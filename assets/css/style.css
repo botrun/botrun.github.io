@@ -711,6 +711,21 @@ main h1 {
   color: var(--text);
   margin-bottom: 2rem;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+main h1 svg {
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+header nav a svg {
+  width: 20px;
+  height: 20px;
 }
 
 .file-list h2 {
@@ -719,6 +734,15 @@ main h1 {
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-list h2 svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
 }
 
 .file-list ul {
@@ -750,17 +774,16 @@ main h1 {
   -webkit-tap-highlight-color: rgba(124, 58, 237, 0.1);
 }
 
-.file-list a::before {
-  content: '';
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: 8px;
+.file-list a svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
   flex-shrink: 0;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px;
+  transition: color var(--transition-fast);
+}
+
+.file-list a:hover svg {
+  color: var(--cta);
 }
 
 .file-list a:hover {
