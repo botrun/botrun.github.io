@@ -11,24 +11,29 @@
   <header>
     <h1><i data-lucide="sparkles"></i>波特人-零幻覺證明<span class="subtitle">（案例篇）</span></h1>
     <p class="update-date"><i data-lucide="calendar"></i>更新日期：2026-01-27</p>
-    <div class="search-container">
-      <div class="search-input-wrapper">
-        <i data-lucide="search"></i>
-        <input
-          type="search"
-          id="skill-search"
-          placeholder="搜尋技能、方法、範例..."
-          autocomplete="off"
-        />
-      </div>
-      <div id="search-results" class="search-dropdown"></div>
-    </div>
-    <div class="quick-links">
-      <a href="/skills/" class="quick-link"><i data-lucide="book-open"></i> 技能庫 (18)</a>
-      <a href="https://github.com/botrun/timeless-bowen" class="quick-link"><i data-lucide="github"></i> GitHub</a>
-    </div>
   </header>
   <main>
+    <!-- Featured: 數位發展部專案 -->
+    <section class="featured-section">
+      <a class="featured-card" href="projects/002-政府/數位發展部-瀏覽器自動化方案比較.html">
+        <div class="featured-badge"><i data-lucide="star"></i> 精選</div>
+        <div class="featured-content">
+          <div class="featured-icon"><i data-lucide="chrome"></i></div>
+          <div class="featured-text">
+            <h2>政府 AI 瀏覽器自動化方案比較</h2>
+            <p>Claude Computer Use vs Claude in Chrome vs Vercel Agent Browser vs Playwright MCP — 四大方案深度評測</p>
+          </div>
+          <div class="featured-arrow"><i data-lucide="arrow-right"></i></div>
+        </div>
+        <div class="featured-meta">
+          <span><i data-lucide="building-2"></i> 數位發展部</span>
+          <span><i data-lucide="layout-dashboard"></i> 8 頁投影片</span>
+          <span><i data-lucide="calendar"></i> 2026-01</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- 案例分類 -->
     <section class="projects-grid">
       <a class="project-card" href="projects/001-學校/">
         <div class="project-header">
@@ -57,6 +62,5 @@
     <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
   </footer>
   <script>lucide.createIcons();</script>
-  <script type="module" src="assets/js/search.js"></script>
 </body>
 </html>
