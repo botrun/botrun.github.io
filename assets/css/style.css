@@ -679,10 +679,51 @@ footer {
 
 /* Project Pages (Sub Pages) */
 header {
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   background: var(--glass-bg);
   backdrop-filter: var(--blur);
   border-bottom: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+header h1 svg {
+  width: 32px;
+  height: 32px;
+  color: var(--cta);
+}
+
+header h1 .subtitle {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.update-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.update-date svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
 }
 
 header nav a {
