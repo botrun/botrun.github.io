@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>零框架技能 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> 零框架技能</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        
+      </p>
+      <div>
+        <p>ㄓㄜ---<br>
+name: zero-framework-skill<br>
+description: |<br>
+  零框架技能。泛化通用的 AI 任務處理框架，適用於任何領域。</p><p>  <strong>何時使用</strong>：<br>
+  - 用戶說「零框架」「孵化技能」「建立技能」<br>
+  - 用戶需要處理任意格式檔案並產出技能<br>
+  - 用戶需要 AI 協助完成複雜任務</p><p>allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch, Task<br>
+user-invocable: true<br>
+---</p><p><h1>零框架技能</h1></p><p>> <strong>核心理念</strong>：換位思考、三案擇優、技能孵化、智慧前處理、零幻覺引證、持續迭代</p><p>---</p><p><h2>六大步驟</h2></p><p><h3>1. 換位</h3></p><p>初步掃描資料，換位思考使用者潛在動機：</p><p>- 使用者真正想要什麼？<br>
+- 背後的需求是什麼？<br>
+- 有哪些隱含的期待？</p><p><h3>2. 三案</h3></p><p>提出以使用者為中心的驗收要件，設計三種替代方案：</p><p>| 方案 | 實作方法 | 優點 | 缺點 | 評分 (1-10) |<br>
+|------|----------|------|------|-------------|<br>
+| A | ... | ... | ... | ? |<br>
+| B | ... | ... | ... | ? |<br>
+| C | ... | ... | ... | ? |</p><p><strong>選擇評分最高的方案執行。</strong></p><p><h3>3. 技能</h3></p><p>上網查 Claude Code SKILL.md 官方寫法，建立技能：</p><p>- <strong>BDD</strong>（行為驅動開發）：先定義驗收條件<br>
+- <strong>TDD</strong>（測試驅動開發）：先寫測試再實作<br>
+- <strong>SOLID</strong>：單一職責、開放封閉、里氏替換、介面隔離、依賴反轉<br>
+- <strong>DRY</strong>：不重複自己</p><p>技能結構：<br>
+<code>`</code><br>
+.claude/skills/{技能名稱}/<br>
+├── SKILL.md         # 技能定義<br>
+└── scripts/<br>
+    └── run.ts       # TypeScript 處理腳本<br>
+<code>`</code></p><p><h3>4. 前處理</h3></p><p>智慧檔案處理：</p><p>| 情境 | 處理方式 |<br>
+|------|----------|<br>
+| 大檔案 | 自動切片 + 斷點續做 |<br>
+| 圖片/PDF 辨識 | Azure Vision OCR API |<br>
+| 音訊轉文字 | Gemini API |<br>
+| 任意格式 | 轉為 AI 友善純文字 |</p><p><h3>5. 引證</h3></p><p>回應時必須引證來源，全力零幻覺證明：</p><p>| 來源類型 | 引證格式 |<br>
+|----------|----------|<br>
+| 網址 | <code>[標題](https://...)</code> |<br>
+| 檔案 | <code>來源：{檔案名稱}</code> |<br>
+| 頁碼 | <code>第 {N} 頁</code> |<br>
+| 行數 | <code>第 {N} 行</code> |<br>
+| 時間點 | <code>{分:秒}</code> 或 <code>{時:分:秒}</code> |</p><p><strong>原則</strong>：<br>
+- 來源文字不能竄改<br>
+- 完整保留原始 URL<br>
+- 標明確切位置（頁碼、行數、時間點）</p><p><h3>6. 迭代</h3></p><p>若使用者不滿意成果，可再次執行「三案打分」迭代進步：</p><p>- 重新提出三種替代方案<br>
+- 重新打分 1-10 選最佳<br>
+- 更新 SKILL.md 與 .ts 腳本<br>
+- 持續迭代直到使用者滿意</p><p>---</p><p><h2>快速參考</h2></p><p><code>`</code>bash<br>
+<h1>查詢 Claude Code SKILL.md 官方寫法</h1><br>
+WebSearch "claude code SKILL.md official documentation 2026"</p><p><h1>Azure Vision OCR</h1><br>
+curl -X POST "https://{endpoint}/vision/v3.2/ocr" \<br>
+  -H "Ocp-Apim-Subscription-Key: {key}" \<br>
+  -H "Content-Type: application/json" \<br>
+  -d '{"url": "{image_url}"}'<br>
+<code>`</code></p><p>---</p><p><h2>檢索關鍵字</h2></p><p>零框架, 換位思考, 三案, 技能孵化, BDD, TDD, SOLID, DRY, 自動切片, 斷點續做, Azure Vision OCR, 零幻覺, 引證, 來源<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
