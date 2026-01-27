@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>波特人專案展示</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
   <header>
@@ -28,21 +29,31 @@
     </section>
     <section class="projects-grid">
       <a class="project-card" href="projects/001-學校/">
-        <h3>學校</h3>
-        <p class="meta">1 個檔案</p>
+        <div class="project-header">
+          <i data-lucide="graduation-cap"></i>
+          <h3>學校</h3>
+        </div>
+        <p class="meta"><i data-lucide="file-text"></i> 1 個檔案</p>
       </a>
       <a class="project-card" href="projects/002-政府/">
-        <h3>政府</h3>
-        <p class="meta">4 個檔案</p>
+        <div class="project-header">
+          <i data-lucide="landmark"></i>
+          <h3>政府</h3>
+        </div>
+        <p class="meta"><i data-lucide="file-text"></i> 4 個檔案</p>
       </a>
       <a class="project-card" href="projects/004-醫療/">
-        <h3>醫療</h3>
-        <p class="meta">1 個檔案</p>
+        <div class="project-header">
+          <i data-lucide="heart-pulse"></i>
+          <h3>醫療</h3>
+        </div>
+        <p class="meta"><i data-lucide="file-text"></i> 1 個檔案</p>
       </a>
     </section>
   </main>
   <footer>
     <p>由 <a href="https://botrun.ai">波特人 BOTRUN</a> 自動建構 | <a href="https://github.com/botrun/timeless-bowen">GitHub</a></p>
   </footer>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

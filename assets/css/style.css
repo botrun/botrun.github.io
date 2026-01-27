@@ -423,9 +423,22 @@ a:focus-visible {
 
 .project-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.project-header svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.project-card:hover .project-header svg {
+  transform: scale(1.1);
+  color: var(--cta);
 }
 
 .project-header h3 {
@@ -435,16 +448,6 @@ a:focus-visible {
   color: var(--text);
   letter-spacing: -0.01em;
   margin: 0;
-}
-
-.project-header svg {
-  color: var(--text-light);
-  transition: transform var(--transition-fast);
-}
-
-.project-card:hover .project-header svg {
-  transform: translate(2px, -2px);
-  color: var(--primary);
 }
 
 .project-meta {
@@ -457,6 +460,8 @@ a:focus-visible {
 }
 
 .project-meta svg {
+  width: 16px;
+  height: 16px;
   color: var(--text-light);
 }
 
