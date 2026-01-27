@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中共2025年「正義使命」軍事演習封鎖區域圖</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            max-width: 350px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .info-panel h1 {
+            color: #d32f2f;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 2px solid #d32f2f;
+            padding-bottom: 8px;
+        }
+
+        .info-panel h2 {
+            color: #333;
+            font-size: 14px;
+            margin: 12px 0 8px 0;
+            font-weight: bold;
+        }
+
+        .info-panel ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .info-panel li {
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 4px 0;
+            color: #555;
+        }
+
+        .warning-text {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        .date-info {
+            background: #fff3e0;
+            padding: 10px;
+            border-left: 4px solid #ff9800;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .legend h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .legend-line {
+            width: 20px;
+            height: 3px;
+            margin-right: 8px;
+        }
+
+        .red-zone { background-color: rgba(211, 47, 47, 0.6); border: 1px solid #d32f2f; }
+        .orange-zone { background-color: rgba(255, 152, 0, 0.6); border: 1px solid #ff9800; }
+        .yellow-zone { background-color: rgba(255, 193, 7, 0.6); border: 1px solid #ffc107; }
+        .pink-zone { background-color: rgba(233, 30, 99, 0.6); border: 1px solid #e91e63; }
+        .blue-line { background-color: #1976d2; }
+        .red-line { background-color: #d32f2f; }
+
+        .footer-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #666;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .area-label {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            font-weight: bold;
+            font-size: 11px;
+            color: #333;
+            text-shadow: 1px 1px 2px white, -1px -1px 2px white, 1px -1px 2px white, -1px 1px 2px white;
+        }
+
+        .country-label {
+            background: rgba(255,255,255,0.9) !important;
+            border: 1px solid #ccc !important;
+            border-radius: 4px !important;
+            padding: 2px 6px !important;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .info-panel {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 0;
+                max-width: none;
+            }
+
+            .legend {
+                bottom: 60px;
+                right: 10px;
+                padding: 10px;
+            }
+
+            .footer-info {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+            }
+
+            #map {
+                height: calc(100vh - 200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <h1>🚨 正義使命-2025 軍事演習</h1>
+            <div class="date-info">
+                <strong>演習時間：</strong>2025年12月29-31日<br>
+                <strong>實彈射擊：</strong>12月30日 08:00-18:00
+            </div>
+
+            <h2>📍 封鎖區域（5個）</h2>
+            <ul>
+                <li><span class="warning-text">東部海域</span>：花蓮、台東外海</li>
+                <li><span class="warning-text">西部海域</span>：台中、台南外海</li>
+                <li><span class="warning-text">北部海域</span>：基隆、淡水外海</li>
+                <li><span class="warning-text">南部海域</span>：高雄、屏東外海</li>
+                <li><span class="warning-text">東南海域</span>：恆春半島南方（首次）</li>
+            </ul>
+
+            <h2>🚢 演習科目</h2>
+            <ul>
+                <li>海空戰備警巡</li>
+                <li>奪取綜合制權</li>
+                <li>要港要域封控</li>
+                <li>外線立體懾阻</li>
+            </ul>
+
+            <h2>✈️ 交通影響</h2>
+            <ul>
+                <li>馬祖航線：全數取消</li>
+                <li>金門航線：部分停飛</li>
+                <li>影響航班：941架次</li>
+                <li>受影響旅客：逾10萬人</li>
+            </ul>
+        </div>
+
+        <!-- 地圖容器 -->
+        <div id="map"></div>
+
+        <!-- 圖例 -->
+        <div class="legend">
+            <h3>圖例說明</h3>
+            <div class="legend-item">
+                <div class="legend-color red-zone"></div>
+                <span>核心演習區</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color orange-zone"></div>
+                <span>東部演習區</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color yellow-zone"></div>
+                <span>西部演習區</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color pink-zone"></div>
+                <span>東南演習區（首次）</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line blue-line"></div>
+                <span>第一島鏈</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line red-line"></div>
+                <span>軍事威脅方向</span>
+            </div>
+        </div>
+
+        <!-- 頁腳資訊 -->
+        <div class="footer-info">
+            資料來源：中國解放軍東部戰區、台灣國防部 | 製作：波特人地圖技能 | 更新時間：2025年12月31日
+        </div>
+    </div>
+
+    <script>
+        // 初始化地圖，聚焦台海區域
+        var map = L.map('map', {
+            center: [23.5, 121],
+            zoom: 6,
+            minZoom: 5,
+            maxZoom: 10
+        });
+
+        // 使用 OpenStreetMap 圖磚
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 演習區域資料
+        var exerciseAreas = [
+            // 北部海域 - 核心演習區
+            {
+                coords: [[25.5, 120.5], [25.5, 122.0], [25.0, 122.0], [25.0, 120.5]],
+                color: '#D32F2F',
+                name: '北部演習區'
+            },
+            // 東部海域
+            {
+                coords: [[24.5, 121.8], [24.5, 122.5], [22.8, 122.5], [22.8, 121.8]],
+                color: '#FF9800',
+                name: '東部演習區'
+            },
+            // 西部海域
+            {
+                coords: [[24.0, 118.5], [24.0, 120.0], [22.5, 120.0], [22.5, 118.5]],
+                color: '#FFC107',
+                name: '西部演習區'
+            },
+            // 南部海域 - 核心演習區
+            {
+                coords: [[22.5, 119.8], [22.5, 121.0], [21.8, 121.0], [21.8, 119.8]],
+                color: '#D32F2F',
+                name: '南部演習區'
+            },
+            // 東南海域（首次）
+            {
+                coords: [[21.8, 120.5], [21.8, 122.2], [20.5, 122.2], [20.5, 120.5]],
+                color: '#E91E63',
+                name: '東南演習區（首次）'
+            }
+        ];
+
+        // 繪製演習區域
+        exerciseAreas.forEach(function(area) {
+            var polygon = L.polygon(area.coords, {
+                color: area.color,
+                fillColor: area.color,
+                fillOpacity: 0.4,
+                weight: 2
+            }).addTo(map);
+
+            // 計算中心點放置標籤
+            var bounds = polygon.getBounds();
+            var center = bounds.getCenter();
+
+            L.marker(center, {
+                icon: L.divIcon({
+                    className: 'area-label',
+                    html: area.name,
+                    iconSize: [100, 20]
+                })
+            }).addTo(map);
+        });
+
+        // 第一島鏈虛線
+        var firstIslandChain = [
+            [45, 142],   // 千島群島
+            [42, 141],   // 北海道
+            [38, 140],   // 本州
+            [34, 135],   // 四國
+            [32, 131],   // 九州
+            [28, 130],   // 琉球群島北部
+            [26, 127],   // 琉球群島中部
+            [24, 124],   // 琉球群島南部
+            [23, 121],   // 台灣北部
+            [22, 120],   // 台灣中部
+            [21, 119],   // 台灣南部
+            [18, 122],   // 巴丹群島
+            [16, 121],   // 巴布延群島
+            [14, 120]    // 菲律賓呂宋島
+        ];
+
+        L.polyline(firstIslandChain, {
+            color: '#1976D2',
+            weight: 3,
+            opacity: 0.8,
+            dashArray: '10, 6'
+        }).addTo(map);
+
+        // 軍事威脅方向箭頭（從中國指向台灣）
+        var threatLine = [[25, 117], [24, 121]];
+
+        L.polyline(threatLine, {
+            color: '#D32F2F',
+            weight: 5,
+            opacity: 0.8
+        }).addTo(map);
+
+        // 箭頭標記
+        var arrowIcon = L.divIcon({
+            className: 'arrow-marker',
+            html: '<div style="font-size: 24px; color: #D32F2F; transform: rotate(-20deg);">➤</div>',
+            iconSize: [30, 30]
+        });
+
+        L.marker([24.2, 120.5], { icon: arrowIcon }).addTo(map);
+
+        // 重點國家/地區標記
+        var locations = [
+            { name: '🇹🇼 台灣', coords: [23.8, 121.0] },
+            { name: '🇨🇳 中國', coords: [30.0, 118.0] },
+            { name: '🇯🇵 日本', coords: [35.7, 139.7] },
+            { name: '🇵🇭 菲律賓', coords: [14.6, 120.9] },
+            { name: '🇰🇷 南韓', coords: [37.6, 126.9] }
+        ];
+
+        locations.forEach(function(loc) {
+            L.marker(loc.coords, {
+                icon: L.divIcon({
+                    className: 'country-label',
+                    html: loc.name,
+                    iconSize: [80, 20]
+                })
+            }).addTo(map);
+        });
+
+        // 台灣主要城市標記
+        var taiwanCities = [
+            { name: '基隆', coords: [25.13, 121.74] },
+            { name: '台北', coords: [25.03, 121.57] },
+            { name: '花蓮', coords: [23.99, 121.60] },
+            { name: '台中', coords: [24.15, 120.67] },
+            { name: '台南', coords: [22.99, 120.21] },
+            { name: '高雄', coords: [22.63, 120.30] },
+            { name: '台東', coords: [22.76, 121.14] },
+            { name: '恆春', coords: [22.00, 120.75] }
+        ];
+
+        taiwanCities.forEach(function(city) {
+            L.circleMarker(city.coords, {
+                radius: 4,
+                color: '#333',
+                fillColor: '#FF5722',
+                fillOpacity: 1
+            }).addTo(map).bindTooltip(city.name, {
+                permanent: false,
+                direction: 'top'
+            });
+        });
+    </script>
+</body>
+</html>
