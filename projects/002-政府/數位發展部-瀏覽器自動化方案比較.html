@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府 AI 瀏覽器自動化方案比較 | 數位發展部</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #f59e0b;
+            --danger: #dc2626;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 48px 56px;
+            page-break-after: always;
+            min-height: 680px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide:last-child {
+            page-break-after: avoid;
+        }
+
+        /* Header */
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--gray-100);
+        }
+
+        .slide-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .slide-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            flex: 1;
+            margin-left: 16px;
+        }
+
+        .slide-badge {
+            background: var(--gray-100);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        /* Title Slide */
+        .title-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: white;
+        }
+
+        .title-slide .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .title-slide .subtitle {
+            font-size: 22px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .title-slide .org-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0.8;
+            font-size: 16px;
+        }
+
+        .title-slide .date {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Score Card */
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: auto;
+        }
+
+        .score-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .score-card.winner {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        }
+
+        .score-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .score-card-title {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .score-card-score {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .score-card.winner .score-card-score {
+            color: var(--secondary);
+        }
+
+        .score-card-label {
+            font-size: 12px;
+            color: var(--gray-600);
+            margin-top: 4px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+
+        .comparison-table th {
+            background: var(--gray-100);
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .comparison-table th:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .comparison-table th:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .metric-label i {
+            width: 18px;
+            height: 18px;
+            color: var(--primary-light);
+        }
+
+        .cell-best {
+            background: #ecfdf5;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .cell-good {
+            color: var(--primary);
+        }
+
+        .cell-warning {
+            color: var(--accent);
+        }
+
+        .cell-poor {
+            color: var(--danger);
+        }
+
+        /* Feature Box */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+
+        .feature-box {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .feature-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .feature-box-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .feature-box-icon.blue { background: var(--primary); }
+        .feature-box-icon.green { background: var(--secondary); }
+        .feature-box-icon.orange { background: var(--accent); }
+        .feature-box-icon.purple { background: #7c3aed; }
+
+        .feature-box-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .feature-box-subtitle {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .feature-list li i {
+            width: 18px;
+            height: 18px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Stat Bar */
+        .stat-bar-container {
+            margin-bottom: 20px;
+        }
+
+        .stat-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .stat-bar {
+            height: 12px;
+            background: var(--gray-200);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .stat-bar-fill.blue { background: var(--primary); }
+        .stat-bar-fill.green { background: var(--secondary); }
+        .stat-bar-fill.orange { background: var(--accent); }
+        .stat-bar-fill.purple { background: #7c3aed; }
+
+        /* Pros Cons */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .pros, .cons {
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .pros {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .cons {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .pros-title, .cons-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .pros-title { color: var(--secondary); }
+        .cons-title { color: var(--danger); }
+
+        .pros ul, .cons ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        /* Recommendation */
+        .recommendation-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid var(--primary-light);
+            border-radius: 16px;
+            padding: 28px;
+            margin-top: auto;
+        }
+
+        .recommendation-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .recommendation-header i {
+            width: 32px;
+            height: 32px;
+            color: var(--primary);
+        }
+
+        .recommendation-header span {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .recommendation-content {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Score Summary */
+        .score-summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .score-summary-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .score-summary-item.highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: white;
+        }
+
+        .score-summary-item .name {
+            font-size: 13px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .score-summary-item .score {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .score-summary-item.highlight .score {
+            color: #fcd34d;
+        }
+
+        /* Footer */
+        .slide-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* Source Reference */
+        .source-ref {
+            font-size: 11px;
+            color: var(--gray-600);
+            margin-top: 8px;
+        }
+
+        .source-ref a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .slide {
+                box-shadow: none;
+                border: 1px solid var(--gray-200);
+                margin: 0;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Scenario Table */
+        .scenario-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .scenario-row {
+            display: grid;
+            grid-template-columns: 200px 1fr 120px;
+            gap: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: var(--gray-50);
+            align-items: center;
+        }
+
+        .scenario-row:nth-child(odd) {
+            background: white;
+            border: 1px solid var(--gray-100);
+        }
+
+        .scenario-name {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scenario-name i {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-light);
+        }
+
+        .scenario-solution {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .scenario-solution.blue {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+
+        .scenario-solution.green {
+            background: #d1fae5;
+            color: var(--secondary);
+        }
+
+        .scenario-solution.orange {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .scenario-solution.purple {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide title-slide">
+    <div class="main-title">政府 AI 瀏覽器自動化方案比較</div>
+    <div class="subtitle">四大技術路線深度評測：快、省、準</div>
+    <div class="org-info">
+        <i data-lucide="building-2"></i>
+        <span>數位發展部 | 智慧政府 AI 代理人專案</span>
+    </div>
+    <div class="date">2026 年 1 月</div>
+</div>
+
+<!-- Slide 2: Executive Summary -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">1</div>
+        <div class="slide-title">執行摘要：四大方案總評</div>
+        <div class="slide-badge">Executive Summary</div>
+    </div>
+
+    <div class="score-summary">
+        <div class="score-summary-item">
+            <div class="name">Claude Computer Use</div>
+            <div class="score">7.8</div>
+        </div>
+        <div class="score-summary-item highlight">
+            <div class="name">Claude in Chrome</div>
+            <div class="score">8.5</div>
+        </div>
+        <div class="score-summary-item">
+            <div class="name">Vercel Agent Browser</div>
+            <div class="score">7.5</div>
+        </div>
+        <div class="score-summary-item">
+            <div class="name">Playwright MCP</div>
+            <div class="score">7.0</div>
+        </div>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th style="width: 180px;">評估維度</th>
+                <th>Computer Use</th>
+                <th>Claude in Chrome</th>
+                <th>Agent Browser</th>
+                <th>Playwright MCP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="zap"></i>快（速度）</div></td>
+                <td class="cell-warning">6.5 / 10</td>
+                <td class="cell-best">9.0 / 10</td>
+                <td class="cell-good">8.5 / 10</td>
+                <td class="cell-good">7.5 / 10</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="piggy-bank"></i>省（Token）</div></td>
+                <td class="cell-poor">5.0 / 10</td>
+                <td class="cell-good">8.0 / 10</td>
+                <td class="cell-best">9.5 / 10</td>
+                <td class="cell-poor">4.5 / 10</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="target"></i>準（精準度）</div></td>
+                <td class="cell-best">9.0 / 10</td>
+                <td class="cell-good">8.5 / 10</td>
+                <td class="cell-warning">6.5 / 10</td>
+                <td class="cell-good">8.0 / 10</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="shield-check"></i>安全性</div></td>
+                <td class="cell-good">8.5 / 10</td>
+                <td class="cell-best">9.0 / 10</td>
+                <td class="cell-warning">7.0 / 10</td>
+                <td class="cell-good">8.0 / 10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="slide-footer">
+        <span>資料來源：OSWorld Benchmark、Vercel Labs、Microsoft Playwright、網友實測</span>
+        <span>1 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 3: Claude Computer Use -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">2</div>
+        <div class="slide-title">Claude Computer Use</div>
+        <div class="slide-badge">視覺模擬技術</div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon blue">
+                    <i data-lucide="monitor"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">技術原理</div>
+                    <div class="feature-box-subtitle">螢幕截圖 + 視覺理解 + 滑鼠鍵盤模擬</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="check"></i>支援任意應用程式（桌面 + 網頁）</li>
+                <li><i data-lucide="check"></i>無需 API，直接操作 UI 介面</li>
+                <li><i data-lucide="check"></i>OSWorld 評測 <strong>61.4%</strong>（業界最高）</li>
+                <li><i data-lucide="check"></i>完美對接舊系統無 API 情境</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon green">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">效能數據</div>
+                    <div class="feature-box-subtitle">網友實測與官方 Benchmark</div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>OSWorld 準確度</span>
+                    <span class="cell-best">61.4%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill green" style="width: 61.4%"></div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>競爭對手最高分</span>
+                    <span>7.8%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill blue" style="width: 7.8%"></div>
+                </div>
+            </div>
+            <p class="source-ref">
+                <strong>8 倍領先優勢</strong> — <a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank">Anthropic 官方</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="pros-cons">
+        <div class="pros">
+            <div class="pros-title"><i data-lucide="thumbs-up"></i>優點</div>
+            <ul>
+                <li>萬能適用：任何軟體皆可操作</li>
+                <li>精準度最高：61.4% OSWorld</li>
+                <li>政府舊系統完美解方</li>
+                <li>Safety-by-Design 安全設計</li>
+            </ul>
+        </div>
+        <div class="cons">
+            <div class="cons-title"><i data-lucide="thumbs-down"></i>缺點</div>
+            <ul>
+                <li>截圖處理延遲較高</li>
+                <li>Token 消耗大（視覺分析）</li>
+                <li>需 $100-200/月 Claude Max</li>
+                <li>156 秒平均思考延遲</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>網友評價：「舊系統無 API 的唯一解，但成本較高」</span>
+        <span>2 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 4: Claude in Chrome -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">3</div>
+        <div class="slide-title">Claude in Chrome</div>
+        <div class="slide-badge">推薦方案 ⭐</div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon green">
+                    <i data-lucide="chrome"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">技術原理</div>
+                    <div class="feature-box-subtitle">Chrome 原生擴充 + Native Messaging API</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="check"></i>直接存取登入狀態（無需重新認證）</li>
+                <li><i data-lucide="check"></i>讀取 Console / Network / DOM</li>
+                <li><i data-lucide="check"></i>支援 GIF 錄製與多分頁工作流</li>
+                <li><i data-lucide="check"></i>經過 3 個月 Beta 測試驗證</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon purple">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">安全測試結果</div>
+                    <div class="feature-box-subtitle">Anthropic 內部測試數據</div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>提示注入防禦率</span>
+                    <span class="cell-best">76.4%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill green" style="width: 76.4%"></div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>攻擊成功率（有安全層）</span>
+                    <span class="cell-best">23.6%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill orange" style="width: 23.6%"></div>
+                </div>
+            </div>
+            <p class="source-ref">
+                123 測試案例 / 29 種攻擊場景 — <a href="https://claude.com/blog/claude-for-chrome" target="_blank">Anthropic Blog</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="pros-cons">
+        <div class="pros">
+            <div class="pros-title"><i data-lucide="thumbs-up"></i>優點</div>
+            <ul>
+                <li>速度最快：直接 DOM 操作</li>
+                <li>整合現有登入：無需 API 連接器</li>
+                <li>Debug 神器：即時讀取 Console</li>
+                <li>官方維護：安全更新有保障</li>
+            </ul>
+        </div>
+        <div class="cons">
+            <div class="cons-title"><i data-lucide="thumbs-down"></i>缺點</div>
+            <ul>
+                <li>僅限 Chrome 瀏覽器</li>
+                <li>不支援桌面應用程式</li>
+                <li>多 Profile 支援不完善</li>
+                <li>CAPTCHA 需人工介入</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>網友評價：「政府內部系統最佳選擇，安全性高且開發體驗好」</span>
+        <span>3 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 5: Vercel Agent Browser -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">4</div>
+        <div class="slide-title">Vercel Agent Browser</div>
+        <div class="slide-badge">最省 Token</div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon orange">
+                    <i data-lucide="terminal"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">技術原理</div>
+                    <div class="feature-box-subtitle">Rust CLI + Snapshot Refs 系統</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="check"></i>統一 CLI 介面：<code>click @e1</code></li>
+                <li><i data-lucide="check"></i>元素參照系統取代 CSS Selector</li>
+                <li><i data-lucide="check"></i>零配置：無需 MCP Server</li>
+                <li><i data-lucide="check"></i>相容 Claude Code / Cursor / Copilot</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon green">
+                    <i data-lucide="coins"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">Token 效率實測</div>
+                    <div class="feature-box-subtitle">6 個相同測試案例比較</div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>Agent Browser</span>
+                    <span class="cell-best">~1,400 tokens</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill green" style="width: 18%"></div>
+                </div>
+            </div>
+            <div class="stat-bar-container">
+                <div class="stat-bar-label">
+                    <span>Playwright MCP</span>
+                    <span class="cell-poor">~7,800 tokens</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill orange" style="width: 100%"></div>
+                </div>
+            </div>
+            <p class="source-ref">
+                <strong>節省 82% Context</strong>（5.7 倍效率）— <a href="https://paddo.dev/blog/agent-browser-context-efficiency/" target="_blank">開發者實測</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="pros-cons">
+        <div class="pros">
+            <div class="pros-title"><i data-lucide="thumbs-up"></i>優點</div>
+            <ul>
+                <li>Token 最省：節省 82% Context</li>
+                <li>零配置：無需 MCP 設定</li>
+                <li>Refs 系統：穩定元素識別</li>
+                <li>AI SDK 6 生態：2,800 萬月下載</li>
+            </ul>
+        </div>
+        <div class="cons">
+            <div class="cons-title"><i data-lucide="thumbs-down"></i>缺點</div>
+            <ul>
+                <li>功能受限：無網路攔截</li>
+                <li>無 PDF 生成能力</li>
+                <li>多分頁支援較弱</li>
+                <li>新專案，生產驗證較少</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>網友評價：「長時間自動化任務的首選，省 Token 就是省錢」</span>
+        <span>4 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 6: Playwright MCP -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">5</div>
+        <div class="slide-title">Playwright MCP</div>
+        <div class="slide-badge">功能最完整</div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon purple">
+                    <i data-lucide="layers"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">技術原理</div>
+                    <div class="feature-box-subtitle">Microsoft 官方 MCP Server</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="check"></i>26 個自動化工具完整覆蓋</li>
+                <li><i data-lucide="check"></i>網路攔截 / PDF 生成 / 多分頁</li>
+                <li><i data-lucide="check"></i>無障礙樹快照（Accessibility Tree）</li>
+                <li><i data-lucide="check"></i>自動安裝瀏覽器驅動</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon orange">
+                    <i data-lucide="alert-triangle"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">已知問題</div>
+                    <div class="feature-box-subtitle">社群回報與解決方案</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="x"></i>Token 爆量：單次截圖 >15,000 tokens</li>
+                <li><i data-lucide="x"></i>版本迴歸：v0.0.32 比 v0.0.30 多 6 倍 token</li>
+                <li><i data-lucide="x"></i>AI 行為：Claude 會頻繁截圖浪費資源</li>
+                <li><i data-lucide="alert-circle"></i>建議改用 CLI+SKILLS 模式</li>
+            </ul>
+            <p class="source-ref">
+                GitHub Issue #889 — <a href="https://github.com/microsoft/playwright-mcp" target="_blank">microsoft/playwright-mcp</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="pros-cons">
+        <div class="pros">
+            <div class="pros-title"><i data-lucide="thumbs-up"></i>優點</div>
+            <ul>
+                <li>功能最完整：26 個工具</li>
+                <li>Microsoft 官方維護</li>
+                <li>進階功能：網路攔截、PDF</li>
+                <li>跨瀏覽器：Chrome/Firefox/WebKit</li>
+            </ul>
+        </div>
+        <div class="cons">
+            <div class="cons-title"><i data-lucide="thumbs-down"></i>缺點</div>
+            <ul>
+                <li>Token 消耗最高：7,800+</li>
+                <li>需明確指定 "playwright mcp"</li>
+                <li>配置複雜度較高</li>
+                <li>版本穩定性待加強</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>網友評價：「功能強大但吃 Token，複雜任務才用」</span>
+        <span>5 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 7: Detailed Comparison -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">6</div>
+        <div class="slide-title">深度比較：快、省、準</div>
+        <div class="slide-badge">Benchmark Data</div>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>指標</th>
+                <th>Computer Use</th>
+                <th>Claude in Chrome</th>
+                <th>Agent Browser</th>
+                <th>Playwright MCP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="clock"></i>延遲</div></td>
+                <td class="cell-poor">~156 秒</td>
+                <td class="cell-best">即時</td>
+                <td class="cell-good">< 1 秒</td>
+                <td class="cell-warning">2-5 秒</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="database"></i>Token/操作</div></td>
+                <td class="cell-poor">5,000+</td>
+                <td class="cell-good">500-1,000</td>
+                <td class="cell-best">~230</td>
+                <td class="cell-poor">1,300+</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="target"></i>OSWorld</div></td>
+                <td class="cell-best">61.4%</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="monitor"></i>桌面支援</div></td>
+                <td class="cell-best">✓ 完整</td>
+                <td class="cell-poor">✗</td>
+                <td class="cell-poor">✗</td>
+                <td class="cell-poor">✗</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="lock"></i>登入整合</div></td>
+                <td class="cell-poor">需重新登入</td>
+                <td class="cell-best">沿用現有</td>
+                <td class="cell-warning">需配置</td>
+                <td class="cell-warning">需配置</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="wrench"></i>配置難度</div></td>
+                <td class="cell-good">低</td>
+                <td class="cell-best">最低</td>
+                <td class="cell-best">零配置</td>
+                <td class="cell-poor">中高</td>
+            </tr>
+            <tr>
+                <td><div class="metric-label"><i data-lucide="dollar-sign"></i>月成本</div></td>
+                <td class="cell-poor">$100-200</td>
+                <td class="cell-warning">$20-100</td>
+                <td class="cell-best">免費</td>
+                <td class="cell-best">免費</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="recommendation-box">
+        <div class="recommendation-header">
+            <i data-lucide="lightbulb"></i>
+            <span>關鍵洞察</span>
+        </div>
+        <div class="recommendation-content">
+            <strong>Agent Browser 節省 82% Token</strong>：6 個測試消耗 ~5.5K 字元 vs Playwright MCP 的 ~31K 字元，同樣預算可執行 <strong>5.7 倍</strong> 測試量。<br>
+            <strong>Claude in Chrome 速度最快</strong>：直接 DOM 操作，無需截圖解析，且沿用現有登入狀態。
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>數據來源：OSWorld Benchmark、開發者實測、GitHub Issues</span>
+        <span>6 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 8: Scenario Recommendations -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">7</div>
+        <div class="slide-title">政府場景推薦方案</div>
+        <div class="slide-badge">Decision Matrix</div>
+    </div>
+
+    <div class="scenario-table">
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="server"></i>舊系統無 API</div>
+            <div>DOS 視窗、VB6 應用、古老 ERP 系統操作</div>
+            <div class="scenario-solution blue">Computer Use</div>
+        </div>
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="globe"></i>Web 公文系統</div>
+            <div>公文線上簽核、政府入口網站、內部系統</div>
+            <div class="scenario-solution green">Claude in Chrome</div>
+        </div>
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="repeat"></i>大量重複任務</div>
+            <div>批次資料登打、表單填寫、長時間自動化</div>
+            <div class="scenario-solution orange">Agent Browser</div>
+        </div>
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="bug"></i>自動化測試</div>
+            <div>E2E 測試、網路攔截、PDF 報表產生</div>
+            <div class="scenario-solution purple">Playwright MCP</div>
+        </div>
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="shield"></i>機敏資料處理</div>
+            <div>個資系統、財務系統、需完整稽核軌跡</div>
+            <div class="scenario-solution green">Claude in Chrome</div>
+        </div>
+        <div class="scenario-row">
+            <div class="scenario-name"><i data-lucide="wallet"></i>預算有限</div>
+            <div>小規模試點、PoC 驗證、免費方案優先</div>
+            <div class="scenario-solution orange">Agent Browser</div>
+        </div>
+    </div>
+
+    <div class="recommendation-box">
+        <div class="recommendation-header">
+            <i data-lucide="star"></i>
+            <span>數位發展部建議採用組合</span>
+        </div>
+        <div class="recommendation-content">
+            <strong>主力方案：Claude in Chrome (8.5 分)</strong> — 政府 Web 系統最佳選擇，安全性高、速度快、整合現有登入。<br>
+            <strong>舊系統補位：Computer Use (7.8 分)</strong> — 無 API 的 Legacy 系統專用，精準度業界最高。<br>
+            <strong>成本優化：Agent Browser (7.5 分)</strong> — 大量重複任務時節省 82% Token 成本。
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>建議依場景組合使用，發揮各方案優勢</span>
+        <span>7 / 8</span>
+    </div>
+</div>
+
+<!-- Slide 9: Summary & Next Steps -->
+<div class="slide">
+    <div class="slide-header">
+        <div class="slide-number">8</div>
+        <div class="slide-title">總結與後續步驟</div>
+        <div class="slide-badge">Action Items</div>
+    </div>
+
+    <div class="score-grid">
+        <div class="score-card">
+            <div class="score-card-icon">
+                <i data-lucide="monitor"></i>
+            </div>
+            <div class="score-card-title">Computer Use</div>
+            <div class="score-card-score">7.8</div>
+            <div class="score-card-label">最準・舊系統專用</div>
+        </div>
+        <div class="score-card winner">
+            <div class="score-card-icon">
+                <i data-lucide="chrome"></i>
+            </div>
+            <div class="score-card-title">Claude in Chrome</div>
+            <div class="score-card-score">8.5</div>
+            <div class="score-card-label">推薦・Web 系統首選</div>
+        </div>
+        <div class="score-card">
+            <div class="score-card-icon">
+                <i data-lucide="terminal"></i>
+            </div>
+            <div class="score-card-title">Agent Browser</div>
+            <div class="score-card-score">7.5</div>
+            <div class="score-card-label">最省・長任務首選</div>
+        </div>
+        <div class="score-card">
+            <div class="score-card-icon">
+                <i data-lucide="layers"></i>
+            </div>
+            <div class="score-card-title">Playwright MCP</div>
+            <div class="score-card-score">7.0</div>
+            <div class="score-card-label">最全・測試專用</div>
+        </div>
+    </div>
+
+    <div class="feature-grid" style="margin-top: 24px;">
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon green">
+                    <i data-lucide="rocket"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">建議後續步驟</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="check"></i><strong>Phase 1</strong>：Claude in Chrome PoC（Web 公文系統）</li>
+                <li><i data-lucide="check"></i><strong>Phase 2</strong>：Computer Use 試點（舊 ERP 整合）</li>
+                <li><i data-lucide="check"></i><strong>Phase 3</strong>：Agent Browser 規模化（批次作業）</li>
+                <li><i data-lucide="check"></i><strong>Phase 4</strong>：Playwright MCP（自動化測試）</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-box-header">
+                <div class="feature-box-icon purple">
+                    <i data-lucide="link"></i>
+                </div>
+                <div>
+                    <div class="feature-box-title">參考資源</div>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li><i data-lucide="external-link"></i><a href="https://claude.com/chrome" target="_blank">Claude in Chrome 官方文件</a></li>
+                <li><i data-lucide="external-link"></i><a href="https://github.com/vercel-labs/agent-browser" target="_blank">Vercel Agent Browser GitHub</a></li>
+                <li><i data-lucide="external-link"></i><a href="https://github.com/microsoft/playwright-mcp" target="_blank">Microsoft Playwright MCP</a></li>
+                <li><i data-lucide="external-link"></i><a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank">Claude Sonnet 4.5 Benchmark</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Boosted by botrun.ai | 波特人智慧政府解決方案</span>
+        <span>8 / 8</span>
+    </div>
+</div>
+
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
