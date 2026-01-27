@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-memory - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-memory</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己記憶技能。寫入新記憶時使用。當用戶分享資訊、經驗、偏好、對話內容、或任何需要記住的事物時觸發。會區分用戶說的話（權重高）與 AI 回應（權重低）。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 記憶技能</h1></p><p><h2>⭐ 語義化命名原則（必讀！）</h2></p><p><h3>為什麼？</h3><br>
+- <strong>AI/LLM 友善</strong>：<code>rg -C</code> 超高速檢索時，從檔名就能看出端倪<br>
+- <strong>知識圖譜吻合</strong>：關鍵字即檔名，檢索 = 找到<br>
+- <strong>人類可讀</strong>：一眼就知道這個記憶在講什麼</p><p><h3>檔名格式</h3></p><p><code>`</code><br>
+{主題}-{次要關鍵字}-{日期}.md<br>
+<code>`</code></p><p><strong>範例</strong>：<br>
+<code>`</code><br>
+AI工具比較-Claude與Gemini-2026-01-19.md<br>
+ISO27001資安教育訓練討論-2026-01-19.md<br>
+小國合作-定價與立場-2026-01-19.md<br>
+<code>`</code></p><p><h3>禁止的檔名</h3><br>
+- ❌ 純時間戳：<code>2026-01-19T12-14-33.md</code><br>
+- ❌ 純數字：<code>001.md</code><br>
+- ❌ 無意義 hash：<code>abc123.md</code><br>
+- ❌ 過於籠統：<code>筆記.md</code>、<code>記錄.md</code></p><p><h3>命名原則</h3><br>
+1. <strong>主題實體優先</strong>：人名、專案名、組織名、方法論<br>
+2. <strong>動作+目標</strong>：討論、規劃、分析+對象<br>
+3. <strong>日期結尾</strong>：便於按時間排序</p><p>---</p><p><h2>核心原則</h2></p><p><strong>權重區分</strong>：<br>
+- <code>user</code> = 用戶親口說的 → 權重 <strong>高</strong>（authority: 10）<br>
+- <code>ai</code> = AI 回應/建議 → 權重 <strong>低</strong>（authority: 3）<br>
+- <code>external</code> = 外部來源（文章、影片）→ 權重 <strong>中</strong>（authority: 5）</p><p><h2>記憶寫入格式</h2></p><p><code>`</code>yaml<br>
+---<br>
+id: unique-id<br>
+title: 標題<br>
+speaker: user | ai | external      # ⭐ 誰說的<br>
+authority: 1-10                    # ⭐ 權重（user=10, ai=3, external=5）<br>
+source_type: conversation | article | video | meeting<br>
+quality: 1-5<br>
+captured_at: YYYY-MM-DDTHH:mm:ss   # ⭐ 精確到秒<br>
+updated: YYYY-MM-DDTHH:mm:ss       # ⭐ 精確到秒<br>
+tags: [標籤]<br>
+context: 當時的對話背景<br>
+---<br>
+<code>`</code></p><p><h2>寫入流程</h2></p><p>1. <strong>判斷來源</strong>：這是用戶說的還是 AI 說的？<br>
+2. <strong>設定權重</strong>：用戶=10, AI=3, 外部=5<br>
+3. <strong>記錄上下文</strong>：為什麼記這個？<br>
+4. <strong>選擇位置</strong>：<br>
+   - 用戶偏好 → <code>記憶核心/語義記憶/偏好學習/</code><br>
+   - 用戶經歷 → <code>記憶核心/情節記憶/</code><br>
+   - 外部素材 → <code>素材庫/收集箱/</code></p><p><h2>特殊處理：偏好學習</h2></p><p>當用戶說「我要」「我不要」「這個好」「這個不好」時：</p><p><code>`</code>bash<br>
+<h1>立即寫入偏好</h1><br>
+echo "記錄到 記憶核心/語義記憶/偏好學習/偏好紀錄.md"<br>
+<code>`</code></p><p><h2>範例</h2></p><p><strong>用戶說</strong>：「我喜歡簡潔的回答，不要太囉嗦」</p><p><code>`</code>yaml<br>
+---<br>
+id: pref-2026-01-19-001<br>
+title: 回答風格偏好<br>
+speaker: user<br>
+authority: 10<br>
+source_type: conversation<br>
+quality: 5<br>
+captured_at: 2026-01-19T14:30:45<br>
+updated: 2026-01-19T14:30:45<br>
+tags: [偏好, 溝通風格]<br>
+context: 用戶明確表達回答偏好<br>
+---</p><p><h1>回答風格偏好</h1></p><p>用戶偏好：<br>
+- ✅ 要：簡潔的回答<br>
+- ❌ 不要：太囉嗦</p><p>權重：10（用戶親口說）<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-retrieval - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-retrieval</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己檢索技能。搜尋記憶時使用。當用戶詢問任何需要查找記憶的問題時觸發。會優先回傳用戶說的內容（authority 高），時間越近權重越高。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 檢索技能</h1></p><p><h2>⭐ 語義化檔名檢索優勢</h2></p><p><h3>為什麼檔名很重要？</h3></p><p><code>`</code>bash<br>
+<h1>語義化檔名：一眼看出內容</h1><br>
+rg -l "提示工程" .<br>
+<h1>→ 提示工程-六宮格分析-零幻覺索引表-2026-01-19T12.md</h1></p><p><h1>時間戳檔名：完全看不出</h1><br>
+<h1>→ 2026-01-19T12-14-33-11-13-35.md  ← 這是什麼？</h1><br>
+<code>`</code></p><p><h3>檔名即關鍵字</h3></p><p>所有新檔案都使用 <strong>語義化命名</strong>：<br>
+- <code>{關鍵字1}-{關鍵字2}-{關鍵字3}-{日期}.md</code><br>
+- 搜尋關鍵字 = 搜尋檔名 = 找到檔案</p><p><h3>舊檔案對照表</h3></p><p>如需追溯舊檔案，查看 metadata 中的 <code>original_filename</code> 欄位。</p><p>---</p><p><h2>核心原則</h2></p><p><strong>檢索優先順序</strong>：<br>
+1. <strong>用戶說的</strong> > AI 說的（authority: 10 > 3）<br>
+2. <strong>最近的</strong> > 舊的（時間權重）<br>
+3. <strong>高品質</strong> > 低品質（quality: 5 > 1）</p><p><h2>快速檢索指令</h2></p><p><code>`</code>bash<br>
+<h1>第零步：優先查索引（最省資源）</h1><br>
+rg -C 3 "關鍵字" 索引/</p><p><h1>第一步：限定目錄（省資源）</h1><br>
+rg -C 3 "關鍵字" 目標目錄/</p><p><h1>找用戶說的（高權重）</h1><br>
+rg "authority: (8|9|10)" . -l | xargs rg -C 3 "關鍵字"<br>
+rg "speaker: user" . -l | xargs rg -C 3 "關鍵字"</p><p><h1>找最近的（精確到秒）</h1><br>
+rg "updated: 2026-01-19T" . -l | xargs rg -C 3 "關鍵字"</p><p><h1>找今天的</h1><br>
+rg "updated: $(date +%Y-%m-%d)T" . -l</p><p><h1>組合：用戶說的 + 最近的 + 高品質</h1><br>
+rg -l "speaker: user" . | xargs rg -l "quality: [4-5]" | xargs rg -C 3 "關鍵字"<br>
+<code>`</code></p><p><h2>目錄速查</h2></p><p>| 問什麼 | 搜哪裡 |<br>
+|--------|--------|<br>
+| <strong>任何問題（優先）</strong> | <code>索引/</code> |<br>
+| 會議記錄 | <code>索引/會議索引.md</code> → <code>素材庫/來源歸檔/會議記錄/逐字稿/</code> |<br>
+| 用戶偏好 | <code>記憶核心/語義記憶/偏好學習/</code> |<br>
+| 用戶說過的 | <code>rg "speaker: user"</code> |<br>
+| API 金鑰 | <code>素材庫/連結中心/API金鑰.md</code> |<br>
+| PM/專案 | <code>營運資料/團隊分工/</code> |<br>
+| 行事曆 | <code>營運資料/行事曆/</code> |<br>
+| 定價 | <code>營運資料/產品定價/</code> |</p><p><h2>檢索結果排序</h2></p><p>回傳結果時，按此順序排列：</p><p>1. <code>authority: 10</code> + <code>updated: 最近</code> → 最先顯示<br>
+2. <code>authority: 10</code> + <code>updated: 較舊</code> → 次之<br>
+3. <code>authority: 5</code> + <code>updated: 最近</code> → 再次之<br>
+4. <code>authority: 3</code> + 任何時間 → 最後</p><p><h2>範例</h2></p><p><strong>用戶問</strong>：「我之前說過喜歡什麼風格？」</p><p><code>`</code>bash<br>
+<h1>執行順序</h1><br>
+rg -C 3 "風格" 記憶核心/語義記憶/偏好學習/<br>
+rg "speaker: user" 記憶核心/ -l | xargs rg -C 3 "風格"<br>
+<code>`</code></p><p><strong>回答格式</strong>：<br>
+<code>`</code><br>
+根據您之前說的（權重 10）：<br>
+- 2026-01-19：您偏好簡潔的回答</p><p>（AI 建議，權重 3，僅供參考）：<br>
+- ...<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

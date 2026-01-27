@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-reasoning - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-reasoning</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己推理技能。當需要綜合多個記憶進行分析、推論、給建議時觸發。會優先採用用戶說過的內容作為推理基礎，AI 建議僅作為補充。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 推理技能</h1></p><p><h2>核心原則</h2></p><p><strong>推理基礎權重</strong>：<br>
+- 用戶說的 → 作為「事實」<br>
+- AI 說的 → 作為「參考」<br>
+- 外部來源 → 需要驗證</p><p><h2>推理流程</h2></p><p><h3>1. 收集相關記憶</h3></p><p><code>`</code>bash<br>
+<h1>先找用戶說的（高權重）</h1><br>
+rg "speaker: user" . -l | xargs rg -C 5 "關鍵字"</p><p><h1>再找相關背景</h1><br>
+rg -C 3 "關鍵字" 記憶核心/ 實體/<br>
+<code>`</code></p><p><h3>2. 權重排序</h3></p><p>| 來源 | 權重 | 用途 |<br>
+|------|------|------|<br>
+| 用戶明確說的 | 10 | 作為推理前提 |<br>
+| 用戶行為推斷 | 7 | 支持性證據 |<br>
+| 外部可靠來源 | 5 | 補充資訊 |<br>
+| AI 之前的建議 | 3 | 僅供參考 |</p><p><h3>3. 推理模式</h3></p><p><strong>演繹推理</strong>（從用戶說的推論）：<br>
+<code>`</code><br>
+前提：用戶說「我喜歡簡潔」（authority: 10）<br>
+前提：用戶說「我討厭廢話」（authority: 10）<br>
+結論：應該給簡短、直接的回答<br>
+<code>`</code></p><p><strong>歸納推理</strong>（從多個記憶歸納）：<br>
+<code>`</code><br>
+觀察 1：用戶 3 次選擇 A 方案<br>
+觀察 2：用戶 2 次拒絕 B 方案<br>
+歸納：用戶可能偏好 A 類型的方案<br>
+<code>`</code></p><p><h3>4. 輸出格式</h3></p><p><code>`</code>markdown<br>
+<h2>推理結果</h2></p><p><h3>基於您說過的（高權重）</h3><br>
+- [日期] 您說：「...」<br>
+- [日期] 您說：「...」</p><p><h3>推論</h3><br>
+根據以上，我推測...</p><p><h3>建議（僅供參考）</h3><br>
+[AI 的建議，標註為低權重]</p><p><h3>需要您確認</h3><br>
+[不確定的部分，詢問用戶]<br>
+<code>`</code></p><p><h2>範例</h2></p><p><strong>用戶問</strong>：「我應該用哪個技術做這個專案？」</p><p><strong>推理過程</strong>：<br>
+<code>`</code><br>
+1. 搜尋用戶說過的技術偏好<br>
+   - 2026-01-15：「我比較熟悉 Python」（authority: 10）<br>
+   - 2026-01-10：「我不太喜歡 Java」（authority: 10）</p><p>2. 搜尋專案需求<br>
+   - 需要快速開發<br>
+   - 需要 API 整合</p><p>3. 推論<br>
+   基於您熟悉 Python 且不喜歡 Java，<br>
+   加上專案需要快速開發，<br>
+   建議使用 Python + FastAPI。</p><p>4. 標註<br>
+   這是基於您的偏好推論，<br>
+   如果有其他考量請告訴我。<br>
+<code>`</code></p><p><h2>不確定時</h2></p><p>當推理信心不足時：</p><p>1. <strong>明確標註</strong>：「這是推測，信心度 60%」<br>
+2. <strong>詢問用戶</strong>：「我不確定，您的想法是？」<br>
+3. <strong>列出選項</strong>：「有 A、B、C 三個可能，您偏好哪個？」<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

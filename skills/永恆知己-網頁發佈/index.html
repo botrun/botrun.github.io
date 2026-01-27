@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web-deploy - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> web-deploy</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        網頁發佈與建構。當用戶說「發佈網頁」「部署網站」「建構 web」「更新網頁」時使用此技能。自動掃描 projects/ 下的 HTML 並發佈到 GitHub Pages。
+      </p>
+      <div>
+        <p>
+<h1>網頁發佈技能</h1></p><p><h2>何時使用</h2></p><p>- 用戶說「發佈網頁」「部署網站」「更新網頁」<br>
+- 用戶新增了 HTML/CSS/JS 到 projects/ 目錄<br>
+- 用戶要求建構網頁索引</p><p><h2>架構設計</h2></p><p><code>`</code><br>
+timeless-bowen (私有 repo)<br>
+├── projects/                    # 專案源碼（私有）<br>
+│   ├── 專案A/<br>
+│   │   └── *.html              # 要發佈的網頁<br>
+│   └── 專案B/<br>
+└── web/                         # 發佈目錄（GitHub Pages）<br>
+    ├── index.html              # 自動生成的索引<br>
+    ├── assets/css/style.css    # 共用樣式<br>
+    └── projects/<br>
+        ├── 001-專案A/<br>
+        └── 002-專案B/<br>
+<code>`</code></p><p><strong>URL 格式</strong>：<code>https://{org}.github.io/{repo}/projects/{id}/</code></p><p><h2>使用流程</h2></p><p><h3>步驟 1：建構網頁</h3></p><p>執行建構腳本：</p><p><code>`</code>bash<br>
+npx tsx .claude/skills/永恆知己-網頁發佈/scripts/build-web.ts<br>
+<code>`</code></p><p>腳本會自動：<br>
+1. 掃描 <code>projects/</code> 下所有 HTML 檔案<br>
+2. 複製到 <code>web/projects/{專案ID}/</code><br>
+3. 複製相關 CSS/JS/圖片資源<br>
+4. 生成專案索引頁<br>
+5. 生成主索引頁 <code>web/index.html</code></p><p><h3>步驟 2：預覽（本地）</h3></p><p><code>`</code>bash<br>
+cd web && python3 -m http.server 8000<br>
+<code>`</code></p><p>開啟 http://localhost:8000 預覽</p><p><h3>步驟 3：提交並推送</h3></p><p><code>`</code>bash<br>
+git add web/<br>
+git commit -m "build: 更新網頁發佈內容"<br>
+git push<br>
+<code>`</code></p><p>GitHub Actions 會自動部署到 GitHub Pages。</p><p><h2>自動觸發條件</h2></p><p>GitHub Actions 會在以下情況自動觸發部署：</p><p>- <code>projects/<em>*/</em>.html</code> 變動<br>
+- <code>projects/<em>*/</em>.css</code> 變動<br>
+- <code>projects/<em>*/</em>.js</code> 變動<br>
+- <code>projects/<em>*/</em>.png|jpg|gif|svg|webp</code> 變動<br>
+- <code>web/**</code> 變動<br>
+- 手動觸發（workflow_dispatch）</p><p><h2>首次設定</h2></p><p>需要在 GitHub repo 設定中啟用 GitHub Pages：</p><p>1. 進入 repo → Settings → Pages<br>
+2. Source 選擇 "GitHub Actions"<br>
+3. 完成！</p><p><h2>檔案參考</h2></p><p>- 建構腳本：[scripts/build-web.ts](scripts/build-web.ts)<br>
+- GitHub Actions：<code>.github/workflows/deploy-pages.yml</code><br>
+- 共用樣式：<code>web/assets/css/style.css</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

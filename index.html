@@ -11,6 +11,22 @@
   <header>
     <h1><i data-lucide="sparkles"></i>波特人-零幻覺證明<span class="subtitle">（案例篇）</span></h1>
     <p class="update-date"><i data-lucide="calendar"></i>更新日期：2026-01-27</p>
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <i data-lucide="search"></i>
+        <input
+          type="search"
+          id="skill-search"
+          placeholder="搜尋技能、方法、範例..."
+          autocomplete="off"
+        />
+      </div>
+      <div id="search-results" class="search-dropdown"></div>
+    </div>
+    <div class="quick-links">
+      <a href="/skills/" class="quick-link"><i data-lucide="book-open"></i> 技能庫 (18)</a>
+      <a href="https://github.com/botrun/timeless-bowen" class="quick-link"><i data-lucide="github"></i> GitHub</a>
+    </div>
   </header>
   <main>
     <section class="projects-grid">
@@ -38,8 +54,9 @@
     </section>
   </main>
   <footer>
-    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a> | <a href="https://github.com/botrun/timeless-bowen">GitHub</a></p>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
   </footer>
   <script>lucide.createIcons();</script>
+  <script type="module" src="assets/js/search.js"></script>
 </body>
 </html>

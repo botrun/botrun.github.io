@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zero-framework-skill-hatch - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> zero-framework-skill-hatch</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>零框架技能 - 後設孵化系統</h1></p><p>> <strong>核心理念</strong>：泛化通用、禁止過度擬合、孵化技能後解決問題<br>
+><br>
+> <strong>適用範圍</strong>：所有機關專案（無預設立場）<br>
+><br>
+> <strong>相依自足</strong>：本目錄可獨立複製使用，所有引證檔案皆內建</p><p>---</p><p><h2>本技能目錄結構</h2></p><p><code>`</code><br>
+.claude/skills/零框架技能-後設孵化系統/<br>
+├── SKILL.md                    # 主技能定義（本檔案）<br>
+├── 後設系列盤點摘要.md          # 後設系列快速索引<br>
+├── references/                 # 內建引證檔案（相依自足）<br>
+│   ├── 後設系列-完整方法學框架.md<br>
+│   ├── 後設提示索引.yaml<br>
+│   ├── 零框架後設提示.yaml<br>
+│   └── 精緻後設提示.md<br>
+└── templates/                  # 輸出模板<br>
+    └── 零幻覺證明報告.html<br>
+<code>`</code></p><p>---</p><p><h2>何時使用此技能</h2></p><p><h3>✅ 主要用途（日常使用）</h3></p><p>1. <strong>即時問題解決</strong>：透過 Claude Code Web + HTTPS Proxy 解決用戶當場提問的任意問題<br>
+2. <strong>技能孵化</strong>：將解決方案孵化進步，變成可複用的技能集和腳本集<br>
+3. <strong>新專案啟動</strong>：任何領域的專案孵化（採購法、勞基法、環境法規...）<br>
+4. <strong>完整流程</strong>：需要執行零幻覺四部曲（耳眼手心）</p><p><h3>🎯 進階用途（大模型蒸餾小模型時才需要）</h3></p><p>僅在以下情境才需要執行多模型評測（8 個模型 via OpenRouter API）：<br>
+- <strong>大模型蒸餾小模型</strong>：將大模型的知識遷移到小模型<br>
+- <strong>大模型智慧遷移小模型</strong>：優化小模型在特定領域的表現<br>
+- <strong>產出排行榜報告</strong>：需要比較多個模型的表現差異</p><p><h3>❌ 不適用情境</h3></p><p>- 單一檔案處理（直接用 <code>sh/cli.sh process</code>）<br>
+- 簡單問答（不需要孵化技能）<br>
+- 已有現成技能可用</p><p>---</p><p><h2>核心原則（三大禁令）</h2></p><p><code>`</code>yaml<br>
+禁止過度擬合:<br>
+  - ❌ if (domain === '採購法') { specialLogic() }<br>
+  - ❌ 硬編碼特定機關的處理邏輯<br>
+  - ✅ 透過配置檔處理差異<br>
+  - ✅ 使用泛化的 API 介面</p><p>禁止預設立場:<br>
+  - ❌ 假設用戶是某種類型的專案<br>
+  - ❌ 限定特定的資料格式<br>
+  - ✅ 詢問用戶的具體需求<br>
+  - ✅ 動態適應任何領域</p><p>禁止竄改來源:<br>
+  - ❌ 修改原始文字內容<br>
+  - ❌ 省略引證資訊<br>
+  - ✅ 完整保留 URL、檔案路徑、頁碼、時間點<br>
+  - ✅ 引用時標明來源<br>
+<code>`</code></p><p>---</p><p><h2>兩種使用模式</h2></p><p><h3>🚀 日常模式（大多數情況）</h3></p><p><code>`</code><br>
+┌─────────────────────────────────────────────────────────────┐<br>
+│              日常模式：即時解決 → 孵化技能                    │<br>
+│                                                              │<br>
+│   用戶提問                                                   │<br>
+│      │                                                       │<br>
+│      ▼                                                       │<br>
+│   Claude Code Web + HTTPS Proxy                              │<br>
+│      │                                                       │<br>
+│      ├──→ 解決當場問題                                       │<br>
+│      │                                                       │<br>
+│      ▼                                                       │<br>
+│   孵化成技能集/腳本集（手）                                   │<br>
+│      │                                                       │<br>
+│      ▼                                                       │<br>
+│   下次遇到類似問題 → 直接複用                                 │<br>
+│                                                              │<br>
+└─────────────────────────────────────────────────────────────┘<br>
+<code>`</code></p><p><h3>🎯 進階模式（大模型蒸餾小模型時）</h3></p><p><code>`</code><br>
+┌─────────────────────────────────────────────────────────────┐<br>
+│                    零幻覺四部曲完整流程                       │<br>
+│                                                              │<br>
+│   👂 耳（波知己）    👁️ 眼（波排行）⚡選擇性                  │<br>
+│   ──────────────    ────────────────                        │<br>
+│   任意格式處理器      高品味題庫評測                          │<br>
+│   • 上網爬搜         • 題庫生成                              │<br>
+│   • 格式轉換         • 多模型評測（8模型）                    │<br>
+│   • 來源引證         • 九維度評分                            │<br>
+│        │                  │                                 │<br>
+│        ▼                  ▼                                 │<br>
+│   🤲 手（波孵化）    ❤️ 心（波水晶）                         │<br>
+│   ──────────────    ──────────────                          │<br>
+│   技能飛輪孵化        世界模型預測                            │<br>
+│   • SKILL.md 生成    • 因果分析                              │<br>
+│   • .ts 腳本孵化     • 情境模擬                              │<br>
+│   • CLI 封裝         • 趨勢預測                              │<br>
+│                                                              │<br>
+│   ⚡ 眼（8模型評測）僅在蒸餾/遷移小模型時需要                  │<br>
+│                                                              │<br>
+└─────────────────────────────────────────────────────────────┘<br>
+<code>`</code></p><p>---</p><p><h2>CLI 統一入口</h2></p><p><code>`</code>bash<br>
+<h1>完整專案孵化</h1><br>
+sh/cli.sh project init <領域名稱><br>
+sh/cli.sh project run <領域名稱></p><p><h1>耳：任意格式處理</h1><br>
+sh/cli.sh ear process <file_or_url><br>
+sh/cli.sh ear batch <directory></p><p><h1>眼：評測排行榜</h1><br>
+sh/cli.sh eye run <領域><br>
+sh/cli.sh eye generate <領域> -n 20</p><p><h1>手：技能孵化</h1><br>
+sh/cli.sh hand run <領域><br>
+sh/cli.sh hand init <領域></p><p><h1>心：世界模型預測</h1><br>
+sh/cli.sh heart predict <主題><br>
+sh/cli.sh heart analyze <主題></p><p><h1>斷點續做</h1><br>
+sh/cli.sh resume <session_id></p><p><h1>查看狀態</h1><br>
+sh/cli.sh status<br>
+<code>`</code></p><p>---</p><p><h2>孵化流程（核心 SOP）</h2></p><p><h3>步驟 1：上網研究（WebSearch）</h3></p><p><code>`</code>yaml<br>
+目的: 收集公開資料、智庫報告、官方文件<br>
+執行:<br>
+  - WebSearch 查詢「{領域} 2026 最新」<br>
+  - 識別權威來源（政府、智庫、學術）<br>
+  - 記錄所有來源 URL（不竄改）<br>
+輸出:<br>
+  - 來源清單（URL + 權重 1-10）<br>
+  - 重點摘要<br>
+<code>`</code></p><p><h3>步驟 2：格式轉換（耳）</h3></p><p><code>`</code>yaml<br>
+目的: 將任意格式轉為 AI 友善文字<br>
+支援格式:<br>
+  文件: PDF, DOCX, XLSX, PPTX<br>
+  圖片: PNG, JPG, GIF, WEBP<br>
+  音訊: M4A, MP3, WAV<br>
+  影片: MP4, MOV, AVI<br>
+  網頁: HTTP/HTTPS URL<br>
+  資料: JSON, YAML, CSV, XML<br>
+執行:<br>
+  - sh/cli.sh ear process <file><br>
+輸出:<br>
+  - Markdown 純文字<br>
+  - 保留來源引證（檔案路徑、頁碼、時間點）<br>
+<code>`</code></p><p><h3>步驟 3：來源引證（絕對不竄改）</h3></p><p><code>`</code>yaml<br>
+引證格式:<br>
+  URL: "[標題](https://...)"<br>
+  檔案: "來源：{檔案名稱} 第 {頁碼} 頁"<br>
+  音訊: "來源：{檔案名稱} {分:秒}"<br>
+  影片: "來源：{檔案名稱} {時:分:秒}"</p><p>原則:<br>
+  - 原文引用，不修改內容<br>
+  - 明確標示來源位置<br>
+  - 保留完整 URL<br>
+<code>`</code></p><p><h3>步驟 4：高品味題庫（眼）</h3></p><p><code>`</code>yaml<br>
+題庫三大特色:<br>
+  鑑別度: 能區分不同模型表現（標準差 > 1.5）<br>
+  口碑: 答案讓人覺得「哇真讚」（滿意度 > 8/10）<br>
+  複雜情境: 真實用戶會問的問題（非簡單問答）</p><p>題目結構:<br>
+  question: 複雜情境問題<br>
+  answer_must_contain: 必含內容陣列<br>
+  should_mention: 應提內容陣列<br>
+  reference_source: 引證來源<br>
+  difficulty: easy | medium | hard | expert<br>
+  tags: 標籤陣列</p><p>執行:<br>
+  - sh/cli.sh eye generate <領域> -n 20<br>
+<code>`</code></p><p><h3>步驟 5：多模型評測（眼）⚡ 選擇性</h3></p><p>> <strong>何時需要</strong>：僅在「大模型蒸餾小模型」或「大模型智慧遷移小模型」時執行<br>
+> <strong>日常使用</strong>：跳過此步驟，直接用 Claude Code Web 解決問題即可</p><p><code>`</code>yaml<br>
+評測模型清單（進階用途）:<br>
+  - openai/gpt-oss-120b<br>
+  - meta-llama/llama-4-maverick<br>
+  - google/gemini-3-flash-preview<br>
+  - mistralai/devstral-2512<br>
+  - mistralai/ministral-14b-2512<br>
+  - mistralai/ministral-8b-2512<br>
+  - anthropic/claude-haiku-4.5<br>
+  - anthropic/claude-sonnet-4</p><p>評審模型: google/gemini-3-flash-preview</p><p>兩批評測:<br>
+  Batch 1: 無網路（測試內建知識）<br>
+  Batch 2: 有網路（測試搜尋整合）</p><p>執行:<br>
+  - sh/cli.sh eye run <領域><br>
+<code>`</code></p><p><h3>步驟 6：九維度評分</h3></p><p><code>`</code>yaml<br>
+口訣: 真新全快省準人安穩</p><p>維度:<br>
+  真（真實性）: 來源可追溯、可驗證<br>
+  新（新穎性）: 使用最新資料<br>
+  全（完整性）: 涵蓋必含內容<br>
+  快（速度）: 回應簡潔有效<br>
+  省（節省）: token 使用效率<br>
+  準（精準度）: 答案正確<br>
+  人（人本）: 易於理解<br>
+  安（安全性）: 無誤導資訊<br>
+  穩（穩定性）: 可重現</p><p>認證等級:<br>
+  🥇 金標: ≥ 85 分 (94.4%)<br>
+  🥈 銀標: ≥ 80 分 (88.9%)<br>
+  🥉 銅標: ≥ 70 分 (77.8%)<br>
+<code>`</code></p><p><h3>步驟 7：技能孵化（手）</h3></p><p><code>`</code>yaml<br>
+目的: 建立領域專用 SKILL.md 和 .ts 腳本<br>
+輸出結構:<br>
+  .claude/skills/{領域}-專用技能/<br>
+  ├── SKILL.md          # 技能定義<br>
+  ├── 題庫.json         # 高品味題庫<br>
+  ├── 評測報告.md       # 評測結果<br>
+  └── scripts/<br>
+      ├── cli.ts        # 領域專用 CLI<br>
+      ├── process.ts    # 格式處理器<br>
+      └── evaluate.ts   # 評測腳本</p><p>執行:<br>
+  - sh/cli.sh hand run <領域><br>
+<code>`</code></p><p><h3>步驟 8：世界模型預測（心）</h3></p><p><code>`</code>yaml<br>
+後設預測六大步驟:<br>
+  1. 原始數據: 該收集什麼資料？<br>
+  2. 方法學: 該用什麼方法建模？<br>
+  3. 驗證: 該如何驗證準確性？<br>
+  4. 模型搭建: 神經 + 符號混搭<br>
+  5. 避免過擬合: 泛化驗證<br>
+  6. 演化計算: 朝向目標最佳化</p><p>執行:<br>
+  - sh/cli.sh heart predict <主題><br>
+<code>`</code></p><p>---</p><p><h2>軟體工程原則</h2></p><p><code>`</code>yaml<br>
+BDD (行為驅動開發):<br>
+  - 先定義驗收條件<br>
+  - 再實作功能<br>
+  - 驗證行為符合預期</p><p>TDD (測試驅動開發):<br>
+  - 先寫測試<br>
+  - 再寫程式碼<br>
+  - 確保測試通過</p><p>SOLID:<br>
+  - S: 單一職責（每個模組只做一件事）<br>
+  - O: 開放封閉（擴展開放、修改封閉）<br>
+  - L: 里氏替換（子類可替換父類）<br>
+  - I: 介面隔離（介面要小而專注）<br>
+  - D: 依賴反轉（依賴抽象不依賴具體）</p><p>DRY:<br>
+  - 不重複自己<br>
+  - 共用邏輯抽成函式<br>
+  - 配置抽成設定檔<br>
+<code>`</code></p><p>---</p><p><h2>Claude Agent SDK 整合</h2></p><p><code>`</code>typescript<br>
+import { Claude } from "@anthropic-ai/claude-agent-sdk";</p><p>// 初始化 Agent<br>
+const agent = new Claude({<br>
+  model: "claude-haiku-4-5-20251001",<br>
+  allowedTools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "WebSearch"],<br>
+  permissionMode: "acceptEdits",<br>
+});</p><p>// 執行任務<br>
+const result = await agent.send({<br>
+  prompt: "幫我處理這個專案並孵化技能",<br>
+  settingsSources: ["project"], // 載入 CLAUDE.md<br>
+});<br>
+<code>`</code></p><p>---</p><p><h2>HTTPS Proxy 處理</h2></p><p><code>`</code>typescript<br>
+// OpenRouter API 配置<br>
+const openrouter = new OpenAI({<br>
+  baseURL: "https://openrouter.ai/api/v1",<br>
+  apiKey: process.env.OPENROUTER_API_KEY,<br>
+  // Proxy 環境配置<br>
+  httpAgent: process.env.HTTPS_PROXY<br>
+    ? new HttpsProxyAgent(process.env.HTTPS_PROXY)<br>
+    : undefined,<br>
+});</p><p>// Web Search 啟用方式<br>
+const response = await openrouter.chat.completions.create({<br>
+  model: "anthropic/claude-sonnet-4",<br>
+  messages: [...],<br>
+  max_tokens: 32768,<br>
+  plugins: [{ id: "web", max_results: 5 }], // 啟用網路搜尋<br>
+});<br>
+<code>`</code></p><p>---</p><p><h2>專案目錄結構（泛化模板）</h2></p><p><code>`</code><br>
+projects/{領域名稱}/<br>
+├── 素材/                  # 耳：原始資料<br>
+│   ├── 文件/<br>
+│   ├── 音訊/<br>
+│   └── 網頁擷取/<br>
+├── 題庫/                  # 眼：高品味題庫<br>
+│   ├── 粗糙題庫.json<br>
+│   ├── 精緻題庫.json<br>
+│   └── 巨量題庫.json<br>
+├── 技能/                  # 手：孵化後的技能<br>
+│   ├── SKILL.md<br>
+│   └── scripts/<br>
+├── 評測/                  # 眼：評測報告<br>
+│   ├── 無網路評測.json<br>
+│   ├── 有網路評測.json<br>
+│   └── 排行榜.md<br>
+├── 預測/                  # 心：預測結果<br>
+│   ├── 因果分析.md<br>
+│   └── 趨勢預測.md<br>
+├── logs/                  # 執行日誌<br>
+├── cli.sh                 # 專屬 CLI<br>
+└── README.md<br>
+<code>`</code></p><p>---</p><p><h2>輸出格式</h2></p><p><h3>HTML 報告模板</h3></p><p><code>`</code>html<br>
+<!DOCTYPE html><br>
+<html><br>
+<head><br>
+  <title>波特人-零幻覺證明報告</title><br>
+  <style><br>
+    /<em> 品牌風格 </em>/<br>
+  </style><br>
+</head><br>
+<body><br>
+  <h1>波特人-零幻覺證明報告</h1><br>
+  <section id="summary">...</section><br>
+  <section id="benchmark">...</section><br>
+  <section id="ranking">...</section><br>
+  <section id="dimension-analysis">...</section><br>
+</body><br>
+</html><br>
+<code>`</code></p><p>---</p><p><h2>相關技能</h2></p><p>| 技能 | 路徑 | 用途 |<br>
+|------|------|------|<br>
+| 耳 | <code>.claude/skills/零幻覺四部曲之耳-任意格式處理器/</code> | 格式轉換 |<br>
+| 眼 | <code>.claude/skills/零幻覺四部曲之眼-評測排行榜/</code> | 評測打榜 |<br>
+| 手 | <code>.claude/skills/零幻覺四部曲之手-自我進化孵化/</code> | 技能孵化 |<br>
+| 心 | <code>.claude/skills/零幻覺四部曲之心-世界模型預測/</code> | 預測模型 |</p><p>---</p><p><h2>相關文件（本目錄內建，相依自足）</h2></p><p>| 文件 | 路徑（相對於本技能目錄） |<br>
+|------|--------------------------|<br>
+| 後設系列框架 | <code>references/後設系列-完整方法學框架.md</code> |<br>
+| 後設提示索引 | <code>references/後設提示索引.yaml</code> |<br>
+| 零框架後設提示 | <code>references/零框架後設提示.yaml</code> |<br>
+| 精緻後設提示 | <code>references/精緻後設提示.md</code> |<br>
+| 後設系列盤點 | <code>後設系列盤點摘要.md</code> |<br>
+| HTML 報告模板 | <code>templates/零幻覺證明報告.html</code> |</p><p>> <strong>設計原則</strong>：所有引證檔案皆內建於本目錄，複製給別人即可使用，無外部相依</p><p>---</p><p><h2>快速開始</h2></p><p><code>`</code>bash<br>
+<h1>1. 初始化專案</h1><br>
+sh/cli.sh project init 採購法</p><p><h1>2. 執行完整四部曲</h1><br>
+sh/cli.sh project run 採購法</p><p><h1>3. 或分步執行</h1><br>
+sh/cli.sh ear process 採購法相關文件.pdf<br>
+sh/cli.sh eye run 採購法<br>
+sh/cli.sh hand run 採購法<br>
+sh/cli.sh heart predict 採購法趨勢</p><p><h1>4. 查看結果</h1><br>
+open projects/採購法/評測/排行榜.md<br>
+<code>`</code></p><p>---</p><p><h2>檢索關鍵字</h2></p><p>零框架技能, 後設孵化, meta skill, 零幻覺四部曲, 耳眼手心, 波知己, 波排行, 波孵化, 波水晶, 泛化通用, 禁止擬合, BDD, TDD, SOLID, DRY, Claude Agent SDK, OpenRouter, 九維度評分, 真新全快省準人安穩, 高品味題庫, 來源引證, 技能孵化, CLI, 後設提示, meta prompt<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

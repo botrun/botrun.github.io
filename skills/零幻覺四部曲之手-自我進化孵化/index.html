@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zero-hallucination-hand-organization-skills - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> zero-hallucination-hand-organization-skills</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>手（Hand）- 組織技能飛輪孵化系統</h1></p><p>> 零幻覺四部曲第三部曲：執行、孵化、服務</p><p>---</p><p><h2>核心使命</h2></p><p>將任意領域知識轉化為<strong>組織技能</strong>：</p><p>1. <strong>領域專用 CLI.ts</strong>：每個領域一個 GitHub Repo<br>
+2. <strong>技能飛輪孵化</strong>：每次互動都自動進化<br>
+3. <strong>快省準</strong>：5 分鐘 → 15 秒（快 20 倍、省 18 倍、準不變）<br>
+4. <strong>耳手眼三大積累</strong>：原始記錄、組織技能、高品味題庫</p><p>---</p><p><h2>核心指令</h2></p><p><code>`</code>bash<br>
+<h1>完整孵化流程（領域專用 CLI）</h1><br>
+sh/cli.sh hatch run <領域> --goal 95</p><p><h1>初始化領域 CLI Repo</h1><br>
+sh/cli.sh hatch init <領域> --repo @botrun/<領域>-cli</p><p><h1>孵化題庫（粗糙 → 精緻 → 巨量）</h1><br>
+sh/cli.sh hatch quiz <領域> --level [粗糙|精緻|巨量]</p><p><h1>優化（Opus → 8B 小模型遷移）</h1><br>
+sh/cli.sh hatch optimize <cli-path> --target 8b</p><p><h1>評測（準確度、速度、成本）</h1><br>
+sh/cli.sh hatch benchmark <cli-path></p><p><h1>迭代進化</h1><br>
+sh/cli.sh hatch evolve <cli-path></p><p><h1>斷點續做</h1><br>
+sh/cli.sh hatch resume <session_id></p><p><h1>封裝到 GitHub</h1><br>
+sh/cli.sh hatch publish <cli-path> --repo <github-repo><br>
+<code>`</code></p><p>---</p><p><h2>技能飛輪孵化哲學</h2></p><p><h3>每個領域 CLI.ts = 不停進化的專家系統</h3></p><p><code>`</code><br>
+environmental-metrics-cli（環境指標查詢）</p><p>第 1 天（v0.1）：用戶問「慈濟零碳排指標」<br>
+→ Opus 深度研究（5 分鐘）<br>
+→ 孵化 CLI v0.1（粗糙題庫 20 題）<br>
+→ GitHub Repo 建立（耳手眼初始化）</p><p>第 3 天（v0.5）：用戶問 5 個相關問題<br>
+→ 每次調用 CLI（30 秒）<br>
+→ 背後自動進化（題庫 20 → 35 題）⭐<br>
+→ 速度優化（30 秒 → 25 秒）⭐</p><p>第 7 天（v1.0）：累積 20 個提問<br>
+→ CLI 自動升級 v1.0（精緻題庫 100 題）⭐<br>
+→ 支援時間序列查詢⭐<br>
+→ 新增 API 端點⭐</p><p>第 30 天（v2.0）：累積 100 個提問<br>
+→ CLI 自動升級 v2.0（巨量題庫 500 題）⭐<br>
+→ 速度再優化（25 秒 → 15 秒）⭐<br>
+→ 準確度提升（98.5% → 98.8%）⭐</p><p>第 90 天（v3.0）：累積 500 個提問<br>
+→ CLI 自動升級 v3.0（巨量題庫 2000+ 題）⭐<br>
+→ 涵蓋 95% 該領域查詢⭐<br>
+→ 成為該領域最強 CLI⭐<br>
+<code>`</code></p><p>---</p><p><h2>快省準孵化：5 分鐘 → 15 秒</h2></p><p>| 階段 | 時間 | 模型 | 成本 | 準確度 |<br>
+|------|------|------|------|--------|<br>
+| <strong>第一次提問</strong>（深度研究） | 5 分鐘 | Opus 4.5 | $0.15 | 98% |<br>
+| <strong>第二次提問</strong>（優化後） | <strong>15 秒</strong> | 8B 小模型 | $0.008 | 98% |<br>
+| <strong>效能提升</strong> | <strong>快 20 倍</strong> | 降級優化 | <strong>省 18.75 倍</strong> | <strong>不變</strong> |</p><p><h3>Opus 歷程追蹤（v1 → v4）</h3></p><p>| 版本 | 階段 | 時間 | 成本 | 準確度 |<br>
+|------|------|------|------|--------|<br>
+| v1 | Opus 基準測試 | 5 分 12 秒 | $0.15 | 98.5% |<br>
+| v2 | 快取優化 | 2 分 45 秒 | $0.10 | 98.5% |<br>
+| v3 | 8B 小模型遷移 | 15 秒 | $0.008 | 98.2% |<br>
+| v4 | 精準度調優 | 15 秒 | $0.008 | <strong>98.6%</strong> |</p><p>---</p><p><h2>領域專用 CLI GitHub Repo 完整架構</h2></p><p><code>`</code><br>
+environmental-metrics-cli/<br>
+├── 📂 原始記錄-耳/           # 耳朵：該領域原始記錄<br>
+│   ├── 會議記錄/<br>
+│   ├── 研究報告/<br>
+│   └── 外部資料來源/<br>
+│<br>
+├── 📂 組織技能-手/           # 雙手：該領域組織技能<br>
+│   ├── cli.ts               # ⭐ 核心 CLI 工具（8B 小模型優化）<br>
+│   ├── lib/                 # 支援函式庫<br>
+│   ├── plugins/             # 擴充插件<br>
+│   └── workflows/           # Unix pipe 工作流<br>
+│<br>
+├── 📂 題庫-眼/               # 眼睛：該領域題庫 + 孵化報告<br>
+│   ├── 粗糙題庫.json        # 初期自動生成（20 題）<br>
+│   ├── 精緻題庫.json        # PM 審核優化（100 題）<br>
+│   ├── 巨量題庫.json        # 持續積累（1000+ 題）<br>
+│   ├── 孵化歷程報告/<br>
+│   │   ├── v1-opus-baseline.md<br>
+│   │   ├── v2-speed-optimization.md<br>
+│   │   ├── v3-8b-migration.md<br>
+│   │   └── v4-accuracy-tuning.md<br>
+│   └── 評測報告/<br>
+│       ├── accuracy-report.json<br>
+│       ├── speed-benchmark.json<br>
+│       └── cost-analysis.json<br>
+│<br>
+├── 📂 API/                   # OpenAI 相容 API<br>
+│   ├── server.ts<br>
+│   ├── routes/<br>
+│   └── openapi.yaml<br>
+│<br>
+├── 📂 前後端網頁/            # 網頁問答介面<br>
+│   ├── frontend/<br>
+│   ├── backend/<br>
+│   └── docker-compose.yml<br>
+│<br>
+├── 📂 孵化器/                # ⭐ 可迭代進步的孵化器<br>
+│   ├── 題庫生成器.ts        # 自動生成變化題<br>
+│   ├── 評測器.ts            # 自動評測準確度<br>
+│   ├── 優化器.ts            # 自動優化效能<br>
+│   └── 迭代器.ts            # 自動迭代升級<br>
+│<br>
+├── 📂 迭代歷史/              # 完整的演化歷程<br>
+│   ├── CHANGELOG.md<br>
+│   ├── migrations/<br>
+│   └── archived-versions/<br>
+│<br>
+├── 📄 README.md<br>
+├── 📄 HELP.md<br>
+├── 📄 package.json<br>
+└── 📄 tsconfig.json<br>
+<code>`</code></p><p>---</p><p><h2>孵化器四大工具</h2></p><p><h3>1. 題庫生成器（generateVariations）</h3></p><p>自動生成變化題：<br>
+- 查詢對象變化<br>
+- 查詢類型變化<br>
+- 具體指標變化<br>
+- 複合查詢變化</p><p><h3>2. 評測器（evaluateAccuracy）</h3></p><p>自動評測準確度：<br>
+- 執行所有測試題<br>
+- 比對標準答案<br>
+- 計算準確度<br>
+- 找出失敗案例</p><p><h3>3. 優化器（optimizePerformance）</h3></p><p>自動優化效能：<br>
+- 分析錯誤案例<br>
+- 生成補強題目<br>
+- 微調模型<br>
+- 重新評測</p><p><h3>4. 迭代器（evolve）</h3></p><p>自動迭代升級：<br>
+- 分析當前版本效能<br>
+- 識別優化機會<br>
+- 自動生成新題庫<br>
+- 產生孵化報告<br>
+- 更新版本</p><p>---</p><p><h2>題庫積累：粗糙 → 精緻 → 巨量</h2></p><p>| 等級 | 題數 | 來源 | 品質 |<br>
+|------|------|------|------|<br>
+| 粗糙題庫 | 20 題 | 自動生成 | 基礎 |<br>
+| 精緻題庫 | 100 題 | PM 審核 + 邊界情況 | 高品質 |<br>
+| 巨量題庫 | 1000+ 題 | 持續積累 + 實際提問 | 生產級 |</p><p><h3>粗糙題庫（自動生成）</h3></p><p><code>`</code>json<br>
+{<br>
+  "題庫類型": "粗糙題庫",<br>
+  "題數": 20,<br>
+  "生成方式": "自動變化題生成器",<br>
+  "品質": "基礎"<br>
+}<br>
+<code>`</code></p><p><h3>精緻題庫（PM 審核）</h3></p><p><code>`</code>json<br>
+{<br>
+  "題庫類型": "精緻題庫",<br>
+  "題數": 100,<br>
+  "新增類型": [<br>
+    "邊界情況（極端數值）",<br>
+    "錯誤輸入（格式錯誤）",<br>
+    "複合查詢（多條件）",<br>
+    "時間序列（歷史資料）",<br>
+    "跨領域（整合查詢）"<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><h3>巨量題庫（生產級）</h3></p><p><code>`</code>json<br>
+{<br>
+  "題庫類型": "巨量題庫",<br>
+  "題數": 1247,<br>
+  "涵蓋率": "95% 日常查詢",<br>
+  "更新頻率": "每週自動更新"<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>斷點續做機制</h2></p><p><h3>Session ID 格式</h3></p><p><code>`</code><br>
+hand-{領域}-{timestamp}<br>
+例如：hand-environmental-2026-01-26T22-00<br>
+例如：hand-gov-statistics-2026-01-26T22-30<br>
+<code>`</code></p><p><h3>進度追蹤</h3></p><p><code>`</code>json<br>
+{<br>
+  "session_id": "hand-environmental-2026-01-26T22-00",<br>
+  "status": "in_progress",<br>
+  "current_phase": "v3-8b-migration",<br>
+  "progress": {<br>
+    "v1-opus-baseline": "completed",<br>
+    "v2-speed-optimization": "completed",<br>
+    "v3-8b-migration": "in_progress",<br>
+    "v4-accuracy-tuning": "pending"<br>
+  }<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>Unix Pipe + GNU Parallel</h2></p><p><h3>模組化串接</h3></p><p><code>`</code>bash<br>
+<h1>完整流程：從輸入到預測</h1><br>
+波知己-收集 input.m4a \          # 耳：聽取<br>
+  | 波排行-評測 --model=devstral \  # 眼：評測<br>
+  | 波孵化-技能 --目標=95 \         # 手：孵化<br>
+  | 波水晶-預測 --模型=MAGO         # 心：預測<br>
+<code>`</code></p><p><h3>平行處理</h3></p><p><code>`</code>bash<br>
+<h1>GNU parallel 批次處理</h1><br>
+parallel -j 4 'sh/cli.sh hatch quiz {} -n 20' ::: 內政部 法務部 衛福部 環境部<br>
+<code>`</code></p><p>---</p><p><h2>CLI 操作範例</h2></p><p><code>`</code>bash<br>
+<h1>安裝</h1><br>
+npm install -g @botrun/environmental-metrics-cli</p><p><h1>基本查詢</h1><br>
+env-metrics query "慈濟的零碳排指標"<br>
+<h1>→ 15 秒內回答</h1></p><p><h1>Unix pipe 串接</h1><br>
+echo "環境部 零碳排" | env-metrics query<br>
+<h1>→ 支援 Unix 哲學</h1></p><p><h1>批次查詢</h1><br>
+env-metrics batch --input=queries.txt --output=results.json<br>
+<h1>→ 平行處理多筆查詢</h1></p><p><h1>啟動 API 伺服器</h1><br>
+env-metrics serve --port=3000<br>
+<h1>→ 啟動 OpenAI 相容 API</h1></p><p><h1>啟動網頁介面</h1><br>
+env-metrics web --port=8080<br>
+<h1>→ 啟動前後端網頁問答</h1></p><p><h1>孵化器迭代</h1><br>
+env-metrics hatch --evolve<br>
+<h1>→ 自動迭代進步題庫</h1></p><p><h1>查看孵化報告</h1><br>
+env-metrics report<br>
+<h1>→ 顯示 v1-v4 的完整演化過程</h1></p><p><h1>查看評測報告</h1><br>
+env-metrics benchmark<br>
+<h1>→ 準確度、速度、成本分析</h1><br>
+<code>`</code></p><p>---</p><p><h2>相關資源</h2></p><p>| 資源 | 路徑 |<br>
+|------|------|<br>
+| 完整 YAML 規格 | <code>.claude/skills/零幻覺四部曲之手-自我進化孵化/零框架後設提示.yaml</code> |<br>
+| 耳（格式處理） | <code>.claude/skills/永恆知己-耳-任意格式處理器/</code> |<br>
+| 眼（評測排行） | <code>.claude/skills/零幻覺四部曲之眼-評測排行榜/</code> |<br>
+| 領域專用 CLI 藍圖 | <code>記憶核心/情節記憶/產品策略/領域專用CLIts封裝GitHub-快省準孵化-藍圖-2026-01-24T0645.md</code> |<br>
+| 耳眼手心架構 | <code>記憶核心/情節記憶/產品策略/全球零幻覺服務-耳眼手心四大產品架構-2026-01-25.md</code> |</p><p>---</p><p><h2>快速開始</h2></p><p><code>`</code>bash<br>
+<h1>1. 設定環境變數</h1><br>
+export ANTHROPIC_API_KEY="your-api-key"<br>
+export OPENROUTER_API_KEY="your-api-key"</p><p><h1>2. 初始化領域 CLI</h1><br>
+sh/cli.sh hatch init 環境指標 --repo @botrun/environmental-metrics-cli</p><p><h1>3. 執行首次孵化</h1><br>
+sh/cli.sh hatch run 環境指標</p><p><h1>4. 查看孵化歷程</h1><br>
+sh/cli.sh hatch history hand-environmental-2026-01-26T22-00</p><p><h1>5. 若中斷，可斷點續做</h1><br>
+sh/cli.sh hatch resume hand-environmental-2026-01-26T22-00<br>
+<code>`</code></p><p>---</p><p><h2>注意事項</h2></p><p>1. <strong>每次互動都進化</strong>：用戶每問一次，CLI 就更強一次<br>
+2. <strong>自動延伸擴充</strong>：從粗糙 → 精緻 → 巨量題庫<br>
+3. <strong>領域知識積累</strong>：耳（記錄）、手（技能）、眼（題庫）持續增長<br>
+4. <strong>GitHub 完整追溯</strong>：每個版本都有孵化報告、評測報告<br>
+5. <strong>開源生態系</strong>：其他組織可直接 fork，站在巨人肩膀上</p><p>---</p><p><h2>速查表</h2></p><p>| 簡稱 | 產品 | 比喻 | 一句話 |<br>
+|------|------|------|--------|<br>
+| 波知己 | 永恆知己 | 耳 | 聽取世界的記憶系統 |<br>
+| 波排行 | 零幻覺排行 | 眼 | 觀察品質的評測系統 |<br>
+| <strong>波孵化</strong> | <strong>組織技能</strong> | <strong>手</strong> | <strong>執行服務的孵化系統</strong> |<br>
+| 波水晶 | 世界水晶 | 心 | 推理預測的建模系統 |</p><p>---</p><p><h2>零框架分析 (Zero-Framework Analysis)</h2></p><p>打破既定模板、擁抱任意格式的政府等級 AI 分析模式：</p><p>| 特質 | 說明 |<br>
+|------|------|<br>
+| <strong>無招勝有招</strong> | 不需預設 Prompt 框架，直接針對 BDD/TDD/SOLID/DRY 等軟體工程概念或任意數據進行解析 |<br>
+| <strong>零幻覺四部曲</strong> | 透過耳（組織記憶）、眼（工研院驗證）、手（技能飛輪）、心（世界模型）四大維度，確保分析結果精準可靠 |<br>
+| <strong>全通路即戰力</strong> | 支援 LINE、Google Chat 等全平台，讓 AI 從「個人助理」升級為「可重複運用的組織級大腦」 |<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

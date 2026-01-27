@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zero-hallucination-eye-benchmark - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> zero-hallucination-eye-benchmark</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>眼（Eye）- 通用評測排行系統</h1></p><p>> 零幻覺四部曲第二部曲：觀察、評測、打榜</p><p>---</p><p><h2>🎯 核心使命</h2></p><p>將任意格式資料轉換為：<br>
+1. <strong>高品味問答題庫</strong>（20+ 題）<br>
+2. <strong>多模型評測結果</strong><br>
+3. <strong>九維度評分報告</strong><br>
+4. <strong>排行榜</strong></p><p>---</p><p><h2>📋 核心指令</h2></p><p><code>`</code>bash<br>
+<h1>完整評測流程</h1><br>
+sh/cli.sh benchmark run <領域></p><p><h1>生成高品味題庫</h1><br>
+sh/cli.sh benchmark generate <領域> -n 20</p><p><h1>執行模型評測</h1><br>
+sh/cli.sh benchmark evaluate questions.json</p><p><h1>九維度評分</h1><br>
+sh/cli.sh benchmark score results.json</p><p><h1>生成排行榜</h1><br>
+sh/cli.sh benchmark rank scores.json</p><p><h1>斷點續做</h1><br>
+sh/cli.sh benchmark resume <session_id></p><p><h1>列出所有 session</h1><br>
+sh/cli.sh benchmark list</p><p><h1>查看評測進度</h1><br>
+sh/cli.sh benchmark status <session_id><br>
+<code>`</code></p><p>---</p><p><h2>🏆 高品味題庫三大特色</h2></p><p>| 特色 | 說明 | 檢驗標準 |<br>
+|------|------|----------|<br>
+| <strong>鑑別度</strong> | 能區分不同模型表現 | 標準差 > 1.5 |<br>
+| <strong>口碑</strong> | 答案讓人覺得「哇真讚」 | 滿意度 > 8/10 |<br>
+| <strong>複雜情境</strong> | 真實用戶會問的問題 | 非簡單問答 |</p><p><h3>題目結構</h3></p><p><code>`</code>json<br>
+{<br>
+  "question": "爸爸過世有 200 萬債務，二哥要拋棄繼承，請問...",<br>
+  "answer_must_contain": ["民法第 1174 條", "3 個月內"],<br>
+  "should_mention": ["限定繼承", "債務清償順序"],<br>
+  "reference_source": "https://law.moj.gov.tw/...",<br>
+  "difficulty": "hard",<br>
+  "tags": ["繼承", "債務", "民法"]<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🤖 評測模型清單</h2></p><p>| 模型 ID | 別名 | 提供者 |<br>
+|---------|------|--------|<br>
+| <code>openai/gpt-oss-120b</code> | gpt-oss | OpenAI |<br>
+| <code>meta-llama/llama-4-maverick</code> | llama-4 | Meta |<br>
+| <code>google/gemini-3-flash-preview</code> | gemini-flash | Google |<br>
+| <code>mistralai/devstral-2512</code> | devstral | Mistral |<br>
+| <code>mistralai/ministral-14b-2512</code> | ministral-14b | Mistral |<br>
+| <code>mistralai/ministral-8b-2512</code> | ministral-8b | Mistral |<br>
+| <code>anthropic/claude-haiku-4.5</code> | claude-haiku | Anthropic |<br>
+| <code>anthropic/claude-sonnet-4</code> | claude-sonnet | Anthropic |</p><p><strong>評審模型</strong>：<code>google/gemini-3-flash-preview</code></p><p>---</p><p><h2>📊 兩批評測設計</h2></p><p>| 批次 | 名稱 | 用途 |<br>
+|------|------|------|<br>
+| <strong>Batch 1</strong> | 無網路評測 | 測試模型內建知識 |<br>
+| <strong>Batch 2</strong> | 有網路評測 | 測試搜尋整合能力 |</p><p>對比兩批結果可知網路搜尋對各模型的效益差異。</p><p>---</p><p><h2>📈 九維度評分法</h2></p><p><strong>口訣</strong>：真新全快省準人安穩</p><p>| 維度 | 權重 | 說明 |<br>
+|------|------|------|<br>
+| <strong>真</strong> | 1.2 | 真實性：資料來源可追溯 |<br>
+| <strong>新</strong> | 0.8 | 新穎性：使用最新資料 |<br>
+| <strong>全</strong> | 1.0 | 完整性：涵蓋必含內容 |<br>
+| <strong>快</strong> | 1.1 | 速度：回應簡潔有效 |<br>
+| <strong>省</strong> | 1.0 | 節省：token 使用效率 |<br>
+| <strong>準</strong> | 1.2 | 精準度：答案正確 |<br>
+| <strong>人</strong> | 0.9 | 人本：易於理解 |<br>
+| <strong>安</strong> | 1.3 | 安全性：無誤導資訊 |<br>
+| <strong>穩</strong> | 1.1 | 穩定性：可重現 |</p><p><h3>評分等級</h3></p><p>| 等級 | 門檻 | 百分比 |<br>
+|------|------|--------|<br>
+| 🥇 金標 | ≥ 85 分 | 94.4% |<br>
+| 🥈 銀標 | ≥ 80 分 | 88.9% |<br>
+| 🥉 銅標 | ≥ 70 分 | 77.8% |<br>
+| ❌ 未達標 | < 70 分 | - |</p><p>---</p><p><h2>⚡ 平行處理配置</h2></p><p>| 項目 | 上限 |<br>
+|------|------|<br>
+| 平行評測題目 | 30 |<br>
+| 平行測試模型 | 30 |<br>
+| 平行評分 | 30 |</p><p><strong>重要設定</strong>：<br>
+- <code>max_output_tokens: 32768</code>（32k 輸出）<br>
+- <code>temperature: 0.3</code>（評測用低溫度）</p><p>---</p><p><h2>💾 斷點續做機制</h2></p><p><h3>Session ID 格式</h3></p><p><code>`</code><br>
+eye-{領域}-{時間戳}<br>
+例如：eye-interior-land-2026-01-26T21-30<br>
+<code>`</code></p><p><h3>評測階段</h3></p><p>1. 資料收集<br>
+2. 題庫生成<br>
+3. 人工校驗（可選）<br>
+4. 無網路評測（Batch 1）<br>
+5. 有網路評測（Batch 2）<br>
+6. 九維度評分<br>
+7. 排行榜生成</p><p><h3>續做指令</h3></p><p><code>`</code>bash<br>
+<h1>列出所有 session</h1><br>
+sh/cli.sh benchmark list</p><p><h1>查看特定 session 進度</h1><br>
+sh/cli.sh benchmark status eye-interior-2026-01-26T21-30</p><p><h1>繼續未完成的評測</h1><br>
+sh/cli.sh benchmark resume eye-interior-2026-01-26T21-30<br>
+<code>`</code></p><p>---</p><p><h2>📁 輸出格式</h2></p><p>| 格式 | 路徑 | 用途 |<br>
+|------|------|------|<br>
+| CSV | <code>sh/output/rankings/{session}.csv</code> | 資料分析 |<br>
+| JSON | <code>sh/output/rankings/{session}.json</code> | 程式讀取 |<br>
+| Markdown | <code>sh/output/rankings/{session}.md</code> | 人類閱讀 |</p><p>---</p><p><h2>🔗 相關資源</h2></p><p>| 資源 | 路徑 |<br>
+|------|------|<br>
+| 完整 YAML 規格 | <code>.claude/skills/零幻覺四部曲之眼-評測排行榜/零框架後設提示.yaml</code> |<br>
+| 耳（格式處理） | <code>.claude/skills/零幻覺四部曲之耳-任意格式處理器/</code> |<br>
+| 後設系列框架 | <code>配置/規則/後設系列-完整方法學框架.md</code> |<br>
+| 高品味題庫說明 | <code>記憶核心/語義記憶/FAQ/成大產學合作FAQ-2026-01-26.md</code> |</p><p>---</p><p><h2>🚀 快速開始</h2></p><p><code>`</code>bash<br>
+<h1>1. 設定環境變數</h1><br>
+export OPENROUTER_API_KEY="your-api-key"</p><p><h1>2. 對內政部國土署進行評測</h1><br>
+sh/cli.sh benchmark run 內政部國土署</p><p><h1>3. 查看排行榜</h1><br>
+open sh/output/rankings/eye-interior-land-*.md<br>
+<code>`</code></p><p>---</p><p><h2>⚠️ 注意事項</h2></p><p>1. <strong>模型字串</strong>：<code>google/gemini-3-flash-preview</code> 務必正確拼寫<br>
+2. <strong>輸出 tokens</strong>：務必設定 32k 輸出<br>
+3. <strong>平行處理</strong>：max concurrent 必須為 30<br>
+4. <strong>評審模型</strong>：固定使用 <code>google/gemini-3-flash-preview</code><br>
+5. <strong>時區</strong>：Session ID 使用台灣時間戳（Asia/Taipei）</p><p>---</p><p><h2>📚 延伸閱讀</h2></p><p>- [Claude Agent SDK 文件](https://platform.claude.com/docs/en/agent-sdk/typescript)<br>
+- [OpenRouter API 文件](https://openrouter.ai/docs/api/reference/overview)<br>
+- [OpenRouter Web Search](https://openrouter.ai/docs/guides/features/plugins/web-search)<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

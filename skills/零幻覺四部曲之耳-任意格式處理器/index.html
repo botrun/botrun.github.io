@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ear-file-processor - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> ear-file-processor</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>耳（Ear）- 任意格式處理器</h1></p><p>> 零幻覺四部曲之一：將任意格式轉換為 AI 可讀文字</p><p><h2>何時使用此技能</h2></p><p>- 用戶上傳任意格式檔案（PDF、Word、Excel、圖片、音檔、影片等）<br>
+- 用戶說「處理這個檔案」「轉成文字」「讀取這份文件」<br>
+- 用戶說「把這個 PDF 轉成 Markdown」「OCR 這張圖片」<br>
+- 用戶說「分析這份資料」「萃取文字」<br>
+- 需要將非文字格式轉換為 AI 可讀格式</p><p><h2>核心指令</h2></p><p><code>`</code>bash<br>
+<h1>單檔處理</h1><br>
+sh/cli.sh process <file-path></p><p><h1>目錄批次處理</h1><br>
+sh/cli.sh process <directory> -j 4</p><p><h1>自然語言驅動</h1><br>
+sh/cli.sh ask '<描述任務>'</p><p><h1>使用特定模型</h1><br>
+sh/cli.sh process <file> -m claude-sonnet-4-5<br>
+<code>`</code></p><p><h2>支援格式</h2></p><p>| 類別 | 格式 | 處理器 |<br>
+|------|------|--------|<br>
+| 音檔 | <code>.m4a</code> <code>.mp3</code> <code>.wav</code> <code>.webm</code> <code>.ogg</code> <code>.flac</code> <code>.aac</code> | AudioProcessor |<br>
+| 圖片 | <code>.png</code> <code>.jpg</code> <code>.jpeg</code> <code>.gif</code> <code>.webp</code> <code>.bmp</code> <code>.tiff</code> <code>.heic</code> | ImageProcessor |<br>
+| 文件 | <code>.pdf</code> <code>.docx</code> <code>.doc</code> <code>.xlsx</code> <code>.xls</code> <code>.pptx</code> <code>.ppt</code> | DocumentProcessor |<br>
+| 影片 | <code>.mov</code> <code>.mp4</code> <code>.webm</code> <code>.avi</code> <code>.mkv</code> <code>.m4v</code> | VideoProcessor |<br>
+| 資料 | <code>.csv</code> <code>.json</code> <code>.xml</code> <code>.yaml</code> <code>.yml</code> <code>.toml</code> | DataProcessor |<br>
+| 文字 | <code>.txt</code> <code>.md</code> <code>.html</code> <code>.htm</code> <code>.rtf</code> <code>.tex</code> | TextProcessor |</p><p><h2>使用範例</h2></p><p><h3>處理單一 PDF</h3><br>
+<code>`</code>bash<br>
+sh/cli.sh process 收集箱/文件.pdf<br>
+<code>`</code></p><p><h3>批次處理會議錄音</h3><br>
+<code>`</code>bash<br>
+sh/cli.sh process 收集箱/會議錄音/ -j 4<br>
+<code>`</code></p><p><h3>OCR 圖片</h3><br>
+<code>`</code>bash<br>
+sh/cli.sh process 收集箱/screenshot.png<br>
+<code>`</code></p><p><h3>轉換 Excel</h3><br>
+<code>`</code>bash<br>
+sh/cli.sh process 收集箱/報表.xlsx<br>
+<code>`</code></p><p><h2>快取機制</h2></p><p>- 使用 SHA-256 hash 識別檔案<br>
+- 預設快取 30 天<br>
+- 使用 <code>--no-cache</code> 強制重新處理<br>
+- 使用 <code>sh/cli.sh cache stats</code> 查看快取統計</p><p><h2>輸出位置</h2></p><p>- 預設輸出到原始檔案同目錄<br>
+- 使用 <code>-o <dir></code> 指定輸出目錄<br>
+- 輸出格式：Markdown（.md）</p><p><h2>相關檔案</h2></p><p>- 後設提示：<code>配置/規則/零框架後設提示-耳-任意格式處理器.yaml</code><br>
+- CLI 入口：<code>sh/cli.sh</code><br>
+- TypeScript 模組：<code>sh/src/</code></p><p><h2>與其他技能的關係</h2></p><p>- <strong>永恆知己-文字轉換</strong>：本技能的精簡版，主要處理 PDF/圖片/Office<br>
+- <strong>永恆知己-語音轉文字</strong>：專門處理會議錄音，使用 pipeline.ts<br>
+- <strong>永恆知己-記憶</strong>：處理完成後可自動記憶重要內容<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>universal-file-processor - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> universal-file-processor</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 萬用處理器（四部曲「眼」）</h1></p><p>> <strong>觸發條件</strong>：用戶需要處理任意格式檔案、生成題庫、或執行模型評測時</p><p><h2>核心能力</h2></p><p><h3>1. 任意格式處理</h3><br>
+- <strong>文件</strong>: PDF, DOCX, XLSX, PPTX, CSV<br>
+- <strong>圖片</strong>: PNG, JPG, GIF, WEBP (OCR + 描述)<br>
+- <strong>音訊</strong>: M4A, MP3, WAV (語音轉文字)<br>
+- <strong>影片</strong>: MP4, MOV, AVI (提取音軌 → 轉文字)<br>
+- <strong>網頁</strong>: HTTP/HTTPS URL (擷取 → 整理)<br>
+- <strong>結構化</strong>: JSON, YAML, XML</p><p><h3>2. 高品位題庫生成</h3><br>
+- 以人為中心（IDEO Design Thinking）<br>
+- 四種題型分佈：<br>
+  - 事實性 20%<br>
+  - 推論性 30%<br>
+  - 應用性 30%<br>
+  - 創意性 20%</p><p><h3>3. 模型評測（九維度）</h3><br>
+- 波特人評分法：真新全快省準人安穩<br>
+- 支援 8+ 主流模型<br>
+- 上網 vs 不上網兩批測試<br>
+- 自動生成排行榜</p><p><h2>CLI 指令</h2></p><p><code>`</code>bash<br>
+<h1>處理檔案</h1><br>
+sh/cli.sh process <file_or_url></p><p><h1>生成題庫</h1><br>
+sh/cli.sh quiz <processed_file> --count 20</p><p><h1>執行評測</h1><br>
+sh/cli.sh benchmark <quiz_file> [--web]</p><p><h1>斷點續做</h1><br>
+sh/cli.sh resume <session_id></p><p><h1>查看進度</h1><br>
+sh/cli.sh status</p><p><h1>自然語言</h1><br>
+sh/cli.sh ask "你的指令"<br>
+<code>`</code></p><p><h2>使用流程</h2></p><p>1. <strong>處理檔案</strong> → 轉換成 AI 可讀的 Markdown<br>
+2. <strong>生成題庫</strong> → 從內容生成高品位題目<br>
+3. <strong>執行評測</strong> → 多模型並行測試 + 九維度評分<br>
+4. <strong>輸出排行榜</strong> → Markdown + JSON 格式</p><p><h2>三替代方案評估</h2></p><p>在執行複雜任務前，自動使用「三替代方案打分選最佳」：</p><p>| 方案 | 可行性 | 泛化性 | 維護性 | 效能 | 簡潔性 | 總分 |<br>
+|------|--------|--------|--------|------|--------|------|<br>
+| A    | ?      | ?      | ?      | ?    | ?      | ?    |<br>
+| B    | ?      | ?      | ?      | ?    | ?      | ?    |<br>
+| C    | ?      | ?      | ?      | ?    | ?      | ?    |</p><p>選擇最高分方案執行。</p><p><h2>九維度評分標準</h2></p><p>| 維度 | 說明 | 10分標準 |<br>
+|------|------|----------|<br>
+| 真   | 真實性 | 完全可追溯、有明確引用來源 |<br>
+| 新   | 新穎性 | 使用最新版本、資料即時更新 |<br>
+| 全   | 完整性 | 端到端完整、無任何遺漏 |<br>
+| 快   | 速度   | < 1 分鐘完成 |<br>
+| 省   | 節省   | < 1K tokens |<br>
+| 準   | 精準度 | > 95% 正確率 |<br>
+| 人   | 以人為中心 | 完全透明、隨時可介入修正 |<br>
+| 安   | 安全性 | 全地端、零外洩風險 |<br>
+| 穩   | 穩定性 | 完全可重現、零漂移 |</p><p>認證等級：<br>
+- 🥇 金標: ≥ 85 分<br>
+- 🥈 銀標: ≥ 80 分<br>
+- 🥉 銅標: ≥ 70 分</p><p><h2>斷點續做</h2></p><p>所有長時間任務自動建立 Session：<br>
+- Session ID 格式: <code>{task_type}-{YYYYMMdd-HHmmss}</code><br>
+- 進度存放: <code>.cache/progress/{session_id}.json</code><br>
+- 隨時可用 <code>sh/cli.sh resume <session_id></code> 繼續</p><p><h2>快取策略</h2></p><p>| 快取類型 | 位置 | TTL |<br>
+|----------|------|-----|<br>
+| 檔案處理 | .cache/processed/ | 7 天 |<br>
+| API 回應 | .cache/api/ | 24 小時 |<br>
+| 評分結果 | .cache/scores/ | 30 天 |</p><p><h2>相關檔案</h2></p><p>- 零框架後設提示配置: <code>配置/規則/零框架後設提示.yaml</code><br>
+- CLI 入口: <code>sh/cli.sh</code><br>
+- 處理器模組: <code>scripts/universal/</code><br>
+- 評測模組: <code>scripts/benchmark/</code></p><p><h2>預設模型</h2></p><p>評測使用以下模型：<br>
+- openai/gpt-oss-120b<br>
+- meta-llama/llama-4-maverick-17b-128e-instruct<br>
+- google/gemini-3-flash-preview-20251217<br>
+- mistralai/devstral-2512<br>
+- mistralai/ministral-14b-2512<br>
+- mistralai/ministral-8b-2512<br>
+- anthropic/claude-haiku-4.5<br>
+- anthropic/claude-sonnet-4</p><p>評分模型: <code>google/gemini-3-flash-preview-20251217</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

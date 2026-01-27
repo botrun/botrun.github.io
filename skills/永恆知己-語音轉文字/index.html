@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-speech-to-text - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-speech-to-text</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己語音轉文字技能。當用戶說「處理會議錄音」或上傳音訊檔案時觸發。使用 CLI pipeline + Gemini API (gemini-3-flash-preview) 進行高品質轉錄。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 語音轉文字技能</h1></p><p><h2>🎯 一鍵完成（CLI Pipeline）</h2></p><p><h3>單檔處理</h3><br>
+<code>`</code>bash<br>
+npx tsx scripts/pipeline.ts "收集箱/會議錄音/檔案名.m4a"<br>
+<code>`</code></p><p><h3>批次處理（平行）</h3><br>
+<code>`</code>bash<br>
+npx tsx scripts/pipeline.ts --batch 收集箱/會議錄音/ --jobs 4<br>
+<code>`</code></p><p><h3>自動完成</h3><br>
+Pipeline 自動執行：<br>
+1. Gemini 轉錄（gemini-3-flash-preview）<br>
+2. <strong>大模型勘誤</strong>（理解上下文，處理模糊錯誤）⭐<br>
+3. Gemini 語義分析（檔名+摘要+關鍵字）<br>
+4. 格式化輸出 .txt<br>
+5. 自動 <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>📁 輸出位置</h2></p><p>| 類型 | 路徑 |<br>
+|------|------|<br>
+| 逐字稿 .md | <code>素材庫/來源歸檔/會議記錄/逐字稿/{語義檔名}.md</code> |<br>
+| 會議記錄 .txt | <code>素材庫/輸出/會議記錄/{語義檔名}-會議記錄.txt</code> |<br>
+| 原始音檔 | <code>素材庫/來源歸檔/會議記錄/原始音檔/</code> |</p><p>---</p><p><h2>🔧 技術規格</h2></p><p>- <strong>轉錄模型</strong>：<code>gemini-3-flash-preview</code>（絕對不能錯）<br>
+- <strong>勘誤</strong>：大模型勘誤（<code>gemini-2.0-flash</code>）⭐ 禁用 sed<br>
+  - 勘誤表：<code>配置/規則/勘誤表.md</code>（人類可讀）<br>
+  - 模組：<code>scripts/lib/correct.ts</code><br>
+  - 優勢：理解上下文、處理模糊錯誤、同音字判斷<br>
+- <strong>語義分析</strong>：Gemini 一次調用完成檔名+摘要+關鍵字<br>
+- <strong>格式化</strong>：純 template（不需 AI）</p><p>---</p><p><h2>⚡ 效能</h2></p><p>| 指標 | 數值 |<br>
+|------|------|<br>
+| 30 秒音檔 | ~20 秒完成 |<br>
+| 大模型勘誤 | ~5-10 秒（理解上下文） |<br>
+| 4 檔平行 | ~80 秒（含大模型勘誤） |</p><p>---</p><p><h2>🔍 搜尋轉錄內容</h2></p><p><code>`</code>bash<br>
+rg "關鍵字" 素材庫/來源歸檔/會議記錄/逐字稿/<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

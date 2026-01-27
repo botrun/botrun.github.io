@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-learning - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-learning</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己學習技能。當用戶說「要」「不要」「好」「不好」「對」「錯」「喜歡」「不喜歡」時觸發。即時學習用戶偏好並寫入偏好紀錄。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 學習技能</h1></p><p><h2>觸發條件</h2></p><p>當用戶說以下關鍵字時，立即學習：</p><p>| 正向（要） | 負向（不要） |<br>
+|-----------|-------------|<br>
+| 我要、我想要 | 我不要、不想要 |<br>
+| 這個好、很好 | 這個不好、不行 |<br>
+| 對、沒錯 | 錯、不對 |<br>
+| 喜歡、偏好 | 不喜歡、討厭 |<br>
+| 繼續、就這樣 | 停、別這樣 |<br>
+| 保留、留著 | 刪掉、移除 |</p><p><h2>學習流程</h2></p><p>1. <strong>偵測</strong>：用戶說了偏好關鍵字<br>
+2. <strong>提取</strong>：提取具體偏好內容<br>
+3. <strong>分類</strong>：正向（要）或負向（不要）<br>
+4. <strong>寫入</strong>：<code>記憶核心/語義記憶/偏好學習/偏好紀錄.md</code><br>
+5. <strong>確認</strong>：回報「已記住您的偏好」</p><p><h2>寫入格式</h2></p><p>追加到 <code>記憶核心/語義記憶/偏好學習/偏好紀錄.md</code>：</p><p><code>`</code>markdown<br>
+<h3>[YYYY-MM-DDTHH:mm:ss] [主題]</h3></p><p>- <strong>類型</strong>：正向/負向<br>
+- <strong>內容</strong>：[具體偏好]<br>
+- <strong>原話</strong>：「[用戶原話]」<br>
+- <strong>情境</strong>：[當時在做什麼]<br>
+- <strong>權重</strong>：10<br>
+<code>`</code></p><p><h2>範例</h2></p><p><strong>用戶說</strong>：「這個太囉嗦了，我不要這麼長的回答」</p><p><strong>學習動作</strong>：<br>
+<code>`</code>markdown<br>
+<h3>2026-01-19T14:35:22 回答長度</h3></p><p>- <strong>類型</strong>：負向（不要）<br>
+- <strong>內容</strong>：不要太長的回答<br>
+- <strong>原話</strong>：「這個太囉嗦了，我不要這麼長的回答」<br>
+- <strong>情境</strong>：AI 回答過長時<br>
+- <strong>權重</strong>：10<br>
+<code>`</code></p><p><strong>回報</strong>：「已記住：您偏好簡短的回答，我會調整。」</p><p><h2>偏好衝突處理</h2></p><p>當新偏好與舊偏好衝突時：</p><p>1. <strong>以最新為準</strong>：更新 <code>updated</code> 日期<br>
+2. <strong>保留歷史</strong>：舊偏好加上 <code>[已更新]</code> 標記<br>
+3. <strong>告知用戶</strong>：「您之前說 X，現在改為 Y，已更新。」</p><p><h2>自動應用</h2></p><p>學習後的偏好會自動影響：</p><p>1. <strong>回答風格</strong>：長度、詳細程度、語氣<br>
+2. <strong>搜尋排序</strong>：偏好相關的結果優先<br>
+3. <strong>建議方式</strong>：避免用戶不喜歡的方式<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

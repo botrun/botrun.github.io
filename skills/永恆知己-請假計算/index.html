@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leave-calculator - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> leave-calculator</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        Calculate leave days needed for international travel trips. Use when analyzing travel tickets, calculating vacation days, or planning leave requests. Accounts for Taiwan national holidays and weekends. Handles half-day work schedules (half-day leave requests).
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 請假計算技能</h1></p><p><h2>何時使用此技能</h2></p><p>- 當收到機票 PDF 或旅行日期資訊時<br>
+- 需要計算出國旅行的請假天數<br>
+- 需要排除台灣國定假日和週末<br>
+- 工作型態為半職（每天工作半天）的請假計算<br>
+- 產生請假摘要報告（Markdown 和 PDF 格式）</p><p><h2>使用流程</h2></p><p><h3>1. 收集旅行資訊</h3></p><p>從機票 PDF 或用戶提供的資訊中提取：<br>
+- 旅行地點<br>
+- 起始日期<br>
+- 結束日期<br>
+- 同行者（如有）</p><p><h3>2. 計算請假天數</h3></p><p><strong>核心規則</strong>：<br>
+- 排除週末（六、日）<br>
+- 排除台灣國定假日（參考 <code>配置/國定假日/台灣-{年度}.json</code>）<br>
+- 每個工作日請假「半天」（因為半職工作）<br>
+- 跨年旅行：只計算指定年度的部分</p><p><strong>計算公式</strong>：<br>
+<code>`</code><br>
+請假次數 = 工作日天數<br>
+請假天數 = 請假次數 × 0.5<br>
+<code>`</code></p><p><strong>範例</strong>：<br>
+- 5 個工作日 → 5 次半天 → 2.5 天<br>
+- 14 個工作日 → 14 次半天 → 7 天</p><p><h3>3. 產生摘要文件</h3></p><p>建立以下檔案：<br>
+- <code>營運資料/請假記錄/{年度}-出國請假總覽.md</code>（詳細版）<br>
+- <code>營運資料/請假記錄/{年度}-出國請假摘要.md</code>（簡潔版）<br>
+- <code>營運資料/請假記錄/{年度}-出國請假摘要.pdf</code>（PDF 版）<br>
+- <code>索引/請假索引.md</code>（索引檔案）</p><p><h3>4. 更新 .gitignore</h3></p><p>確保以下規則存在：<br>
+<code>`</code>gitignore<br>
+<h1>收集箱中的 PDF 檔案（機票、帳單等個人文件）</h1><br>
+收集箱/*.pdf</p><p><h1>請假摘要 PDF：< 100kb 可上傳（便於記錄），> 100kb 則排除</h1><br>
+<h1>目前 2025-出國請假摘要.pdf = 42kb，允許上傳</h1><br>
+<code>`</code></p><p><strong>重要規則</strong>：<br>
+- PDF < 100kb：可以上傳到 GitHub（便於版本控制和歷史追蹤）<br>
+- PDF ≥ 100kb：應排除，避免儲存庫膨脹</p><p><h3>5. 永久記憶</h3></p><p>將請假記錄寫入：<br>
+<code>`</code><br>
+記憶核心/情節記憶/{日期}-出國請假記錄整理.md<br>
+<code>`</code></p><p>包含：<br>
+- <code>speaker: user</code><br>
+- <code>authority: 10</code><br>
+- <code>captured_at</code> 和 <code>updated</code> 精確到秒</p><p><h2>PDF 產生</h2></p><p>使用 <code>generate_pdf.py</code> 腳本產生 PDF：</p><p><code>`</code>bash<br>
+python3 .claude/skills/永恆知己-請假計算/generate_pdf.py "營運資料/請假記錄/{年度}-出國請假摘要.pdf"<br>
+<code>`</code></p><p>腳本位置：<code>.claude/skills/永恆知己-請假計算/generate_pdf.py</code></p><p><strong>重要</strong>：<br>
+- 使用 <code>reportlab</code> 套件<br>
+- 中文字型：<code>/System/Library/Fonts/STHeiti Medium.ttc</code><br>
+- 不要使用 PingFang（路徑不正確）</p><p><h2>輸出格式規範</h2></p><p><h3>Markdown 格式</h3></p><p><code>`</code>markdown<br>
+<h1>{年度} 年出國請假摘要</h1></p><p><strong>總請假：{N} 天</strong>（共請假 {M} 次，每次半天）</p><p>---</p><p><h2>請假明細</h2></p><p><h3>1. {地點}之旅</h3><br>
+- <strong>日期</strong>：YYYY-MM-DD ~ MM-DD（{X} 天）<br>
+- <strong>請假</strong>：{Y} 天（{Z} 次半天）<br>
+- <strong>日期明細</strong>：MM-DD(一)、MM-DD(二)...</p><p><h2>統計表</h2></p><p>| 旅程 | 目的地 | 旅行天數 | 請假次數 | 請假天數 |<br>
+|------|--------|----------|----------|----------|<br>
+| 1 | 維也納 | 13 天 | 5 次 | 2.5 天 |<br>
+| <strong>總計</strong> | - | <strong>{X} 天</strong> | <strong>{M} 次</strong> | <strong>{N} 天</strong> |</p><p><h2>說明</h2></p><p>- <strong>工作型態</strong>：半職（每天工作半天）<br>
+- <strong>請假單位</strong>：每次請假半天<br>
+- <strong>計算方式</strong>：{M} 次半天 = {N} 個全天<br>
+- <strong>排除項目</strong>：週末、國定假日、連假<br>
+- <strong>年度分隔</strong>：跨年旅行僅計算 {年度} 年部分<br>
+<code>`</code></p><p><h3>清晰度要求</h3></p><p><strong>❌ 錯誤</strong>：「請假 31 天（每天半天）」<br>
+- 問題：讓人誤以為請假 31 個全天</p><p><strong>✅ 正確</strong>：「請假 15 天（共請假 30 次，每次半天）」<br>
+- 清楚區分「請假次數」和「請假天數」</p><p><h2>國定假日配置</h2></p><p>位置：<code>配置/國定假日/台灣-{年度}.json</code></p><p>格式：<br>
+<code>`</code>json<br>
+{<br>
+  "year": 2025,<br>
+  "country": "台灣",<br>
+  "holidays": [<br>
+    {<br>
+      "date": "2025-01-01",<br>
+      "name": "中華民國開國紀念日",<br>
+      "is_compensatory": false<br>
+    }<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><h2>跨年計算規則</h2></p><p>當旅行跨年時：<br>
+1. 只計算指定年度範圍內的日期<br>
+2. 在說明中註明跨年情況<br>
+3. 範例：「熊本之旅的 2026-01-02 不計入 2025 年」</p><p><h2>地雷經驗</h2></p><p><h3>地雷 1：中文字型路徑錯誤</h3><br>
+- ❌ 錯誤：<code>/System/Library/Fonts/PingFang.ttc</code>（不存在）<br>
+- ✅ 正確：<code>/System/Library/Fonts/STHeiti Medium.ttc</code><br>
+- 解法：使用 <code>fc-list | grep -i "hei\|song"</code> 尋找可用中文字型</p><p><h3>地雷 2：請假天數表達不清</h3><br>
+- ❌ 錯誤：「31 天（每天半天）」<br>
+- ✅ 正確：「15 天（共請假 30 次，每次半天）」<br>
+- 原因：必須明確區分「請假次數」和「請假天數」</p><p><h3>地雷 3：跨年計算錯誤</h3><br>
+- ❌ 錯誤：將 2026 年的日期計入 2025 年<br>
+- ✅ 正確：嚴格按年度分隔，跨年部分另外註明<br>
+- 解法：在計算時明確過濾日期範圍</p><p><h3>地雷 4：PDF 工具依賴問題</h3><br>
+- ❌ 錯誤：使用 <code>pandoc --pdf-engine=xelatex</code>（需要安裝 xelatex）<br>
+- ✅ 正確：使用 Python <code>reportlab</code> 套件<br>
+- 優點：純 Python，無需外部工具</p><p><h3>地雷 5：PDF 檔案大小與 Git 儲存</h3><br>
+- ❌ 錯誤：無條件排除所有 PDF 或無條件上傳所有 PDF<br>
+- ✅ 正確：設定大小閾值（100kb）<br>
+- 規則：PDF < 100kb 可上傳，≥ 100kb 則排除<br>
+- 優點：平衡版本控制需求與儲存庫大小</p><p><h2>PDF 最佳化技巧（實驗驗證）</h2></p><p><h3>壓縮實驗結果</h3></p><p><strong>檔案大小對比</strong>（以 2025 年 4 次旅行為例）：<br>
+<code>`</code><br>
+Markdown 原始檔      :  1.7 KB  (基準)<br>
+PDF 最佳化版本      : 43.5 KB  (25.6x)<br>
+<code>`</code></p><p><strong>有效的壓縮技巧</strong>（節省 >5%）：<br>
+1. <strong>頁面壓縮</strong>（<code>pageCompression=True</code>）- 節省 ~40%<br>
+2. <strong>移除表格樣式和顏色</strong> - 節省 ~15%<br>
+3. <strong>縮小邊距</strong>（2cm → 1.5cm）- 節省 ~7%<br>
+4. <strong>Ghostscript 後處理</strong> - 額外節省 ~16%</p><p><strong>無效的技巧</strong>（節省 <2%）：<br>
+- 字型子集化（subset fonts）~0%<br>
+- 降低字型大小 ~0.5%<br>
+- 壓縮等級調整 ~0%</p><p><h3>關鍵發現</h3></p><p>1. <strong>中文字型是主要瓶頸</strong><br>
+   - STHeiti 最小嵌入 ~15-18KB<br>
+   - 無法移除（PDF 需要嵌入字型才能正確顯示中文）</p><p>2. <strong>PDF 格式開銷</strong><br>
+   - 元數據、結構、壓縮字典 ~2-3KB<br>
+   - 無法避免</p><p>3. <strong>理論極限</strong><br>
+   - 最小可能：~18-20KB（純文字 + 最小字型）<br>
+   - Markdown 1.7KB 無法達成（除非放棄 PDF 格式）</p><p><h3>使用方式</h3></p><p><strong>預設（最佳化）</strong>：<br>
+<code>`</code>bash<br>
+python3 generate_pdf.py output.pdf<br>
+<h1>自動使用最佳化設定</h1><br>
+<code>`</code></p><p><strong>完整樣式版本</strong>：<br>
+<code>`</code>bash<br>
+python3 generate_pdf.py output.pdf --no-optimize<br>
+<h1>使用完整樣式（較大檔案）</h1><br>
+<code>`</code></p><p><strong>最佳化參數</strong>：<br>
+- 邊距：1.5cm（vs 2cm）<br>
+- 字型大小：16/12/9（vs 18/13/10）<br>
+- 表格樣式：簡化背景色<br>
+- 頁面壓縮：啟用</p><p><h2>範例使用</h2></p><p><code>`</code>markdown<br>
+User: 收集箱有機票 PDF，幫我計算 2025 年請假天數</p><p>1. 讀取收集箱中的 PDF 檔案<br>
+2. 提取旅行日期和地點<br>
+3. 載入台灣 2025 年國定假日<br>
+4. 計算每個旅程的請假天數（排除週末和假日）<br>
+5. 產生摘要文件（Markdown 和 PDF）<br>
+6. 更新索引和記憶<br>
+7. 清理收集箱<br>
+8. 更新 .gitignore<br>
+<code>`</code></p><p><h2>技能維護</h2></p><p>- 每年更新國定假日配置：<code>配置/國定假日/台灣-{年度}.json</code><br>
+- 記錄新的地雷經驗到此文件<br>
+- 持續優化 PDF 產生腳本</p><p><h2>相關檔案</h2></p><p>- 國定假日配置：<code>配置/國定假日/</code><br>
+- 請假記錄：<code>營運資料/請假記錄/</code><br>
+- 請假索引：<code>索引/請假索引.md</code><br>
+- PDF 產生腳本：<code>.claude/skills/永恆知己-請假計算/generate_pdf.py</code><br>
+- 記憶記錄：<code>記憶核心/情節記憶/</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

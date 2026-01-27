@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-text-conversion - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-text-conversion</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己 LLM 友善文字轉換技能。自動將 PDF、音訊、圖片、Office 文件等轉換為純文字版本，方便 rg -C 超高速檢索。使用 hash 技術避免重複轉換。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - LLM 友善文字轉換技能</h1></p><p><h2>⭐ 語義化命名原則（轉換輸出檔案）</h2></p><p><h3>輸出檔名格式</h3></p><p>對於大型獨立文件（PDF 報告、演講音訊等），建議使用語義化命名：</p><p><code>`</code><br>
+{主題關鍵字1}-{關鍵字2}-{來源}.txt<br>
+<code>`</code></p><p><strong>範例</strong>：<br>
+<code>`</code><br>
+<h1>原始檔案 → 轉換後檔案</h1><br>
+2024-DoD-Report.pdf → 美國國防部報告-中共軍力-2024.pdf.txt<br>
+meeting-audio.m4a   → 已有語義化逐字稿，連結即可<br>
+<code>`</code></p><p><h3>一般檔案保持一對一對應</h3></p><p><code>`</code><br>
+原始檔案: path/to/file.pdf<br>
+轉換結果: path/to/file.pdf.txt  ← 簡單一對一<br>
+<code>`</code></p><p><h3>禁止的轉換輸出檔名</h3><br>
+- ❌ 純 hash：<code>abc123def456.txt</code><br>
+- ❌ 無意義序號：<code>output_001.txt</code></p><p>---</p><p><h2>🎯 核心目的</h2></p><p>為所有非純文字檔案創建 <strong>LLM 友善的純文字版本</strong>，讓 <code>rg -C</code> 能超高速檢索所有內容。</p><p><h2>📋 處理範圍</h2></p><p><h3>支援檔案類型</h3><br>
+- <strong>PDF 文件</strong>：<code>.pdf</code><br>
+- <strong>音訊檔案</strong>：<code>.mp3</code>, <code>.m4a</code>, <code>.wav</code>, <code>.webm</code>, <code>.ogg</code>, <code>.flac</code><br>
+- <strong>圖片檔案</strong>：<code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.webp</code><br>
+- <strong>Office 文件</strong>：<code>.docx</code>, <code>.xlsx</code>, <code>.pptx</code>, <code>.doc</code>, <code>.xls</code>, <code>.ppt</code><br>
+- <strong>其他</strong>：<code>.epub</code>, <code>.rtf</code></p><p><h3>轉換位置</h3><br>
+<code>`</code><br>
+原始檔案: path/to/file.pdf<br>
+轉換結果: path/to/file.pdf.txt  ← 一對一對應<br>
+<code>`</code></p><p><h3>Hash 快取機制</h3><br>
+<code>`</code><br>
+.text-conversion-cache/<br>
+├── hashes.json          ← 記錄所有檔案 hash<br>
+└── metadata.json        ← 記錄轉換時間、狀態<br>
+<code>`</code></p><p>---</p><p><h2>🔄 自動轉換流程</h2></p><p><h3>1. 掃描檔案</h3><br>
+<code>`</code>bash<br>
+<h1>掃描所有需要轉換的檔案</h1><br>
+find . -type f \( -name "<em>.pdf" -o -name "</em>.mp3" -o -name "*.m4a" \<br>
+  -o -name "<em>.jpg" -o -name "</em>.png" -o -name "<em>.docx" -o -name "</em>.xlsx" \) \<br>
+  ! -path "./.git/<em>" ! -path "./.text-conversion-cache/</em>"<br>
+<code>`</code></p><p><h3>2. Hash 檢查</h3><br>
+<code>`</code><br>
+對於每個檔案：<br>
+1. 計算 SHA256 hash<br>
+2. 比對快取中的 hash<br>
+3. 若 hash 相同且 .txt 存在 → 跳過<br>
+4. 若 hash 不同或 .txt 不存在 → 轉換<br>
+<code>`</code></p><p><h3>3. 轉換處理</h3><br>
+<code>`</code><br>
+根據檔案類型選擇工具（優先順序）：<br>
+├── PDF         → Claude API (優先) → pdftotext (fallback)<br>
+├── 圖片        → Claude Vision (優先) → tesseract OCR (fallback)<br>
+├── 音訊        → 逐字稿檔案路徑（已轉換過）<br>
+├── Office      → python-docx/openpyxl/python-pptx → pandoc (fallback)<br>
+└── 其他        → 適當工具<br>
+<code>`</code></p><p><h3>4. 輸出格式</h3><br>
+<code>`</code>markdown<br>
+---<br>
+原始檔案: path/to/file.pdf<br>
+檔案類型: PDF<br>
+檔案大小: 1.2 MB<br>
+轉換時間: 2026-01-19T14:30:45<br>
+轉換工具: claude-api  # 或 claude-vision, pdftotext, tesseract<br>
+---</p><p><h1>[檔案名]</h1></p><p>[轉換後的純文字內容，LLM 友善的 Markdown 格式]</p><p><h2>Claude API 的優勢</h2><br>
+- ✅ 保留完整結構（標題、段落、列表、表格）<br>
+- ✅ 高品質 OCR（圖片中的中英文準確辨識）<br>
+- ✅ LLM 友善格式（適合 AI 理解和檢索）<br>
+- ✅ 自動去除雜訊（頁碼、頁首頁尾）<br>
+- ✅ 保持語義完整性<br>
+<code>`</code></p><p>---</p><p><h2>🚀 使用方式</h2></p><p><h3>自動掃描並轉換</h3><br>
+<code>`</code>bash<br>
+python3 scripts/convert_to_text.py --scan<br>
+<code>`</code></p><p><h3>轉換特定檔案</h3><br>
+<code>`</code>bash<br>
+python3 scripts/convert_to_text.py "path/to/file.pdf"<br>
+<code>`</code></p><p><h3>強制重新轉換</h3><br>
+<code>`</code>bash<br>
+python3 scripts/convert_to_text.py "path/to/file.pdf" --force<br>
+<code>`</code></p><p><h3>批次轉換特定類型</h3><br>
+<code>`</code>bash<br>
+python3 scripts/convert_to_text.py --type pdf<br>
+python3 scripts/convert_to_text.py --type audio<br>
+python3 scripts/convert_to_text.py --type image<br>
+python3 scripts/convert_to_text.py --type office<br>
+<code>`</code></p><p>---</p><p><h2>🔍 檢索使用</h2></p><p><h3>搜尋所有內容（包含原本不可搜尋的檔案）</h3><br>
+<code>`</code>bash<br>
+<h1>搜尋 PDF 內容</h1><br>
+rg -C 3 "關鍵字" . --glob "*.pdf.txt"</p><p><h1>搜尋所有轉換後的檔案</h1><br>
+rg -C 3 "關鍵字" . --glob "*.txt"</p><p><h1>找到後查看原始檔案</h1><br>
+<h1>從 file.pdf.txt 的 metadata 可看到原始檔案路徑</h1><br>
+<code>`</code></p><p><h3>查看轉換狀態</h3><br>
+<code>`</code>bash<br>
+python3 scripts/convert_to_text.py --status<br>
+<code>`</code></p><p>---</p><p><h2>⚙️ 技術規格</h2></p><p><h3>優先順序策略</h3></p><p>#### 1. Claude 多模態 API（優先）<br>
+- <strong>PDF 提取</strong>：使用 Claude PDF Vision 直接讀取<br>
+- <strong>圖片 OCR</strong>：使用 Claude Vision 辨識文字<br>
+- <strong>優勢</strong>：<br>
+  - 高品質提取（保留結構、表格、格式）<br>
+  - LLM 友善格式（Markdown）<br>
+  - 支援中英文混合<br>
+  - 完整的 OCR 能力<br>
+- <strong>設定</strong>：需要 <code>ANTHROPIC_API_KEY</code> 環境變數</p><p>#### 2. Fallback 工具（備用）<br>
+若無 API key 或 API 失敗，自動使用本地工具：<br>
+<code>`</code>bash<br>
+<h1>PDF</h1><br>
+apt-get install poppler-utils  # pdftotext</p><p><h1>圖片 OCR</h1><br>
+pip install pytesseract pillow<br>
+apt-get install tesseract-ocr tesseract-ocr-chi-tra tesseract-ocr-chi-sim</p><p><h1>Office</h1><br>
+pip install python-docx openpyxl python-pptx</p><p><h1>通用</h1><br>
+pip install python-dotenv anthropic<br>
+<code>`</code></p><p><h3>API 配置</h3><br>
+- <strong>Claude API</strong>：優先使用，提供最高品質的文字提取<br>
+- <strong>Gemini API</strong>：音訊轉錄（使用現有的 transcribe_gemini.py）</p><p><h3>提示工程（Prompt Engineering）</h3><br>
+使用精心設計的提示詞來提取 LLM 友善格式：<br>
+- 保留結構（標題層級、段落、列表）<br>
+- 完整內容（不省略、不摘要）<br>
+- 清晰格式（Markdown 語法）<br>
+- 可搜尋（確保關鍵字可被 ripgrep 檢索）<br>
+- 去除雜訊（頁碼、頁首頁尾）</p><p>---</p><p><h2>📁 腳本位置</h2></p><p><code>`</code><br>
+scripts/convert_to_text.py       ← 主要腳本<br>
+scripts/lib/text_converter.py    ← 轉換邏輯<br>
+scripts/lib/hash_cache.py        ← Hash 快取管理<br>
+<code>`</code></p><p>---</p><p><h2>🎯 智能特性</h2></p><p><h3>1. 避免重複轉換</h3><br>
+- 使用 SHA256 hash 判斷檔案是否改變<br>
+- 只有檔案內容改變才重新轉換<br>
+- 大幅節省 API 用量與時間</p><p><h3>2. 音訊檔案特殊處理</h3><br>
+- 檢查是否已有逐字稿檔案<br>
+- 若有，直接建立軟連結或複製內容<br>
+- 若無，提示使用語音轉文字技能</p><p><h3>3. LLM 友善格式</h3><br>
+- 保留原始結構（標題、段落）<br>
+- 添加清晰的 metadata<br>
+- 使用 markdown 格式<br>
+- 保持可讀性</p><p><h3>4. 增量更新</h3><br>
+- 只處理新增或修改的檔案<br>
+- 保持快取同步<br>
+- 支援大型專案</p><p>---</p><p><h2>📊 輸出報告</h2></p><p>轉換完成後顯示：<br>
+<code>`</code><br>
+=== LLM 友善文字轉換報告 ===</p><p>處理檔案總數: 45<br>
+- 已轉換: 12<br>
+- 快取命中: 30<br>
+- 跳過（錯誤）: 3</p><p>檔案類型分布:<br>
+- PDF: 15 個<br>
+- 音訊: 8 個<br>
+- 圖片: 12 個<br>
+- Office: 10 個</p><p>節省時間: ~30 分鐘<br>
+節省 API 用量: ~$5.00</p><p>錯誤檔案:<br>
+1. path/to/corrupted.pdf - 檔案損壞<br>
+2. path/to/huge.mp3 - 音檔過大（需先轉錄）<br>
+<code>`</code></p><p>---</p><p><h2>🔧 進階設定</h2></p><p><h3>排除特定目錄</h3><br>
+編輯 <code>scripts/convert_to_text.py</code>：<br>
+<code>`</code>python<br>
+EXCLUDE_DIRS = [<br>
+    '.git',<br>
+    '.text-conversion-cache',<br>
+    'node_modules',<br>
+    '機密'  # 不轉換機密目錄<br>
+]<br>
+<code>`</code></p><p><h3>自訂輸出格式</h3><br>
+<code>`</code>python<br>
+<h1>可調整輸出模板</h1><br>
+OUTPUT_TEMPLATE = """<br>
+---<br>
+原始檔案: {original_file}<br>
+轉換時間: {converted_at}<br>
+---</p><p>{content}<br>
+"""<br>
+<code>`</code></p><p>---</p><p><h2>🎓 使用情境</h2></p><p><h3>情境 1: 初次建立索引</h3><br>
+<code>`</code>bash<br>
+<h1>掃描並轉換所有檔案</h1><br>
+python3 scripts/convert_to_text.py --scan --all<br>
+<code>`</code></p><p><h3>情境 2: 每日增量更新</h3><br>
+<code>`</code>bash<br>
+<h1>只處理新增/修改的檔案</h1><br>
+python3 scripts/convert_to_text.py --scan<br>
+<code>`</code></p><p><h3>情境 3: 搜尋所有內容</h3><br>
+<code>`</code>bash<br>
+<h1>即使原本是 PDF/圖片/音訊，現在都能搜尋</h1><br>
+rg -C 5 "ISO27001" . --glob "*.txt"<br>
+<code>`</code></p><p><h3>情境 4: 查看原始檔案</h3><br>
+<code>`</code>bash<br>
+<h1>從 .txt 找到對應的原始檔案</h1><br>
+head -5 path/to/file.pdf.txt  # 看 metadata 中的原始檔案路徑<br>
+<code>`</code></p><p>---</p><p><h2>⚠️ 注意事項</h2></p><p>1. <strong>大型音訊檔案</strong>：請先使用「永恆知己-語音轉文字」技能處理<br>
+2. <strong>加密 PDF</strong>：需要密碼的 PDF 無法自動轉換<br>
+3. <strong>機密資料</strong>：預設排除「機密/」目錄<br>
+4. <strong>API 用量</strong>：圖片 OCR 會使用 Claude API，注意用量<br>
+5. <strong>儲存空間</strong>：純文字檔案會增加約 5-10% 的儲存空間</p><p>---</p><p><h2>🔄 與其他技能整合</h2></p><p>- <strong>永恆知己-語音轉文字</strong>：音訊檔案優先使用該技能<br>
+- <strong>永恆知己-記憶</strong>：轉換後的內容可被記憶<br>
+- <strong>永恆知己-檢索</strong>：轉換後的內容可被檢索</p><p>---</p><p><h2>📝 更新 CLAUDE.md</h2></p><p>將此技能加入索引：<br>
+<code>`</code>markdown<br>
+| 轉換非文字檔案 | 文字轉換 | <code>.claude/skills/永恆知己-文字轉換/</code> |<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
