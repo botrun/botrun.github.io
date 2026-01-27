@@ -416,6 +416,11 @@ a:focus-visible {
   background: rgba(255, 255, 255, 0.9);
 }
 
+/* 確保卡片內所有元素不阻擋點擊 */
+.project-card * {
+  pointer-events: none;
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -762,6 +767,11 @@ main h1 {
 .file-list a:active {
   transform: translateY(-2px) scale(0.98);
   background: rgba(255, 255, 255, 0.9);
+}
+
+/* 確保檔案連結內所有元素不阻擋點擊 */
+.file-list a * {
+  pointer-events: none;
 }
 
 /* Print styles */
