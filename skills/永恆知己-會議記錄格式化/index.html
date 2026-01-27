@@ -78,7 +78,18 @@ YYYY-MM-DD | XX 分鐘 | 參與者1、參與者2</p><p>━━━━━━━━�
 - ❌ 其他討論</p><p>---</p><p><h2>🎯 使用方式</h2></p><p>1. 找到逐字稿：<br>
 <code>`</code>bash<br>
 ls 素材庫/來源歸檔/會議記錄/逐字稿/*.md | tail -5<br>
-<code>`</code></p><p>2. 讀取逐字稿，理解內容</p><p>3. 按照上面的格式要求產生 .txt</p><p>4. 輸出到 <code>素材庫/輸出/會議記錄/{語義化檔名}-會議記錄.txt</code></p><p>5. <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>📁 輸出位置</h2></p><p><code>`</code><br>
+<code>`</code></p><p>2. <strong>讀取勘誤表</strong>（必做！）：<br>
+<code>`</code>bash<br>
+cat 配置/規則/勘誤表.md<br>
+<code>`</code></p><p>3. 讀取逐字稿，理解內容</p><p>4. <strong>套用勘誤表校正</strong>（必做！）：<br>
+   - 人名：博瀚→泊寰、Saba→Ada、承偉→承緯 等<br>
+   - 專有名詞：中理寺→宗禮司、靈幻覺→零幻覺 等<br>
+   - 產品名：波特毛→波特貓、Cloud Code→Claude Code 等</p><p>5. 按照上面的格式要求產生 .txt</p><p>6. 輸出到 <code>素材庫/輸出/會議記錄/{語義化檔名}-會議記錄.txt</code></p><p>7. <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>⚠️ 勘誤校正（永久記憶）</h2></p><p><strong>每次格式化會議記錄前，必須先讀取 <code>配置/規則/勘誤表.md</code>！</strong></p><p>常見錯誤：<br>
+- ❌ 博瀚、博涵、博翰 → ✅ 泊寰<br>
+- ❌ Saba、撒博、薩博 → ✅ Ada<br>
+- ❌ 中理寺、中理司 → ✅ 宗禮司<br>
+- ❌ 靈幻覺 → ✅ 零幻覺<br>
+- ❌ 波特毛 → ✅ 波特貓</p><p>勘誤表位置：<code>配置/規則/勘誤表.md</code></p><p>---</p><p><h2>📁 輸出位置</h2></p><p><code>`</code><br>
 素材庫/輸出/會議記錄/{語義化檔名}-會議記錄.txt<br>
 <code>`</code><br>
 </p>
