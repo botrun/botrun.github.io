@@ -1,0 +1,102 @@
+[
+  {
+    "query": "最低工資",
+    "neo4j": {
+      "avg_ms": 58.5,
+      "std_dev": 150.17939272749774,
+      "min_ms": 6,
+      "max_ms": 509,
+      "avg_memory_mb": 0.120733642578125,
+      "results_count": 0
+    },
+    "rg": {
+      "avg_ms": 59,
+      "std_dev": 23.332380932943813,
+      "min_ms": 46,
+      "max_ms": 122,
+      "avg_memory_mb": 0.09242019653320313,
+      "results_count": 0
+    },
+    "speedup_ratio": 1.0085470085470085
+  },
+  {
+    "query": "數位發展",
+    "neo4j": {
+      "avg_ms": 7.5,
+      "std_dev": 4.522167621838006,
+      "min_ms": 5,
+      "max_ms": 21,
+      "avg_memory_mb": 0.08321762084960938,
+      "results_count": 0
+    },
+    "rg": {
+      "avg_ms": 50.3,
+      "std_dev": 4.382921400162226,
+      "min_ms": 45,
+      "max_ms": 58,
+      "avg_memory_mb": 0.09039535522460937,
+      "results_count": 0
+    },
+    "speedup_ratio": 6.706666666666666
+  },
+  {
+    "query": "淨零排放",
+    "neo4j": {
+      "avg_ms": 6.3,
+      "std_dev": 1.1,
+      "min_ms": 5,
+      "max_ms": 9,
+      "avg_memory_mb": 0.08400726318359375,
+      "results_count": 0
+    },
+    "rg": {
+      "avg_ms": 48.3,
+      "std_dev": 3.63455636907725,
+      "min_ms": 45,
+      "max_ms": 58,
+      "avg_memory_mb": 0.09025497436523437,
+      "results_count": 0
+    },
+    "speedup_ratio": 7.666666666666666
+  },
+  {
+    "query": "永續",
+    "neo4j": {
+      "avg_ms": 5.8,
+      "std_dev": 0.8717797887081347,
+      "min_ms": 5,
+      "max_ms": 8,
+      "avg_memory_mb": -0.5021286010742188,
+      "results_count": 0
+    },
+    "rg": {
+      "avg_ms": 48.6,
+      "std_dev": 3.5832945734337835,
+      "min_ms": 44,
+      "max_ms": 57,
+      "avg_memory_mb": 0.09003982543945313,
+      "results_count": 0
+    },
+    "speedup_ratio": 8.379310344827587
+  },
+  {
+    "query": "教育",
+    "neo4j": {
+      "avg_ms": 7.5,
+      "std_dev": 2.29128784747792,
+      "min_ms": 6,
+      "max_ms": 14,
+      "avg_memory_mb": 0.0961639404296875,
+      "results_count": 6
+    },
+    "rg": {
+      "avg_ms": 53.2,
+      "std_dev": 3.0919249667480617,
+      "min_ms": 49,
+      "max_ms": 58,
+      "avg_memory_mb": 0.0900726318359375,
+      "results_count": 0
+    },
+    "speedup_ratio": 7.093333333333334
+  }
+]

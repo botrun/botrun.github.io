@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>永恆知己 AI - 實驗報告</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .experiment-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .experiment-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+    .experiment-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .experiment-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .experiment-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #343a40;
+      margin: 0;
+    }
+    .experiment-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+    }
+    .experiment-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .badge {
+      background: #28a745;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i data-lucide="flask-conical"></i>永恆知己 AI - 實驗報告</h1>
+    <p class="update-date"><i data-lucide="calendar"></i>更新日期：2026-01-28</p>
+  </header>
+  <main>
+    <section class="projects-grid">
+      <a class="experiment-card" href="neo4j-retrieval-benchmark/">
+        <div class="experiment-header">
+          <div class="experiment-icon">
+            <i data-lucide="database" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div>
+            <h2 class="experiment-title">Neo4j 檢索效能實驗</h2>
+            <div class="experiment-meta">
+              <span><i data-lucide="calendar"></i> 2026-01-28</span>
+              <span><i data-lucide="zap"></i> 效能測試</span>
+              <span class="badge">ripgrep 基準線</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 1rem; color: #495057;">
+          比較 Neo4j 圖形資料庫與 ripgrep 在「多快、多省、多準」三大面向的檢索效能差異。
+          使用臺灣政府公開文件（2026年重大政策、反剝削行動計畫）進行實驗。
+        </p>
+        <div class="experiment-meta" style="margin-top: 1rem;">
+          <span><i data-lucide="file-text"></i> 5 個查詢</span>
+          <span><i data-lucide="repeat"></i> 每個 10 次迭代</span>
+          <span><i data-lucide="clock"></i> 平均 44ms</span>
+        </div>
+      </a>
+
+      <!-- 未來實驗可以在這裡新增 -->
+      <div style="text-align: center; padding: 3rem 0; color: #6c757d;">
+        <i data-lucide="lightbulb" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+        <p>更多實驗報告即將推出...</p>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+      <h3><i data-lucide="info"></i> 關於實驗</h3>
+      <p style="margin-top: 0.5rem; color: #495057;">
+        這些實驗由永恆知己 AI 使用<strong>零框架技能</strong>自動生成，展示 AI 輔助研究與效能測試的能力。
+        所有實驗皆遵循 BDD/TDD/SOLID/DRY 原則，確保可重現性與可擴展性。
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a> | <a href="../">回首頁</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

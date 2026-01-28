@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>neo4j-retrieval-benchmark - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> neo4j-retrieval-benchmark</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>Neo4j 檢索效能實驗技能</h1></p><p>> <strong>核心目標</strong>：量化比較 Neo4j 圖形資料庫與 rg (ripgrep) 在「多快、多省、多準」三大面向的差異</p><p>---</p><p><h2>🎯 實驗目標</h2></p><p><h3>三大評估面向</h3></p><p>| 面向 | 指標 | 測量方法 |<br>
+|------|------|----------|<br>
+| <strong>多快</strong> | 查詢回應時間 (ms) | 執行 10 次取平均值 |<br>
+| <strong>多省</strong> | 記憶體使用量 (MB) | Docker stats / /usr/bin/time -v |<br>
+| <strong>多準</strong> | 準確度 (%) | 人工驗證 Top-10 結果相關性 |</p><p>---</p><p><h2>📁 專案結構</h2></p><p><code>`</code><br>
+實驗/Neo4j檢索效能實驗-{日期}/<br>
+├── 測試資料/<br>
+│   └── PDFs/              # 臺灣政府 PDF 文件<br>
+├── scripts/<br>
+│   ├── setup.ts           # 環境設定與資料導入<br>
+│   ├── benchmark.ts       # 效能測試主程式<br>
+│   ├── neo4j-query.ts     # Neo4j 查詢模組<br>
+│   ├── rg-query.ts        # ripgrep 查詢模組<br>
+│   └── report-generator.ts # HTML 報告生成器<br>
+├── docker/<br>
+│   └── docker-compose.yml # Neo4j 容器配置<br>
+└── 結果報告/<br>
+    └── benchmark-{timestamp}.html<br>
+<code>`</code></p><p>---</p><p><h2>🔧 使用方式</h2></p><p><h3>1. 環境準備</h3></p><p><code>`</code>bash<br>
+<h1>啟動 Neo4j 容器</h1><br>
+cd 實驗/Neo4j檢索效能實驗-{日期}/docker<br>
+docker-compose up -d</p><p><h1>安裝依賴</h1><br>
+npm install neo4j-driver pdf-parse<br>
+<code>`</code></p><p><h3>2. 資料導入</h3></p><p><code>`</code>bash<br>
+<h1>將 PDF 轉換為純文字並導入 Neo4j</h1><br>
+npx tsx scripts/setup.ts<br>
+<code>`</code></p><p><h3>3. 執行實驗</h3></p><p><code>`</code>bash<br>
+<h1>執行 Benchmark</h1><br>
+npx tsx scripts/benchmark.ts \<br>
+  --queries "最低工資,數位發展,淨零排放" \<br>
+  --iterations 10 \<br>
+  --output 結果報告/benchmark-$(TZ='Asia/Taipei' date "+%Y-%m-%dT%H%M").html<br>
+<code>`</code></p><p><h3>4. 查看報告</h3></p><p><code>`</code>bash<br>
+<h1>開啟 HTML 報告</h1><br>
+open 結果報告/benchmark-*.html<br>
+<code>`</code></p><p>---</p><p><h2>🧪 實驗設計</h2></p><p><h3>測試查詢集</h3></p><p>| 類型 | 查詢詞 | 預期結果 |<br>
+|------|--------|----------|<br>
+| <strong>單一關鍵字</strong> | 最低工資 | 政策相關段落 |<br>
+| <strong>多關鍵字</strong> | 數位 發展 | 跨主題關聯 |<br>
+| <strong>語義查詢</strong> | 永續能源政策 | 淨零轉型相關 |</p><p><h3>Neo4j 資料模型</h3></p><p><code>`</code>cypher<br>
+// 文件節點<br>
+(:Document {id, filename, source, date})</p><p>// 段落節點<br>
+(:Paragraph {id, content, page, order})</p><p>// 實體節點<br>
+(:Entity {name, type})  // 人名、組織、政策名稱</p><p>// 關係<br>
+(:Document)-[:CONTAINS]->(:Paragraph)<br>
+(:Paragraph)-[:MENTIONS]->(:Entity)<br>
+(:Entity)-[:RELATED_TO]->(:Entity)<br>
+<code>`</code></p><p><h3>ripgrep 查詢策略</h3></p><p><code>`</code>bash<br>
+<h1>基本查詢</h1><br>
+rg -i "關鍵字" 測試資料/PDFs/*.txt</p><p><h1>上下文查詢</h1><br>
+rg -i -C 3 "關鍵字" 測試資料/PDFs/*.txt</p><p><h1>多關鍵字組合</h1><br>
+rg -i "關鍵字1" 測試資料/PDFs/*.txt | rg "關鍵字2"<br>
+<code>`</code></p><p>---</p><p><h2>📊 效能指標</h2></p><p><h3>1. 速度測試</h3></p><p><code>`</code>typescript<br>
+interface SpeedMetrics {<br>
+  query: string;<br>
+  neo4j_avg_ms: number;<br>
+  neo4j_std_dev: number;<br>
+  rg_avg_ms: number;<br>
+  rg_std_dev: number;<br>
+  speedup_ratio: number;  // neo4j 比 rg 快多少倍<br>
+}<br>
+<code>`</code></p><p><h3>2. 記憶體測試</h3></p><p><code>`</code>typescript<br>
+interface MemoryMetrics {<br>
+  neo4j_memory_mb: number;<br>
+  neo4j_peak_memory_mb: number;<br>
+  rg_memory_mb: number;<br>
+  rg_peak_memory_mb: number;<br>
+}<br>
+<code>`</code></p><p><h3>3. 準確度測試</h3></p><p><code>`</code>typescript<br>
+interface AccuracyMetrics {<br>
+  query: string;<br>
+  neo4j_top10: Array<{content: string, score: number}>;<br>
+  rg_top10: Array<{content: string, line_number: number}>;<br>
+  human_relevance_neo4j: number;  // 0-10 人工評分<br>
+  human_relevance_rg: number;     // 0-10 人工評分<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🔬 驗收條件（BDD）</h2></p><p><h3>Given（前置條件）</h3><br>
+- ✅ Neo4j 容器已啟動（localhost:7687）<br>
+- ✅ 至少 2 份臺灣政府 PDF 已轉換為純文字<br>
+- ✅ PDF 內容已導入 Neo4j 圖形資料庫<br>
+- ✅ 測試查詢集已定義（至少 5 個查詢）</p><p><h3>When（執行操作）</h3><br>
+- ✅ 對每個查詢分別執行 Neo4j 查詢 10 次<br>
+- ✅ 對每個查詢分別執行 rg 查詢 10 次<br>
+- ✅ 記錄每次查詢的時間、記憶體、結果數量</p><p><h3>Then（預期結果）</h3><br>
+- ✅ 生成包含以下內容的 HTML 報告：<br>
+  - 速度比較圖表（長條圖）<br>
+  - 記憶體使用比較圖表（折線圖）<br>
+  - 準確度比較表格<br>
+  - 結論與建議<br>
+- ✅ 報告自動部署到 GitHub Pages<br>
+- ✅ 原始數據儲存為 JSON 供後續分析</p><p>---</p><p><h2>🛠️ 技術實作（TDD）</h2></p><p><h3>測試驅動開發流程</h3></p><p><code>`</code>typescript<br>
+// 1. 先寫測試<br>
+describe('Neo4j Query', () => {<br>
+  it('should return results within 100ms', async () => {<br>
+    const result = await neo4jQuery('最低工資');<br>
+    expect(result.duration_ms).toBeLessThan(100);<br>
+  });</p><p>  it('should return at least 5 results', async () => {<br>
+    const result = await neo4jQuery('數位發展');<br>
+    expect(result.results.length).toBeGreaterThanOrEqual(5);<br>
+  });<br>
+});</p><p>// 2. 實作功能<br>
+async function neo4jQuery(keyword: string): Promise<QueryResult> {<br>
+  const session = driver.session();<br>
+  const startTime = Date.now();</p><p>  const result = await session.run(<br>
+    'MATCH (p:Paragraph)-[:CONTAINS_KEYWORD]->(k:Keyword {text: $keyword}) ' +<br>
+    'RETURN p.content, p.page ORDER BY p.relevance DESC LIMIT 10',<br>
+    { keyword }<br>
+  );</p><p>  const duration_ms = Date.now() - startTime;<br>
+  await session.close();</p><p>  return {<br>
+    results: result.records.map(r => r.get('p.content')),<br>
+    duration_ms<br>
+  };<br>
+}</p><p>// 3. 執行測試確認通過<br>
+<code>`</code></p><p>---</p><p><h2>📦 Docker 配置</h2></p><p><h3>docker-compose.yml</h3></p><p><code>`</code>yaml<br>
+version: '3.8'<br>
+services:<br>
+  neo4j:<br>
+    image: neo4j:5.15.0<br>
+    container_name: neo4j-benchmark<br>
+    ports:<br>
+      - "7474:7474"  # HTTP<br>
+      - "7687:7687"  # Bolt<br>
+    environment:<br>
+      - NEO4J_AUTH=neo4j/benchmark123<br>
+      - NEO4J_dbms_memory_heap_max__size=2G<br>
+      - NEO4J_dbms_memory_pagecache_size=1G<br>
+    volumes:<br>
+      - neo4j_data:/data<br>
+      - neo4j_logs:/logs<br>
+    restart: unless-stopped</p><p>volumes:<br>
+  neo4j_data:<br>
+  neo4j_logs:<br>
+<code>`</code></p><p>---</p><p><h2>🎨 報告視覺化</h2></p><p><h3>HTML 報告元素</h3></p><p>1. <strong>執行摘要</strong><br>
+   - 實驗日期時間<br>
+   - 測試資料集（PDF 清單）<br>
+   - 總查詢數量</p><p>2. <strong>速度比較</strong><br>
+   - 長條圖：每個查詢的 Neo4j vs rg 回應時間<br>
+   - 表格：平均值、標準差、最快/最慢</p><p>3. <strong>記憶體比較</strong><br>
+   - 折線圖：執行過程中的記憶體使用<br>
+   - 表格：平均記憶體、峰值記憶體</p><p>4. <strong>準確度評估</strong><br>
+   - 表格：Top-10 結果人工評分<br>
+   - 範例結果展示</p><p>5. <strong>結論與建議</strong><br>
+   - 哪種場景適合 Neo4j<br>
+   - 哪種場景適合 rg<br>
+   - 混合策略建議</p><p>---</p><p><h2>🔗 相關資源</h2></p><p><h3>官方文件</h3><br>
+- [Neo4j Driver for TypeScript](https://neo4j.com/docs/api/javascript-driver/current/)<br>
+- [ripgrep User Guide](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md)</p><p><h3>技能依賴</h3><br>
+- <code>.claude/skills/永恆知己-文字轉換/</code> - PDF 轉純文字<br>
+- <code>.claude/skills/永恆知己-網頁發佈/</code> - 報告部署到 GitHub Pages</p><p>---</p><p><h2>📝 引證來源</h2></p><p>- <strong>Claude Code 官方文件</strong>：[Extend Claude with skills](https://code.claude.com/docs/en/skills)<br>
+- <strong>Anthropic Skills Repository</strong>：[GitHub - anthropics/skills](https://github.com/anthropics/skills)<br>
+- <strong>測試資料來源</strong>：<br>
+  - [2026年重大政策及惠民措施](https://www.ey.gov.tw/File/11824F61AFFD5159?A=C) - 行政院<br>
+  - [2025-2026反剝削行動計畫](https://www.immigration.gov.tw/media/110904/2025-2026%E5%8F%8D%E5%89%9D%E5%89%8A%E8%A1%8C%E5%8B%95%E8%A8%88%E7%95%AB-%E5%A5%89%E6%A0%B8%E7%89%88.pdf) - 移民署</p><p>---</p><p><h2>🔄 迭代改進</h2></p><p><h3>第一版（當前）</h3><br>
+- ✅ 基本 Benchmark 框架<br>
+- ✅ Neo4j vs rg 對照測試<br>
+- ✅ HTML 報告生成</p><p><h3>未來迭代</h3><br>
+- ⏳ 加入向量檢索（Embedding）比較<br>
+- ⏳ 支援更多資料格式（Word, Excel）<br>
+- ⏳ 自動化 CI/CD 定期測試<br>
+- ⏳ 支援分散式 Neo4j 叢集測試</p><p>---</p><p><h2>檢索關鍵字</h2></p><p>Neo4j, 圖形資料庫, 檢索效能, Benchmark, ripgrep, rg, 臺灣政府, PDF, 語義檢索, Cypher, TypeScript, Docker, 效能測試, 記憶體使用, 準確度, BDD, TDD<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
