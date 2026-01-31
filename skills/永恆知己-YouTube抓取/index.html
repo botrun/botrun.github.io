@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>youtube-fetch - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> youtube-fetch</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>永恆知己-YouTube抓取</h1></p><p>> <strong>核心功能</strong>：抓取 YouTube 頻道影片清單、下載字幕或音訊、轉錄為文字<br>
+> <strong>支援 Proxy</strong>：自動讀取 <code>HTTPS_PROXY</code> / <code>HTTP_PROXY</code> 環境變數</p><p>---</p><p><h2>三案評估</h2></p><p>| 方案 | 方法 | 優點 | 缺點 | 評分 |<br>
+|------|------|------|------|------|<br>
+| A | 抓字幕 (youtube-transcript-api) | 最快、免轉錄 | 無字幕時失敗 | <strong>9</strong> |<br>
+| B | 下載音訊 + Whisper 轉錄 | 最準確 | 耗時、需 GPU | 7 |<br>
+| C | yt-dlp 自動字幕 | 中等速度 | 依賴自動字幕品質 | 6 |</p><p><strong>預設策略</strong>：先嘗試方案 A，失敗時回退到方案 B</p><p>---</p><p><h2>使用方式</h2></p><p><code>`</code>bash<br>
+<h1>抓取頻道最近 N 天的影片字幕</h1><br>
+python3 .claude/skills/永恆知己-YouTube抓取/scripts/fetch.py \<br>
+  --channel "https://www.youtube.com/@AZisk" \<br>
+  --days 30 \<br>
+  --output projects/輸出目錄/</p><p><h1>指定語言</h1><br>
+python3 .claude/skills/永恆知己-YouTube抓取/scripts/fetch.py \<br>
+  --channel "@channelname" \<br>
+  --days 7 \<br>
+  --lang zh-TW,en \<br>
+  --output 素材庫/輸出/<br>
+<code>`</code></p><p>---</p><p><h2>參數說明</h2></p><p>| 參數 | 必填 | 說明 | 預設值 |<br>
+|------|------|------|--------|<br>
+| <code>--channel</code> | 是 | 頻道網址或 @handle | - |<br>
+| <code>--days</code> | 否 | 抓取最近 N 天 | 30 |<br>
+| <code>--lang</code> | 否 | 字幕語言優先順序 | <code>zh-TW,zh-Hant,en</code> |<br>
+| <code>--output</code> | 否 | 輸出目錄 | <code>./output/</code> |<br>
+| <code>--audio</code> | 否 | 下載音訊（用於 Whisper）| false |<br>
+| <code>--max</code> | 否 | 最多抓取影片數 | 50 |</p><p>---</p><p><h2>Proxy 支援</h2></p><p>腳本會自動讀取環境變數：<br>
+- <code>HTTPS_PROXY</code><br>
+- <code>HTTP_PROXY</code><br>
+- <code>https_proxy</code><br>
+- <code>http_proxy</code></p><p><strong>yt-dlp 配置</strong>：<br>
+<code>`</code>python<br>
+ydl_opts = {<br>
+    "proxy": os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"),<br>
+    "nocheckcertificate": True,  # 處理自簽憑證<br>
+}<br>
+<code>`</code></p><p><strong>youtube-transcript-api 配置</strong>：<br>
+<code>`</code>python<br>
+proxies = {<br>
+    "https": os.environ.get("HTTPS_PROXY"),<br>
+    "http": os.environ.get("HTTP_PROXY"),<br>
+}<br>
+YouTubeTranscriptApi.get_transcript(video_id, proxies=proxies)<br>
+<code>`</code></p><p>---</p><p><h2>輸出結構</h2></p><p><code>`</code><br>
+{output}/<br>
+├── {頻道名}/<br>
+│   ├── 影片清單.json          # 影片元資料<br>
+│   ├── {影片ID}/<br>
+│   │   ├── metadata.json     # 單一影片資訊<br>
+│   │   ├── transcript.txt    # 純文字字幕<br>
+│   │   └── audio.m4a         # 音訊（若有下載）<br>
+│   └── 綜合報告.md            # 所有影片內容摘要<br>
+<code>`</code></p><p>---</p><p><h2>依賴套件</h2></p><p><code>`</code>bash<br>
+pip3 install yt-dlp youtube-transcript-api<br>
+<code>`</code></p><p>---</p><p><h2>錯誤處理</h2></p><p>| 錯誤 | 處理方式 |<br>
+|------|----------|<br>
+| SSL 憑證錯誤 | 啟用 <code>nocheckcertificate</code> |<br>
+| Proxy 連線失敗 | 檢查環境變數、重試 3 次 |<br>
+| 無字幕 | 嘗試自動字幕 → 下載音訊 |<br>
+| 速率限制 | 等待 30 秒後重試 |</p><p>---</p><p><h2>注意事項</h2></p><p>1. <strong>Proxy 必要</strong>：此環境需透過 proxy 連線外網<br>
+2. <strong>速率限制</strong>：避免短時間大量請求，建議每次最多 50 個影片<br>
+3. <strong>字幕優先</strong>：手動字幕 > 自動字幕 > Whisper 轉錄<br>
+4. <strong>隱私影片</strong>：無法抓取會員限定或私人影片<br>
+5. <strong>403 封鎖</strong>：若 YouTube 返回 403，改用 WebSearch 備用方案</p><p>---</p><p><h2>備用方案：WebSearch 模式</h2></p><p>當 yt-dlp 因 proxy IP 被封鎖時，改用 WebSearch：</p><p><code>`</code>bash<br>
+<h1>在 Claude Code 中使用</h1><br>
+WebSearch "{頻道名} YouTube latest videos 2026"<br>
+WebSearch "{頻道名} {關鍵字} benchmark test"<br>
+<code>`</code></p><p><strong>步驟</strong>：<br>
+1. WebSearch 搜尋頻道最新影片<br>
+2. 從 X/Twitter @handle 找影片公告連結<br>
+3. 從 Medium/Blog 找影片內容分析<br>
+4. 手動整理成 Markdown 報告<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
