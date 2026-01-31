@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-orchestrator - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-orchestrator</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報總指揮技能 v5.0</h1></p><p>> <strong>用途</strong>：編排所有 v5.0 技能，生成五份獨立報告，滿足五大利害關係人需求<br>
+> <strong>版本</strong>：v5.0（2026-01-28）<br>
+> <strong>革命性改進</strong>：五份獨立報告 + 執行摘要 + 審計追蹤 + 以人為中心設計</p><p>---</p><p><h2>🎯 總指揮架構</h2></p><p><code>`</code><br>
+┌─────────────────────────────────────────────────────────────┐<br>
+│                    心戰情報總指揮                              │<br>
+│                 (psyops-intel-orchestrator)                  │<br>
+└─────────────────────────────────────────────────────────────┘<br>
+                              │<br>
+        ┌─────────────────────┼─────────────────────┐<br>
+        │                     │                     │<br>
+        ▼                     ▼                     ▼<br>
+┌───────────────┐   ┌────────────────┐   ┌──────────────────┐<br>
+│  1. 智庫搜尋   │   │  2. 事件收集    │   │  3. 零幻覺驗證    │<br>
+│  (週更新)     │   │  (每日執行)     │   │  (所有來源)      │<br>
+└───────────────┘   └────────────────┘   └──────────────────┘<br>
+        │                     │                     │<br>
+        └─────────────────────┼─────────────────────┘<br>
+                              │<br>
+                ┌─────────────┴─────────────┐<br>
+                │                           │<br>
+                ▼                           ▼<br>
+      ┌─────────────────┐         ┌────────────────┐<br>
+      │  4. 趨勢預測     │         │  5. 日報生成    │<br>
+      │  (未來 1-4 週)   │         │  (整合 + 圖卡) │<br>
+      └─────────────────┘         └────────────────┘<br>
+                                          │<br>
+                                          ▼<br>
+                                ┌────────────────────┐<br>
+                                │  6. 發佈到 GitHub  │<br>
+                                │     Pages          │<br>
+                                └────────────────────┘<br>
+<code>`</code></p><p>---</p><p><h2>📋 執行流程（SOP）</h2></p><p><h3>階段 0：前置檢查</h3></p><p><code>`</code>typescript<br>
+interface PreCheck {<br>
+  git_status: 'clean' | 'dirty';<br>
+  network_available: boolean;<br>
+  disk_space_mb: number;<br>
+  last_run_date: string;<br>
+}</p><p>async function preCheck(): Promise<PreCheck> {<br>
+  // 1. 檢查 Git 狀態（避免衝突）<br>
+  const gitStatus = await execBash('git status --short');</p><p>  // 2. 檢查網路連線（必要，因為需要 WebSearch）<br>
+  const networkAvailable = await checkNetwork('https://www.google.com');</p><p>  // 3. 檢查磁碟空間（至少 1GB）<br>
+  const diskSpace = await execBash("df -m . | tail -1 | awk '{print $4}'");</p><p>  // 4. 讀取上次執行時間<br>
+  const lastRunDate = await readLastRunDate();</p><p>  return { git_status, network_available, disk_space_mb, last_run_date };<br>
+}<br>
+<code>`</code></p><p><strong>檢查結果</strong>：<br>
+- ✅ 所有檢查通過 → 繼續執行<br>
+- ❌ 任一檢查失敗 → 中止並回報錯誤</p><p>---</p><p><h3>階段 1：智庫搜尋（條件執行）</h3></p><p><strong>條件</strong>：距離上次執行 ≥ 7 天，或首次執行</p><p><code>`</code>typescript<br>
+async function stage1_ThinkTankSearch(): Promise<void> {<br>
+  console.log('📊 階段 1/6：智庫搜尋');</p><p>  // 檢查快取<br>
+  const cacheFile = '素材庫/來源歸檔/心戰情報/智庫清單/.cache-timestamp';<br>
+  const cacheAge = await getCacheAge(cacheFile);</p><p>  if (cacheAge < 7) {<br>
+    console.log(<code>⏭️  跳過（快取有效，${cacheAge} 天前更新）</code>);<br>
+    return;<br>
+  }</p><p>  // 執行智庫搜尋技能（平行搜尋 5 個地區）<br>
+  console.log('🔍 啟動智庫搜尋技能...');<br>
+  await invokeSkill('心戰情報-智庫搜尋');</p><p>  // 更新快取時間戳<br>
+  await writeFile(cacheFile, new Date().toISOString());<br>
+  console.log('✅ 階段 1 完成');<br>
+}<br>
+<code>`</code></p><p><strong>輸出</strong>：<br>
+- <code>素材庫/來源歸檔/心戰情報/智庫清單/全球心戰智庫清單-{日期}.md</code></p><p>---</p><p><h3>階段 2：事件收集（每日執行）</h3></p><p><code>`</code>typescript<br>
+async function stage2_EventCollection(): Promise<Event[]> {<br>
+  console.log('📊 階段 2/6：事件收集');<br>
+  console.log('🔍 啟動事件收集技能（9 種新型態攻擊）...');</p><p>  // 執行事件收集技能（平行收集 9 個事件類型）<br>
+  const events = await invokeSkill('心戰情報-事件收集');</p><p>  console.log(<code>✅ 階段 2 完成（收集 ${events.length} 個事件）</code>);<br>
+  return events;<br>
+}<br>
+<code>`</code></p><p><strong>輸出</strong>：<br>
+- <code>素材庫/來源歸檔/心戰情報/事件時間軸/心戰事件時間軸-{日期}.md</code><br>
+- <code>素材庫/來源歸檔/心戰情報/事件時間軸/因果鏈-{日期}.yaml</code></p><p>---</p><p><h3>階段 3：零幻覺驗證（所有來源）</h3></p><p><code>`</code>typescript<br>
+async function stage3_ZeroHallucinationVerify(events: Event[]): Promise<Event[]> {<br>
+  console.log('📊 階段 3/6：零幻覺驗證');<br>
+  console.log(<code>🔍 驗證 ${events.length} 個事件的所有來源...</code>);</p><p>  const verifiedEvents: Event[] = [];<br>
+  const excludedEvents: Event[] = [];</p><p>  for (const event of events) {<br>
+    console.log(<code>  驗證事件：${event.title}（${event.sources.length} 個來源）</code>);</p><p>    const verifiedSources = [];</p><p>    for (const source of event.sources) {<br>
+      // 呼叫零幻覺驗證技能<br>
+      const verification = await invokeSkill('心戰情報-零幻覺驗證', {<br>
+        url: source.url,<br>
+        quotedText: event.description.substring(0, 100)<br>
+      });</p><p>      // 驗證分數 ≥ 80 = 通過<br>
+      if (verification.overallScore >= 80) {<br>
+        verifiedSources.push({<br>
+          ...source,<br>
+          verification_score: verification.overallScore,<br>
+          verified: true<br>
+        });<br>
+        console.log(<code>    ✅ ${source.url}（${verification.overallScore}/100）</code>);<br>
+      } else {<br>
+        console.log(<code>    ❌ ${source.url}（${verification.overallScore}/100）已排除</code>);<br>
+      }<br>
+    }</p><p>    // 至少保留 2 個驗證通過的來源<br>
+    if (verifiedSources.length >= 2) {<br>
+      verifiedEvents.push({<br>
+        ...event,<br>
+        sources: verifiedSources<br>
+      });<br>
+    } else if (verifiedSources.length === 1) {<br>
+      console.warn(<code>  ⚠️ 事件「${event.title}」僅 1 個驗證通過來源，標註「單一來源」</code>);<br>
+      verifiedEvents.push({<br>
+        ...event,<br>
+        sources: verifiedSources,<br>
+        warning: '單一來源，需更多佐證'<br>
+      });<br>
+    } else {<br>
+      console.warn(<code>  ❌ 事件「${event.title}」無驗證通過來源，已排除</code>);<br>
+      excludedEvents.push(event);<br>
+    }<br>
+  }</p><p>  console.log(<code>✅ 階段 3 完成（通過 ${verifiedEvents.length} 個，排除 ${excludedEvents.length} 個）</code>);</p><p>  // 寫入驗證報告<br>
+  await writeVerificationReport(verifiedEvents, excludedEvents);</p><p>  return verifiedEvents;<br>
+}<br>
+<code>`</code></p><p><strong>輸出</strong>：<br>
+- <code>素材庫/來源歸檔/心戰情報/驗證報告/{日期}-零幻覺驗證報告.md</code></p><p>---</p><p><h3>階段 4：趨勢預測（未來 1-4 週）</h3></p><p><code>`</code>typescript<br>
+async function stage4_TrendPrediction(events: Event[]): Promise<Prediction[]> {<br>
+  console.log('📊 階段 4/6：趨勢預測');<br>
+  console.log('🔮 啟動趨勢預測技能（預測未來 1-4 週）...');</p><p>  // 執行趨勢預測技能<br>
+  const predictions = await invokeSkill('心戰情報-趨勢預測', { events });</p><p>  console.log(<code>✅ 階段 4 完成（生成 ${predictions.length} 個預測）</code>);<br>
+  return predictions;<br>
+}<br>
+<code>`</code></p><p><strong>輸出</strong>：<br>
+- <code>素材庫/輸出/心戰情報/趨勢預測/{日期}-趨勢預測報告.md</code></p><p>---</p><p><h3>階段 5：日報生成（整合 + 圖卡）</h3></p><p><code>`</code>typescript<br>
+async function stage5_DailyReportGeneration(<br>
+  events: Event[],<br>
+  predictions: Prediction[]<br>
+): Promise<DailyReport> {<br>
+  console.log('📊 階段 5/6：日報生成');<br>
+  console.log('📝 整合所有資料 + 生成視覺化圖卡...');</p><p>  // 執行日報生成技能<br>
+  const report = await invokeSkill('心戰情報-日報生成', {<br>
+    events,<br>
+    predictions<br>
+  });</p><p>  console.log('✅ 階段 5 完成');<br>
+  console.log(<code>  - Markdown 日報：${report.markdown_path}</code>);<br>
+  console.log(<code>  - 圖卡數量：${report.charts.length}</code>);</p><p>  return report;<br>
+}<br>
+<code>`</code></p><p><strong>輸出</strong>：<br>
+- <code>素材庫/輸出/心戰情報/{日期}-心戰情報日報.md</code><br>
+- <code>素材庫/輸出/心戰情報/圖卡/timeline-{日期}.png</code><br>
+- <code>素材庫/輸出/心戰情報/圖卡/event-types-{日期}.png</code><br>
+- <code>素材庫/輸出/心戰情報/圖卡/verification-scores-{日期}.png</code><br>
+- <code>素材庫/輸出/心戰情報/圖卡/trend-acceleration-{日期}.png</code></p><p>---</p><p><h3>階段 6：發佈到 GitHub Pages</h3></p><p><code>`</code>typescript<br>
+async function stage6_PublishToGitHubPages(report: DailyReport): Promise<void> {<br>
+  console.log('📊 階段 6/6：發佈到 GitHub Pages');</p><p>  // 複製到 web 目錄<br>
+  await execBash(<code>cp "${report.markdown_path}" web/心戰情報/latest.md</code>);<br>
+  await execBash(<code>cp -r 素材庫/輸出/心戰情報/圖卡/* web/心戰情報/charts/</code>);</p><p>  // 生成 HTML（使用 marked 或類似工具）<br>
+  await execBash('npx marked -i web/心戰情報/latest.md -o web/心戰情報/latest.html');</p><p>  // Git commit & push<br>
+  await execBash(`<br>
+    cd web<br>
+    git add .<br>
+    git commit -m "心戰情報日報 $(date +'%Y-%m-%d')</p><p>https://claude.ai/code/session_01EwiB9gHVDVNuNuW3fozoSJ"<br>
+    git push origin gh-pages<br>
+  `);</p><p>  console.log('✅ 階段 6 完成');<br>
+  console.log(<code>🌐 發佈網址：https://botrun.github.io/timeless-bowen/心戰情報/latest.html</code>);<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🔄 錯誤處理與重試機制</h2></p><p><code>`</code>typescript<br>
+async function executeStageWithRetry<T>(<br>
+  stageName: string,<br>
+  stageFunc: () => Promise<T>,<br>
+  maxRetries: number = 3<br>
+): Promise<T> {<br>
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {<br>
+    try {<br>
+      return await stageFunc();<br>
+    } catch (error) {<br>
+      console.error(<code>❌ ${stageName} 失敗（嘗試 ${attempt}/${maxRetries}）：${error.message}</code>);</p><p>      if (attempt === maxRetries) {<br>
+        throw new Error(<code>${stageName} 失敗，已重試 ${maxRetries} 次</code>);<br>
+      }</p><p>      // 指數退避（2s, 4s, 8s）<br>
+      const backoffMs = Math.pow(2, attempt) * 1000;<br>
+      console.log(<code>⏳ 等待 ${backoffMs/1000} 秒後重試...</code>);<br>
+      await sleep(backoffMs);<br>
+    }<br>
+  }<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>📊 進度追蹤與狀態回報</h2></p><p><code>`</code>typescript<br>
+interface ExecutionStatus {<br>
+  status: 'running' | 'completed' | 'failed';<br>
+  current_stage: string;<br>
+  progress_percent: number;<br>
+  start_time: string;<br>
+  estimated_completion: string;<br>
+  errors: string[];<br>
+}</p><p>async function reportProgress(status: ExecutionStatus): Promise<void> {<br>
+  // 寫入狀態檔案<br>
+  await writeFile(<br>
+    '素材庫/輸出/心戰情報/.execution-status.json',<br>
+    JSON.stringify(status, null, 2)<br>
+  );</p><p>  // 終端輸出<br>
+  console.log(<code>\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code>);<br>
+  console.log(<code>📊 執行狀態：${status.status}</code>);<br>
+  console.log(<code>🎯 當前階段：${status.current_stage}</code>);<br>
+  console.log(<code>📈 進度：${status.progress_percent}%</code>);<br>
+  console.log(<code>⏱️  開始時間：${status.start_time}</code>);<br>
+  console.log(<code>⏰ 預計完成：${status.estimated_completion}</code>);<br>
+  if (status.errors.length > 0) {<br>
+    console.log(<code>❌ 錯誤數量：${status.errors.length}</code>);<br>
+  }<br>
+  console.log(<code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n</code>);<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🎯 主執行函式</h2></p><p><code>`</code>typescript<br>
+export async function orchestrate(): Promise<void> {<br>
+  console.log(`<br>
+╔══════════════════════════════════════════════════╗<br>
+║     心戰情報系統 - 總指揮執行                     ║<br>
+║     Taiwan PSYOP Intelligence System             ║<br>
+╚══════════════════════════════════════════════════╝<br>
+`);</p><p>  const startTime = new Date();<br>
+  const status: ExecutionStatus = {<br>
+    status: 'running',<br>
+    current_stage: '前置檢查',<br>
+    progress_percent: 0,<br>
+    start_time: startTime.toISOString(),<br>
+    estimated_completion: new Date(startTime.getTime() + 15<em>60</em>1000).toISOString(),  // 預估 15 分鐘<br>
+    errors: []<br>
+  };</p><p>  try {<br>
+    // 階段 0：前置檢查（0-10%）<br>
+    status.current_stage = '前置檢查';<br>
+    status.progress_percent = 5;<br>
+    await reportProgress(status);</p><p>    const preCheckResult = await preCheck();<br>
+    if (!preCheckResult.network_available) {<br>
+      throw new Error('網路連線失敗，無法執行');<br>
+    }<br>
+    if (preCheckResult.disk_space_mb < 1000) {<br>
+      throw new Error(<code>磁碟空間不足（剩餘 ${preCheckResult.disk_space_mb} MB，需要至少 1000 MB）</code>);<br>
+    }</p><p>    // 階段 1：智庫搜尋（10-25%）<br>
+    status.current_stage = '智庫搜尋';<br>
+    status.progress_percent = 15;<br>
+    await reportProgress(status);</p><p>    await executeStageWithRetry('智庫搜尋', stage1_ThinkTankSearch);</p><p>    // 階段 2：事件收集（25-45%）<br>
+    status.current_stage = '事件收集';<br>
+    status.progress_percent = 30;<br>
+    await reportProgress(status);</p><p>    const events = await executeStageWithRetry('事件收集', stage2_EventCollection);</p><p>    // 階段 3：零幻覺驗證（45-65%）<br>
+    status.current_stage = '零幻覺驗證';<br>
+    status.progress_percent = 50;<br>
+    await reportProgress(status);</p><p>    const verifiedEvents = await executeStageWithRetry(<br>
+      '零幻覺驗證',<br>
+      () => stage3_ZeroHallucinationVerify(events)<br>
+    );</p><p>    // 階段 4：趨勢預測（65-75%）<br>
+    status.current_stage = '趨勢預測';<br>
+    status.progress_percent = 70;<br>
+    await reportProgress(status);</p><p>    const predictions = await executeStageWithRetry(<br>
+      '趨勢預測',<br>
+      () => stage4_TrendPrediction(verifiedEvents)<br>
+    );</p><p>    // 階段 5：日報生成（75-90%）<br>
+    status.current_stage = '日報生成';<br>
+    status.progress_percent = 80;<br>
+    await reportProgress(status);</p><p>    const report = await executeStageWithRetry(<br>
+      '日報生成',<br>
+      () => stage5_DailyReportGeneration(verifiedEvents, predictions)<br>
+    );</p><p>    // 階段 6：發佈到 GitHub Pages（90-100%）<br>
+    status.current_stage = '發佈到 GitHub Pages';<br>
+    status.progress_percent = 95;<br>
+    await reportProgress(status);</p><p>    await executeStageWithRetry(<br>
+      '發佈到 GitHub Pages',<br>
+      () => stage6_PublishToGitHubPages(report)<br>
+    );</p><p>    // 完成<br>
+    status.status = 'completed';<br>
+    status.progress_percent = 100;<br>
+    await reportProgress(status);</p><p>    console.log(`<br>
+╔══════════════════════════════════════════════════╗<br>
+║     ✅ 執行完成！                                 ║<br>
+║     執行時間：${((Date.now() - startTime.getTime()) / 1000 / 60).toFixed(1)} 分鐘<br>
+║     事件數量：${verifiedEvents.length} 個<br>
+║     預測數量：${predictions.length} 個<br>
+║     圖卡數量：${report.charts.length} 張<br>
+╚══════════════════════════════════════════════════╝<br>
+`);</p><p>  } catch (error) {<br>
+    status.status = 'failed';<br>
+    status.errors.push(error.message);<br>
+    await reportProgress(status);</p><p>    console.error(`<br>
+╔══════════════════════════════════════════════════╗<br>
+║     ❌ 執行失敗！                                 ║<br>
+║     錯誤：${error.message}<br>
+╚══════════════════════════════════════════════════╝<br>
+`);</p><p>    throw error;<br>
+  }<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+執行心戰情報系統<br>
+<code>`</code></p><p><strong>總指揮執行（終端輸出）</strong>：<br>
+<code>`</code><br>
+╔══════════════════════════════════════════════════╗<br>
+║     心戰情報系統 - 總指揮執行                     ║<br>
+║     Taiwan PSYOP Intelligence System             ║<br>
+╚══════════════════════════════════════════════════╝</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
+📊 執行狀態：running<br>
+🎯 當前階段：前置檢查<br>
+📈 進度：5%<br>
+⏱️  開始時間：2026-01-28T06:00:00Z<br>
+⏰ 預計完成：2026-01-28T06:15:00Z<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>📊 階段 1/6：智庫搜尋<br>
+⏭️  跳過（快取有效，3 天前更新）<br>
+✅ 階段 1 完成</p><p>📊 階段 2/6：事件收集<br>
+🔍 啟動事件收集技能（9 種新型態攻擊）...<br>
+✅ 階段 2 完成（收集 42 個事件）</p><p>📊 階段 3/6：零幻覺驗證<br>
+🔍 驗證 42 個事件的所有來源...<br>
+  驗證事件：無人機入侵本島（2 個來源）<br>
+    ✅ https://globaltaiwan.org/...（95/100）<br>
+    ✅ https://focustaiwan.tw/...（100/100）<br>
+  驗證事件：AI 人格模擬攻擊（3 個來源）<br>
+    ✅ https://www.globalsecurity.org/...（100/100）<br>
+    ✅ https://www.visiontimes.com/...（90/100）<br>
+    ❌ https://example-fake.com/...（45/100）已排除<br>
+  ...<br>
+✅ 階段 3 完成（通過 38 個，排除 4 個）</p><p>...（省略階段 4-6）</p><p>╔══════════════════════════════════════════════════╗<br>
+║     ✅ 執行完成！                                 ║<br>
+║     執行時間：12.3 分鐘<br>
+║     事件數量：38 個<br>
+║     預測數量：5 個<br>
+║     圖卡數量：4 張<br>
+╚══════════════════════════════════════════════════╝<br>
+<code>`</code></p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>編排技能</strong>（依序執行）：<br>
+  1. <code>心戰情報-智庫搜尋</code><br>
+  2. <code>心戰情報-事件收集</code><br>
+  3. <code>心戰情報-零幻覺驗證</code><br>
+  4. <code>心戰情報-趨勢預測</code><br>
+  5. <code>心戰情報-日報生成</code></p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v2.0（迭代改進）<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

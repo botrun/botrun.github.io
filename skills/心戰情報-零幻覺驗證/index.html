@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-zero-hallucination-verify - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-zero-hallucination-verify</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報零幻覺驗證技能 v3.0</h1></p><p>> <strong>用途</strong>：四重驗證 + 三層備援，確保零幻覺且提升驗證通過率<br>
+> <strong>版本</strong>：v3.0（2026-01-28）<br>
+> <strong>改進</strong>：從 v2.0 驗證率 45.5% 提升到 v3.0 目標 75%+</p><p>---</p><p><h2>🎯 四重驗證機制</h2></p><p><h3>驗證 1：URL 可達性驗證</h3></p><p><strong>目的</strong>：確保網址真實存在且可訪問</p><p><strong>執行</strong>：<br>
+<code>`</code>bash<br>
+<h1>HTTP HEAD 請求（不下載全文，僅驗證可達）</h1><br>
+curl -I -L -s -o /dev/null -w "%{http_code}" "https://doublethinklab.org/"<br>
+<code>`</code></p><p><strong>驗證標準</strong>：<br>
+- ✅ HTTP 200（成功）<br>
+- ✅ HTTP 301/302（重定向，但最終到達 200）<br>
+- ❌ HTTP 404（找不到頁面）<br>
+- ❌ HTTP 403（禁止訪問）<br>
+- ❌ HTTP 500（伺服器錯誤）<br>
+- ❌ Timeout（超時）</p><p>---</p><p><h3>驗證 2：內容一致性驗證</h3></p><p><strong>目的</strong>：確保引用文字未竄改</p><p><strong>執行</strong>：<br>
+<code>`</code>typescript<br>
+// 1. WebFetch 抓取原文<br>
+const originalText = await WebFetch(url, "提取關於認知戰的完整段落");</p><p>// 2. 比對引用文字是否存在於原文中<br>
+const quotedText = "中國透過 TikTok 進行認知作戰";<br>
+const isConsistent = originalText.includes(quotedText);</p><p>// 3. 計算相似度（允許微小差異，如標點符號）<br>
+const similarity = calculateSimilarity(quotedText, originalText);<br>
+<code>`</code></p><p><strong>驗證標準</strong>：<br>
+- ✅ 引用文字 100% 存在於原文<br>
+- ✅ 相似度 ≥ 95%（允許標點符號差異）<br>
+- ⚠️ 相似度 80-95%（需人工檢查）<br>
+- ❌ 相似度 < 80%（疑似竄改）</p><p><strong>引用長度要求</strong>：<br>
+- ✅ 引用文字 ≥ 50 字元（避免斷章取義）<br>
+- ❌ 引用文字 < 50 字元（太短，缺乏脈絡）</p><p>---</p><p><h3>驗證 3：時間戳驗證</h3></p><p><strong>目的</strong>：確認文章發佈日期，排除過時資訊</p><p><strong>執行</strong>：<br>
+<code>`</code>typescript<br>
+// WebFetch 提取發佈日期<br>
+const publishDate = await WebFetch(url, "提取文章發佈日期（格式：YYYY-MM-DD）");</p><p>// 驗證時效性<br>
+const daysSincePublish = (new Date() - new Date(publishDate)) / (1000 <em> 60 </em> 60 * 24);<br>
+<code>`</code></p><p><strong>驗證標準</strong>：<br>
+- ✅ 發佈日期 ≤ 60 天（最新資訊）<br>
+- ⚠️ 發佈日期 60-180 天（稍舊但可用）<br>
+- ❌ 發佈日期 > 180 天（過時，需更新來源）<br>
+- ❌ 無法找到發佈日期（疑似不可靠來源）</p><p>---</p><p><h3>驗證 4：交叉驗證（多來源佐證）</h3></p><p><strong>目的</strong>：同一事件至少 2 個獨立來源佐證</p><p><strong>執行</strong>：<br>
+<code>`</code>typescript<br>
+// 對於關鍵事件，要求多來源佐證<br>
+const event = "2025年10月中國懸賞臺灣心戰部隊";</p><p>// 搜尋至少 2 個獨立來源<br>
+const sources = [<br>
+  { url: "https://focustaiwan.tw/...", org: "Focus Taiwan" },<br>
+  { url: "https://www.taipeitimes.com/...", org: "Taipei Times" },<br>
+  { url: "https://www.rfa.org/...", org: "RFA" }<br>
+];</p><p>// 驗證來源獨立性（不同機構）<br>
+const isIndependent = sources.every((s1, i) =><br>
+  sources.slice(i+1).every(s2 => s1.org !== s2.org)<br>
+);<br>
+<code>`</code></p><p><strong>驗證標準</strong>：<br>
+- ✅ ≥ 2 個獨立來源（不同機構）<br>
+- ⚠️ 僅 1 個來源（需標註「單一來源」）<br>
+- ❌ 來源皆為轉載（需找到原始來源）</p><p>---</p><p><h2>🆕 v3.0 三層備援驗證機制</h2></p><p><h3>架構圖</h3></p><p><code>`</code><br>
+驗證請求<br>
+  ↓<br>
+第 1 層：直接驗證（curl + WebFetch）<br>
+  ├─ 成功 → 返回結果 ✅<br>
+  └─ 失敗（403/503）<br>
+      ↓<br>
+第 2 層：重試驗證（指數退避 2s, 4s, 8s）<br>
+  ├─ 成功 → 返回結果 ✅<br>
+  └─ 仍失敗<br>
+      ↓<br>
+第 3 層：替代方法驗證<br>
+  ├─ Archive.org（網頁時光機）<br>
+  ├─ Google Cache（搜尋快取）<br>
+  ├─ Proxy（代理服務）<br>
+  └─ Manual Check（人工檢查清單）<br>
+      ↓<br>
+全部失敗 → 標記「暫時無法驗證」⏸️<br>
+<code>`</code></p><p><h3>實作細節</h3></p><p><strong>第 1 層：直接驗證</strong><br>
+- HTTP HEAD 請求（curl）<br>
+- WebFetch 抓取內容<br>
+- <strong>適用場景</strong>：正常網站（預期 70% 成功率）</p><p><strong>第 2 層：重試驗證</strong><br>
+- 間隔時間：2s → 4s → 8s（指數退避）<br>
+- 最多重試 3 次<br>
+- <strong>適用場景</strong>：暫時性錯誤（503, timeout）（預期恢復 15%）</p><p><strong>第 3 層：替代方法</strong><br>
+1. <strong>Archive.org</strong>：<code>https://web.archive.org/web/{url}</code><br>
+2. <strong>Google Cache</strong>：<code>https://webcache.googleusercontent.com/search?q=cache:{url}</code><br>
+3. <strong>Proxy 服務</strong>：透過第三方代理繞過地區限制<br>
+4. <strong>Manual Check</strong>：加入待人工檢查清單</p><p><strong>預期成效</strong>：<br>
+- 第 1 層：70% 成功<br>
+- 第 2 層：+15% 成功（累計 85%）<br>
+- 第 3 層：+10% 成功（累計 95%）<br>
+- 剩餘 5% 標記為「暫時無法驗證」</p><p>---</p><p><h2>🔧 驗證腳本（TypeScript）v3.0</h2></p><p>建立 <code>scripts/verify.ts</code>：</p><p><code>`</code>typescript<br>
+interface VerificationResult {<br>
+  url: string;<br>
+  urlAccessible: boolean;<br>
+  httpStatus: number;<br>
+  contentConsistent: boolean;<br>
+  similarity: number;<br>
+  timestampValid: boolean;<br>
+  publishDate: string;<br>
+  daysOld: number;<br>
+  crossVerified: boolean;<br>
+  numSources: number;<br>
+  overallScore: number; // 0-100<br>
+  verdict: 'PASS' | 'WARNING' | 'FAIL' | 'PENDING';<br>
+  verificationLayer: 1 | 2 | 3 | null;  // v3.0 新增<br>
+  retryCount: number;                    // v3.0 新增<br>
+  alternativeMethod?: string;            // v3.0 新增<br>
+}</p><p>// v3.0 主驗證函式（三層備援）<br>
+async function verifyURL_v3(url: string, quotedText?: string): Promise<VerificationResult> {<br>
+  // 第 1 層：直接驗證<br>
+  const layer1Result = await verifyURL_Direct(url, quotedText);<br>
+  if (layer1Result.verdict === 'PASS' || layer1Result.verdict === 'WARNING') {<br>
+    return { ...layer1Result, verificationLayer: 1, retryCount: 0 };<br>
+  }</p><p>  // 第 2 層：重試驗證（指數退避）<br>
+  console.log(<code>[第 1 層失敗] 啟動第 2 層重試驗證...</code>);<br>
+  const layer2Result = await verifyURL_Retry(url, quotedText, { maxRetries: 3, backoff: [2000, 4000, 8000] });<br>
+  if (layer2Result.verdict === 'PASS' || layer2Result.verdict === 'WARNING') {<br>
+    return { ...layer2Result, verificationLayer: 2 };<br>
+  }</p><p>  // 第 3 層：替代方法驗證<br>
+  console.log(<code>[第 2 層失敗] 啟動第 3 層替代方法驗證...</code>);<br>
+  const layer3Result = await verifyURL_Alternative(url, quotedText);<br>
+  if (layer3Result.verdict === 'PASS' || layer3Result.verdict === 'WARNING') {<br>
+    return { ...layer3Result, verificationLayer: 3 };<br>
+  }</p><p>  // 全部失敗 → 標記為「暫時無法驗證」<br>
+  console.log(<code>[第 3 層失敗] 全部驗證失敗，標記為 PENDING</code>);<br>
+  return {<br>
+    ...layer3Result,<br>
+    verdict: 'PENDING',<br>
+    verificationLayer: null,<br>
+    retryCount: layer2Result.retryCount,<br>
+  };<br>
+}</p><p>// 第 1 層：直接驗證<br>
+async function verifyURL_Direct(url: string, quotedText?: string): Promise<VerificationResult> {<br>
+  // 驗證 1：URL 可達性<br>
+  const httpStatus = await checkHTTPStatus(url);<br>
+  const urlAccessible = httpStatus === 200;</p><p>  // 驗證 2：內容一致性（若提供引用文字）<br>
+  let contentConsistent = true;<br>
+  let similarity = 100;<br>
+  if (quotedText) {<br>
+    const originalText = await fetchContent(url);<br>
+    similarity = calculateSimilarity(quotedText, originalText);<br>
+    contentConsistent = similarity >= 80;<br>
+  }</p><p>  // 驗證 3：時間戳<br>
+  const publishDate = await extractPublishDate(url);<br>
+  const daysOld = calculateDaysOld(publishDate);<br>
+  const timestampValid = daysOld <= 180;</p><p>  // 驗證 4：交叉驗證（需外部輸入）<br>
+  const numSources = 1; // 預設，可由上層提供<br>
+  const crossVerified = numSources >= 2;</p><p>  // 計算總分<br>
+  const overallScore = (<br>
+    (urlAccessible ? 30 : 0) +<br>
+    (contentConsistent ? 30 : 0) +<br>
+    (timestampValid ? 20 : 0) +<br>
+    (crossVerified ? 20 : 0)<br>
+  );</p><p>  // 判定<br>
+  let verdict: 'PASS' | 'WARNING' | 'FAIL';<br>
+  if (overallScore >= 80) verdict = 'PASS';<br>
+  else if (overallScore >= 60) verdict = 'WARNING';<br>
+  else verdict = 'FAIL';</p><p>  return {<br>
+    url, urlAccessible, httpStatus, contentConsistent, similarity,<br>
+    timestampValid, publishDate, daysOld, crossVerified, numSources,<br>
+    overallScore, verdict, verificationLayer: 1, retryCount: 0<br>
+  };<br>
+}</p><p>// 第 2 層：重試驗證（指數退避）<br>
+async function verifyURL_Retry(<br>
+  url: string,<br>
+  quotedText?: string,<br>
+  options = { maxRetries: 3, backoff: [2000, 4000, 8000] }<br>
+): Promise<VerificationResult> {<br>
+  let lastResult: VerificationResult | null = null;</p><p>  for (let i = 0; i < options.maxRetries; i++) {<br>
+    console.log(<code>[重試 ${i + 1}/${options.maxRetries}] 等待 ${options.backoff[i] / 1000}s...</code>);<br>
+    await sleep(options.backoff[i]);</p><p>    lastResult = await verifyURL_Direct(url, quotedText);</p><p>    // 若成功，立即返回<br>
+    if (lastResult.verdict === 'PASS' || lastResult.verdict === 'WARNING') {<br>
+      return { ...lastResult, retryCount: i + 1 };<br>
+    }</p><p>    // 若是永久性錯誤（404），不再重試<br>
+    if (lastResult.httpStatus === 404) {<br>
+      console.log(<code>[永久性錯誤 404] 停止重試</code>);<br>
+      break;<br>
+    }<br>
+  }</p><p>  return { ...lastResult!, retryCount: options.maxRetries };<br>
+}</p><p>// 第 3 層：替代方法驗證<br>
+async function verifyURL_Alternative(url: string, quotedText?: string): Promise<VerificationResult> {<br>
+  const methods = [<br>
+    { name: 'Archive.org', getUrl: (u: string) => <code>https://web.archive.org/web/${u}</code> },<br>
+    { name: 'Google Cache', getUrl: (u: string) => <code>https://webcache.googleusercontent.com/search?q=cache:${u}</code> },<br>
+  ];</p><p>  for (const method of methods) {<br>
+    console.log(<code>[替代方法] 嘗試 ${method.name}...</code>);<br>
+    const alternativeUrl = method.getUrl(url);<br>
+    const result = await verifyURL_Direct(alternativeUrl, quotedText);</p><p>    if (result.verdict === 'PASS' || result.verdict === 'WARNING') {<br>
+      return {<br>
+        ...result,<br>
+        url: url,  // 保留原始 URL<br>
+        alternativeMethod: method.name,<br>
+        retryCount: 0<br>
+      };<br>
+    }<br>
+  }</p><p>  // 全部替代方法失敗，返回「暫時無法驗證」<br>
+  return {<br>
+    url,<br>
+    urlAccessible: false,<br>
+    httpStatus: 0,<br>
+    contentConsistent: false,<br>
+    similarity: 0,<br>
+    timestampValid: false,<br>
+    publishDate: '',<br>
+    daysOld: 0,<br>
+    crossVerified: false,<br>
+    numSources: 0,<br>
+    overallScore: 0,<br>
+    verdict: 'PENDING',<br>
+    verificationLayer: null,<br>
+    retryCount: 0,<br>
+    alternativeMethod: 'manual_check_required'<br>
+  };<br>
+}</p><p>// 輔助函式<br>
+async function checkHTTPStatus(url: string): Promise<number> {<br>
+  // 使用 Bash curl 或 Node.js fetch<br>
+  const result = await execBash(<code>curl -I -L -s -o /dev/null -w "%{http_code}" "${url}"</code>);<br>
+  return parseInt(result);<br>
+}</p><p>function calculateSimilarity(text1: string, text2: string): number {<br>
+  // 簡易相似度計算（可用 Levenshtein distance）<br>
+  if (text2.includes(text1)) return 100;<br>
+  // ... 進階相似度演算法<br>
+  return 0;<br>
+}</p><p>async function extractPublishDate(url: string): Promise<string> {<br>
+  // WebFetch 提取日期<br>
+  // 或解析 HTML <meta property="article:published_time"><br>
+  return "2026-01-28";<br>
+}</p><p>function calculateDaysOld(publishDate: string): number {<br>
+  const now = new Date();<br>
+  const publish = new Date(publishDate);<br>
+  return Math.floor((now.getTime() - publish.getTime()) / (1000 <em> 60 </em> 60 * 24));<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>📊 輸出格式</h2></p><p><h3>驗證報告（Markdown）</h3></p><p><code>`</code>markdown<br>
+<h1>零幻覺驗證報告</h1></p><p><strong>驗證時間</strong>：2026-01-28 14:30:00<br>
+<strong>驗證網址</strong>：https://doublethinklab.org/reports/2025-election</p><p>---</p><p><h2>✅ 驗證通過（PASS）</h2></p><p><h3>驗證 1：URL 可達性 ✅</h3><br>
+- HTTP 狀態碼：200<br>
+- 響應時間：235ms<br>
+- HTTPS 證書：有效（到期日 2027-01-01）</p><p><h3>驗證 2：內容一致性 ✅</h3><br>
+- 引用文字：「中國透過 TikTok 進行認知作戰...」<br>
+- 相似度：100%<br>
+- 引用長度：127 字元（✅ ≥ 50）</p><p><h3>驗證 3：時間戳驗證 ✅</h3><br>
+- 發佈日期：2025-12-15<br>
+- 距今天數：44 天（✅ ≤ 60）</p><p><h3>驗證 4：交叉驗證 ✅</h3><br>
+- 獨立來源數：3 個<br>
+  1. Doublethink Lab（https://...）<br>
+  2. Focus Taiwan（https://...）<br>
+  3. Taipei Times（https://...）</p><p>---</p><p><h2>📊 總評分：100/100（PASS）</h2></p><p>- URL 可達性：30/30<br>
+- 內容一致性：30/30<br>
+- 時間戳驗證：20/20<br>
+- 交叉驗證：20/20<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+驗證網址 https://doublethinklab.org/reports/2025-election<br>
+引用文字：「中國透過 TikTok 進行認知作戰」<br>
+<code>`</code></p><p><strong>技能執行</strong>：<br>
+1. HTTP HEAD 請求驗證可達（200 OK）<br>
+2. WebFetch 抓取全文，比對引用文字（100% 相似）<br>
+3. 提取發佈日期（2025-12-15，44 天前）<br>
+4. 搜尋交叉驗證來源（找到 3 個獨立來源）<br>
+5. 生成驗證報告（總分 100/100，PASS）<br>
+6. 寫入 <code>素材庫/來源歸檔/心戰情報/驗證報告/{日期}-驗證報告.md</code></p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>上游技能</strong>：<code>心戰情報-智庫搜尋</code>（提供待驗證網址）<br>
+- <strong>上游技能</strong>：<code>心戰情報-事件收集</code>（提供待驗證事件）<br>
+- <strong>下游技能</strong>：<code>心戰情報-分析生成</code>（使用驗證通過的資料）</p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v1.0<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

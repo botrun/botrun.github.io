@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-daily-report - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-daily-report</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報日報生成技能 v5.0</h1></p><p>> <strong>用途</strong>：整合所有資料，生成五份獨立報告（以人為中心設計）<br>
+> <strong>版本</strong>：v5.0（2026-01-28）<br>
+> <strong>革命性改進</strong>：五份獨立報告 + 執行摘要 + 審計追蹤 + 滿足五大利害關係人需求</p><p>---</p><p><h2>🎯 執行流程（工作流編排）</h2></p><p><h3>步驟 1：呼叫上游技能（依序執行）</h3></p><p><code>`</code>typescript<br>
+// 1. 智庫搜尋（每週執行，快取 7 天）<br>
+if (needsUpdate('智庫清單', 7)) {<br>
+  await invokeSkill('心戰情報-智庫搜尋');<br>
+}</p><p>// 2. 事件收集（每日執行）<br>
+const events = await invokeSkill('心戰情報-事件收集');</p><p>// 3. 所有事件自動驗證（零幻覺保證）<br>
+for (const event of events) {<br>
+  for (const source of event.sources) {<br>
+    const verification = await invokeSkill('心戰情報-零幻覺驗證', {<br>
+      url: source.url,<br>
+      quotedText: event.description.substring(0, 100)<br>
+    });</p><p>    // 只保留驗證通過的事件<br>
+    if (verification.overallScore < 80) {<br>
+      console.warn(<code>❌ 事件 ${event.title} 來源 ${source.url} 驗證失敗（${verification.overallScore}/100），已排除</code>);<br>
+      event.sources = event.sources.filter(s => s.url !== source.url);<br>
+    }<br>
+  }</p><p>  // 至少保留 2 個驗證通過的來源<br>
+  if (event.sources.length < 2) {<br>
+    console.warn(<code>⚠️ 事件 ${event.title} 獨立來源不足 2 個，標註為「單一來源」</code>);<br>
+    event.warning = '單一來源，需更多佐證';<br>
+  }<br>
+}<br>
+<code>`</code></p><p><h3>步驟 2：分析與評分</h3></p><p><code>`</code>typescript<br>
+interface EventScore {<br>
+  event: Event;<br>
+  importance: number;    // 1-10（涉及範圍、影響程度）<br>
+  timeliness: number;    // 1-10（發生天數，越近越高）<br>
+  actionability: number; // 1-10（是否有具體應對措施）<br>
+  verificationScore: number; // 0-100（零幻覺驗證分數）<br>
+  totalScore: number;    // 加權總分<br>
+}</p><p>function scoreEvent(event: Event): EventScore {<br>
+  // 重要性評分<br>
+  const importance = calculateImportance(event.impact_scope, event.entities);</p><p>  // 時效性評分（距今天數）<br>
+  const daysOld = (Date.now() - new Date(event.date)) / (1000 <em> 60 </em> 60 * 24);<br>
+  const timeliness = Math.max(1, 10 - daysOld / 6); // 60 天後降為 1 分</p><p>  // 可行動性評分（是否有應對建議）<br>
+  const actionability = event.recommendations ? 10 : 5;</p><p>  // 驗證分數（平均所有來源）<br>
+  const verificationScore = event.sources.reduce((sum, s) => sum + s.verification_score, 0) / event.sources.length;</p><p>  // 加權總分（零幻覺驗證權重最高）<br>
+  const totalScore = (<br>
+    importance * 0.25 +<br>
+    timeliness * 0.20 +<br>
+    actionability * 0.15 +<br>
+    verificationScore * 0.40  // 零幻覺驗證權重 40%<br>
+  );</p><p>  return { event, importance, timeliness, actionability, verificationScore, totalScore };<br>
+}<br>
+<code>`</code></p><p><h3>步驟 3：生成 Top 10 建議</h3></p><p><code>`</code>typescript<br>
+// 排序所有事件<br>
+const scoredEvents = events.map(scoreEvent).sort((a, b) => b.totalScore - a.totalScore);</p><p>// 選出 top 10<br>
+const top10 = scoredEvents.slice(0, 10);</p><p>// 生成行動建議<br>
+const recommendations = top10.map((scored, index) => ({<br>
+  rank: index + 1,<br>
+  event: scored.event,<br>
+  priority: scored.totalScore >= 8 ? '🔴 高' : scored.totalScore >= 6 ? '🟡 中' : '🟢 低',<br>
+  actions: generateActions(scored.event),<br>
+  verificationStatus: scored.verificationScore >= 90 ? '✅ 完全驗證' : '⚠️ 部分驗證'<br>
+}));<br>
+<code>`</code></p><p><h3>步驟 4：生成視覺化圖卡（TypeScript + Chart.js）</h3></p><p>建立 <code>scripts/generate-charts.ts</code>：</p><p><code>`</code>typescript<br>
+import { Chart } from 'chart.js';<br>
+import { createCanvas } from 'canvas';</p><p>// 圖卡 1：時間軸圖卡<br>
+function generateTimelineChart(events: Event[]): Buffer {<br>
+  const canvas = createCanvas(1200, 600);<br>
+  const ctx = canvas.getContext('2d');</p><p>  new Chart(ctx, {<br>
+    type: 'line',<br>
+    data: {<br>
+      labels: events.map(e => e.date),<br>
+      datasets: [{<br>
+        label: '心戰事件頻率',<br>
+        data: events.map(e => e.importance),<br>
+        borderColor: 'rgb(255, 99, 132)',<br>
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',<br>
+      }]<br>
+    },<br>
+    options: {<br>
+      responsive: true,<br>
+      plugins: {<br>
+        title: {<br>
+          display: true,<br>
+          text: '過去 60 天心戰事件時間軸'<br>
+        }<br>
+      }<br>
+    }<br>
+  });</p><p>  return canvas.toBuffer('image/png');<br>
+}</p><p>// 圖卡 2：事件類型分佈<br>
+function generateEventTypeChart(events: Event[]): Buffer {<br>
+  const typeCounts = events.reduce((acc, e) => {<br>
+    acc[e.event_type] = (acc[e.event_type] || 0) + 1;<br>
+    return acc;<br>
+  }, {} as Record<string, number>);</p><p>  const canvas = createCanvas(800, 600);<br>
+  const ctx = canvas.getContext('2d');</p><p>  new Chart(ctx, {<br>
+    type: 'pie',<br>
+    data: {<br>
+      labels: Object.keys(typeCounts),<br>
+      datasets: [{<br>
+        data: Object.values(typeCounts),<br>
+        backgroundColor: [<br>
+          'rgb(255, 99, 132)',<br>
+          'rgb(54, 162, 235)',<br>
+          'rgb(255, 205, 86)',<br>
+          // ...其他顏色<br>
+        ]<br>
+      }]<br>
+    },<br>
+    options: {<br>
+      plugins: {<br>
+        title: {<br>
+          display: true,<br>
+          text: '9 種新型態心戰攻擊分佈'<br>
+        }<br>
+      }<br>
+    }<br>
+  });</p><p>  return canvas.toBuffer('image/png');<br>
+}</p><p>// 圖卡 3：驗證分數分佈（零幻覺保證視覺化）<br>
+function generateVerificationScoreChart(events: Event[]): Buffer {<br>
+  const scores = events.map(e =><br>
+    e.sources.reduce((sum, s) => sum + s.verification_score, 0) / e.sources.length<br>
+  );</p><p>  const canvas = createCanvas(800, 600);<br>
+  const ctx = canvas.getContext('2d');</p><p>  new Chart(ctx, {<br>
+    type: 'bar',<br>
+    data: {<br>
+      labels: events.map(e => e.title.substring(0, 20) + '...'),<br>
+      datasets: [{<br>
+        label: '零幻覺驗證分數',<br>
+        data: scores,<br>
+        backgroundColor: scores.map(s =><br>
+          s >= 90 ? 'rgb(75, 192, 192)' : // 綠色（完全驗證）<br>
+          s >= 80 ? 'rgb(255, 205, 86)' : // 黃色（部分驗證）<br>
+          'rgb(255, 99, 132)'              // 紅色（驗證失敗）<br>
+        )<br>
+      }]<br>
+    },<br>
+    options: {<br>
+      plugins: {<br>
+        title: {<br>
+          display: true,<br>
+          text: '零幻覺驗證分數（綠色 ≥ 90，黃色 80-89，紅色 < 80）'<br>
+        }<br>
+      },<br>
+      scales: {<br>
+        y: {<br>
+          beginAtZero: true,<br>
+          max: 100<br>
+        }<br>
+      }<br>
+    }<br>
+  });</p><p>  return canvas.toBuffer('image/png');<br>
+}<br>
+<code>`</code></p><p><h3>步驟 5：生成日報（Markdown + 圖卡）</h3></p><p><code>`</code>markdown<br>
+<h1>心戰情報日報（2026-01-28）</h1></p><p>> <strong>零幻覺保證</strong>：所有資訊已通過四重驗證，總驗證率 92%</p><p>---</p><p><h2>📊 今日摘要</h2></p><p>- <strong>事件總數</strong>：42 個（過去 60 天）<br>
+- <strong>新增事件</strong>：5 個（過去 24 小時）<br>
+- <strong>驗證通過</strong>：38 個（90%）<br>
+- <strong>獨立來源</strong>：126 個網址<br>
+- <strong>平均驗證分數</strong>：92/100</p><p>---</p><p><h2>🔴 Top 10 行動建議</h2></p><p><h3>1. 🔴 高優先級：無人機心理施壓</h3></p><p><strong>事件</strong>：中國無人機直接入侵台灣本島上空<br>
+<strong>發生日期</strong>：2026-01-26<br>
+<strong>影響範圍</strong>：區域<br>
+<strong>驗證狀態</strong>：✅ 完全驗證（95/100）</p><p><strong>來源</strong>：<br>
+- ✅ [Global Taiwan Institute](https://globaltaiwan.org/2026/01/shrinking-the-strait/)（驗證：95/100）<br>
+- ✅ [Focus Taiwan](https://focustaiwan.tw/...)（驗證：100/100）</p><p><strong>行動建議</strong>：<br>
+1. <strong>短期（1 週內）</strong>：<br>
+   - 加強防空警報系統測試<br>
+   - 發布公民應對指南</p><p>2. <strong>中期（1 個月內）</strong>：<br>
+   - 發展反無人機技術（電子干擾、定向能武器）<br>
+   - 與盟友（美日）共享無人機情報</p><p>3. <strong>長期（3 個月內）</strong>：<br>
+   - 建立無人機防禦網路<br>
+   - 公民教育：降低恐慌反應</p><p>---</p><p><h3>2. 🔴 高優先級：AI 人格模擬攻擊</h3></p><p><strong>事件</strong>：GoLaxy 公司 AI 虛擬角色散播 2026 選舉假訊息<br>
+<strong>發生日期</strong>：2025-12-15<br>
+<strong>影響範圍</strong>：全球<br>
+<strong>驗證狀態</strong>：✅ 完全驗證（100/100）</p><p><strong>來源</strong>：<br>
+- ✅ [Global Security - NSB Report](https://www.globalsecurity.org/intell/library/news/2026/intell-260111-roc-nsb01.htm)（驗證：100/100）<br>
+- ✅ [Vision Times](https://www.visiontimes.com/2026/01/14/...)（驗證：90/100）</p><p><strong>行動建議</strong>：<br>
+1. <strong>短期</strong>：<br>
+   - 開發 AI 生成內容檢測工具<br>
+   - 與社群平台合作標註 AI 內容</p><p>2. <strong>中期</strong>：<br>
+   - 公民教育：提高對 AI 假帳號的警覺<br>
+   - 立法要求 AI 生成內容標註</p><p>3. <strong>長期</strong>：<br>
+   - 建立 AI 認知戰防禦實驗室<br>
+   - 與國際合作共享 AI 檢測技術</p><p>---</p><p>...（Top 3-10 建議）</p><p>---</p><p><h2>📈 視覺化分析</h2></p><p><h3>過去 60 天心戰事件時間軸</h3></p><p>![時間軸](./charts/timeline-2026-01-28.png)</p><p><h3>9 種新型態心戰攻擊分佈</h3></p><p>![事件類型](./charts/event-types-2026-01-28.png)</p><p><h3>零幻覺驗證分數</h3></p><p>![驗證分數](./charts/verification-scores-2026-01-28.png)</p><p>---</p><p><h2>🌍 智庫追蹤</h2></p><p><h3>本週最活躍智庫</h3></p><p>1. <strong>Global Taiwan Institute</strong> - 3 篇報告<br>
+2. <strong>German Marshall Fund</strong> - 2 篇報告<br>
+3. <strong>Doublethink Lab</strong> - 2 篇報告</p><p><h3>本週最活躍專家</h3></p><p>1. <strong>Bonnie Glaser</strong> (GMF) - 2 篇分析<br>
+2. <strong>蘇紫雲</strong> (INDSR) - 1 篇分析</p><p>---</p><p><h2>🔍 零幻覺驗證統計</h2></p><p>| 驗證項目 | 通過率 |<br>
+|---------|--------|<br>
+| URL 可達性 | 98% (124/126) |<br>
+| 內容一致性 | 95% (120/126) |<br>
+| 時間戳驗證 | 90% (113/126) |<br>
+| 交叉驗證 | 85% (107/126) |<br>
+| <strong>總驗證率</strong> | <strong>92%</strong> |</p><p>---</p><p><strong>生成時間</strong>：2026-01-28 07:00:00<br>
+<strong>下次更新</strong>：2026-01-29 07:00:00<br>
+<code>`</code></p><p><h3>步驟 6：發佈到 GitHub Pages</h3></p><p><code>`</code>bash<br>
+<h1>複製到 web 目錄</h1><br>
+cp "素材庫/輸出/心戰情報/2026-01-28-心戰情報日報.md" web/心戰情報/latest.md</p><p><h1>生成 HTML（使用 marked 或類似工具）</h1><br>
+npx marked -i web/心戰情報/latest.md -o web/心戰情報/latest.html</p><p><h1>Git commit & push</h1><br>
+cd web<br>
+git add .<br>
+git commit -m "心戰情報日報 2026-01-28"<br>
+git push origin gh-pages<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+生成心戰日報<br>
+<code>`</code></p><p><strong>技能執行</strong>（工作流）：<br>
+1. 檢查智庫清單是否需要更新（快取 7 天）<br>
+2. 呼叫「心戰情報-事件收集」技能<br>
+3. 對所有事件呼叫「心戰情報-零幻覺驗證」技能<br>
+4. 排除驗證失敗的事件（< 80 分）<br>
+5. 分析與評分（零幻覺驗證權重 40%）<br>
+6. 生成 top 10 行動建議<br>
+7. 生成視覺化圖卡（時間軸、類型分佈、驗證分數）<br>
+8. 寫入日報 Markdown<br>
+9. 發佈到 GitHub Pages<br>
+10. 回報：「✅ 已生成心戰情報日報（2026-01-28），總驗證率 92%，已發佈到 GitHub Pages。」</p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>依賴技能</strong>：<code>心戰情報-智庫搜尋</code><br>
+- <strong>依賴技能</strong>：<code>心戰情報-事件收集</code><br>
+- <strong>依賴技能</strong>：<code>心戰情報-零幻覺驗證</code></p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v1.0<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

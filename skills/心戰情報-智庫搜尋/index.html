@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-think-tank-search - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-think-tank-search</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報智庫搜尋技能 v3.0</h1></p><p>> <strong>用途</strong>：自動搜尋全球心戰/認知戰相關智庫與專家，產出結構化清單<br>
+> <strong>版本</strong>：v3.0（2026-01-28）<br>
+> <strong>改進</strong>：三層備援驗證 + 智庫評分機制 + 7 天快取</p><p>---</p><p><h2>🎯 執行流程</h2></p><p><h3>步驟 1：讀取智庫檢核清單</h3></p><p>讀取 <code>/home/user/timeless-bowen/配置/規則/心戰情報系統-盤點檢核清單.md</code> 中的：<br>
+- 檢核清單 A：全球智庫與顧問機構覆蓋度<br>
+- 檢核清單 B：心戰領域專家與顧問</p><p><h3>步驟 2：平行啟動 5 個地區搜尋子代理人</h3></p><p><strong>重要</strong>：使用 Task tool 一次性啟動 5 個平行子代理人（在單個訊息中包含 5 個 Task 呼叫）。</p><p><code>`</code>typescript<br>
+// 平行搜尋架構<br>
+const regions = [<br>
+  { name: '臺灣本地', keywords: 'Taiwan think tanks psychological warfare cognitive warfare PSYOP 2026' },<br>
+  { name: '美國', keywords: 'US think tanks Taiwan PSYOP cognitive warfare 2026 RAND CSIS' },<br>
+  { name: '日本澳洲', keywords: 'Japan Australia think tanks Taiwan security PSYOP 2026' },<br>
+  { name: '歐洲', keywords: 'European think tanks cognitive warfare disinformation 2026' },<br>
+  { name: '其他亞太', keywords: 'India Canada think tanks cognitive warfare 2026' }<br>
+];<br>
+<code>`</code></p><p><strong>每個子代理人任務</strong>：<br>
+1. WebSearch 搜尋該地區智庫（2026 年最新）<br>
+2. WebFetch 驗證智庫官網可達性<br>
+3. 提取智庫資訊：<br>
+   - 機構名稱（英文 + 中文）<br>
+   - 官方網址<br>
+   - 專注領域<br>
+   - 近期重要報告（2025-2026）<br>
+4. 輸出 JSON 格式結果</p><p><h3>步驟 3：整合所有子代理人結果</h3></p><p>等待所有 5 個子代理人完成後，整合結果為統一格式：</p><p><code>`</code>yaml<br>
+---<br>
+region: 臺灣本地<br>
+organization: 雙想實驗室（Doublethink Lab）<br>
+website: https://doublethinklab.org/<br>
+focus_areas:<br>
+  - 中國惡意影響力操作<br>
+  - 假訊息活動<br>
+  - 數位工具與方法學<br>
+recent_reports:<br>
+  - title: "2025 台灣選舉假訊息分析"<br>
+    date: 2025-12-01<br>
+    url: https://doublethinklab.org/reports/...<br>
+verified: true<br>
+verified_date: 2026-01-28<br>
+---<br>
+<code>`</code></p><p><h3>步驟 4：寫入結構化檔案</h3></p><p>輸出到：<code>素材庫/來源歸檔/心戰情報/智庫清單/全球心戰智庫清單-{日期}.md</code></p><p>---</p><p><h2>📋 智庫搜尋優先級（檢核清單）</h2></p><p><h3>臺灣本地（最高優先級）</h3><br>
+- [ ] Doublethink Lab（雙想實驗室）<br>
+- [ ] IORG（臺灣資訊環境研究中心）<br>
+- [ ] DSET（民主、社會與新興技術研究所）<br>
+- [ ] 認知作戰研究中心（法務部調查局）<br>
+- [ ] 臺灣事實查核中心<br>
+- [ ] 國防安全研究院（INDSR）<br>
+- [ ] CAPSTS（亞太安全與臺灣研究中心）<br>
+- [ ] 東海大學兩岸研究中心<br>
+- [ ] 亞太和平研究基金會</p><p><h3>美國（高優先級）</h3><br>
+- [ ] German Marshall Fund (GMF)<br>
+- [ ] Foundation for Defense of Democracies (FDD)<br>
+- [ ] Institute for the Study of War (ISW)<br>
+- [ ] Global Taiwan Institute (GTI)<br>
+- [ ] RAND Corporation<br>
+- [ ] CSIS<br>
+- [ ] AEI<br>
+- [ ] Atlantic Council（DFRLab）</p><p><h3>日本澳洲</h3><br>
+- [ ] The Sasakawa Peace Foundation<br>
+- [ ] Australian Strategic Policy Institute (ASPI)<br>
+- [ ] Lowy Institute</p><p><h3>歐洲</h3><br>
+- [ ] RUSI, IISS, Chatham House<br>
+- [ ] SIPRI</p><p><h3>其他亞太</h3><br>
+- [ ] Observer Research Foundation (ORF) - 印度<br>
+- [ ] Macdonald-Laurier Institute - 加拿大</p><p>---</p><p><h2>🔍 搜尋策略</h2></p><p><h3>1. 關鍵字組合</h3><br>
+<code>`</code><br>
+基礎詞 + 地區詞 + 時效詞<br>
+- 基礎詞：cognitive warfare, PSYOP, psychological operations, disinformation<br>
+- 地區詞：Taiwan, cross-strait, Indo-Pacific<br>
+- 時效詞：2025, 2026, latest<br>
+<code>`</code></p><p><h3>2. 驗證標準</h3><br>
+- ✅ 官網可達（HTTP 200）<br>
+- ✅ HTTPS 證書有效<br>
+- ✅ 有近期更新（2025-2026）<br>
+- ✅ 有臺海/認知戰相關報告</p><p><h3>3. 排除標準</h3><br>
+- ❌ 404/403 錯誤<br>
+- ❌ 證書過期<br>
+- ❌ 2024 年後無更新<br>
+- ❌ 無臺海相關內容</p><p>---</p><p><h2>🤖 子代理人範本（平行執行）</h2></p><p><h3>子代理人 1：臺灣本地智庫搜尋</h3></p><p><strong>Prompt</strong>：<br>
+<code>`</code><br>
+你是臺灣本地智庫搜尋代理人。請執行以下任務：</p><p>1. WebSearch 搜尋：<br>
+   - "Taiwan think tanks cognitive warfare 2026"<br>
+   - "台灣智庫 認知作戰 2025 2026"<br>
+   - "Doublethink Lab IORG DSET 2026"</p><p>2. 針對以下 9 個機構，逐一驗證：<br>
+   - Doublethink Lab, IORG, DSET, 認知作戰研究中心,<br>
+     臺灣事實查核中心, INDSR, CAPSTS, 東海兩岸中心, 亞太和平基金會</p><p>3. 每個機構執行：<br>
+   - WebFetch 官網首頁（驗證可達）<br>
+   - WebFetch 最新報告頁面<br>
+   - 提取：機構名稱、網址、專注領域、近期報告</p><p>4. 輸出 JSON：<br>
+{<br>
+  "region": "臺灣本地",<br>
+  "organizations": [<br>
+    {<br>
+      "name": "Doublethink Lab",<br>
+      "name_zh": "雙想實驗室",<br>
+      "website": "https://doublethinklab.org/",<br>
+      "verified": true,<br>
+      "focus_areas": ["中國惡意影響力操作"],<br>
+      "recent_reports": [...]<br>
+    }<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><strong>相同結構用於其他 4 個地區代理人</strong>。</p><p>---</p><p><h2>⚡ 效能優化</h2></p><p>1. <strong>平行搜尋</strong>：5 個地區同時搜尋（Task tool 平行呼叫）<br>
+2. <strong>快取機制</strong>：同一智庫 24 小時內不重複驗證<br>
+3. <strong>批次驗證</strong>：一次 WebFetch 可驗證多個 URL（HEAD 請求）</p><p>---</p><p><h2>📊 輸出格式</h2></p><p><h3>Markdown 格式（供人類閱讀）</h3><br>
+<code>`</code>markdown<br>
+<h1>全球心戰智庫清單（2026-01-28）</h1></p><p><h2>臺灣本地（9 個）</h2></p><p><h3>雙想實驗室（Doublethink Lab）</h3><br>
+- <strong>官網</strong>：https://doublethinklab.org/<br>
+- <strong>專注領域</strong>：中國惡意影響力操作、假訊息活動<br>
+- <strong>近期報告</strong>：<br>
+  - [2025 台灣選舉假訊息分析](https://...)（2025-12-01）<br>
+- <strong>驗證狀態</strong>：✅ 已驗證（2026-01-28）</p><p>...<br>
+<code>`</code></p><p><h3>YAML 格式（供 ripgrep 檢索）</h3><br>
+<code>`</code>yaml<br>
+---<br>
+region: 臺灣本地<br>
+total_organizations: 9<br>
+verified_date: 2026-01-28<br>
+---</p><p>organizations:<br>
+  - name: Doublethink Lab<br>
+    name_zh: 雙想實驗室<br>
+    website: https://doublethinklab.org/<br>
+    verified: true<br>
+    ...<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+搜尋心戰智庫<br>
+<code>`</code></p><p><strong>技能執行</strong>：<br>
+1. 讀取檢核清單<br>
+2. 平行啟動 5 個子代理人（臺灣、美國、日澳、歐洲、其他亞太）<br>
+3. 等待所有子代理人完成<br>
+4. 整合結果<br>
+5. 寫入 <code>素材庫/來源歸檔/心戰情報/智庫清單/全球心戰智庫清單-2026-01-28.md</code><br>
+6. 回報：「✅ 已完成全球心戰智庫搜尋，共找到 45 個機構，全部驗證通過。」</p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>下游技能</strong>：<code>心戰情報-零幻覺驗證</code>（進一步驗證智庫報告內容）<br>
+- <strong>下游技能</strong>：<code>心戰情報-事件收集</code>（使用智庫清單收集事件）</p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v1.0<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

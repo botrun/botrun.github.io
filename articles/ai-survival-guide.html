@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 時代生存攻略：讓機器人幫你賺錢，而不是搶你飯碗 | 波特人</title>
+  <meta name="description" content="未來五年，AI 會淘汰「賴以為生但熱情不夠」的工作。四個關鍵建議：創作者經濟、保留創意快樂、成長可見化、情境設計師">
+  <style>
+    /* 設計系統：Minimalism - 專業、清晰、易讀 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+    :root {
+      /* Colors - Minimalism + Professional */
+      --primary: #0891B2;
+      --secondary: #22D3EE;
+      --cta: #22C55E;
+      --bg: #FFFFFF;
+      --bg-light: #F0FDFA;
+      --text: #164E63;
+      --text-muted: #0E7490;
+      --text-light: #67E8F9;
+      --border: #CFFAFE;
+      --accent: #F97316;
+
+      /* Typography */
+      --font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Shadows */
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text);
+      line-height: 1.75;
+      background: var(--bg-light);
+      font-size: 18px;
+    }
+
+    /* 列印樣式 */
+    @media print {
+      body {
+        background: white;
+        font-size: 12pt;
+        line-height: 1.5;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      article {
+        max-width: 100% !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+      }
+
+      h1 { page-break-after: avoid; font-size: 24pt; }
+      h2 { page-break-after: avoid; font-size: 18pt; margin-top: 20pt; }
+      h3 { page-break-after: avoid; font-size: 14pt; margin-top: 16pt; }
+
+      .situation-box,
+      .evidence-box,
+      .action-box {
+        page-break-inside: avoid;
+        border: 1px solid #ccc !important;
+        background: white !important;
+        box-shadow: none !important;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: underline;
+      }
+
+      a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+      }
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    header .subtitle {
+      font-size: 1.25rem;
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header .meta {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Article */
+    article {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
+      border-radius: 8px;
+    }
+
+    /* Typography */
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    em {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Special boxes */
+    .situation-box,
+    .evidence-box,
+    .action-box {
+      background: var(--bg-light);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+    }
+
+    .evidence-box {
+      background: #FFF7ED;
+      border-left-color: var(--accent);
+    }
+
+    .action-box {
+      background: #F0FDF4;
+      border-left-color: var(--cta);
+    }
+
+    .situation-box h4,
+    .evidence-box h4,
+    .action-box h4 {
+      margin-top: 0;
+      font-size: 1.125rem;
+    }
+
+    /* Score badge */
+    .score {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-left: 0.5rem;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-light);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    tr:hover {
+      background: var(--bg-light);
+    }
+
+    /* Links */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 200ms;
+    }
+
+    a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+      transition: background 200ms;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background: var(--text-muted);
+      border-bottom-color: transparent;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      header .subtitle {
+        font-size: 1rem;
+      }
+
+      article {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      body {
+        font-size: 16px;
+      }
+    }
+
+    /* Icons using emoji (only for visual decoration, not functional) */
+    .icon {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI 時代生存攻略：讓機器人幫你賺錢，而不是搶你飯碗</h1>
+    <p class="subtitle">未來五年，AI 會淘汰「賴以為生但熱情不夠」的工作。四個關鍵建議讓你從被取代變成不可取代</p>
+    <p class="meta">發布日期：2026-01-31 | 基於全球最新 AI 研究 (2025-2026)</p>
+  </header>
+
+  <article>
+    <a href="../" class="back-btn no-print">← 返回首頁</a>
+
+    <h2>核心發現：AI 五年後的最大挑戰</h2>
+
+    <div class="evidence-box">
+      <h4>關鍵研究洞察</h4>
+      <ol>
+        <li><strong>到 2030 年，40% 核心技能將改變</strong>，全球 59% 勞動力需要額外培訓</li>
+        <li><strong>AI 會降低內在動機</strong>：研究顯示 AI 協助完成任務時，雖提高效率，但會降低長期動機和心理健康</li>
+        <li><strong>創意工作者失去熱情</strong>：當 AI 接管創意部分時，人們只剩下「檢查 AI 生成內容」的無趣工作</li>
+        <li><strong>賴以為生但熱情不夠的工作，終將被 AI 淘汰</strong></li>
+        <li><strong>人類需要的三大要素</strong>：自主權（autonomy）、精通感（mastery）、目的感（purpose）</li>
+      </ol>
+    </div>
+
+    <h2>2️⃣ 建立「創作者經濟」：讓領域專家保有熱情與收入 <span class="score">10/10</span></h2>
+
+    <div class="situation-box">
+      <h4><span class="icon">💭</span>大白話情境</h4>
+      <p><strong>想像一下：</strong></p>
+      <p>你是一個<strong>公共工程採購法的資深專家</strong>，做了 20 年。<br>
+      以前，政府機關會花 20 萬請你審標案、教新人。<br>
+      <strong>現在 AI 出現了</strong>，它 3 秒就能查完所有法規，你失業了嗎？</p>
+
+      <p>❌ <strong>錯誤做法</strong>：跟 AI 比速度 → 你輸定了<br>
+      ✅ <strong>正確做法</strong>：<strong>成為「AI 的老師」，教 AI 什麼是好答案</strong></p>
+
+      <h4>具體怎麼做？</h4>
+      <p>你<strong>設計 100 題「超難情境題」</strong>（例如：「軍事採購遇到疫情延誤，又遇到匯率暴跌，怎麼辦？」）<br>
+      → 每次有人用 AI 答這些題，<strong>你拿 70% 收入</strong><br>
+      → 你從「做一次賺一次」變成「<strong>躺著賺被動收入</strong>」<br>
+      → 而且你做的是你<strong>最有熱情的事</strong>：設計刁鑽的情境題，考倒所有 AI</p>
+    </div>
+
+    <div class="evidence-box">
+      <h4><span class="icon">📊</span>研究證據</h4>
+
+      <p><strong>2026 年創作者經濟將達到 $43.9B（美金 439 億）</strong></p>
+      <p>來源：<a href="https://www.emarketer.com/content/creator-economy-trends-watch-2026" target="_blank" rel="noopener">Creator Economy Trends to Watch in 2026 - eMarketer</a><br>
+      原文：<em>"For 2026, that figure is set to increase to $43.9 billion."</em></p>
+
+      <p><strong>84% 創作者使用 AI 工具，50.1% 說提升生產力、42.5% 說降低成本</strong></p>
+      <p>來源：<a href="https://finance.yahoo.com/news/creator-economy-analytics-artificial-intelligence-122400718.html" target="_blank" rel="noopener">Creator Economy Analytics AI Research Report 2025 - Yahoo Finance</a><br>
+      原文：<em>"A substantial 84% of content creators are leveraging AI-powered tools, appreciating them for boosting productivity (50.1%), saving time (53.7%), and reducing costs (42.5%)."</em></p>
+
+      <p><strong>2025 年 9 月，Donatuz 推出 AI 驅動的變現平台，整合多種收入來源、AI 分析、即時支付</strong></p>
+      <p>來源：同上<br>
+      原文：<em>"In September 2025, Donatuz launched an AI-led monetization platform that consolidates multiple revenue streams into one application, offering features like AI analytics, instant payouts, and secure transactions."</em></p>
+    </div>
+
+    <div class="action-box">
+      <h4><span class="icon">✅</span>我們團隊正在做的</h4>
+      <ul>
+        <li><strong>零幻覺™ 題庫分潤：專家拿 70% 收入</strong></li>
+        <li>31 個政府機關的專家，設計高品味題庫</li>
+        <li>18 個月累積 500+ 台灣政策情境，別人從零開始追不上</li>
+      </ul>
+
+      <h4>夥伴們可以做的</h4>
+      <ol>
+        <li>找出你最有熱情的領域（採購法、資安、政策評估...）</li>
+        <li>設計 100 題「你做 20 年才知道的刁鑽情境」</li>
+        <li>每次有人用 AI 答這些題，你拿 70% 收入</li>
+        <li>你從「賣時間」變成「賣智慧」</li>
+      </ol>
+    </div>
+
+    <h2>4️⃣ 保留「創意的快樂」：讓 AI 做苦工，人類做有趣的部分 <span class="score">8/10</span></h2>
+
+    <div class="situation-box">
+      <h4><span class="icon">💭</span>大白話情境</h4>
+      <p><strong>想像一下：</strong></p>
+      <p>你是<strong>設計師</strong>，最愛的是「發想創意點子」。<br>
+      以前：花 2 小時收集資料 → 花 6 小時發想創意 → 花 2 小時執行<br>
+      <strong>AI 出現後，你開心嗎？</strong></p>
+
+      <p>❌ <strong>錯誤分配</strong>：AI 幫你「發想創意」→ 你只剩「檢查 AI 生成的圖」→ <strong>你失去工作的樂趣</strong><br>
+      ✅ <strong>正確分配</strong>：AI 幫你「收集資料」→ 你專注「發想創意」→ AI 幫你「初步執行」→ 你做「最終調整」</p>
+    </div>
+
+    <div class="evidence-box">
+      <h4><span class="icon">📊</span>研究證據</h4>
+
+      <p><strong>超過 3,500 人的研究：AI 協作提升任務表現，但降低人類的內在動機</strong></p>
+      <p>來源：<a href="https://www.researchgate.net/publication/391282484_Human-generative_AI_collaboration_enhances_task_performance_but_undermines_human's_intrinsic_motivation" target="_blank" rel="noopener">Human-generative AI collaboration - ResearchGate</a><br>
+      論文標題本身即為核心發現</p>
+
+      <p><strong>為什麼會降低動機？三大原因：</strong></p>
+      <p>來源：<a href="https://blog.scottlogic.com/2025/07/31/motivation-and-AI.html" target="_blank" rel="noopener">Motivation Matters: Rethinking AI's Role - Scott Logic</a></p>
+
+      <ol>
+        <li><strong>失去控制感</strong>：<em>"When working with AI, people's sense of control may be reduced if they feel the AI is overriding or strongly influencing their own decision-making process."</em></li>
+        <li><strong>身份認同挑戰</strong>：<em>"Delegating skills that form part of our identity to AI can challenge our self-concept and create cognitive dissonance."</em></li>
+        <li><strong>AI 搶走有趣的部分</strong>：<em>"There's a concern that AI may take over the parts of the job people tend to be more intrinsically motivated to do."</em></li>
+      </ol>
+
+      <p><strong>但如果分配得好，AI 可以讓你更快樂：</strong></p>
+      <p>來源：<a href="https://www.fau.edu/newsdesk/articles/ai-retail-innovation-study" target="_blank" rel="noopener">AI in Retail: How to Spark Creativity - FAU</a></p>
+
+      <p><strong>零售業研究：AI 承擔 90% 無聊工作，員工保留創意解決困難問題</strong><br>
+      原文：<em>"Employees reported that 'because AI can take up 90% of the boring part of the job,' this saved them mental energy and allowed them to preserve creativity for solving harder problems."</em></p>
+    </div>
+
+    <div class="action-box">
+      <h4><span class="icon">✅</span>我們團隊正在做的</h4>
+      <ul>
+        <li><strong>CLI 自動化處理「資料收集」「格式轉換」「初步分析」</strong></li>
+        <li><strong>人類專家負責「定義問題」「設計情境」「最終判斷」</strong></li>
+        <li>例如：成大學生用 CLI 5 分鐘收集資料 → 專注在「設計高品味題目」（有趣的部分）</li>
+      </ul>
+
+      <h4>夥伴們可以做的</h4>
+      <ol>
+        <li>列出你工作中的「無聊部分」vs「有趣部分」</li>
+        <li>無聊部分：交給 AI CLI 自動化（收集資料、整理格式）</li>
+        <li>有趣部分：你親手做（發想創意、設計情境、做判斷）</li>
+        <li><strong>永遠保留「最後決定權」</strong>：AI 建議，你決定</li>
+      </ol>
+    </div>
+
+    <h2>5️⃣ 「成長可見化」：讓每個人看到自己的進化歷程 <span class="score">9/10</span></h2>
+
+    <div class="situation-box">
+      <h4><span class="icon">💭</span>大白話情境</h4>
+      <p><strong>想像一下：</strong></p>
+      <p>你在<strong>玩遊戲</strong>（例如寶可夢）：<br>
+      → 你看到自己從 Lv.1 升到 Lv.50<br>
+      → 你看到皮卡丘從小隻變成大隻<br>
+      → 你看到圖鑑收集了 150 隻神奇寶貝<br>
+      <strong>你超有成就感，一直想玩下去</strong></p>
+
+      <p><strong>但在工作中：</strong><br>
+      → 你做了 3 個月專案，<strong>看不到自己成長了什麼</strong><br>
+      → 老闆說「你進步了」，<strong>但你感覺不到</strong><br>
+      → <strong>你失去動力</strong></p>
+
+      <p><strong>如果把工作變成遊戲呢？</strong></p>
+      <p>✅ <strong>Day 1</strong>：你孵化出第一個 CLI（v0.1），只能回答 20 個問題<br>
+      ✅ <strong>Day 30</strong>：CLI 升級到 v1.0，可以回答 200 個問題<br>
+      ✅ <strong>Day 90</strong>：CLI 升級到 v2.0，可以回答 2,000 個問題<br>
+      → <strong>你清楚看到自己「從新手變專家」的過程</strong><br>
+      → <strong>你超有成就感，想繼續升級到 v3.0</strong></p>
+    </div>
+
+    <div class="evidence-box">
+      <h4><span class="icon">📊</span>研究證據</h4>
+
+      <p><strong>Apple Watch 的進度環（Progress Rings）：看到完成度會激勵你繼續</strong></p>
+      <p>來源：<a href="https://alpha.school/blog/how-ai-and-gamification-transform-learning-at-alpha-school/" target="_blank" rel="noopener">How AI and Gamification Transform Learning - Alpha School</a><br>
+      原文：<em>"Progress Rings (similar to Apple Watch) that show completion when students finish learning sessions at mastery level (90%+ accuracy), along with real-time daily goal tracking."</em></p>
+
+      <p><strong>遊戲化的核心元素：Progress（進度）讓玩家感受到「正在進步」</strong></p>
+      <p>來源：<a href="https://medium.com/yahoo-apac-design/%E9%81%8A%E6%88%B2%E5%8C%96-gamification-%E8%88%87%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88%E5%AF%A6%E8%B8%90-b6899b0d9931" target="_blank" rel="noopener">遊戲化與產品設計實踐 - Yahoo Design</a><br>
+      原文：<em>"進度（progression）：玩家需要感受到「正在進步」，常見透過經驗值或分數解鎖更多功能或特權。"</em></p>
+    </div>
+
+    <div class="action-box">
+      <h4><span class="icon">✅</span>我們團隊正在做的</h4>
+      <ul>
+        <li><strong>CLI 孵化歷程報告：v0.1 → v1.0 → v2.0 → v3.0</strong></li>
+        <li>每個版本記錄「新增了什麼能力」「解決了什麼問題」</li>
+        <li>例如：成大學生第一次 5 分鐘深度研究 → 孵化 CLI → 第二次 15 秒回答（<strong>快 20 倍！看得見的成長</strong>）</li>
+      </ul>
+
+      <h4>夥伴們可以做的</h4>
+      <ol>
+        <li><strong>每個專案都有「版本號」</strong>：v0.1 → v1.0 → v2.0</li>
+        <li><strong>每次升級都記錄</strong>：新增了什麼能力、解決了什麼問題</li>
+        <li><strong>建立「個人儀表板」</strong>：
+          <ul>
+            <li>我孵化了 3 個 CLI</li>
+            <li>我設計了 150 題高品味題目</li>
+            <li>我的題庫被使用 500 次</li>
+            <li><strong>我從 Lv.1 新手升到 Lv.25 專家</strong></li>
+          </ul>
+        </li>
+        <li>定期回顧：「3 個月前的我 vs 現在的我」</li>
+      </ol>
+    </div>
+
+    <h2>1️⃣1️⃣ 「情境設計師」：設計 AI 無法想像的複雜情境 <span class="score">9/10</span></h2>
+
+    <div class="situation-box">
+      <h4><span class="icon">💭</span>大白話情境</h4>
+      <p><strong>想像一下：</strong></p>
+      <p><strong>AI 很會「回答教科書問題」</strong><br>
+      → 問：「公共工程採購法第 52 條是什麼？」<br>
+      → AI：3 秒查到答案 ✅</p>
+
+      <p><strong>但 AI 不會「設計刁鑽情境」</strong><br>
+      → 你設計一題：「軍事採購遇到疫情延誤，又遇到匯率暴跌，又遇到承包商倒閉，又遇到立法院質詢，你怎麼辦？」<br>
+      → AI：???（答錯）❌<br>
+      → <strong>你才是專家</strong></p>
+
+      <h4>為什麼「情境設計」是 AI 做不到的？</h4>
+      <ol>
+        <li><strong>AI 擅長「模式識別」</strong>（看過的題目）<br>
+        → 人類擅長<strong>「創造前所未見的情境」</strong>（沒看過的題目）</li>
+        <li><strong>AI 是「組合已知」</strong>（把教科書內容重新排列）<br>
+        → 人類是<strong>「創造未知」</strong>（想像未來可能發生的事）</li>
+        <li><strong>AI 缺乏「現實經驗」</strong>（沒真的遇過危機）<br>
+        → 人類有<strong>「20 年實戰經驗」</strong>（知道哪些情境會同時發生）</li>
+      </ol>
+    </div>
+
+    <div class="evidence-box">
+      <h4><span class="icon">📊</span>研究證據</h4>
+
+      <p><strong>只有 26% 員工說 AI 提升創意，AI 的好處不是普遍的</strong></p>
+      <p>來源：<a href="https://mitsloan.mit.edu/press/does-generative-ai-actually-enhance-creativity-workplace" target="_blank" rel="noopener">Does generative AI actually enhance creativity? - MIT Sloan</a><br>
+      原文：<em>"A Gallup survey found that only 26% of employees using generative AI reported improved creativity, highlighting that AI's benefits aren't universal."</em></p>
+
+      <p><strong>AI 提升創意，但僅限於「有強後設認知策略」的員工</strong></p>
+      <p>來源：同上<br>
+      原文：<em>"Research from MIT Sloan found that generative AI enhances creativity only for employees who have strong metacognitive strategies."</em></p>
+
+      <p><strong>這代表什麼？</strong><br>
+      → <strong>AI 不會自己產生創意</strong><br>
+      → <strong>需要人類「設計策略」「定義什麼是好創意」</strong><br>
+      → <strong>這就是「情境設計師」的價值</strong></p>
+    </div>
+
+    <div class="action-box">
+      <h4><span class="icon">✅</span>我們團隊正在做的</h4>
+      <ul>
+        <li><strong>高品味題庫定義：「鑑別度、口碑、複雜情境」</strong></li>
+        <li>設計出「讓所有 AI 都答錯」的題目</li>
+        <li>例如：台灣政策情境（疫情 + 選舉 + 國際壓力 + 預算限制）同時發生</li>
+        <li><strong>18 個月累積 500+ 複雜情境</strong>，這是 AI 無法自己產生的</li>
+      </ul>
+
+      <h4>夥伴們可以做的</h4>
+      <ol>
+        <li><strong>列出你領域的「教科書答案」</strong>（AI 會的）</li>
+        <li><strong>設計「複雜情境題」</strong>（AI 不會的）：
+          <ul>
+            <li>同時考慮 3-5 個限制條件</li>
+            <li>加入「現實中的兩難」（例如：預算不夠但時間緊迫）</li>
+            <li>加入「台灣特殊情境」（例如：選舉、兩岸、民意）</li>
+          </ul>
+        </li>
+        <li><strong>測試 AI</strong>：看 Claude/ChatGPT 能不能答對你的題目</li>
+        <li><strong>如果 AI 答錯 → 你就是專家</strong>，這題就是你的護城河</li>
+      </ol>
+    </div>
+
+    <h2>總結：給夥伴的行動清單</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>建議</th>
+          <th>你明天就能做的事</th>
+          <th>為什麼重要</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2️⃣ 創作者經濟</strong></td>
+          <td>找出你最有熱情的領域，設計 10 題「你做 20 年才知道的刁鑽情境」</td>
+          <td><strong>從賣時間變成賣智慧</strong>，躺著賺被動收入</td>
+        </tr>
+        <tr>
+          <td><strong>4️⃣ 保留創意快樂</strong></td>
+          <td>列出工作的「無聊部分 vs 有趣部分」，無聊部分交給 AI CLI</td>
+          <td><strong>保留工作的樂趣</strong>，避免失去動力</td>
+        </tr>
+        <tr>
+          <td><strong>5️⃣ 成長可見化</strong></td>
+          <td>開始記錄你的「版本號」：今天是 v1.0，3 個月後升到 v2.0</td>
+          <td><strong>看到自己進步</strong>，像玩遊戲一樣有成就感</td>
+        </tr>
+        <tr>
+          <td><strong>1️⃣1️⃣ 情境設計師</strong></td>
+          <td>設計一題「讓所有 AI 都答錯」的複雜情境題</td>
+          <td><strong>你不會被 AI 取代</strong>，你是考倒 AI 的人</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>完整研究來源</h2>
+
+    <h3>內在動機與 AI</h3>
+    <ul>
+      <li><a href="https://www.researchgate.net/publication/391282484_Human-generative_AI_collaboration_enhances_task_performance_but_undermines_human's_intrinsic_motivation" target="_blank" rel="noopener">Human-generative AI collaboration enhances task performance but undermines human's intrinsic motivation</a></li>
+      <li><a href="https://blog.scottlogic.com/2025/07/31/motivation-and-AI.html" target="_blank" rel="noopener">Motivation Matters: Rethinking AI's Role in Human-Centred Workplaces</a></li>
+    </ul>
+
+    <h3>創意工作與 AI</h3>
+    <ul>
+      <li><a href="https://www.fau.edu/newsdesk/articles/ai-retail-innovation-study" target="_blank" rel="noopener">AI in Retail: How to Spark Creativity and Improve Job Satisfaction - FAU</a></li>
+      <li><a href="https://mitsloan.mit.edu/press/does-generative-ai-actually-enhance-creativity-workplace" target="_blank" rel="noopener">Does generative AI actually enhance creativity in the workplace? - MIT Sloan</a></li>
+    </ul>
+
+    <h3>創作者經濟</h3>
+    <ul>
+      <li><a href="https://www.emarketer.com/content/creator-economy-trends-watch-2026" target="_blank" rel="noopener">Creator Economy Trends to Watch in 2026 - eMarketer</a></li>
+      <li><a href="https://finance.yahoo.com/news/creator-economy-analytics-artificial-intelligence-122400718.html" target="_blank" rel="noopener">Creator Economy Analytics AI Research Report 2025 - Yahoo Finance</a></li>
+    </ul>
+
+    <h3>遊戲化與成長可視化</h3>
+    <ul>
+      <li><a href="https://alpha.school/blog/how-ai-and-gamification-transform-learning-at-alpha-school/" target="_blank" rel="noopener">How AI and Gamification Transform Learning at Alpha School</a></li>
+      <li><a href="https://medium.com/yahoo-apac-design/%E9%81%8A%E6%88%B2%E5%8C%96-gamification-%E8%88%87%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88%E5%AF%A6%E8%B8%90-b6899b0d9931" target="_blank" rel="noopener">遊戲化 (Gamification) 與產品設計實踐 - Yahoo Design</a></li>
+    </ul>
+
+    <div class="action-box" style="margin-top: 3rem;">
+      <h4><span class="icon">🚀</span>核心洞察</h4>
+      <p><strong>你們團隊最大的優勢：已經在做「AI 做不到的事」</strong></p>
+      <ul>
+        <li>✅ <strong>預測未來</strong>：世界水晶（競爭對手都沒有）</li>
+        <li>✅ <strong>主權 AI</strong>：7 國聯盟（巨頭做不到的地緣政治優勢）</li>
+        <li>✅ <strong>領域深度</strong>：31 機關高品味題庫（需要熱情與專業）</li>
+        <li>✅ <strong>組織記憶</strong>：18 個月累積的智慧（時間護城河）</li>
+        <li>✅ <strong>傳承文化</strong>：成大產學合作（培養下一代）</li>
+      </ul>
+      <p><strong>五年後，當 AI 淘汰了「賴以為生但熱情不夠」的工作，你們團隊正在做的，全都是「需要熱情+專業+人類智慧」才能做好的事。</strong></p>
+    </div>
+
+    <p style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border); text-align: center; color: var(--text-muted);">
+      <strong>文件建立時間</strong>：2026-01-31（臺灣時間）<br>
+      <strong>基於</strong>：Botrun 團隊成果 + 全球最新 AI 研究（2025-2026）<br>
+      <strong>語言</strong>：繁體中文臺灣慣用語
+    </p>
+  </article>
+
+  <footer class="no-print">
+    <p>Boosted by <a href="https://botrun.ai" target="_blank" rel="noopener">botrun.ai</a></p>
+  </footer>
+</body>
+</html>

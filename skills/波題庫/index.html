@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wave-quiz-system - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> wave-quiz-system</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>波題庫 - AI 模型評測完整系統</h1></p><p>> <strong>核心理念</strong>：高品味開放式題庫 + 多模型平行評測 + 零幻覺驗證</p><p>---</p><p><h2>功能總覽</h2></p><p>| 功能 | 觸發詞 | 說明 | 參考文件 |<br>
+|------|--------|------|----------|<br>
+| <strong>出題</strong> | 波出題 | 逆向出題法生成高品味開放式題庫 | <code>references/波出題.md</code> |<br>
+| <strong>答題</strong> | 波答題 | 多模型平行答題（Haiku/Gemini/Ministral）| <code>references/波答題-haiku.md</code>, <code>references/波答題-openrouter.md</code> |<br>
+| <strong>打分</strong> | 波打分 | 對所有模型答題進行評分 | <code>references/波打分.md</code> |<br>
+| <strong>排行榜</strong> | 波排行榜 | 生成多維度排行榜報告 | <code>references/波排行榜.md</code> |<br>
+| <strong>驗證</strong> | 波驗證 | 驗證題庫答案正確性 | <code>references/波驗證.md</code> |<br>
+| <strong>共用</strong> | - | 模型配置、評分標準、版本偵測 | <code>references/波共用.md</code> |</p><p>---</p><p><h2>統一輸出目錄規則</h2></p><p><strong>專案輸出</strong>：<code>projects/{專案名}/</code></p><p><code>`</code><br>
+projects/{專案名}/<br>
+├── 題庫/<br>
+│   └── v{版本}/<br>
+│       ├── {專案名}-題庫-v{版本}.yaml    # 出題輸出<br>
+│       ├── 驗算報告-{日期}.md             # 驗證輸出<br>
+│       ├── 答題/                          # 答題輸出<br>
+│       │   ├── haiku/<br>
+│       │   │   ├── 有上網/<br>
+│       │   │   └── 無上網/<br>
+│       │   ├── gemini3flash/<br>
+│       │   │   ├── 有上網/<br>
+│       │   │   └── 無上網/<br>
+│       │   └── ministral8b/<br>
+│       │       ├── 有上網/<br>
+│       │       └── 無上網/<br>
+│       └── 評分/                          # 打分輸出<br>
+│           ├── {模型}/                    # JSON 評分記錄<br>
+│           └── 評分報告-多模型-{日期}.md<br>
+└── 來源/                                   # 原始資料</p><p>shared/排行榜/                              # 跨專案排行榜<br>
+├── AI模型排行榜-{日期}.md<br>
+└── leaderboard-{日期}.json<br>
+<code>`</code></p><p>---</p><p><h2>支援模型</h2></p><p>| 模型 | 簡稱 | 類別 | 有上網 | 無上網 |<br>
+|------|------|------|:------:|:------:|<br>
+| Claude Haiku 4.5 | haiku | proprietary | ✅ | ✅ |<br>
+| Gemini 3 Flash | gemini3flash | proprietary | ✅ | ✅ |<br>
+| Ministral 8B | ministral8b | open_weight | ✅ | ✅ |</p><p>---</p><p><h2>快速啟動</h2></p><p><h3>出題</h3></p><p><code>`</code><br>
+用戶：波出題<br>
+AI：好的！請告訴我：<br>
+1. 來源是什麼？（網址/PDF/檔案）<br>
+2. 需要幾題？（5/20/50/100）<br>
+3. 放在哪個專案？（如：政府/採購法）<br>
+4. 什麼領域？<br>
+<code>`</code></p><p><h3>答題</h3></p><p><code>`</code>bash<br>
+<h1>Haiku 有上網答題（使用 Task）</h1><br>
+用戶：波答題有上網 採購法</p><p><h1>Gemini 答題（使用 OpenRouter API）</h1><br>
+npx tsx .claude/skills/波題庫/scripts/openrouter-quiz.ts \<br>
+  --model gemini --project "政府/採購法" --mode with-search<br>
+<code>`</code></p><p><h3>打分</h3></p><p><code>`</code><br>
+用戶：波打分 採購法<br>
+AI：開始平行評分所有模型的答題記錄...<br>
+<code>`</code></p><p><h3>排行榜</h3></p><p><code>`</code><br>
+用戶：波排行榜 採購法<br>
+AI：生成 AI 模型排行榜...<br>
+<code>`</code></p><p><h3>驗證</h3></p><p><code>`</code><br>
+用戶：波驗證 採購法<br>
+AI：開始驗證題庫答案正確性...<br>
+<code>`</code></p><p>---</p><p><h2>完整執行流程</h2></p><p><code>`</code><br>
+Step 1: 波出題<br>
+        ├─ 抓取來源（PDF/網頁）<br>
+        ├─ 逆向出題法生成題庫<br>
+        └─ 輸出：projects/{專案}/題庫/v{版本}/{專案名}-題庫.yaml</p><p>Step 2: 波驗證<br>
+        ├─ 上網查證每題答案<br>
+        ├─ 發現錯誤立即修正<br>
+        └─ 輸出：projects/{專案}/題庫/v{版本}/驗算報告.md</p><p>Step 3: 波答題<br>
+        ├─ Haiku 有上網/無上網<br>
+        ├─ Gemini 有上網/無上網<br>
+        ├─ Ministral 有上網/無上網<br>
+        └─ 輸出：projects/{專案}/題庫/v{版本}/答題/{模型}/{模式}/</p><p>Step 4: 波打分<br>
+        ├─ 對照標準答案評分<br>
+        ├─ 1-10 分制<br>
+        └─ 輸出：projects/{專案}/題庫/v{版本}/評分/</p><p>Step 5: 波排行榜<br>
+        ├─ 彙整所有評分<br>
+        ├─ 生成多維度排名<br>
+        └─ 輸出：projects/{專案}/排行榜/<br>
+<code>`</code></p><p>---</p><p><h2>腳本清單</h2></p><p>| 腳本 | 功能 |<br>
+|------|------|<br>
+| <code>scripts/pdf-processor.ts</code> | PDF 拆頁 + 轉純文字 |<br>
+| <code>scripts/browser-fetch.ts</code> | 無頭瀏覽器抓取 |<br>
+| <code>scripts/validate.ts</code> | 題庫格式驗證 |<br>
+| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題 |<br>
+| <code>scripts/models.ts</code> | 模型配置 |<br>
+| <code>scripts/proxy-fetch.ts</code> | Proxy + Fetch |<br>
+| <code>scripts/leaderboard.ts</code> | 排行榜生成 |<br>
+| <code>scripts/types.ts</code> | 型別定義 |<br>
+| <code>scripts/stage1-check.ts</code> | 進度檢查 |<br>
+| <code>scripts/stage2-score.ts</code> | 平行評分 |<br>
+| <code>scripts/stage4-leaderboard.ts</code> | 排行榜生成 v2 |</p><p>---</p><p><h2>版本偵測規則（永久記憶）</h2></p><p><strong>必須使用最新版本！從大到小排序取第一個：</strong></p><p><code>`</code>bash<br>
+Glob: projects/{專案名}/題庫/v*/<br>
+<h1>v4 > v3 > v2 > v1 → 選 v4</h1><br>
+<code>`</code></p><p>| 功能 | 版本規則 |<br>
+|------|----------|<br>
+| 出題 | 最大版本 +1 |<br>
+| 驗證 | 最大版本 |<br>
+| 答題 | 最大版本 |<br>
+| 打分 | 最大版本 |</p><p>---</p><p><h2>評分標準</h2></p><p>| 分數 | 層次 | 認證 |<br>
+|:----:|:----:|:----:|<br>
+| 9-10 | 專家 | 🥇 金牌 (≥8.5) |<br>
+| 7-8 | 進階 | 🥈 銀牌 (≥8.0) |<br>
+| 5-6 | 基礎 | 🥉 銅牌 (≥7.0) |<br>
+| 1-4 | 不足 | - |</p><p>---</p><p><h2>答案隔離警告</h2></p><p><strong>禁止傳給答題 subagent 的欄位</strong>：<br>
+- ❌ <code>answer_rubric</code><br>
+- ❌ <code>final_answer</code><br>
+- ❌ <code>citations</code><br>
+- ❌ <code>reasoning_chain</code></p><p><strong>只能傳這些</strong>：<br>
+- ✅ <code>id</code><br>
+- ✅ <code>question</code></p><p>---</p><p><h2>v2.0 直接寫檔架構</h2></p><p><code>`</code><br>
+✅ 新架構：<br>
+   Subagent 答題 → 直接寫入檔案 → Opus 只驗證<br>
+   優點：無須彙整，可平行 25 題<br>
+<code>`</code></p><p>---</p><p><h2>參考文件索引</h2></p><p>| 文件 | 路徑 |<br>
+|------|------|<br>
+| 共用配置 | <code>references/波共用.md</code> |<br>
+| 出題規則 | <code>references/波出題.md</code> |<br>
+| 打分規則 | <code>references/波打分.md</code> |<br>
+| 排行榜規則 | <code>references/波排行榜.md</code> |<br>
+| Haiku 答題 | <code>references/波答題-haiku.md</code> |<br>
+| OpenRouter 答題 | <code>references/波答題-openrouter.md</code> |<br>
+| 驗證規則 | <code>references/波驗證.md</code> |<br>
+| 題庫模板 | <code>templates/題庫模板.yaml</code> |</p><p>---</p><p><h2>檢索關鍵字</h2></p><p>波題庫, 波出題, 波答題, 波打分, 波排行榜, 波驗證, AI評測, 多模型, 高品味題庫<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-event-collection - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-event-collection</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報事件收集技能 v3.0</h1></p><p>> <strong>用途</strong>：自動收集當天最新 + 過去 60 天全球心戰事件，建立時間軸與因果鏈<br>
+> <strong>版本</strong>：v3.0（2026-01-28）<br>
+> <strong>時效性保證</strong>：優先當天 24 小時內最新事件，避免過時資訊<br>
+> <strong>改進</strong>：激進搜尋策略 + 事件嚴重度自動評分 + 三層備援驗證</p><p>---</p><p><h2>🎯 執行流程</h2></p><p><h3>步驟 0：日期判斷與時間範圍設定</h3></p><p><code>`</code>typescript<br>
+// 取得當天日期（臺灣時區 UTC+8）<br>
+const today = new Date();<br>
+const todayStr = today.toISOString().split('T')[0];  // 2026-01-28</p><p>// 計算時間範圍<br>
+const ranges = {<br>
+  today: todayStr,                              // 2026-01-28<br>
+  last7days: getDateBefore(7),                  // 2026-01-21<br>
+  last30days: getDateBefore(30),                // 2025-12-29<br>
+  last60days: getDateBefore(60),                // 2025-11-29<br>
+};</p><p>// 時效性權重（用於事件排序）<br>
+const freshnessWeight = (eventDate: string): number => {<br>
+  const daysOld = daysSince(eventDate);<br>
+  if (daysOld === 0) return 10;      // 當天 = 10 分<br>
+  if (daysOld <= 7) return 8;        // 7 天內 = 8 分<br>
+  if (daysOld <= 30) return 5;       // 30 天內 = 5 分<br>
+  if (daysOld <= 60) return 3;       // 60 天內 = 3 分<br>
+  return 0;                          // 超過 60 天 = 0 分（過時，排除）<br>
+};</p><p>console.log(<code>📅 當天日期：${todayStr}</code>);<br>
+console.log(<code>🔍 搜尋範圍：${ranges.last60days} ~ ${ranges.today}（過去 60 天）</code>);<br>
+console.log(<code>⭐ 優先級：當天 > 7 天內 > 30 天內 > 60 天內</code>);<br>
+<code>`</code></p><p><h3>步驟 1：讀取事件類型檢核清單</h3></p><p>讀取 <code>/home/user/timeless-bowen/配置/規則/心戰情報系統-盤點檢核清單.md</code> 中的：<br>
+- 檢核清單 C：心戰事件類型（不可遺漏）</p><p><h3>步驟 2：平行啟動 9 個事件類型搜尋子代理人（含日期限定）</h3></p><p><strong>9 種新型態攻擊</strong>（根據獨立代理人 3 檢核發現）：</p><p>1. <strong>法律戰 + 認知戰複合攻擊</strong><br>
+2. <strong>AI 人格模擬攻擊</strong><br>
+3. <strong>數據微定向宣傳</strong><br>
+4. <strong>水軍作業（Dragonbridge）</strong><br>
+5. <strong>無人機心理施壓</strong><br>
+6. <strong>統戰與內部分化策略</strong><br>
+7. <strong>基礎設施脆弱性心戰</strong><br>
+8. <strong>多模態假訊息</strong><br>
+9. <strong>偽裝國際媒體</strong></p><p><strong>平行搜尋架構（含日期限定）</strong>：<br>
+<code>`</code>typescript<br>
+// 取得當天日期字串<br>
+const todayStr = new Date().toISOString().split('T')[0];  // 2026-01-28<br>
+const yesterday = getDateBefore(1);                        // 2026-01-27<br>
+const last7days = getDateBefore(7);                        // 2026-01-21</p><p>const eventTypes = [<br>
+  {<br>
+    type: '法律戰複合',<br>
+    keywords: [<br>
+      <code>China lawfare cognitive warfare Taiwan today ${todayStr}</code>,        // 優先搜尋當天<br>
+      <code>China lawfare cognitive warfare Taiwan latest 24 hours</code>,          // 24 小時內<br>
+      <code>China lawfare cognitive warfare Taiwan after:${last7days}</code>,       // 7 天內（Google 語法）<br>
+      <code>China lawfare cognitive warfare Taiwan 2026-01</code>                   // 當月<br>
+    ]<br>
+  },<br>
+  {<br>
+    type: 'AI人格模擬',<br>
+    keywords: [<br>
+      <code>AI persona deepfake Taiwan today ${todayStr}</code>,<br>
+      <code>AI persona deepfake Taiwan latest news ${yesterday}</code>,<br>
+      <code>GoLaxy AI Taiwan after:${last7days}</code>,<br>
+      <code>AI persona Taiwan January 2026</code><br>
+    ]<br>
+  },<br>
+  {<br>
+    type: '無人機心戰',<br>
+    keywords: [<br>
+      <code>China drone Taiwan today ${todayStr}</code>,<br>
+      <code>PLA drone Taiwan airspace latest 24 hours</code>,<br>
+      <code>Taiwan drone intrusion after:${last7days}</code>,<br>
+      <code>China drone Taiwan January 2026</code><br>
+    ]<br>
+  },<br>
+  // ... 其他 6 種事件類型（同樣格式）<br>
+];</p><p>// 搜尋策略：優先執行 keywords[0]（當天），若無結果再執行 keywords[1-3]<br>
+<code>`</code></p><p><strong>每個子代理人任務</strong>：<br>
+1. <strong>WebSearch 搜尋</strong>（優先當天，漸進擴大）：<br>
+   - 第 1 輪：搜尋「today + 當天日期」（例如：<code>today 2026-01-28</code>）<br>
+   - 第 2 輪：若無結果，搜尋「latest 24 hours」<br>
+   - 第 3 輪：若仍無結果，搜尋「過去 7 天」（<code>after:2026-01-21</code>）<br>
+   - 第 4 輪：若仍無結果，搜尋「當月」（<code>January 2026</code>）</p><p>2. <strong>提取事件資訊</strong>：<br>
+   - 事件標題（中英文）<br>
+   - <strong>發生日期</strong>（YYYY-MM-DD，必須精確到日）<br>
+   - <strong>發佈日期</strong>（文章發佈時間，用於時效性判斷）<br>
+   - 涉及實體（國家、組織、人物）<br>
+   - 事件描述（150-200 字）<br>
+   - 影響範圍（臺灣、區域、全球）<br>
+   - 來源網址（至少 2 個獨立來源）</p><p>3. <strong>日期驗證</strong>（關鍵步驟）：<br>
+   <code>`</code>typescript<br>
+   // 計算事件距今天數<br>
+   const daysOld = daysSince(event.date);</p><p>   // 過濾過時事件<br>
+   if (daysOld > 60) {<br>
+     console.warn(<code>⚠️ 事件「${event.title}」距今 ${daysOld} 天（超過 60 天），已排除</code>);<br>
+     return null;  // 排除過時事件<br>
+   }</p><p>   // 計算時效性權重<br>
+   event.freshness_weight = freshnessWeight(event.date);<br>
+   event.days_old = daysOld;</p><p>   // 標註時效性<br>
+   if (daysOld === 0) event.freshness = '⭐ 當天最新';<br>
+   else if (daysOld <= 7) event.freshness = '🔥 7 天內';<br>
+   else if (daysOld <= 30) event.freshness = '📅 30 天內';<br>
+   else event.freshness = '📁 60 天內';<br>
+   <code>`</code></p><p>4. <strong>呼叫零幻覺驗證技能</strong>驗證所有網址</p><p>5. <strong>輸出 JSON 格式結果</strong>（含時效性資訊）</p><p><h3>步驟 3：建立事件時間軸</h3></p><p>整合所有事件，依日期排序：</p><p><code>`</code>yaml<br>
+---<br>
+date: 2025-12-15<br>
+event_type: AI人格模擬攻擊<br>
+title: GoLaxy 公司 AI 虛擬角色散播 2026 選舉假訊息<br>
+entities:<br>
+  organizations: [GoLaxy, 台灣國安局]<br>
+  countries: [中國, 台灣]<br>
+impact_scope: 全球<br>
+sources:<br>
+  - url: https://www.globalsecurity.org/...<br>
+    verified: true<br>
+    verification_score: 100<br>
+  - url: https://focustaiwan.tw/...<br>
+    verified: true<br>
+    verification_score: 95<br>
+related_events:<br>
+  - 2024-01-13-taiwan-election-disinformation<br>
+---</p><p><h2>事件描述</h2></p><p>中國國安局 2025 年報告指出，GoLaxy 公司使用 AI 模仿真人說話模式，創建虛擬角色進行長期對話並散播假訊息，針對 2026/2028 台灣選舉進行認知戰。此攻擊手法超越傳統假帳號，AI 生成虛擬人物可進行自然互動，更難偵測。</p><p><h2>影響分析</h2></p><p>- <strong>短期影響</strong>：2026 台灣選舉期間社群媒體信任度下降<br>
+- <strong>長期影響</strong>：AI 認知戰軍備競賽加劇，檢測技術需求增加<br>
+- <strong>應對建議</strong>：<br>
+  1. 開發 AI 生成內容檢測工具<br>
+  2. 公民教育：提高對 AI 假帳號的警覺<br>
+  3. 平台合作：要求社群平台標註 AI 生成內容<br>
+<code>`</code></p><p><h3>步驟 4：建立因果鏈</h3></p><p>分析事件間的因果關係：</p><p><code>`</code>yaml<br>
+causal_chain:<br>
+  - event: 2024-01-13-taiwan-election-disinformation<br>
+    caused_by: null<br>
+    leads_to:<br>
+      - 2025-12-15-golaxy-ai-persona-attack<br>
+      - 2026-01-12-taiwan-strengthen-cognitive-defense</p><p>  - event: 2025-12-15-golaxy-ai-persona-attack<br>
+    caused_by: 2024-01-13-taiwan-election-disinformation<br>
+    leads_to:<br>
+      - 2026-01-12-taiwan-strengthen-cognitive-defense<br>
+<code>`</code></p><p><h3>步驟 5：寫入結構化檔案</h3></p><p>輸出到：<br>
+- <code>素材庫/來源歸檔/心戰情報/事件時間軸/心戰事件時間軸-{日期}.md</code><br>
+- <code>素材庫/來源歸檔/心戰情報/事件時間軸/因果鏈-{日期}.yaml</code></p><p>---</p><p><h2>🤖 子代理人範本（平行執行）</h2></p><p><h3>子代理人 1：法律戰複合攻擊收集</h3></p><p><strong>Prompt</strong>：<br>
+<code>`</code><br>
+你是法律戰複合攻擊事件收集代理人。請執行以下任務：</p><p>1. WebSearch 搜尋（過去 60 天）：<br>
+   - "China lawfare cognitive warfare Taiwan 2025 2026"<br>
+   - "中國法律戰 台灣 2025 懸賞 心戰部隊"<br>
+   - "China bounty Taiwan PSYOP unit October 2025"</p><p>2. 提取關鍵事件：<br>
+   - 2025年10月中國廈門公安局懸賞台灣心戰部隊<br>
+   - 其他法律戰 + 認知戰複合案例</p><p>3. 每個事件提取：<br>
+   - 事件標題（中英文）<br>
+   - 發生日期（YYYY-MM-DD）<br>
+   - 涉及實體（組織、人物、國家）<br>
+   - 事件描述（150-200 字）<br>
+   - 影響範圍（台灣/區域/全球）<br>
+   - 來源網址（至少 2 個獨立來源）</p><p>4. 呼叫零幻覺驗證技能：<br>
+   - 對每個來源網址執行四重驗證<br>
+   - 只保留驗證通過（PASS 或 WARNING）的事件</p><p>5. 輸出 JSON：<br>
+{<br>
+  "event_type": "法律戰複合攻擊",<br>
+  "events": [<br>
+    {<br>
+      "title": "中國懸賞台灣心戰部隊",<br>
+      "date": "2025-10-15",<br>
+      "entities": {<br>
+        "organizations": ["廈門公安局", "台灣國防部"],<br>
+        "countries": ["中國", "台灣"]<br>
+      },<br>
+      "description": "...",<br>
+      "impact_scope": "全球",<br>
+      "sources": [<br>
+        { "url": "https://...", "verified": true, "score": 100 }<br>
+      ]<br>
+    }<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><strong>相同結構用於其他 8 個事件類型代理人</strong>。</p><p>---</p><p><h2>📊 輸出格式</h2></p><p><h3>事件時間軸（Markdown）</h3></p><p><code>`</code>markdown<br>
+<h1>心戰事件時間軸（過去 60 天）</h1></p><p><strong>統計期間</strong>：2025-11-28 ~ 2026-01-28<br>
+<strong>事件總數</strong>：42 個<br>
+<strong>驗證通過</strong>：38 個<br>
+<strong>驗證警告</strong>：4 個</p><p>---</p><p><h2>2026-01-28</h2></p><p><h3>無人機心理施壓</h3></p><p><strong>標題</strong>：中國無人機直接入侵台灣本島上空<br>
+<strong>影響範圍</strong>：區域<br>
+<strong>涉及實體</strong>：<br>
+- 國家：中國、台灣<br>
+- 組織：中國人民解放軍</p><p><strong>事件描述</strong>：<br>
+Global Taiwan Institute 報告指出，中國無人機直接入侵台灣本島軍事與民用關鍵基礎設施上空，侵蝕台灣海峽提供的戰略縱深，造成台灣民眾心理恐慌。</p><p><strong>來源</strong>：<br>
+- ✅ [Global Taiwan Institute - Shrinking the Strait](https://globaltaiwan.org/2026/01/shrinking-the-strait/)（驗證分數：95/100）<br>
+- ✅ [Focus Taiwan](https://focustaiwan.tw/...)（驗證分數：100/100）</p><p><strong>應對建議</strong>：<br>
+1. 加強防空警報系統<br>
+2. 發展反無人機技術<br>
+3. 公民教育：降低恐慌反應</p><p>---</p><p><h2>2025-12-15</h2></p><p><h3>AI 人格模擬攻擊</h3></p><p>...（同上格式）</p><p>---<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+收集心戰事件<br>
+<code>`</code></p><p><strong>技能執行</strong>：<br>
+1. 讀取事件類型檢核清單（9 種新型態攻擊）<br>
+2. 平行啟動 9 個子代理人<br>
+3. 等待所有子代理人完成<br>
+4. 整合事件，建立時間軸<br>
+5. 分析因果鏈<br>
+6. 寫入結構化檔案<br>
+7. 回報：「✅ 已完成心戰事件收集，過去 60 天共 42 個事件，38 個驗證通過。」</p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>依賴技能</strong>：<code>心戰情報-零幻覺驗證</code>（驗證所有來源網址）<br>
+- <strong>依賴技能</strong>：<code>心戰情報-智庫搜尋</code>（從智庫報告中提取事件）<br>
+- <strong>下游技能</strong>：<code>心戰情報-分析生成</code>（分析事件趨勢）</p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v1.0<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

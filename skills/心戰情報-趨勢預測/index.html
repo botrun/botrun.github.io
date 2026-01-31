@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psyops-intel-trend-prediction - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> psyops-intel-trend-prediction</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>心戰情報趨勢預測技能 v4.5</h1></p><p>> <strong>用途</strong>：基於歷史事實預測近/中/長程未來心戰攻擊趨勢與應變策略<br>
+> <strong>版本</strong>：v4.5（2026-01-28）<br>
+> <strong>革命性改進</strong>：因果鏈分析 + 時間線脈絡 + 三層時間架構 + 關鍵轉折點識別</p><p>---</p><p><h2>🎯 執行流程</h2></p><p><h3>步驟 1：讀取歷史事件資料</h3></p><p>讀取過去 60 天事件時間軸：<br>
+- <code>素材庫/來源歸檔/心戰情報/事件時間軸/心戰事件時間軸-{最新日期}.md</code></p><p>提取資料：<br>
+- 事件類型分佈<br>
+- 每週事件頻率<br>
+- 攻擊手法演變<br>
+- 涉及實體變化</p><p><h3>步驟 2：頻率分析（識別加速趨勢）</h3></p><p><code>`</code>typescript<br>
+interface FrequencyAnalysis {<br>
+  event_type: string;<br>
+  week1_count: number;  // 第 1 週（最近）<br>
+  week2_count: number;  // 第 2 週<br>
+  week3_count: number;  // 第 3 週<br>
+  week4_count: number;  // 第 4 週<br>
+  acceleration: number; // 加速度（week1 / week4）<br>
+  trend: 'accelerating' | 'stable' | 'declining';<br>
+}</p><p>// 範例：AI 人格模擬攻擊<br>
+{<br>
+  event_type: "AI人格模擬攻擊",<br>
+  week1_count: 3,   // 最近一週 3 次<br>
+  week2_count: 2,<br>
+  week3_count: 1,<br>
+  week4_count: 1,<br>
+  acceleration: 3.0,  // 3 倍加速<br>
+  trend: 'accelerating'<br>
+}<br>
+<code>`</code></p><p><strong>加速度計算</strong>：<br>
+<code>`</code>typescript<br>
+function calculateAcceleration(recent: number, baseline: number): number {<br>
+  if (baseline === 0) return recent > 0 ? 10 : 1; // 從無到有 = 10 倍<br>
+  return recent / baseline;<br>
+}</p><p>function identifyTrend(acceleration: number): string {<br>
+  if (acceleration >= 1.5) return 'accelerating';  // 加速<br>
+  if (acceleration >= 0.7) return 'stable';        // 穩定<br>
+  return 'declining';                               // 減少<br>
+}<br>
+<code>`</code></p><p><h3>步驟 3：模式識別（攻擊手法演變）</h3></p><p><code>`</code>typescript<br>
+interface PatternRecognition {<br>
+  event_type: string;<br>
+  common_targets: string[];     // 常見目標（台灣選舉、基礎設施等）<br>
+  common_methods: string[];     // 常見手法（社群媒體、無人機等）<br>
+  evolution: string;            // 手法演變描述<br>
+  sophistication_level: number; // 複雜度（1-10）<br>
+}</p><p>// 範例：AI 人格模擬攻擊<br>
+{<br>
+  event_type: "AI人格模擬攻擊",<br>
+  common_targets: ["2026 台灣選舉", "社群媒體用戶"],<br>
+  common_methods: ["AI 虛擬角色長期對話", "模仿真人說話模式"],<br>
+  evolution: "從簡單假帳號 → AI 生成虛擬人物（更難偵測）",<br>
+  sophistication_level: 8<br>
+}<br>
+<code>`</code></p><p><h3>步驟 4：時間序列預測</h3></p><p><code>`</code>typescript<br>
+interface TimePrediction {<br>
+  event_type: string;<br>
+  last_occurrence: string;      // 最後一次發生日期<br>
+  average_interval_days: number; // 平均間隔天數<br>
+  predicted_next_date: string;   // 預測下次發生日期<br>
+  predicted_timeframe: string;   // 預測時間範圍<br>
+  confidence: number;            // 信心度（0-100）<br>
+}</p><p>// 範例<br>
+{<br>
+  event_type: "無人機心理施壓",<br>
+  last_occurrence: "2026-01-26",<br>
+  average_interval_days: 14,     // 平均 14 天一次<br>
+  predicted_next_date: "2026-02-09",<br>
+  predicted_timeframe: "2026-02-05 ~ 2026-02-13（前後 4 天）",<br>
+  confidence: 70<br>
+}<br>
+<code>`</code></p><p><strong>信心度計算</strong>：<br>
+<code>`</code>typescript<br>
+function calculateConfidence(params: {<br>
+  sample_size: number;       // 樣本數（歷史事件數）<br>
+  consistency: number;       // 一致性（標準差的倒數）<br>
+  recency: number;           // 時效性（最後一次距今天數）<br>
+  verification_score: number; // 驗證分數<br>
+}): number {<br>
+  // 樣本數越多 = 信心越高（最多 30 分）<br>
+  const sampleScore = Math.min(params.sample_size * 5, 30);</p><p>  // 一致性越高 = 信心越高（最多 30 分）<br>
+  const consistencyScore = Math.min(params.consistency * 30, 30);</p><p>  // 越近期 = 信心越高（最多 20 分）<br>
+  const recencyScore = Math.max(0, 20 - params.recency / 3);</p><p>  // 驗證分數越高 = 信心越高（最多 20 分）<br>
+  const verificationScore = params.verification_score * 0.2;</p><p>  return Math.min(100, sampleScore + consistencyScore + recencyScore + verificationScore);<br>
+}<br>
+<code>`</code></p><p><h3>步驟 5：生成應變建議</h3></p><p><code>`</code>typescript<br>
+interface ContingencyPlan {<br>
+  event_type: string;<br>
+  predicted_scenario: string;       // 預測情境描述<br>
+  impact_assessment: string;        // 影響評估<br>
+  short_term_actions: string[];     // 短期行動（1 週內）<br>
+  medium_term_actions: string[];    // 中期行動（1 個月內）<br>
+  long_term_actions: string[];      // 長期行動（3 個月內）<br>
+  required_resources: string[];     // 需要資源<br>
+  responsible_units: string[];      // 負責單位<br>
+}</p><p>// 範例：無人機心理施壓<br>
+{<br>
+  event_type: "無人機心理施壓",<br>
+  predicted_scenario: "預測 2026-02-09 前後，中國無人機可能再次入侵台灣本島上空，目標可能為軍事基地或重要基礎設施，目的是製造民眾恐慌與測試台灣反應速度。",</p><p>  impact_assessment: "中等。可能造成：(1) 民眾心理恐慌升高 (2) 國際媒體關注 (3) 測試台灣防空能力漏洞。若處理不當，可能被國際視為台灣防禦能力不足。",</p><p>  short_term_actions: [<br>
+    "啟動 24 小時無人機監控（雷達 + 光學）",<br>
+    "預先演練防空警報系統（避免臨時故障）",<br>
+    "準備公民應對指南（官網 + 社群媒體）",<br>
+    "與國際媒體預先溝通（避免誤導報導）"<br>
+  ],</p><p>  medium_term_actions: [<br>
+    "部署反無人機系統（電子干擾、定向能武器）",<br>
+    "與美日盟友共享無人機情報系統",<br>
+    "公民教育：無人機入侵應對演練"<br>
+  ],</p><p>  long_term_actions: [<br>
+    "建立全島無人機防禦網路",<br>
+    "發展自主反無人機技術（AI 偵測 + 自動反制）",<br>
+    "國際合作：與北約分享反無人機經驗"<br>
+  ],</p><p>  required_resources: [<br>
+    "反無人機設備（預算約 5000 萬新台幣）",<br>
+    "24 小時監控人力（約 50 人）",<br>
+    "公民教育經費（約 500 萬新台幣）"<br>
+  ],</p><p>  responsible_units: [<br>
+    "國防部（主責）",<br>
+    "內政部（公民應對）",<br>
+    "外交部（國際溝通）"<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><h3>步驟 6：輸出預測報告</h3></p><p><code>`</code>markdown<br>
+<h1>心戰情報趨勢預測報告（2026-01-28）</h1></p><p>> <strong>預測期間</strong>：2026-02-01 ~ 2026-02-28（未來 1 個月）<br>
+> <strong>基於資料</strong>：2025-11-28 ~ 2026-01-28（過去 60 天，42 個事件）</p><p>---</p><p><h2>🔴 高風險預測（信心度 ≥ 70%）</h2></p><p><h3>預測 1：無人機心理施壓（信心度 75%）</h3></p><p><strong>預測情境</strong>：<br>
+預測 2026-02-09 前後（2026-02-05 ~ 2026-02-13），中國無人機可能再次入侵台灣本島上空。</p><p><strong>頻率分析</strong>：<br>
+- 過去 4 週事件頻率：1 → 1 → 1 → 2（加速 2 倍）<br>
+- 平均間隔：14 天<br>
+- 趨勢：穩定加速</p><p><strong>影響評估</strong>：<br>
+中等。可能造成民眾心理恐慌、國際媒體關注、測試防空能力。</p><p><strong>應變建議</strong>：</p><p>#### 短期（1 週內）🔥<br>
+1. ✅ 啟動 24 小時無人機監控（雷達 + 光學）<br>
+2. ✅ 預先演練防空警報系統<br>
+3. ✅ 準備公民應對指南（官網 + 社群媒體）<br>
+4. ✅ 與國際媒體預先溝通</p><p>#### 中期（1 個月內）<br>
+1. 部署反無人機系統（電子干擾、定向能武器）<br>
+2. 與美日盟友共享無人機情報<br>
+3. 公民教育：無人機入侵應對演練</p><p>#### 長期（3 個月內）<br>
+1. 建立全島無人機防禦網路<br>
+2. 發展自主反無人機技術（AI 偵測 + 自動反制）<br>
+3. 國際合作：與北約分享反無人機經驗</p><p><strong>需要資源</strong>：<br>
+- 反無人機設備（5000 萬新台幣）<br>
+- 24 小時監控人力（50 人）<br>
+- 公民教育經費（500 萬新台幣）</p><p><strong>負責單位</strong>：<br>
+- 🎯 國防部（主責）<br>
+- 內政部（公民應對）<br>
+- 外交部（國際溝通）</p><p>---</p><p><h3>預測 2：AI 人格模擬攻擊（信心度 70%）</h3></p><p><strong>預測情境</strong>：<br>
+預測 2026-02-15 前後，可能出現新一波 AI 虛擬角色散播針對 2026 年底地方選舉的假訊息。</p><p><strong>頻率分析</strong>：<br>
+- 過去 4 週事件頻率：1 → 1 → 2 → 3（加速 3 倍）<br>
+- 趨勢：快速加速 ⚠️</p><p><strong>手法演變</strong>：<br>
+從簡單假帳號 → AI 生成虛擬人物（更難偵測），複雜度 8/10。</p><p><strong>應變建議</strong>：...（同上格式）</p><p>---</p><p><h2>🟡 中風險預測（信心度 50-70%）</h2></p><p><h3>預測 3：法律戰 + 認知戰複合攻擊（信心度 60%）</h3></p><p>...</p><p>---</p><p><h2>📊 趨勢總覽</h2></p><p>| 事件類型 | 過去頻率 | 加速度 | 預測時間 | 信心度 | 風險等級 |<br>
+|---------|---------|--------|----------|--------|----------|<br>
+| 無人機心理施壓 | 4 次/60 天 | 2.0x | 2026-02-09 | 75% | 🔴 高 |<br>
+| AI 人格模擬 | 7 次/60 天 | 3.0x | 2026-02-15 | 70% | 🔴 高 |<br>
+| 法律戰複合 | 3 次/60 天 | 1.5x | 2026-02-20 | 60% | 🟡 中 |<br>
+| 水軍作業 | 8 次/60 天 | 1.2x | 持續 | 50% | 🟡 中 |</p><p>---</p><p><h2>🎯 優先行動檢查表</h2></p><p>- [ ] 啟動 24 小時無人機監控（國防部，2026-02-01 前）<br>
+- [ ] 部署 AI 生成內容檢測工具（數位發展部，2026-02-07 前）<br>
+- [ ] 公民教育宣導（內政部，2026-02-01 起）<br>
+- [ ] 與美日盟友情報共享（外交部，持續）</p><p>---</p><p><strong>生成時間</strong>：2026-01-28 14:00:00<br>
+<strong>下次更新</strong>：2026-02-04（每週更新）<br>
+<code>`</code></p><p>---</p><p><h2>📊 輸出格式</h2></p><p><h3>JSON 格式（供機器讀取）</h3></p><p><code>`</code>json<br>
+{<br>
+  "report_date": "2026-01-28",<br>
+  "prediction_period": "2026-02-01 ~ 2026-02-28",<br>
+  "based_on_data": "2025-11-28 ~ 2026-01-28",<br>
+  "total_historical_events": 42,<br>
+  "predictions": [<br>
+    {<br>
+      "event_type": "無人機心理施壓",<br>
+      "risk_level": "high",<br>
+      "confidence": 75,<br>
+      "predicted_date": "2026-02-09",<br>
+      "predicted_timeframe": "2026-02-05 ~ 2026-02-13",<br>
+      "frequency_analysis": {<br>
+        "week1": 2,<br>
+        "week2": 1,<br>
+        "week3": 1,<br>
+        "week4": 1,<br>
+        "acceleration": 2.0<br>
+      },<br>
+      "contingency_plan": { ... }<br>
+    }<br>
+  ]<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行範例</h2></p><p><strong>用戶輸入</strong>：<br>
+<code>`</code><br>
+預測心戰趨勢<br>
+<code>`</code></p><p><strong>技能執行</strong>：<br>
+1. 讀取過去 60 天事件時間軸<br>
+2. 頻率分析（識別加速趨勢）<br>
+3. 模式識別（攻擊手法演變）<br>
+4. 時間序列預測（下一個事件時間）<br>
+5. 生成應變建議（短中長期）<br>
+6. 寫入預測報告<br>
+7. 回報：「✅ 已完成趨勢預測，發現 2 個高風險預測（信心度 ≥ 70%）。」</p><p>---</p><p><h2>📚 相依技能</h2></p><p>- <strong>依賴技能</strong>：<code>心戰情報-事件收集</code>（提供歷史事件資料）<br>
+- <strong>下游技能</strong>：<code>心戰情報-日報生成</code>（整合預測到日報）</p><p>---</p><p><strong>建立時間</strong>：2026-01-28<br>
+<strong>版本</strong>：v1.0<br>
+<strong>維護者</strong>：Claude Code<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
