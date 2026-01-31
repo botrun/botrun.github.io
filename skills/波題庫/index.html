@@ -51,123 +51,210 @@
       </p>
       <div>
         <p>
-<h1>波題庫 - AI 模型評測完整系統</h1></p><p>> <strong>核心理念</strong>：高品味開放式題庫 + 多模型平行評測 + 零幻覺驗證</p><p>---</p><p><h2>功能總覽</h2></p><p>| 功能 | 觸發詞 | 說明 | 參考文件 |<br>
-|------|--------|------|----------|<br>
-| <strong>出題</strong> | 波出題 | 逆向出題法生成高品味開放式題庫 | <code>references/波出題.md</code> |<br>
-| <strong>答題</strong> | 波答題 | 多模型平行答題（Haiku/Gemini/Ministral）| <code>references/波答題-haiku.md</code>, <code>references/波答題-openrouter.md</code> |<br>
-| <strong>打分</strong> | 波打分 | 對所有模型答題進行評分 | <code>references/波打分.md</code> |<br>
-| <strong>排行榜</strong> | 波排行榜 | 生成多維度排行榜報告 | <code>references/波排行榜.md</code> |<br>
-| <strong>驗證</strong> | 波驗證 | 驗證題庫答案正確性 | <code>references/波驗證.md</code> |<br>
-| <strong>共用</strong> | - | 模型配置、評分標準、版本偵測 | <code>references/波共用.md</code> |</p><p>---</p><p><h2>統一輸出目錄規則</h2></p><p><strong>專案輸出</strong>：<code>projects/{專案名}/</code></p><p><code>`</code><br>
-projects/{專案名}/<br>
+<h1>波題庫 - AI 模型評測完整系統 v4.0</h1></p><p>> <strong>核心理念</strong>：統一標準 × 100分制 × 波特人九維度加權評分法 × 公平排行</p><p>---</p><p><h2>🚨 v4.0 重大變更</h2></p><p>| 項目 | v3.0 舊制 | v4.0 新制 |<br>
+|------|-----------|-----------|<br>
+| 分數制度 | 100 分制（五維度加權） | <strong>100 分制（九維度加權正規化）</strong> |<br>
+| 評分維度 | 五維度 | <strong>九維度（真新全快省準人安穩）</strong> |<br>
+| 模型 ID | shortName | <strong>完整 OpenRouter API ID</strong> |<br>
+| 評分方式 | 各自評分 | <strong>Opus 統一標準平行評分</strong> |</p><p>---</p><p><h2>📁 統一目錄結構（永久規則）</h2></p><p><code>`</code><br>
+projects/{類別}/{專案名}/<br>
+├── 來源/                              # 原始資料（PDF、網頁快照）<br>
 ├── 題庫/<br>
 │   └── v{版本}/<br>
-│       ├── {專案名}-題庫-v{版本}.yaml    # 出題輸出<br>
-│       ├── 驗算報告-{日期}.md             # 驗證輸出<br>
-│       ├── 答題/                          # 答題輸出<br>
-│       │   ├── haiku/<br>
-│       │   │   ├── 有上網/<br>
-│       │   │   └── 無上網/<br>
-│       │   ├── gemini3flash/<br>
-│       │   │   ├── 有上網/<br>
-│       │   │   └── 無上網/<br>
-│       │   └── ministral8b/<br>
-│       │       ├── 有上網/<br>
-│       │       └── 無上網/<br>
-│       └── 評分/                          # 打分輸出<br>
-│           ├── {模型}/                    # JSON 評分記錄<br>
-│           └── 評分報告-多模型-{日期}.md<br>
-└── 來源/                                   # 原始資料</p><p>shared/排行榜/                              # 跨專案排行榜<br>
-├── AI模型排行榜-{日期}.md<br>
-└── leaderboard-{日期}.json<br>
-<code>`</code></p><p>---</p><p><h2>支援模型</h2></p><p>| 模型 | 簡稱 | 類別 | 有上網 | 無上網 |<br>
-|------|------|------|:------:|:------:|<br>
-| Claude Haiku 4.5 | haiku | proprietary | ✅ | ✅ |<br>
-| Gemini 3 Flash | gemini3flash | proprietary | ✅ | ✅ |<br>
-| Ministral 8B | ministral8b | open_weight | ✅ | ✅ |</p><p>---</p><p><h2>快速啟動</h2></p><p><h3>出題</h3></p><p><code>`</code><br>
-用戶：波出題<br>
-AI：好的！請告訴我：<br>
-1. 來源是什麼？（網址/PDF/檔案）<br>
-2. 需要幾題？（5/20/50/100）<br>
-3. 放在哪個專案？（如：政府/採購法）<br>
-4. 什麼領域？<br>
-<code>`</code></p><p><h3>答題</h3></p><p><code>`</code>bash<br>
-<h1>Haiku 有上網答題（使用 Task）</h1><br>
-用戶：波答題有上網 採購法</p><p><h1>Gemini 答題（使用 OpenRouter API）</h1><br>
-npx tsx .claude/skills/波題庫/scripts/openrouter-quiz.ts \<br>
-  --model gemini --project "政府/採購法" --mode with-search<br>
-<code>`</code></p><p><h3>打分</h3></p><p><code>`</code><br>
-用戶：波打分 採購法<br>
-AI：開始平行評分所有模型的答題記錄...<br>
-<code>`</code></p><p><h3>排行榜</h3></p><p><code>`</code><br>
-用戶：波排行榜 採購法<br>
-AI：生成 AI 模型排行榜...<br>
-<code>`</code></p><p><h3>驗證</h3></p><p><code>`</code><br>
-用戶：波驗證 採購法<br>
-AI：開始驗證題庫答案正確性...<br>
-<code>`</code></p><p>---</p><p><h2>完整執行流程</h2></p><p><code>`</code><br>
-Step 1: 波出題<br>
-        ├─ 抓取來源（PDF/網頁）<br>
-        ├─ 逆向出題法生成題庫<br>
-        └─ 輸出：projects/{專案}/題庫/v{版本}/{專案名}-題庫.yaml</p><p>Step 2: 波驗證<br>
-        ├─ 上網查證每題答案<br>
-        ├─ 發現錯誤立即修正<br>
-        └─ 輸出：projects/{專案}/題庫/v{版本}/驗算報告.md</p><p>Step 3: 波答題<br>
-        ├─ Haiku 有上網/無上網<br>
-        ├─ Gemini 有上網/無上網<br>
-        ├─ Ministral 有上網/無上網<br>
-        └─ 輸出：projects/{專案}/題庫/v{版本}/答題/{模型}/{模式}/</p><p>Step 4: 波打分<br>
-        ├─ 對照標準答案評分<br>
-        ├─ 1-10 分制<br>
-        └─ 輸出：projects/{專案}/題庫/v{版本}/評分/</p><p>Step 5: 波排行榜<br>
-        ├─ 彙整所有評分<br>
-        ├─ 生成多維度排名<br>
-        └─ 輸出：projects/{專案}/排行榜/<br>
-<code>`</code></p><p>---</p><p><h2>腳本清單</h2></p><p>| 腳本 | 功能 |<br>
+│       └── {專案名}-題庫-v{版本}.yaml  # 題庫 YAML<br>
+└── 評測/<br>
+    └── v{版本}/<br>
+        ├── 答題/<br>
+        │   └── {模型}/                # 每題一個 .md<br>
+        │       ├── Q001.md<br>
+        │       ├── Q002.md<br>
+        │       └── ...<br>
+        ├── 評分/<br>
+        │   └── {模型}/                # 每題一個 .json<br>
+        │       ├── Q001.json<br>
+        │       ├── Q002.json<br>
+        │       └── ...<br>
+        └── 報告/<br>
+            ├── 評分報告-{模型}-{日期}.md<br>
+            └── 排行榜-{日期}.md</p><p>shared/<br>
+└── 排行榜/<br>
+    └── 完整排行榜-v{版本}-{日期}.md    # 跨專案總排行榜<br>
+<code>`</code></p><p><h3>檔名規則</h3></p><p>| 類型 | 格式 | 範例 |<br>
+|------|------|------|<br>
+| 題庫 | <code>{專案名}-題庫-v{版本}.yaml</code> | <code>採購法-題庫-v3.yaml</code> |<br>
+| 模型目錄 | <code>{provider}_{model}</code> | <code>anthropic_claude-haiku-4.5</code> |<br>
+| 答題 | <code>Q{三位數}.md</code> | <code>Q001.md</code>, <code>Q002.md</code> |<br>
+| 評分 | <code>Q{三位數}.json</code> | <code>Q001.json</code>, <code>Q002.json</code> |<br>
+| 評分報告 | <code>評分報告-{模型}-{日期}.md</code> | <code>評分報告-claude-haiku-4.5-2026-01-31.md</code> |<br>
+| 排行榜 | <code>排行榜-{日期}.md</code> | <code>排行榜-2026-01-31.md</code> |</p><p>> <strong>模型目錄命名</strong>：將 OpenRouter API ID 的 <code>/</code> 替換為 <code>_</code><br>
+> 例如：<code>anthropic/claude-haiku-4.5</code> → <code>anthropic_claude-haiku-4.5</code></p><p>---</p><p><h2>⚖️ 波特人評分法（100 分制・九維度加權）</h2></p><p>> <strong>核心</strong>：真新全快省準人安穩 × 各維度 10 分 × 權重係數 → 正規化 100 分</p><p><h3>九維度定義與權重</h3></p><p>| 維度 | 代號 | 原始滿分 | 權重 | 加權滿分 | 評分要點 |<br>
+|------|:----:|:--------:|:----:|:--------:|----------|<br>
+| <strong>真</strong> | 正確 | 10 | 25% | 25 | 事實正確、法規引用準確、數據無誤、<strong>零幻覺</strong> |<br>
+| <strong>人</strong> | 易用 | 10 | 15% | 15 | <strong>以人為本、換位思考</strong>、可讀性高、結構清晰 |<br>
+| <strong>準</strong> | 精確 | 10 | 15% | 15 | 用詞精準、無歧義、專業術語正確 |<br>
+| <strong>全</strong> | 完整 | 10 | 15% | 15 | 涵蓋所有子問題、結構完整、無遺漏關鍵點 |<br>
+| <strong>新</strong> | 創新 | 10 | 10% | 10 | 創新觀點、獨特見解、非模板化、<strong>與時俱進</strong> |<br>
+| <strong>安</strong> | 安全 | 10 | 8% | 8 | 無風險建議、合規合法、無誤導 |<br>
+| <strong>穩</strong> | 穩定 | 10 | 5% | 5 | 一致性高、邏輯連貫、前後呼應 |<br>
+| <strong>快</strong> | 速度 | 10 | 4% | 4 | 回答直接明確、重點前置、不拖沓 |<br>
+| <strong>省</strong> | 成本 | 10 | 3% | 3 | 答案精煉、無冗餘、字數適中 |<br>
+| <strong>總計</strong> | - | 90 | 100% | <strong>100</strong> | - |</p><p><h3>權重設計理念</h3></p><p><code>`</code><br>
+第一優先（品質核心）：<br>
+  - 真 25%：零幻覺是 AI 最重要的品質指標</p><p>第二優先（以人為本）：<br>
+  - 人 15%：以人為本、換位思考、使用者體驗<br>
+  - 準 15%：精準度影響實用性<br>
+  - 全 15%：完整度確保回答價值</p><p>第三優先（創新價值）：<br>
+  - 新 10%：與時俱進、非模板化回答</p><p>第四優先（輔助指標）：<br>
+  - 安 8%：合規合法<br>
+  - 穩 5%：邏輯連貫<br>
+  - 快 4%：重點前置<br>
+  - 省 3%：精煉表達<br>
+<code>`</code></p><p><h3>分數計算公式</h3></p><p><code>`</code><br>
+加權總分 = 真×2.5 + 人×1.5 + 準×1.5 + 全×1.5 + 新×1.0 + 安×0.8 + 穩×0.5 + 快×0.4 + 省×0.3</p><p>範例：<br>
+真=9, 人=8, 準=8, 全=8, 新=7, 安=10, 穩=9, 快=8, 省=9</p><p>加權總分 = 9×2.5 + 8×1.5 + 8×1.5 + 8×1.5 + 7×1.0 + 10×0.8 + 9×0.5 + 8×0.4 + 9×0.3<br>
+        = 22.5 + 12 + 12 + 12 + 7 + 8 + 4.5 + 3.2 + 2.7<br>
+        = 83.9 分<br>
+<code>`</code></p><p><h3>等級對照</h3></p><p>| 總分 | 等級 | 徽章 | 說明 |<br>
+|:----:|:----:|:----:|------|<br>
+| 90-100 | 專家級 | 🏆 | 達到或超越專家標準 |<br>
+| 80-89 | 進階級 | 🥇 | 具專業深度，細節完整 |<br>
+| 70-79 | 良好級 | 🥈 | 達標準水平，略有不足 |<br>
+| 60-69 | 基礎級 | 🥉 | 達基本要求，深度不足 |<br>
+| 0-59 | 不足級 | ❌ | 錯誤、遺漏或不完整 |</p><p>---</p><p><h2>📊 統一評分 JSON Schema</h2></p><p><code>`</code>json<br>
+{<br>
+  "metadata": {<br>
+    "questionId": "Q001",<br>
+    "project": "政府/採購法",<br>
+    "version": "v3",<br>
+    "model": "anthropic/claude-haiku-4.5",<br>
+    "mode": "有上網",<br>
+    "scoredBy": "opus",<br>
+    "scoredAt": "2026-01-31T12:00:00+08:00"<br>
+  },<br>
+  "波特人評分": {<br>
+    "真": { "score": 9, "max": 10, "weight": 2.5, "weighted": 22.5, "reason": "法規引用正確，無幻覺" },<br>
+    "人": { "score": 8, "max": 10, "weight": 1.5, "weighted": 12.0, "reason": "以人為本，換位思考到位" },<br>
+    "準": { "score": 8, "max": 10, "weight": 1.5, "weighted": 12.0, "reason": "術語正確，表達精準" },<br>
+    "全": { "score": 8, "max": 10, "weight": 1.5, "weighted": 12.0, "reason": "涵蓋主要問題，略有遺漏" },<br>
+    "新": { "score": 7, "max": 10, "weight": 1.0, "weighted": 7.0, "reason": "觀點常見，創新度中等" },<br>
+    "安": { "score": 10, "max": 10, "weight": 0.8, "weighted": 8.0, "reason": "建議合規無風險" },<br>
+    "穩": { "score": 9, "max": 10, "weight": 0.5, "weighted": 4.5, "reason": "邏輯連貫一致" },<br>
+    "快": { "score": 8, "max": 10, "weight": 0.4, "weighted": 3.2, "reason": "重點明確，回答直接" },<br>
+    "省": { "score": 9, "max": 10, "weight": 0.3, "weighted": 2.7, "reason": "精煉無冗餘" }<br>
+  },<br>
+  "總分": 83.9,<br>
+  "滿分": 100,<br>
+  "等級": "進階級",<br>
+  "analysis": {<br>
+    "strengths": ["優點1", "優點2"],<br>
+    "weaknesses": ["改進點1"],<br>
+    "summary": "整體評述..."<br>
+  }<br>
+}<br>
+<code>`</code></p><p>---</p><p><h2>🎯 功能總覽</h2></p><p>| 功能 | 觸發詞 | 說明 | 參考文件 |<br>
+|------|--------|------|----------|<br>
+| <strong>出題</strong> | 波出題 | 逆向出題法生成題庫 | <code>references/波出題.md</code> |<br>
+| <strong>答題</strong> | 波答題 | 多模型答題 | <code>references/波答題.md</code> |<br>
+| <strong>打分</strong> | 波打分 | Opus 統一標準評分 | <code>references/波打分.md</code> |<br>
+| <strong>排行榜</strong> | 波排行榜 | 生成公平排行榜 | <code>references/波排行榜.md</code> |<br>
+| <strong>簡報</strong> | 波排行簡報 | 矽谷敘事法排行榜報告 | <code>references/波排行簡報.md</code> |<br>
+| <strong>驗證</strong> | 波驗證 | 驗證題庫正確性 | <code>references/波驗證.md</code> |</p><p>---</p><p><h2>🔧 波打分（評分流程）</h2></p><p><h3>⚠️ 關鍵原則</h3></p><p>1. <strong>Opus 唯一評分者</strong>：所有評分必須由 Claude Opus 執行<br>
+2. <strong>統一標準</strong>：對所有模型使用相同評分標準（波特人九維度加權評分法）<br>
+3. <strong>平行處理</strong>：同時評分所有模型，確保一致性<br>
+4. <strong>100 分制</strong>：九維度加權正規化，總分 100 分</p><p><h3>評分流程</h3></p><p><code>`</code><br>
+Step 1: 掃描答題目錄<br>
+        Glob: projects/{專案}/評測/v<em>/答題/</em>/*.md<br>
+        找出所有待評分的答題檔案</p><p>Step 2: 讀取題庫標準答案<br>
+        Read: projects/{專案}/題庫/v*/...題庫.yaml<br>
+        取得 answer_rubric（基礎/進階/專家）</p><p>Step 3: 平行評分（Opus 執行）<br>
+        對每個答題檔案：<br>
+        - 讀取答題內容<br>
+        - 對照標準答案<br>
+        - 依波特人九維度打分（各 0-10 分）<br>
+        - 乘以權重係數<br>
+        - 計算加權總分</p><p>Step 4: 輸出評分 JSON<br>
+        Write: projects/{專案}/評測/v*/評分/{模型}/Q{NNN}.json</p><p>Step 5: 生成評分報告<br>
+        Write: projects/{專案}/評測/v*/報告/評分報告-{模型}-{日期}.md<br>
+<code>`</code></p><p>---</p><p><h2>📈 波排行榜（排行榜流程）</h2></p><p><h3>排行榜生成流程</h3></p><p><code>`</code><br>
+Step 1: 收集所有評分<br>
+        Glob: projects/<strong>/評測/v<em>/評分/</strong>/</em>.json</p><p>Step 2: 計算各模型平均分<br>
+        - 按專案計算專案平均<br>
+        - 按模型計算總平均</p><p>Step 3: 生成排行榜<br>
+        Write: shared/排行榜/完整排行榜-v{版本}-{日期}.md<br>
+<code>`</code></p><p><h3>排行榜格式</h3></p><p><code>`</code>markdown<br>
+<h1>AI 模型排行榜</h1></p><p>| 排名 | 模型 | 總平均 | 專家級 | 進階級 | 良好級 | 基礎級 | 不足級 |<br>
+|:----:|------|:------:|:------:|:------:|:------:|:------:|:------:|<br>
+| 1 | anthropic/claude-sonnet-4 | 85.2 | 3 | 12 | 8 | 2 | 0 |<br>
+| 2 | google/gemini-3-pro-preview | 82.1 | 2 | 10 | 10 | 3 | 0 |<br>
+<code>`</code></p><p>---</p><p><h2>🤖 支援模型（11 個）</h2></p><p>> <strong>重要</strong>：模型 ID 必須與 OpenRouter API 完全一致</p><p>| 模型 ID (OpenRouter) | 顯示名稱 | 費用 | 類別 |<br>
+|---------------------|----------|------|------|<br>
+| <code>anthropic/claude-haiku-4.5</code> | Claude Haiku 4.5 | $1 / $5 per M | 閉源 |<br>
+| <code>anthropic/claude-sonnet-4</code> | Claude Sonnet 4 | $3 / $15 per M | 閉源 |<br>
+| <code>google/gemini-3-flash-preview</code> | Gemini 3 Flash | $0.50 / $3 per M | 閉源 |<br>
+| <code>google/gemini-3-pro-preview</code> | Gemini 3 Pro | $2 / $12 per M | 閉源 |<br>
+| <code>mistralai/mistral-large-2512</code> | Mistral Large 3 | $0.50 / $1.50 per M | 閉源 |<br>
+| <code>mistralai/ministral-8b-2512</code> | Ministral 3 8B | $0.15 / $0.15 per M | 開源 |<br>
+| <code>mistralai/ministral-14b-2512</code> | Ministral 3 14B | $0.20 / $0.20 per M | 開源 |<br>
+| <code>mistralai/ministral-3b-2512</code> | Ministral 3 3B | $0.10 / $0.10 per M | 開源 |<br>
+| <code>mistralai/devstral-2512</code> | Devstral 2 | $0.05 / $0.22 per M | 開源 |<br>
+| <code>openai/gpt-oss-120b</code> | GPT OSS 120B | $0.039 / $0.19 per M | 開源 |<br>
+| <code>meta-llama/llama-4-maverick</code> | Llama 4 Maverick | $0.15 / $0.60 per M | 開源 |</p><p>---</p><p><h2>📝 腳本清單（v4.0 精簡版）</h2></p><p>| 腳本 | 功能 |<br>
 |------|------|<br>
-| <code>scripts/pdf-processor.ts</code> | PDF 拆頁 + 轉純文字 |<br>
-| <code>scripts/browser-fetch.ts</code> | 無頭瀏覽器抓取 |<br>
-| <code>scripts/validate.ts</code> | 題庫格式驗證 |<br>
-| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題 |<br>
-| <code>scripts/models.ts</code> | 模型配置 |<br>
-| <code>scripts/proxy-fetch.ts</code> | Proxy + Fetch |<br>
-| <code>scripts/leaderboard.ts</code> | 排行榜生成 |<br>
+| <code>scripts/models.ts</code> | 模型統一配置（OpenRouter API ID） |<br>
 | <code>scripts/types.ts</code> | 型別定義 |<br>
-| <code>scripts/stage1-check.ts</code> | 進度檢查 |<br>
-| <code>scripts/stage2-score.ts</code> | 平行評分 |<br>
-| <code>scripts/stage4-leaderboard.ts</code> | 排行榜生成 v2 |</p><p>---</p><p><h2>版本偵測規則（永久記憶）</h2></p><p><strong>必須使用最新版本！從大到小排序取第一個：</strong></p><p><code>`</code>bash<br>
-Glob: projects/{專案名}/題庫/v*/<br>
+| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題 |<br>
+| <code>scripts/pdf-processor.ts</code> | PDF 拆頁轉文字 |<br>
+| <code>scripts/browser-fetch.ts</code> | 無頭瀏覽器抓取 |<br>
+| <code>scripts/validate.ts</code> | 題庫格式驗證 |</p><p><strong>已移除的腳本</strong>（改用 Opus subagent）：<br>
+- ~~leaderboard.ts~~（改用 Opus 手動彙整）<br>
+- ~~stage*.ts~~（改用提示工程）</p><p>---</p><p><h2>🔑 版本偵測規則</h2></p><p><code>`</code>bash<br>
+<h1>自動偵測最新版本</h1><br>
+Glob: projects/{專案}/題庫/v*/<br>
 <h1>v4 > v3 > v2 > v1 → 選 v4</h1><br>
 <code>`</code></p><p>| 功能 | 版本規則 |<br>
 |------|----------|<br>
 | 出題 | 最大版本 +1 |<br>
-| 驗證 | 最大版本 |<br>
 | 答題 | 最大版本 |<br>
-| 打分 | 最大版本 |</p><p>---</p><p><h2>評分標準</h2></p><p>| 分數 | 層次 | 認證 |<br>
-|:----:|:----:|:----:|<br>
-| 9-10 | 專家 | 🥇 金牌 (≥8.5) |<br>
-| 7-8 | 進階 | 🥈 銀牌 (≥8.0) |<br>
-| 5-6 | 基礎 | 🥉 銅牌 (≥7.0) |<br>
-| 1-4 | 不足 | - |</p><p>---</p><p><h2>答案隔離警告</h2></p><p><strong>禁止傳給答題 subagent 的欄位</strong>：<br>
-- ❌ <code>answer_rubric</code><br>
-- ❌ <code>final_answer</code><br>
-- ❌ <code>citations</code><br>
-- ❌ <code>reasoning_chain</code></p><p><strong>只能傳這些</strong>：<br>
-- ✅ <code>id</code><br>
-- ✅ <code>question</code></p><p>---</p><p><h2>v2.0 直接寫檔架構</h2></p><p><code>`</code><br>
-✅ 新架構：<br>
-   Subagent 答題 → 直接寫入檔案 → Opus 只驗證<br>
-   優點：無須彙整，可平行 25 題<br>
-<code>`</code></p><p>---</p><p><h2>參考文件索引</h2></p><p>| 文件 | 路徑 |<br>
+| 打分 | 最大版本（與答題一致） |<br>
+| 排行榜 | 最大版本 |</p><p>---</p><p><h2>🔄 斷點續做機制（永久規則）</h2></p><p>> <strong>核心原則</strong>：評分任務可能中斷，必須支援從斷點繼續</p><p><h3>進度檢查指令</h3></p><p><code>`</code>bash<br>
+<h1>檢查評分進度</h1><br>
+for proj in "政府/採購法:v3" "政府/數位部-AI手冊:v4" "政府/經濟部-淨零排放:v3" "學校/北科大-外籍生:v4" "智庫/CSIS-臺海分析:v3"; do<br>
+  name=$(echo $proj | cut -d: -f1)<br>
+  ver=$(echo $proj | cut -d: -f2)<br>
+  count=$(find "/home/user/timeless-bowen/projects/$name/評測/$ver/評分" -name "*.json" 2>/dev/null | wc -l)<br>
+  echo "$name ($ver): $count/55"<br>
+done<br>
+<code>`</code></p><p><h3>缺漏檢查指令</h3></p><p><code>`</code>bash<br>
+<h1>找出缺漏的評分檔案</h1><br>
+MODELS="anthropic_claude-haiku-4.5 anthropic_claude-sonnet-4 google_gemini-3-flash-preview google_gemini-3-pro-preview meta-llama_llama-4-maverick mistralai_devstral-2512 mistralai_ministral-14b-2512 mistralai_ministral-3b-2512 mistralai_ministral-8b-2512 mistralai_mistral-large-2512 openai_gpt-oss-120b"</p><p>for proj in "政府/採購法:v3" "政府/數位部-AI手冊:v4" "政府/經濟部-淨零排放:v3" "學校/北科大-外籍生:v4" "智庫/CSIS-臺海分析:v3"; do<br>
+  name=$(echo $proj | cut -d: -f1)<br>
+  ver=$(echo $proj | cut -d: -f2)<br>
+  echo "=== $name ($ver) ==="<br>
+  for model in $MODELS; do<br>
+    for q in Q001 Q002 Q003 Q004 Q005; do<br>
+      file="/home/user/timeless-bowen/projects/$name/評測/$ver/評分/$model/$q.json"<br>
+      if [ ! -f "$file" ]; then<br>
+        echo "  缺: $model/$q"<br>
+      fi<br>
+    done<br>
+  done<br>
+done<br>
+<code>`</code></p><p><h3>斷點續做流程</h3></p><p><code>`</code><br>
+Step 1: 執行「缺漏檢查指令」找出缺漏<br>
+Step 2: 對缺漏的檔案啟動評分 Task agent<br>
+Step 3: 監控進度直到 275/275 完成<br>
+Step 4: 生成排行榜<br>
+<code>`</code></p><p><h3>進度記錄檔位置</h3></p><p>- 即時進度：<code>projects/評分進度-checkpoint.md</code><br>
+- 最終排行榜：<code>shared/排行榜/完整排行榜-v{版本}-{日期}.md</code></p><p>---</p><p><h2>📋 參考文件索引</h2></p><p>| 文件 | 路徑 |<br>
 |------|------|<br>
-| 共用配置 | <code>references/波共用.md</code> |<br>
 | 出題規則 | <code>references/波出題.md</code> |<br>
+| 答題規則 | <code>references/波答題.md</code> |<br>
 | 打分規則 | <code>references/波打分.md</code> |<br>
 | 排行榜規則 | <code>references/波排行榜.md</code> |<br>
-| Haiku 答題 | <code>references/波答題-haiku.md</code> |<br>
-| OpenRouter 答題 | <code>references/波答題-openrouter.md</code> |<br>
+| <strong>簡報規則</strong> | <code>references/波排行簡報.md</code> |<br>
 | 驗證規則 | <code>references/波驗證.md</code> |<br>
-| 題庫模板 | <code>templates/題庫模板.yaml</code> |</p><p>---</p><p><h2>檢索關鍵字</h2></p><p>波題庫, 波出題, 波答題, 波打分, 波排行榜, 波驗證, AI評測, 多模型, 高品味題庫<br>
+| 題庫模板 | <code>templates/題庫模板.yaml</code> |<br>
+| 進度記錄 | <code>projects/評分進度-checkpoint.md</code> |</p><p>---</p><p><h2>檢索關鍵字</h2></p><p>波題庫, 波出題, 波答題, 波打分, 波排行榜, 波驗證, 波特人評分法, 100分制, 九維度, 真新全快省準人安穩, AI評測, 多模型, 加權評分, 斷點續做, checkpoint<br>
 </p>
       </div>
     </div>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 模型評測報告 2026.01 | 波特人零幻覺</title>
+  <meta name="description" content="臺灣首個以零幻覺為核心的 AI 模型評測報告，涵蓋 11 個主流模型、5 大專業領域、275 道真實情境題目">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --slide-max-width: 960px;
+      --primary: #7C3AED;
+      --primary-light: #A78BFA;
+      --gold: #F59E0B;
+      --success: #10B981;
+      --danger: #EF4444;
+      --warning: #F97316;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 投影片卡片 */
+    .slide {
+      background: var(--card-bg);
+      max-width: var(--slide-max-width);
+      margin: 2rem auto;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      position: relative;
+      page-break-inside: avoid;
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .slide h2 {
+      font-size: 1.75rem;
+      margin: 0 0 1.5rem 0;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .slide h2 i {
+      color: var(--primary);
+    }
+
+    .slide h3 {
+      font-size: 1.25rem;
+      margin: 1.5rem 0 1rem 0;
+      color: var(--text);
+    }
+
+    /* 封面投影片 */
+    .slide-cover {
+      background: linear-gradient(135deg, var(--primary) 0%, #4F46E5 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 3rem;
+    }
+
+    .slide-cover h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+    }
+
+    .slide-cover .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .slide-cover .meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .slide-cover .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* 統計卡片 */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary) 0%, #4F46E5 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-card .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-card .label {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    /* 排行榜表格 */
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .leaderboard-table th {
+      background: var(--bg);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .leaderboard-table tr:hover {
+      background: var(--bg);
+    }
+
+    .rank {
+      font-weight: 700;
+      width: 3rem;
+      text-align: center;
+    }
+
+    .rank-1 { color: var(--gold); }
+    .rank-2 { color: #94A3B8; }
+    .rank-3 { color: #CD7F32; }
+
+    .model-name {
+      font-weight: 500;
+    }
+
+    .score {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-expert { background: #FEF3C7; color: #92400E; }
+    .badge-advanced { background: #DBEAFE; color: #1E40AF; }
+    .badge-good { background: #D1FAE5; color: #065F46; }
+    .badge-basic { background: #FEE2E2; color: #991B1B; }
+    .badge-insufficient { background: #F3F4F6; color: #6B7280; }
+
+    /* SVG 圖表容器 */
+    .chart-container {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .chart-container svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* 九維度表格 */
+    .dimension-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .dimension-table th,
+    .dimension-table td {
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .dimension-table th {
+      background: var(--primary);
+      color: white;
+    }
+
+    .dimension-table th:first-child {
+      text-align: left;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .dimension-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    /* 專案卡片 */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .project-card h4 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-card h4 i {
+      color: var(--primary);
+    }
+
+    /* 下載區 */
+    .download-section {
+      background: var(--bg);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .download-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .download-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(124,58,237,0.15);
+    }
+
+    .download-card i {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .download-card span {
+      font-weight: 600;
+    }
+
+    .download-card small {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* 問題卡片 */
+    .question-card {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .question-card .big-question {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #92400E;
+      margin: 0;
+    }
+
+    /* 列表 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-list i {
+      color: var(--success);
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    /* 權重視覺化 */
+    .weight-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .weight-bar .label {
+      width: 60px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .weight-bar .bar {
+      flex: 1;
+      height: 24px;
+      background: var(--bg);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .weight-bar .fill {
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.5rem;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* 結論區 */
+    .conclusion-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .conclusion-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .conclusion-card.winner {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+      border: 2px solid var(--gold);
+    }
+
+    .conclusion-card.insight {
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+
+    .conclusion-card h4 {
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* 頁尾 */
+    .report-footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .report-footer a {
+      color: var(--primary);
+    }
+
+    /* 返回連結 */
+    .back-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+
+    .back-link:hover {
+      background: var(--bg);
+    }
+
+    /* 列印樣式 */
+    @media print {
+      body {
+        background: white;
+      }
+
+      .slide {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin: 1rem auto;
+        padding: 2rem;
+        page-break-inside: avoid;
+      }
+
+      .back-link,
+      .no-print {
+        display: none !important;
+      }
+
+      .slide-cover {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.7em;
+        color: #666;
+      }
+
+      .download-card::after {
+        content: none;
+      }
+    }
+
+    /* RWD */
+    @media (max-width: 768px) {
+      .slide {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid,
+      .download-grid,
+      .conclusion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slide-cover h1 {
+        font-size: 1.75rem;
+      }
+
+      .leaderboard-table {
+        font-size: 0.8rem;
+      }
+
+      .leaderboard-table th,
+      .leaderboard-table td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="../" class="back-link no-print">
+    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+    返回首頁
+  </a>
+
+  <!-- 封面 -->
+  <div class="slide slide-cover">
+    <div class="slide-number">01</div>
+    <h1>AI 模型評測報告</h1>
+    <p class="subtitle">臺灣政府、學校、智庫專業領域零幻覺評測</p>
+    <div class="meta">
+      <span><i data-lucide="calendar" style="width:16px;height:16px;"></i> 2026 年 1 月</span>
+      <span><i data-lucide="flask-conical" style="width:16px;height:16px;"></i> v4.0</span>
+      <span><i data-lucide="sparkles" style="width:16px;height:16px;"></i> 波特人評分法</span>
+    </div>
+  </div>
+
+  <!-- 第一幕：設定 - 核心問題 -->
+  <div class="slide">
+    <div class="slide-number">02</div>
+    <h2><i data-lucide="help-circle"></i> 核心問題</h2>
+
+    <div class="question-card">
+      <p class="big-question">在臺灣本土專業情境下，哪個 AI 模型最能回答問題且零幻覺？</p>
+    </div>
+
+    <h3>為什麼這很重要？</h3>
+    <ul class="feature-list">
+      <li>
+        <i data-lucide="shield-alert" style="width:20px;height:20px;"></i>
+        <div>
+          <strong>政府決策風險</strong>
+          <p style="margin:0.25rem 0 0 0;color:var(--text-muted);font-size:0.875rem;">錯誤的法規解釋可能導致採購弊端、行政疏失</p>
+        </div>
+      </li>
+      <li>
+        <i data-lucide="graduation-cap" style="width:20px;height:20px;"></i>
+        <div>
+          <strong>教育服務品質</strong>
+          <p style="margin:0.25rem 0 0 0;color:var(--text-muted);font-size:0.875rem;">國際學生的簽證、居留問題需要精確指引</p>
+        </div>
+      </li>
+      <li>
+        <i data-lucide="globe" style="width:20px;height:20px;"></i>
+        <div>
+          <strong>地緣政治分析</strong>
+          <p style="margin:0.25rem 0 0 0;color:var(--text-muted);font-size:0.875rem;">臺海情勢的分析需要客觀、無偏見的 AI 協助</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 評測範圍 -->
+  <div class="slide">
+    <div class="slide-number">03</div>
+    <h2><i data-lucide="target"></i> 評測範圍</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="number">11</span>
+        <span class="label">AI 模型</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">5</span>
+        <span class="label">專業領域</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">275</span>
+        <span class="label">評測題目</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">100</span>
+        <span class="label">分制評分</span>
+      </div>
+    </div>
+
+    <h3>評測專案</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4><i data-lucide="scale" style="width:18px;height:18px;"></i> 政府採購法</h4>
+        <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">限制性招標、最有利標、緊急採購等實務情境</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="cpu" style="width:18px;height:18px;"></i> 數位部 AI 手冊</h4>
+        <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">政府機關導入 AI 的政策指引與風險管理</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="leaf" style="width:18px;height:18px;"></i> 經濟部淨零排放</h4>
+        <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">2050 淨零轉型路徑與產業減碳策略</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="graduation-cap" style="width:18px;height:18px;"></i> 北科大外籍生</h4>
+        <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">國際學生簽證、居留、就業相關法規</p>
+      </div>
+      <div class="project-card" style="grid-column: span 2;">
+        <h4><i data-lucide="globe" style="width:18px;height:18px;"></i> CSIS 臺海分析</h4>
+        <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">戰略暨國際研究中心（CSIS）臺海局勢專業分析</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第二幕：衝突 - 評分方法 -->
+  <div class="slide">
+    <div class="slide-number">04</div>
+    <h2><i data-lucide="sliders"></i> 波特人九維度評分法</h2>
+
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;">以「零幻覺」為核心，兼顧以人為本與專業精確的綜合評分體系</p>
+
+    <div class="weight-bar">
+      <span class="label">真 25%</span>
+      <div class="bar"><div class="fill" style="width:100%;background:#7C3AED;">零幻覺、事實正確</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">人 15%</span>
+      <div class="bar"><div class="fill" style="width:60%;background:#A78BFA;">以人為本、換位思考</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">準 15%</span>
+      <div class="bar"><div class="fill" style="width:60%;background:#A78BFA;">用詞精準、術語正確</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">全 15%</span>
+      <div class="bar"><div class="fill" style="width:60%;background:#A78BFA;">涵蓋完整、無遺漏</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">新 10%</span>
+      <div class="bar"><div class="fill" style="width:40%;background:#C4B5FD;">創新見解、與時俱進</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">安 8%</span>
+      <div class="bar"><div class="fill" style="width:32%;background:#DDD6FE;">合規無風險</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">穩 5%</span>
+      <div class="bar"><div class="fill" style="width:20%;background:#EDE9FE;">邏輯連貫</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">快 4%</span>
+      <div class="bar"><div class="fill" style="width:16%;background:#F5F3FF;">重點前置</div></div>
+    </div>
+    <div class="weight-bar">
+      <span class="label">省 3%</span>
+      <div class="bar"><div class="fill" style="width:12%;background:#F5F3FF;">精煉表達</div></div>
+    </div>
+
+    <p style="font-size:0.875rem;color:var(--text-muted);margin-top:1.5rem;text-align:center;">
+      評分公式：真×2.5 + 人×1.5 + 準×1.5 + 全×1.5 + 新×1.0 + 安×0.8 + 穩×0.5 + 快×0.4 + 省×0.3 = 100 分
+    </p>
+  </div>
+
+  <!-- 第三幕：解決 - 總排行榜 -->
+  <div class="slide">
+    <div class="slide-number">05</div>
+    <h2><i data-lucide="trophy"></i> 總排行榜</h2>
+
+    <!-- SVG 橫條圖 -->
+    <div class="chart-container">
+      <svg width="100%" viewBox="0 0 700 420" style="max-width:700px;">
+        <!-- 標題 -->
+        <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="600" fill="#64748B">11 個 AI 模型評測結果（滿分 100）</text>
+
+        <!-- 橫條圖 -->
+        <g transform="translate(180, 45)">
+          <!-- 第 1 名 -->
+          <rect x="0" y="0" width="420" height="28" fill="#F59E0B" rx="4"/>
+          <text x="-10" y="19" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Gemini 3 Pro</text>
+          <text x="430" y="19" font-size="12" fill="#1E293B" font-weight="700">84.2</text>
+          <text x="10" y="19" font-size="11" fill="white" font-weight="600">1</text>
+
+          <!-- 第 2 名 -->
+          <rect x="0" y="32" width="418" height="28" fill="#7C3AED" rx="4"/>
+          <text x="-10" y="51" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Mistral Large 3</text>
+          <text x="430" y="51" font-size="12" fill="#1E293B" font-weight="700">83.7</text>
+          <text x="10" y="51" font-size="11" fill="white" font-weight="600">2</text>
+
+          <!-- 第 3 名 -->
+          <rect x="0" y="64" width="412" height="28" fill="#7C3AED" rx="4"/>
+          <text x="-10" y="83" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Claude Sonnet 4</text>
+          <text x="430" y="83" font-size="12" fill="#1E293B" font-weight="700">82.4</text>
+          <text x="10" y="83" font-size="11" fill="white" font-weight="600">3</text>
+
+          <!-- 第 4 名 -->
+          <rect x="0" y="96" width="402" height="28" fill="#A78BFA" rx="4"/>
+          <text x="-10" y="115" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">GPT OSS 120B</text>
+          <text x="430" y="115" font-size="12" fill="#1E293B" font-weight="700">80.5</text>
+          <text x="10" y="115" font-size="11" fill="white" font-weight="600">4</text>
+
+          <!-- 第 5 名 -->
+          <rect x="0" y="128" width="397" height="28" fill="#A78BFA" rx="4"/>
+          <text x="-10" y="147" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Gemini 3 Flash</text>
+          <text x="430" y="147" font-size="12" fill="#1E293B" font-weight="700">79.4</text>
+          <text x="10" y="147" font-size="11" fill="white" font-weight="600">5</text>
+
+          <!-- 第 6 名 -->
+          <rect x="0" y="160" width="397" height="28" fill="#A78BFA" rx="4"/>
+          <text x="-10" y="179" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Claude Haiku 4.5</text>
+          <text x="430" y="179" font-size="12" fill="#1E293B" font-weight="700">79.4</text>
+          <text x="10" y="179" font-size="11" fill="white" font-weight="600">6</text>
+
+          <!-- 第 7 名 -->
+          <rect x="0" y="192" width="384" height="28" fill="#C4B5FD" rx="4"/>
+          <text x="-10" y="211" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Ministral 14B</text>
+          <text x="430" y="211" font-size="12" fill="#1E293B" font-weight="700">76.9</text>
+          <text x="10" y="211" font-size="11" fill="#1E293B" font-weight="600">7</text>
+
+          <!-- 第 8 名 -->
+          <rect x="0" y="224" width="378" height="28" fill="#C4B5FD" rx="4"/>
+          <text x="-10" y="243" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Ministral 8B</text>
+          <text x="430" y="243" font-size="12" fill="#1E293B" font-weight="700">75.7</text>
+          <text x="10" y="243" font-size="11" fill="#1E293B" font-weight="600">8</text>
+
+          <!-- 第 9 名 -->
+          <rect x="0" y="256" width="366" height="28" fill="#DDD6FE" rx="4"/>
+          <text x="-10" y="275" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Devstral 2</text>
+          <text x="430" y="275" font-size="12" fill="#1E293B" font-weight="700">73.2</text>
+          <text x="10" y="275" font-size="11" fill="#1E293B" font-weight="600">9</text>
+
+          <!-- 第 10 名 -->
+          <rect x="0" y="288" width="348" height="28" fill="#EDE9FE" rx="4"/>
+          <text x="-10" y="307" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Llama 4 Maverick</text>
+          <text x="430" y="307" font-size="12" fill="#1E293B" font-weight="700">69.7</text>
+          <text x="10" y="307" font-size="11" fill="#1E293B" font-weight="600">10</text>
+
+          <!-- 第 11 名 -->
+          <rect x="0" y="320" width="323" height="28" fill="#F5F3FF" rx="4"/>
+          <text x="-10" y="339" text-anchor="end" font-size="12" fill="#1E293B" font-weight="500">Ministral 3B</text>
+          <text x="430" y="339" font-size="12" fill="#1E293B" font-weight="700">64.6</text>
+          <text x="10" y="339" font-size="11" fill="#1E293B" font-weight="600">11</text>
+        </g>
+
+        <!-- 圖例 -->
+        <g transform="translate(350, 395)">
+          <rect x="-150" y="0" width="12" height="12" fill="#F59E0B" rx="2"/>
+          <text x="-133" y="10" font-size="10" fill="#64748B">冠軍</text>
+          <rect x="-80" y="0" width="12" height="12" fill="#7C3AED" rx="2"/>
+          <text x="-63" y="10" font-size="10" fill="#64748B">進階級 (80+)</text>
+          <rect x="20" y="0" width="12" height="12" fill="#C4B5FD" rx="2"/>
+          <text x="37" y="10" font-size="10" fill="#64748B">良好級 (70+)</text>
+          <rect x="110" y="0" width="12" height="12" fill="#EDE9FE" rx="2"/>
+          <text x="127" y="10" font-size="10" fill="#64748B">基礎級 (60+)</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 梯隊分布 -->
+  <div class="slide">
+    <div class="slide-number">06</div>
+    <h2><i data-lucide="layers"></i> 等級分布</h2>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>模型</th>
+          <th>平均分</th>
+          <th>專家級</th>
+          <th>進階級</th>
+          <th>良好級</th>
+          <th>基礎級</th>
+          <th>不足級</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank rank-1">1</td>
+          <td class="model-name">google/gemini-3-pro-preview</td>
+          <td class="score">84.2</td>
+          <td>1</td>
+          <td>15</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank rank-2">2</td>
+          <td class="model-name">mistralai/mistral-large-2512</td>
+          <td class="score">83.7</td>
+          <td>6</td>
+          <td>13</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank rank-3">3</td>
+          <td class="model-name">anthropic/claude-sonnet-4</td>
+          <td class="score">82.4</td>
+          <td>1</td>
+          <td>12</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="model-name">openai/gpt-oss-120b</td>
+          <td class="score">80.5</td>
+          <td>5</td>
+          <td>9</td>
+          <td>3</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="model-name">google/gemini-3-flash-preview</td>
+          <td class="score">79.4</td>
+          <td>0</td>
+          <td>11</td>
+          <td>6</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="model-name">anthropic/claude-haiku-4.5</td>
+          <td class="score">79.4</td>
+          <td>3</td>
+          <td>11</td>
+          <td>7</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td class="model-name">mistralai/ministral-14b-2512</td>
+          <td class="score">76.9</td>
+          <td>3</td>
+          <td>8</td>
+          <td>1</td>
+          <td>6</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank">8</td>
+          <td class="model-name">mistralai/ministral-8b-2512</td>
+          <td class="score">75.7</td>
+          <td>0</td>
+          <td>9</td>
+          <td>7</td>
+          <td>4</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="rank">9</td>
+          <td class="model-name">mistralai/devstral-2512</td>
+          <td class="score">73.2</td>
+          <td>0</td>
+          <td>7</td>
+          <td>9</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="rank">10</td>
+          <td class="model-name">meta-llama/llama-4-maverick</td>
+          <td class="score">69.7</td>
+          <td>0</td>
+          <td>1</td>
+          <td>13</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td class="model-name">mistralai/ministral-3b-2512</td>
+          <td class="score">64.6</td>
+          <td>0</td>
+          <td>2</td>
+          <td>12</td>
+          <td>7</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:0.875rem;color:var(--text-muted);margin-top:1rem;">
+      等級標準：專家級 90+、進階級 80-89、良好級 70-79、基礎級 60-69、不足級 0-59
+    </p>
+  </div>
+
+  <!-- 各專案排名 - 採購法 -->
+  <div class="slide">
+    <div class="slide-number">07</div>
+    <h2><i data-lucide="scale"></i> 專案排名：政府採購法</h2>
+
+    <p style="color:var(--text-muted);margin-bottom:1rem;">涵蓋限制性招標、最有利標、選擇性招標、緊急採購、獨家製造等 5 題</p>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>模型</th>
+          <th>平均分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank rank-1">1</td><td>Gemini 3 Flash</td><td class="score">87.3</td></tr>
+        <tr><td class="rank rank-2">2</td><td>Gemini 3 Pro</td><td class="score">85.2</td></tr>
+        <tr><td class="rank rank-3">3</td><td>Claude Haiku 4.5</td><td class="score">85.1</td></tr>
+        <tr><td class="rank">4</td><td>Claude Sonnet 4</td><td class="score">84.5</td></tr>
+        <tr><td class="rank">5</td><td>Ministral 14B</td><td class="score">82.6</td></tr>
+        <tr><td class="rank">6</td><td>Mistral Large 3</td><td class="score">82.2</td></tr>
+        <tr><td class="rank">7</td><td>Ministral 8B</td><td class="score">78.2</td></tr>
+        <tr><td class="rank">8</td><td>Devstral 2</td><td class="score">72.8</td></tr>
+        <tr><td class="rank">9</td><td>GPT OSS 120B</td><td class="score">68.6</td></tr>
+        <tr><td class="rank">10</td><td>Ministral 3B</td><td class="score">68.3</td></tr>
+        <tr><td class="rank">11</td><td>Llama 4 Maverick</td><td class="score">62.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 各專案排名 - 其他專案摘要 -->
+  <div class="slide">
+    <div class="slide-number">08</div>
+    <h2><i data-lucide="bar-chart-3"></i> 各專案冠軍</h2>
+
+    <div class="project-grid" style="grid-template-columns: 1fr;">
+      <div class="project-card" style="display:flex;align-items:center;gap:1rem;">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 0.25rem 0;"><i data-lucide="scale" style="width:16px;height:16px;"></i> 採購法</h4>
+          <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">Gemini 3 Flash 87.3 分</p>
+        </div>
+        <span class="badge badge-advanced">進階級</span>
+      </div>
+      <div class="project-card" style="display:flex;align-items:center;gap:1rem;">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 0.25rem 0;"><i data-lucide="cpu" style="width:16px;height:16px;"></i> 數位部 AI 手冊</h4>
+          <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">Gemini 3 Pro 88.2 分</p>
+        </div>
+        <span class="badge badge-advanced">進階級</span>
+      </div>
+      <div class="project-card" style="display:flex;align-items:center;gap:1rem;">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 0.25rem 0;"><i data-lucide="leaf" style="width:16px;height:16px;"></i> 經濟部淨零排放</h4>
+          <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">GPT OSS 120B 84.9 分</p>
+        </div>
+        <span class="badge badge-advanced">進階級</span>
+      </div>
+      <div class="project-card" style="display:flex;align-items:center;gap:1rem;">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 0.25rem 0;"><i data-lucide="graduation-cap" style="width:16px;height:16px;"></i> 北科大外籍生</h4>
+          <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">Mistral Large 3 86.8 分</p>
+        </div>
+        <span class="badge badge-advanced">進階級</span>
+      </div>
+      <div class="project-card" style="display:flex;align-items:center;gap:1rem;">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 0.25rem 0;"><i data-lucide="globe" style="width:16px;height:16px;"></i> CSIS 臺海分析</h4>
+          <p style="margin:0;font-size:0.875rem;color:var(--text-muted);">GPT OSS 120B 85.3 分</p>
+        </div>
+        <span class="badge badge-advanced">進階級</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:1.5rem;">關鍵發現</h3>
+    <ul class="feature-list">
+      <li>
+        <i data-lucide="check-circle" style="width:20px;height:20px;"></i>
+        <span><strong>沒有單一模型稱霸所有領域</strong> - 不同專案有不同的冠軍</span>
+      </li>
+      <li>
+        <i data-lucide="check-circle" style="width:20px;height:20px;"></i>
+        <span><strong>Gemini 系列在法規領域表現突出</strong> - 採購法、AI 手冊皆奪冠</span>
+      </li>
+      <li>
+        <i data-lucide="check-circle" style="width:20px;height:20px;"></i>
+        <span><strong>開源模型在特定領域可匹敵閉源</strong> - GPT OSS 在能源與地緣政治表現佳</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 結論與建議 -->
+  <div class="slide">
+    <div class="slide-number">09</div>
+    <h2><i data-lucide="lightbulb"></i> 結論與建議</h2>
+
+    <div class="conclusion-grid">
+      <div class="conclusion-card winner">
+        <h4><i data-lucide="trophy" style="width:20px;height:20px;color:#92400E;"></i> 總冠軍</h4>
+        <p style="font-size:1.5rem;font-weight:700;margin:0.5rem 0;">Gemini 3 Pro</p>
+        <p style="font-size:0.875rem;color:#92400E;margin:0;">平均分 84.2，進階級佔比最高</p>
+      </div>
+      <div class="conclusion-card insight">
+        <h4><i data-lucide="zap" style="width:20px;height:20px;color:var(--primary);"></i> 性價比之選</h4>
+        <p style="font-size:1.25rem;font-weight:600;margin:0.5rem 0;">Ministral 8B</p>
+        <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">成本最低，良好級穩定表現</p>
+      </div>
+      <div class="conclusion-card insight">
+        <h4><i data-lucide="shield-check" style="width:20px;height:20px;color:var(--success);"></i> 穩定之選</h4>
+        <p style="font-size:1.25rem;font-weight:600;margin:0.5rem 0;">Claude Sonnet 4</p>
+        <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">無不足級，表現最穩定</p>
+      </div>
+      <div class="conclusion-card insight">
+        <h4><i data-lucide="star" style="width:20px;height:20px;color:var(--warning);"></i> 專家潛力</h4>
+        <p style="font-size:1.25rem;font-weight:600;margin:0.5rem 0;">Mistral Large 3</p>
+        <p style="font-size:0.875rem;color:var(--text-muted);margin:0;">專家級數量最多（6 題）</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;">適用場景建議</h3>
+    <table class="leaderboard-table" style="margin-top:1rem;">
+      <thead>
+        <tr>
+          <th>場景</th>
+          <th>推薦模型</th>
+          <th>原因</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>法規諮詢</td>
+          <td>Gemini 3 Flash / Pro</td>
+          <td>法規領域表現最佳</td>
+        </tr>
+        <tr>
+          <td>一般文書</td>
+          <td>Claude Sonnet 4</td>
+          <td>穩定無不足級</td>
+        </tr>
+        <tr>
+          <td>預算有限</td>
+          <td>Ministral 8B</td>
+          <td>成本最低，品質可接受</td>
+        </tr>
+        <tr>
+          <td>地緣政治分析</td>
+          <td>GPT OSS 120B</td>
+          <td>CSIS 專案表現最佳</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Open Data 下載區 -->
+  <div class="slide">
+    <div class="slide-number">10</div>
+    <h2><i data-lucide="download"></i> 原始資料下載</h2>
+
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;">本報告秉持 Open Data 精神，所有評測資料皆可下載驗證</p>
+
+    <div class="download-section">
+      <h3 style="margin-top:0;"><i data-lucide="database" style="width:18px;height:18px;vertical-align:middle;margin-right:0.5rem;"></i> 資料集</h3>
+      <div class="download-grid">
+        <a href="data/題庫-v4.yaml" class="download-card">
+          <i data-lucide="file-text" style="width:32px;height:32px;"></i>
+          <span>題庫 YAML</span>
+          <small>5 專案 × 5 題</small>
+        </a>
+        <a href="../../shared/排行榜/完整排行榜-v4-2026-01-31.md" class="download-card">
+          <i data-lucide="trophy" style="width:32px;height:32px;"></i>
+          <span>排行榜 Markdown</span>
+          <small>完整報告</small>
+        </a>
+        <a href="data/評分說明.md" class="download-card">
+          <i data-lucide="book-open" style="width:32px;height:32px;"></i>
+          <span>評分方法說明</span>
+          <small>九維度評分法</small>
+        </a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;"><i data-lucide="folder-open" style="width:18px;height:18px;vertical-align:middle;margin-right:0.5rem;"></i> 題庫範例</h3>
+    <div style="background:#1E293B;color:#E2E8F0;padding:1.5rem;border-radius:12px;font-family:monospace;font-size:0.8rem;overflow-x:auto;margin-top:1rem;">
+      <pre style="margin:0;"><code>- id: "Q001"
+  domain: "政府採購法"
+  category: "限制性招標"
+  difficulty: 8
+  question: |
+    【情境】你是某機關採購人員，本次採購案為公告金額以上。
+    第一次公開招標結果無廠商投標，主管問你接下來該怎麼辦？
+
+    請說明：
+    1. 有哪些可行的處理方式？
+    2. 如果要改採限制性招標，需要符合什麼條件？
+    3. 實務上有哪些注意事項？可能踩到什麼地雷？</code></pre>
+    </div>
+  </div>
+
+  <!-- 關於評測 -->
+  <div class="slide">
+    <div class="slide-number">11</div>
+    <h2><i data-lucide="info"></i> 關於本評測</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <h4><i data-lucide="user" style="width:16px;height:16px;"></i> 評測者</h4>
+        <p style="margin:0;font-size:0.875rem;">Claude Opus（統一標準評分）</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="calendar" style="width:16px;height:16px;"></i> 評測期間</h4>
+        <p style="margin:0;font-size:0.875rem;">2026 年 1 月</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="code" style="width:16px;height:16px;"></i> 評測版本</h4>
+        <p style="margin:0;font-size:0.875rem;">波題庫 v4.0</p>
+      </div>
+      <div class="project-card">
+        <h4><i data-lucide="scale" style="width:16px;height:16px;"></i> 評分標準</h4>
+        <p style="margin:0;font-size:0.875rem;">波特人九維度加權評分法</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:1.5rem;">評測方法論</h3>
+    <ul class="feature-list">
+      <li>
+        <i data-lucide="check" style="width:20px;height:20px;"></i>
+        <span><strong>開放式問答</strong> - 非選擇題，測試真實理解與推理能力</span>
+      </li>
+      <li>
+        <i data-lucide="check" style="width:20px;height:20px;"></i>
+        <span><strong>真實情境題</strong> - 基於臺灣政府、學校、智庫的實際需求</span>
+      </li>
+      <li>
+        <i data-lucide="check" style="width:20px;height:20px;"></i>
+        <span><strong>統一評分者</strong> - 所有答題由同一評分者（Opus）評分，確保公平</span>
+      </li>
+      <li>
+        <i data-lucide="check" style="width:20px;height:20px;"></i>
+        <span><strong>九維度加權</strong> - 以「零幻覺」為核心，兼顧實用性與創新性</span>
+      </li>
+    </ul>
+
+    <div style="background:var(--bg);padding:1.5rem;border-radius:12px;margin-top:1.5rem;text-align:center;">
+      <p style="margin:0;color:var(--text-muted);">
+        本報告由 <a href="https://botrun.ai" style="color:var(--primary);font-weight:600;">botrun.ai</a> 波特人團隊製作
+      </p>
+      <p style="margin:0.5rem 0 0 0;font-size:0.875rem;color:var(--text-muted);">
+        以 MIT License 開源，歡迎引用與分享
+      </p>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <footer class="report-footer">
+    <p>
+      <i data-lucide="sparkles" style="width:16px;height:16px;vertical-align:middle;"></i>
+      AI 模型評測報告 2026.01 | 波特人零幻覺
+    </p>
+    <p>
+      Boosted by <a href="https://botrun.ai">botrun.ai</a> |
+      <a href="https://github.com/botrun">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

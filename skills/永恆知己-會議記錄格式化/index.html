@@ -84,7 +84,11 @@ cat 配置/規則/勘誤表.md<br>
 <code>`</code></p><p>3. 讀取逐字稿，理解內容</p><p>4. <strong>套用勘誤表校正</strong>（必做！）：<br>
    - 人名：博瀚→泊寰、Saba→Ada、承偉→承緯 等<br>
    - 專有名詞：中理寺→宗禮司、靈幻覺→零幻覺 等<br>
-   - 產品名：波特毛→波特貓、Cloud Code→Claude Code 等</p><p>5. 按照上面的格式要求產生 .txt</p><p>6. 輸出到 <code>素材庫/輸出/會議記錄/{語義化檔名}-會議記錄.txt</code></p><p>7. <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>⚠️ 勘誤校正（永久記憶）</h2></p><p><strong>每次格式化會議記錄前，必須先讀取 <code>配置/規則/勘誤表.md</code>！</strong></p><p>常見錯誤：<br>
+   - 產品名：波特毛→波特貓、Cloud Code→Claude Code 等</p><p>5. 按照上面的格式要求產生 .txt</p><p>6. 輸出到 <code>素材庫/輸出/會議記錄/{語義化檔名}-會議記錄.txt</code></p><p>7. <strong>勘誤完成後</strong>，才能 <code>open</code> 讓用戶檢閱</p><p><h3>⚠️ 永久規則：只打開一次 .txt（勘誤後）</h3></p><p><strong>禁止行為</strong>：<br>
+- ❌ 打開未勘誤的 .txt<br>
+- ❌ 打開兩次 .txt（一次沒勘誤、一次有勘誤）</p><p><strong>正確行為</strong>：<br>
+- ✅ 完成勘誤後，才能 <code>bash open</code> .txt<br>
+- ✅ 整個流程只打開一次最終版本</p><p>---</p><p><h2>⚠️ 勘誤校正（永久記憶）</h2></p><p><strong>每次格式化會議記錄前，必須先讀取 <code>配置/規則/勘誤表.md</code>！</strong></p><p>常見錯誤：<br>
 - ❌ 博瀚、博涵、博翰 → ✅ 泊寰<br>
 - ❌ Saba、撒博、薩博 → ✅ Ada<br>
 - ❌ 中理寺、中理司 → ✅ 宗禮司<br>

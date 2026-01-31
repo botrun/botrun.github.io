@@ -47,37 +47,51 @@
     <div class="skill-content">
       <h1><i data-lucide="book-open"></i> timeless-speech-to-text</h1>
       <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        永恆知己語音轉文字技能。當用戶說「處理會議錄音」或上傳音訊檔案時觸發。使用 CLI pipeline + Gemini API (gemini-3-flash-preview) 進行高品質轉錄。
+        永恆知己語音轉文字技能。當用戶說「處理會議錄音」或上傳音訊/影片檔案時觸發。使用 CLI pipeline + Gemini API (gemini-3-flash-preview) 進行高品質轉錄。支援影片格式，會先用 ffmpeg 提取音訊。
       </p>
       <div>
         <p>
 <h1>永恆知己 - 語音轉文字技能</h1></p><p><h2>🎯 一鍵完成（CLI Pipeline）</h2></p><p><h3>單檔處理</h3><br>
 <code>`</code>bash<br>
-npx tsx scripts/pipeline.ts "收集箱/會議錄音/檔案名.m4a"<br>
+<h1>音訊檔案</h1><br>
+npx tsx scripts/pipeline.ts "收集箱/會議錄音/檔案名.m4a"</p><p><h1>影片檔案（自動提取音訊）</h1><br>
+npx tsx scripts/pipeline.ts "收集箱/會議錄音/會議.mp4"<br>
 <code>`</code></p><p><h3>批次處理（平行）</h3><br>
 <code>`</code>bash<br>
 npx tsx scripts/pipeline.ts --batch 收集箱/會議錄音/ --jobs 4<br>
 <code>`</code></p><p><h3>自動完成</h3><br>
 Pipeline 自動執行：<br>
-1. Gemini 轉錄（gemini-3-flash-preview）<br>
-2. <strong>大模型勘誤</strong>（理解上下文，處理模糊錯誤）⭐<br>
-3. Gemini 語義分析（檔名+摘要+關鍵字）<br>
-4. 格式化輸出 .txt<br>
-5. 自動 <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>📁 輸出位置</h2></p><p>| 類型 | 路徑 |<br>
+1. <strong>影片先提取音訊</strong>（ffmpeg）🎬<br>
+2. Gemini 轉錄（gemini-3-flash-preview）<br>
+3. <strong>大模型勘誤</strong>（理解上下文，處理模糊錯誤）⭐<br>
+4. Gemini 語義分析（檔名+摘要+關鍵字）<br>
+5. 格式化輸出 .txt<br>
+6. 自動 <code>open</code> 讓用戶檢閱</p><p><h3>⚠️ 永久規則：只打開一次 .txt（勘誤後）</h3></p><p><strong>禁止行為</strong>：<br>
+- ❌ 打開未勘誤的 .txt<br>
+- ❌ 打開兩次 .txt（一次沒勘誤、一次有勘誤）</p><p><strong>正確行為</strong>：<br>
+- ✅ 完成勘誤後，才能 <code>bash open</code> .txt<br>
+- ✅ 整個流程只打開一次最終版本</p><p>---</p><p><h2>📁 支援格式</h2></p><p>| 類型 | 格式 |<br>
+|------|------|<br>
+| 🎵 音訊 | <code>.mp3</code>, <code>.m4a</code>, <code>.wav</code>, <code>.webm</code>, <code>.ogg</code>, <code>.flac</code>, <code>.aac</code>, <code>.wma</code> |<br>
+| 🎬 影片 | <code>.mp4</code>, <code>.mov</code>, <code>.avi</code>, <code>.mkv</code>, <code>.webm</code>, <code>.flv</code>, <code>.wmv</code>, <code>.m4v</code>, <code>.3gp</code>, <code>.ogv</code>, <code>.ts</code>, <code>.mts</code>, <code>.m2ts</code> |</p><p>---</p><p><h2>📁 輸出與歸檔位置</h2></p><p>| 類型 | 路徑 |<br>
 |------|------|<br>
 | 逐字稿 .md | <code>素材庫/來源歸檔/會議記錄/逐字稿/{語義檔名}.md</code> |<br>
 | 會議記錄 .txt | <code>素材庫/輸出/會議記錄/{語義檔名}-會議記錄.txt</code> |<br>
-| 原始音檔 | <code>素材庫/來源歸檔/會議記錄/原始音檔/</code> |</p><p>---</p><p><h2>🔧 技術規格</h2></p><p>- <strong>轉錄模型</strong>：<code>gemini-3-flash-preview</code>（絕對不能錯）<br>
+| 原始音檔 | <code>素材庫/來源歸檔/會議記錄/原始音檔/</code> |<br>
+| 原始影片 | <code>素材庫/來源歸檔/會議記錄/原始影片/</code> |</p><p>---</p><p><h2>🔧 技術規格</h2></p><p>- <strong>轉錄模型</strong>：<code>gemini-3-flash-preview</code>（絕對不能錯）<br>
+- <strong>影片音訊提取</strong>：ffmpeg（AAC 128kbps, 44.1kHz）<br>
 - <strong>勘誤</strong>：大模型勘誤（<code>gemini-2.0-flash</code>）⭐ 禁用 sed<br>
   - 勘誤表：<code>配置/規則/勘誤表.md</code>（人類可讀）<br>
-  - 模組：<code>scripts/lib/correct.ts</code><br>
+  - 模組：<code>.claude/skills/共用工具庫/scripts/correct.ts</code><br>
   - 優勢：理解上下文、處理模糊錯誤、同音字判斷<br>
-- <strong>語義分析</strong>：Gemini 一次調用完成檔名+摘要+關鍵字<br>
-- <strong>格式化</strong>：純 template（不需 AI）</p><p>---</p><p><h2>⚡ 效能</h2></p><p>| 指標 | 數值 |<br>
+- <strong>語義分析</strong>：Gemini 一次調用完成檔名+摘要+關鍵字</p><p>---</p><p><h2>⚡ 效能</h2></p><p>| 指標 | 數值 |<br>
 |------|------|<br>
 | 30 秒音檔 | ~20 秒完成 |<br>
+| 影片音訊提取 | ~5-10 秒 |<br>
 | 大模型勘誤 | ~5-10 秒（理解上下文） |<br>
-| 4 檔平行 | ~80 秒（含大模型勘誤） |</p><p>---</p><p><h2>🔍 搜尋轉錄內容</h2></p><p><code>`</code>bash<br>
+| 4 檔平行 | ~80 秒（含大模型勘誤） |</p><p>---</p><p><h2>🗂️ 收集箱使用方式</h2></p><p>1. <strong>無腦丟檔案</strong>：將音訊或影片丟到 <code>收集箱/會議錄音/</code><br>
+2. <strong>執行 pipeline</strong>：<code>npx tsx scripts/pipeline.ts --batch 收集箱/會議錄音/</code><br>
+3. <strong>自動歸檔</strong>：原始檔案會自動移動到對應的歸檔目錄</p><p>---</p><p><h2>🔍 搜尋轉錄內容</h2></p><p><code>`</code>bash<br>
 rg "關鍵字" 素材庫/來源歸檔/會議記錄/逐字稿/<br>
 <code>`</code><br>
 </p>
