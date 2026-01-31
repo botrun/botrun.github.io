@@ -439,71 +439,89 @@
         <!-- Complete Comparison Table -->
         <section class="section" id="comparison">
             <h2 class="section-title">完整硬體規格比較</h2>
-            <p class="section-subtitle">價格、記憶體、效能全面對比</p>
+            <p class="section-subtitle">價格、記憶體、測試模型、效能全面對比</p>
 
             <div class="chart-container">
+                <h3 class="chart-title">測試環境說明</h3>
+                <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(76,201,240,0.1); border-radius: 8px;">
+                    <p style="margin-bottom: 0.5rem;"><strong>單用戶測試模型：</strong>Qwen 34B (4-bit 量化) — 約 17GB 模型大小</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>並發測試模型：</strong>Qwen 34B (Q8 8-bit 量化) via Llama CPP Server</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>叢集測試模型：</strong>Llama 70B — 約 35GB (Q4) 至 70GB (FP16)</p>
+                    <p><strong>超大模型：</strong>Qwen Coder 480B (270GB) / Kimi K2 1T</p>
+                </div>
+
                 <table class="comparison-table">
                     <thead>
                         <tr>
                             <th>硬體</th>
                             <th>記憶體</th>
+                            <th>測試模型</th>
                             <th>單用戶 (t/s)</th>
                             <th>高並發 (t/s)</th>
                             <th>參考價格</th>
-                            <th>備註</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Mac Studio M3 Ultra</strong></td>
                             <td>512 GB</td>
+                            <td>Qwen 34B 4-bit</td>
                             <td class="winner">99</td>
                             <td class="winner">518 (8並發)</td>
                             <td>$10,000</td>
-                            <td>可跑 480B 模型</td>
                         </tr>
                         <tr>
                             <td><strong>NVIDIA DGX Spark</strong></td>
                             <td>128 GB</td>
+                            <td>Qwen 34B 4-bit</td>
                             <td>67</td>
                             <td>386 (VLM優化)</td>
                             <td>~$3,000</td>
-                            <td>需 VLM 才能發揮並發</td>
                         </tr>
                         <tr>
-                            <td><strong>AMD Strix Halo</strong></td>
+                            <td><strong>AMD Strix Halo (Beink)</strong></td>
                             <td>128 GB</td>
+                            <td>Qwen 34B 4-bit</td>
                             <td>62</td>
                             <td>69 (2並發)</td>
                             <td>~$2,500</td>
-                            <td>Beink 機器最快</td>
                         </tr>
                         <tr>
                             <td><strong>Framework 叢集 (x4)</strong></td>
-                            <td>512 GB</td>
-                            <td>37</td>
-                            <td>15 (受限網路)</td>
+                            <td>512 GB 總計</td>
+                            <td>Llama 70B</td>
+                            <td>37 (單節點)</td>
+                            <td>15 (4節點,受限網路)</td>
                             <td>~$10,000</td>
-                            <td>可跑 1T 模型</td>
                         </tr>
                         <tr>
                             <td><strong>RTX 5090</strong></td>
                             <td>32 GB VRAM</td>
+                            <td>LTX2 (43GB 影片生成)</td>
                             <td>-</td>
                             <td>-</td>
                             <td>~$2,000</td>
-                            <td>LTX2 影片生成</td>
                         </tr>
                         <tr>
                             <td><strong>AMD Radeon 9060 XT</strong></td>
                             <td>16 GB VRAM</td>
+                            <td>Qwen 34B 4-bit</td>
                             <td>18</td>
                             <td>-</td>
                             <td>~$350</td>
-                            <td>入門級選擇</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(114,9,183,0.1); border-radius: 8px; border-left: 4px solid var(--accent-purple);">
+                    <strong>模型參數說明：</strong>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>Qwen 34B</strong> = 340 億參數，4-bit 量化後約 17GB</li>
+                        <li><strong>Llama 70B</strong> = 700 億參數，Q4 量化後約 35GB</li>
+                        <li><strong>Qwen Coder 480B</strong> = 4800 億參數，MLX 格式 270GB</li>
+                        <li><strong>Kimi K2 1T</strong> = 1 兆參數，需 512GB+ 記憶體</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
