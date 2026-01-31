@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國網中心-AI服務 模型評測報告 | 2026-01-31</title>
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --gold: #F59E0B;
+      --success: #10B981;
+      --danger: #EF4444;
+      --bg: #F8FAFC;
+      --text: #1E293B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 48px;
+      margin: 32px auto;
+      max-width: 960px;
+      position: relative;
+      page-break-inside: avoid;
+    }
+
+    .slide-card h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .big-idea {
+      background: linear-gradient(135deg, var(--primary), #9F7AEA);
+      color: white;
+      text-align: center;
+      padding: 80px 48px;
+    }
+
+    .big-idea h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .big-idea p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 24px;
+      background: var(--bg);
+      border-radius: 12px;
+    }
+
+    .stat-item .number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .stat-item .label {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .leaderboard {
+      width: 100%;
+    }
+
+    .leaderboard-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .leaderboard-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank {
+      width: 40px;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .rank.gold { color: var(--gold); }
+    .rank.silver { color: #94A3B8; }
+    .rank.bronze { color: #CD7F32; }
+
+    .model-name {
+      flex: 1;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .score-bar {
+      width: 180px;
+      height: 20px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    .score-value {
+      width: 50px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .dimension-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .dimension-item {
+      padding: 16px;
+      background: var(--bg);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .dimension-item .dim-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .dimension-item .dim-weight {
+      color: #666;
+      font-size: 0.875rem;
+    }
+
+    .insight-box {
+      background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+      border-left: 4px solid var(--gold);
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+    }
+
+    .insight-box h3 {
+      color: #92400E;
+      margin-bottom: 8px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    .comparison-table th {
+      background: var(--primary);
+      color: white;
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background: var(--bg);
+    }
+
+    .conclusion-list {
+      list-style: none;
+    }
+
+    .conclusion-list li {
+      padding: 16px 0;
+      padding-left: 40px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+    }
+
+    .conclusion-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 48px;
+      color: #666;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    .badge-gold { background: #FEF3C7; color: #92400E; }
+    .badge-good { background: #D1FAE5; color: #065F46; }
+    .badge-base { background: #E5E7EB; color: #374151; }
+
+    @media print {
+      .slide-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+      }
+
+      body {
+        font-size: 12pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 01: 封面 -->
+<div class="slide-card big-idea">
+  <span class="slide-number">01</span>
+  <h1>國網中心-AI服務<br>模型評測報告</h1>
+  <p>10 個 AI 模型大比拼：誰最適合回答國網中心問題？</p>
+  <p style="margin-top: 24px; opacity: 0.7;">2026-01-31 | v2 完整版 | 波特人九維度評分法</p>
+</div>
+
+<!-- Slide 02: 核心問題 -->
+<div class="slide-card">
+  <span class="slide-number">02</span>
+  <h2>核心問題</h2>
+  <div style="font-size: 1.5rem; text-align: center; padding: 48px 0; color: var(--primary);">
+    「政府機關想諮詢國網中心 AI 服務，<br>哪個 AI 模型能提供最正確、最完整的回答？」
+  </div>
+  <div class="insight-box">
+    <h3>評測情境</h3>
+    <p>模擬政府機關資訊長向國網中心諮詢 TWCC、TAIDE、算力計畫、GPU 費用、主權 AI 等議題</p>
+  </div>
+</div>
+
+<!-- Slide 03: 評測範圍 -->
+<div class="slide-card">
+  <span class="slide-number">03</span>
+  <h2>評測範圍</h2>
+  <div class="stat-grid">
+    <div class="stat-item">
+      <div class="number">5</div>
+      <div class="label">題目數量</div>
+    </div>
+    <div class="stat-item">
+      <div class="number" style="color: var(--gold);">10</div>
+      <div class="label">參與模型</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">50</div>
+      <div class="label">評分筆數</div>
+    </div>
+  </div>
+  <table class="comparison-table" style="margin-top: 32px;">
+    <tr>
+      <th>題目</th>
+      <th>類別</th>
+      <th>難度</th>
+    </tr>
+    <tr>
+      <td>Q001</td>
+      <td>TWCC 雲端運算</td>
+      <td>中等</td>
+    </tr>
+    <tr>
+      <td>Q002</td>
+      <td>480PF 算力規劃</td>
+      <td>較難</td>
+    </tr>
+    <tr>
+      <td>Q003</td>
+      <td>TAIDE 國產語言模型</td>
+      <td>中等</td>
+    </tr>
+    <tr>
+      <td>Q004</td>
+      <td>GPU 費用計算</td>
+      <td style="color: var(--danger);">⚠️ 最難</td>
+    </tr>
+    <tr>
+      <td>Q005</td>
+      <td>主權 AI 戰略</td>
+      <td>中等</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Slide 04: 評分方法 -->
+<div class="slide-card">
+  <span class="slide-number">04</span>
+  <h2>波特人九維度評分法</h2>
+  <p style="margin-bottom: 24px;">以「真新全快省準人安穩」九個維度加權計算，滿分 100 分</p>
+  <div class="dimension-grid">
+    <div class="dimension-item">
+      <div class="dim-name">真</div>
+      <div class="dim-weight">正確性 25%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">人</div>
+      <div class="dim-weight">易用性 15%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">準</div>
+      <div class="dim-weight">精確性 15%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">全</div>
+      <div class="dim-weight">完整性 15%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">新</div>
+      <div class="dim-weight">創新性 10%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">安</div>
+      <div class="dim-weight">安全性 8%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">穩</div>
+      <div class="dim-weight">穩定性 5%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">快</div>
+      <div class="dim-weight">速度 4%</div>
+    </div>
+    <div class="dimension-item">
+      <div class="dim-name">省</div>
+      <div class="dim-weight">精煉 3%</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 05: 總排行榜 -->
+<div class="slide-card">
+  <span class="slide-number">05</span>
+  <h2>總排行榜（10 個模型）</h2>
+  <div class="leaderboard">
+    <div class="leaderboard-item">
+      <div class="rank gold">🥇</div>
+      <div class="model-name">Ministral 14B <span class="badge badge-gold">冠軍</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 77.7%; background: linear-gradient(90deg, var(--gold), #FBBF24);"></div>
+      </div>
+      <div class="score-value">77.7</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank silver">🥈</div>
+      <div class="model-name">Claude Sonnet 4 <span class="badge badge-good">良好</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 76.6%; background: var(--primary);"></div>
+      </div>
+      <div class="score-value">76.6</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank bronze">🥉</div>
+      <div class="model-name">Gemini 3 Flash <span class="badge badge-good">良好</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 74.4%; background: #CD7F32;"></div>
+      </div>
+      <div class="score-value">74.4</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">4</div>
+      <div class="model-name">Llama 4 Maverick <span class="badge badge-good">良好</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 73.1%; background: var(--primary);"></div>
+      </div>
+      <div class="score-value">73.1</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">5</div>
+      <div class="model-name">Devstral <span class="badge badge-good">良好</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 72.9%; background: var(--primary);"></div>
+      </div>
+      <div class="score-value">72.9</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">6</div>
+      <div class="model-name">Gemini 3 Pro Preview <span class="badge badge-good">良好</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 71.7%; background: var(--primary);"></div>
+      </div>
+      <div class="score-value">71.7</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">7</div>
+      <div class="model-name">Mistral Large 3 <span class="badge badge-base">基礎</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 68.9%; background: #94A3B8;"></div>
+      </div>
+      <div class="score-value">68.9</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">8</div>
+      <div class="model-name">Ministral 8B <span class="badge badge-base">基礎</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 68.7%; background: #94A3B8;"></div>
+      </div>
+      <div class="score-value">68.7</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">9</div>
+      <div class="model-name">Claude Haiku 4.5 <span class="badge badge-base">基礎</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 66.7%; background: #94A3B8;"></div>
+      </div>
+      <div class="score-value">66.7</div>
+    </div>
+    <div class="leaderboard-item">
+      <div class="rank">10</div>
+      <div class="model-name">GPT-OSS 120B <span class="badge badge-base">基礎</span></div>
+      <div class="score-bar">
+        <div class="score-bar-fill" style="width: 64.7%; background: #94A3B8;"></div>
+      </div>
+      <div class="score-value">64.7</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 06: 關鍵發現 1 -->
+<div class="slide-card">
+  <span class="slide-number">06</span>
+  <h2>關鍵發現：小模型的逆襲</h2>
+  <div class="insight-box">
+    <h3>14B 參數模型擊敗百億級大模型</h3>
+    <p>Ministral 14B 以 77.7 分奪冠，超越 Claude Sonnet 4、Gemini 3 Pro、GPT-OSS 120B 等大型模型。<br>顯示：<strong>模型大小不是決定因素，搜尋能力與資訊整合才是關鍵。</strong></p>
+  </div>
+  <table class="comparison-table">
+    <tr>
+      <th>模型</th>
+      <th>參數量</th>
+      <th>平均分</th>
+      <th>排名</th>
+    </tr>
+    <tr style="background: #FEF3C7;">
+      <td><strong>Ministral 14B</strong></td>
+      <td>14B</td>
+      <td><strong>77.7</strong></td>
+      <td>🥇 1</td>
+    </tr>
+    <tr>
+      <td>Claude Sonnet 4</td>
+      <td>-</td>
+      <td>76.6</td>
+      <td>🥈 2</td>
+    </tr>
+    <tr>
+      <td>Ministral 8B</td>
+      <td>8B</td>
+      <td>68.7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>GPT-OSS 120B</td>
+      <td>120B</td>
+      <td>64.7</td>
+      <td>10</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Slide 07: 關鍵發現 2 -->
+<div class="slide-card">
+  <span class="slide-number">07</span>
+  <h2>關鍵發現：Q004 是全面地雷</h2>
+  <div class="insight-box">
+    <h3>GPU 費用計算題：所有模型的共同弱點</h3>
+    <p>平均僅 57.5 分，6 個模型未達 60 分。主因：國網中心費率（H100=50 元、H200=60 元/GPU 小時）不易搜尋。</p>
+  </div>
+  <table class="comparison-table">
+    <tr>
+      <th>題目</th>
+      <th>平均分</th>
+      <th>最高分模型</th>
+      <th>最低分模型</th>
+    </tr>
+    <tr>
+      <td>Q003 TAIDE</td>
+      <td style="color: var(--success);">77.6</td>
+      <td>Ministral 8B (87.6)</td>
+      <td>GPT-OSS (64.0)</td>
+    </tr>
+    <tr>
+      <td>Q005 主權 AI</td>
+      <td style="color: var(--success);">77.0</td>
+      <td>Ministral 14B (82.5)</td>
+      <td>GPT-OSS (68.5)</td>
+    </tr>
+    <tr>
+      <td>Q002 算力計畫</td>
+      <td>72.0</td>
+      <td>Claude Sonnet 4 (84.1)</td>
+      <td>Mistral Large (60.7)</td>
+    </tr>
+    <tr>
+      <td>Q001 TWCC</td>
+      <td>72.0</td>
+      <td>Ministral 8B (83.0)</td>
+      <td>Claude Haiku (60.8)</td>
+    </tr>
+    <tr style="background: #FEE2E2;">
+      <td><strong>Q004 GPU 費用</strong></td>
+      <td style="color: var(--danger);"><strong>57.5</strong></td>
+      <td>Claude Sonnet 4 (66.4)</td>
+      <td>Ministral 8B (39.1)</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Slide 08: 成本效益 -->
+<div class="slide-card">
+  <span class="slide-number">08</span>
+  <h2>成本效益分析</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>模型</th>
+      <th>平均分</th>
+      <th>費率 ($/M tokens)</th>
+      <th>CP 值</th>
+    </tr>
+    <tr style="background: #FEF3C7;">
+      <td><strong>Ministral 14B</strong></td>
+      <td>77.7</td>
+      <td>$0.02 / $0.10</td>
+      <td style="color: var(--gold);">⭐⭐⭐⭐⭐ 最佳</td>
+    </tr>
+    <tr>
+      <td>Devstral</td>
+      <td>72.9</td>
+      <td>$0.05 / $0.22</td>
+      <td style="color: var(--gold);">⭐⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>Gemini 3 Flash</td>
+      <td>74.4</td>
+      <td>$0.075 / $0.30</td>
+      <td>⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>Llama 4 Maverick</td>
+      <td>73.1</td>
+      <td>$0.15 / $0.60</td>
+      <td>⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>Claude Sonnet 4</td>
+      <td>76.6</td>
+      <td>$3.00 / $15.00</td>
+      <td>⭐⭐⭐</td>
+    </tr>
+  </table>
+  <div class="insight-box">
+    <h3>推薦：Ministral 14B</h3>
+    <p>最高分（77.7）+ 最低費率（$0.02/M），是政府機關大量查詢的最佳選擇。</p>
+  </div>
+</div>
+
+<!-- Slide 09: 結論 -->
+<div class="slide-card">
+  <span class="slide-number">09</span>
+  <h2>結論與建議</h2>
+  <ul class="conclusion-list">
+    <li><strong>Ministral 14B 奪冠</strong>：以 77.7 分拿下第一，小模型打敗大模型的經典案例</li>
+    <li><strong>Claude Sonnet 4 穩定亞軍</strong>：76.6 分且無單題極低分，適合需要穩定輸出的場景</li>
+    <li><strong>Q004 是共同弱點</strong>：費用計算題平均僅 57.5 分，涉及精確計算時建議人工複驗</li>
+    <li><strong>成本效益之王</strong>：Ministral 14B 以最低費率獲得最高分，CP 值無人能及</li>
+    <li><strong>實務建議</strong>：政府機關可優先選用 Ministral 14B 或 Devstral，兼顧品質與成本</li>
+  </ul>
+</div>
+
+<!-- Slide 10: 等級分布 -->
+<div class="slide-card">
+  <span class="slide-number">10</span>
+  <h2>等級分布</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>等級</th>
+      <th>分數範圍</th>
+      <th>模型數</th>
+      <th>模型列表</th>
+    </tr>
+    <tr>
+      <td>🏆 專家級</td>
+      <td>90-100</td>
+      <td>0</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>🥇 進階級</td>
+      <td>80-89</td>
+      <td>0</td>
+      <td>-</td>
+    </tr>
+    <tr style="background: #D1FAE5;">
+      <td>🥈 良好級</td>
+      <td>70-79</td>
+      <td><strong>6</strong></td>
+      <td>Ministral 14B, Claude Sonnet 4, Gemini 3 Flash, Llama 4 Maverick, Devstral, Gemini 3 Pro Preview</td>
+    </tr>
+    <tr>
+      <td>🥉 基礎級</td>
+      <td>60-69</td>
+      <td>4</td>
+      <td>Mistral Large 3, Ministral 8B, Claude Haiku 4.5, GPT-OSS 120B</td>
+    </tr>
+    <tr>
+      <td>❌ 不足級</td>
+      <td>0-59</td>
+      <td>0</td>
+      <td>-</td>
+    </tr>
+  </table>
+  <p style="margin-top: 24px; text-align: center; color: #666;">
+    60% 的模型達到「良好級」以上，顯示現代 AI 模型在專業知識查詢上已有相當水準。
+  </p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>波題庫 AI 模型評測系統 | 波特人九維度評分法</p>
+  <p style="margin-top: 8px; font-size: 0.875rem;">
+    專案：政府/國網中心-AI服務 | 版本：v2 完整版 | 日期：2026-01-31
+  </p>
+  <p style="margin-top: 8px; font-size: 0.75rem; color: #999;">
+    🚨 全模型納入排行榜（10 個模型）
+  </p>
+</div>
+
+</body>
+</html>

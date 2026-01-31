@@ -51,43 +51,78 @@
       </p>
       <div>
         <p>
-<h1>波題庫 - AI 模型評測完整系統 v4.0</h1></p><p>> <strong>核心理念</strong>：統一標準 × 100分制 × 波特人九維度加權評分法 × 公平排行</p><p>---</p><p><h2>🚨 v4.0 重大變更</h2></p><p>| 項目 | v3.0 舊制 | v4.0 新制 |<br>
+<h1>波題庫 - AI 模型評測完整系統 v6.0</h1></p><p>> <strong>核心理念</strong>：<strong>單一題目單一檔案</strong> × 統一標準 × 100分制 × 波特人九維度加權評分法 × <strong>手動 Opus 評分</strong></p><p>---</p><p><h2>🚨🚨🚨 v5.0 重大變更：禁止腳本評分！</h2></p><p>| 項目 | v4.x 舊制 | v5.0 新制 |<br>
 |------|-----------|-----------|<br>
-| 分數制度 | 100 分制（五維度加權） | <strong>100 分制（九維度加權正規化）</strong> |<br>
-| 評分維度 | 五維度 | <strong>九維度（真新全快省準人安穩）</strong> |<br>
-| 模型 ID | shortName | <strong>完整 OpenRouter API ID</strong> |<br>
-| 評分方式 | 各自評分 | <strong>Opus 統一標準平行評分</strong> |</p><p>---</p><p><h2>📁 統一目錄結構（永久規則）</h2></p><p><code>`</code><br>
+| <strong>波打分方式</strong> | ❌ score-opus.ts 腳本 | ✅ <strong>Claude Code Opus 手動評分</strong> |<br>
+| 評分執行者 | 腳本自動化 | <strong>人工監督 + Opus 模型</strong> |<br>
+| 評分品質保證 | 批次處理 | <strong>逐題確認</strong> |</p><p><h3>🚫 永久禁止事項（波打分）</h3></p><p><code>`</code><br>
+❌ 禁止：使用任何腳本（.ts, .py, .sh）進行 Opus 評分<br>
+❌ 禁止：調用 OpenRouter API 進行評分<br>
+❌ 禁止：自動化批次評分<br>
+<code>`</code></p><p><h3>✅ 正確做法（波打分）</h3></p><p><code>`</code><br>
+✅ 正確：使用 Claude Code 切換到 Opus 模型<br>
+✅ 正確：手動讀取答題內容，依照波打分技能規則評分<br>
+✅ 正確：人工監督每一題的評分過程<br>
+✅ 正確：評分結果由 Claude Code Opus 直接輸出 JSON<br>
+<code>`</code></p><p>---</p><p><h2>🚨🚨🚨 v6.0 重大規則：單一題目單一檔案（永久規則）</h2></p><p>> <strong>核心原則</strong>：每一題出題、每一題答題、每一題打分，都必須是單獨一個檔案！<br>
+> <strong>慘痛經驗</strong>：合併在一起會 tokens 爆炸！只有一題一檔才能平行處理！</p><p><h3>🚫 永久禁止事項</h3></p><p><code>`</code><br>
+❌ 禁止：將多題合併在同一個 YAML 檔案中（tokens 會爆炸）<br>
+❌ 禁止：將多題答案合併在同一個 MD 檔案中<br>
+❌ 禁止：將多題評分合併在同一個 JSON 檔案中<br>
+❌ 禁止：刪除 individual 單題目錄（必須保留！）<br>
+<code>`</code></p><p><h3>✅ 正確做法</h3></p><p><code>`</code><br>
+✅ 出題：每題一個 YAML → Q001.yaml, Q002.yaml...<br>
+✅ 答題：每題一個 MD   → Q001.md, Q002.md...<br>
+✅ 打分：每題一個 JSON → Q001.json, Q002.json...<br>
+<code>`</code></p><p><h3>單一檔案優勢</h3></p><p>| 優勢 | 說明 |<br>
+|------|------|<br>
+| <strong>避免 tokens 爆炸</strong> | 大題庫（50-100題）合併會超過 context window |<br>
+| <strong>平行出題</strong> | 可同時產生多題，不互相依賴 |<br>
+| <strong>平行答題</strong> | 可同時送多題給不同模型 |<br>
+| <strong>平行打分</strong> | 可同時評分多題，加速評測 |<br>
+| <strong>斷點續做</strong> | 中斷後可從任一題繼續 |<br>
+| <strong>獨立修改</strong> | 修改一題不影響其他題目 |</p><p><h3>檔案命名規範</h3></p><p>| 階段 | 格式 | 範例 |<br>
+|------|------|------|<br>
+| <strong>出題</strong> | <code>Q{三位數}-{簡述}.yaml</code> | <code>Q001-GPU算力.yaml</code> |<br>
+| <strong>答題</strong> | <code>Q{三位數}.md</code> | <code>Q001.md</code> |<br>
+| <strong>評分</strong> | <code>Q{三位數}.json</code> | <code>Q001.json</code> |</p><p>---</p><p><h2>📁 統一目錄結構（永久規則）</h2></p><p><code>`</code><br>
 projects/{類別}/{專案名}/<br>
 ├── 來源/                              # 原始資料（PDF、網頁快照）<br>
 ├── 題庫/<br>
 │   └── v{版本}/<br>
-│       └── {專案名}-題庫-v{版本}.yaml  # 題庫 YAML<br>
+│       ├── Q001-{簡述}.yaml           # 🚨 每題獨立 YAML！<br>
+│       ├── Q002-{簡述}.yaml<br>
+│       ├── Q003-{簡述}.yaml<br>
+│       ├── ...<br>
+│       └── 品質檢核報告-v{版本}.md<br>
 └── 評測/<br>
     └── v{版本}/<br>
         ├── 答題/<br>
-        │   └── {模型}/                # 每題一個 .md<br>
-        │       ├── Q001.md<br>
-        │       ├── Q002.md<br>
-        │       └── ...<br>
+        │   └── {模型}/                # 🚨 每題一個 .md！<br>
+        │       └── 有上網/            # 🚨 v4.0+ 只支援有上網模式<br>
+        │           ├── Q001.md<br>
+        │           ├── Q002.md<br>
+        │           └── ...<br>
         ├── 評分/<br>
-        │   └── {模型}/                # 每題一個 .json<br>
-        │       ├── Q001.json<br>
-        │       ├── Q002.json<br>
-        │       └── ...<br>
+        │   └── {模型}/                # 🚨 每題一個 .json！<br>
+        │       └── 有上網/            # 🚨 v4.0+ 只支援有上網模式<br>
+        │           ├── Q001.json<br>
+        │           ├── Q002.json<br>
+        │           └── ...<br>
         └── 報告/<br>
             ├── 評分報告-{模型}-{日期}.md<br>
             └── 排行榜-{日期}.md</p><p>shared/<br>
 └── 排行榜/<br>
     └── 完整排行榜-v{版本}-{日期}.md    # 跨專案總排行榜<br>
-<code>`</code></p><p><h3>檔名規則</h3></p><p>| 類型 | 格式 | 範例 |<br>
+<code>`</code></p><p><h3>🚨 檔名規則（單一題目單一檔案）</h3></p><p>| 階段 | 格式 | 範例 |<br>
 |------|------|------|<br>
-| 題庫 | <code>{專案名}-題庫-v{版本}.yaml</code> | <code>採購法-題庫-v3.yaml</code> |<br>
+| <strong>出題</strong> | <code>Q{三位數}-{簡述}.yaml</code> | <code>Q001-GPU算力.yaml</code>, <code>Q002-費用計算.yaml</code> |<br>
+| <strong>答題</strong> | <code>Q{三位數}.md</code> | <code>Q001.md</code>, <code>Q002.md</code> |<br>
+| <strong>評分</strong> | <code>Q{三位數}.json</code> | <code>Q001.json</code>, <code>Q002.json</code> |<br>
 | 模型目錄 | <code>{provider}_{model}</code> | <code>anthropic_claude-haiku-4.5</code> |<br>
-| 答題 | <code>Q{三位數}.md</code> | <code>Q001.md</code>, <code>Q002.md</code> |<br>
-| 評分 | <code>Q{三位數}.json</code> | <code>Q001.json</code>, <code>Q002.json</code> |<br>
 | 評分報告 | <code>評分報告-{模型}-{日期}.md</code> | <code>評分報告-claude-haiku-4.5-2026-01-31.md</code> |<br>
 | 排行榜 | <code>排行榜-{日期}.md</code> | <code>排行榜-2026-01-31.md</code> |</p><p>> <strong>模型目錄命名</strong>：將 OpenRouter API ID 的 <code>/</code> 替換為 <code>_</code><br>
-> 例如：<code>anthropic/claude-haiku-4.5</code> → <code>anthropic_claude-haiku-4.5</code></p><p>---</p><p><h2>⚖️ 波特人評分法（100 分制・九維度加權）</h2></p><p>> <strong>核心</strong>：真新全快省準人安穩 × 各維度 10 分 × 權重係數 → 正規化 100 分</p><p><h3>九維度定義與權重</h3></p><p>| 維度 | 代號 | 原始滿分 | 權重 | 加權滿分 | 評分要點 |<br>
+> 例如：<code>anthropic/claude-haiku-4.5</code> → <code>anthropic_claude-haiku-4.5</code></p><p>> <strong>⚠️ 重要</strong>：禁止將多題合併成一個檔案！這會導致 tokens 爆炸！</p><p>---</p><p><h2>⚖️ 波特人評分法（100 分制・九維度加權）</h2></p><p>> <strong>核心</strong>：真新全快省準人安穩 × 各維度 10 分 × 權重係數 → 正規化 100 分</p><p><h3>九維度定義與權重</h3></p><p>| 維度 | 代號 | 原始滿分 | 權重 | 加權滿分 | 評分要點 |<br>
 |------|:----:|:--------:|:----:|:--------:|----------|<br>
 | <strong>真</strong> | 正確 | 10 | 25% | 25 | 事實正確、法規引用準確、數據無誤、<strong>零幻覺</strong> |<br>
 | <strong>人</strong> | 易用 | 10 | 15% | 15 | <strong>以人為本、換位思考</strong>、可讀性高、結構清晰 |<br>
@@ -151,28 +186,45 @@ projects/{類別}/{專案名}/<br>
     "summary": "整體評述..."<br>
   }<br>
 }<br>
-<code>`</code></p><p>---</p><p><h2>🎯 功能總覽</h2></p><p>| 功能 | 觸發詞 | 說明 | 參考文件 |<br>
-|------|--------|------|----------|<br>
-| <strong>出題</strong> | 波出題 | 逆向出題法生成題庫 | <code>references/波出題.md</code> |<br>
-| <strong>答題</strong> | 波答題 | 多模型答題 | <code>references/波答題.md</code> |<br>
-| <strong>打分</strong> | 波打分 | Opus 統一標準評分 | <code>references/波打分.md</code> |<br>
-| <strong>排行榜</strong> | 波排行榜 | 生成公平排行榜 | <code>references/波排行榜.md</code> |<br>
-| <strong>簡報</strong> | 波排行簡報 | 矽谷敘事法排行榜報告 | <code>references/波排行簡報.md</code> |<br>
-| <strong>驗證</strong> | 波驗證 | 驗證題庫正確性 | <code>references/波驗證.md</code> |</p><p>---</p><p><h2>🔧 波打分（評分流程）</h2></p><p><h3>⚠️ 關鍵原則</h3></p><p>1. <strong>Opus 唯一評分者</strong>：所有評分必須由 Claude Opus 執行<br>
-2. <strong>統一標準</strong>：對所有模型使用相同評分標準（波特人九維度加權評分法）<br>
-3. <strong>平行處理</strong>：同時評分所有模型，確保一致性<br>
-4. <strong>100 分制</strong>：九維度加權正規化，總分 100 分</p><p><h3>評分流程</h3></p><p><code>`</code><br>
+<code>`</code></p><p>---</p><p><h2>🎯 功能總覽（Pipeline 順序）</h2></p><p>> <strong>🚨 正確執行順序</strong>：出題 → 驗證 → 答題 → 打分 → 盤點 → 排行榜 → 簡報</p><p>| 順序 | 功能 | 觸發詞 | 說明 | 參考文件 |<br>
+|:----:|------|--------|------|----------|<br>
+| 1️⃣ | <strong>出題</strong> | 波出題 | 逆向出題法生成題庫 | <code>references/波出題.md</code> |<br>
+| 2️⃣ | <strong>驗證</strong> | 波驗證 | 驗證題庫正確性 | <code>references/波驗證.md</code> |<br>
+| 3️⃣ | <strong>答題</strong> | 波答題 | 多模型答題（v4.0 只有上網模式） | <code>references/波答題.md</code> |<br>
+| 4️⃣ | <strong>打分</strong> | 波打分 | Opus 統一標準評分 | <code>references/波打分.md</code> |<br>
+| 5️⃣ | <strong>盤點</strong> | 波盤點 | 排行榜前品質保證 | <code>references/波合併後盤點怪異或增補.md</code> |<br>
+| 6️⃣ | <strong>排行榜</strong> | 波排行榜 | 生成公平排行榜 | <code>references/波排行榜.md</code> |<br>
+| 7️⃣ | <strong>簡報</strong> | 波排行簡報 | 矽谷敘事法排行榜報告 | <code>references/波排行簡報.md</code> |</p><p>---</p><p><h2>⚡ 平行執行技巧（Opus Subagents 加速）</h2></p><p>> <strong>核心原則</strong>：使用 Claude Code Task 工具平行啟動多個 subagent 加速 pipeline</p><p><h3>可平行階段</h3></p><p>| 階段 | 平行策略 | 說明 |<br>
+|------|----------|------|<br>
+| <strong>答題</strong> | 多模型同時答題 | 11 個模型 × 5 題 = 55 個平行任務 |<br>
+| <strong>打分</strong> | 多題同時評分 | 每題一個 Opus subagent |<br>
+| <strong>盤點</strong> | 多模型同時檢查 | 平行掃描各模型答題品質 |</p><p><h3>平行執行範例</h3></p><p>在單一訊息中啟動多個 Task 工具：</p><p><code>`</code>markdown<br>
+同時啟動 3 個評分 subagent：</p><p>Task 1: subagent_type=general-purpose, description="評分 Q001"<br>
+Task 2: subagent_type=general-purpose, description="評分 Q002"<br>
+Task 3: subagent_type=general-purpose, description="評分 Q003"<br>
+<code>`</code></p><p><h3>平行執行注意事項</h3></p><p>1. <strong>獨立任務才能平行</strong>：確保各 subagent 不互相依賴<br>
+2. <strong>資源限制</strong>：建議同時啟動 3-5 個 subagent<br>
+3. <strong>結果匯整</strong>：等所有 subagent 完成後再進入下一階段</p><p>---</p><p><h2>🔧 波打分（評分流程）</h2></p><p><h3>🚨🚨🚨 關鍵原則：禁止腳本評分！</h3></p><p><code>`</code><br>
+❌ 禁止：使用 score-opus.ts 或任何腳本評分<br>
+❌ 禁止：調用 OpenRouter API 自動評分<br>
+✅ 正確：Claude Code Opus 手動評分<br>
+<code>`</code></p><p>1. <strong>手動評分</strong>：🚨 <strong>必須由 Claude Code Opus 手動執行，禁止腳本！</strong><br>
+2. <strong>Opus 唯一評分者</strong>：所有評分必須由 Claude Opus 執行<br>
+3. <strong>統一標準</strong>：對所有模型使用相同評分標準（波特人九維度加權評分法）<br>
+4. <strong>人工監督</strong>：每題評分需人工確認，確保品質<br>
+5. <strong>100 分制</strong>：九維度加權正規化，總分 100 分</p><p><h3>評分流程（手動執行）</h3></p><p><code>`</code><br>
 Step 1: 掃描答題目錄<br>
         Glob: projects/{專案}/評測/v<em>/答題/</em>/*.md<br>
         找出所有待評分的答題檔案</p><p>Step 2: 讀取題庫標準答案<br>
         Read: projects/{專案}/題庫/v*/...題庫.yaml<br>
-        取得 answer_rubric（基礎/進階/專家）</p><p>Step 3: 平行評分（Opus 執行）<br>
+        取得 answer_rubric（基礎/進階/專家）</p><p>Step 3: 🚨 Claude Code Opus 手動評分 🚨<br>
         對每個答題檔案：<br>
         - 讀取答題內容<br>
         - 對照標準答案<br>
         - 依波特人九維度打分（各 0-10 分）<br>
         - 乘以權重係數<br>
-        - 計算加權總分</p><p>Step 4: 輸出評分 JSON<br>
+        - 計算加權總分<br>
+        ⚠️ 人工監督每一題！</p><p>Step 4: 輸出評分 JSON<br>
         Write: projects/{專案}/評測/v*/評分/{模型}/Q{NNN}.json</p><p>Step 5: 生成評分報告<br>
         Write: projects/{專案}/評測/v*/報告/評分報告-{模型}-{日期}.md<br>
 <code>`</code></p><p>---</p><p><h2>📈 波排行榜（排行榜流程）</h2></p><p><h3>排行榜生成流程</h3></p><p><code>`</code><br>
@@ -198,16 +250,20 @@ Step 1: 收集所有評分<br>
 | <code>mistralai/ministral-3b-2512</code> | Ministral 3 3B | $0.10 / $0.10 per M | 開源 |<br>
 | <code>mistralai/devstral-2512</code> | Devstral 2 | $0.05 / $0.22 per M | 開源 |<br>
 | <code>openai/gpt-oss-120b</code> | GPT OSS 120B | $0.039 / $0.19 per M | 開源 |<br>
-| <code>meta-llama/llama-4-maverick</code> | Llama 4 Maverick | $0.15 / $0.60 per M | 開源 |</p><p>---</p><p><h2>📝 腳本清單（v4.0 精簡版）</h2></p><p>| 腳本 | 功能 |<br>
+| <code>meta-llama/llama-4-maverick</code> | Llama 4 Maverick | $0.15 / $0.60 per M | 開源 |</p><p>---</p><p><h2>📝 腳本清單（v5.0 精簡版）</h2></p><p>| 腳本 | 功能 |<br>
 |------|------|<br>
 | <code>scripts/models.ts</code> | 模型統一配置（OpenRouter API ID） |<br>
 | <code>scripts/types.ts</code> | 型別定義 |<br>
-| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題 |<br>
+| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題（波答題用） |<br>
+| <code>scripts/proxy-fetch.ts</code> | Proxy 網路請求（波答題用） |<br>
 | <code>scripts/pdf-processor.ts</code> | PDF 拆頁轉文字 |<br>
 | <code>scripts/browser-fetch.ts</code> | 無頭瀏覽器抓取 |<br>
-| <code>scripts/validate.ts</code> | 題庫格式驗證 |</p><p><strong>已移除的腳本</strong>（改用 Opus subagent）：<br>
+| <code>scripts/playwright-fetch.ts</code> | Playwright 抓取工具 |<br>
+| <code>scripts/validate.ts</code> | 題庫格式驗證 |<br>
+| <code>scripts/generate-report.ts</code> | 報告生成 |</p><p><strong>已移除的腳本</strong>（禁止使用！）：<br>
+- ~~score-opus.ts~~（🚨 <strong>永久刪除！禁止腳本評分！</strong>）<br>
 - ~~leaderboard.ts~~（改用 Opus 手動彙整）<br>
-- ~~stage*.ts~~（改用提示工程）</p><p>---</p><p><h2>🔑 版本偵測規則</h2></p><p><code>`</code>bash<br>
+- ~~stage*.ts~~（改用提示工程）</p><p>> ⚠️ <strong>波打分必須手動</strong>：評分禁止使用任何腳本，必須由 Claude Code Opus 手動執行！</p><p>---</p><p><h2>🔑 版本偵測規則</h2></p><p><code>`</code>bash<br>
 <h1>自動偵測最新版本</h1><br>
 Glob: projects/{專案}/題庫/v*/<br>
 <h1>v4 > v3 > v2 > v1 → 選 v4</h1><br>
