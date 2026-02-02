@@ -47,28 +47,28 @@
     <div class="skill-content">
       <h1><i data-lucide="book-open"></i> nchc-botrun-cli</h1>
       <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        國網中心 AI 模型排行榜專案。當用戶提到「國網排行榜」「NCHC leaderboard」「國網中心評測」時使用此技能。
+        國網中心波特人 Agentic AI 孵化器。當用戶提到「國網排行榜」「NCHC leaderboard」「國網中心評測」時使用此技能。
       </p>
       <div>
         <p>
-<h1>國網中心 AI 模型排行榜</h1></p><p><h2>快速指令</h2></p><p><h3>/stress-test - 壓力測試全模型</h3></p><p>平行呼叫所有打星號模型，測量：<br>
+<h1>NCHC-Botrun - 國網中心波特人 Agentic AI 孵化器</h1></p><p><h2>快速指令</h2></p><p><h3>/hi-direct - Direct 壓力測試</h3></p><p>平行呼叫所有打星號模型，測量：<br>
 - <strong>TTFT</strong> (Time To First Token) - 首 token 回應時間<br>
 - <strong>總時間</strong> - 完整回應時間<br>
 - <strong>Tokens/sec</strong> - 每秒生成速度</p><p>執行方式：</p><p><code>`</code>bash<br>
-cd projects/nchc-botrun-cli && sh/cli.sh --stress-test<br>
-<code>`</code></p><p>輸出結果儲存於 <code>data/stress-test-results.json</code></p><p><h2>可用模型 🌟</h2></p><p>1. TAIDE 12B（臺灣本土）- Gemma-3-TAIDE-12b-Chat<br>
+cd projects/nchc-botrun-cli && sh/cli.sh --hi-direct<br>
+<code>`</code></p><p>輸出結果儲存於 <code>data/hi-direct-results.json</code></p><p><h3>/hi-agentic - Agentic AI 壓力測試</h3></p><p><code>`</code>bash<br>
+cd projects/nchc-botrun-cli && sh/cli.sh --hi-agentic<br>
+<code>`</code></p><p>輸出結果儲存於 <code>data/hi-agentic-results.json</code></p><p><h2>可用模型</h2></p><p>1. TAIDE 12B（臺灣本土）- Gemma-3-TAIDE-12b-Chat<br>
 2. Llama 4 Maverick 17B<br>
 3. Devstral 2 123B<br>
 4. Devstral Small 24B<br>
 5. Ministral 3 14B<br>
 6. Ministral 3 8B<br>
-7. GPT-OSS 120B</p><p><h2>其他 CLI 命令</h2></p><p>| 命令 | 說明 |<br>
+7. GPT-OSS 120B</p><p><h2>CLI 命令</h2></p><p>| 命令 | 說明 |<br>
 |------|------|<br>
 | <code>sh/cli.sh</code> | 互動模式（預設） |<br>
-| <code>sh/cli.sh --hi</code> | 直接 API 平行呼叫 |<br>
-| <code>sh/cli.sh --opencode</code> | 透過本地伺服器平行呼叫 |<br>
-| <code>sh/cli.sh --compare</code> | 比較兩種方式 |<br>
-| <code>sh/cli.sh --stress-test</code> | 壓力測試（TTFT + 總時間） |<br>
+| <code>sh/cli.sh --hi-direct</code> | Direct 壓力測試 |<br>
+| <code>sh/cli.sh --hi-agentic</code> | Agentic AI 壓力測試 |<br>
 | <code>sh/cli.sh --test</code> | 執行單元測試 |</p><p><h2>專案路徑</h2></p><p><code>projects/nchc-botrun-cli/</code><br>
 </p>
       </div>
