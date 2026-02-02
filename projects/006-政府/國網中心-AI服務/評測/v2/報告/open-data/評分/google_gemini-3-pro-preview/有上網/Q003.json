@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "questionId": "Q003",
+    "project": "政府/國網中心-AI服務",
+    "version": "v2",
+    "model": "google/gemini-3-pro-preview",
+    "mode": "有上網",
+    "scoredBy": "opus",
+    "scoredAt": "2026-01-31T20:00:00+08:00"
+  },
+  "波特人評分": {
+    "真": {
+      "score": 7,
+      "max": 10,
+      "weight": 2.5,
+      "weighted": 17.5,
+      "reason": "核心規格正確（70億參數、LLaMA 2基礎、72片H100），但政府案例與標準答案不符（交通部氣象署vs教育部AI CUP），部分數據需驗證"
+    },
+    "人": {
+      "score": 8,
+      "max": 10,
+      "weight": 1.5,
+      "weighted": 12.0,
+      "reason": "結構清晰分四面向（規格、算力、案例、戰略），以承辦人員視角回答"
+    },
+    "準": {
+      "score": 8,
+      "max": 10,
+      "weight": 1.5,
+      "weighted": 12.0,
+      "reason": "專業術語正確（Continuous Pretraining、Fine-tuning、Inference），技術細節精準"
+    },
+    "全": {
+      "score": 7,
+      "max": 10,
+      "weight": 1.5,
+      "weighted": 10.5,
+      "reason": "四個問題都有回答，但遺漏教育部AI CUP案例、叡揚資訊案例、4.8 PFLOPS數據"
+    },
+    "新": {
+      "score": 8,
+      "max": 10,
+      "weight": 1.0,
+      "weighted": 8.0,
+      "reason": "提及G-TAIDE公務專用模型、414.4億Token訓練量、24,720個擴充字元、1,531.82 GPU小時訓練成本等額外資訊"
+    },
+    "安": {
+      "score": 9,
+      "max": 10,
+      "weight": 0.8,
+      "weighted": 7.2,
+      "reason": "強調資料主權與地端部署，建議合規無風險"
+    },
+    "穩": {
+      "score": 8,
+      "max": 10,
+      "weight": 0.5,
+      "weighted": 4.0,
+      "reason": "邏輯連貫，從規格→算力→案例→戰略層層遞進"
+    },
+    "快": {
+      "score": 8,
+      "max": 10,
+      "weight": 0.4,
+      "weighted": 3.2,
+      "reason": "結構清晰，重點前置，總結建議明確"
+    },
+    "省": {
+      "score": 7,
+      "max": 10,
+      "weight": 0.3,
+      "weighted": 2.1,
+      "reason": "答案詳盡適中，約1800字"
+    }
+  },
+  "總分": 76.5,
+  "滿分": 100,
+  "等級": "良好級",
+  "analysis": {
+    "strengths": [
+      "TAIDE技術規格說明完整（70B、LLaMA 2、五大功能）",
+      "72片H100 GPU、9台DGX主機數據正確",
+      "提及G-TAIDE公務專用模型，觀點有價值",
+      "數位主權與資安分析深入"
+    ],
+    "weaknesses": [
+      "政府案例與標準答案不符（未提及教育部AI CUP系統）",
+      "未提及叡揚資訊產品整合案例",
+      "未提及4.8 PFLOPS效能數據"
+    ],
+    "summary": "達良好水準，技術規格與戰略價值分析完整，但政府案例引用與標準答案有差異"
+  }
+}
