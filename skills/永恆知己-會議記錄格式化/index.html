@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>永恆知己-會議記錄格式化 - 波特人技能</title>
+  <title>永恆知己-會議記錄格式化（精華版） - 波特人技能</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -45,13 +45,22 @@
   </header>
   <main>
     <div class="skill-content">
-      <h1><i data-lucide="book-open"></i> 永恆知己-會議記錄格式化</h1>
+      <h1><i data-lucide="book-open"></i> 永恆知己-會議記錄格式化（精華版）</h1>
       <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        將逐字稿轉換為可分享的會議記錄格式。當用戶說「給我會議記錄」「產生會議紀要」「輸出給夥伴看」時觸發。注意：語音轉文字 pipeline 已內建格式化，此技能用於重新格式化已存在的逐字稿。
+        將逐字稿轉換為精華會議記錄格式。當用戶說「給我會議記錄」「產生會議紀要」「輸出給夥伴看」時觸發。產出精華版 .txt。如需詳細版，請另外呼叫「永恆知己-會議記錄詳細版」。
       </p>
       <div>
         <p>
-<h1>永恆知己 - 會議記錄格式化技能</h1></p><p><h2>⚠️ 注意</h2></p><p>語音轉文字 pipeline 已內建格式化功能，執行 <code>npx tsx scripts/pipeline.ts</code> 時會自動產生 .txt 會議記錄。</p><p>此技能用於：<br>
+<h1>永恆知己 - 會議記錄格式化技能（精華版）</h1></p><p><h2>🎯 精華版定位</h2></p><p><strong>精華版</strong>：適合快速瀏覽、管理階層決策、分享給非直接參與者<br>
+- 篇幅：逐字稿的 10-20%<br>
+- 重點：決議、結論、待辦事項<br>
+- 對象：主管、非技術人員、需要快速了解的人</p><p><strong>詳細版</strong>：適合技術傳承、知識保留、深度學習<br>
+- 篇幅：逐字稿的 70-90%<br>
+- 重點：完整討論脈絡、Q&A、技術細節解釋<br>
+- 對象：技術夥伴、需要學習整個討論過程的人<br>
+- 技能位置：<code>.claude/skills/永恆知己-會議記錄詳細版/SKILL.md</code></p><p><h2>⚠️ 注意</h2></p><p>語音轉文字 pipeline 會自動產生<strong>兩種版本</strong>：<br>
+- 精華版：<code>{檔名}-會議記錄.txt</code><br>
+- 詳細版：<code>{檔名}-詳細會議記錄.txt</code></p><p>此技能用於：<br>
 - 重新格式化已存在的逐字稿<br>
 - 用戶說「給我會議記錄」但逐字稿已存在時</p><p>---</p><p><h2>🎯 格式要求（用戶偏好，2026-02-03 更新）</h2></p><p>1. 純文字格式，禁止 markdown 符號（** ## 等）<br>
 2. 每個分段標題要有適當 emoji<br>
