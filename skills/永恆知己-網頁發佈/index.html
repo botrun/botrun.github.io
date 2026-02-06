@@ -95,7 +95,20 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 | 404 Page not found | GitHub Pages 未部署 | 檢查 Actions 是否成功執行 |<br>
 | Permission denied | DEPLOY_TOKEN 無權限 | 重新生成 PAT 並更新 Secret |<br>
 | build-web.ts 失敗 | 缺少依賴 | 執行 <code>npm install tsx minisearch unified remark-parse remark-stringify</code> |<br>
-| open-data 遺漏 | 建構腳本 bug | 參考 <code>docs/地雷-build-web-open-data遺漏.md</code> |</p><p><h2>檔案參考</h2></p><p>- 建構腳本：<code>.claude/skills/永恆知己-網頁發佈/scripts/build-web.ts</code><br>
+| open-data 遺漏 | 建構腳本 bug | 參考 <code>docs/地雷-build-web-open-data遺漏.md</code> |<br>
+| 專案 index.html 被覆蓋 | build-web.ts 生成索引頁 | 已修復：腳本會保留專案原有的 index.html |<br>
+| 首頁連結 404 | 連結指向不存在的檔案 | 用 Playwright 驗證每個連結 |</p><p><h2>🚨 永久地雷記錄</h2></p><p><h3>地雷 1：雙 repo 架構誤解（2026-02-07）</h3></p><p><strong>錯誤</strong>：誤以為 push 到 <code>timeless-bowen</code> 就會發佈<br>
+<strong>正確</strong>：必須執行 build-web.ts → push web/ → Actions 部署到 <code>botrun.github.io</code><br>
+<strong>正確 URL</strong>：<code>https://botrun.github.io/</code> （不是 <code>/timeless-bowen/</code>）<br>
+<strong>參考</strong>：<code>docs/地雷-GitHub-Pages-部署架構.md</code></p><p><h3>地雷 2：專案 index.html 被覆蓋（2026-02-07）</h3></p><p><strong>錯誤</strong>：build-web.ts 會用自動生成的索引頁覆蓋專案原有的 index.html<br>
+<strong>修復</strong>：腳本會檢查專案是否有 index.html，有則保留不覆蓋<br>
+<strong>驗證</strong>：部署後必須用 Playwright 驗證所有連結可訪問</p><p><h3>地雷 3：GitHub Actions 快取問題（2026-02-07）</h3></p><p><strong>錯誤</strong>：Actions 顯示 "nothing to commit" 但檔案沒被部署<br>
+<strong>原因</strong>：peaceiris/actions-gh-pages 比較的是 Actions 執行時的 web/ 內容<br>
+<strong>解法</strong>：確保本地 commit 包含 web/ 的最新內容，Actions 會重新建構</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
+- [ ] 確認 web/ 目錄包含最新內容<br>
+- [ ] Commit 並 push<br>
+- [ ] 等待 Actions 完成（<code>gh run list</code>）<br>
+- [ ] 用 Playwright 驗證首頁所有連結</p><p><h2>檔案參考</h2></p><p>- 建構腳本：<code>.claude/skills/永恆知己-網頁發佈/scripts/build-web.ts</code><br>
 - GitHub Actions：<code>.github/workflows/deploy-pages.yml</code><br>
 - 地雷文件：<code>docs/地雷-build-web-open-data遺漏.md</code><br>
 </p>

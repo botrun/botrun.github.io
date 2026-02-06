@@ -3,26 +3,878 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>agentic-ai-predictions-2026 - 波特人專案</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Agentic AI 18個月預言 | Botrun.ai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366F1;
+      --primary-light: #818CF8;
+      --secondary: #0EA5E9;
+      --success: #22C55E;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --text-primary: #1E293B;
+      --text-secondary: #64748B;
+      --text-muted: #94A3B8;
+      --bg-white: #FFFFFF;
+      --bg-light: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border: #E2E8F0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', -apple-system, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text-primary);
+    }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .powered-by {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .powered-by a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .powered-by a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-white) 0%, #EEF2FF 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .meta-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary);
+    }
+
+    /* Prediction Cards */
+    .predictions-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .prediction-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .prediction-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .prediction-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .prediction-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .prediction-title-wrapper {
+      flex: 1;
+    }
+
+    .prediction-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .prediction-deadline {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .prediction-content {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .prediction-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-box {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .stat-value.probability {
+      color: var(--success);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      margin-top: 1rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: var(--bg-light);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success) 0%, #4ADE80 100%);
+      border-radius: 9999px;
+      transition: width 0.5s ease;
+    }
+
+    /* Stars */
+    .stars {
+      color: var(--warning);
+      letter-spacing: 2px;
+    }
+
+    /* Summary Table */
+    .summary-section {
+      margin-top: 3rem;
+    }
+
+    .summary-table {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-table th,
+    .summary-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+    }
+
+    .summary-table thead {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary-table th {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .summary-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+
+    .summary-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .summary-table tbody tr:hover {
+      background: var(--bg-light);
+    }
+
+    .summary-table td {
+      color: var(--text-primary);
+    }
+
+    .prob-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      background: #DCFCE7;
+      color: #166534;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    /* Sources */
+    .sources-section {
+      margin-top: 3rem;
+    }
+
+    .sources-list {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .sources-list ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .sources-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .source-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--bg-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .source-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+    }
+
+    .sources-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+    }
+
+    .sources-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      height: 32px;
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+    }
+
+    .footer-text {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .footer-text a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .prediction-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-table {
+        font-size: 0.875rem;
+      }
+
+      .summary-table th,
+      .summary-table td {
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回專案列表</a></nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="brand">
+        <div class="brand-logo">波</div>
+        <div class="brand-text">
+          <span class="brand-name">波特人 Botrun</span>
+          <span class="brand-tagline">AI Agent 研究報告</span>
+        </div>
+      </div>
+      <div class="powered-by">
+        <span>Boosted by</span>
+        <a href="https://botrun.ai" target="_blank" rel="noopener">Botrun.ai</a>
+      </div>
+    </div>
   </header>
-  <main>
-    <h1><i data-lucide="folder"></i>agentic-ai-predictions-2026</h1>
-    <section class="file-list">
-      <h2><i data-lucide="folder-open"></i>專案檔案</h2>
-      <ul>
-        <li><a href="index.html"><i data-lucide="file-text"></i>index.html</a></li>
-      </ul>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        18 個月預測
+      </div>
+      <h1>Agentic AI 未來預言</h1>
+      <p>基於 Gartner、IBM、Deloitte 等權威機構研究，預測 2026-02 至 2027-08 的 5 個 80%+ 發生機率的關鍵趨勢</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          發佈日期：2026-02-07
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          5 個核心預言
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          80%+ 發生機率
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h2 class="section-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      五大預言
+    </h2>
+
+    <div class="predictions-grid">
+      <!-- Prediction 1 -->
+      <article class="prediction-card">
+        <div class="prediction-header">
+          <div class="prediction-number">1</div>
+          <div class="prediction-title-wrapper">
+            <h3 class="prediction-title">企業應用 Agent 嵌入率達 50%</h3>
+            <p class="prediction-deadline">驗證時間：2027-08</p>
+          </div>
+        </div>
+        <p class="prediction-content">
+          到 2027 年 8 月，超過 50% 的企業應用將嵌入 task-specific AI Agent，比 Gartner 的 40% 預測更激進。2025 年初僅 5%，18 個月內成長 10 倍。
+        </p>
+        <div class="prediction-stats">
+          <div class="stat-box">
+            <div class="stat-label">發生機率</div>
+            <div class="stat-value probability">85%</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">驚人程度</div>
+            <div class="stat-value stars">★★★★☆</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prediction 2 -->
+      <article class="prediction-card">
+        <div class="prediction-header">
+          <div class="prediction-number">2</div>
+          <div class="prediction-title-wrapper">
+            <h3 class="prediction-title">「Agent 身份管理」成為獨立產業</h3>
+            <p class="prediction-deadline">驗證時間：2027-06</p>
+          </div>
+        </div>
+        <p class="prediction-content">
+          到 2027 年中，將出現至少 3 家估值超過 $1B 的「AI Agent Identity Management」新創公司，專門處理 Agent 的身份驗證、權限控制與行為審計。目前這個賽道幾乎不存在。
+        </p>
+        <div class="prediction-stats">
+          <div class="stat-box">
+            <div class="stat-label">發生機率</div>
+            <div class="stat-value probability">80%</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">驚人程度</div>
+            <div class="stat-value stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prediction 3 -->
+      <article class="prediction-card">
+        <div class="prediction-header">
+          <div class="prediction-number">3</div>
+          <div class="prediction-title-wrapper">
+            <h3 class="prediction-title">40%+ Agentic AI 專案將失敗</h3>
+            <p class="prediction-deadline">驗證時間：2027-08</p>
+          </div>
+        </div>
+        <p class="prediction-content">
+          到 2027 年 8 月，超過 40% 的企業 Agentic AI 專案將被宣告失敗或無限期擱置，主因是遺留系統無法整合。與「AI 將改變一切」的敘事形成強烈對比，79% 組織困在「pilot hell」。
+        </p>
+        <div class="prediction-stats">
+          <div class="stat-box">
+            <div class="stat-label">發生機率</div>
+            <div class="stat-value probability">85%</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">驚人程度</div>
+            <div class="stat-value stars">★★★★☆</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prediction 4 -->
+      <article class="prediction-card">
+        <div class="prediction-header">
+          <div class="prediction-number">4</div>
+          <div class="prediction-title-wrapper">
+            <h3 class="prediction-title">「Super Agent」控制面板成標準配備</h3>
+            <p class="prediction-deadline">驗證時間：2027-06</p>
+          </div>
+        </div>
+        <p class="prediction-content">
+          到 2027 年中，70% 的企業 AI 部署將採用統一的「Agent Control Plane」或「Multi-Agent Dashboard」，取代分散的單一 Agent 工具。從「每個 Agent 獨立運作」轉向「統一指揮中心」。
+        </p>
+        <div class="prediction-stats">
+          <div class="stat-box">
+            <div class="stat-label">發生機率</div>
+            <div class="stat-value probability">80%</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">驚人程度</div>
+            <div class="stat-value stars">★★★★☆</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prediction 5 -->
+      <article class="prediction-card">
+        <div class="prediction-header">
+          <div class="prediction-number">5</div>
+          <div class="prediction-title-wrapper">
+            <h3 class="prediction-title">領域專屬 Agent 完勝通用 Agent</h3>
+            <p class="prediction-deadline">驗證時間：2027-08</p>
+          </div>
+        </div>
+        <p class="prediction-content">
+          到 2027 年 8 月，成功部署的 AI Agent 中，超過 80% 將是「領域專屬」（Domain-Specific）而非「通用型」（General-Purpose），「全知 Agent」敘事將徹底破產。打臉「AGI 即將到來」的過度炒作。
+        </p>
+        <div class="prediction-stats">
+          <div class="stat-box">
+            <div class="stat-label">發生機率</div>
+            <div class="stat-value probability">85%</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">驚人程度</div>
+            <div class="stat-value stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Summary Table -->
+    <section class="summary-section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        預言摘要
+      </h2>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>預言</th>
+            <th>機率</th>
+            <th>驗證時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>企業 Agent 嵌入率達 50%</td>
+            <td><span class="prob-badge">85%</span></td>
+            <td>2027-08</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Agent 身份管理成獨立產業</td>
+            <td><span class="prob-badge">80%</span></td>
+            <td>2027-06</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>40%+ 專案失敗</td>
+            <td><span class="prob-badge">85%</span></td>
+            <td>2027-08</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Control Plane 成標準配備</td>
+            <td><span class="prob-badge">80%</span></td>
+            <td>2027-06</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>領域專屬 Agent 完勝通用</td>
+            <td><span class="prob-badge">85%</span></td>
+            <td>2027-08</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sources -->
+    <section class="sources-section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        資料來源
+      </h2>
+      <div class="sources-list">
+        <ul>
+          <li>
+            <div class="source-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank" rel="noopener">Gartner - 40% Enterprise Apps Will Feature AI Agents</a>
+          </li>
+          <li>
+            <div class="source-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <a href="https://www.ibm.com/think/news/ai-tech-trends-predictions-2026" target="_blank" rel="noopener">IBM - AI Tech Trends 2026</a>
+          </li>
+          <li>
+            <div class="source-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <a href="https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html" target="_blank" rel="noopener">Deloitte - Agentic AI Strategy</a>
+          </li>
+          <li>
+            <div class="source-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <a href="https://learn.g2.com/enterprise-ai-agents-report" target="_blank" rel="noopener">G2 - Enterprise AI Agents Report</a>
+          </li>
+          <li>
+            <div class="source-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <a href="https://medium.com/generative-ai-revolution-ai-native-transformation/the-first-production-ai-agents-study-reveals-why-agentic-engineering-becomes-mandatory-in-2026-ec5e00514e5e" target="_blank" rel="noopener">Medium - First Production AI Agents Study</a>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
-  <footer>
-    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-logo">波</div>
+          <span class="brand-name">波特人 Botrun</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-text">
+          Boosted by <a href="https://botrun.ai" target="_blank" rel="noopener">Botrun.ai</a>
+        </div>
+      </div>
+      <p class="footer-copyright">
+        © 2026 Botrun.ai. 本報告基於公開研究資料彙整，預言僅供參考。
+      </p>
+    </div>
   </footer>
-  <script>lucide.createIcons();</script>
 </body>
 </html>

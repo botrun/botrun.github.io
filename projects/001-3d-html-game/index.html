@@ -2,27 +2,105 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3d-html-game - 波特人專案</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Cosmic Runner - 3D 太空跑酷</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0a0a2e;
+    }
+    #game-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    canvas {
+      display: block;
+    }
+    /* 載入畫面 */
+    #loading {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0a0a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Courier New', monospace;
+      color: #00ffff;
+      transition: opacity 0.5s;
+    }
+    #loading.done {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loading h1 {
+      font-size: 2rem;
+      text-shadow: 0 0 20px #00ffff;
+      margin-bottom: 20px;
+    }
+    .loader {
+      width: 60px; height: 60px;
+      border: 3px solid rgba(0,255,255,0.2);
+      border-top: 3px solid #00ffff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回專案列表</a></nav>
-  </header>
-  <main>
-    <h1><i data-lucide="folder"></i>3d-html-game</h1>
-    <section class="file-list">
-      <h2><i data-lucide="folder-open"></i>專案檔案</h2>
-      <ul>
-        <li><a href="index.html"><i data-lucide="file-text"></i>index.html</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
-  </footer>
-  <script>lucide.createIcons();</script>
+  <div id="loading">
+    <h1>COSMIC RUNNER</h1>
+    <div class="loader"></div>
+  </div>
+  <div id="game-container"></div>
+
+  <script type="module">
+    import { Game } from './src/game.js';
+
+    // 等待 DOM 和 Three.js 載入
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const game = new Game('game-container');
+
+        // 隱藏載入畫面
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('done');
+          setTimeout(() => {
+            document.getElementById('loading').remove();
+          }, 500);
+        }, 500);
+
+        // 全域清理
+        window.addEventListener('beforeunload', () => {
+          game.dispose();
+        });
+      } catch (err) {
+        console.error('遊戲初始化失敗:', err);
+        document.getElementById('loading').innerHTML =
+          `<h1 style="color: #ff3333;">載入失敗</h1>
+           <p style="color: #aaa; margin-top: 10px;">${err.message}</p>`;
+      }
+    });
+  </script>
 </body>
 </html>
