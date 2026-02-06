@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>web-deploy - 波特人技能</title>
+  <title>永恆知己-網頁發佈 - 波特人技能</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -45,49 +45,59 @@
   </header>
   <main>
     <div class="skill-content">
-      <h1><i data-lucide="book-open"></i> web-deploy</h1>
+      <h1><i data-lucide="book-open"></i> 永恆知己-網頁發佈</h1>
       <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        網頁發佈與建構。當用戶說「發佈網頁」「部署網站」「建構 web」「更新網頁」時使用此技能。自動掃描 projects/ 下的 HTML 並發佈到 GitHub Pages。
+        發佈網頁到 GitHub Pages。觸發詞：publish github page、發佈網頁、部署網站、deploy web、publish web、更新網頁、github pages。自動執行 build-web.ts 建構、commit、push，然後 GitHub Actions 部署到 https://botrun.github.io/
       </p>
       <div>
         <p>
-<h1>網頁發佈技能</h1></p><p><h2>何時使用</h2></p><p>- 用戶說「發佈網頁」「部署網站」「更新網頁」<br>
-- 用戶新增了 HTML/CSS/JS 到 projects/ 目錄<br>
-- 用戶要求建構網頁索引</p><p><h2>架構設計</h2></p><p><code>`</code><br>
+<h1>網頁發佈技能</h1></p><p><h2>何時使用</h2></p><p>當用戶說以下任一詞彙時觸發：<br>
+- "publish github page" / "publish to github pages"<br>
+- "發佈網頁" / "部署網站" / "更新網頁"<br>
+- "deploy web" / "publish web"<br>
+- "github pages"</p><p><h2>架構設計</h2></p><p><code>`</code><br>
 timeless-bowen (私有 repo)<br>
 ├── projects/                    # 專案源碼（私有）<br>
-│   ├── 專案A/<br>
-│   │   └── *.html              # 要發佈的網頁<br>
-│   └── 專案B/<br>
-└── web/                         # 發佈目錄（GitHub Pages）<br>
-    ├── index.html              # 自動生成的索引<br>
-    ├── assets/css/style.css    # 共用樣式<br>
+│   └── {專案名}/<br>
+│       └── *.html              # 要發佈的網頁<br>
+└── web/                         # 建構輸出目錄<br>
+    ├── index.html              # 自動生成的首頁索引<br>
     └── projects/<br>
-        ├── 001-專案A/<br>
-        └── 002-專案B/<br>
-<code>`</code></p><p><strong>URL 格式</strong>：<code>https://{org}.github.io/{repo}/projects/{id}/</code></p><p><h2>使用流程</h2></p><p><h3>步驟 1：建構網頁</h3></p><p>執行建構腳本：</p><p><code>`</code>bash<br>
+        └── {專案ID}/           # 複製後的專案</p><p>↓ GitHub Actions 自動部署 ↓</p><p>botrun/botrun.github.io (公開 repo)<br>
+└── (web/ 內容複製到這裡)<br>
+<code>`</code></p><p><strong>最終 URL</strong>：<code>https://botrun.github.io/</code><br>
+<strong>專案 URL</strong>：<code>https://botrun.github.io/projects/{專案ID}/</code></p><p><h2>執行流程（三步驟）</h2></p><p><h3>步驟 1：建構網頁</h3></p><p>執行建構腳本，將 projects/ 的 HTML 複製到 web/ 目錄：</p><p><code>`</code>bash<br>
 npx tsx .claude/skills/永恆知己-網頁發佈/scripts/build-web.ts<br>
-<code>`</code></p><p>腳本會自動：<br>
+<code>`</code></p><p>腳本自動執行：<br>
 1. 掃描 <code>projects/</code> 下所有 HTML 檔案<br>
 2. 複製到 <code>web/projects/{專案ID}/</code><br>
-3. 複製相關 CSS/JS/圖片資源<br>
+3. 複製相關 CSS/JS/圖片/open-data 資源<br>
 4. 生成專案索引頁<br>
-5. 生成主索引頁 <code>web/index.html</code></p><p><h3>步驟 2：預覽（本地）</h3></p><p><code>`</code>bash<br>
-cd web && python3 -m http.server 8000<br>
-<code>`</code></p><p>開啟 http://localhost:8000 預覽</p><p><h3>步驟 3：提交並推送</h3></p><p><code>`</code>bash<br>
+5. 生成主索引頁 <code>web/index.html</code></p><p><h3>步驟 2：提交並推送</h3></p><p><code>`</code>bash<br>
 git add web/<br>
-git commit -m "build: 更新網頁發佈內容"<br>
-git push<br>
-<code>`</code></p><p>GitHub Actions 會自動部署到 GitHub Pages。</p><p><h2>自動觸發條件</h2></p><p>GitHub Actions 會在以下情況自動觸發部署：</p><p>- <code>projects/<em>*/</em>.html</code> 變動<br>
-- <code>projects/<em>*/</em>.css</code> 變動<br>
-- <code>projects/<em>*/</em>.js</code> 變動<br>
-- <code>projects/<em>*/</em>.png|jpg|gif|svg|webp</code> 變動<br>
-- <code>web/**</code> 變動<br>
-- 手動觸發（workflow_dispatch）</p><p><h2>首次設定</h2></p><p>需要在 GitHub repo 設定中啟用 GitHub Pages：</p><p>1. 進入 repo → Settings → Pages<br>
-2. Source 選擇 "GitHub Actions"<br>
-3. 完成！</p><p><h2>檔案參考</h2></p><p>- 建構腳本：[scripts/build-web.ts](scripts/build-web.ts)<br>
+git commit -m "build: 更新網頁發佈內容</p><p>Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"<br>
+git push origin main<br>
+<code>`</code></p><p><h3>步驟 3：等待 GitHub Actions 部署</h3></p><p>推送後，GitHub Actions 自動觸發 <code>.github/workflows/deploy-pages.yml</code>：<br>
+- 使用 <code>peaceiris/actions-gh-pages@v4</code><br>
+- 將 <code>web/</code> 內容部署到 <code>botrun/botrun.github.io</code> repo<br>
+- 需要 <code>DEPLOY_TOKEN</code> secret（具有 repo 權限的 PAT）</p><p><h2>驗證部署</h2></p><p>使用 Playwright MCP 或瀏覽器驗證：</p><p><code>`</code>bash<br>
+<h1>檢查首頁</h1><br>
+curl -I https://botrun.github.io/</p><p><h1>或用 Playwright</h1><br>
+mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
+<code>`</code></p><p><h2>首次設定檢查清單</h2></p><p>如果部署失敗，確認以下設定：</p><p>1. <strong>DEPLOY_TOKEN Secret</strong>：<br>
+   - 進入 timeless-bowen repo → Settings → Secrets → Actions<br>
+   - 新增 <code>DEPLOY_TOKEN</code>（需要 repo 權限的 Personal Access Token）</p><p>2. <strong>目標 Repo 存在</strong>：<br>
+   - 確認 <code>botrun/botrun.github.io</code> repo 存在<br>
+   - 確認 token 有權限推送</p><p>3. <strong>GitHub Actions 啟用</strong>：<br>
+   - 確認 <code>.github/workflows/deploy-pages.yml</code> 存在<br>
+   - 確認 Actions 沒有被停用</p><p><h2>常見錯誤與解法</h2></p><p>| 錯誤 | 原因 | 解法 |<br>
+|------|------|------|<br>
+| 404 Page not found | GitHub Pages 未部署 | 檢查 Actions 是否成功執行 |<br>
+| Permission denied | DEPLOY_TOKEN 無權限 | 重新生成 PAT 並更新 Secret |<br>
+| build-web.ts 失敗 | 缺少依賴 | 執行 <code>npm install tsx minisearch unified remark-parse remark-stringify</code> |<br>
+| open-data 遺漏 | 建構腳本 bug | 參考 <code>docs/地雷-build-web-open-data遺漏.md</code> |</p><p><h2>檔案參考</h2></p><p>- 建構腳本：<code>.claude/skills/永恆知己-網頁發佈/scripts/build-web.ts</code><br>
 - GitHub Actions：<code>.github/workflows/deploy-pages.yml</code><br>
-- 共用樣式：<code>web/assets/css/style.css</code><br>
+- 地雷文件：<code>docs/地雷-build-web-open-data遺漏.md</code><br>
 </p>
       </div>
     </div>
