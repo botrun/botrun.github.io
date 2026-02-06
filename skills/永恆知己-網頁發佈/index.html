@@ -104,7 +104,12 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 <strong>修復</strong>：腳本會檢查專案是否有 index.html，有則保留不覆蓋<br>
 <strong>驗證</strong>：部署後必須用 Playwright 驗證所有連結可訪問</p><p><h3>地雷 3：GitHub Actions 快取問題（2026-02-07）</h3></p><p><strong>錯誤</strong>：Actions 顯示 "nothing to commit" 但檔案沒被部署<br>
 <strong>原因</strong>：peaceiris/actions-gh-pages 比較的是 Actions 執行時的 web/ 內容<br>
-<strong>解法</strong>：確保本地 commit 包含 web/ 的最新內容，Actions 會重新建構</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
+<strong>解法</strong>：確保本地 commit 包含 web/ 的最新內容，Actions 會重新建構</p><p><h3>地雷 4：首頁連結硬編碼路徑（2026-02-07）</h3></p><p><strong>錯誤</strong>：首頁精選連結使用硬編碼路徑如 <code>projects/006-政府/</code><br>
+<strong>問題</strong>：專案目錄使用動態編號（根據排序），硬編碼會導致 404<br>
+<strong>修復</strong>：使用 <code>findProjectId()</code> 動態查找正確的專案路徑<br>
+<strong>驗證</strong>：部署後必須用 Playwright 點擊測試每個連結</p><p><h3>地雷 5：GitHub Pages CDN 快取延遲（2026-02-07）</h3></p><p><strong>現象</strong>：部署成功但瀏覽器顯示舊內容<br>
+<strong>原因</strong>：GitHub Pages 使用 CDN，更新需要時間傳播<br>
+<strong>解法</strong>：加時間戳參數繞過快取（如 <code>?t=時間戳</code>）或等待幾分鐘</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
 - [ ] 確認 web/ 目錄包含最新內容<br>
 - [ ] Commit 並 push<br>
 - [ ] 等待 Actions 完成（<code>gh run list</code>）<br>
