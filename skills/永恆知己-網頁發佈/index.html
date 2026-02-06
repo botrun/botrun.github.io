@@ -109,7 +109,11 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 <strong>修復</strong>：使用 <code>findProjectId()</code> 動態查找正確的專案路徑<br>
 <strong>驗證</strong>：部署後必須用 Playwright 點擊測試每個連結</p><p><h3>地雷 5：GitHub Pages CDN 快取延遲（2026-02-07）</h3></p><p><strong>現象</strong>：部署成功但瀏覽器顯示舊內容<br>
 <strong>原因</strong>：GitHub Pages 使用 CDN，更新需要時間傳播<br>
-<strong>解法</strong>：加時間戳參數繞過快取（如 <code>?t=時間戳</code>）或等待幾分鐘</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
+<strong>解法</strong>：加時間戳參數繞過快取（如 <code>?t=時間戳</code>）或等待幾分鐘</p><p><h3>地雷 6：hasOwnIndex 誤判子目錄 index.html（2026-02-07）</h3></p><p><strong>錯誤</strong>：<code>hasOwnIndex</code> 檢測到子目錄的 <code>index.html</code>（如 <code>open-data/評分/index.html</code>），誤判專案根目錄有 <code>index.html</code><br>
+<strong>後果</strong>：專案目錄缺少索引頁，訪問 <code>projects/007-政府/</code> 返回 404<br>
+<strong>修復</strong>：<code>hasOwnIndex</code> 改為只檢查 <code>relativePath === 'index.html'</code>（根目錄）<br>
+<strong>影響專案</strong>：007-政府、002-AI硬體測試、004-botrun-board<br>
+<strong>驗證</strong>：部署後用 Playwright 點擊每個專案卡片確認可訪問</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
 - [ ] 確認 web/ 目錄包含最新內容<br>
 - [ ] Commit 並 push<br>
 - [ ] 等待 Actions 完成（<code>gh run list</code>）<br>
