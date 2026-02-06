@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>永恆知己-會議記錄 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> 永恆知己-會議記錄</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        會議記錄總指揮。當用戶放入音訊/影片檔案、或說「給我會議記錄」「產生會議紀要」時觸發。自動產生精華版和詳細版兩份會議記錄，完成後打開兩個 .txt。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 會議記錄總指揮</h1></p><p><h2>🎯 觸發條件</h2></p><p><strong>自動觸發</strong>：<br>
+- 用戶放入音訊檔案（.mp3, .m4a, .wav, .webm 等）<br>
+- 用戶放入影片檔案（.mp4, .mov, .avi, .mkv 等）<br>
+- 語音轉文字技能完成後自動串接</p><p><strong>手動觸發</strong>：<br>
+- 用戶說「給我會議記錄」「產生會議紀要」</p><p>---</p><p><h2>🎯 總指揮職責</h2></p><p>本技能負責協調會議記錄的產出，確保用戶同時獲得：<br>
+1. <strong>精華版</strong>：給主管快速瀏覽（5-10 分鐘閱讀）<br>
+2. <strong>詳細版</strong>：給技術夥伴深度學習（20-40 分鐘閱讀）</p><p>---</p><p><h2>📋 執行流程</h2></p><p><h3>步驟 0：音檔驅動（若有音檔）</h3></p><p><strong>若用戶提供音訊/影片檔案</strong>，必須先調用語音轉文字技能：</p><p><code>`</code><br>
+調用技能：永恆知己-語音轉文字<br>
+<code>`</code></p><p>等待逐字稿產生完成後，再繼續下一步。</p><p>---</p><p><h3>步驟 1：準備工作</h3></p><p>1. 找到最新的逐字稿：<br>
+<code>`</code>bash<br>
+ls 素材庫/來源歸檔/會議記錄/逐字稿/*.md | tail -5<br>
+<code>`</code></p><p>2. 讀取共用規則（含勘誤表）：<br>
+<code>`</code>bash<br>
+cat .claude/skills/永恆知己-會議記錄/references/共用規則.md<br>
+cat 配置/規則/勘誤表.md<br>
+<code>`</code></p><p>3. 讀取逐字稿內容，理解會議主題</p><p>---</p><p><h3>步驟 2：產生精華版</h3></p><p>直接執行（不調用子技能，避免額外開銷）：</p><p>1. 按精華版格式產生 .txt（參考精華版 SKILL.md）<br>
+2. 篇幅：逐字稿的 20-30%<br>
+3. 重點：決議、結論、待辦、金句、定價總表（若有）<br>
+4. 輸出到：<code>素材庫/輸出/會議記錄/{語義化檔名}-精華會議記錄.txt</code></p><p>---</p><p><h3>步驟 3：產生詳細版</h3></p><p>直接執行：</p><p>1. 按詳細版格式產生 .txt<br>
+2. 篇幅：逐字稿的 70-90%<br>
+3. 重點：完整 Q&A、技術細節、討論脈絡<br>
+4. 輸出到：<code>素材庫/輸出/會議記錄/{語義化檔名}-詳細會議記錄.txt</code></p><p>---</p><p><h3>步驟 4：完成確認（必做！）</h3></p><p>兩個版本都完成後，<strong>必須同時打開兩個 .txt</strong>：</p><p><code>`</code>bash<br>
+open "素材庫/輸出/會議記錄/{檔名}-精華會議記錄.txt" "素材庫/輸出/會議記錄/{檔名}-詳細會議記錄.txt"<br>
+<code>`</code></p><p><strong>注意</strong>：<br>
+- 必須兩個檔案一起打開<br>
+- 勘誤完成後才能打開<br>
+- 整個流程只打開一次</p><p>---</p><p><h2>🔗 子技能參考（格式規範）</h2></p><p>| 版本 | 參考路徑 | 篇幅 |<br>
+|------|----------|------|<br>
+| 精華版 | <code>.claude/skills/永恆知己-會議記錄精華版/SKILL.md</code> | 20-30% |<br>
+| 詳細版 | <code>.claude/skills/永恆知己-會議記錄詳細版/SKILL.md</code> | 70-90% |</p><p>---</p><p><h2>⚠️ 注意事項</h2></p><p>1. <strong>兩個版本都要產出</strong>：每次都同時產生精華版 + 詳細版<br>
+2. <strong>共用規則必讀</strong>：<code>references/共用規則.md</code> 含勘誤表引用<br>
+3. <strong>勘誤後才打開</strong>：.txt 只能打開一次（勘誤完成後）<br>
+4. <strong>必須打開兩個檔案</strong>：完成後 <code>open</code> 同時打開兩個 .txt</p><p>---</p><p><h2>💡 快速指令</h2></p><p>用戶說：<br>
+- 「給我會議記錄」→ 產生精華版 + 詳細版，打開兩個 .txt<br>
+- 「只要精華版」→ 只產生精華版，打開一個 .txt<br>
+- 「只要詳細版」→ 只產生詳細版，打開一個 .txt<br>
+- 「技術傳承版」→ 只產生詳細版，打開一個 .txt<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>永恆知己-會議記錄精華版 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> 永恆知己-會議記錄精華版</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        將逐字稿轉換為精華會議記錄。當用戶說「精華會議記錄」「快速版」「給主管看的版本」時觸發。篇幅為逐字稿 20-30%。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 會議記錄精華版</h1></p><p><h2>🎯 精華版定位</h2></p><p><strong>精華版</strong>：適合快速瀏覽、管理階層決策、分享給非直接參與者<br>
+- <strong>篇幅</strong>：逐字稿的 20-30%<br>
+- <strong>重點</strong>：決議、結論、待辦事項、關鍵討論<br>
+- <strong>對象</strong>：主管、非技術人員、需要快速了解的人<br>
+- <strong>閱讀時間</strong>：5-10 分鐘</p><p>---</p><p><h2>📖 共用規則引用</h2></p><p><strong>必讀</strong>：<code>.claude/skills/永恆知己-會議記錄/references/共用規則.md</code></p><p>含：勘誤表、輸出位置、格式通用規則、標題寫法規範</p><p>---</p><p><h2>⚠️ 精華版內容原則</h2></p><p><h3>必須包含</h3></p><p>- ✅ 所有重要決議（完整列出）<br>
+- ✅ 每個討論主題的結論<br>
+- ✅ 關鍵數字、日期、金額<br>
+- ✅ <strong>定價/方案總表</strong>（若有討論定價，必須整理成一目了然的對照表）<br>
+- ✅ 待辦事項（誰負責、做什麼、<strong>截止日期</strong>）<br>
+- ✅ 重要發言金句（引號標註）</p><p><h3>金句篩選原則</h3></p><p>- ✅ 保留：商業洞見、技術要點、決策關鍵<br>
+- ✅ 保留：有啟發性的比喻或觀點<br>
+- ❌ 排除：內部批評性發言（對人不對事的評論）<br>
+- ❌ 排除：情緒性抱怨或吐槽<br>
+- ❌ 排除：可能造成團隊問題的敏感發言</p><p><h3>可以省略</h3></p><p>- 討論過程的來回細節<br>
+- Q&A 的完整回答（只保留結論）<br>
+- 技術實作細節（只保留結論）<br>
+- 背景說明（假設讀者已知）</p><p>---</p><p><h2>📖 主題式書面段落格式</h2></p><p><strong>核心原則：一個標題、一個段落、一個主題</strong></p><p>每個段落應該是：<br>
+1. <strong>完整的書面語敘述</strong>（不是逐句對話記錄）<br>
+2. <strong>整合多人發言</strong>成連貫文章<br>
+3. <strong>保留關鍵金句</strong>用引號標註發言者<br>
+4. <strong>易於快速閱讀</strong>，像在讀文章而非看逐字稿</p><p><strong>範例</strong>：</p><p><code>`</code><br>
+🔧 Agentic AI 採用五大代理人分工架構</p><p>系統採用五個專業代理人分工合作：文件審閱員負責初步篩選分類，<br>
+法律研究員處理法規查詢，風險評估師進行量化分析，報告撰寫員<br>
+產出最終文件，品質控管員確保輸出品質。</p><p>泊寰強調：「一個代理人做一件事，做到極致，這樣才不會出錯。」<br>
+<code>`</code></p><p>---</p><p><h2>📋 精華版輸出範本</h2></p><p><code>`</code><br>
+會議標題<br>
+YYYY-MM-DD | XX 分鐘 | 參與者1、參與者2</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>📌 重點決議</p><p>1. 具體決議 1<br>
+2. 具體決議 2<br>
+3. 具體決議 3</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>🔧 具體明確的標題（說明這段在講什麼）</p><p>用淺顯易懂的文字解釋這段討論的內容。保留關鍵資訊和結論。<br>
+整合多人發言成流暢段落。某某強調：「重要發言用引號保留」。</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>🧠 另一個具體明確的標題</p><p>繼續展開其他討論主題...每個主題都要有實質內容，<br>
+不能只有一兩句話帶過。</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>📊 定價/方案總表（若有討論定價）</p><p>| 方案 | 價格 | 內容 |<br>
+|------|------|------|<br>
+| 方案 A | XXX 萬 | 包含 OOO |<br>
+| 方案 B | XXX 萬 | 包含 OOO |</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>📋 待辦事項</p><p>[ ] 具體待辦 1（負責人）- 截止：MM/DD<br>
+[ ] 具體待辦 2（負責人）- 截止：MM/DD</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>💬 金句摘錄（只保留商業/技術價值，排除內部批評）</p><p>某某：「值得記住的話」<br>
+某某：「另一句重要發言」</p><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>附件：{逐字稿路徑}<br>
+音檔：{音檔路徑}</p><p>Boosted by BOTRUN.ai<br>
+<code>`</code></p><p>---</p><p><h2>🎯 執行步驟</h2></p><p>1. 讀取共用規則：<br>
+<code>`</code>bash<br>
+cat .claude/skills/永恆知己-會議記錄/references/共用規則.md<br>
+<code>`</code></p><p>2. 讀取勘誤表：<br>
+<code>`</code>bash<br>
+cat 配置/規則/勘誤表.md<br>
+<code>`</code></p><p>3. 讀取逐字稿，理解內容</p><p>4. 套用勘誤表校正</p><p>5. 按照精華版格式產生 .txt</p><p>6. 輸出到 <code>素材庫/輸出/會議記錄/{語義化檔名}-精華會議記錄.txt</code></p><p>7. 勘誤完成後，才能 <code>open</code> 讓用戶檢閱</p><p>---</p><p><h2>📁 輸出位置</h2></p><p><code>`</code><br>
+素材庫/輸出/會議記錄/{語義化檔名}-精華會議記錄.txt<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
