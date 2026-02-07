@@ -567,22 +567,53 @@ a:focus-visible {
   }
 }
 
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* Projects Section */
+.projects-section {
   margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
 }
 
+.projects-section .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-section .section-title svg {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+
+.projects-section .section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: 2rem;
+}
+
+/* Projects Grid - Bento Style 統一規格 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* 統一卡片規格 */
 .project-card {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   background: var(--glass-bg);
   backdrop-filter: var(--blur);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+  height: 90px;  /* 🔥 固定高度統一規格 */
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   cursor: pointer;
   text-decoration: none;
@@ -594,11 +625,11 @@ a:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .project-card:active {
   transform: translateY(-2px) scale(0.98);
-  background: rgba(255, 255, 255, 0.9);
 }
 
 /* 確保卡片內所有元素不阻擋點擊 */
@@ -606,6 +637,70 @@ a:focus-visible {
   pointer-events: none;
 }
 
+/* 圖示容器 */
+.project-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.project-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.project-card:hover .project-icon-wrapper {
+  transform: scale(1.05);
+}
+
+/* 專案資訊 */
+.project-info {
+  flex: 1;
+  min-width: 0;  /* 允許文字截斷 */
+}
+
+.project-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.project-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.project-meta svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-light);
+}
+
+/* 舊版相容 - project-header */
 .project-header {
   display: flex;
   align-items: center;
@@ -633,21 +728,6 @@ a:focus-visible {
   color: var(--text);
   letter-spacing: -0.01em;
   margin: 0;
-}
-
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.project-meta svg {
-  width: 16px;
-  height: 16px;
-  color: var(--text-light);
 }
 
 /* CTA Section */
@@ -782,16 +862,46 @@ footer {
 
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .project-card {
-    padding: 1.75rem;
-    min-height: 120px;
+    height: 80px;
+    padding: 1rem 1.25rem;
+  }
+
+  .project-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+  }
+
+  .project-icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .project-info h3 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .project-meta {
+    gap: 0.75rem;
+    font-size: 0.75rem;
   }
 
   .project-card:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .projects-section .section-title {
+    font-size: 1.25rem;
   }
 
   header {
@@ -833,12 +943,38 @@ footer {
   }
 
   .projects-grid {
-    gap: 1.75rem;
+    gap: 0.75rem;
   }
 
   .project-card {
-    padding: 1.5rem;
-    min-height: 100px;
+    height: 72px;
+    padding: 0.875rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .project-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 8px;
+  }
+
+  .project-icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .project-info h3 {
+    font-size: 0.875rem;
+  }
+
+  .project-meta {
+    gap: 0.5rem;
+    font-size: 0.6875rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
   }
 
   header {
@@ -893,6 +1029,14 @@ header h1 svg {
 header h1 .subtitle {
   color: var(--text-muted);
   font-weight: 500;
+}
+
+.tagline {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
 }
 
 .update-date {
