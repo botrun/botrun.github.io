@@ -150,7 +150,27 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 - 統一使用 <code>.content-card</code> 樣式<br>
 - 所有內容使用相同的卡片結構<br>
 - 透過 badge 和 icon 區分內容類型<br>
-<strong>CSS</strong>：<code>web/assets/css/style.css</code> <code>.content-card</code> 類別</p><p><h2>🎨 UI/UX 設計規範（永久規則）</h2></p><p><h3>首頁設計</h3><br>
+<strong>CSS</strong>：<code>web/assets/css/style.css</code> <code>.content-card</code> 類別</p><p><h3>地雷 11：CSS 優先級不足導致樣式失效（2026-02-07）</h3></p><p><strong>錯誤</strong>：卡片的 <code>display: flex</code> 被其他樣式覆蓋，導致佈局失敗<br>
+<strong>症狀</strong>：<br>
+- Badge 變成全寬色條（而非右上角小徽章）<br>
+- Icon 與內容垂直堆疊（而非水平排列）<br>
+- 箭頭位置錯誤</p><p><strong>初版修復</strong>（無效）：<br>
+- 加入 <code>!important</code> 到 CSS</p><p><strong>正確做法</strong>：<br>
+- 將關鍵佈局樣式內聯到 HTML 元素<br>
+- 在 <code>generateUnifiedCard()</code> 函數中使用 <code>style="..."</code> 屬性<br>
+- 內聯樣式優先級最高，不會被外部 CSS 覆蓋</p><p><strong>關鍵內聯樣式</strong>：<br>
+<code>`</code>javascript<br>
+const cardStyle = <code>display:flex;flex-direction:row;align-items:center;gap:1rem;...</code>;<br>
+const badgeStyle = <code>position:absolute;top:0.75rem;right:0.75rem;...</code>;<br>
+const iconStyle = <code>width:56px;height:56px;background:linear-gradient(...);...</code>;<br>
+<code>`</code></p><p><strong>程式</strong>：<code>build-web.ts</code> 第 513-534 行</p><p><h3>地雷 12：GitHub Pages CDN 快取延遲 CSS 更新（2026-02-07）</h3></p><p><strong>錯誤</strong>：修改 CSS 後部署，但瀏覽器顯示舊樣式<br>
+<strong>原因</strong>：<br>
+- GitHub Pages 使用 CDN，CSS 檔案可能被快取<br>
+- 即使 HTML 更新，CSS 可能仍是舊版<br>
+<strong>正確做法</strong>：<br>
+- 關鍵佈局樣式內聯到 HTML（不依賴外部 CSS）<br>
+- 視覺樣式（顏色、動畫）放在外部 CSS<br>
+- 或：在 CSS 引用加版本號 <code>style.css?v=時間戳</code></p><p><h2>🎨 UI/UX 設計規範（永久規則）</h2></p><p><h3>首頁設計</h3><br>
 - 品牌標題：「波特人 Showcase」<br>
 - 副標題：「AI 專案 · 評測報告 · 技術研究」<br>
 - 使用 Lucide Icons（SVG 圖示），禁止使用 emoji 作為圖示</p><p><h3>專案卡片（統一規格）</h3><br>
