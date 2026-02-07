@@ -584,12 +584,15 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* 統一規格卡片 - Content Card */
 .content-card {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
   gap: 1rem;
   background: var(--glass-bg);
   backdrop-filter: var(--blur);
@@ -600,7 +603,7 @@ a:focus-visible {
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   position: relative;
   overflow: hidden;
@@ -624,7 +627,7 @@ a:focus-visible {
 
 /* 卡片徽章 */
 .card-badge {
-  position: absolute;
+  position: absolute !important;
   top: 0.75rem;
   right: 0.75rem;
   padding: 0.25rem 0.625rem;
@@ -634,6 +637,9 @@ a:focus-visible {
   border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  display: inline-block !important;
+  width: auto !important;
+  z-index: 10;
 }
 
 /* 卡片圖示 */
@@ -641,9 +647,10 @@ a:focus-visible {
   width: 56px;
   height: 56px;
   min-width: 56px;
+  flex-shrink: 0;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 14px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   transition: transform var(--transition-fast);
@@ -712,11 +719,14 @@ a:focus-visible {
 .card-arrow {
   width: 32px;
   height: 32px;
-  display: flex;
+  min-width: 32px;
+  flex-shrink: 0;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   color: var(--text-light);
   transition: all var(--transition-fast);
+  margin-left: auto;
 }
 
 .card-arrow svg {

@@ -120,13 +120,37 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 - 統一圖示容器大小（48px/40px/36px）<br>
 - 文字截斷避免溢出<br>
 <strong>CSS</strong>：<code>web/assets/css/style.css</code> <code>.project-card</code> 設定 <code>height: 90px</code></p><p><h3>地雷 8：首頁專案沒按時間排序（2026-02-07）</h3></p><p><strong>錯誤</strong>：專案按目錄名稱排序，用戶無法快速看到最新內容<br>
-<strong>修復</strong>：<br>
-- <code>ProjectInfo</code> 添加 <code>lastModified: Date</code> 欄位<br>
-- 計算每個專案最新 HTML 檔案的修改時間<br>
-- 按 <code>lastModified</code> 降序排序（最新的在最前面）<br>
-- 卡片顯示更新時間（YYYY-MM-DD 格式）<br>
-- 區塊標題標註「按最後更新時間排序」<br>
-<strong>程式</strong>：<code>build-web.ts</code> 第 737-738 行</p><p><h2>🎨 UI/UX 設計規範（永久規則）</h2></p><p><h3>首頁設計</h3><br>
+<strong>初版修復</strong>：使用檔案修改時間 <code>fs.statSync().mtime</code> 排序<br>
+<strong>問題</strong>：檔案修改時間會被 git clone/pull 重置，導致所有日期都變成今天</p><p><h3>地雷 9：檔案修改時間 vs 發佈日期（2026-02-07）</h3></p><p><strong>錯誤</strong>：使用 <code>fs.statSync().mtime</code>（檔案修改時間）作為排序依據<br>
+<strong>問題</strong>：<br>
+- git 操作會重置所有檔案的修改時間為當前時間<br>
+- 導致所有專案日期都變成「今天」<br>
+- 用戶無法區分新舊內容</p><p><strong>正確做法</strong>：<br>
+- 建立 <code>web/data/content-manifest.json</code> 配置檔<br>
+- 明確定義每個內容的 <code>publishDate</code>（發佈日期）<br>
+- 按 <code>publishDate</code> 排序，而非檔案系統時間</p><p><strong>架構</strong>：<br>
+<code>`</code>json<br>
+{<br>
+  "items": [<br>
+    {<br>
+      "id": "agentic-ai-predictions",<br>
+      "title": "Agentic AI 18 個月預測研究",<br>
+      "publishDate": "2026-02-07",<br>
+      "href": "projects/003-agentic-ai-predictions-2026/",<br>
+      "icon": "brain",<br>
+      "badge": "研究",<br>
+      "badgeColor": "#8B5CF6",<br>
+      "tags": ["target:5 個預言", "calendar:18 個月"]<br>
+    }<br>
+  ]<br>
+}<br>
+<code>`</code></p><p><strong>程式</strong>：<code>build-web.ts</code> 的 <code>loadContentManifest()</code> 函數</p><p><h3>地雷 10：卡片規格不統一（精選 vs 專案）（2026-02-07）</h3></p><p><strong>錯誤</strong>：首頁有多種卡片樣式（featured-card、project-card），大小不一致<br>
+<strong>問題</strong>：用戶體驗差，視覺混亂<br>
+<strong>正確做法</strong>：<br>
+- 統一使用 <code>.content-card</code> 樣式<br>
+- 所有內容使用相同的卡片結構<br>
+- 透過 badge 和 icon 區分內容類型<br>
+<strong>CSS</strong>：<code>web/assets/css/style.css</code> <code>.content-card</code> 類別</p><p><h2>🎨 UI/UX 設計規範（永久規則）</h2></p><p><h3>首頁設計</h3><br>
 - 品牌標題：「波特人 Showcase」<br>
 - 副標題：「AI 專案 · 評測報告 · 技術研究」<br>
 - 使用 Lucide Icons（SVG 圖示），禁止使用 emoji 作為圖示</p><p><h3>專案卡片（統一規格）</h3><br>
