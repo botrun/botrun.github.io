@@ -113,7 +113,43 @@ mcp__playwright__browser_navigate url="https://botrun.github.io/"<br>
 <strong>後果</strong>：專案目錄缺少索引頁，訪問 <code>projects/007-政府/</code> 返回 404<br>
 <strong>修復</strong>：<code>hasOwnIndex</code> 改為只檢查 <code>relativePath === 'index.html'</code>（根目錄）<br>
 <strong>影響專案</strong>：007-政府、002-AI硬體測試、004-botrun-board<br>
-<strong>驗證</strong>：部署後用 Playwright 點擊每個專案卡片確認可訪問</p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
+<strong>驗證</strong>：部署後用 Playwright 點擊每個專案卡片確認可訪問</p><p><h3>地雷 7：首頁專案卡片大小不一致（2026-02-07）</h3></p><p><strong>錯誤</strong>：專案卡片沒有統一規格，有的大有的小，看起來不專業<br>
+<strong>修復</strong>：<br>
+- 固定卡片高度（桌面 90px / 平板 80px / 手機 72px）<br>
+- 使用 Bento Grid 風格<br>
+- 統一圖示容器大小（48px/40px/36px）<br>
+- 文字截斷避免溢出<br>
+<strong>CSS</strong>：<code>web/assets/css/style.css</code> <code>.project-card</code> 設定 <code>height: 90px</code></p><p><h3>地雷 8：首頁專案沒按時間排序（2026-02-07）</h3></p><p><strong>錯誤</strong>：專案按目錄名稱排序，用戶無法快速看到最新內容<br>
+<strong>修復</strong>：<br>
+- <code>ProjectInfo</code> 添加 <code>lastModified: Date</code> 欄位<br>
+- 計算每個專案最新 HTML 檔案的修改時間<br>
+- 按 <code>lastModified</code> 降序排序（最新的在最前面）<br>
+- 卡片顯示更新時間（YYYY-MM-DD 格式）<br>
+- 區塊標題標註「按最後更新時間排序」<br>
+<strong>程式</strong>：<code>build-web.ts</code> 第 737-738 行</p><p><h2>🎨 UI/UX 設計規範（永久規則）</h2></p><p><h3>首頁設計</h3><br>
+- 品牌標題：「波特人 Showcase」<br>
+- 副標題：「AI 專案 · 評測報告 · 技術研究」<br>
+- 使用 Lucide Icons（SVG 圖示），禁止使用 emoji 作為圖示</p><p><h3>專案卡片（統一規格）</h3><br>
+<code>`</code>css<br>
+/<em> 桌面 </em>/<br>
+.project-card { height: 90px; }<br>
+.project-icon-wrapper { width: 48px; height: 48px; }</p><p>/<em> 平板 @media (max-width: 768px) </em>/<br>
+.project-card { height: 80px; }<br>
+.project-icon-wrapper { width: 40px; height: 40px; }</p><p>/<em> 手機 @media (max-width: 375px) </em>/<br>
+.project-card { height: 72px; }<br>
+.project-icon-wrapper { width: 36px; height: 36px; }<br>
+<code>`</code></p><p><h3>排序規則</h3><br>
+- <strong>必須</strong>按最後修改時間排序（最新的在最前面）<br>
+- 卡片必須顯示更新時間（YYYY-MM-DD 格式）<br>
+- 區塊標題標註排序方式</p><p><h3>RWD 斷點</h3><br>
+- 桌面：1440px+<br>
+- 平板：768px - 1024px<br>
+- 手機：375px - 768px<br>
+- 小手機：< 375px</p><p><h3>ui-ux-pro-max 技能整合</h3><br>
+設計首頁時必須使用 ui-ux-pro-max 技能生成設計系統：<br>
+<code>`</code>bash<br>
+python3 skills/ui-ux-pro-max/scripts/search.py "showcase portfolio" --design-system<br>
+<code>`</code></p><p><h2>部署前檢查清單</h2></p><p>- [ ] 執行 build-web.ts 建構<br>
 - [ ] 確認 web/ 目錄包含最新內容<br>
 - [ ] Commit 並 push<br>
 - [ ] 等待 Actions 完成（<code>gh run list</code>）<br>
