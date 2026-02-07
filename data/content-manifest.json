@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "description": "所有內容的元資料配置，按發佈日期排序用",
+    "lastUpdated": "2026-02-07"
+  },
+  "items": [
+    {
+      "id": "nchc-leaderboard",
+      "title": "國網中心 AI 服務模型排行榜",
+      "subtitle": "10 個 AI 模型 × 5 題國網專業知識查詢 — Ministral 14B 奪冠",
+      "href": "projects/007-政府/國網中心-AI服務/評測/v2/報告/排行簡報-2026-01-31.html",
+      "icon": "server-cog",
+      "badge": "模型評測",
+      "badgeColor": "#F59E0B",
+      "publishDate": "2026-01-31",
+      "tags": ["trophy:冠軍 Ministral 14B", "database:Open Data"]
+    },
+    {
+      "id": "ai-model-evaluation",
+      "title": "AI 模型評測排行榜 2026.01",
+      "subtitle": "11 個主流模型 × 5 大專業領域 × 275 題零幻覺評測",
+      "href": "reports/ai-model-evaluation-2026-01.html",
+      "icon": "bar-chart-3",
+      "badge": "評測報告",
+      "badgeColor": "#F59E0B",
+      "publishDate": "2026-01-31",
+      "tags": ["sparkles:九維度評分", "database:Open Data"]
+    },
+    {
+      "id": "ai-survival-guide",
+      "title": "AI 時代生存攻略",
+      "subtitle": "讓機器人幫你賺錢，而不是搶你飯碗",
+      "href": "articles/ai-survival-guide.html",
+      "icon": "lightbulb",
+      "badge": "文章",
+      "badgeColor": "#F97316",
+      "publishDate": "2026-01-31",
+      "tags": ["globe:全球研究", "users:團隊指南"]
+    },
+    {
+      "id": "ai-hardware-test",
+      "title": "私有 AI 硬體測試報告 2026",
+      "subtitle": "Mac Studio M3 Ultra vs DGX Spark vs AMD Strix Halo vs RTX 5090",
+      "href": "projects/002-AI硬體測試/web/index.html",
+      "icon": "server",
+      "badge": "硬體評測",
+      "badgeColor": "#06d6a0",
+      "publishDate": "2026-01-31",
+      "tags": ["zap:99 t/s 單用戶", "layers:518 t/s 並發"]
+    },
+    {
+      "id": "browser-automation",
+      "title": "政府 AI 瀏覽器自動化方案比較",
+      "subtitle": "Claude Computer Use vs Claude in Chrome vs Vercel Agent Browser vs Playwright MCP",
+      "href": "projects/007-政府/數位發展部-瀏覽器自動化方案比較.html",
+      "icon": "chrome",
+      "badge": "技術評測",
+      "badgeColor": "#7C3AED",
+      "publishDate": "2026-01-30",
+      "tags": ["building-2:數位發展部", "layout-dashboard:8 頁投影片"]
+    },
+    {
+      "id": "agentic-ai-predictions",
+      "title": "Agentic AI 18 個月預測研究",
+      "subtitle": "2026-02 至 2027-08 的 5 個 80% 機率驚人預言",
+      "href": "projects/003-agentic-ai-predictions-2026/",
+      "icon": "brain",
+      "badge": "研究",
+      "badgeColor": "#8B5CF6",
+      "publishDate": "2026-02-07",
+      "tags": ["target:5 個預言", "calendar:18 個月"]
+    },
+    {
+      "id": "gov-project",
+      "title": "政府專案",
+      "subtitle": "數位發展部、國網中心等政府 AI 相關專案",
+      "href": "projects/007-政府/",
+      "icon": "landmark",
+      "badge": "專案集",
+      "badgeColor": "#6366F1",
+      "publishDate": "2026-01-15",
+      "tags": ["file-text:7 個檔案"]
+    },
+    {
+      "id": "school-project",
+      "title": "學校專案",
+      "subtitle": "教育領域 AI 應用",
+      "href": "projects/006-學校/",
+      "icon": "graduation-cap",
+      "badge": "專案集",
+      "badgeColor": "#6366F1",
+      "publishDate": "2026-01-10",
+      "tags": ["file-text:1 個檔案"]
+    },
+    {
+      "id": "medical-project",
+      "title": "醫療專案",
+      "subtitle": "醫療健康領域 AI 應用",
+      "href": "projects/010-醫療/",
+      "icon": "heart-pulse",
+      "badge": "專案集",
+      "badgeColor": "#6366F1",
+      "publishDate": "2026-01-08",
+      "tags": ["file-text:1 個檔案"]
+    },
+    {
+      "id": "botrun-board",
+      "title": "波特榜",
+      "subtitle": "AI 模型評測排行榜系統",
+      "href": "projects/004-botrun-board/",
+      "icon": "trophy",
+      "badge": "專案",
+      "badgeColor": "#6366F1",
+      "publishDate": "2026-01-05",
+      "tags": ["file-text:2 個檔案"]
+    },
+    {
+      "id": "3d-html-game",
+      "title": "3D HTML 遊戲",
+      "subtitle": "純 HTML/CSS/JS 3D 遊戲展示",
+      "href": "projects/001-3d-html-game/",
+      "icon": "gamepad-2",
+      "badge": "專案",
+      "badgeColor": "#6366F1",
+      "publishDate": "2025-12-20",
+      "tags": ["file-text:1 個檔案"]
+    },
+    {
+      "id": "ai-hardware-project",
+      "title": "AI 硬體測試專案",
+      "subtitle": "私有 AI 硬體效能測試集",
+      "href": "projects/002-AI硬體測試/",
+      "icon": "cpu",
+      "badge": "專案集",
+      "badgeColor": "#6366F1",
+      "publishDate": "2025-12-15",
+      "tags": ["file-text:1 個檔案"]
+    }
+  ]
+}
