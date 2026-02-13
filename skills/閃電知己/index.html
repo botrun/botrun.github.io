@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lightning-expert - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> lightning-expert</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        閃電知己技能。使用 rg 超高速檢索本地知識庫，透過國網 Ministral 14B 模型在 7 秒內回答問題。當用戶需要快速查詢本地記憶、需要極速回應時觸發。
+      </p>
+      <div>
+        <p>
+<h1>閃電知己 - Lightning Expert</h1></p><p><h2>🎯 核心目標</h2></p><p><strong>TTFT（Time To First Token）< 7 秒</strong>：從用戶提問到開始回答，全程 7 秒內完成。</p><p><h2>🚀 三步驟極速流程</h2></p><p><code>`</code><br>
+用戶提問 → rg 檢索（1 秒）→ NCHC API（5 秒）→ 開始回答（< 7 秒）<br>
+<code>`</code></p><p><h2>💡 設計原則</h2></p><p>1. <strong>rg 先過濾</strong>：使用 ripgrep 超高速檢索，1 秒內過濾出相關內容<br>
+2. <strong>小模型快速推理</strong>：使用 Ministral 14B（國網 1.6 折），TTFT < 5 秒<br>
+3. <strong>單次呼叫</strong>：避免多次 API 往返，降低延遲<br>
+4. <strong>本地優先</strong>：優先搜尋 <code>記憶核心/</code>、<code>索引/</code>、<code>素材庫/</code> 等本地知識庫</p><p><h2>🔧 使用方式</h2></p><p><h3>自動觸發</h3></p><p>當用戶說：<br>
+- 「快速查詢...」<br>
+- 「幫我找...」<br>
+- 「之前有提到...」<br>
+- 「記憶中...」<br>
+- 任何需要檢索本地知識的問題</p><p><h3>手動觸發</h3></p><p><code>`</code>bash<br>
+/lightning-expert<br>
+<code>`</code></p><p><h2>📋 執行流程</h2></p><p>1. <strong>解析問題</strong>：提取關鍵字（使用 Claude Code 內建能力）<br>
+2. <strong>執行檢索</strong>：<br>
+   <code>`</code>bash<br>
+   cd /home/user/timeless-bowen/.claude/skills/閃電知己/scripts<br>
+   npx tsx lightning-query.ts "用戶問題" "關鍵字1 關鍵字2"<br>
+   <code>`</code><br>
+3. <strong>回傳結果</strong>：Ministral 14B 回答 + 來源引用</p><p><h2>🎯 檢索策略</h2></p><p><h3>優先搜尋目錄</h3></p><p>1. <strong>索引/</strong> - 最快找到入口<br>
+2. <strong>記憶核心/語義記憶/</strong> - 結構化知識<br>
+3. <strong>記憶核心/情節記憶/</strong> - 會議記錄、對話歷史<br>
+4. <strong>素材庫/來源歸檔/</strong> - 原始資料<br>
+5. <strong>全域搜尋</strong> - 最後手段</p><p><h3>rg 檢索參數</h3></p><p><code>`</code>bash<br>
+<h1>基礎檢索（含上下文）</h1><br>
+rg -C 5 "關鍵字" 目標目錄/</p><p><h1>找用戶說的（高權重）</h1><br>
+rg "speaker: user" . -l | xargs rg -C 5 "關鍵字"</p><p><h1>找最近的</h1><br>
+rg "updated: $(date +%Y-%m-%d)" . -l | xargs rg -C 5 "關鍵字"</p><p><h1>組合：用戶說的 + 最近的</h1><br>
+rg -l "speaker: user" . | xargs rg -l "updated: 2026-02" | xargs rg -C 5 "關鍵字"<br>
+<code>`</code></p><p><h2>📊 效能指標</h2></p><p>| 指標 | 目標 | 實測 |<br>
+|------|------|------|<br>
+| TTFT | < 7 秒 | 待測試 |<br>
+| rg 檢索 | < 1 秒 | 待測試 |<br>
+| API 回應 | < 5 秒 | 待測試 |<br>
+| 總時間 | < 10 秒 | 待測試 |</p><p><h2>🔑 API 設定</h2></p><p>API Key 從根目錄 <code>.env</code> 讀取：</p><p><code>`</code>bash<br>
+NCHC_API_KEY=sk-M28-oooxxx-api-key<br>
+NCHC_API_BASE=https://portal.genai.nchc.org.tw/api/v1<br>
+NCHC_MODEL=Ministral-3-14B-Instruct-2511<br>
+<code>`</code></p><p><h2>📝 回答格式</h2></p><p><code>`</code>markdown<br>
+<h2>回答</h2></p><p>{Ministral 14B 生成的回答}</p><p><h2>來源引用</h2></p><p>1. 檔案：<code>記憶核心/語義記憶/XXX.md</code><br>
+   - 相關度：⭐⭐⭐⭐⭐<br>
+   - 更新時間：2026-02-12<br>
+   - 內容摘要：...</p><p>2. 檔案：<code>索引/XXX索引.md</code><br>
+   - 相關度：⭐⭐⭐⭐<br>
+   - 更新時間：2026-02-10<br>
+   - 內容摘要：...</p><p><h2>效能</h2></p><p>- rg 檢索：0.8 秒<br>
+- API 回應：4.2 秒<br>
+- TTFT：5.0 秒 ✅<br>
+<code>`</code></p><p><h2>🚨 地雷與注意事項</h2></p><p><h3>地雷 1：rg 結果過多</h3></p><p><strong>問題</strong>：rg 可能回傳數千行結果，超過 API context window</p><p><strong>解決</strong>：<br>
+- 使用 <code>rg -l</code> 先列出檔案清單，再精準讀取<br>
+- 使用 <code>head -n 200</code> 限制行數<br>
+- 優先搜尋索引目錄</p><p><h3>地雷 2：API Key 寫死</h3></p><p><strong>問題</strong>：API Key 不應該寫死在程式碼中</p><p><strong>解決</strong>：<br>
+- 從 <code>.env</code> 讀取<br>
+- 提供 <code>.env.example</code> 模板</p><p><h3>地雷 3：TTFT 超時</h3></p><p><strong>問題</strong>：網路延遲、API 繁忙導致 TTFT > 7 秒</p><p><strong>解決</strong>：<br>
+- 設定 timeout（10 秒）<br>
+- 降級策略：超時則回傳 rg 原始結果<br>
+- 快取常見問題的答案</p><p><h3>地雷 4：關鍵字提取失敗</h3></p><p><strong>問題</strong>：無法從用戶問題中提取有效關鍵字</p><p><strong>解決</strong>：<br>
+- 提供預設關鍵字清單<br>
+- 使用 Claude Code 內建能力協助提取<br>
+- 全域搜尋作為備案</p><p><h3>地雷 5：多關鍵字檢索失敗 ⭐ (2026-02-12 修正)</h3></p><p><strong>問題</strong>：當傳入多個關鍵字（如「藍圖 產品 波盈盈」），rg 會把整個字串當作一個關鍵字搜尋，導致找不到結果</p><p><strong>症狀</strong>：<br>
+<code>`</code>bash<br>
+<h1>錯誤：rg 搜尋 "藍圖 產品 波盈盈" 這個完整字串（找不到）</h1><br>
+rg -C 5 -i "藍圖 產品 波盈盈" 索引/</p><p><h1>正確：應該搜尋包含「藍圖」OR「產品」OR「波盈盈」的檔案</h1><br>
+rg -C 5 -i "(藍圖|產品|波盈盈)" 索引/<br>
+<code>`</code></p><p><strong>解決</strong>：<br>
+- 修正 <code>searchWithRg()</code> 函式，將空格分隔的關鍵字轉換為正則表達式 OR 搜尋<br>
+- 例如：<code>"藍圖 產品 波盈盈"</code> → <code>"(藍圖|產品|波盈盈)"</code><br>
+- 單一關鍵字時不加括號，保持原樣</p><p><strong>修正版本</strong>：<br>
+<code>`</code>typescript<br>
+// 多關鍵字處理：將空格分隔的關鍵字轉換為正則表達式 OR 搜尋<br>
+const keywordArray = keywords.trim().split(/\s+/).filter(k => k.length > 0);<br>
+const regexPattern = keywordArray.length > 1<br>
+  ? <code>(${keywordArray.join('|')})</code><br>
+  : keywordArray[0] || keywords;</p><p>const cmd = <code>cd "${CONFIG.REPO_ROOT}" && rg -C 5 -i "${regexPattern}" "${targetDir}" 2>/dev/null || true</code>;<br>
+<code>`</code></p><p><strong>測試</strong>：<br>
+<code>`</code>bash<br>
+<h1>測試多關鍵字</h1><br>
+npx tsx lightning-query.ts "搜尋藍圖有哪些" "藍圖 產品 波盈盈 耳眼手心"</p><p><h1>測試單一關鍵字</h1><br>
+npx tsx lightning-query.ts "搜尋藍圖有哪些" "藍圖"<br>
+<code>`</code></p><p><strong>修正位置</strong>：<code>scripts/lightning-query.ts:78-89</code></p><p><h2>🔬 實驗問題清單</h2></p><p>1. <strong>用戶偏好</strong>：「我之前說過喜歡什麼風格？」<br>
+2. <strong>專案資訊</strong>：「波題庫專案在哪裡？」<br>
+3. <strong>技術問題</strong>：「WWM 世界模型是什麼？」<br>
+4. <strong>會議記錄</strong>：「上次會議討論了什麼？」<br>
+5. <strong>定價資訊</strong>：「國網中心的模型價格是多少？」</p><p><h2>📚 參考資料</h2></p><p>- [Claude Code SKILL.md 官方規格](https://code.claude.com/docs/en/skills)<br>
+- [Agent Skills 開放標準](https://agentskills.io)<br>
+- [國網中心 API 文件](https://portal.genai.nchc.org.tw)<br>
+- [ripgrep 使用指南](https://github.com/BurntSushi/ripgrep)</p><p><h2>🎓 版本歷史</h2></p><p>- v1.2 (2026-02-12)：強化秒數測量與效能分析<br>
+  - 所有時間顯示統一加上秒數：<code>XXXms (X.XXs)</code><br>
+  - 新增 rg 檢索階段總時間測量<br>
+  - 新增 API 呼叫階段總時間測量<br>
+  - 新增效能分析表格（時間分解 + 佔比）<br>
+  - 新增 TTFT 目標檢查（達成狀態 + 差距計算）<br>
+  - Token 用量顯示更詳細：<code>prompt + completion = total</code></p><p>- v1.1 (2026-02-12)：修正多關鍵字檢索失敗<br>
+  - 修正 <code>searchWithRg()</code> 多關鍵字處理邏輯<br>
+  - 支援正則表達式 OR 搜尋：<code>(關鍵字1|關鍵字2|關鍵字3)</code><br>
+  - 新增除錯訊息顯示搜尋模式<br>
+  - 新增地雷 5 記錄</p><p>- v1.0 (2026-02-12)：初版建立<br>
+  - 實作 rg + NCHC Ministral 14B<br>
+  - 目標 TTFT < 7 秒<br>
+  - 待實測驗證<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
