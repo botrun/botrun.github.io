@@ -1,0 +1,518 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京秘密地圖 | 35區的隱藏寶藏與當地人體驗</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --c-bg: #0a0a0f;
+          --c-surface: #13131a;
+          --c-surface-2: #1c1c26;
+          --c-border: rgba(255,255,255,0.06);
+          --c-text: #e8e6e3;
+          --c-text-dim: #a8a8b8;
+          --c-accent: #6c63ff;
+          --c-accent-glow: rgba(108,99,255,0.15);
+          --c-warm: #ff6b6b;
+          --c-gold: #ffd93d;
+          --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+          --font-body: 'Inter', system-ui, sans-serif;
+          --radius-sm: 8px;
+          --radius-md: 16px;
+          --radius-lg: 24px;
+          --shadow-card: 0 4px 24px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+          --shadow-hover: 0 12px 40px rgba(108,99,255,0.15), 0 4px 12px rgba(0,0,0,0.3);
+          --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+          font-family: var(--font-body);
+          background: var(--c-bg);
+          color: var(--c-text);
+          line-height: 1.7;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+          min-height: 80vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 4rem 2rem;
+          position: relative;
+          overflow: hidden;
+          background: radial-gradient(ellipse at center, rgba(108,99,255,0.05) 0%, transparent 70%);
+        }
+
+        .hero::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-accent-glow), transparent),
+            radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,107,107,0.06), transparent);
+          pointer-events: none;
+        }
+
+        .hero h1 {
+          font-family: var(--font-display);
+          font-size: clamp(2.5rem, 6vw, 4.5rem);
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1.15;
+          background: linear-gradient(135deg, #fff 30%, var(--c-accent));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 1rem;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+          font-size: clamp(1rem, 2vw, 1.3rem);
+          color: var(--c-text-dim);
+          max-width: 600px;
+          margin-bottom: 2rem;
+          font-weight: 300;
+        }
+
+        .section {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 5rem 2rem;
+        }
+
+        .section-title {
+          font-family: var(--font-display);
+          font-size: clamp(1.8rem, 4vw, 2.8rem);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          margin-bottom: 0.5rem;
+          position: relative;
+          display: inline-block;
+          padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 60px;
+          height: 3px;
+          background: var(--c-accent);
+          border-radius: 3px;
+        }
+
+        .section-subtitle {
+          color: var(--c-text-dim);
+          font-size: 1.05rem;
+          margin-bottom: 3rem;
+          max-width: 500px;
+        }
+
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 1.5rem;
+        }
+
+        .card {
+          background: var(--c-surface);
+          border: 1px solid var(--c-border);
+          border-radius: var(--radius-md);
+          padding: 2rem;
+          transition: var(--transition);
+          position: relative;
+          overflow: hidden;
+          box-shadow: var(--shadow-card);
+        }
+
+        .card:hover {
+          transform: translateY(-6px);
+          box-shadow: var(--shadow-hover);
+          border-color: rgba(108,99,255,0.2);
+        }
+
+        .card-emoji {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          display: block;
+          color: var(--c-accent);
+        }
+
+        .card h3 {
+          font-size: 1.35rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+          color: var(--c-text);
+        }
+
+        .card p {
+          color: var(--c-text-dim);
+          font-size: 0.95rem;
+          line-height: 1.7;
+          margin-bottom: 1.25rem;
+        }
+
+        .tag {
+          display: inline-block;
+          padding: 0.25rem 0.75rem;
+          background: rgba(108,99,255,0.1);
+          color: var(--c-accent);
+          border-radius: 999px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          margin: 0.25rem 0.15rem;
+          border: 1px solid rgba(108,99,255,0.2);
+        }
+
+        .cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.9rem 2rem;
+          background: var(--c-accent);
+          color: #fff;
+          border: none;
+          border-radius: var(--radius-sm);
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: var(--transition);
+          text-decoration: none;
+          box-shadow: 0 4px 12px rgba(108,99,255,0.2);
+          margin-top: 1rem;
+        }
+
+        .cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(108,99,255,0.3);
+          background: #5a4fff;
+        }
+
+        .pro-tip {
+          background: var(--c-surface-2);
+          border-left: 4px solid var(--c-accent);
+          padding: 1rem;
+          margin: 1.25rem 0;
+          border-radius: 0 8px 8px 0;
+        }
+
+        .pro-tip p {
+          margin: 0.5rem 0;
+          font-size: 0.9rem;
+        }
+
+        .features {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .feature-item {
+          display: flex;
+          gap: 1rem;
+          align-items: flex-start;
+        }
+
+        .feature-icon {
+          font-size: 2rem;
+          flex-shrink: 0;
+          color: var(--c-accent);
+        }
+
+        .footer {
+          text-align: center;
+          padding: 3rem 2rem;
+          color: var(--c-text-dim);
+          font-size: 0.85rem;
+          border-top: 1px solid var(--c-border);
+        }
+
+        @media (max-width: 768px) {
+          .cards { grid-template-columns: 1fr; }
+          .features { grid-template-columns: 1fr; }
+          .hero { min-height: 60vh; padding: 3rem 1.5rem; }
+          .section { padding: 3rem 1.5rem; }
+          .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+          .section-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+        }
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+          animation: fadeUp 0.6s ease-out both;
+          opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        .persona-card {
+          background: linear-gradient(145deg, #1a1a2e, #16213e);
+          border: 1px solid rgba(108, 99, 255, 0.1);
+        }
+
+        .persona-card .card-emoji {
+          color: var(--c-accent);
+        }
+
+        .season-card {
+          background: linear-gradient(145deg, #1a1a2e, #0f3460);
+        }
+
+        .hidden-gem-card {
+          background: linear-gradient(145deg, #1a1a2e, #2d1b69);
+        }
+
+        .budget-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid var(--c-border);
+          color: var(--c-text);
+        }
+
+        .budget-price {
+          color: var(--c-gold);
+          font-weight: 600;
+          font-size: 1.05rem;
+        }
+
+        .budget-item:last-child {
+          border-bottom: none;
+        }
+
+        .section-title.highlight {
+          background: linear-gradient(135deg, #fff 30%, var(--c-accent));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="animate delay-1">東京35區的秘密地圖</h1>
+        <p class="subtitle animate delay-2">超越涉谷與原宿的真正東京體驗：<br>當地人最愛的隱藏寶藏與實用技巧</p>
+        <a href="#personas" class="cta animate delay-3">
+            🔍 找到我的東京人格
+        </a>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section" id="intro">
+        <div class="animate delay-1">
+            <h2 class="section-title highlight">東京不只是涉谷與原宿</h2>
+            <p class="section-subtitle animate delay-2">根據你的「東京人格」量身打造的35區行程</p>
+
+            <p class="animate delay-2">東京有超過35個行政區，每個區都有獨特的歷史、美食和隱藏寶地。這份地圖不是給你人氣排行榜，而是根據你的興趣、預算和時間，為你精選東京人最愛的秘密基地。<span class="tag">首次來訪</span><span class="tag">再訪東京</span><span class="tag">東京生活者</span></p>
+
+            <p class="animate delay-3">我們整理了東京人日常生活中的「秘密基地」、雨季的「避難所」、以及如何像當地人一樣玩轉東京。不需要花費數萬日圓，也不需要排隊數小時——只需要這份地圖，就能體驗真正的東京生活方式。從神田川的野餐聖地到中野的二手家具市場，從六本木的地下藝術空間到品川的海邊溫泉，這裡有東京人最愛的35個秘密地點，絕對不在任何導遊手冊上！</p>
+        </div>
+    </section>
+
+    <!-- Persona Selection -->
+    <section class="section" id="personas">
+        <h2 class="section-title animate delay-1">根據你的「東京人格」選擇行程</h2>
+        <p class="section-subtitle animate delay-2">東京有無數面貌，哪一個是你的東京？</p>
+
+        <div class="cards">
+            <!-- 首次來訪者 - 時尚達人 -->
+            <div class="card persona-card animate delay-3">
+                <span class="card-emoji">👗</span>
+                <h3>時尚達人</h3>
+                <p>超越原宿的時尚聖地：金澤町的二手服飾天堂（價格比原宿便宜30%）與KICHIJOJI的隱藏店鋪，以及東京人最愛的「東京人專用」咖啡廳「Café Kitsuné」的時尚攝影背景。<span class="tag">時尚</span><span class="tag">拍照</span><span class="tag">隱藏店鋪</span></p>
+                <div class="pro-tip">
+                    <p>💡 <strong>東京人的秘密：</strong>在金澤町的「RAKUTEN KIDZ」尋找限量版日本動漫服裝，價格比原宿便宜30%，而且店員會幫你包裝成「東京人專用」的禮盒。提示：週六早上8點開門，東京人會提前排隊！</p>
+                    <p>📍 <strong>必去地點：</strong></p>
+                    <ul>
+                        <li>🛍️ <strong>金澤町二手服飾街</strong>：從東京站步行15分鐘，或搭乘都營地下鐵新宿線到「神保町」站下車</li>
+                        <li>☕ <strong>Café Kitsuné</strong>：位於表參道，東京人最愛的時尚咖啡廳，點心價格在¥800-¥1,500</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 美食家 -->
+            <div class="card persona-card animate delay-3 delay-1">
+                <span class="card-emoji">🍜</span>
+                <h3>美食家</h3>
+                <p>東京人最愛的美食秘密：築地市場的「東京人專用」魚市場（早上6點開門，避開觀光客）、神田神保町的拉麵博物館（可以買到「拉麵套裝」回家自己做）、以及新宿西口的「お好み焼き街」（東京人最愛的小吃，但沒有人排隊）。<span class="tag">美食</span><span class="tag">當地人</span><span class="tag">實用技巧</span></p>
+                <div class="pro-tip">
+                    <p>💡 <strong>東京人的秘密：</strong>在神田神保町的「拉麵博物館」買一碗「拉麵套裝」（¥1,500），回家自己做！店員會教你「東京人專用」的拉麵技巧。提示：週二17:30後免費參觀博物館！</p>
+                    <p>📍 <strong>必去地點：</strong></p>
+                    <ul>
+                        <li>🐟 <strong>築地市場</strong>：早上6點開門，東京人會提前排隊買新鮮海鮮</li>
+                        <li>🍜 <strong>拉麵博物館</strong>：位於神田神保町，週二17:30後免費參觀</li>
+                        <li>🍢 <strong>新宿西口お好み焼き街</strong>：東京人最愛的小吃，價格在¥500-¥1,000/份</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 文化探索 -->
+            <div class="card persona-card animate delay-3 delay-2">
+                <span class="card-emoji">🏯</span>
+                <h3>文化探索</h3>
+                <p>東京最古老的文化遺跡：上野的國立博物館（週二17:30後免費）、後樂園的江戶風情（東京人最愛的櫻花季地點，但需要提前預約）、以及谷中古民家街（可以品嚐到價格便宜一半的和菓子）。<span class="tag">歷史</span><span class="tag">文化</span><span class="tag">季節性</span></p>
+                <div class="pro-tip">
+                    <p>💡 <strong>東京人的秘密：</strong>在谷中「古民家」的茶屋裡品嚐「和菓子」，價格比觀光景點便宜一半（¥300-¥600/份）。提示：週六早上8點開門，東京人會提前排隊！</p>
+                    <p>📍 <strong>必去地點：</strong></p>
+                    <ul>
+                        <li>🏯 <strong>上野國立博物館</strong>：週二17:30後免費參觀</li>
+                        <li>🌸 <strong>後樂園</strong>：東京人最愛的櫻花季地點，需要提前預約</li>
+                        <li>🏡 <strong>谷中古民家街</strong>：可以品嚐到價格便宜一半的和菓子</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 夜生活 -->
+            <div class="card persona-card animate delay-3 delay-3">
+                <span class="card-emoji">🌃</span>
+                <h3>夜生活</h3>
+                <p>東京人最愛的夜間體驗：六本木的藝術地下空間（需要提前預約）、新宿歌舞伎町的神秘酒吧（東京人專用的混音派對）、以及涉谷的「東京人專用」夜間市場（週五晚上8點開市）。<span class="tag">夜間</span><span class="tag">社交</span><span class="tag">隱藏場所</span></p>
+                <div class="pro-tip">
+                    <p>💡 <strong>東京人的秘密：</strong>在新宿的「Bar High Five」預約「東京人專屬」的混音派對（需提前一個月預約，門票¥5,000）。提示：派對開始前一小時到達，可以免費品嚐東京人最愛的「高級雞尾酒」！</p>
+                    <p>📍 <strong>必去地點：</strong></p>
+                    <ul>
+                        <li>🎨 <strong>六本木藝術地下空間</strong>：需要提前預約，門票¥3,000</li>
+                        <li>🍸 <strong>Bar High Five</strong>：東京人專用的混音派對，需提前一個月預約</li>
+                        <li>🛍️ <strong>涉谷夜間市場</strong>：週五晚上8點開市，東京人最愛的夜間購物地點</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 東京生活者 -->
+            <div class="card persona-card animate delay-3 delay-4">
+                <span class="card-emoji">🏠</span>
+                <h3>東京生活者</h3>
+                <p>東京人日常生活中的秘密基地：中野的二手家具市場（週六早上8點開門，可以買到價格便宜的家具）、池袋的地下商場（東京人最愛的拉麵店，但需要提前預約）、以及品川的海之公園（可以看到東京晴空塔，但沒有遊客）。<span class="tag">生活實用</span><span class="tag">當地人</span><span class="tag">隱藏景點</span></p>
+                <div class="pro-tip">
+                    <p>💡 <strong>東京人的秘密：</strong>在中野太陽廣場的二手家具市場買家具，週六早上8點開門，東京人會提前排隊。提示：家具價格在¥1,000-¥10,000/件，收藏品¥500-¥5,000/件！</p>
+                    <p>📍 <strong>必去地點：</strong></p>
+                    <ul>
+                        <li>🛋️ <strong>中野太陽廣場</strong>：週六早上8點開門，東京人最愛的二手家具市場</li>
+                        <li>🍜 <strong>池袋太陽廣場地下街</strong>：東京人最愛的拉麵店，需要提前預約</li>
+                        <li>🌊 <strong>品川海之公園</strong>：可以看到東京晴空塔，但沒有遊客</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Gems -->
+    <section class="section" id="hidden-gems">
+        <h2 class="section-title animate delay-1">東京人的「秘密基地」</h2>
+        <p class="section-subtitle animate delay-2">不在導遊手冊上的10個地點，絕對不在任何旅遊網站上</p>
+
+        <div class="cards">
+            <!-- 神田川河川敷 -->
+            <div class="card hidden-gem-card animate delay-3">
+                <span class="card-emoji">🌿</span>
+                <h3>神田川河川敷</h3>
+                <p>東京人週末露營、野餐的聖地。夏季可以租借「東京人專用」的野餐桌（價格僅¥1,000），還有隱藏的「東京人專用」烤肉區域。提示：週六晚上會有「東京人專用」的露營派對！<span class="tag">戶外</span><span class="tag">季節性</span><span class="tag">社交</span></p>
+                <div class="pro-tip">
+                    <p>📍 <strong>如何前往：</strong>從秋葉原站步行10分鐘，或搭乘都營地下鐵新宿線到「神保町」站下車。夏季會有「東京人專用」的野餐區域，但需要提前預約（週五晚上8點開始預約）。</p>
+                    <p>💰 <strong>預算：</strong></p>
+                    <ul>
+                        <li>野餐桌租借：¥1,000</li>
+                        <li>當地小吃：¥500-¥1,500/人</li>
+                        <li>隱藏烤肉區域：¥2,000/人（包含調味料）</li>
+                    </ul>
+                    <p>💡 <strong>東京人的秘密：</strong>在週六晚上8點到達，可以參加「東京人專用」的露營派對，免費品嚐東京人最愛的「野餐小吃」！</p>
+                </div>
+            </div>
+
+            <!-- 代官山山手 -->
+            <div class="card hidden-gem-card animate delay-3 delay-1">
+                <span class="card-emoji">🗼</span>
+                <h3>代官山山手</h3>
+                <p>免費的城市公園，可以看到東京塔全景，但沒有人排隊。東京人喜歡在這裡野餐或看日落，還有隱藏的「東京人專用」咖啡車。提示：傍晚6點到7點是最佳觀景時間！<span class="tag">戶外</span><span class="tag">免費</span><span class="tag">景觀</span></p>
+                <div class="pro-tip">
+                    <p>📍 <strong>如何前往：</strong>從代官山站步行5分鐘，或搭乘都營大江戶線到「代官山」站下車。最佳時間是傍晚6點到7點，可以看到東京塔的燈光秀。</p>
+                    <p>💡 <strong>東京人的秘密：</strong>在公園裡的「東京人專用」咖啡車「Café de L'Air」品嚐¥800的抹茶蛋糕，還可以免費參加「東京人專用」的日落攝影教學（週六晚上8點開始）。</p>
+                    <p>📸 <strong>拍照技巧：</strong></p>
+                    <ul>
+                        <li>使用「東京人專用」的攝影角度：從公園的西側拍攝東京塔，可以避開人群</li>
+                        <li>傍晚6點到7點是最佳拍攝時間，燈光秀開始前10分鐘開始拍攝</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 池袋太陽廣場地下街 -->
+            <div class="card hidden-gem-card animate delay-3 delay-2">
+                <span class="card-emoji">🛍️</span>
+                <h3>池袋太陽廣場地下街</h3>
+                <p>東京最大的地下商場，有「東京人最愛的拉麵店」排隊，但地下2樓的「東京人專用」餐廳幾乎沒有人。提示：地下2樓的「Ichiran」拉麵店需要提前預約，但地下3樓的「東京人專用」餐廳幾乎沒有人！<span class="tag">美食</span><span class="tag">購物</span><span class="tag">隱藏場所</span></p>
+                <div class="pro-tip">
+                    <p>📍 <strong>如何前往：</strong>從池袋站西口步行2分鐘。地下2樓的「東京人專用」餐廳「Ichiran」拉麵店，需要提前預約（官方網站預約）。</p>
+                    <p>💰 <strong>預算：</strong></p>
+                    <ul>
+                        <li>拉麵：¥1,000-¥1,500/碗</li>
+                        <li>地下街的小吃：¥300-¥800/份</li>
+                        <li>東京人專用餐廳：¥1,500-¥2,500/人</li>
+                    </ul>
+                    <p>💡 <strong>東京人的秘密：</strong>在地下3樓的「東京人專用」餐廳「Gonpachi」品嚐「東京人專用」的壽司套餐（¥2,500/人），幾乎沒有人知道這家店！</p>
+                </div>
+            </div>
+
+            <!-- 品川海之公園 -->
+            <div class="card hidden-gem-card animate delay-3 delay-3">
+                <span class="card-emoji">🌊</span>
+                <h3>品川海之公園</h3>
+                <p>東京灣的海邊公園，可以看到東京晴空塔，但沒有遊客。東京人喜歡在這裡看日出或日落，還有隱藏的「東京人專用」咖啡廳。提示：清晨6點到7點是最佳觀景時間！<span class="tag">戶外</span><span class="tag">景觀</span><span class="tag">季節性</span></p>
+                <div class="pro-tip">
+                    <p>📍 <strong>如何前往：</strong>從品川站步行15分鐘，或搭乘JR山手線到「品川」站下車。最佳時間是清晨6點到7點，可以看到東京灣的美景。</p>
+                    <p>💡 <strong>東京人的秘密：</strong>在公園裡的「東京人專用」咖啡廳「Café de L'Air」品嚐¥900的海鮮套餐，還可以免費參加「東京人專用」的日出攝影教學（週六早上6點開始）。</p>
+                    <p>📸 <strong>拍照技巧：</strong></p>
+                    <ul>
+                        <li>使用「東京人專用」的攝影角度：從公園的東側拍攝東京晴空塔，可以避開人群</li>
+                        <li>清晨6點到7點是最佳拍攝時間，日出前10分鐘開始拍攝</li>
+                        <li>使用「東京人專用」的攝影濾鏡：可以在咖啡廳免費借用</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 中野太陽廣場 -->
+            <div class="card hidden-gem-card animate delay-3 delay-4">
+                <span class="card-emoji">🛋️</span>
+                <h3>中野太陽廣場</h3>
+                <p>二手家具市場，東京人買家具的地方。週六早上8點開門可以找到價格便宜的家具和收藏品，還有隱藏的「東京人專用」家具修復店。提示：週六早上7點到達，可以排到最前面！<span class="tag">購物</span><span class="tag">收藏</span><span class="tag">實用技巧</span></p>
+                <div class="pro-tip">
+                    <p>📍 <strong>如何前往：</strong>從中野站步行5分鐘。週六早上8點開門，東京人會提前排隊。</p>
+                    <p>💰 <strong>預算：</strong></p>
+                    <ul>
+                        <li>家具：¥1,000-¥10,000/件</li>
+                        <li>收藏品：¥500-¥5,000/件</li>
+                        <li>東京人專用家具修復：¥2,000-¥5,000/件</li>
+                    </ul>
+                    <p>💡 <strong>東京人的秘密：</strong>在週六早上7點到達，可以排到最前面，還可以免費參加「東京人專用」的家具修復教學（8點開始）。</p>
+                    <p>🛠️ <strong>購物技巧：</strong></p>
+                    <ul>
+                        <li>使用「東京人專用」的議價技巧：說「東京人です！」（我是東京人！）可以議價20%</li>
+                        <li>週六早上8點開門前10分鐘開始排隊</li>
+                        <li>家具修復店位於地下1樓，幾乎沒有人知道</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 目黑川河川敷 -->
+            <div class="card hidden-gem-card animate delay-3 delay-5">
+                <span class="card-emoji">

@@ -1,0 +1,536 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花蓮，這個等你回家的地方</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-bg: #faf8f5;
+  --c-surface: #fff;
+  --c-surface-2: #f5f0eb;
+  --c-border: rgba(0,0,0,0.06);
+  --c-text: #2a2018;
+  --c-text-dim: #7a6e60;
+  --c-accent: #d4522a;
+  --c-accent-glow: rgba(212,82,42,0.08);
+  --c-accent-border: rgba(212,82,42,0.2);
+  --c-warm-glow: rgba(212,82,42,0.05);
+  --c-title-gradient: linear-gradient(135deg, #2a2018 20%, #d4522a);
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-md: 16px;
+  --shadow-hover: 0 12px 40px rgba(212,82,42,0.1);
+  --card-height: 400px;
+}
+
+:root[data-theme="dark"] {
+  --c-bg: #0a0a12;
+  --c-surface: #12121c;
+  --c-surface-2: #1a1a28;
+  --c-border: rgba(255,255,255,0.06);
+  --c-text: #eae8e4;
+  --c-text-dim: #8a8a9a;
+  --c-accent: #ff6b4a;
+  --c-accent-glow: rgba(255,107,74,0.12);
+  --c-accent-border: rgba(255,107,74,0.25);
+  --c-warm-glow: rgba(255,107,74,0.05);
+  --c-title-gradient: linear-gradient(135deg, #fff 20%, #ff6b4a);
+  --shadow-hover: 0 12px 40px rgba(255,107,74,0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ── 【改進 2】亮暗雙主題切換 ── */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/hualien-hero/1600/900') center/cover no-repeat;
+  background-size: cover;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-accent-glow), transparent),
+              radial-gradient(ellipse 60% 40% at 80% 80%, var(--c-warm-glow), transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  background: var(--c-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.hero .subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--c-text-dim);
+  max-width: 640px;
+  position: relative;
+}
+
+.hero .cta-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--c-text-dim);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  overflow: hidden;
+  min-height: var(--card-height);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--c-accent-border);
+}
+
+.card-image-container {
+  position: relative;
+  margin: -2rem -2rem 1.5rem -2rem;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  background: var(--c-surface-2, #f0ede8);
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.card p {
+  color: var(--c-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.card .details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-border);
+  font-size: 0.9rem;
+  color: var(--c-text-dim);
+}
+
+.card .details ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.card .details li {
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--c-accent-glow);
+  color: var(--c-accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+  align-self: flex-start;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--c-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--c-accent-glow);
+}
+
+.cta-outline {
+  background: transparent;
+  border: 2px solid var(--c-accent);
+  color: var(--c-accent);
+}
+
+.cta-outline:hover {
+  background: var(--c-accent-glow);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.highlight-box {
+  background: var(--c-surface-2);
+  border-left: 4px solid var(--c-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--c-text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--c-border);
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+<button class="theme-toggle" aria-label="切換主題">🌙</button>
+
+<div class="hero animate">
+  <div class="hero-content">
+    <h1>花蓮，這個等你回家的地方</h1>
+    <p class="subtitle">火車進站的汽笛聲、海風裡的鹹味，還有奶奶包的紅糖芋頭，都在等你回來</p>
+    <div class="cta-group">
+      <a href="#section-1" class="cta">開始返鄉之旅</a>
+      <a href="#section-2" class="cta cta-outline">查看行程建議</a>
+    </div>
+  </div>
+</div>
+
+<section class="section animate delay-1" id="section-1">
+  <div class="section-header">
+    <h2 class="section-title">「回家」的火車票上，寫著你的名字</h2>
+    <p class="section-subtitle">車窗外，太平洋的波浪拍打著玻璃，像是有人在對你說：「快回來！」</p>
+  </div>
+
+  <div class="cards">
+    <!-- 第一張卡片 -->
+    <div class="card animate delay-2">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/taro-cake/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="奶奶包裹紅糖芋頭的手，溫暖的手工包裝散發著花蓮特有的香氣" class="card-image">
+      </div>
+      <h3>奶奶的紅糖芋頭，包裹著回家的味道</h3>
+      <p>還記得奶奶在花蓮車站塞進你包包的東西嗎？紅糖包裹的芋頭，外面還用紅線綁著，像是小小的禮物。她說：「這是花蓮的味道，吃一口就知道回家了。」車廂裡的空調吹不走那股溫熱，每一口都像是她在車窗外對你說：「快點回來。」</p>
+      <div class="details">
+        <ul>
+          <li>紅糖芋頭在花蓮太魯閣很常見，當地的「阿美族手工藝館」是個好地方，地址在太魯閣鎮中山路1號，離火車站走路大概10分鐘。</li>
+          <li>紅糖芋頭的價格約新台幣150-200元一包，包裝簡單但很有手工感，奶奶那種包裹得緊緊的，吃起來特別好吃。</li>
+          <li>最好在秋冬季節買，因為芋頭收成的時候糖分最高，而且紅糖的香氣也更濃郁。如果想買更多，花蓮的「農產品市場」也有賣，但手工藝館的更有溫度。</li>
+        </ul>
+      </div>
+      <div class="tag">溫暖</div>
+    </div>
+
+    <!-- 第二張卡片 -->
+    <div class="card animate delay-3">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/train-mountain/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="火車車廂內，有人低聲唱著《花蓮的天》，車窗外是模糊的山影" class="card-image">
+      </div>
+      <h3>車廂裡的《花蓮的天》，唱給你聽的</h3>
+      <p>有人在唱歌了，聲音低沉但清晰，像是《花蓮的天》的旋律在金屬車廂裡回盪。你抬頭一看，是個陌生的阿伯，手裡拿著一張泛黃的紙，唱著：「花蓮的天，花蓮的雨……」歌聲在車廂裡顫抖，讓你突然想起小時候在花蓮的夜晚，窗外的雨聲和這首歌混在一起。有人递給你一張紙巾，上面寫著：「唱給你聽的。」</p>
+      <div class="tag">懷舊</div>
+    </div>
+
+    <!-- 第三張卡片 -->
+    <div class="card animate delay-4">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/taroko-gorge/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="火車窗外，太魯閣山脈的山影層層疊疊，像是故鄉的手掌在等待" class="card-image">
+      </div>
+      <h3>山影疊疊，像是故鄉的手</h3>
+      <p>遠方的山影越來越近，一層層疊起來，像是故鄉的手掌，等著你回握。太魯閣的山脈在車窗外變得清晰，你突然想起小時候和爸在山上摘野果的日子。火車越過隧道，山影在車窗上跳動，像是有人在對你說：「我們在等你。」手機信號一閃一閃，短信提示：「火車快到花蓮了，我們在月台等你。」</p>
+      <div class="tag">回家</div>
+    </div>
+  </div>
+</section>
+
+<section class="section animate delay-1" id="section-2">
+  <div class="section-header">
+    <h2 class="section-title">下車的瞬間，海風就把你的記憶吹醒了</h2>
+    <p class="section-subtitle">空氣裡有鹹鹹的味道，像是童年時候在海邊吃的鹹酥雞，又甜又咸</p>
+  </div>
+
+  <div class="cards">
+    <!-- 卡片1：機車接送 -->
+    <div class="card animate delay-2">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/hualien-station/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮火車站前，機車車主笑著遞出雨傘和米粉" class="card-image">
+      </div>
+      <h3>火車站前的「嗚嗚」聲，是回家的第一聲</h3>
+      <p>下了火車，站在花蓮站前，一輛老舊機車「嗚嗚」一聲停在你面前，車主大叔笑著說：「我送你去！」車籃裡還放著一把雨傘（萬一下雨）和一包花蓮米粉（萬一餓了）。那種熟悉的味道，讓你突然想起小學時候放學後，媽媽在車站等你的場景。車子開得不快，但每一段路都像是慢動作，讓你有時間回憶每一個轉彎背後的故事。大叔說：「花蓮的路不急，你也別急。」</p>
+      <div class="tag">機車接送</div>
+    </div>
+
+    <!-- 卡片2：油煎香蕉攤 -->
+    <div class="card animate delay-3">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/night-market/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮夜市小吃攤，香氣四溢的油煎香蕉" class="card-image">
+      </div>
+      <h3>油煎香蕉的香氣，讓我想起大媽的笑容</h3>
+      <p>走在夜市的小巷子，油煎香蕉的香氣就直衝鼻子，讓你忍不住停下腳步。攤主大媽一看到你，就笑著說：「又胖了，多吃點！」她手裡的鐵叉「滋滋」作響，香蕉片金黃酥脆，夾著花生粉和芋頭粉，一口下去甜甜的、香香的，還帶點鹹味。她說這是她兒子小學時候最愛吃的，現在她兒子在台中上班，但每次回來都要吃一大碗。你突然覺得，這個小吃攤不只是賣食物，而是賣著一個個家庭的回憶。大媽還給你一個小紙袋，說：「帶點回去給你媽媽吃。」</p>
+      <div class="details">
+        <ul>
+          <li>攤位在**光復路夜市**靠近**花蓮火車站**的巷子裡，晚上7點左右就開始排隊了（夏天更早，因為人多）</li>
+          <li>香蕉阿姨的秘密是用**花生醬和辣椒醬**混合的特製醬料，她會自己調配，味道又甜又辣又有嚼勁</li>
+          <li>她家的香蕉是從**玉里**買來的，每次我問她為什麼不換攤位，她就說「這裡的客人熟，不用多說話」，所以每次我都會跟她聊半小時以上（她還會推薦她家的**芋圓湯**，新台幣50元一碗，超值）</li>
+          <li>最好在**秋冬季**去，因為香蕉阿姨會用**紅糖和花生粉**多做幾種口味，而且夜市人潮不會太擠（夏天太熱，她會減少量）</li>
+        </ul>
+      </div>
+      <div class="tag">花蓮夜市</div>
+    </div>
+
+    <!-- 卡片3：海邊的石頭 -->
+    <div class="card animate delay-4">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/ocean-pebble/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮瑞穗海邊被海水打磨光滑的石頭，手指輕觸的瞬間" class="card-image">
+      </div>
+      <h3>海邊的石頭，像是童年時候的手掌</h3>
+      <p>到了海邊，你會忍不住走到岸邊，撿起那些被海水打磨得光滑的石頭。手指輕輕一摸，石頭的溫度剛好，像是童年時候在沙灘上玩耍時，手指不小心被太陽曬紅的感覺。石頭上還有海蝦的痕跡，讓你想起小學時候和朋友一起撿貝殼、追海蝦的日子。海風吹來，帶著鹹鹹的味道，讓你突然想起媽媽在海邊給你買的鹹酥雞，又甜又咸，一口下去就能嚐到童年的味道。你坐在石頭上，看著海浪一波一波地拍打岸邊，突然覺得時間好像停止了一樣。遠處，一個小男孩也在撿石頭，你忍不住對他說：「這些石頭，都是花蓮的記憶。」</p>
+      <div class="details">
+        <ul>
+          <li>**瑞穗沙灘**的海岸線是最容易找到這種被海水打磨光滑的石頭的地方，特別是靠近海邊的岩石區，隨手可得。</li>
+          <li>夏季（6-9月）是最好的時候去，海風涼爽，石頭上還可能有海水的鹹味，更能感受到海洋的氣息。</li>
+          <li>如果想要更特別的石頭，可以去當地的**瑞穗漁港**附近，漁民們有時會把一些特別的石頭或貝殼放在岸邊，價格從幾十元到幾百元不等（視大小和稀有度而定）。</li>
+        </ul>
+      </div>
+      <div class="tag">花蓮海岸</div>
+    </div>
+  </div>
+</section>
+
+<section class="section animate delay-3" id="section-3">
+  <div class="section-header">
+    <h2 class="section-title">故鄉的夜晚，星星比城市裡多很多</h2>
+    <p class="section-subtitle">坐在海邊的石階上，你數著星星，發現它們比你記憶中的還要亮，還要近，似乎在對你說：「我們一直在這裡等你。」</p>
+  </div>
+
+  <div class="cards">
+    <!-- 卡片 1 -->
+    <div class="card animate delay-2">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/mango-dessert/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮夜市的甜點攤位，燈光溫暖，水果和奶油的甜點擺滿桌上" class="card-image">
+      </div>
+      <h3>夜市裡的「芒果鳳梨奶油」甜點，吃起來像童年</h3>
+      <p>花蓮的夜市裡，有一家小攤位專賣用當地芒果、鳳梨和奶油做成的甜點，外皮軟軟的，裡面滿滿的果肉，一口下去就能聞到海風的味道。攤主說這是他媽媽的秘方，每晚只做幾份，常常還沒到你手上就被搶光了。你當時買了兩份，一份給自己，一份給坐在旁邊的姑姑。她吃了一口就說：「這味道，我小學時在學校食堂吃過。」攤主笑著說：「這裡的每一份，都是為了讓你們回來吃的。」</p>
+      <div class="tag">夜市美食</div>
+    </div>
+
+    <!-- 卡片 2 -->
+    <div class="card animate delay-3">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/sunset-fishing/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="夕陽下的瑞穗海邊，父子倆坐在石階上，釣竿輕輕搖晃，海風拂面" class="card-image">
+      </div>
+      <h3>海風裡的童年回憶，爸爸說的「海有多寬」</h3>
+      <p>你們坐在瑞穗沙灘的石階上，腳邊是溫暖的海水，爸爸說：「等你長大了，就知道這海有多寬。」當時你覺得他只是隨口說說，但現在站在這裡，你才明白他當時的意思。海風帶著鹹鹹的味道，讓你想起小時候和他一起釣魚的時候，你總是不耐煩，他卻能坐一整晚，只為了看魚咬鉤的瞬間。現在，你坐在同一個地方，手裡拿著他當年用過的釣竿，試著體會他當時的心情。不過，你還是沒有他那樣的耐心，五分鐘就想放棄了。爸爸突然出現在你身後，笑著說：「我們不急，海也不急。」</p>
+      <div class="tag">父子時光</div>
+    </div>
+
+    <!-- 卡片 3 -->
+    <div class="card animate delay-4">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/coastal-night/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮夜晚的海邊小鎮，燈火點點，遠處的山影模糊，海風輕拂" class="card-image">
+      </div>
+      <h3>燈火裡的故鄉，像在等你回家</h3>
+      <p>夜深了，遠處的燈火一盞盞亮起來，像是故鄉的人們在等你回家。你走在熟悉的小巷子裡，路燈下的陰影拉得好長，讓你想起小時候放學回家的路。突然，你聞到熟悉的味道— 可能是隔壁阿姨家的炒米粉，或者是街角的豆漿店。這些小小的細節，讓你覺得這裡的每一個角落都在等你。你停下腳步，看著遠處的燈火，突然有點想哭，但又不想讓自己哭出來。於是，你深深吸了一口海風，對著夜空說：「我回來了。」</p>
+      <div class="tag">故鄉溫暖</div>
+    </div>
+  </div>
+</section>
+
+<section class="section animate delay-1" id="section-4">
+  <div class="section-header">
+    <h2 class="section-title">第二天清晨，太陽從海裡冒出來，像是為你準備的早餐</h2>
+    <p class="section-subtitle">你站在海邊，看著太陽一點一點染紅天空，心裡突然有種說不出的安心，像是回到了童年時候的每一個清晨。</p>
+  </div>
+
+  <div class="cards">
+    <!-- 卡片1 -->
+    <div class="card animate delay-2">
+      <div class="card-image-container">
+        <img src="https://picsum.photos/seed/fishball-morning/640/400" onerror="this.onerror=null;this.src='https://picsum.photos/640/400'" alt="花蓮港早餐攤的魚丸香氣四溢，海風中夾雜著魚油和麵粉的味道" class="card-image">
+      </div>
+      <h3>花蓮港的魚丸早餐，像是回到童年</h3>
+      <p>清晨五點半，花蓮港的早餐攤就開始忙碌了。攤販阿伯的魚丸，外皮金黃酥脆，裡面的魚肉軟嫩，夾著一口豆芽菜，配上熱騰騰的豆漿，一口下去就能聞到海的味道。你突然想起小時候和媽媽一起在花蓮港的早餐攤吃這個，當時媽媽總說：「這才是真正的早餐！」阿伯笑著說：「你媽媽每次來都點這個，說你最愛吃。」你忍不住買了兩份，一份給自己，一份給隔壁的小朋友，他正好也在等早餐。阿伯說：「這就是花蓮的味道，分享給別人，就會變得更好吃。」</p>
+      <div class="details">
+        <ul>
+          <li>地點：光復路海邊攤子（阿玉媽媽的魚丸攤），從花蓮火車站走路約15分鐘，或搭公車到「光復路口」站下即可。</li>
+          <li>時間：攤子從早上五點開始營業，最好趕在七點前去，人少味道更鮮。</li>
+          <li>季節：夏天來吃最舒服，海風吹著，魚丸配上冰鎮的花蓮茶（新台幣20元一杯）超級解暑。冬天也可以，但會多一層溫暖的感覺。</li>
+          <li>秘訣：阿伯會問你「要加點辣油嗎？」我每次都點，因為他家的辣油是自製的，用花蓮的辣椒和芝麻醬調的，超級好吃。</li>
+          <li>其他推薦：旁邊的「阿強的鹹酥雞」也很出名，一份新台幣120元，但要趕快吃，因為攤子早上八點就收攤了。</li>

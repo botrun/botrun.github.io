@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-inbox-processor - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-inbox-processor</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己收集箱處理技能。自動處理收集箱中的 PDF、Office、圖片等檔案，轉換成純文字永久記憶，並將原始檔案歸檔到適當位置。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 收集箱處理技能</h1></p><p><h2>🎯 核心目的</h2></p><p>自動化處理 <code>收集箱/</code> 目錄中的非文字檔案：<br>
+1. <strong>轉純文字</strong> → 永久記憶到 <code>記憶核心/語義記憶/外部文件/</code><br>
+2. <strong>原始檔案歸檔</strong> → 搬移到 <code>素材庫/原始檔案/</code> 對應子目錄<br>
+3. <strong>建立關聯</strong> → 純文字版本包含原始檔案的本地路徑<br>
+4. <strong>版本控制友善</strong> → 純文字上 GitHub，原始檔案本地保留</p><p>---</p><p><h2>📋 處理範圍</h2></p><p><h3>支援檔案類型</h3></p><p>| 類型 | 副檔名 | 歸檔位置 |<br>
+|------|--------|----------|<br>
+| PDF | <code>.pdf</code> | <code>素材庫/原始檔案/PDF/</code> |<br>
+| Word | <code>.doc</code>, <code>.docx</code> | <code>素材庫/原始檔案/Office/</code> |<br>
+| Excel | <code>.xls</code>, <code>.xlsx</code> | <code>素材庫/原始檔案/Office/</code> |<br>
+| PowerPoint | <code>.ppt</code>, <code>.pptx</code> | <code>素材庫/原始檔案/Office/</code> |<br>
+| 圖片 | <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.webp</code> | <code>素材庫/原始檔案/圖片/</code> |<br>
+| 其他 | <code>.epub</code>, <code>.rtf</code> | <code>素材庫/原始檔案/其他/</code> |</p><p><h3>音訊/影片特殊處理</h3></p><p>音訊和影片檔案請使用「永恆知己-語音轉文字」+「永恆知己-會議記錄」技能串接處理。</p><p>---</p><p><h2>🔄 處理流程</h2></p><p><h3>Step 1: 掃描收集箱</h3></p><p><code>`</code>bash<br>
+<h1>掃描收集箱中需要處理的檔案</h1><br>
+find 收集箱/ -type f \( \<br>
+  -name "*.pdf" -o \<br>
+  -name "<em>.doc" -o -name "</em>.docx" -o \<br>
+  -name "<em>.xls" -o -name "</em>.xlsx" -o \<br>
+  -name "<em>.ppt" -o -name "</em>.pptx" -o \<br>
+  -name "<em>.jpg" -o -name "</em>.jpeg" -o -name "*.png" -o \<br>
+  -name "<em>.gif" -o -name "</em>.bmp" -o -name "*.webp" -o \<br>
+  -name "<em>.epub" -o -name "</em>.rtf" \<br>
+\) ! -name ".DS_Store"<br>
+<code>`</code></p><p><h3>Step 2: 呼叫文字轉換技能</h3></p><p>對每個檔案呼叫「永恆知己-文字轉換」技能進行轉換：<br>
+- 使用 Claude API 進行高品質提取<br>
+- 保留結構、表格、格式<br>
+- 輸出 LLM 友善的 Markdown</p><p><h3>Step 3: 語義化命名並寫入記憶</h3></p><p>轉換後的純文字檔案寫入 <code>記憶核心/語義記憶/外部文件/</code>：</p><p><code>`</code><br>
+記憶核心/語義記憶/外部文件/<br>
+├── Claude團隊-產品介紹-2026-02-10.md<br>
+├── 年度報告-財務分析-2026-02-10.md<br>
+└── ...<br>
+<code>`</code></p><p><h3>Step 4: 搬移原始檔案</h3></p><p><code>`</code>bash<br>
+<h1>依檔案類型搬移到對應目錄</h1><br>
+mv 收集箱/example.pdf 素材庫/原始檔案/PDF/example.pdf<br>
+mv 收集箱/report.docx 素材庫/原始檔案/Office/report.docx<br>
+<code>`</code></p><p>---</p><p><h2>📝 純文字格式（含原始檔案關聯）</h2></p><p><code>`</code>markdown<br>
+---<br>
+id: doc-2026-02-10-001<br>
+title: [從內容推斷的語義化標題]<br>
+original_file: 素材庫/原始檔案/PDF/claude-team.pdf<br>
+file_type: PDF<br>
+file_size: 1.2 MB<br>
+speaker: external<br>
+authority: 5<br>
+source_type: document<br>
+captured_at: 2026-02-10T14:30:45<br>
+tags: [標籤1, 標籤2]<br>
+---</p><p><h1>[標題]</h1></p><p>[轉換後的純文字內容]</p><p>---<br>
+<h2>📎 原始檔案資訊</h2></p><p>- <strong>本地路徑</strong>: <code>素材庫/原始檔案/PDF/claude-team.pdf</code><br>
+- <strong>檔案類型</strong>: PDF<br>
+- <strong>轉換時間</strong>: 2026-02-10T14:30:45<br>
+<code>`</code></p><p>---</p><p><h2>⚙️ .gitignore 設定</h2></p><p>確保以下規則已加入 <code>.gitignore</code>：</p><p><code>`</code>gitignore<br>
+<h1>PDF 檔案（全域排除）</h1><br>
+*.pdf</p><p><h1>Office 檔案（全域排除）</h1><br>
+*.doc<br>
+*.docx<br>
+*.xls<br>
+*.xlsx<br>
+*.ppt<br>
+*.pptx</p><p><h1>原始檔案歸檔目錄（本地保留）</h1><br>
+素材庫/原始檔案/<br>
+<code>`</code></p><p><strong>結果</strong>：<br>
+- ✅ 純文字版本（<code>.md</code>）→ 上傳 GitHub<br>
+- ❌ 原始檔案（PDF/Office）→ 本地保留，不上傳</p><p>---</p><p><h2>🚀 使用方式</h2></p><p><h3>自動模式</h3></p><p>當 Claude 發現收集箱有新檔案時自動觸發：</p><p><code>`</code><br>
+用戶：處理收集箱<br>
+Claude：掃描收集箱，找到 3 個檔案...<br>
+        1. claude-team.pdf → 轉換中...<br>
+        2. report.docx → 轉換中...<br>
+        3. data.xlsx → 轉換中...</p><p>        完成！<br>
+        - 純文字已寫入：記憶核心/語義記憶/外部文件/<br>
+        - 原始檔案已歸檔：素材庫/原始檔案/<br>
+<code>`</code></p><p><h3>手動觸發</h3></p><p><code>`</code><br>
+用戶：處理 收集箱/specific-file.pdf<br>
+<code>`</code></p><p>---</p><p><h2>🔍 後續檢索</h2></p><p>轉換完成後，可使用 ripgrep 快速檢索：</p><p><code>`</code>bash<br>
+<h1>檢索所有外部文件</h1><br>
+rg -C 3 "關鍵字" 記憶核心/語義記憶/外部文件/</p><p><h1>找到後查看原始檔案路徑</h1><br>
+<h1>從 metadata 的 original_file 欄位可找到本地路徑</h1><br>
+<code>`</code></p><p>---</p><p><h2>🔗 與其他技能整合</h2></p><p>| 相關技能 | 用途 |<br>
+|----------|------|<br>
+| 永恆知己-文字轉換 | PDF/Office/圖片 → 純文字 |<br>
+| 永恆知己-記憶 | 寫入記憶核心 |<br>
+| 永恆知己-檢索 | 檢索已記憶內容 |<br>
+| 永恆知己-語音轉文字 | 音訊檔案處理 |</p><p>---</p><p><h2>⚠️ 注意事項</h2></p><p>1. <strong>音訊/影片</strong>：不在此技能處理範圍，請使用語音轉文字技能<br>
+2. <strong>機密檔案</strong>：若檔案含機密資訊，請先移到 <code>機密/</code> 目錄<br>
+3. <strong>大型檔案</strong>：超過 50MB 的檔案可能需要較長處理時間<br>
+4. <strong>加密檔案</strong>：加密的 PDF/Office 無法自動處理</p><p>---</p><p><h2>📊 處理報告範例</h2></p><p><code>`</code><br>
+=== 收集箱處理報告 ===</p><p>掃描時間: 2026-02-10T14:30:00<br>
+處理檔案: 3 個</p><p>✅ 成功處理:<br>
+1. claude-team.pdf<br>
+   → 純文字: 記憶核心/語義記憶/外部文件/Claude團隊-產品介紹-2026-02-10.md<br>
+   → 原始檔案: 素材庫/原始檔案/PDF/claude-team.pdf</p><p>2. report.docx<br>
+   → 純文字: 記憶核心/語義記憶/外部文件/年度報告-營運分析-2026-02-10.md<br>
+   → 原始檔案: 素材庫/原始檔案/Office/report.docx</p><p>❌ 處理失敗:<br>
+（無）</p><p>收集箱已清空！<br>
+<code>`</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

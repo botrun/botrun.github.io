@@ -1,0 +1,680 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>回家，重新認識花蓮 | 童年記憶的時光隧道</title>
+<meta name="description" content="重返花蓮，透過童年記憶、在地文化與自然風光，重新認識故鄉的多重面貌。從海岸線的童話到山林的祕密，每一步都充滿溫暖與驚喜。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --c-bg: #0a0a12;
+    --c-surface: #12121c;
+    --c-surface-2: #1a1a28;
+    --c-border: rgba(255,255,255,0.06);
+    --c-text: #eae8e4;
+    --c-text-dim: #8a8a9a;
+    --c-accent: #ff6b4a;
+    --c-accent-glow: rgba(255,107,74,0.12);
+    --c-accent-border: rgba(255,107,74,0.25);
+    --c-warm-glow: rgba(255,107,74,0.05);
+    --c-title-gradient: linear-gradient(135deg, #fff 20%, #ff6b4a);
+    --font-display: 'Noto Serif TC', 'Inter', system-ui, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --radius-md: 16px;
+    --shadow-hover: 0 12px 40px rgba(255,107,74,0.12);
+    --transition-speed: 0.4s;
+}
+
+:root[data-theme="light"] {
+    --c-bg: #faf8f5;
+    --c-surface: #fff;
+    --c-surface-2: #f5f0eb;
+    --c-border: rgba(0,0,0,0.06);
+    --c-text: #2a2018;
+    --c-text-dim: #7a6e60;
+    --c-accent: #d4522a;
+    --c-accent-glow: rgba(212,82,42,0.08);
+    --c-accent-border: rgba(212,82,42,0.2);
+    --c-title-gradient: linear-gradient(135deg, #2a2018 20%, #d4522a);
+    --shadow-hover: 0 12px 40px rgba(212,82,42,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--c-bg);
+    color: var(--c-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    transition: background var(--transition-speed), color var(--transition-speed);
+    padding-top: 60px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    color: var(--c-text);
+    border-radius: 999px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, rgba(255,107,74,0.03) 0%, transparent 70%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-accent-glow), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 80%, var(--c-warm-glow), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: var(--c-title-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.hero .subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--c-text-dim);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.hero .subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--c-accent);
+    border-radius: 1px;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2.2rem;
+    background: var(--c-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) cubic-bezier(0.4,0,0.2,1);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255,107,74,0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left var(--transition-speed);
+    z-index: -1;
+}
+
+.cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(255,107,74,0.3);
+}
+
+.cta:hover::before {
+    left: 100%;
+}
+
+.cta-outline {
+    background: transparent;
+    border: 2px solid var(--c-accent);
+    color: var(--c-accent);
+}
+
+.cta-outline:hover {
+    background: var(--c-accent-glow);
+    color: var(--c-text);
+}
+
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.section-header {
+    margin-bottom: 3.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--c-accent);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--c-text-dim);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 2.2rem;
+    transition: all var(--transition-speed) cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--c-accent-border);
+}
+
+.card-emoji {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    display: block;
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.card:hover .card-emoji {
+    transform: scale(1.2);
+}
+
+.card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--c-text);
+    text-align: center;
+}
+
+.card p {
+    color: var(--c-text-dim);
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.card .details {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--c-border);
+    font-size: 0.9rem;
+    color: var(--c-text-dim);
+}
+
+.card .details ul {
+    padding-left: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.card .details li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.card .details li::before {
+    content: '•';
+    color: var(--c-accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.highlight-box {
+    background: var(--c-surface-2);
+    border-left: 4px solid var(--c-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1.5rem 2rem;
+    margin: 1.8rem 0;
+    font-style: italic;
+    color: var(--c-text-dim);
+    position: relative;
+}
+
+.highlight-box::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+    font-size: 1.2rem;
+    color: var(--c-accent);
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--c-accent-glow);
+    color: var(--c-accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 1.2rem 0 0;
+    text-align: center;
+    transition: all var(--transition-speed);
+}
+
+.card:hover .tag {
+    background: var(--c-accent);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    color: var(--c-accent);
+    margin-top: 0.2rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--c-text-dim);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--c-border);
+    margin-top: 4rem;
+}
+
+.footer a {
+    color: var(--c-accent);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+    }
+
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
+    }
+
+    .card {
+        padding: 1.8rem;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeUp 0.6s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* 新增動畫效果 */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* 修正卡片內容 */
+.card p:last-child {
+    margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+<button class="theme-toggle" aria-label="切換主題">☀️</button>
+
+<section class="hero animate">
+  <div class="hero-content">
+    <h1>回家，重新認識花蓮</h1>
+    <p class="subtitle">
+      太平洋的風吹散了都市的塵埃，
+      童年記憶在每一座山、每一道海岸線等待你回來。
+      這裡不只是風景，更是你童年最真實的時光隧道。
+      讓我們一起重新發現故鄉的多重面貌——從海浪的低語到山林的祕密，
+      每一步都充滿溫暖與驚喜，像是回家的感覺。
+    </p>
+    <div class="cta-group">
+      <a href="#" class="cta">探索花蓮</a>
+      <a href="#" class="cta cta-outline">預約行程</a>
+    </div>
+  </div>
+</section>
+
+<section id="section-1" class="section animate delay-1">
+  <div class="section-header">
+    <h2 class="section-title">故鄉的呼喚：為何回來？</h2>
+    <p class="section-subtitle">
+      在城市的喧囂中，故鄉的聲音悄然呼喚著我們的心靈。這裡不只是地圖上的點，
+      而是童年記憶的起點、親人故事的舞台、以及屬於你的「時光隧道」入口。
+      讓我們一起探索，為何現代遊子會選擇回來——是尋找根源的渴望，
+      還是逃避都市的疲憊？或者，更深層的，是對於「家」這個概念的重新定義？
+    </p>
+  </div>
+
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card animate delay-1">
+      <div class="card-emoji">📸</div>
+      <h3>童年照片中的故鄉：時光隧道的入口</h3>
+      <p>
+        翻開那本泛黃的相簿，你是否還能聞到故鄉特有的味道？從童年照片中的「老街口」到現在的「新都心」，每一張照片都是故鄉變遷的見證。
+        我們將帶你重現那些熟悉的地標——從「阿嬤家的後院」到「學校操場的秋千」，這些地方不僅是地理位置，更是你童年記憶的碎片。
+        試著問問自己：「這些地方現在還在嗎？如果不在，它們留下了什麼？」而更重要的，是這些地方在你心中留下的「感覺」是什麼？
+      </p>
+      <p>
+        例如，你可能記得「學校門口的大榕樹」，現在它是否還在？如果不在，你是否曾想過它的故事？當地人可能會告訴你，這棵樹曾經見證過多少童年遊戲，甚至是第一次戀愛的告白。這些故事不在照片中，但在當地人的記憶裡。
+      </p>
+      <div class="highlight-box">
+        <p><strong>小提示：</strong>準備一本空白相簿，在返鄉途中收集新舊照片的對比，並請當地人為你補充照片背後的故事。這將是你最珍貴的「時光紀錄」！你可以在每頁寫下：「這張照片讓我想起了什麼？」「現在這個地方變成了什麼樣子？」</p>
+      </div>
+      <div class="tag">記憶重現</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card animate delay-2">
+      <div class="card-emoji">🧭</div>
+      <h3>現代遊子的三大返鄉動機：你屬於哪一種？</h3>
+      <p>
+        都市的燈海雖然璀璨，但故鄉的呼喚卻如潮水般湧來。研究顯示，現代遊子返鄉的動機主要有三類：
+        <strong>根源尋找者</strong>（如：想見父母、探索家族歷史、尋找童年玩伴）、
+        <strong>都市逃避者</strong>（如：想呼吸新鮮空氣、遠離壓力、尋找內在平靜）、
+        以及<strong>時光共享者</strong>（如：與家人共度假期、參與在地活動、傳承文化）。
+      </p>
+      <p>
+        你是為了「回家」的感覺，還是為了「逃離」的需要？或者更深層的，是想要「重新認識」這個地方？讓我們一起剖析你的內心動機，並找到最適合你的返鄉方式。
+        例如，如果你是「根源尋找者」，可以專注於家族歷史的探索；如果你是「都市逃避者」，可以選擇更接近自然的體驗；而「時光共享者」則可以參與當地的文化活動。
+      </p>
+      <div class="highlight-box">
+        <p><strong>深度思考：</strong>寫下你返鄉的「真正原因」，然後問問自己：
+        「如果故鄉不再是當初的樣子，我是否仍會回來？」
+        「我希望在故鄉找到什麼，而不只是失去的東西？」
+        這些問題將幫助你更深入地理解自己的返鄉動機。</p>
+      </div>
+      <div class="tag">心理分析</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card animate delay-3">
+      <div class="card-emoji">🌱</div>
+      <h3>返鄉前的心理準備：面對變與不變</h3>
+      <p>
+        故鄉可能已經變得面目全非——街道寬闊了、親戚搬走了、甚至連口音都變了。這種「失落感」是許多返鄉遊子共同的挑戰。
+        我們提供三步驟幫助你做好準備：
+        <strong>1. 低期望值</strong>：接受故鄉可能不再是童年中的樣子，但它仍然是「家」；
+        <strong>2. 尋找新的共鳴點</strong>：如在地藝術、新興產業或年輕人的創業故事；
+        <strong>3. 重新定義「家」</strong>：家不只是房子，更是人與人之間的連結。
+      </p>
+      <p>
+        例如，你可以參加當地的「記憶分享會」，與其他遊子一起探討故鄉的變遷。或者，你可以透過「故鄉地圖」標註出你童年中的重要地點，並預先了解現在的樣貌，減少心理落差。
+        更重要的，是要理解變化是自然的，而「家」的概念是可以重新定義的。例如，你可以將「家」定義為「與親人共度的時光」，而不只是特定的地點。
+      </p>
+      <div class="highlight-box">
+        <p><strong>實用工具：</strong>下載「故鄉地圖APP」，標註出你童年中的重要地點，並請當地人為你補充現在的樣貌。你可以在APP中寫下：「這個地方現在變成了什麼？」「我對這個變化的感受是什麼？」這將幫助你更好地接受變化。</p>
+      </div>
+      <div class="tag">心理建設</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card animate delay-4">
+      <div class="card-emoji">🎨</div>
+      <h3>花蓮在地藝術家的視角：故鄉的多重面貌</h3>
+      <p>
+        故鄉不只是風景，更是藝術家眼中的「活生生的畫布」。花蓮的在地藝術家們，透過攝影、文學或音樂，為故鄉注入新的生命力。
+        例如，攝影師<strong>林XX</strong>用鏡頭捕捉了「阿里山隧道」的光影變化，而作家<strong>陳YY</strong>則在小說中重現了「太魯閣族的口述歷史」。
+      </p>
+      <p>
+        我們將介紹五位在地藝術家的作品，幫助你從不同角度認識故鄉：
+        <strong>自然的美</strong>（如：攝影家捕捉的山林光影）、
+        <strong>文化的根</strong>（如：作家記錄的部落故事）、
+        以及<strong>現代的創新</strong>（如：藝術家結合傳統與現代的作品）。
+        透過參觀他們的展覽或閱讀作品，你將發現故鄉不僅是過去，更是一個正在被重新書寫的故事。
+      </p>
+      <div class="highlight-box">
+        <p><strong>行動建議：</strong>預約「花蓮藝術季」的在地藝術家見面會，與他們對談故鄉的變遷與未來。你可以問他們：
+        「你眼中的故鄉與我記憶中的故鄉有什麼不同？」
+        「你認為故鄉的未來會怎麼樣？」
+        這些對話將幫助你更深入地理解故鄉的多重面貌。</p>
+      </div>
+      <div class="tag">藝術探索</div>
+    </div>
+  </div>
+</section>
+
+<section id="section-2" class="section animate delay-1">
+  <div class="section-header">
+    <h2 class="section-title">山海交響：花蓮的地理情感地圖</h2>
+    <p class="section-subtitle">
+      — 讓每一步都充滿童年回憶與大自然的呼喚，
+      走進花蓮最真實的風景，感受山海交織的情感地圖
+    </p>
+  </div>
+
+  <div class="cards">
+    <!-- 第一張卡片：太平洋海岸線的童話之旅 -->
+    <div class="card animate delay-2">
+      <div class="card-emoji">🌊</div>
+      <h3>太平洋海岸線：童話與海浪的對話</h3>
+      <p>
+        從秀姑巖的海岸開始，這裡不只是岩石與海浪的碰撞，更是童年記憶的起點。
+        當地傳說中，秀姑巖是「海之女神」的化身，每當潮水退去，就能看到她留下的「腳印」— 那些神秘的岩洞。
+        帶著孩子們，在退潮時尋找「女神的腳趾」，或是聽老漁夫講述「海怪與漁船的故事」，讓每一步都充滿童話的魔力。
+      </p>
+      <p>
+        別忘了在光復島的海灘上，尋找「海膽的足跡」— 這裡的沙子在陽光下會閃爍著金色的光芒，像是大自然的珠寶盒。
+        當地居民會告訴你，只有在特定的季節（通常是秋季），才能看到「海膽舞會」的奇景，千萬別錯過這場海洋的盛宴。
+        更有趣的是，你可以在秀姑巖的岩石上找到「愛情的刻痕」— 當地年輕人會在岩石上刻下彼此的名字，象徵著永恆的愛情。
+      </p>
+      <div class="highlight-box">
+        <strong>情感提示：</strong> 在秀姑巖拍照時，別只看風景，試著閉上眼睛聽海浪的聲音，你會聽到童年最遠的呼喚。
+        你可以在日記中寫下：「海浪的聲音讓我想起了什麼？」或者「這個地方讓我感受到什麼？」
+      </div>
+      <div class="tag">海岸線探索</div>
+    </div>
+
+    <!-- 第二張卡片：中央山脈的雨季之旅 -->
+    <div class="card animate delay-3">
+      <div class="card-emoji">🌧️🏔️</div>
+      <h3>中央山脈：雨季中的山林祕密</h3>
+      <p>
+        花蓮的雨季不是單調的陰沉，而是一場山林的交響曲。
+        在玉里的阿里山步道上，每一滴雨水都會在樹葉上跳出音符，而當地的「雨林導覽」會帶你認識「會唱歌的樹」— 那些被雨水沖刷後，樹皮會發出「嗡嗡」聲的古木。
+        更神奇的是，雨季的夜晚，你可以在「七星潭」聽到「山靈的低語」，當地原住民相信，這是祖先在與大地對話。
+      </p>
+      <p>
+        不要害怕雨季的「迷霧」，因為這正是花蓮最神祕的時刻。
+        在「清水斷崖」附近，雨霧會形成「天橋」，連接山與天空，而當地居民會告訴你，只有在雨季，才能看到「山神的背影」— 那些在雲海中若隱若現的山峰。
+        帶一把雨傘，不只是遮雨，更是與山林對話的工具。你可以在雨傘上寫下你的願望，然後將它掛在樹上，象徵著與大自然的連結。
+      </p>
+      <div class="highlight-box">
+        <strong>季節秘技：</strong> 雨季前往「太魯閣國家公園」，在「花蓮森林鐵道」上，你可以看到「雨中的綠色隧道」，每一節車廂都像是走進童話故事。
+        你可以在車窗上貼上一張紙，寫下你想要記住的景色，然後在回家後將它保存起來。
+      </div>
+      <div class="tag">雨季探險</div>
+    </div>
+
+    <!-- 第三張卡片：溫泉與禁忌故事 -->
+    <div class="card animate delay-4">
+      <div class="card-emoji">💆‍♂️🌿</div>
+      <h3>溫泉療癒：冬季的禁忌與溫暖</h3>
+      <p>
+        冬季的花蓮，溫泉不只是放鬆身體，更是與「地火之神」對話的時刻。
+        在「吉安溫泉」的「女神池」，當地傳說中，泡溫泉時如果看到「水中倒影的眼睛」，代表你收到了祖先的祝福。
+        而「七星潭溫泉」的「禁忌」是：千萬別在午夜時分泡溫泉，因為當地人說，這是「鬼魂洗澡的時間」，會帶來不吉利。
+      </p>
+      <p>
+        更有趣的是，在「卓溪溫泉」的「老街」，你可以品嚐到「溫泉蛋糕」— 這是當地獨有的美食，將溫泉水融入麵糰中，吃起來既軟又帶著微微的礦物味。
+        當地老人家會說：「吃了這個，身體就跟溫泉一樣暖和。」而「溫泉按摩」更是一門藝術，師傅會用「花蓮特有的檜木油」為你按摩，讓你感受到「山林的氣息」。
+        你可以在溫泉按摩後，寫下你的感受，並將它放在溫泉旅館的留言簿上，與其他遊客分享。
+      </p>
+      <div class="highlight-box">
+        <strong>溫泉禮儀：</strong> 泡溫泉前，別忘了在「溫泉神社」前點一支線香，祈求「健康與平安」，這是當地人世代相傳的習俗。
+        你可以在線香上寫下你的願望，然後將它放在神社的供桌上，象徵著對故鄉的祝福。
+      </div>
+      <div class="tag">溫泉文化</div>
+    </div>
+  </div>
+</section>
+
+<section class="section animate delay-1" id="section-3">
+  <div class="section-header">
+    <h2 class="section-title">部落的心跳：超越觀光的文化體驗</h2>
+    <p class="section-subtitle">
+      不只是看，而是真正感受原住民族的靈魂與智慧。
+      這裡提供真正的參與機會，讓你成為

@@ -1,0 +1,812 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東京旅遊指南 - 探索東京最佳景點、美食、文化體驗，完整旅遊攻略">
+    <title>東京旅遊指南 | 玩轉東京的完美攻略</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #9c27b0;
+            --accent-color: #3f51b5;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1558026392-4b8c58f5f602?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .btn:hover {
+            background: #d81b60;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .sidebar {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.3s ease, padding 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .content-section img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        /* Travel Tips */
+        .travel-tips {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tip-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .tip-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .tip-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">東京旅遊</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#attractions">景點</a></li>
+                <li><a href="#food">美食</a></li>
+                <li><a href="#culture">文化</a></li>
+                <li><a href="#tips">旅遊秘技</a></li>
+                <li><a href="#contact">聯絡</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="container header-content">
+            <h1>東京旅遊指南</h1>
+            <p>探索東京最熱門景點、美味小吃、文化體驗，完整旅遊攻略，讓你的東京之旅更加精彩絕倫！</p>
+            <a href="#attractions" class="btn">開始探索</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>東京必去景點</h2>
+            <p>東京擁有無數世界級景點，從現代化的摩天大樓到傳統的神社寺廟，每個角落都充滿驚喜。我們為您整理了最完整的東京旅遊攻略，幫助您規劃最佳行程。</p>
+            <a href="#attractions" class="btn">查看所有景點</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>東京旅遊特色</h2>
+                <p>東京結合了現代與傳統的完美融合，為遊客提供多元化的體驗</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>多元景點</h3>
+                    <p>從東京塔到明治神宮，從新宿到浅草，東京擁有各式各樣的景點，滿足不同遊客的需求。</p>
+                </div>
+                <div class="feature-card animate delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>美食天堂</h3>
+                    <p>東京是世界美食之都，從壽司到拉麵，從壽司店到便利商店，每個角落都有美味等著你發現。</p>
+                </div>
+                <div class="feature-card animate delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>經濟實惠</h3>
+                    <p>東京提供多種價格的住宿、餐飲和交通選擇，讓不同預算的遊客都能享受東京之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar animate delay-1">
+                    <h3>東京旅遊目錄</h3>
+                    <ul>
+                        <li><a href="#must-see">必去景點</a></li>
+                        <li><a href="#hidden-gems">隱藏寶石</a></li>
+                        <li><a href="#food-guide">美食指南</a></li>
+                        <li><a href="#transport">交通指南</a></li>
+                        <li><a href="#seasonal">季節活動</a></li>
+                        <li><a href="#budget">預算規劃</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Content -->
+                <main>
+                    <!-- Must See Attractions -->
+                    <section id="must-see" class="content-section animate delay-2">
+                        <h2>東京必去景點</h2>
+                        <p>這些景點是東京的代表，絕對不能錯過！</p>
+
+                        <div style="margin: 40px 0;">
+                            <h3>1. 橫濱 - 東京的門戶</h3>
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="橫濱港">
+                            <p>橫濱是東京的重要門戶，擁有著名的橫濱港、中華街和山手線。從橫濱出發，您可以輕鬆前往東京市區，同時也能體驗到不同的文化氛圍。</p>
+                            <ul>
+                                <li><strong>必去景點：</strong>橫濱港大鐘、中華街、山下公園</li>
+                                <li><strong>交通：</strong>JR橫濱站、橫濱地鐵</li>
+                                <li><strong>美食推薦：</strong>中華街的燒肉、拉麵</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>2. 新宿 - 現代東京的心臟</h3>
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="新宿夜景">
+                            <p>新宿是東京的商業和娛樂中心，擁有著名的新宿站、歌舞伎町和新宿御苑。這裡是夜生活的熱點，同時也是購物和觀光的好去處。</p>
+                            <ul>
+                                <li><strong>必去景點：</strong>新宿站、歌舞伎町、新宿御苑、東京塔</li>
+                                <li><strong>交通：</strong>新宿站（JR、地鐵多條線路交匯）</li>
+                                <li><strong>美食推薦：</strong>新宿神樂坂的壽司、歌舞伎町的燒肉</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>3. 浅草 - 東京的傳統文化</h3>
+                            <img src="https://images.unsplash.com/photo-1558026392-4b8c58f5f602?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="浅草寺">
+                            <p>浅草是東京最古老的地區之一，擁有著名的浅草寺和雷門。這裡保留了許多江戶時代的風貌，是體驗東京傳統文化的最佳地點。</p>
+                            <ul>
+                                <li><strong>必去景點：</strong>浅草寺、雷門、寶藏市場</li>
+                                <li><strong>交通：</strong>浅草站（東武鐵道、地鐵）</li>
+                                <li><strong>美食推薦：</strong>浅草的天婦羅、寶藏市場的小吃</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Hidden Gems -->
+                    <section id="hidden-gems" class="content-section animate delay-3">
+                        <h2>東京隱藏寶石</h2>
+                        <p>這些地方可能不如主流景點知名，但卻有著獨特的魅力，值得您花時間探索。</p>
+
+                        <div style="margin: 40px 0;">
+                            <h3>1. 代代木公園 - 綠色綿延的休閒天堂</h3>
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="代代木公園">
+                            <p>代代木公園是東京最大的都市公園之一，擁有廣闊的綠地、湖泊和運動設施。這裡是東京人休閒的好去處，也是舉辦大型活動的場地。</p>
+                            <ul>
+                                <li><strong>特色：</strong>日本武道館、代代木體育館、國立競技場</li>
+                                <li><strong>交通：</strong>代代木上原站、原宿站</li>
+                                <li><strong>季節活動：</strong>櫻花季、秋季紅葉</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>2. 小石川後樂園 - 歷史與自然的結合</h3>
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb39278827?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="小石川後樂園">
+                            <p>小石川後樂園是東京少數保留江戶時代風貌的庭園之一，擁有著名的櫻花樹和傳統建築。這裡是體驗東京歷史文化的絕佳場所。</p>
+                            <ul>
+                                <li><strong>特色：</strong>櫻花、傳統庭園、歷史建築</li>
+                                <li><strong>交通：</strong>後樂園站</li>
+                                <li><strong>開放時間：</strong>全年開放，櫻花季特別熱門</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>3. 表參道 - 時尚與歷史的融合</h3>
+                            <img src="https://images.unsplash.com/photo-1558026392-4b8c58f5f602?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="表參道">
+                            <p>表參道是東京最時尚的街道之一，擁有許多高級商店、藝術畫廊和歷史建築。這裡是東京人購物和休閒的熱門地點。</p>
+                            <ul>
+                                <li><strong>特色：</strong>時尚購物、歷史建築、美術館</li>
+                                <li><strong>交通：</strong>表參道站、原宿站</li>
+                                <li><strong>推薦店家：</strong>三越百貨、原宿的時尚店鋪</li>
+                            </ul>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Guide -->
+    <section class="main-content" id="food">
+        <div class="container">
+            <div class="content-grid">
+                <aside class="sidebar animate delay-1">
+                    <h3>東京美食分類</h3>
+                    <ul>
+                        <li><a href="#street-food">街頭小吃</a></li>
+                        <li><a href="#traditional">傳統美食</a></li>
+                        <li><a href="#modern">現代創意</a></li>
+                        <li><a href="#cafes">咖啡茶館</a></li>
+                        <li><a href="#desserts">甜點</a></li>
+                        <li><a href="#drinks">飲品</a></li>
+                    </ul>
+                </aside>
+
+                <main>
+                    <section id="street-food" class="content-section animate delay-2">
+                        <h2>東京街頭小吃</h2>
+                        <p>東京的街頭小吃種類繁多，價格親民，是體驗當地美食文化的最佳方式。</p>
+
+                        <div style="margin: 40px 0;">
+                            <h3>1. 天婦羅（天婦羅）</h3>
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="天婦羅">
+                            <p>天婦羅是日本的經典小吃，以魚或蔬菜為主要食材，蘸上特製的天婦羅醬。東京的浅草和新宿是品嚐天婦羅的熱門地點。</p>
+                            <ul>
+                                <li><strong>推薦店家：</strong>浅草的天婦羅專門店、新宿的天婦羅連鎖店</li>
+                                <li><strong>價格：</strong>¥500-¥1500</li>
+                                <li><strong>最佳時間：</strong>晚餐時間或夜間</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>2. 燒肉（焼肉）</h3>
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="燒肉">
+                            <p>燒肉是韓國和日本都很流行的美食，在東京有許多專門的燒肉店。您可以自己烤肉，享受新鮮的肉類和蔬菜。</p>
+                            <ul>
+                                <li><strong>推薦店家：</strong>歌舞伎町的燒肉店、新宿的韓國料理店</li>
+                                <li><strong>價格：</strong>¥2000-¥5000（人均）</li>
+                                <li><strong>最佳時間：</strong>晚餐時間</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 40px 0;">
+                            <h3>3. 便當（弁当）</h3>
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="便當">
+                            <p>便當是日本人最喜愛的午餐選擇，東京的便當種類繁多，從簡單的三文治到精緻的高級便當應有盡有。便利商店的便當也是品嚐東京美食的好方法。</p>
+                            <ul>
+                                <li><strong>推薦店家：</strong>便利商店（FamilyMart、7-Eleven、Lawson）、專門便當店</li>
+                                <li><strong>價格：</strong>¥300-¥1500</li>
+                                <li><strong>最佳時間：</strong>午餐時間</li>
+                            </ul>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips -->
+    <section class="travel-tips" id="tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>東京旅遊秘技</h2>
+                <p>這些實用的旅遊秘技將幫助您更順利地遊覽東京，節省時間和金錢。</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card animate delay-1">
+                    <div class="tip-number">1</div>
+                    <h3>交通卡的使用</h3>
+                    <p>購買Suica或Pasmo交通卡，可以在東京的地鐵、巴士和JR線上便捷地乘車。這些卡片可以充值，也可以在離開東京時退款剩餘金額。</p>
+                </div>
+                <div class="tip-card animate delay-2">
+                    <div class="tip-number">2</div>
+                    <h3>預約熱門景點</h3>
+                    <p>東京的熱門景點如東京迪士尼、東京塔等，通常需要預約。提前在線上預約可以節省時間，避免排隊。</p>
+                </div>
+                <div class="tip-card animate delay-3">
+                    <div class="tip-number">3</div>
+                    <h3>學習基本日語</h3>
+                    <p>學習一些基本的日語問候和用語，如「こんにちは」（你好）、「ありがとう」（謝謝）、「すみません」（抱歉），可以幫助您在東京更好地與當地人溝通。</p>
+                </div>
+                <div class="tip-card animate delay-1">
+                    <div class="tip-number">4</div>
+                    <h3>使用Google翻譯</h3>
+                    <p>下載Google翻譯應用程式，並預先下載日文語言包。這樣在沒有網路連接時也能進行翻譯，非常實用。</p>
+                </div>
+                <div class="tip-card animate delay-2">
+                    <div class="tip-number">5</div>
+                    <h3>尊重當地習俗</h3>
+                    <p>在東京，尊重當地的

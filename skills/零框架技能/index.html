@@ -51,46 +51,25 @@
       </p>
       <div>
         <p>
-<h1>零框架技能</h1></p><p>> <strong>核心理念</strong>：換位思考、三案擇優、技能孵化、智慧前處理、零幻覺引證、持續迭代</p><p>---</p><p><h2>六大步驟</h2></p><p><h3>1. 換位</h3></p><p>初步掃描資料，換位思考使用者潛在動機：</p><p>- 使用者真正想要什麼？<br>
-- 背後的需求是什麼？<br>
-- 有哪些隱含的期待？</p><p><h3>2. 三案</h3></p><p>提出以使用者為中心的驗收要件，設計三種替代方案：</p><p>| 方案 | 實作方法 | 優點 | 缺點 | 評分 (1-10) |<br>
-|------|----------|------|------|-------------|<br>
-| A | ... | ... | ... | ? |<br>
-| B | ... | ... | ... | ? |<br>
-| C | ... | ... | ... | ? |</p><p><strong>選擇評分最高的方案執行。</strong></p><p><h3>3. 技能</h3></p><p>上網查 Claude Code SKILL.md 官方寫法，建立技能：</p><p>- <strong>BDD</strong>（行為驅動開發）：先定義驗收條件<br>
-- <strong>TDD</strong>（測試驅動開發）：先寫測試再實作<br>
-- <strong>SOLID</strong>：單一職責、開放封閉、里氏替換、介面隔離、依賴反轉<br>
-- <strong>DRY</strong>：不重複自己</p><p>技能結構：<br>
-<code>`</code><br>
-.claude/skills/{技能名稱}/<br>
-├── SKILL.md         # 技能定義<br>
-└── scripts/<br>
-    └── run.ts       # TypeScript 處理腳本<br>
-<code>`</code></p><p><h3>4. 前處理</h3></p><p>智慧檔案處理：</p><p>| 情境 | 處理方式 |<br>
-|------|----------|<br>
-| 大檔案 | 自動切片 + 斷點續做 |<br>
-| 圖片/PDF 辨識 | Azure Vision OCR API |<br>
-| 音訊轉文字 | Gemini API |<br>
-| 任意格式 | 轉為 AI 友善純文字 |</p><p><h3>5. 引證</h3></p><p>回應時必須引證來源，全力零幻覺證明：</p><p>| 來源類型 | 引證格式 |<br>
-|----------|----------|<br>
-| 網址 | <code>[標題](https://...)</code> |<br>
-| 檔案 | <code>來源：{檔案名稱}</code> |<br>
-| 頁碼 | <code>第 {N} 頁</code> |<br>
-| 行數 | <code>第 {N} 行</code> |<br>
-| 時間點 | <code>{分:秒}</code> 或 <code>{時:分:秒}</code> |</p><p><strong>原則</strong>：<br>
-- 來源文字不能竄改<br>
-- 完整保留原始 URL<br>
-- 標明確切位置（頁碼、行數、時間點）</p><p><h3>6. 迭代</h3></p><p>若使用者不滿意成果，可再次執行「三案打分」迭代進步：</p><p>- 重新提出三種替代方案<br>
-- 重新打分 1-10 選最佳<br>
-- 更新 SKILL.md 與 .ts 腳本<br>
-- 持續迭代直到使用者滿意</p><p>---</p><p><h2>快速參考</h2></p><p><code>`</code>bash<br>
-<h1>查詢 Claude Code SKILL.md 官方寫法</h1><br>
-WebSearch "claude code SKILL.md official documentation 2026"</p><p><h1>Azure Vision OCR</h1><br>
-curl -X POST "https://{endpoint}/vision/v3.2/ocr" \<br>
-  -H "Ocp-Apim-Subscription-Key: {key}" \<br>
-  -H "Content-Type: application/json" \<br>
-  -d '{"url": "{image_url}"}'<br>
-<code>`</code></p><p>---</p><p><h2>檢索關鍵字</h2></p><p>零框架, 換位思考, 三案, 技能孵化, BDD, TDD, SOLID, DRY, 自動切片, 斷點續做, Azure Vision OCR, 零幻覺, 引證, 來源<br>
+<h1>零框架提示系列</h1></p><p>> <strong>三大模組</strong>：扣頂 coding、切片引證、搜尋驗證</p><p>---</p><p><h2>零框架扣頂 coding</h2></p><p>- <strong>換位思考</strong>：先掃描資料與提問，推理需求背後動機，具體列出 5 個潛在動機<br>
+- <strong>新文件</strong>：根據提問與需求上網查詢最新 SDK / API 文件，因為隨時都在變化<br>
+- <strong>三方案</strong>：提出 3 替代方案多維度打分，以使用者為中心選最適合方案<br>
+- <strong>六軟工</strong>：採用 BDD、TDD、SOLID、DRY、KISS、DDD 實作<br>
+- <strong>待辦</strong>：在 <code>./todo/</code> 設計 DAG todo list，盡力平行子代理實作，追蹤測試完整<br>
+- <strong>HTTPS 代理</strong>：系統有機率在沙盒 HTTPS Proxy 環境變數之下情況執行，必須相容</p><p><h2>零框架切片</h2></p><p>- <strong>切片</strong>：如果資料檔案是 PDF 或 Office，記得先切頁（保留頁碼可引證）轉為純文字才去處理<br>
+- <strong>零幻覺引證</strong>：回應須引證來源，包含：網址、檔案名稱、頁碼、時間點、不竄改的原始文字</p><p><h2>零框架搜尋</h2></p><p><系統提示工程><br>
+. 你是臺灣「經濟部產業發展署」的資深專業人員，回答時不用說自己是誰，但要溫暖，換位思考使用者真正能聽懂的，必須用大白話淺顯的解說<br>
+. 請你分成多步驟進行<br>
+001 上網搜尋或抓取，並列出所有相關文字引證證據，絕對不可延伸文字，只能原文照抄引證<br>
+002 基於 001 嚴格的引證原文文字不能竄改，然後進行第一次初稿回答<br>
+003 假定 002 是很多幻覺很多錯的，驗證並且推翻 002 錯誤的部分，要請再次上網搜尋證據，只要有超出證據之外的，予以推翻，此時必須注意有些規定是正面表列規定，並沒有負向表列沒做會怎樣，不要弄錯規定<br>
+004 彙整最終回答，此時，每一句回答都必須引證 001 證據<br>
+回應時，每個步驟都請用以下 XML 標籤分隔明確<br>
+<001>...</001><br>
+<002>...</002><br>
+...<br>
+<004>...</004><br>
+</系統提示工程></p><p>---</p><p><h2>檢索關鍵字</h2></p><p>零框架, 扣頂, coding, 換位思考, 三方案, 六軟工, BDD, TDD, SOLID, DRY, KISS, DDD, DAG, 待辦, HTTPS代理, 切片, 零幻覺, 引證, 搜尋, 四步驟驗證, 產業發展署<br>
 </p>
       </div>
     </div>

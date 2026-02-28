@@ -1,0 +1,725 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東京不只是景點，是一場體驗之旅 | 東京達人親授的秘密基地</title>
+<meta name="description" content="東京不只是景點，更是一場體驗之旅！從當地人最愛的隱藏寶地到全家共享的精彩行程，我們幫你解鎖東京的無限可能。包含美食、文化、時尚、季節活動等全方位攻略，讓你在混亂的東京找到屬於自己的「專屬體驗」！">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-bg: #0a0a12;
+  --c-surface: #12121c;
+  --c-surface-2: #1a1a28;
+  --c-border: rgba(255,255,255,0.06);
+  --c-text: #eae8e4;
+  --c-text-dim: #8a8a9a;
+  --c-accent: #ff6b4a;
+  --c-accent-glow: rgba(255,107,74,0.12);
+  --c-accent-border: rgba(255,107,74,0.25);
+  --c-warm-glow: rgba(255,107,74,0.05);
+  --c-title-gradient: linear-gradient(135deg, #fff 20%, #ff6b4a);
+  --font-display: 'Noto Serif JP', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-md: 16px;
+  --shadow-hover: 0 12px 40px rgba(255,107,74,0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="light"] {
+  --c-bg: #faf8f5;
+  --c-surface: #fff;
+  --c-surface-2: #f5f0eb;
+  --c-border: rgba(0,0,0,0.06);
+  --c-text: #2a2018;
+  --c-text-dim: #7a6e60;
+  --c-accent: #d4522a;
+  --c-accent-glow: rgba(212,82,42,0.08);
+  --c-accent-border: rgba(212,82,42,0.2);
+  --c-title-gradient: linear-gradient(135deg, #2a2018 20%, #d4522a);
+  --shadow-hover: 0 12px 40px rgba(212,82,42,0.1);
+  --c-warm-glow: rgba(212,82,42,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: var(--transition);
+  padding-top: 60px;
+}
+
+/* Header & Theme Toggle */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(18, 18, 28, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  text-decoration: none;
+}
+
+.theme-toggle {
+  position: relative;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  z-index: 1001;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--c-text-dim);
+  background: var(--c-surface);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.theme-toggle:hover::after {
+  opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-accent-glow), transparent);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-accent-glow), transparent),
+              radial-gradient(ellipse 60% 40% at 80% 80%, var(--c-warm-glow), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  background: var(--c-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero .subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--c-text-dim);
+  max-width: 800px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: var(--c-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255,107,74,0.2);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--c-accent-glow);
+}
+
+.cta-outline {
+  background: transparent;
+  border: 2px solid var(--c-accent);
+  color: var(--c-accent);
+}
+
+.cta-outline:hover {
+  background: var(--c-accent-glow);
+  color: var(--c-accent);
+}
+
+/* Section Styles */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--c-accent);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--c-text-dim);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  background: rgba(18, 18, 28, 0.8);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--c-accent-border);
+}
+
+.card-emoji {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  display: block;
+  text-align: center;
+  color: var(--c-accent);
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--c-text);
+}
+
+.card p {
+  color: var(--c-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.card .details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-border);
+  font-size: 0.9rem;
+  color: var(--c-text-dim);
+}
+
+.card .details ul {
+  padding-left: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.card .details li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+.card .details li::before {
+  content: '•';
+  color: var(--c-accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--c-accent-glow);
+  color: var(--c-accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.tag:hover {
+  background: var(--c-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Highlight Box */
+.highlight-box {
+  background: var(--c-surface-2);
+  border-left: 4px solid var(--c-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.highlight-box::before {
+  content: '💡';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  color: var(--c-accent);
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  color: var(--c-accent);
+  margin-top: 0.2rem;
+}
+
+.feature-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+  color: var(--c-text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--c-text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--c-border);
+  margin-top: 4rem;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+
+  .card {
+    padding: 1.8rem;
+  }
+
+  .card-emoji {
+    font-size: 2.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="#" class="logo">東京達人</a>
+  <button class="theme-toggle" aria-label="切換主題">☀️</button>
+</div>
+
+<section class="hero animate">
+  <div class="hero-container">
+    <h1>東京不只是景點，是一場體驗之旅</h1>
+    <p class="subtitle">
+      從當地人最愛的隱藏寶地到全家共享的精彩行程，我們幫你解鎖東京的無限可能！
+      不只是旅遊手冊上的景點，更是東京達人親自測試過的「秘密基地」—
+      讓你在混亂的東京找到屬於自己的「專屬體驗」！
+    </p>
+
+    <div class="cta-group">
+      <a href="#" class="cta">立即規劃我的東京之旅</a>
+      <a href="#" class="cta cta-outline">查看東京達人小技巧</a>
+    </div>
+  </div>
+</section>
+
+<section id="section-1" class="section animate delay-1">
+  <div class="section-header">
+    <h2 class="section-title">東京必玩精華路線 🗼</h2>
+    <p class="section-subtitle">
+      — 讓你不再像迷路的貓咪，輕鬆玩轉東京！
+      由東京達人親授的「零浪費」行程秘笈，包含景點精華、交通優化、美食攻略，
+      讓你在有限的時間內體驗東京的「最精華部分」！
+    </p>
+  </div>
+
+  <div class="cards">
+    <!-- 卡片 1：1天速覽 -->
+    <div class="card animate delay-2">
+      <div class="card-emoji">🏯</div>
+      <h3>1天速覽：東京核心精華</h3>
+      <p>
+        東京一天玩不完，但這條路線幫你「精華濃縮」！從新宿的摩登夜景（<strong>新宿御苑</strong>日落時分最美，別忘了帶上單車騎行）出發，
+        搭地鐵直達<strong>皇居</strong>（免費參觀，但別忘了「御茶之水」的學術氛圍，可以拍到「江戶時代的石碑」），
+        再到<strong>浅草寺</strong>（人潮高峰期避開11:00-14:00，改去「浅草寺的隱藏小巷」尋找「江戶時代的古書店」）。
+        <span class="highlight-box">東京達人小技巧：</span>
+        午餐在<strong>東京站</strong>的「東京駅八重洲地下街」解決，價格實惠又不會餓到！
+        別只吃「便當」，試試「東京站地下的「秘密拉麵店」」（如「拉麵道場」的「站長推薦麵」）。
+      </p>
+      <div class="tags">
+        <span class="tag">新手必備</span>
+        <span class="tag">景點濃縮</span>
+        <span class="tag">交通優化</span>
+      </div>
+    </div>
+
+    <!-- 卡片 2：2-3天深度遊 -->
+    <div class="card animate delay-3">
+      <div class="card-emoji">🎌</div>
+      <h3>2-3天深度遊：傳統與現代的完美平衡</h3>
+      <p>
+        這條路線帶你穿梭於<strong>江戶東京博物館</strong>（了解江戶時代的日常，別忘了「江戶時代的廚房模型」）與<strong>原宿</strong>（時尚與歷史的碰撞，
+        可以在「原宿的古董店」淘到「二戰時的軍服」），再到<strong>上野公園</strong>（動物園+美術館，周日免費入園，
+        但別忘了「上野公園的隱藏櫻花樹」— 只有當地人知道的「江戶時代的櫻花品種」）。
+        <span class="highlight-box">東京達人重點提示：</span>
+        搭乘<strong>東京地鐵日比谷線</strong>可直達多個景點，但<strong>避開週一早上8:30-9:30</strong>（上班高峰，人山人海）。
+        別只坐地鐵，試試「東京的「隱藏電車」— <strong>東京灣岸線（Yurikamome）</strong>」，沿途有東京晴空塔和豐洲市場的美景！
+        <span class="highlight-box">東京達人秘技：</span>
+        在<strong>銀座</strong>的「神田神保町」買書，價格是其他書店的1/3！
+        別只買新書，試試「神田的「古書街」— 可以找到「江戶時代的地圖」或「二戰時的照片集」！
+      </p>
+      <div class="tags">
+        <span class="tag">文化體驗</span>
+        <span class="tag">交通優化</span>
+        <span class="tag">歷史探索</span>
+      </div>
+    </div>
+
+    <!-- 卡片 3：4-5天全方位探索 -->
+    <div class="card animate delay-4">
+      <div class="card-emoji">🌸</div>
+      <h3>4-5天全方位：隱藏寶地與季節限定</h3>
+      <p>
+        除了經典景點，這條路線還包含<strong>小石川後樂園</strong>（櫻花季的最佳賞花地，但門票要提前預約！，
+        別忘了「小石川後樂園的「隱藏茶室」— 只有當地人知道的「江戶時代的茶道體驗」）和<strong>多摩川河畔</strong>（夏季的河邊野餐聖地，
+        可以在「多摩川的「隱藏沙灘」」玩水）。
+        <span class="highlight-box">東京達人季節攻略：</span>
+        秋季去<strong>御嶽山</strong>（東京近郊的「富士山替代品」，可以拍到「秋季的紅葉」），
+        冬季則到<strong>池袋</strong>的「Sunshine City」滑冰（別只滑冰，試試「Sunshine City的「隱藏溫泉」— 只有當地人知道的「東京的「溫泉聖地」」）。
+        <span class="highlight-box">東京達人交通祕訣：</span>
+        購買<strong>東京周遊券（2430日圓）</strong>可無限乘坐JR線，但<strong>別忘了結合地鐵</strong>（如銀座線到浅草更快）！
+        別只坐JR，試試「東京的「隱藏巴士」— <strong>東京巴士的「新宿–六本木–銀座–東京站」環線</strong>」，沿途有「隱藏的小站」可以拍照！
+      </p>
+      <div class="tags">
+        <span class="tag">季節性活動</span>
+        <span class="tag">隱藏景點</span>
+        <span class="tag">交通優化</span>
+      </div>
+    </div>
+
+    <!-- 卡片 4：交通與語言小撇步 -->
+    <div class="card animate delay-5">
+      <div class="card-emoji">🚆</div>
+      <h3>交通與語言：東京達人的小撇步</h3>
+      <p>
+        IC卡（Suica/Pasmo）是你的「萬能鑰匙」，但<strong>別忘了在機場購買</strong>（機場售票機24小時可用，
+        別只買Suica，試試「Pasmo」— 可以在「東京的便利商店」使用！）。
+        <span class="highlight-box">東京達人語言小技巧：</span>
+        學會「<ruby>すみません<rt>sumimasen</rt></ruby>」（抱歉）、「<ruby>いくらですか<rt>ikura desu ka</rt></ruby>」（多少錢）和「<ruby>トイレ<rt>toire</rt></ruby>」（廁所）就能應付80%情境！
+        別只學基本詞彙，試試「東京的「隱藏用語」— <strong>「おいしい！」</strong>（好吃！）和「<strong>「ありがとうございません」</strong>（謝謝您！）」，可以讓店員更熱情招待！
+        <span class="highlight-box">東京達人建議：</span>
+        下載<strong>Google Maps離線地圖</strong>（東京地區），並開啟「公共交通」模式，避免手機沒信號時迷路。
+        別只用Google Maps，試試「東京的「隱藏地圖」— <strong>「東京地鐵的「站內地圖」</strong>」，可以更精準地找到「隱藏的出口」！
+        <span class="highlight-box">東京達人注意：</span>
+        東京的電梯很窄，<strong>別忘了讓出位置給老人或孕婦</strong>！
+        別只讓位，試試「東京的「隱藏禮儀」— <strong>「在電梯裡說「<ruby>お先にどうぞ<rt>osaki ni douzo</rt></ruby>」（請先）」</strong>」，可以讓當地人更尊重你！
+      </p>
+      <div class="tags">
+        <span class="tag">交通攻略</span>
+        <span class="tag">語言入門</span>
+        <span class="tag">禮儀指南</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section animate delay-1" id="section-2">
+  <div class="section-header">
+    <h2 class="section-title">隱藏東京：當地人最愛的秘密基地</h2>
+    <p class="section-subtitle">
+      — 那些旅遊手冊絕對不會告訴你的「東京達人」獨門體驗！
+      從只有東京人知道的拉麵店到24小時營業的書店，這裡收錄了東京達人親自測試過的「秘密基地」—
+      讓你在混亂的東京找到「屬於自己的體驗」！
+    </p>
+  </div>
+
+  <div class="cards">
+    <!-- 卡片1 -->
+    <div class="card animate delay-2">
+      <div class="card-emoji">🍜</div>
+      <h3>「只有東京人知道的拉麵店」：不排隊的秘技</h3>
+      <p>
+        在新宿神樂坂的「拉麵道場」裡，店員會悄悄告訴你：「午餐時間前來，點『秘密麵』（日式豬骨高湯加上手工切麵），店長會親自調味！」
+        別只點「秘密麵」，試試「拉麵道場的「隱藏菜單」— <strong>「拉麵道場的「秘密麵」的「秘密版」</strong>」，價格更便宜，味道更好！
+        <span class="highlight-box">東京達人小技巧：</span>
+        別問菜單上的價格，直接說「一碗就好」— 當地人會自動給你最划算的份量。
+        別只說「一碗」，試試「東京的「隱藏用語」— <strong>「<ruby>おすすめをください<rt>osusume wo kudasai</rt></ruby>」（請給我推薦）」</strong>」，店員會更熱情地推薦！
+      </p>
+      <div class="highlight-box">
+        <strong>東京達人攻略：</strong>
+        店家不接受外語點餐，但會用手勢示意「再來一碗」— 學會「👌」手勢（代表「好吃」）可以讓店員更熱情招待。
+        別只學手勢，試試「東京的「隱藏手勢」— <strong>「<ruby>ごちそうさまでした<rt>gochisousama deshita</rt></ruby>」（謝謝款待）」</strong>的手勢」，可以讓店員更開心！
+      </div>
+      <div class="tags">
+        <span class="tag">美食</span>
+        <span class="tag">隱藏店家</span>
+        <span class="tag">當地用語</span>
+      </div>
+    </div>
+
+    <!-- 卡片2 -->
+    <div class="card animate delay-3">
+      <div class="card-emoji">📚</div>
+      <h3>24小時營業的書店：東京人「逃避現實」的聖地</h3>
+      <p>
+        在池袋的「紀伊國屋書店」地下，有間名為「書店咖啡廳」的秘密空間— 24小時開放，但只有當地人知道的「隱藏入口」在書架後方的小門。
+        別只去「書店咖啡廳」，試試「紀伊國屋書店的「隱藏地下室」— 只有當地人知道的「東京的「秘密圖書館」」！
+        <span class="highlight-box">東京達人為什麼值得去：</span>
+        除了書，還有「限定版東京地圖」可以免費領取，上面標註了只有當地人知道的小巷子。
+        別只領地圖，試試「東京的「隱藏地圖」— <strong>「東京的「古地圖」</strong>」，可以找到「江戶時代的隱藏景點」！
+      </p>
+      <div class="highlight-box">
+        <strong>東京達人優惠：</strong>
+        midnight 時段（凌晨1點後）進店，店員會送你一杯「免費抹茶拿鐵」，但前提是你能用日語說「お疲れ様です」（辛苦了）。
+        別只說「お疲れ様です」，試試「東京的「隱藏用語」— <strong>「<ruby>お疲れ様でした<rt>otsukaresama deshita</rt></ruby>」（辛苦了）」</strong>」，店員會更熱情地招待！
+      </div>
+      <div class="tags">
+        <span class="tag">文化</span>
+        <span class="tag">隱藏空間</span>
+        <span class="tag">夜間體驗</span>
+      </div>
+    </div>
+
+    <!-- 卡片3 -->
+    <div class="card animate delay-4">
+      <div class="card-emoji">🎨</div>
+      <h3>獨家手工藝體驗：不收門票的「東京工匠」工作坊</h3>
+      <p>
+        在表參道的「隱藏陶藝坊」，老師傅會教你用「江戶時代的技法」製作茶碗— 但前提是你得先幫他們整理倉庫裡的「失傳工具」。
+        別只製作茶碗，試試「東京的「隱藏手工藝」— <strong>「東京的「紙燈籠製作」</strong>」，可以帶回家當作「紀念品」！
+        <span class="highlight-box">東京達人為什麼特別：</span>
+        完成後的作品可以帶走，但更珍貴的是老師會在背面寫上「這個碗的故事」，比如「這個碗是為了某位戰後難民而做」。
+        別只聽故事，試試「東京的「隱藏故事」— <strong>「東京的「工匠的秘密」</strong>」，可以了解「東京的「手工藝歷史」」！
+      </p>
+      <div class="highlight-box">
+        <strong>東京達人技巧：</strong>
+        別問價格，直接說「我想學習」— 當地人會以「體驗費」的名義收你5000日圓（含午餐），但實際成本是1萬日圓。
+        別只學習，試試「東京的「隱藏體驗」— <strong>「東京的「工匠的午餐」</strong>」，可以品嚐「東京的「家常菜」」！
+      </div>
+      <div class="tags">
+        <span class="tag">手工藝</span>
+        <span class="tag">文化體驗</span>
+        <span class="tag">隱藏工作坊</span>
+      </div>
+    </div>
+
+    <!-- 卡片4 -->
+    <div class="card animate delay-5">
+      <div class="card-emoji

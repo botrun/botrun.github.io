@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeless-archive - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> timeless-archive</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        永恆知己歸檔技能。將任意路徑的 PDF、Office、圖片等檔案歸檔到適當位置，並轉為 LLM 友善純文字。當用戶說「歸檔」「archive」「歸檔 done」或提供外部檔案路徑要求處理時觸發。
+      </p>
+      <div>
+        <p>
+<h1>永恆知己 - 歸檔技能</h1></p><p><h2>核心目的</h2></p><p>處理來自<strong>任意路徑</strong>（<code>~/Downloads/</code>、外部硬碟、桌面等）的檔案：<br>
+1. <strong>讀取內容</strong> → 用 Claude 多模態能力提取純文字<br>
+2. <strong>寫入記憶</strong> → 語義化命名存入 <code>記憶核心/</code> 對應分類<br>
+3. <strong>原始檔案歸檔</strong> → 複製到 <code>素材庫/原始檔案/</code> 對應子目錄<br>
+4. <strong>不刪除原始檔案</strong> → 只做 <code>cp</code>，不做 <code>mv</code>（來源可能是 Downloads 等非本 repo 位置）</p><p><h3>與收集箱處理的差異</h3></p><p>| | 歸檔技能（本技能） | 收集箱處理 |<br>
+|---|---|---|<br>
+| 來源 | 任意路徑（Downloads、外部） | 僅 <code>收集箱/</code> 目錄 |<br>
+| 觸發 | 用戶指定檔案路徑 | 掃描收集箱 |<br>
+| 原始檔案 | <code>cp</code>（不刪來源） | <code>mv</code>（搬移） |</p><p>---</p><p><h2>處理流程</h2></p><p><h3>Step 1: 識別檔案類型與來源</h3></p><p><code>`</code><br>
+用戶提供: /Users/40gpu/Downloads/某報告.pdf<br>
+         ↓<br>
+判斷檔案類型 → PDF<br>
+判斷內容分類 → 產品策略 / 技術資源 / 外部文件 / ...<br>
+<code>`</code></p><p><h3>Step 2: 讀取並提取內容</h3></p><p>- <strong>PDF</strong> → 用 <code>Read</code> 工具直接讀取（Claude 多模態）<br>
+- <strong>圖片</strong> → 用 <code>Read</code> 工具讀取（Claude Vision）<br>
+- <strong>Office</strong> → 嘗試 <code>Read</code>，fallback 用 pandoc/python 工具</p><p>重點：提取完整內容，保留結構、表格、格式，輸出 LLM 友善 Markdown。</p><p><h3>Step 3: 分類判斷</h3></p><p>根據檔案內容自動判斷歸入哪個記憶分類：</p><p>| 內容類型 | 記憶位置 |<br>
+|----------|----------|<br>
+| 產品需求/策略/會議決議 | <code>記憶核心/情節記憶/產品策略/</code> |<br>
+| 技術文件/API/架構 | <code>記憶核心/語義記憶/技術資源/</code> |<br>
+| 外部報告/論文/文件 | <code>記憶核心/語義記憶/外部文件/</code> |<br>
+| 個人行程/機票/收據 | <code>記憶核心/情節記憶/個人行程/</code> |<br>
+| 產品研究/競品分析 | <code>記憶核心/情節記憶/產品研究/</code> |<br>
+| 其他/不確定 | <code>記憶核心/語義記憶/外部文件/</code> |</p><p><h3>Step 4: 寫入純文字記憶</h3></p><p>檔名格式：<code>{主題關鍵字}-{YYYY-MM-DD}.md</code></p><p><code>`</code>markdown<br>
+<h1>{從內容推斷的語義化標題}</h1></p><p>- <strong>日期</strong>：YYYY-MM-DD<br>
+- <strong>來源</strong>：{來源描述，如 Asana 匯出、外部報告}<br>
+- <strong>authority</strong>：{10=用戶提供, 5=外部文件, 3=AI 生成}<br>
+- <strong>原始檔案</strong>：<code>素材庫/原始檔案/{子目錄}/{檔名}</code></p><p>---</p><p>{提取的完整純文字內容，Markdown 格式}</p><p>---</p><p><strong>關鍵字</strong>：{以逗號分隔的關鍵字，方便 rg 檢索}<br>
+<code>`</code></p><p><h3>Step 5: 複製原始檔案到歸檔位置</h3></p><p><code>`</code>bash<br>
+<h1>依檔案類型複製到對應子目錄</h1><br>
+cp "{來源路徑}" "素材庫/原始檔案/PDF/{語義化檔名}.pdf"<br>
+cp "{來源路徑}" "素材庫/原始檔案/Office/{語義化檔名}.docx"<br>
+cp "{來源路徑}" "素材庫/原始檔案/圖片/{語義化檔名}.png"<br>
+<code>`</code></p><p>歸檔子目錄對照：</p><p>| 副檔名 | 歸檔子目錄 |<br>
+|--------|----------|<br>
+| <code>.pdf</code> | <code>素材庫/原始檔案/PDF/</code> |<br>
+| <code>.doc</code>, <code>.docx</code>, <code>.xls</code>, <code>.xlsx</code>, <code>.ppt</code>, <code>.pptx</code> | <code>素材庫/原始檔案/Office/</code> |<br>
+| <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.webp</code> | <code>素材庫/原始檔案/圖片/</code> |<br>
+| 其他 | <code>素材庫/原始檔案/其他/</code> |</p><p><h3>Step 6: 輸出歸檔報告</h3></p><p><code>`</code><br>
+歸檔完成：</p><p>| 項目 | 位置 |<br>
+|------|------|<br>
+| 原始 PDF | <code>素材庫/原始檔案/PDF/{檔名}.pdf</code> |<br>
+| 純文字記憶 | <code>記憶核心/{分類}/{語義化檔名}-{日期}.md</code> |</p><p>內容摘要：{一句話摘要}<br>
+<code>`</code></p><p>---</p><p><h2>.gitignore 保障</h2></p><p>以下副檔名已在 <code>.gitignore</code> 全域排除，原始檔案不會上傳 GitHub：</p><p>- <code>*.pdf</code> — 第 127 行<br>
+- <code><em>.doc</code> <code></em>.docx</code> <code><em>.xls</code> <code></em>.xlsx</code> <code><em>.ppt</code> <code></em>.pptx</code> — 第 130-136 行<br>
+- <code>素材庫/原始檔案/</code> — 第 141 行</p><p>結果：<br>
+- 純文字 <code>.md</code> → 上傳 GitHub，AI/LLM 隨時可存取<br>
+- 原始檔案 → 本地保留，不上傳</p><p>---</p><p><h2>使用範例</h2></p><p><h3>範例 1: Asana 匯出 PDF</h3><br>
+<code>`</code><br>
+用戶：歸檔 /Users/40gpu/Downloads/● 2025-bowen - 波駿馬內建零框架系列 - Asana.pdf<br>
+Claude：讀取 PDF → 提取內容 → 判斷為產品策略<br>
+       → 寫入 記憶核心/情節記憶/產品策略/波駿馬內建零框架系列-Asana完成任務-2026-02-28.md<br>
+       → 複製 素材庫/原始檔案/PDF/波駿馬內建零框架系列-Asana-2026-02-28.pdf<br>
+<code>`</code></p><p><h3>範例 2: 外部技術報告</h3><br>
+<code>`</code><br>
+用戶：歸檔 ~/Downloads/2026-AI-Trends-Report.pdf<br>
+Claude：讀取 PDF → 提取內容 → 判斷為外部文件<br>
+       → 寫入 記憶核心/語義記憶/外部文件/AI趨勢報告-2026-02-28.md<br>
+       → 複製 素材庫/原始檔案/PDF/AI趨勢報告-2026-02-28.pdf<br>
+<code>`</code></p><p><h3>範例 3: 標註 done 的歸檔</h3><br>
+<code>`</code><br>
+用戶：歸檔 done: /path/to/file.pdf<br>
+Claude：同上流程，額外在純文字中標註「狀態：已完成」<br>
+<code>`</code></p><p>---</p><p><h2>注意事項</h2></p><p>1. <strong>只複製不刪除</strong>：來源檔案可能在 Downloads 等外部位置，絕不 <code>rm</code> 或 <code>mv</code><br>
+2. <strong>語義化檔名</strong>：不用原始亂碼檔名，從內容推斷有意義的中文名稱<br>
+3. <strong>時間戳必須</strong>：所有 <code>記憶核心/</code> 下的 <code>.md</code> 檔名必須含 <code>-YYYY-MM-DD</code><br>
+4. <strong>機密判斷</strong>：若內容含帳密/API Key，提醒用戶改放 <code>機密/</code> 目錄<br>
+5. <strong>大型 PDF</strong>：超過 20 頁的 PDF 分批讀取，確保完整提取<br>
+6. <strong>authority 判斷</strong>：用戶自己的文件 = 10，外部文件 = 5，AI 摘要 = 3<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
