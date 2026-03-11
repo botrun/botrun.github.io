@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Agentic AI 公文生成 API 規格書</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Agentic AI 公文生成 API 規格書</h1>
+</header>
+<h1 id="agentic-ai-公文生成-api-規格書">Agentic AI 公文生成 API
+規格書</h1>
+<blockquote>
+<p><strong>版本</strong>：v1.0 | <strong>日期</strong>：2026-03-10 |
+<strong>作者</strong>：泊寰
+<strong>驗收基準</strong>：每項功能皆有流水編號，全部 PASS 才算驗收通過
+<strong>表示法</strong>：BDD（Given/When/Then）—
+每個人都看得懂的「情境→動作→結果」</p>
+</blockquote>
+<hr />
+<h2 id="目錄">目錄</h2>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>編號範圍</th>
+<th>項目數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. API 核心</td>
+<td>A-001 ~ A-010</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B. 後端（永恆知己記憶）</td>
+<td>B-001 ~ B-012</td>
+<td>12</td>
+</tr>
+<tr>
+<td>C. 前端整合介面</td>
+<td>C-001 ~ C-006</td>
+<td>6</td>
+</tr>
+<tr>
+<td>D. 公文排行榜（多維度打分）</td>
+<td>D-001 ~ D-008</td>
+<td>8</td>
+</tr>
+<tr>
+<td>E. 高品味題庫</td>
+<td>E-001 ~ E-005</td>
+<td>5</td>
+</tr>
+<tr>
+<td>F. 商業計價</td>
+<td>F-001 ~ F-004</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td></td>
+<td><strong>45 項</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="a.-api-核心10-項">A. API 核心（10 項）</h2>
+<h3 id="a-001-文字輸入-api">A-001 文字輸入 API</h3>
+<pre><code>Given 廠商前端傳來一段使用者文字訊息
+When  POST /api/v1/chat
+Then  回傳 200，開始串流輸出 AI 回應</code></pre>
+<ul>
+<li>輸入：<code>{ &quot;user_id&quot;: string, &quot;message&quot;: string }</code></li>
+<li>輸出：SSE 串流文字</li>
+</ul>
+<h3 id="a-002-串流輸出">A-002 串流輸出</h3>
+<pre><code>Given API 收到合法請求
+When  AI 開始生成回應
+Then  以 Server-Sent Events (SSE) 逐 token 串流回傳
+      且每個 chunk 包含 { &quot;delta&quot;: string, &quot;done&quot;: boolean }</code></pre>
+<h3 id="a-003-上傳舊公文">A-003 上傳舊公文</h3>
+<pre><code>Given 使用者或管理者要上傳舊公文 PDF
+When  POST /api/v1/documents/upload (multipart/form-data)
+Then  PDF 存入對應資料夾（共用或個人）
+      且回傳 { &quot;document_id&quot;: string, &quot;tags&quot;: string[] }</code></pre>
+<h3 id="a-004-下載生成公文">A-004 下載生成公文</h3>
+<pre><code>Given AI 已生成完整公文（.md 格式）
+When  GET /api/v1/documents/{id}/download?format=docx|pdf
+Then  回傳對應格式的檔案</code></pre>
+<h3 id="a-005-多輪對話">A-005 多輪對話</h3>
+<pre><code>Given 使用者正在進行第 N 輪公文修改
+When  POST /api/v1/chat 帶入 session_id
+Then  AI 記得前 N-1 輪的對話脈絡
+      且每輪產出一份 .md 中間檔</code></pre>
+<h3 id="a-006-session-管理">A-006 Session 管理</h3>
+<pre><code>Given 使用者開始一個新的公文任務
+When  POST /api/v1/sessions
+Then  建立新 session，回傳 { &quot;session_id&quot;: string }</code></pre>
+<pre><code>Given 使用者結束任務
+When  DELETE /api/v1/sessions/{id}
+Then  session 標記結束，對話歷史保留至永恆知己</code></pre>
+<h3 id="a-007-認證授權">A-007 認證授權</h3>
+<pre><code>Given 廠商系統帶入 API Key + 使用者身份
+When  任何 API 請求
+Then  驗證 API Key 有效
+      且確認 user_id 有權限存取該資源</code></pre>
+<h3 id="a-008-錯誤處理">A-008 錯誤處理</h3>
+<pre><code>Given API 收到無效請求
+When  缺少必填欄位 / 格式錯誤 / 權限不足
+Then  回傳標準錯誤格式 { &quot;error&quot;: { &quot;code&quot;: string, &quot;message&quot;: string } }
+      且 HTTP status code 正確（400/401/403/404/500）</code></pre>
+<h3 id="a-009-https-proxy-相容">A-009 HTTPS Proxy 相容</h3>
+<pre><code>Given 部署環境設有 HTTPS_PROXY / HTTP_PROXY
+When  API 對外發出請求（如呼叫 LLM）
+Then  自動使用 Proxy 環境變數</code></pre>
+<h3 id="a-010-速率限制">A-010 速率限制</h3>
+<pre><code>Given 單一使用者短時間內大量請求
+When  超過速率限制
+Then  回傳 429 Too Many Requests
+      且 header 包含 Retry-After</code></pre>
+<hr />
+<h2 id="b.-後端-永恆知己記憶架構12-項">B. 後端 — 永恆知己記憶架構（12
+項）</h2>
+<h3 id="b-001-folder-tree-結構">B-001 Folder Tree 結構</h3>
+<pre><code>Given 一個新使用者首次使用系統
+When  系統初始化該使用者空間
+Then  建立以下 folder tree：
+      ├── shared/          ← 共用舊公文模板（管理者維護）
+      ├── personal/        ← 使用者個人記憶（永恆知己）
+      ├── sessions/        ← 對話歷史
+      └── CLAUDE.md        ← 系統提示（不可修改）</code></pre>
+<h3 id="b-002-共用資料夾管理者維護">B-002 共用資料夾（管理者維護）</h3>
+<pre><code>Given 管理者要增添新的公版舊公文模板
+When  上傳 PDF 至 shared/ 資料夾
+Then  所有使用者下次對話時自動可參考新模板
+      且支援從 100 → 200 → 300+ 份持續擴充</code></pre>
+<h3 id="b-003-個人資料夾永恆知己">B-003 個人資料夾（永恆知己）</h3>
+<pre><code>Given 使用者生成了一份新公文
+When  公文確認完成
+Then  自動存入 personal/ 資料夾
+      且帶有時間戳與標籤</code></pre>
+<h3 id="b-004-時間區間過濾-對話歷史">B-004 時間區間過濾 — 對話歷史</h3>
+<pre><code>Given AI 要參考過去對話
+When  檢索對話歷史
+Then  只參考最近 1 週內的對話
+      且超過 1 週的對話不納入 context</code></pre>
+<h3 id="b-005-時間區間過濾-使用者公文">B-005 時間區間過濾 —
+使用者公文</h3>
+<pre><code>Given AI 要參考使用者過去生成的公文
+When  檢索 personal/ 資料夾
+Then  只參考最近 8 週內的公文
+      且超過 8 週的公文不納入 context</code></pre>
+<h3 id="b-006-智慧標籤分類">B-006 智慧標籤分類</h3>
+<pre><code>Given 使用者上傳或生成一份公文
+When  公文存入系統
+Then  AI 自動分類並貼上標籤
+      （如：核定經費、人事異動、採購案、開會通知）</code></pre>
+<h3 id="b-007-標籤篩選檢索">B-007 標籤篩選檢索</h3>
+<pre><code>Given 使用者說「請你參考核定經費相關的舊公文」
+When  AI 檢索參考資料
+Then  只帶入標籤含「核定經費」的公文
+      且結合時間區間過濾</code></pre>
+<h3 id="b-008-claude.md-不可修改">B-008 CLAUDE.md 不可修改</h3>
+<pre><code>Given 系統部署完成
+When  任何人嘗試修改 CLAUDE.md
+Then  拒絕修改，回傳 403
+      （確保系統提示穩定不被汙染）</code></pre>
+<h3 id="b-009-記憶增刪修權限">B-009 記憶增刪修權限</h3>
+<pre><code>Given 使用者或廠商管理者要管理個人記憶
+When  CRUD personal/ 資料夾內的檔案
+Then  使用者可增刪修自己的檔案
+      且廠商管理者有權限管理所有使用者的 personal/</code></pre>
+<h3 id="b-010-公文中間檔版本管理">B-010 公文中間檔版本管理</h3>
+<pre><code>Given 使用者進行多輪迭代（第 1 輪 → 第 N 輪）
+When  每輪對話完成
+Then  產出一份 .md 中間檔，檔名含輪次與時間戳
+      例：session-abc_round-3_2026-03-10T14-30.md</code></pre>
+<h3 id="b-011-最終輸出轉檔">B-011 最終輸出轉檔</h3>
+<pre><code>Given 使用者確認公文最終版本
+When  請求最終輸出
+Then  同時生成 .docx 和 .pdf 兩種格式</code></pre>
+<h3 id="b-012-技能集架構skill">B-012 技能集架構（Skill）</h3>
+<pre><code>Given 系統要擴展新的應用場景
+When  新增一個 skill 資料夾（如：會議紀錄 skill）
+Then  API 自動載入新技能
+      且不需要修改核心程式碼
+      且共用永恆知己記憶架構</code></pre>
+<hr />
+<h2 id="c.-前端整合介面6-項">C. 前端整合介面（6 項）</h2>
+<h3 id="c-001-文字輸入框">C-001 文字輸入框</h3>
+<pre><code>Given 廠商前端頁面
+When  使用者輸入文字
+Then  透過 WebSocket 或 HTTP 送至 API</code></pre>
+<h3 id="c-002-串流顯示-ai-回應">C-002 串流顯示 AI 回應</h3>
+<pre><code>Given API 回傳 SSE 串流
+When  前端接收 delta chunks
+Then  即時顯示 AI 生成的文字（打字機效果）</code></pre>
+<h3 id="c-003-pdf-上傳介面">C-003 PDF 上傳介面</h3>
+<pre><code>Given 使用者要上傳舊公文
+When  拖拉或選擇 PDF 檔案
+Then  呼叫 A-003 上傳 API
+      且顯示上傳進度與成功/失敗狀態</code></pre>
+<h3 id="c-004-公文下載">C-004 公文下載</h3>
+<pre><code>Given AI 生成完整公文
+When  使用者點擊下載
+Then  提供 Word (.docx) 和 PDF 兩種格式選擇</code></pre>
+<h3 id="c-005-使用者回傳修改版">C-005 使用者回傳修改版</h3>
+<pre><code>Given 使用者下載 Word 修改後要回傳
+When  上傳修改後的 .docx
+Then  系統讀取修改內容，AI 可基於修改版繼續迭代</code></pre>
+<h3 id="c-006-新專案-繼續專案">C-006 新專案 / 繼續專案</h3>
+<pre><code>Given 使用者進入公文系統
+When  選擇「新增公文」或「繼續編輯」
+Then  新增 → 建立新 session（A-006）
+      繼續 → 載入既有 session 的對話脈絡</code></pre>
+<hr />
+<h2 id="d.-公文排行榜-多維度打分8-項">D. 公文排行榜 — 多維度打分（8
+項）</h2>
+<h3 id="d-001-五維度評分定義">D-001 五維度評分定義</h3>
+<pre><code>Given 一份 AI 生成的公文 + 一份標準答案公文
+When  執行評分
+Then  產出以下五個維度的分數（0-100）：
+
+| 編號 | 維度 | 說明 | 權重 |
+|------|------|------|------|
+| D1 | 格式正確性 | 發文字號、主旨/說明/辦法結構、附件格式 | 25% |
+| D2 | 內容完整性 | 所有必填欄位（人名、金額、期程）正確帶入 | 25% |
+| D3 | 語氣適切性 | 公文用語正式得體（函請、惠請、奉核） | 20% |
+| D4 | 邏輯連貫性 | 主旨→說明→辦法邏輯鏈完整不矛盾 | 15% |
+| D5 | 可用性 | 不需修改即可直接使用的程度 | 15% |</code></pre>
+<h3 id="d-002-加權總分計算">D-002 加權總分計算</h3>
+<pre><code>Given 五個維度各有分數
+When  計算總分
+Then  總分 = Σ(維度分數 × 權重)
+      且四捨五入至小數一位</code></pre>
+<h3 id="d-003-扣分原因標註">D-003 扣分原因標註</h3>
+<pre><code>Given 任一維度低於 90 分
+When  輸出評分結果
+Then  附上中文扣分原因列表
+      例：[&quot;缺少發文字號&quot;, &quot;附件格式不符&quot;]</code></pre>
+<h3 id="d-004-判定等級">D-004 判定等級</h3>
+<pre><code>Given 計算完加權總分
+When  輸出最終判定
+Then  總分 ≥ 80 → PASS（可直接使用）
+      60 ≤ 總分 &lt; 80 → NEEDS_REVISION（需人工修改）
+      總分 &lt; 60 → FAIL（需重新生成）</code></pre>
+<h3 id="d-005-模型比較">D-005 模型比較</h3>
+<pre><code>Given 同一份公文任務
+When  分別用 Agentic AI 和 TAIDE（無 Agentic）生成
+Then  兩個模型的五維度分數並排呈現
+      且標示哪個模型在哪個維度勝出</code></pre>
+<h3 id="d-006-批量評分">D-006 批量評分</h3>
+<pre><code>Given 100 份國科會公文測試集
+When  執行批量評分
+Then  每份公文產出完整評分結果
+      且彙整為排行榜表格</code></pre>
+<h3 id="d-007-排行榜表格輸出">D-007 排行榜表格輸出</h3>
+<pre><code>Given 批量評分完成
+When  產出排行榜
+Then  格式包含：
+      | 排名 | 模型名稱 | 總分 | 格式 | 內容 | 語氣 | 邏輯 | 可用性 |
+      且按總分由高到低排序</code></pre>
+<h3 id="d-008-排行榜視覺化">D-008 排行榜視覺化</h3>
+<pre><code>Given 排行榜數據
+When  輸出給工研院 AIEC 展示
+Then  產出可嵌入簡報的圖表（PNG/SVG）
+      且雷達圖呈現各維度差異</code></pre>
+<hr />
+<h2 id="e.-高品味題庫5-項">E. 高品味題庫（5 項）</h2>
+<h3 id="e-001-六欄位定義">E-001 六欄位定義</h3>
+<pre><code>Given 要建立一個高品味題庫
+When  填寫題庫
+Then  必須包含以下六欄位：
+      1. 動機（為什麼要寫這份公文）
+      2. 效益（這份公文達成什麼效益）
+      3. 提問（使用者的完整問題，含所有欄位值）
+      4. 答案（期望的公文產出）
+      5. 原始資料（參考 PDF 或其他文件）
+      6. 鑑別原則（審查專家的審查標準）</code></pre>
+<h3 id="e-002-提問欄位必須包含完整參數">E-002
+提問欄位必須包含完整參數</h3>
+<pre><code>Given 公文類型為「核定補助」
+When  填寫提問欄位
+Then  必須包含：教授名稱、金額、計畫名稱、
+      研究機構、期程、其他必填欄位
+      （即使模擬也必須像真實資料）</code></pre>
+<h3 id="e-003-多-sheet-格式">E-003 多 Sheet 格式</h3>
+<pre><code>Given 一份高品味題庫試算表
+When  包含多個任務
+Then  每個 Sheet 是一個完整任務
+      且 Sheet 名稱為任務摘要</code></pre>
+<h3 id="e-004-多輪對話紀錄">E-004 多輪對話紀錄</h3>
+<pre><code>Given 一個公文生成任務需要多輪迭代
+When  記錄高品味題庫
+Then  提問欄位包含完整多輪對話
+      且標註每輪的修改內容</code></pre>
+<h3 id="e-005-時間戳欄位">E-005 時間戳欄位</h3>
+<pre><code>Given 高品味題庫紀錄
+When  填寫每個任務
+Then  包含「起始時間」和「結束時間」欄位</code></pre>
+<hr />
+<h2 id="f.-商業計價4-項">F. 商業計價（4 項）</h2>
+<h3 id="f-001-按任務定價-公文">F-001 按任務定價 — 公文</h3>
+<pre><code>Given 使用者完成一份公文生成（含多輪迭代）
+When  session 結束
+Then  計費 350 元臺幣/份</code></pre>
+<h3 id="f-002-按任務定價-會議紀錄">F-002 按任務定價 — 會議紀錄</h3>
+<pre><code>Given 使用者完成一份會議紀錄生成
+When  session 結束
+Then  計費 200 元臺幣/份</code></pre>
+<h3 id="f-003-用量統計-api">F-003 用量統計 API</h3>
+<pre><code>Given 廠商要查詢用量
+When  GET /api/v1/usage?from=DATE&amp;to=DATE
+Then  回傳：
+      { &quot;total_tasks&quot;: number,
+        &quot;total_cost&quot;: number,
+        &quot;breakdown&quot;: [{ &quot;skill&quot;: string, &quot;count&quot;: number, &quot;cost&quot;: number }] }</code></pre>
+<h3 id="f-004-技能定價可配置">F-004 技能定價可配置</h3>
+<pre><code>Given 系統管理者要調整定價
+When  修改技能定價配置
+Then  新定價立即生效
+      且歷史帳單不受影響</code></pre>
+<hr />
+<h2 id="驗收總表">驗收總表</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>領域</th>
+<th>總項目數</th>
+<th>必過項目</th>
+<th>可選項目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. API 核心</td>
+<td>10</td>
+<td>A-001 ~ A-008</td>
+<td>A-009, A-010</td>
+</tr>
+<tr>
+<td>B. 後端永恆知己</td>
+<td>12</td>
+<td>B-001 ~ B-007, B-010, B-011</td>
+<td>B-008, B-009, B-012</td>
+</tr>
+<tr>
+<td>C. 前端整合</td>
+<td>6</td>
+<td>C-001 ~ C-004</td>
+<td>C-005, C-006</td>
+</tr>
+<tr>
+<td>D. 排行榜打分</td>
+<td>8</td>
+<td>D-001 ~ D-007</td>
+<td>D-008</td>
+</tr>
+<tr>
+<td>E. 高品味題庫</td>
+<td>5</td>
+<td>E-001 ~ E-002</td>
+<td>E-003 ~ E-005</td>
+</tr>
+<tr>
+<td>F. 商業計價</td>
+<td>4</td>
+<td>F-001, F-002</td>
+<td>F-003, F-004</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>45</strong></td>
+<td><strong>33 必過</strong></td>
+<td><strong>12 可選</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="驗收方式">驗收方式</h2>
+<ul>
+<li><strong>必過項目</strong>：33 項全部 PASS 才算驗收通過</li>
+<li><strong>可選項目</strong>：12 項為加分項，不影響基本驗收</li>
+<li><strong>打分方式</strong>：每項 PASS / FAIL，不打部分分數</li>
+<li><strong>測試資料</strong>：使用 100 份既有國科會模擬公文</li>
+<li><strong>評分者</strong>：由 Claude Opus 4.6 執行多維度評分（D
+領域），人工抽查 10%</li>
+</ul>
+<hr />
+<p><em>Boosted by BOTRUN.ai</em></p>
+</body>
+</html>
