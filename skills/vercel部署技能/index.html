@@ -89,12 +89,14 @@ vercel --yes --name ${PROJECT_NAME}<br>
   </div><br>
 </a><br>
 <code>`</code></p><p>#### 3c. SKILL.md 技能索引<br>
-如果部署的是 SKILL.md 相關內容，在 three-skills.html 的 Vercel 頁面中同步更新。</p><p><h3>Step 4：Git Commit + Push（必要）</h3></p><p><code>`</code>bash<br>
+如果部署的是 SKILL.md 相關內容，在 three-skills.html 的 Vercel 頁面中同步更新。</p><p><h3>Step 4：合併到 botrun.github.io 首頁（必要）</h3></p><p>#### 4a. 更新 content-manifest.json</p><p>在 <code>web/data/content-manifest.json</code> 的 <code>items</code> 陣列<strong>最前面</strong>新增項目（格式見 html-slides 技能 Step 6a）。</p><p>臺灣時間戳：<code>TZ=Asia/Taipei date '+%Y-%m-%dT%H:%M:%S+08:00'</code></p><p>#### 4b. 執行 build-web.ts</p><p><code>`</code>bash<br>
 cd /Users/40gpu/coding_projects/timeless-bowen<br>
-git add html/{檔名}.html html/{相關圖片}*.png docs/部署/vercel-projects.md<br>
-git commit -m "deploy: {專案名稱} to Vercel - {一句話說明}"<br>
+npx tsx .claude/skills/永恆知己-網頁發佈/scripts/build-web.ts<br>
+<code>`</code></p><p>#### 4c. Git Commit + Push</p><p><code>`</code>bash<br>
+git add html/ web/ web/data/content-manifest.json docs/部署/vercel-projects.md<br>
+git commit -m "build: 新增 {專案名稱} 到首頁 + Vercel 部署"<br>
 git push<br>
-<code>`</code></p><p><strong>HTML 是知識資產，URL 也是知識資產，兩者都必須 commit。</strong></p><p><h2>帳號資訊</h2></p><p>| 項目 | 值 |<br>
+<code>`</code></p><p>Push 後 GitHub Actions 自動部署到 https://botrun.github.io/</p><p><strong>驗證</strong>：<code>gh run list --repo botrun/timeless-bowen --limit 1</code> 確認 success</p><p><strong>四處必更新</strong>：content-manifest.json → vercel-projects.md → build-web.ts → git push</p><p><h2>帳號資訊</h2></p><p>| 項目 | 值 |<br>
 |------|-----|<br>
 | Vercel 帳號 | cbhs-projects-06619eab |<br>
 | 索引檔案 | <code>docs/部署/vercel-projects.md</code> |<br>

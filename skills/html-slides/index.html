@@ -102,15 +102,42 @@ mkdir -p /tmp/{project-name}-deploy<br>
 cp ./html/{檔名}.html /tmp/{project-name}-deploy/index.html</p><p><h1>部署</h1><br>
 cd /tmp/{project-name}-deploy<br>
 vercel --yes --name {project-name}<br>
-<code>`</code></p><p>部署完成後（三處必更新）：<br>
-1. <strong>回報 Vercel URL 給用戶</strong>（例如 <code>https://{project-name}.vercel.app</code>）<br>
-2. <strong>更新 <code>docs/部署/vercel-projects.md</code></strong>（新增一行到最新活躍區最上面）<br>
-3. <strong>更新首頁 <code>web/index.html</code></strong>（在 content-grid 最上面插入新卡片，含臺灣時間戳 UTC+8）<br>
-   - 用 <code>TZ=Asia/Taipei date '+%Y-%m-%d %H:%M:%S'</code> 取得時間<br>
-   - 同步更新 header 的「更新日期」</p><p><h3>Step 6：Git Commit + Push（必要步驟）</h3></p><p><strong>HTML 是重要記憶，URL 也是重要記憶，兩者都必須 commit。</strong></p><p>每次完成簡報後，必須 commit 以下檔案並 push：<br>
-- <code>html/{主題名稱}.html</code>（簡報本體）<br>
-- <code>docs/部署/vercel-projects.md</code>（Vercel URL 紀錄）<br>
-- 其他相關修改（技能更新、記憶檔等）</p><p>不可只部署不 commit。簡報和 URL 都是知識資產，必須進 Git。</p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
+<code>`</code></p><p>部署完成後回報 Vercel URL 給用戶。</p><p><h3>Step 6：合併到 botrun.github.io 首頁（必要步驟）</h3></p><p><strong>每份簡報都必須出現在 https://botrun.github.io/ 首頁最上方。</strong></p><p>#### 6a. 更新 content-manifest.json</p><p>在 <code>web/data/content-manifest.json</code> 的 <code>items</code> 陣列<strong>最前面</strong>插入新項目：</p><p><code>`</code>json<br>
+{<br>
+  "id": "{project-name}",<br>
+  "title": "{簡報標題}",<br>
+  "subtitle": "{一句話描述}",<br>
+  "href": "https://{project-name}.vercel.app",<br>
+  "icon": "{lucide-icon-name}",<br>
+  "badge": "{類型}",<br>
+  "badgeColor": "{色碼}",<br>
+  "publishDate": "{TZ=Asia/Taipei date -Iseconds 的輸出}",<br>
+  "tags": ["{icon}:{標籤}"]<br>
+}<br>
+<code>`</code></p><p>取得臺灣時間戳（必須 UTC+8）：<br>
+<code>`</code>bash<br>
+TZ=Asia/Taipei date '+%Y-%m-%dT%H:%M:%S+08:00'<br>
+<code>`</code></p><p>#### 6b. 更新 vercel-projects.md</p><p>在 <code>docs/部署/vercel-projects.md</code> 最新活躍區<strong>最上面</strong>新增一行。</p><p>#### 6c. 執行 build-web.ts 重新生成首頁</p><p><code>`</code>bash<br>
+cd /Users/40gpu/coding_projects/timeless-bowen<br>
+npx tsx .claude/skills/永恆知己-網頁發佈/scripts/build-web.ts<br>
+<code>`</code></p><p>這會自動根據 content-manifest.json 重新生成 <code>web/index.html</code>，最新項目在最上方。</p><p>#### 6d. Git Commit + Push（觸發 GitHub Actions 部署到 botrun.github.io）</p><p><code>`</code>bash<br>
+git add html/{檔名}.html web/ web/data/content-manifest.json docs/部署/vercel-projects.md<br>
+git commit -m "build: 新增 {簡報名稱} 到首頁"<br>
+git push<br>
+<code>`</code></p><p>Push 後 GitHub Actions 自動觸發 <code>.github/workflows/deploy-pages.yml</code>，<br>
+將 <code>web/</code> 部署到 https://botrun.github.io/。</p><p><strong>等 Actions 完成後驗證</strong>：<br>
+<code>`</code>bash<br>
+gh run list --repo botrun/timeless-bowen --limit 1<br>
+open https://botrun.github.io/<br>
+<code>`</code></p><p><h3>部署完整流程圖</h3></p><p><code>`</code><br>
+html-slides 製作簡報<br>
+  → Step 5: vercel --yes --name {name}  (Vercel 部署)<br>
+  → Step 6a: content-manifest.json      (首頁索引)<br>
+  → Step 6b: vercel-projects.md         (Vercel 紀錄)<br>
+  → Step 6c: build-web.ts               (重新生成首頁)<br>
+  → Step 6d: git push                   (觸發 GitHub Actions)<br>
+  → https://botrun.github.io/           (首頁最上方出現新卡片)<br>
+<code>`</code></p><p><strong>四處必更新，缺一不可。簡報和 URL 都是知識資產，必須進 Git。</strong></p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
 <body><br>
   <div class="deck" id="deck"><br>
     <section class="slide" id="s0">...</section>  <!-- 每頁一個 section --><br>
