@@ -51,9 +51,21 @@
       </p>
       <div>
         <p>
-<h1>HTML 投影片技能</h1></p><p>> 將任意主題製作為矽谷流敘事簡報 HTML，純靜態單檔，可下載 PDF。</p><p><h2>何時使用</h2></p><p>- 用戶說「簡報」「投影片」「slides」「HTML 簡報」<br>
+<h1>HTML 投影片技能</h1></p><p>> 將任意主題製作為矽谷流敘事簡報 HTML，純靜態單檔，可下載 PDF。</p><p><h2>何時使用</h2></p><p>- 用戶說「簡報」「投影片」「slides」「HTML 簡報」「網頁投影片技能」「網頁投影片」<br>
 - 用戶提供主題 + 要求視覺化呈現<br>
-- 用戶要求矽谷流說故事風格</p><p><h2>設計原則</h2></p><p><h3>矽谷流敘事（必遵守）</h3></p><p>遵循《矽谷流萬用敘事簡報法則》四步驟：</p><p>1. <strong>設定問題</strong>（痛點） — 讓觀眾感受到問題的存在<br>
+- 用戶要求矽谷流說故事風格</p><p><h2>香蕉繪圖技能整合</h2></p><p>當簡報需要真實情境圖片（人物肖像、場景照片、概念圖）時，使用香蕉繪圖技能：</p><p><code>`</code>bash<br>
+cd /Users/40gpu/coding_projects/timeless-bowen && \<br>
+GEMINI_API_KEY=$(grep GEMINI_API_KEY .env | cut -d= -f2) \<br>
+node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
+  "圖片描述" \<br>
+  --style "風格" \<br>
+  --aspect "16:9" \<br>
+  --size "512px" \<br>
+  --output "./html/image-name.png"<br>
+<code>`</code></p><p>生成後讀取 base64 嵌入 HTML：<br>
+<code>`</code>bash<br>
+base64 -i ./html/image-name.png | tr -d '\n'<br>
+<code>`</code></p><p>嵌入方式：<code><img src="data:image/png;base64,{BASE64}" alt="描述"></code></p><p><strong>多張圖片時，使用子代理平行生成（model: sonnet）以加速。</strong></p><p><h2>設計原則</h2></p><p><h3>矽谷流敘事（必遵守）</h3></p><p>遵循《矽谷流萬用敘事簡報法則》四步驟：</p><p>1. <strong>設定問題</strong>（痛點） — 讓觀眾感受到問題的存在<br>
 2. <strong>呈現數據</strong>（洞見） — 用一個核心訊息翻轉認知<br>
 3. <strong>給出解方</strong>（架構） — 視覺化架構圖<br>
 4. <strong>行動建議</strong>（CTA） — 明確下一步</p><p><h3>視覺風格（預設雅緻淺色）</h3></p><p>| 項目 | 規範 |<br>
@@ -90,9 +102,15 @@ mkdir -p /tmp/{project-name}-deploy<br>
 cp ./html/{檔名}.html /tmp/{project-name}-deploy/index.html</p><p><h1>部署</h1><br>
 cd /tmp/{project-name}-deploy<br>
 vercel --yes --name {project-name}<br>
-<code>`</code></p><p>部署完成後：<br>
+<code>`</code></p><p>部署完成後（三處必更新）：<br>
 1. <strong>回報 Vercel URL 給用戶</strong>（例如 <code>https://{project-name}.vercel.app</code>）<br>
-2. <strong>更新 <code>docs/部署/vercel-projects.md</code></strong>（新增一行到最新活躍區）</p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
+2. <strong>更新 <code>docs/部署/vercel-projects.md</code></strong>（新增一行到最新活躍區最上面）<br>
+3. <strong>更新首頁 <code>web/index.html</code></strong>（在 content-grid 最上面插入新卡片，含臺灣時間戳 UTC+8）<br>
+   - 用 <code>TZ=Asia/Taipei date '+%Y-%m-%d %H:%M:%S'</code> 取得時間<br>
+   - 同步更新 header 的「更新日期」</p><p><h3>Step 6：Git Commit + Push（必要步驟）</h3></p><p><strong>HTML 是重要記憶，URL 也是重要記憶，兩者都必須 commit。</strong></p><p>每次完成簡報後，必須 commit 以下檔案並 push：<br>
+- <code>html/{主題名稱}.html</code>（簡報本體）<br>
+- <code>docs/部署/vercel-projects.md</code>（Vercel URL 紀錄）<br>
+- 其他相關修改（技能更新、記憶檔等）</p><p>不可只部署不 commit。簡報和 URL 都是知識資產，必須進 Git。</p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
 <body><br>
   <div class="deck" id="deck"><br>
     <section class="slide" id="s0">...</section>  <!-- 每頁一個 section --><br>
@@ -128,7 +146,10 @@ vercel --yes --name {project-name}<br>
 | 深色科技 | <code>#0a0e27</code> | Noto Sans TC | 霓虹藍/紫/綠 |<br>
 | 極簡白 | <code>#ffffff</code> | Inter + Noto Sans TC | 純黑 + 一色 |</p><p><h2>永久地雷記錄</h2></p><p><h3>地雷 0：禁止 Emoji — 2026-03-16</h3></p><p>- <strong>問題</strong>：emoji 在 PDF 列印、跨平台顯示不一致，格調不夠<br>
 - <strong>正確</strong>：所有 icon 一律用 inline SVG 繪製（Lucide 風格：24x24 viewBox, stroke-width 1.8, stroke-linecap/linejoin round, fill none）<br>
-- <strong>驗證</strong>：全文搜尋確認零 emoji 字元</p><p><h3>地雷 1：CSS 變數在 SVG 中的使用 — 2026-03-16</h3></p><p>- <strong>問題</strong>：SVG 內的 <code>fill</code> 和 <code>stroke</code> 使用 CSS 變數 <code>var(--xxx)</code> 時，部分瀏覽器 PDF 列印可能不渲染<br>
+- <strong>驗證</strong>：全文搜尋確認零 emoji 字元</p><p><h3>地雷 4：HTML 和 URL 必須 commit — 2026-03-16</h3></p><p>- <strong>問題</strong>：只部署 Vercel 但忘記 commit HTML 和 vercel-projects.md，導致知識資產不在 Git 裡<br>
+- <strong>正確</strong>：每次完成簡報後，HTML 檔案 + URL 紀錄都必須 <code>git add</code> → <code>commit</code> → <code>push</code><br>
+- <strong>原因</strong>：HTML 是重要記憶，URL 也是重要記憶，兩者都是知識資產<br>
+- <strong>驗證</strong>：<code>git status</code> 確認 working tree clean</p><p><h3>地雷 1：CSS 變數在 SVG 中的使用 — 2026-03-16</h3></p><p>- <strong>問題</strong>：SVG 內的 <code>fill</code> 和 <code>stroke</code> 使用 CSS 變數 <code>var(--xxx)</code> 時，部分瀏覽器 PDF 列印可能不渲染<br>
 - <strong>解法</strong>：SVG 中盡量使用 CSS 變數，但確保 <code>@media print</code> 時背景為白色<br>
 - <strong>驗證</strong>：列印預覽確認 SVG 文字和線條可見</p><p><h3>地雷 2：Google Fonts @import 必須在 CSS 最頂部 — 2026-03-16</h3></p><p>- <strong>問題</strong>：<code>@import</code> 放在其他 CSS 規則後面會被忽略<br>
 - <strong>正確</strong>：<code>@import</code> 必須是 <code><style></code> 區塊的第一行<br>

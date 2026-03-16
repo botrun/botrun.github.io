@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>香蕉繪圖技能 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> 香蕉繪圖技能</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>香蕉繪圖技能（Nano Banana 2）</h1></p><p>> 使用 Gemini 3.1 Flash Image Preview 模型，4-6 秒生成高品質圖片，繁體中文渲染優異。</p><p><h2>何時使用</h2></p><p>- 用戶說「畫圖」「繪圖」「生成圖片」「香蕉繪圖」「banana」「畫一張」<br>
+- 用戶描述想要的圖片內容<br>
+- html-slides 技能需要情境插圖<br>
+- 任何需要 AI 生成圖片的場景</p><p><h2>風格優先原則（必遵守）</h2></p><p><h3>如果用戶沒有指定風格，必須先討論風格</h3></p><p><strong>禁止直接跳過風格選擇就開始繪製。</strong> 先向用戶提出風格建議：</p><p><code>`</code><br>
+我準備用香蕉繪圖技能來生成圖片。在開始之前，想確認一下風格方向：</p><p>推薦以下美學風格，請選擇或告訴我你的偏好：</p><p>1. 📷 寫實攝影風（photorealistic）— 像真實照片，適合產品、場景<br>
+2. 🎨 水彩插畫風（watercolor illustration）— 柔和溫暖，適合教育、故事<br>
+3. 🖋️ 扁平設計風（flat design）— 簡潔俐落，適合簡報、UI<br>
+4. 🌸 日系動漫風（anime style）— 活潑可愛，適合年輕受眾<br>
+5. 🏛️ 油畫藝術風（oil painting）— 厚重質感，適合文化、歷史<br>
+6. ✏️ 手繪素描風（pencil sketch）— 樸實自然，適合草稿、構思<br>
+7. 🔮 賽博龐克風（cyberpunk）— 霓虹科技，適合未來、AI 主題<br>
+8. 🍃 侘寂美學風（wabi-sabi）— 不完美的美，適合哲學、禪意</p><p>或者告訴我你想要的氛圍（例如：溫暖的、專業的、科幻的），我來推薦。<br>
+<code>`</code></p><p><h3>如果用戶已指定風格，直接使用</h3></p><p>用戶說了風格關鍵字（如「水彩」「寫實」「扁平」）就直接採用，不再詢問。</p><p><h2>執行方式</h2></p><p><h3>基本繪圖</h3></p><p><code>`</code>bash<br>
+cd /Users/40gpu/coding_projects/timeless-bowen && \<br>
+GEMINI_API_KEY=$(grep GEMINI_API_KEY .env | cut -d= -f2) \<br>
+node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
+  "圖片描述 prompt" \<br>
+  --style "風格描述" \<br>
+  --aspect "1:1" \<br>
+  --size "1K" \<br>
+  --output "./html/output.png"<br>
+<code>`</code></p><p><h3>參數說明</h3></p><p>| 參數 | 說明 | 預設值 |<br>
+|------|------|--------|<br>
+| 第一個參數 | 圖片描述（支援繁體中文） | 必填 |<br>
+| --style, -s | 藝術風格（必須指定） | 無預設，必須先討論 |<br>
+| --aspect, -a | 長寬比 | 1:1 |<br>
+| --size | 解析度: 512px, 1K, 2K, 4K | 512px（最低，最快） |<br>
+| --output, -o | 輸出檔案路徑 | ./output.png |<br>
+| --negative, -n | 要避免的元素 | 無 |</p><p><h3>長寬比選項</h3></p><p>| 值 | 適用場景 |<br>
+|----|---------|<br>
+| 1:1 | 頭像、社群貼文 |<br>
+| 16:9 | 簡報、橫幅 |<br>
+| 9:16 | 手機桌布、限時動態 |<br>
+| 4:3 | 傳統投影片 |<br>
+| 3:2 | 攝影、明信片 |<br>
+| 21:9 | 超寬螢幕、電影感 |</p><p><h3>解析度選項</h3></p><p>| 值 | 說明 | 建議用途 |<br>
+|----|------|---------|<br>
+| 512px | 最低解析度，最快速度（預設推薦） | 草稿、預覽、簡報插圖 |<br>
+| 1K | 標準解析度（512px 失敗時 fallback） | 一般用途 |<br>
+| 2K | 高解析度 | 印刷品、海報 |<br>
+| 4K | 最高解析度 | 大型輸出 |</p><p><h2>Prompt 工程指引</h2></p><p><h3>好的 prompt 結構</h3></p><p><code>`</code><br>
+[主體] + [場景] + [光線] + [構圖] + [風格]<br>
+<code>`</code></p><p>範例：<br>
+- ❌ 「一個女生」<br>
+- ✅ 「一位穿著深藍色西裝的年輕臺灣女性，站在現代辦公室的落地窗前，自然光從左側灑入，半身肖像構圖，水彩插畫風格，柔和色調」</p><p><h3>風格 prompt 模板</h3></p><p>| 風格 | 英文 prompt 補充 |<br>
+|------|-----------------|<br>
+| 寫實攝影 | photorealistic, natural lighting, 8K detail, shallow depth of field |<br>
+| 水彩插畫 | watercolor illustration, soft edges, gentle pastel colors, paper texture |<br>
+| 扁平設計 | flat design, geometric shapes, bold colors, minimal shadows |<br>
+| 日系動漫 | anime style, cel shading, vibrant colors, clean lines |<br>
+| 油畫 | oil painting, visible brushstrokes, rich texture, classical composition |<br>
+| 手繪素描 | pencil sketch, cross-hatching, graphite texture, white background |<br>
+| 賽博龐克 | cyberpunk, neon lights, rain-soaked streets, holographic UI |<br>
+| 侘寂 | wabi-sabi aesthetic, muted earth tones, organic imperfections, minimalist |</p><p><h2>平行生成（子代理加速）</h2></p><p>當需要同時生成多張圖片時，<strong>必須使用子代理平行執行</strong>以加速：</p><p><code>`</code><br>
+使用 Agent tool，subagent_type: general-purpose，model: sonnet<br>
+每張圖片一個子代理，同時發出，大幅縮短等待時間<br>
+<code>`</code></p><p>範例：需要 3 張圖片 → 啟動 3 個 sonnet 子代理 → 各自呼叫 banana-draw.mjs → 全部完成後匯總</p><p><h2>與 html-slides 技能整合</h2></p><p>當 html-slides 需要情境插圖時：</p><p>1. 先用香蕉繪圖技能生成圖片（512px 解析度即可）<br>
+2. 圖片存到 <code>./html/</code> 目錄<br>
+3. 在 HTML 中用 <code><img></code> 引用或用 base64 內嵌</p><p><code>`</code>html<br>
+<!-- 方式 A：檔案引用 --><br>
+<img src="partner-yaqi.png" alt="波雅琪" style="max-width:300px; border-radius:12px;"></p><p><!-- 方式 B：base64 內嵌（純單檔，推薦） --><br>
+<img src="data:image/png;base64,..." alt="波雅琪" style="max-width:300px; border-radius:12px;"><br>
+<code>`</code></p><p><h2>模型資訊</h2></p><p>| 項目 | 值 |<br>
+|------|-----|<br>
+| 模型 ID | gemini-3.1-flash-image-preview |<br>
+| 代號 | Nano Banana 2 |<br>
+| 速度 | 4-6 秒 |<br>
+| 價格 | ~$0.067/張 |<br>
+| 中文渲染 | 優於 Pro 版 |<br>
+| SDK | @google/genai |</p><p><h2>地雷紀錄</h2></p><p><h3>地雷 1：風格未指定就繪圖 — 2026-03-16</h3></p><p>- <strong>問題</strong>：未討論風格就直接生成，產出風格不符用戶期待<br>
+- <strong>正確</strong>：必須先確認風格，再開始繪製<br>
+- <strong>驗證</strong>：每次繪圖前確認 --style 參數有值</p><p><h3>地雷 2：Prompt 要用英文為主 — 2026-03-16</h3></p><p>- <strong>問題</strong>：純中文 prompt 有時品質不穩定<br>
+- <strong>正確</strong>：主體描述用英文，風格和氛圍可混用中文<br>
+- <strong>範例</strong>：<code>"A young Taiwanese woman in business suit, watercolor style, 溫暖柔和的色調"</code><br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

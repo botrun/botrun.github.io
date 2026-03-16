@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vercel部署技能 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> vercel部署技能</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>Vercel 部署技能</h1></p><p>> 一鍵部署 HTML 到 Vercel，自動更新索引，永久記錄。</p><p><h2>何時使用</h2></p><p>- 用戶說「部署」「deploy」「上 Vercel」「vercel」「發佈到網路」<br>
+- html-slides 簡報完成後<br>
+- 任何 HTML 需要公開 URL</p><p><h2>連動技能</h2></p><p>| 技能 | 連動方式 |<br>
+|------|---------|<br>
+| html-slides（網頁投影片技能） | 簡報製作完成後 → 自動呼叫本技能部署 |<br>
+| 香蕉繪圖技能 | 圖片存在 html/ 目錄 → 與 HTML 一起打包部署 |</p><p><h2>部署流程（必遵守）</h2></p><p><h3>Step 1：準備部署目錄</h3></p><p><code>`</code>bash<br>
+<h1>建立乾淨的部署目錄</h1><br>
+PROJECT_NAME="{專案名稱}"  # 英文小寫+連字號，如 three-partners<br>
+mkdir -p /tmp/${PROJECT_NAME}-deploy</p><p><h1>複製 HTML 檔案為 index.html</h1><br>
+cp ./html/{檔名}.html /tmp/${PROJECT_NAME}-deploy/index.html</p><p><h1>如果有搭配圖片（香蕉繪圖技能產出），一起複製</h1><br>
+cp ./html/{相關圖片}*.png /tmp/${PROJECT_NAME}-deploy/ 2>/dev/null<br>
+<code>`</code></p><p><h3>Step 2：部署到 Vercel</h3></p><p><code>`</code>bash<br>
+cd /tmp/${PROJECT_NAME}-deploy<br>
+vercel --yes --name ${PROJECT_NAME}<br>
+<code>`</code></p><p>部署完成後記錄 URL（通常是 <code>https://{PROJECT_NAME}.vercel.app</code>）。</p><p><h3>Step 3：更新索引（三處全部必更新）</h3></p><p>#### 3a. vercel-projects.md<br>
+更新 <code>docs/部署/vercel-projects.md</code>：<br>
+- 在「最新活躍」區塊的<strong>最上面</strong>新增一行<br>
+- 日期格式：<code>2026-03-16</code><br>
+- 說明要簡潔（一句話）</p><p>#### 3b. 首頁 web/index.html（最重要）<br>
+更新 <code>web/index.html</code>：<br>
+- 在 <code><div class="content-grid"></code> 的<strong>最上面</strong>插入新卡片<br>
+- 卡片連結到 Vercel URL（<code>target="_blank"</code>）<br>
+- <strong>必須標示臺灣時間戳（UTC+8）</strong>，格式：<code>2026-03-16 HH:MM UTC+8</code><br>
+- 用 <code>TZ=Asia/Taipei date '+%Y-%m-%d %H:%M:%S'</code> 取得精確時間<br>
+- 更新 header 的「更新日期」為當前臺灣時間（含年月日時分秒）</p><p>卡片結構參考（複製既有卡片，改 href/文字/badge/icon）：<br>
+<code>`</code>html<br>
+<a class="content-card" href="https://{project}.vercel.app" target="_blank" style="..."><br>
+  <div class="card-badge">...</div><br>
+  <div class="card-icon">...</div><br>
+  <div class="card-content"><br>
+    <h3>標題</h3><br>
+    <p>說明</p><br>
+    <div class="card-meta"><br>
+      <span><i data-lucide="calendar"></i> 2026-03-16 HH:MM UTC+8</span><br>
+    </div><br>
+  </div><br>
+</a><br>
+<code>`</code></p><p>#### 3c. SKILL.md 技能索引<br>
+如果部署的是 SKILL.md 相關內容，在 three-skills.html 的 Vercel 頁面中同步更新。</p><p><h3>Step 4：Git Commit + Push（必要）</h3></p><p><code>`</code>bash<br>
+cd /Users/40gpu/coding_projects/timeless-bowen<br>
+git add html/{檔名}.html html/{相關圖片}*.png docs/部署/vercel-projects.md<br>
+git commit -m "deploy: {專案名稱} to Vercel - {一句話說明}"<br>
+git push<br>
+<code>`</code></p><p><strong>HTML 是知識資產，URL 也是知識資產，兩者都必須 commit。</strong></p><p><h2>帳號資訊</h2></p><p>| 項目 | 值 |<br>
+|------|-----|<br>
+| Vercel 帳號 | cbhs-projects-06619eab |<br>
+| 索引檔案 | <code>docs/部署/vercel-projects.md</code> |<br>
+| HTML 目錄 | <code>html/</code> |</p><p><h2>命名規則</h2></p><p>| 規則 | 範例 |<br>
+|------|------|<br>
+| 英文小寫 | <code>three-partners</code> |<br>
+| 連字號分隔 | <code>zero-gap-classroom</code> |<br>
+| 有意義 | <code>h200-autoresearch-gov</code> |<br>
+| 禁止中文 | ~~三位夥伴~~ → <code>three-partners</code> |</p><p><h2>多檔案部署（含圖片）</h2></p><p>當 HTML 引用了圖片（如香蕉繪圖技能產出的 .png）時：</p><p><code>`</code>bash<br>
+<h1>確保圖片也在部署目錄中</h1><br>
+cp ./html/partner-*.png /tmp/${PROJECT_NAME}-deploy/<br>
+<code>`</code></p><p>HTML 中的 <code><img src="partner-chingan.png"></code> 會自動找到同目錄下的圖片。</p><p><h2>地雷紀錄</h2></p><p><h3>地雷 1：只部署不 commit — 2026-03-16</h3></p><p>- <strong>問題</strong>：部署到 Vercel 但忘記 commit HTML 和 URL 紀錄<br>
+- <strong>正確</strong>：部署後必須 git add + commit + push<br>
+- <strong>驗證</strong>：<code>git status</code> 確認 working tree clean</p><p><h3>地雷 2：索引沒有更新 — 2026-03-16</h3></p><p>- <strong>問題</strong>：部署成功但 vercel-projects.md 沒新增紀錄<br>
+- <strong>正確</strong>：每次部署都要在最新活躍區塊最上面新增一行<br>
+- <strong>驗證</strong>：檢查 vercel-projects.md 最新日期是否為今天</p><p><h3>地雷 3：圖片沒有一起部署 — 2026-03-16</h3></p><p>- <strong>問題</strong>：HTML 引用了圖片但部署目錄只有 index.html<br>
+- <strong>正確</strong>：有圖片時一律 cp 到部署目錄<br>
+- <strong>驗證</strong>：打開 Vercel URL 確認圖片顯示<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
