@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>零差別教室 Zero-Gap Classroom</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Serif TC', 'Inter', serif; background: #faf9f6; color: #1a1a1a; }
+  html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+
+  .slide {
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    scroll-snap-align: start; position: relative;
+    page-break-after: always;
+  }
+  .slide-inner { max-width: 960px; width: 88%; text-align: center; }
+
+  .nav { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 99; display: flex; flex-direction: column; gap: 14px; }
+  .nav a { width: 10px; height: 10px; border-radius: 50%; background: #ccc; display: block; transition: all .3s; }
+  .nav a:hover, .nav a.active { background: #2d6a4f; transform: scale(1.5); }
+
+  .dl-btn {
+    position: fixed; top: 24px; right: 28px; z-index: 99;
+    background: #2d6a4f; color: #fff; border: none; padding: 10px 20px;
+    border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif;
+    cursor: pointer; letter-spacing: 0.5px; font-weight: 600;
+    transition: background .2s; display: flex; align-items: center; gap: 8px;
+  }
+  .dl-btn:hover { background: #1b4332; }
+  .dl-btn svg { width: 16px; height: 16px; }
+
+  .tag { display: inline-block; color: #6b7280; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+  h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.15; font-weight: 900; letter-spacing: -1px; }
+  h2 { font-size: clamp(32px, 4.5vw, 56px); line-height: 1.2; font-weight: 700; }
+  p { font-size: clamp(18px, 2vw, 24px); line-height: 1.8; color: #555; font-weight: 300; }
+  .accent { color: #2d6a4f; }
+  .accent-warm { color: #b45309; }
+  .accent-rose { color: #9f1239; }
+  .slide-num { position: absolute; bottom: 32px; right: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: #ccc; letter-spacing: 2px; }
+
+  /* Icon helper */
+  .icon-circle {
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%; width: 56px; height: 56px;
+  }
+  .icon-circle svg { width: 28px; height: 28px; }
+
+  @media print {
+    .nav, .dl-btn { display: none !important; }
+    html { scroll-snap-type: none; }
+    .slide { height: 100vh; page-break-after: always; break-after: page; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<button class="dl-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+  下載 PDF
+</button>
+
+<nav class="nav">
+  <a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a>
+</nav>
+
+<!-- ===== SLIDE 1: 問題 ===== -->
+<section class="slide" id="s1" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Problem</span>
+    <h1>全球 8 億支教學影片<br><span class="accent-rose">沒人幫你打分數</span></h1>
+    <svg viewBox="0 0 600 200" style="max-width:520px;width:80%;margin:36px auto 28px;">
+      <rect x="30" y="30" width="100" height="65" rx="8" fill="#e5e7eb"/>
+      <polygon points="65,50 65,78 88,64" fill="#d1d5db"/>
+      <rect x="150" y="20" width="100" height="65" rx="8" fill="#e5e7eb"/>
+      <polygon points="185,40 185,68 208,54" fill="#d1d5db"/>
+      <rect x="270" y="35" width="100" height="65" rx="8" fill="#e5e7eb"/>
+      <polygon points="305,55 305,83 328,69" fill="#d1d5db"/>
+      <rect x="390" y="25" width="100" height="65" rx="8" fill="#e5e7eb"/>
+      <polygon points="425,45 425,73 448,59" fill="#d1d5db"/>
+      <!-- X mark (SVG, no emoji) -->
+      <line x1="260" y1="125" x2="285" y2="150" stroke="#9f1239" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="285" y1="125" x2="260" y2="150" stroke="#9f1239" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="300" y="155" text-anchor="middle" fill="#9f1239" font-size="28" font-weight="700" font-family="Inter, sans-serif">看完 ≠ 學會</text>
+      <line x1="200" y1="165" x2="400" y2="165" stroke="#9f1239" stroke-width="1.5" opacity="0.3"/>
+    </svg>
+    <p>你看了三小時木工教學<br>但沒有人知道你學會了沒有</p>
+    <span class="slide-num">01 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 2: 洞見 ===== -->
+<section class="slide" id="s2" style="background:#f5f3ee;">
+  <div class="slide-inner">
+    <span class="tag">The Insight</span>
+    <h1>AI 已經能<br><span class="accent">看懂你的實作</span></h1>
+    <svg viewBox="0 0 500 220" style="max-width:420px;width:75%;margin:36px auto 28px;">
+      <!-- Elegant eye -->
+      <path d="M80,110 Q250,20 420,110 Q250,200 80,110 Z" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+      <circle cx="250" cy="110" r="40" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+      <circle cx="250" cy="110" r="15" fill="#2d6a4f" opacity="0.7"/>
+      <circle cx="242" cy="103" r="5" fill="#fff" opacity="0.6"/>
+      <!-- Check marks as SVG paths -->
+      <g stroke="#2d6a4f" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+        <polyline points="132,72 137,77 147,67"/>
+        <polyline points="332,67 337,72 347,62"/>
+        <polyline points="152,152 157,157 167,147"/>
+        <polyline points="322,147 327,152 337,142"/>
+      </g>
+    </svg>
+    <p>螢幕錄影、手作過程、真實操作<br>多模態 AI <span style="color:#2d6a4f;font-weight:600;">逐步比對、逐步評分</span></p>
+    <span class="slide-num">02 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 3: 方案 ===== -->
+<section class="slide" id="s3" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Solution</span>
+    <h2 style="font-size:clamp(18px,2vw,22px);color:#888;font-weight:400;margin-bottom:8px;">Zero-Gap Classroom</h2>
+    <h1 style="margin-bottom:12px;">零差別教室</h1>
+    <p style="margin-bottom:40px;">任何影片變課程　AI 當教練　學完拿證照</p>
+    <svg viewBox="0 0 840 140" style="max-width:800px;width:100%;margin:0 auto;">
+      <!-- Step 1: Play icon -->
+      <g>
+        <rect x="0" y="10" width="170" height="110" rx="12" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+        <g transform="translate(73,30)" stroke="#9f1239" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5,3 19,12 5,21" fill="#9f1239" opacity="0.15" stroke="none"/><polygon points="5,3 19,12 5,21"/>
+        </g>
+        <text x="85" y="80" text-anchor="middle" fill="#1a1a1a" font-size="16" font-weight="700" font-family="Noto Serif TC">看影片</text>
+        <text x="85" y="102" text-anchor="middle" fill="#999" font-size="12" font-family="Inter">YouTube / TED / DIY</text>
+      </g>
+      <text x="192" y="70" fill="#bbb" font-size="22" font-family="Inter">&rarr;</text>
+      <!-- Step 2: Video/Camera icon -->
+      <g>
+        <rect x="220" y="10" width="170" height="110" rx="12" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+        <g transform="translate(289,28)" stroke="#b45309" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="3" width="20" height="14" rx="2"/>
+          <polygon points="20,7 28,3 28,17 20,13"/>
+        </g>
+        <text x="305" y="80" text-anchor="middle" fill="#1a1a1a" font-size="16" font-weight="700" font-family="Noto Serif TC">動手做 / 錄影</text>
+        <text x="305" y="102" text-anchor="middle" fill="#999" font-size="12" font-family="Inter">螢幕或實拍皆可</text>
+      </g>
+      <text x="412" y="70" fill="#bbb" font-size="22" font-family="Inter">&rarr;</text>
+      <!-- Step 3: Sparkles/AI icon -->
+      <g>
+        <rect x="440" y="10" width="170" height="110" rx="12" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+        <g transform="translate(511,28)" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12,0 L13.5,5 L18,3.5 L14.5,7 L18,10 L13.5,9 L12,14 L10.5,9 L6,10 L9.5,7 L6,3.5 L10.5,5 Z"/>
+          <path d="M3,16 L3.8,18.5 L6,18 L4.2,19.5 L6,21 L3.8,20.2 L3,22 L2.2,20.2 L0,21 L1.8,19.5 L0,18 L2.2,18.5 Z" transform="scale(0.7) translate(2,2)"/>
+        </g>
+        <text x="525" y="80" text-anchor="middle" fill="#1a1a1a" font-size="16" font-weight="700" font-family="Noto Serif TC">AI 評分回饋</text>
+        <text x="525" y="102" text-anchor="middle" fill="#999" font-size="12" font-family="Inter">逐步比對 / 個人化</text>
+      </g>
+      <text x="632" y="70" fill="#bbb" font-size="22" font-family="Inter">&rarr;</text>
+      <!-- Step 4: Award/Certificate icon -->
+      <g>
+        <rect x="660" y="10" width="170" height="110" rx="12" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+        <g transform="translate(731,26)" stroke="#6d28d9" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="7"/>
+          <polyline points="4,14 4,22 8,19 12,22 12,14"/>
+        </g>
+        <text x="745" y="80" text-anchor="middle" fill="#1a1a1a" font-size="16" font-weight="700" font-family="Noto Serif TC">拿證照</text>
+        <text x="745" y="102" text-anchor="middle" fill="#999" font-size="12" font-family="Inter">通過即認證</text>
+      </g>
+    </svg>
+    <span class="slide-num">03 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 4: 三引擎 ===== -->
+<section class="slide" id="s4" style="background:#f5f3ee;">
+  <div class="slide-inner">
+    <span class="tag">How It Works</span>
+    <h1 style="margin-bottom:40px;">三層引擎</h1>
+    <svg viewBox="0 0 780 280" style="max-width:740px;width:100%;margin:0 auto;">
+      <!-- Engine 1 -->
+      <g>
+        <rect x="0" y="0" width="240" height="260" rx="16" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+        <circle cx="120" cy="60" r="28" fill="#f0fdf4" stroke="#2d6a4f" stroke-width="1.5"/>
+        <!-- Layers icon (course generation) -->
+        <g transform="translate(107,47)" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13,2 2,7 13,12 24,7"/>
+          <polyline points="2,12 13,17 24,12"/>
+          <polyline points="2,17 13,22 24,17"/>
+        </g>
+        <text x="120" y="115" text-anchor="middle" fill="#1a1a1a" font-size="18" font-weight="700" font-family="Noto Serif TC">課程生成</text>
+        <text x="120" y="150" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">自動拆解影片</text>
+        <text x="120" y="175" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">分階段出題</text>
+        <text x="120" y="215" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">木工 / 程式 / 烹飪</text>
+        <text x="120" y="237" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">瑜伽 / 任何技能</text>
+      </g>
+      <!-- Engine 2 -->
+      <g>
+        <rect x="270" y="0" width="240" height="260" rx="16" fill="#fff" stroke="#b45309" stroke-width="2"/>
+        <circle cx="390" cy="60" r="28" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+        <!-- Eye icon (assessment) -->
+        <g transform="translate(377,47)" stroke="#b45309" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1,13 C1,13 5,5 13,5 C21,5 25,13 25,13 C25,13 21,21 13,21 C5,21 1,13 1,13 Z"/>
+          <circle cx="13" cy="13" r="4"/>
+        </g>
+        <text x="390" y="115" text-anchor="middle" fill="#1a1a1a" font-size="18" font-weight="700" font-family="Noto Serif TC">實作評分</text>
+        <text x="390" y="150" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">看你的錄影</text>
+        <text x="390" y="175" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">逐步比對教學</text>
+        <text x="390" y="215" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">哪裡做對 / 哪裡錯</text>
+        <text x="390" y="237" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">怎麼改善</text>
+      </g>
+      <!-- Engine 3 -->
+      <g>
+        <rect x="540" y="0" width="240" height="260" rx="16" fill="#fff" stroke="#9f1239" stroke-width="2"/>
+        <circle cx="660" cy="60" r="28" fill="#fff1f2" stroke="#9f1239" stroke-width="1.5"/>
+        <!-- Target/Crosshair icon (personalized) -->
+        <g transform="translate(647,47)" stroke="#9f1239" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="13" cy="13" r="10"/>
+          <circle cx="13" cy="13" r="4"/>
+          <line x1="13" y1="1" x2="13" y2="5"/>
+          <line x1="13" y1="21" x2="13" y2="25"/>
+          <line x1="1" y1="13" x2="5" y2="13"/>
+          <line x1="21" y1="13" x2="25" y2="13"/>
+        </g>
+        <text x="660" y="115" text-anchor="middle" fill="#1a1a1a" font-size="18" font-weight="700" font-family="Noto Serif TC">個人化學習</text>
+        <text x="660" y="150" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">依你的程度調整</text>
+        <text x="660" y="175" text-anchor="middle" fill="#777" font-size="14" font-family="Inter">不懂的深入講</text>
+        <text x="660" y="215" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">會的就跳過</text>
+        <text x="660" y="237" text-anchor="middle" fill="#aaa" font-size="12" font-family="Inter">按你的節奏走</text>
+      </g>
+    </svg>
+    <span class="slide-num">04 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 5: 願景 ===== -->
+<section class="slide" id="s5" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Vision</span>
+    <h1>全球老師教你<br>AI 確保你<span class="accent">真的學會</span></h1>
+    <svg viewBox="0 0 600 180" style="max-width:520px;width:80%;margin:36px auto 32px;">
+      <circle cx="300" cy="90" r="75" fill="none" stroke="#d1d5db" stroke-width="1.5"/>
+      <ellipse cx="300" cy="90" rx="75" ry="28" fill="none" stroke="#d1d5db" stroke-width="1"/>
+      <ellipse cx="300" cy="90" rx="30" ry="75" fill="none" stroke="#d1d5db" stroke-width="1"/>
+      <circle cx="265" cy="50" r="5" fill="#2d6a4f" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="340" cy="40" r="5" fill="#b45309" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="280" cy="120" r="5" fill="#9f1239" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="350" cy="110" r="5" fill="#6d28d9" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="300" cy="145" r="5" fill="#0369a1" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.1s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+    <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:36px;">
+      <div>
+        <div style="font-size:36px;font-weight:800;color:#2d6a4f;font-family:Inter;">&#8734;</div>
+        <div style="font-size:14px;color:#888;">教學來源</div>
+      </div>
+      <div>
+        <div style="font-size:36px;font-weight:800;color:#b45309;font-family:Inter;">0</div>
+        <div style="font-size:14px;color:#888;">入學門檻</div>
+      </div>
+      <div>
+        <div style="font-size:36px;font-weight:800;color:#9f1239;font-family:Inter;">24/7</div>
+        <div style="font-size:14px;color:#888;">AI 教練</div>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div style="font-size:14px;color:#888;">技能證照</div>
+      </div>
+    </div>
+    <p style="font-size:clamp(20px,2.5vw,30px);font-weight:700;color:#1a1a1a;letter-spacing:1px;">
+      <span class="accent">Zero Gap.</span>&#12288;<span class="accent-warm">Global Teachers.</span>&#12288;<span class="accent-rose">Your Pace.</span>
+    </p>
+    <span class="slide-num">05 / 05</span>
+  </div>
+</section>
+
+<script>
+const dots = document.querySelectorAll('.nav a');
+const slides = document.querySelectorAll('.slide');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const i = [...slides].indexOf(e.target);
+      dots.forEach((d, j) => d.classList.toggle('active', i === j));
+    }
+  });
+}, { threshold: 0.5 });
+slides.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
