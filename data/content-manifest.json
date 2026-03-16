@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-16T22:27:06+08:00"
+    "lastUpdated": "2026-03-16T22:56:17+08:00"
   },
   "items": [
+    {
+      "id": "one-drag-patent",
+      "title": "One Drag — aiplay 波特人 AI 專利",
+      "subtitle": "拖拉 Folder 就完成高品味題庫，無需 Prompt、無需 Chat，Agentic AI 全自動解析+驗算",
+      "href": "https://one-drag-patent.vercel.app",
+      "icon": "lock",
+      "badge": "機密",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-16T22:56:17+08:00",
+      "tags": ["shield:專利", "lock:密碼保護"]
+    },
     {
       "id": "agent-harness-engineering",
       "title": "駕馭框架 Harness — 六大垂直 AI 管控工程",
