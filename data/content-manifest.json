@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-16T18:36:45+08:00"
+    "lastUpdated": "2026-03-16T22:27:06+08:00"
   },
   "items": [
+    {
+      "id": "agent-harness-engineering",
+      "title": "駕馭框架 Harness — 六大垂直 AI 管控工程",
+      "subtitle": "波駿馬 Harness：Git Submodule 共享 SKILL.md，六大類 22 項政府 AI 應用自動進化，含 AI 生成奔馳駿馬圖",
+      "href": "https://agent-harness-engineering.vercel.app",
+      "icon": "shield",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-16T22:27:06+08:00",
+      "tags": ["cpu:Harness", "layout-dashboard:5 頁"]
+    },
     {
       "id": "timeseries-ai-revolution",
       "title": "時間序列預測三年巨變 2023→2026",
