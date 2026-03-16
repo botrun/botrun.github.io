@@ -84,13 +84,15 @@
 3. 每頁一個 <code><section class="slide"></code><br>
 4. SVG 圖表內嵌在各頁</p><p><h3>Step 4：本機預覽</h3></p><p><code>`</code>bash<br>
 open ./html/{檔名}.html<br>
-<code>`</code></p><p><h3>Step 5：部署（依用戶要求）</h3></p><p>如用戶要求上 Vercel：</p><p><code>`</code>bash<br>
+<code>`</code></p><p><h3>Step 5：部署 Vercel（必要步驟）</h3></p><p><strong>每份簡報都必須部署到 Vercel 並回報 URL。</strong></p><p><code>`</code>bash<br>
 <h1>建立乾淨部署目錄</h1><br>
 mkdir -p /tmp/{project-name}-deploy<br>
 cp ./html/{檔名}.html /tmp/{project-name}-deploy/index.html</p><p><h1>部署</h1><br>
 cd /tmp/{project-name}-deploy<br>
 vercel --yes --name {project-name}<br>
-<code>`</code></p><p>部署後更新 <code>docs/部署/vercel-projects.md</code>。</p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
+<code>`</code></p><p>部署完成後：<br>
+1. <strong>回報 Vercel URL 給用戶</strong>（例如 <code>https://{project-name}.vercel.app</code>）<br>
+2. <strong>更新 <code>docs/部署/vercel-projects.md</code></strong>（新增一行到最新活躍區）</p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
 <body><br>
   <div class="deck" id="deck"><br>
     <section class="slide" id="s0">...</section>  <!-- 每頁一個 section --><br>

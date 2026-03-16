@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一張 H200 的演化引擎 — Autoresearch for Gov</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Serif TC', 'Inter', serif; background: #faf9f6; color: #1a1a1a; }
+  html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+
+  .slide {
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    scroll-snap-align: start; position: relative;
+    page-break-after: always;
+  }
+  .slide-inner { max-width: 980px; width: 90%; text-align: center; }
+
+  .nav { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 99; display: flex; flex-direction: column; gap: 14px; }
+  .nav a { width: 10px; height: 10px; border-radius: 50%; background: #ccc; display: block; transition: all .3s; }
+  .nav a:hover, .nav a.active { background: #7c2d12; transform: scale(1.5); }
+
+  .dl-btn {
+    position: fixed; top: 24px; right: 28px; z-index: 99;
+    background: #7c2d12; color: #fff; border: none; padding: 10px 20px;
+    border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif;
+    cursor: pointer; letter-spacing: 0.5px; font-weight: 600;
+    transition: background .2s; display: flex; align-items: center; gap: 8px;
+  }
+  .dl-btn:hover { background: #5c1d0e; }
+  .dl-btn svg { width: 16px; height: 16px; }
+
+  .tag { display: inline-block; color: #6b7280; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+  h1 { font-size: clamp(38px, 5.5vw, 68px); line-height: 1.15; font-weight: 900; letter-spacing: -1px; }
+  p { font-size: clamp(17px, 1.8vw, 23px); line-height: 1.8; color: #555; font-weight: 300; }
+  .accent { color: #7c2d12; }
+  .accent-teal { color: #0f766e; }
+  .accent-blue { color: #1e40af; }
+  .slide-num { position: absolute; bottom: 32px; right: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: #ccc; letter-spacing: 2px; }
+
+  @media print {
+    .nav, .dl-btn { display: none !important; }
+    html { scroll-snap-type: none; }
+    .slide { height: 100vh; page-break-after: always; break-after: page; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<button class="dl-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+  PDF
+</button>
+
+<nav class="nav">
+  <a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a>
+</nav>
+
+<!-- ===== SLIDE 1: 痛點 ===== -->
+<section class="slide" id="s1" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Problem</span>
+    <h1>政府買的 AI<br><span style="color:#9f1239;">交付那天就開始過時</span></h1>
+    <svg viewBox="0 0 700 190" style="max-width:640px;width:90%;margin:32px auto 24px;">
+      <!-- Flat line chart = static AI -->
+      <line x1="60" y1="170" x2="640" y2="170" stroke="#e5e7eb" stroke-width="1.5"/>
+      <line x1="60" y1="170" x2="60" y2="20" stroke="#e5e7eb" stroke-width="1.5"/>
+      <!-- Static flat line -->
+      <line x1="80" y1="100" x2="620" y2="100" stroke="#9f1239" stroke-width="2.5" stroke-dasharray="8,5"/>
+      <!-- Label -->
+      <text x="350" y="90" text-anchor="middle" fill="#9f1239" font-size="14" font-family="Inter" font-weight="600">傳統 AI：交付後能力凍結</text>
+      <!-- Time axis labels -->
+      <text x="80" y="188" fill="#999" font-size="11" font-family="Inter">驗收日</text>
+      <text x="620" y="188" fill="#999" font-size="11" font-family="Inter" text-anchor="end">一年後</text>
+      <!-- Y axis -->
+      <text x="48" y="105" fill="#999" font-size="10" font-family="Inter" text-anchor="end">能力</text>
+      <!-- World moves on arrow -->
+      <path d="M80,60 Q350,20 620,45" fill="none" stroke="#0f766e" stroke-width="2" stroke-dasharray="4,3" opacity="0.5"/>
+      <text x="500" y="38" fill="#0f766e" font-size="12" font-family="Inter" font-weight="500" opacity="0.7">世界在進步</text>
+      <!-- Gap annotation -->
+      <g stroke="#b45309" stroke-width="1" stroke-dasharray="3,3" opacity="0.5">
+        <line x1="500" y1="52" x2="500" y2="100"/>
+      </g>
+      <text x="520" y="78" fill="#b45309" font-size="11" font-family="Inter" font-weight="500">差距越拉越大</text>
+    </svg>
+    <p>廠商交付一套 AI，能力就定格了<br>世界在跑，你的 AI 在<span style="color:#9f1239;font-weight:600;">原地不動</span></p>
+    <span class="slide-num">01 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 2: 洞見 ===== -->
+<section class="slide" id="s2" style="background:#f5f3ee;">
+  <div class="slide-inner">
+    <span class="tag">The Insight</span>
+    <h1>Karpathy 證明了<br>AI 可以<span class="accent">自己越來越強</span></h1>
+    <svg viewBox="0 0 660 200" style="max-width:600px;width:88%;margin:28px auto 20px;">
+      <!-- Ascending step chart = ratchet -->
+      <line x1="50" y1="180" x2="610" y2="180" stroke="#e5e7eb" stroke-width="1.5"/>
+      <line x1="50" y1="180" x2="50" y2="20" stroke="#e5e7eb" stroke-width="1.5"/>
+      <!-- Steps (ratchet: only goes up) -->
+      <polyline points="70,155 130,155 130,135 200,135 200,118 260,118 260,100 340,100 340,82 410,82 410,68 470,68 470,55 540,55 540,42 600,42" fill="none" stroke="#7c2d12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Dots at each step -->
+      <g fill="#7c2d12">
+        <circle cx="130" cy="135" r="3.5"/>
+        <circle cx="200" cy="118" r="3.5"/>
+        <circle cx="260" cy="100" r="3.5"/>
+        <circle cx="340" cy="82" r="3.5"/>
+        <circle cx="410" cy="68" r="3.5"/>
+        <circle cx="470" cy="55" r="3.5"/>
+        <circle cx="540" cy="42" r="3.5"/>
+      </g>
+      <!-- Rejected attempts (x marks below the line) -->
+      <g stroke="#d1d5db" stroke-width="1.2" stroke-linecap="round" opacity="0.5">
+        <line x1="100" y1="158" x2="106" y2="164"/><line x1="106" y1="158" x2="100" y2="164"/>
+        <line x1="155" y1="140" x2="161" y2="146"/><line x1="161" y1="140" x2="155" y2="146"/>
+        <line x1="170" y1="142" x2="176" y2="148"/><line x1="176" y1="142" x2="170" y2="148"/>
+        <line x1="225" y1="125" x2="231" y2="131"/><line x1="231" y1="125" x2="225" y2="131"/>
+        <line x1="285" y1="108" x2="291" y2="114"/><line x1="291" y1="108" x2="285" y2="114"/>
+        <line x1="310" y1="105" x2="316" y2="111"/><line x1="316" y1="105" x2="310" y2="111"/>
+        <line x1="365" y1="90" x2="371" y2="96"/><line x1="371" y1="90" x2="365" y2="96"/>
+        <line x1="380" y1="88" x2="386" y2="94"/><line x1="386" y1="88" x2="380" y2="94"/>
+        <line x1="440" y1="75" x2="446" y2="81"/><line x1="446" y1="75" x2="440" y2="81"/>
+        <line x1="500" y1="62" x2="506" y2="68"/><line x1="506" y1="62" x2="500" y2="68"/>
+        <line x1="510" y1="60" x2="516" y2="66"/><line x1="516" y1="60" x2="510" y2="66"/>
+      </g>
+      <!-- Labels -->
+      <text x="330" y="195" text-anchor="middle" fill="#999" font-size="11" font-family="Inter">700 次實驗（一個晚上）</text>
+      <text x="38" y="100" fill="#999" font-size="10" font-family="Inter" text-anchor="end">能力</text>
+      <!-- Annotation -->
+      <rect x="350" y="26" width="240" height="42" rx="6" fill="#fff" stroke="#7c2d12" stroke-width="1" opacity="0.9"/>
+      <text x="470" y="44" text-anchor="middle" fill="#7c2d12" font-size="12" font-family="Inter" font-weight="600">棘輪機制：好的保留、爛的丟棄</text>
+      <text x="470" y="60" text-anchor="middle" fill="#888" font-size="11" font-family="Inter">只進不退，永遠往上</text>
+    </svg>
+    <p>改一個東西 / 跑一次 / 打分 / 好的留、爛的丟<br><span style="color:#7c2d12;font-weight:600;">重複三百次，你睡覺，AI 加班</span></p>
+    <span class="slide-num">02 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 3: 方案 ===== -->
+<section class="slide" id="s3" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Method</span>
+    <h1>一張 H200<br>一個月孵出<span class="accent-teal">七大 AI 應用</span></h1>
+    <svg viewBox="0 0 820 300" style="max-width:790px;width:100%;margin:24px auto 16px;">
+      <!-- Central H200 GPU -->
+      <rect x="315" y="105" width="190" height="80" rx="10" fill="#fff" stroke="#7c2d12" stroke-width="2.5"/>
+      <!-- CPU/GPU chip icon -->
+      <g transform="translate(380,118)" stroke="#7c2d12" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/>
+        <rect x="8" y="8" width="8" height="8" rx="1"/>
+        <line x1="12" y1="0" x2="12" y2="4"/>
+        <line x1="8" y1="0" x2="8" y2="4"/>
+        <line x1="16" y1="0" x2="16" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="24"/>
+        <line x1="8" y1="20" x2="8" y2="24"/>
+        <line x1="16" y1="20" x2="16" y2="24"/>
+        <line x1="0" y1="12" x2="4" y2="12"/>
+        <line x1="0" y1="8" x2="4" y2="8"/>
+        <line x1="0" y1="16" x2="4" y2="16"/>
+        <line x1="20" y1="12" x2="24" y2="12"/>
+        <line x1="20" y1="8" x2="24" y2="8"/>
+        <line x1="20" y1="16" x2="24" y2="16"/>
+      </g>
+      <text x="410" y="160" text-anchor="middle" fill="#7c2d12" font-size="16" font-weight="700" font-family="Inter">H200</text>
+      <text x="410" y="177" text-anchor="middle" fill="#999" font-size="11" font-family="Inter">整夜自動演化</text>
+
+      <!-- 7 application nodes around the center -->
+      <!-- Top row: 3 -->
+      <g>
+        <rect x="30" y="10" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- FileText icon -->
+        <g transform="translate(44,20)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12,2 L5,2 C3.9,2 3,2.9 3,4 L3,20 C3,21.1 3.9,22 5,22 L15,22 C16.1,22 17,21.1 17,20 L17,7 Z"/>
+          <polyline points="12,2 12,7 17,7"/>
+          <line x1="6" y1="11" x2="14" y2="11"/>
+          <line x1="6" y1="15" x2="12" y2="15"/>
+        </g>
+        <text x="120" y="33" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">公文生成</text>
+        <text x="120" y="50" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">30 秒出 Word/PDF</text>
+      </g>
+      <g>
+        <rect x="330" y="10" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- Scale/gavel icon -->
+        <g transform="translate(344,20)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10,2 L10,22"/>
+          <path d="M2,8 L18,8"/>
+          <path d="M4,8 L2,16 C2,16 6,18 8,16 L6,8"/>
+          <path d="M14,8 L12,16 C12,16 16,18 18,16 L16,8"/>
+          <line x1="6" y1="22" x2="14" y2="22"/>
+        </g>
+        <text x="420" y="33" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">法規問答</text>
+        <text x="420" y="50" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">附法條出處</text>
+      </g>
+      <g>
+        <rect x="630" y="10" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- Mic icon -->
+        <g transform="translate(644,20)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="1" width="8" height="14" rx="4"/>
+          <path d="M2,11 C2,15.4 5.6,19 10,19 C14.4,19 18,15.4 18,11"/>
+          <line x1="10" y1="19" x2="10" y2="23"/>
+          <line x1="6" y1="23" x2="14" y2="23"/>
+        </g>
+        <text x="720" y="33" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">會議記錄</text>
+        <text x="720" y="50" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">5 分鐘出紀錄</text>
+      </g>
+
+      <!-- Bottom row: 4 -->
+      <g>
+        <rect x="0" y="230" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- Search icon -->
+        <g transform="translate(14,240)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="9" r="7"/>
+          <line x1="14" y1="14" x2="20" y2="20"/>
+        </g>
+        <text x="90" y="253" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">公文搜尋</text>
+        <text x="90" y="270" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">自然語言找範本</text>
+      </g>
+      <g>
+        <rect x="215" y="230" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- CheckSquare icon -->
+        <g transform="translate(229,240)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="7,11 10,14 17,7"/>
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+        </g>
+        <text x="305" y="253" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">品質審查</text>
+        <text x="305" y="270" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">5 秒自動抓錯</text>
+      </g>
+      <g>
+        <rect x="445" y="230" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- MessageSquare icon -->
+        <g transform="translate(459,240)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3,3 L21,3 C22.1,3 23,3.9 23,5 L23,17 C23,18.1 22.1,19 21,19 L7,19 L3,23 L3,5 C3,3.9 3.9,3 5,3 Z"/>
+        </g>
+        <text x="535" y="253" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">智慧客服</text>
+        <text x="535" y="270" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">民眾 AI 即答</text>
+      </g>
+      <g>
+        <rect x="660" y="230" width="150" height="54" rx="8" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+        <!-- TrendingUp icon -->
+        <g transform="translate(674,240)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20,4 13,4 13,11"/>
+          <polyline points="2,18 7,13 13,19 20,4"/>
+        </g>
+        <text x="750" y="253" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">輿情預測</text>
+        <text x="750" y="270" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">每日 8 點摘要</text>
+      </g>
+
+      <!-- Connection lines from H200 to nodes -->
+      <g stroke="#d1d5db" stroke-width="1" opacity="0.4">
+        <line x1="360" y1="105" x2="105" y2="64"/>
+        <line x1="410" y1="105" x2="405" y2="64"/>
+        <line x1="460" y1="105" x2="705" y2="64"/>
+        <line x1="340" y1="185" x2="75" y2="230"/>
+        <line x1="380" y1="185" x2="290" y2="230"/>
+        <line x1="440" y1="185" x2="520" y2="230"/>
+        <line x1="480" y1="185" x2="735" y2="230"/>
+      </g>
+
+      <!-- Circular arrow around H200 (evolution) -->
+      <path d="M315,125 C290,100 290,165 315,165" fill="none" stroke="#7c2d12" stroke-width="1.5" opacity="0.3"/>
+      <path d="M505,165 C530,180 530,110 505,120" fill="none" stroke="#7c2d12" stroke-width="1.5" opacity="0.3"/>
+    </svg>
+    <p>每類每晚跑 200 圈演化<br>一個月後 14B <span style="color:#0f766e;font-weight:600;">七項能力全到位</span></p>
+    <span class="slide-num">03 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 4: 迴圈 ===== -->
+<section class="slide" id="s4" style="background:#f5f3ee;">
+  <div class="slide-inner">
+    <span class="tag">The Loop</span>
+    <h1>一個晚上的<span class="accent">演化迴圈</span></h1>
+    <svg viewBox="0 0 760 310" style="max-width:720px;width:95%;margin:24px auto 16px;">
+      <!-- Step 1: Pick task -->
+      <g>
+        <rect x="0" y="20" width="140" height="90" rx="10" fill="#fff" stroke="#7c2d12" stroke-width="1.8"/>
+        <g transform="translate(55,32)" stroke="#7c2d12" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16,3 L21,8 L8,21 L3,21 L3,16 Z"/>
+        </g>
+        <text x="70" y="74" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">抽一題</text>
+        <text x="70" y="96" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">從真實案例題庫</text>
+      </g>
+
+      <!-- Arrow 1→2 -->
+      <g transform="translate(148,58)" stroke="#bbb" stroke-width="1.5" fill="none" stroke-linecap="round"><line x1="0" y1="0" x2="22" y2="0"/><polyline points="17,-4 22,0 17,4"/></g>
+
+      <!-- Step 2: AI tries -->
+      <g>
+        <rect x="178" y="20" width="140" height="90" rx="10" fill="#fff" stroke="#b45309" stroke-width="1.8"/>
+        <g transform="translate(233,32)" stroke="#b45309" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12,0 L13.5,5 L18,3.5 L14.5,7 L18,10 L13.5,9 L12,14 L10.5,9 L6,10 L9.5,7 L6,3.5 L10.5,5 Z"/>
+        </g>
+        <text x="248" y="74" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">AI 小隊解題</text>
+        <text x="248" y="96" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">14B 用最新策略</text>
+      </g>
+
+      <!-- Arrow 2→3 -->
+      <g transform="translate(326,58)" stroke="#bbb" stroke-width="1.5" fill="none" stroke-linecap="round"><line x1="0" y1="0" x2="22" y2="0"/><polyline points="17,-4 22,0 17,4"/></g>
+
+      <!-- Step 3: Score -->
+      <g>
+        <rect x="356" y="20" width="140" height="90" rx="10" fill="#fff" stroke="#0f766e" stroke-width="1.8"/>
+        <!-- Clipboard check -->
+        <g transform="translate(411,32)" stroke="#0f766e" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="16" height="18" rx="2"/>
+          <path d="M6,2 L6,2 C6,1 7,0 8,0 L12,0 C13,0 14,1 14,2 L14,2"/>
+          <polyline points="6,12 9,15 14,10"/>
+        </g>
+        <text x="426" y="74" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">自動打分</text>
+        <text x="426" y="96" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">九維度評分法</text>
+      </g>
+
+      <!-- Arrow 3→4 -->
+      <g transform="translate(504,58)" stroke="#bbb" stroke-width="1.5" fill="none" stroke-linecap="round"><line x1="0" y1="0" x2="22" y2="0"/><polyline points="17,-4 22,0 17,4"/></g>
+
+      <!-- Step 4: Keep or discard -->
+      <g>
+        <rect x="534" y="20" width="140" height="90" rx="10" fill="#fff" stroke="#1e40af" stroke-width="1.8"/>
+        <!-- GitBranch icon -->
+        <g transform="translate(589,32)" stroke="#1e40af" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="6" r="3"/>
+          <circle cx="6" cy="6" r="3"/>
+          <path d="M6,9 L6,15"/>
+          <path d="M6,9 C6,12 9,15 18,9"/>
+        </g>
+        <text x="604" y="74" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="700" font-family="Noto Serif TC">存檔或丟棄</text>
+        <text x="604" y="96" text-anchor="middle" fill="#999" font-size="10" font-family="Inter">進步 → commit</text>
+      </g>
+
+      <!-- Return arrow (loop back) -->
+      <path d="M604,115 L604,145 Q604,165 584,165 L90,165 Q70,165 70,145 L70,115" fill="none" stroke="#7c2d12" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4"/>
+      <polygon points="66,118 70,108 74,118" fill="#7c2d12" opacity="0.4"/>
+      <!-- Loop label -->
+      <text x="340" y="180" text-anchor="middle" fill="#7c2d12" font-size="12" font-family="Inter" font-weight="600" opacity="0.6">重複 300 次 / 整夜自動</text>
+
+      <!-- Bottom: who does what -->
+      <rect x="40" y="210" width="680" height="85" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1.2"/>
+      <line x1="380" y1="215" x2="380" y2="290" stroke="#e5e7eb" stroke-width="1"/>
+      <!-- Left: human -->
+      <g transform="translate(60,225)" stroke="#7c2d12" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="4" r="4"/>
+        <path d="M2,20 C2,14 6,10 10,10 C14,10 18,14 18,20"/>
+      </g>
+      <text x="100" y="238" fill="#7c2d12" font-size="13" font-weight="700" font-family="Inter">人類</text>
+      <text x="100" y="258" fill="#888" font-size="12" font-family="Inter">寫 program.md（策略）</text>
+      <text x="100" y="275" fill="#888" font-size="12" font-family="Inter">定義評分標準、準備題庫</text>
+      <!-- Right: AI -->
+      <g transform="translate(400,225)" stroke="#0f766e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="16" height="16" rx="3"/>
+        <circle cx="7" cy="9" r="1.5" fill="#0f766e"/>
+        <circle cx="13" cy="9" r="1.5" fill="#0f766e"/>
+        <line x1="7" y1="14" x2="13" y2="14"/>
+      </g>
+      <text x="440" y="238" fill="#0f766e" font-size="13" font-weight="700" font-family="Inter">AI 小隊</text>
+      <text x="440" y="258" fill="#888" font-size="12" font-family="Inter">執行實驗、自動打分</text>
+      <text x="440" y="275" fill="#888" font-size="12" font-family="Inter">保留好的、淘汰爛的、整夜不停</text>
+    </svg>
+    <span class="slide-num">04 / 05</span>
+  </div>
+</section>
+
+<!-- ===== SLIDE 5: 願景 ===== -->
+<section class="slide" id="s5" style="background:#faf9f6;">
+  <div class="slide-inner">
+    <span class="tag">The Difference</span>
+    <h1>別人賣靜態工具<br>你賣<span class="accent">活的系統</span></h1>
+    <svg viewBox="0 0 700 140" style="max-width:660px;width:90%;margin:32px auto 28px;">
+      <!-- Before -->
+      <rect x="20" y="10" width="280" height="50" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+      <text x="160" y="40" text-anchor="middle" fill="#9f1239" font-size="14" font-family="Inter" font-weight="600">別家：驗收那天 = 最佳狀態</text>
+      <!-- After -->
+      <rect x="380" y="10" width="290" height="50" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+      <text x="525" y="40" text-anchor="middle" fill="#0f766e" font-size="14" font-family="Inter" font-weight="600">波特人：每天都比昨天更強</text>
+      <!-- VS -->
+      <text x="345" y="40" text-anchor="middle" fill="#bbb" font-size="14" font-family="Inter" font-weight="700">vs</text>
+      <!-- Bottom annotation -->
+      <rect x="100" y="80" width="500" height="46" rx="8" fill="#fff" stroke="#7c2d12" stroke-width="1.5"/>
+      <text x="350" y="100" text-anchor="middle" fill="#7c2d12" font-size="13" font-family="Inter" font-weight="600">人類寫策略 / AI 整夜演化 / 14B 公文品質逼近 Opus</text>
+      <text x="350" y="118" text-anchor="middle" fill="#888" font-size="12" font-family="Inter">一張 H200 / 一個月 / 七大應用全到位</text>
+    </svg>
+    <div style="display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-bottom:32px;">
+      <div>
+        <div style="font-size:34px;font-weight:800;color:#7c2d12;font-family:Inter;">300</div>
+        <div style="font-size:13px;color:#888;">次 / 每晚演化</div>
+      </div>
+      <div>
+        <div style="font-size:34px;font-weight:800;color:#0f766e;font-family:Inter;">7</div>
+        <div style="font-size:13px;color:#888;">大應用類別</div>
+      </div>
+      <div>
+        <div style="font-size:34px;font-weight:800;color:#b45309;font-family:Inter;">14B</div>
+        <div style="font-size:13px;color:#888;">全地端部署</div>
+      </div>
+      <div>
+        <div style="font-size:34px;font-weight:800;color:#1e40af;font-family:Inter;">45&#8594;80</div>
+        <div style="font-size:13px;color:#888;">分 / 一個月進化</div>
+      </div>
+    </div>
+    <p style="font-size:clamp(19px,2.3vw,28px);font-weight:700;color:#1a1a1a;letter-spacing:1px;">
+      <span class="accent">You sleep.</span>&#12288;<span class="accent-teal">AI evolves.</span>&#12288;<span class="accent-blue">Gov wins.</span>
+    </p>
+    <span class="slide-num">05 / 05</span>
+  </div>
+</section>
+
+<script>
+const dots = document.querySelectorAll('.nav a');
+const slides = document.querySelectorAll('.slide');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const i = [...slides].indexOf(e.target);
+      dots.forEach((d, j) => d.classList.toggle('active', i === j));
+    }
+  });
+}, { threshold: 0.5 });
+slides.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
