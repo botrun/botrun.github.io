@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-16T18:15:19+08:00"
+    "lastUpdated": "2026-03-16T18:36:45+08:00"
   },
   "items": [
+    {
+      "id": "timeseries-ai-revolution",
+      "title": "時間序列預測三年巨變 2023→2026",
+      "subtitle": "AI Foundation Model 讓預測從「數週調參」變「零樣本秒出」，精準度提升 15-25%，真實數據全面對比",
+      "href": "https://timeseries-ai-revolution.vercel.app",
+      "icon": "activity",
+      "badge": "簡報",
+      "badgeColor": "#c2185b",
+      "publishDate": "2026-03-16T18:36:45+08:00",
+      "tags": ["activity:時間序列", "layout-dashboard:5 頁"]
+    },
     {
       "id": "mirror-classroom-ai-education",
       "title": "鏡像學習教室 — AI 自動化教學與無人教室願景",
