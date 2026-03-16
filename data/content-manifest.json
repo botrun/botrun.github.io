@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-16T15:20:54+08:00"
+    "lastUpdated": "2026-03-16T18:15:19+08:00"
   },
   "items": [
+    {
+      "id": "mirror-classroom-ai-education",
+      "title": "鏡像學習教室 — AI 自動化教學與無人教室願景",
+      "subtitle": "Agent Teams + DAG + Playwright 自動產製 59 秒教材，教育轉型三部曲：教材自動化 → 適性化教學 → 適性化評量",
+      "href": "https://mirror-classroom-ai-education.vercel.app",
+      "icon": "presentation",
+      "badge": "簡報",
+      "badgeColor": "#F97316",
+      "publishDate": "2026-03-16T18:15:19+08:00",
+      "tags": ["monitor:AI 教育", "layout-dashboard:5 頁"]
+    },
     {
       "id": "three-skills",
       "title": "三位 AI 夥伴 SKILL.md 全文（One-Click Copy）",
