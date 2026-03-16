@@ -3,27 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>波特人 Showcase - AI 專案展示</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <title>五言波特人</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1><i data-lucide="bot"></i>波特人 <span class="gradient-text">Showcase</span></h1>
-    <p class="tagline">AI 專案 · 評測報告 · 技術研究</p>
-    <p class="update-date"><i data-lucide="calendar"></i>更新日期：2026-03-16</p>
+    <h1>五言<span>波特人</span></h1>
+    <p class="tagline">簡單的 AI，真實的價值</p>
+    <p class="update-info"><span id="update-time"></span> · <span id="item-count"></span></p>
   </header>
   <main>
-    <section class="content-section">
-      <p class="section-subtitle">按發佈日期排序（最新在前）</p>
-      <div class="content-grid">
-
-      </div>
-    </section>
+    <p class="section-label">最新發表</p>
+    <div class="card-list" id="card-list"></div>
   </main>
-  <footer>
-    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
-  </footer>
-  <script>lucide.createIcons();</script>
+  <footer>五言波特人 · botrun.github.io</footer>
+  <script type="module" src="app.mjs"></script>
 </body>
 </html>
