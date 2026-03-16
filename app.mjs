@@ -1,7 +1,7 @@
 // app.mjs — 讀取 content-manifest.json 動態渲染首頁卡片
 // 零編譯、零框架，純 ES Module
 
-const MANIFEST_URL = './data/content-manifest.json';
+const MANIFEST_URL = `./data/content-manifest.json?t=${Date.now()}`;
 
 // Lucide icon SVG 模板（手繪 24x24 viewBox, stroke-width 1.8）
 const ICONS = {
