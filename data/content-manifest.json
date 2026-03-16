@@ -1,9 +1,97 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-02-07"
+    "lastUpdated": "2026-03-16T15:20:54+08:00"
   },
   "items": [
+    {
+      "id": "three-skills",
+      "title": "三位 AI 夥伴 SKILL.md 全文（One-Click Copy）",
+      "subtitle": "波晴安 BD × 波詩涵 Marketing × 波芷寧 PM — 2026 頂級職業技能 · YC + HBR 方法論",
+      "href": "https://three-skills.vercel.app",
+      "icon": "file-text",
+      "badge": "技能全文",
+      "badgeColor": "#22C55E",
+      "publishDate": "2026-03-16T15:20:54+08:00",
+      "tags": ["copy:一鍵複製", "users:3 位夥伴"]
+    },
+    {
+      "id": "three-partners",
+      "title": "三位全職 Agentic AI 夥伴",
+      "subtitle": "波晴安（BD）× 波詩涵（Marketing）× 波芷寧（PM）— Nano Banana 2 水彩肖像 · 5 頁矽谷流簡報",
+      "href": "https://three-partners.vercel.app",
+      "icon": "presentation",
+      "badge": "簡報",
+      "badgeColor": "#F97316",
+      "publishDate": "2026-03-16T15:20:00+08:00",
+      "tags": ["image:AI 繪圖", "layout-dashboard:5 頁"]
+    },
+    {
+      "id": "botrun-horse-slides",
+      "title": "高品味題庫波駿馬五堂課",
+      "subtitle": "六大類 22 應用、六欄位定義、H200 演化引擎、Agentic AI 公文實證",
+      "href": "https://botrun-horse-slides.vercel.app",
+      "icon": "graduation-cap",
+      "badge": "課程",
+      "badgeColor": "#8B5CF6",
+      "publishDate": "2026-03-16T14:00:00+08:00",
+      "tags": ["book-open:5 堂課", "trophy:22 應用"]
+    },
+    {
+      "id": "smart-portal-csv",
+      "title": "智慧入口三層 CSV 架構",
+      "subtitle": "Greeting 秒回、Knowledge 知識注入、Cache 自學成長，PM 友善系統",
+      "href": "https://smart-portal-csv.vercel.app",
+      "icon": "layers",
+      "badge": "架構",
+      "badgeColor": "#0D9488",
+      "publishDate": "2026-03-16T13:00:00+08:00",
+      "tags": ["zap:秒回", "database:知識注入"]
+    },
+    {
+      "id": "h200-autoresearch-gov",
+      "title": "H200 演化引擎 — Autoresearch for Gov",
+      "subtitle": "Karpathy autoresearch 方法論應用於政府七大 AI，一張 GPU 整夜自動演化",
+      "href": "https://h200-autoresearch-gov.vercel.app",
+      "icon": "cpu",
+      "badge": "研究",
+      "badgeColor": "#7C2D12",
+      "publishDate": "2026-03-16T12:00:00+08:00",
+      "tags": ["server:H200 GPU", "landmark:政府 AI"]
+    },
+    {
+      "id": "natural-log",
+      "title": "自然日誌 — 平台原生列管",
+      "subtitle": "取代自建腳本，零程式碼管理帳單/用量/部署，飛輪迭代",
+      "href": "https://natural-log.vercel.app",
+      "icon": "scroll-text",
+      "badge": "方法論",
+      "badgeColor": "#059669",
+      "publishDate": "2026-03-16T11:00:00+08:00",
+      "tags": ["leaf:零程式碼", "refresh-cw:飛輪迭代"]
+    },
+    {
+      "id": "zero-gap-classroom",
+      "title": "零差別教室 Zero-Gap Classroom",
+      "subtitle": "任何 YouTube 教學影片變成可認證課程，AI 評分個人化學習",
+      "href": "https://zero-gap-classroom.vercel.app",
+      "icon": "video",
+      "badge": "教育",
+      "badgeColor": "#2D6A4F",
+      "publishDate": "2026-03-16T10:00:00+08:00",
+      "tags": ["play-circle:YouTube", "award:認證課程"]
+    },
+    {
+      "id": "lobster-claude",
+      "title": "機敏龍蝦 × Claude 公務員協作",
+      "subtitle": "5 頁矽谷流敘事、無為使用策略、雙引擎架構",
+      "href": "https://lobster-claude.vercel.app",
+      "icon": "shield",
+      "badge": "策略",
+      "badgeColor": "#9F1239",
+      "publishDate": "2026-03-16T09:00:00+08:00",
+      "tags": ["lock:機敏", "layout-dashboard:5 頁"]
+    },
     {
       "id": "nchc-leaderboard",
       "title": "國網中心 AI 服務模型排行榜",
