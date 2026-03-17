@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-16T22:56:17+08:00"
+    "lastUpdated": "2026-03-17T23:19:49+08:00"
   },
   "items": [
+    {
+      "id": "botrun-orchestration-strategy",
+      "title": "波特人編排層戰略 — 從 CLI 工具到產業定價權",
+      "subtitle": "8 大行動方案 x 18 個月路線圖：編排層、算過即忘、AI 採購決策引擎、無人教室",
+      "href": "https://botrun-orchestration-strategy.vercel.app",
+      "icon": "layers",
+      "badge": "戰略",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-17T23:19:49+08:00",
+      "tags": ["target:編排層", "zap:8大TODO", "trending-up:18個月"]
+    },
     {
       "id": "benchmark-guide",
       "title": "「波特人」高品味題庫設計指南 — 30 頁完整攻略",
