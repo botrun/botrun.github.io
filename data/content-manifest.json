@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "benchmark-guide",
+      "title": "高品味題庫設計指南 — 30 頁完整攻略",
+      "subtitle": "Top 5 公司題庫設計方法論，PM + 技術人都能上手，從 GAIA 到 Tau-bench 六大方法",
+      "href": "https://benchmark-guide.vercel.app",
+      "icon": "trophy",
+      "badge": "指南",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-17T10:14:35+08:00",
+      "tags": ["book-open:30頁", "target:題庫設計", "globe:Top5公司"]
+    },
+    {
       "id": "one-drag-patent",
       "title": "One Drag — aiplay 波特人 AI 專利",
       "subtitle": "拖拉 Folder 就完成高品味題庫，無需 Prompt、無需 Chat，Agentic AI 全自動解析+驗算",
