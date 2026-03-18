@@ -51,144 +51,16 @@
       </p>
       <div>
         <p>
-<h1>HTML 投影片技能</h1></p><p>> 將任意主題製作為矽谷流敘事簡報 HTML，純靜態單檔，可下載 PDF。</p><p><h2>何時使用</h2></p><p>- 用戶說「簡報」「投影片」「slides」「HTML 簡報」「網頁投影片技能」「網頁投影片」<br>
-- 用戶提供主題 + 要求視覺化呈現<br>
-- 用戶要求矽谷流說故事風格</p><p><h2>香蕉繪圖技能整合</h2></p><p>當簡報需要真實情境圖片（人物肖像、場景照片、概念圖）時，使用香蕉繪圖技能：</p><p><code>`</code>bash<br>
-cd /Users/40gpu/coding_projects/timeless-bowen && \<br>
-GEMINI_API_KEY=$(grep GEMINI_API_KEY .env | cut -d= -f2) \<br>
-node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
-  "圖片描述" \<br>
-  --style "風格" \<br>
-  --aspect "16:9" \<br>
-  --size "512px" \<br>
-  --output "./html/image-name.png"<br>
-<code>`</code></p><p>生成後讀取 base64 嵌入 HTML：<br>
-<code>`</code>bash<br>
-base64 -i ./html/image-name.png | tr -d '\n'<br>
-<code>`</code></p><p>嵌入方式：<code><img src="data:image/png;base64,{BASE64}" alt="描述"></code></p><p><strong>多張圖片時，使用子代理平行生成（model: sonnet）以加速。</strong></p><p><h2>設計原則</h2></p><p><h3>矽谷流敘事（必遵守）</h3></p><p>遵循《矽谷流萬用敘事簡報法則》四步驟：</p><p>1. <strong>設定問題</strong>（痛點） — 讓觀眾感受到問題的存在<br>
-2. <strong>呈現數據</strong>（洞見） — 用一個核心訊息翻轉認知<br>
-3. <strong>給出解方</strong>（架構） — 視覺化架構圖<br>
-4. <strong>行動建議</strong>（CTA） — 明確下一步</p><p><h3>視覺風格（預設雅緻淺色）</h3></p><p>| 項目 | 規範 |<br>
-|------|------|<br>
-| 底色 | 淺暖白 <code>#faf8f5</code>，卡片白 <code>#ffffff</code> |<br>
-| 字體 | 標題 <code>Noto Serif TC</code>（襯線），內文 <code>Noto Sans TC</code>（無襯線） |<br>
-| 色彩 | 3 色為限：主色（珊瑚 <code>#e8634a</code>）、輔色（青 <code>#0d9488</code>）、點綴（紫 <code>#7c3aed</code>） |<br>
-| 字量 | <strong>每頁最多 3 句話</strong>，數字放大、文字精簡 |<br>
-| 字級 | 標題 <code>clamp(2.4rem, 5vw, 4rem)</code>，lead <code>clamp(1.1rem, 1.8vw, 1.4rem)</code> |<br>
-| Icon | <strong>禁止 emoji</strong>，一律用 SVG icon（Lucide 風格：24x24 viewBox, stroke-width 1.8, stroke-linecap/linejoin round） |<br>
-| 圖表 | 純 SVG 內嵌，禁止外部圖片/CDN |</p><p><h3>技術規範</h3></p><p>| 項目 | 規範 |<br>
-|------|------|<br>
-| 檔案 | <strong>純靜態單一 HTML 檔案</strong>，零依賴 |<br>
-| 字體載入 | Google Fonts <code>@import</code>（Noto Serif TC + Noto Sans TC） |<br>
-| 頁數 | 預設 5 頁（可依需求調整，建議 3-7 頁） |<br>
-| 導航 | 鍵盤左右鍵 + 點擊箭頭 + 手機觸控滑動 |<br>
-| 動畫 | <code>fade-up</code> 進場動畫，CSS transition，無 JS 動畫庫 |<br>
-| PDF | 左上角「PDF」按鈕，使用 <code>window.print()</code> + <code>@media print</code> |<br>
-| RWD | 手機自動單欄，<code>@media(max-width:768px)</code> |</p><p><h2>執行流程</h2></p><p><h3>Step 1：理解主題</h3></p><p>1. 如果用戶提供了參考資料路徑，先讀取內容<br>
-2. 確認核心訊息、目標受眾、頁數</p><p><h3>Step 2：規劃故事線</h3></p><p>依矽谷流四步驟規劃每頁內容：</p><p><code>`</code><br>
-第 1 頁：痛點 — 一個讓觀眾有感的問題（配大數字）<br>
-第 2 頁：洞見 — 翻轉認知的核心觀點<br>
-第 3 頁：解方 — 架構圖 / 流程圖（SVG）<br>
-第 4 頁：實證 — 數據佐證（3 個關鍵指標）<br>
-第 5 頁：行動 — CTA + 時間軸 / 步驟圖<br>
-<code>`</code></p><p><h3>Step 3：產出 HTML</h3></p><p>1. 使用 [模板](templates/base-template.html) 作為骨架<br>
-2. 輸出到 <code>./html/{主題名稱}.html</code><br>
-3. 每頁一個 <code><section class="slide"></code><br>
-4. SVG 圖表內嵌在各頁</p><p><h3>Step 4：本機預覽</h3></p><p><code>`</code>bash<br>
-open ./html/{檔名}.html<br>
-<code>`</code></p><p><h3>Step 5：部署 Vercel（必要步驟）</h3></p><p><strong>每份簡報都必須部署到 Vercel 並回報 URL。</strong></p><p><code>`</code>bash<br>
-<h1>建立乾淨部署目錄</h1><br>
-mkdir -p /tmp/{project-name}-deploy<br>
-cp ./html/{檔名}.html /tmp/{project-name}-deploy/index.html</p><p><h1>部署</h1><br>
-cd /tmp/{project-name}-deploy<br>
-vercel --yes --name {project-name}<br>
-<code>`</code></p><p>部署完成後回報 Vercel URL 給用戶。</p><p><h3>Step 6：合併到 botrun.github.io 首頁（必要步驟）</h3></p><p><strong>每份簡報都必須出現在 https://botrun.github.io/ 首頁最上方。</strong></p><p>#### 6a. 更新 content-manifest.json</p><p>在 <code>web/data/content-manifest.json</code> 的 <code>items</code> 陣列<strong>最前面</strong>插入新項目：</p><p><code>`</code>json<br>
-{<br>
-  "id": "{project-name}",<br>
-  "title": "{簡報標題}",<br>
-  "subtitle": "{一句話描述}",<br>
-  "href": "https://{project-name}.vercel.app",<br>
-  "icon": "{lucide-icon-name}",<br>
-  "badge": "{類型}",<br>
-  "badgeColor": "{色碼}",<br>
-  "publishDate": "{TZ=Asia/Taipei date -Iseconds 的輸出}",<br>
-  "tags": ["{icon}:{標籤}"]<br>
-}<br>
-<code>`</code></p><p>取得臺灣時間戳（必須 UTC+8）：<br>
-<code>`</code>bash<br>
-TZ=Asia/Taipei date '+%Y-%m-%dT%H:%M:%S+08:00'<br>
-<code>`</code></p><p>#### 6b. 更新 vercel-projects.md</p><p>在 <code>docs/部署/vercel-projects.md</code> 最新活躍區<strong>最上面</strong>新增一行。</p><p>#### 6c. 執行 build-web.ts 重新生成首頁</p><p><code>`</code>bash<br>
-cd /Users/40gpu/coding_projects/timeless-bowen<br>
-npx tsx .claude/skills/永恆知己-網頁發佈/scripts/build-web.ts<br>
-<code>`</code></p><p>這會自動根據 content-manifest.json 重新生成 <code>web/index.html</code>，最新項目在最上方。</p><p>#### 6d. Git Commit + Push（觸發 GitHub Actions 部署到 botrun.github.io）</p><p><code>`</code>bash<br>
-git add html/{檔名}.html web/ web/data/content-manifest.json docs/部署/vercel-projects.md<br>
-git commit -m "build: 新增 {簡報名稱} 到首頁"<br>
-git push<br>
-<code>`</code></p><p>Push 後 GitHub Actions 自動觸發 <code>.github/workflows/deploy-pages.yml</code>，<br>
-將 <code>web/</code> 部署到 https://botrun.github.io/。</p><p><strong>等 Actions 完成後驗證</strong>：<br>
-<code>`</code>bash<br>
-gh run list --repo botrun/timeless-bowen --limit 1<br>
-open https://botrun.github.io/<br>
-<code>`</code></p><p><h3>部署完整流程圖</h3></p><p><code>`</code><br>
-html-slides 製作簡報<br>
-  → Step 5: vercel --yes --name {name}  (Vercel 部署)<br>
-  → Step 6a: content-manifest.json      (首頁索引)<br>
-  → Step 6b: vercel-projects.md         (Vercel 紀錄)<br>
-  → Step 6c: build-web.ts               (重新生成首頁)<br>
-  → Step 6d: git push                   (觸發 GitHub Actions)<br>
-  → https://botrun.github.io/           (首頁最上方出現新卡片)<br>
-<code>`</code></p><p><strong>四處必更新，缺一不可。簡報和 URL 都是知識資產，必須進 Git。</strong></p><p><h2>HTML 結構模板</h2></p><p><code>`</code><br>
-<body><br>
-  <div class="deck" id="deck"><br>
-    <section class="slide" id="s0">...</section>  <!-- 每頁一個 section --><br>
-    <section class="slide" id="s1">...</section><br>
-    ...<br>
-  </div><br>
-  <button class="pdf-btn" onclick="window.print()">PDF</button><br>
-  <button class="arrow arrow-l">←</button><br>
-  <button class="arrow arrow-r">→</button><br>
-  <div class="nav" id="nav"></div>         <!-- 底部圓點 --><br>
-  <div class="page-num" id="pn"></div>     <!-- 右上角頁碼 --><br>
-  <script>/<em> 換頁邏輯 </em>/</script><br>
-</body><br>
-<code>`</code></p><p><h2>SVG 圖表指引</h2></p><p>- <strong>架構圖</strong>：<code><rect></code> 方塊 + <code><line></code> 箭頭 + <code><text></code> 標籤<br>
-- <strong>流程圖</strong>：水平時間軸 <code><circle></code> 節點 + <code><line></code> 連線<br>
-- <strong>對比圖</strong>：左右分區，顏色區隔（紅=舊/問題，綠=新/解方）<br>
-- <strong>數據卡</strong>：大數字 <code>font-size: 3.5rem; font-weight: 900</code> + 小標籤<br>
-- <strong>人物圖</strong>：簡筆火柴人 <code><circle></code> 頭 + <code><line></code> 身體四肢<br>
-- 顏色使用 CSS 變數 <code>var(--coral)</code> <code>var(--teal)</code> <code>var(--violet)</code><br>
-- marker 箭頭用 <code><defs><marker></code> 定義</p><p><h2>@media print CSS（PDF 必備）</h2></p><p><code>`</code>css<br>
-@media print {<br>
-  @page { size: landscape; margin: 0 }<br>
-  body { background: #fff; overflow: visible }<br>
-  .deck { display: block; width: auto; transform: none !important }<br>
-  .slide { width: 100vw; height: 100vh; page-break-after: always; page-break-inside: avoid }<br>
-  .slide:last-child { page-break-after: auto }<br>
-  .fade-up { opacity: 1 !important; transform: none !important }<br>
-  .nav, .arrow, .page-num, .pdf-btn { display: none !important }<br>
-}<br>
-<code>`</code></p><p><h2>風格變體</h2></p><p>用戶可指定風格，預設為「雅緻淺色」：</p><p>| 風格 | 底色 | 字體 | 色彩 |<br>
-|------|------|------|------|<br>
-| 雅緻淺色（預設） | <code>#faf8f5</code> | Noto Serif TC | 珊瑚/青/紫 |<br>
-| 深色科技 | <code>#0a0e27</code> | Noto Sans TC | 霓虹藍/紫/綠 |<br>
-| 極簡白 | <code>#ffffff</code> | Inter + Noto Sans TC | 純黑 + 一色 |</p><p><h2>永久地雷記錄</h2></p><p><h3>地雷 0：禁止 Emoji — 2026-03-16</h3></p><p>- <strong>問題</strong>：emoji 在 PDF 列印、跨平台顯示不一致，格調不夠<br>
-- <strong>正確</strong>：所有 icon 一律用 inline SVG 繪製（Lucide 風格：24x24 viewBox, stroke-width 1.8, stroke-linecap/linejoin round, fill none）<br>
-- <strong>驗證</strong>：全文搜尋確認零 emoji 字元</p><p><h3>地雷 4：HTML 和 URL 必須 commit — 2026-03-16</h3></p><p>- <strong>問題</strong>：只部署 Vercel 但忘記 commit HTML 和 vercel-projects.md，導致知識資產不在 Git 裡<br>
-- <strong>正確</strong>：每次完成簡報後，HTML 檔案 + URL 紀錄都必須 <code>git add</code> → <code>commit</code> → <code>push</code><br>
-- <strong>原因</strong>：HTML 是重要記憶，URL 也是重要記憶，兩者都是知識資產<br>
-- <strong>驗證</strong>：<code>git status</code> 確認 working tree clean</p><p><h3>地雷 1：CSS 變數在 SVG 中的使用 — 2026-03-16</h3></p><p>- <strong>問題</strong>：SVG 內的 <code>fill</code> 和 <code>stroke</code> 使用 CSS 變數 <code>var(--xxx)</code> 時，部分瀏覽器 PDF 列印可能不渲染<br>
-- <strong>解法</strong>：SVG 中盡量使用 CSS 變數，但確保 <code>@media print</code> 時背景為白色<br>
-- <strong>驗證</strong>：列印預覽確認 SVG 文字和線條可見</p><p><h3>地雷 2：Google Fonts @import 必須在 CSS 最頂部 — 2026-03-16</h3></p><p>- <strong>問題</strong>：<code>@import</code> 放在其他 CSS 規則後面會被忽略<br>
-- <strong>正確</strong>：<code>@import</code> 必須是 <code><style></code> 區塊的第一行<br>
-- <strong>驗證</strong>：檢查字體是否正確載入（標題應為襯線字）</p><p><h3>地雷 3：淺色底 SVG 文字顏色 — 2026-03-16</h3></p><p>- <strong>問題</strong>：從深色主題轉淺色時，SVG <code><text></code> 的 <code>fill</code> 還用淺色值導致看不見<br>
-- <strong>正確</strong>：SVG 文字 fill 使用 <code>var(--ink)</code> 或 <code>var(--sub)</code>，不要硬編碼</p><p><h2>驗證清單</h2></p><p>- [ ] 字體正確載入（標題襯線、內文無襯線）<br>
-- [ ] 5 頁都有內容且可切換<br>
-- [ ] 鍵盤左右鍵、箭頭按鈕、手機滑動都能換頁<br>
-- [ ] PDF 按鈕可觸發列印（5 頁橫式）<br>
-- [ ] SVG 圖表在所有頁面正常顯示<br>
-- [ ] 手機 RWD 排版正常（單欄）<br>
-- [ ] 每頁文字精簡（最多 3 句話）<br>
-- [ ] 顏色不超過 3 色<br>
+<h1>HTML 投影片技能（DRY Reuse）</h1></p><p>> <strong>唯一真相源</strong>：<code>shared/botrun-horse/skills/html-slides.md</code><br>
+> <strong>模板路徑</strong>：<code>shared/botrun-horse/skills/media-suite/html-slides/base-template.html</code><br>
+><br>
+> 本檔僅作觸發器，完整規則、地雷記錄、驗證清單請讀上述真相源。</p><p><h2>快速參考</h2></p><p>- <strong>預設淺色底</strong> <code>#faf8f5</code>（地雷 12）<br>
+- <strong>手機垂直 scroll-snap</strong>（地雷 11）<br>
+- <strong>內容密集頁加 <code>slide-dense</code></strong>（地雷 10）<br>
+- <strong>GA4 必須內嵌</strong> <code>G-W3XP2TGZ05</code>（地雷 8）<br>
+- <strong>禁止 emoji / base64 / Chrome 自動化</strong>（地雷 0/5/9）</p><p><h2>執行時</h2></p><p>1. 讀取 <code>shared/botrun-horse/skills/html-slides.md</code> 取得完整規則<br>
+2. 使用 <code>shared/botrun-horse/skills/media-suite/html-slides/base-template.html</code> 作為模板骨架<br>
+3. 依規則執行 Step 1-6（理解→規劃→產出→預覽→Vercel→首頁）<br>
 </p>
       </div>
     </div>

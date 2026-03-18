@@ -252,11 +252,11 @@ Step 1: 收集所有評分<br>
 | <code>openai/gpt-oss-120b</code> | GPT OSS 120B | $0.039 / $0.19 per M | 開源 |<br>
 | <code>meta-llama/llama-4-maverick</code> | Llama 4 Maverick | $0.15 / $0.60 per M | 開源 |</p><p>---</p><p><h2>📝 腳本清單（v5.0 精簡版）</h2></p><p>| 腳本 | 功能 |<br>
 |------|------|<br>
-| <code>scripts/models.ts</code> | 模型統一配置（OpenRouter API ID） |<br>
+| 多模型答題 | <code>shared/bh openrouter ask</code>（DRY） |<br>
 | <code>scripts/types.ts</code> | 型別定義 |<br>
-| <code>scripts/openrouter-quiz.ts</code> | OpenRouter 多模型答題（波答題用） |<br>
-| <code>scripts/proxy-fetch.ts</code> | Proxy 網路請求（波答題用） |<br>
-| <code>scripts/pdf-processor.ts</code> | PDF 拆頁轉文字 |<br>
+| PDF 拆頁轉文字 | <code>shared/bh doc split</code> + <code>shared/bh doc text</code>（DRY） |<br>
+| 模型配置 | <code>shared/bh openrouter models</code>（DRY） |<br>
+| Proxy 請求 | botrun-horse <code>_core/proxy.mjs</code> 內建（DRY） |<br>
 | <code>scripts/browser-fetch.ts</code> | 無頭瀏覽器抓取 |<br>
 | <code>scripts/playwright-fetch.ts</code> | Playwright 抓取工具 |<br>
 | <code>scripts/validate.ts</code> | 題庫格式驗證 |<br>

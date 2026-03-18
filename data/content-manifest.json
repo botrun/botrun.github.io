@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-18T09:30:59+08:00"
+    "lastUpdated": "2026-03-18T11:45:00+08:00"
   },
   "items": [
+    {
+      "id": "eems-ai-sroi",
+      "title": "EEMS 環境案件 AI 數據分析 — SROI 效益評估",
+      "subtitle": "10 小時→1 小時，26.7 萬筆裁處數據鑑往知來，每投入 1 元創造 10-25 元社會價值（密碼保護）",
+      "href": "https://eems-ai-sroi.vercel.app",
+      "icon": "shield",
+      "badge": "機密",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-18T11:45:00+08:00",
+      "tags": ["lock:密碼保護", "activity:SROI", "database:26.7萬筆"]
+    },
     {
       "id": "orchestration-harness-battleground",
       "title": "編排層 + Harness = 2026 全球必爭之地",

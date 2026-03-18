@@ -53,15 +53,17 @@
         <p>
 <h1>共用工具庫</h1></p><p><h2>何時使用此技能</h2></p><p>- 其他技能需要引用共用函式時<br>
 - 需要文字轉換、分析、校正功能時<br>
-- 需要雜湊快取功能時</p><p><h2>腳本清單</h2></p><p>| 腳本 | 用途 |<br>
-|------|------|<br>
-| <code>scripts/analyze.ts</code> | 文字分析 |<br>
-| <code>scripts/correct.ts</code> | 勘誤校正 |<br>
-| <code>scripts/format.ts</code> | 格式化輸出 |<br>
-| <code>scripts/transcribe.ts</code> | 轉錄工具 |<br>
-| <code>scripts/hash_cache.py</code> | 雜湊快取 |<br>
-| <code>scripts/text_converter.py</code> | 文字轉換 |</p><p><h2>引用方式</h2></p><p><code>`</code>typescript<br>
-import { analyze } from '.claude/skills/共用工具庫/scripts/analyze';<br>
+- 需要雜湊快取功能時</p><p><h2>DRY: 優先使用 shared/bh（botrun-horse）</h2></p><p>| 功能 | shared/bh 指令 | 舊腳本（保留但不推薦） |<br>
+|------|---------------|----------------------|<br>
+| 文字轉換 | <code>shared/bh doc text</code> | <code>scripts/text_converter.py</code> |<br>
+| 雜湊快取 | botrun-horse 內建 | <code>scripts/hash_cache.py</code> |<br>
+| 轉錄 | <code>shared/bh gemini transcribe</code> | <code>scripts/transcribe.ts</code> |<br>
+| 文字分析 | Claude Code 內建能力 | <code>scripts/analyze.ts</code> |<br>
+| 勘誤校正 | Claude Code Opus 手動 | <code>scripts/correct.ts</code> |<br>
+| 格式化 | Claude Code 內建能力 | <code>scripts/format.ts</code> |</p><p><code>`</code>bash<br>
+<h1>DRY 引用方式</h1><br>
+shared/bh doc text "file.pdf"<br>
+shared/bh gemini transcribe "audio.mp3"<br>
 <code>`</code><br>
 </p>
       </div>

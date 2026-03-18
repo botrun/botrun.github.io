@@ -64,12 +64,13 @@ cd projects/nchc-botrun-cli && sh/cli.sh --hi-agentic<br>
 4. Devstral Small 24B<br>
 5. Ministral 3 14B<br>
 6. Ministral 3 8B<br>
-7. GPT-OSS 120B</p><p><h2>CLI 命令</h2></p><p>| 命令 | 說明 |<br>
+7. GPT-OSS 120B</p><p><h2>CLI 命令（DRY: 優先使用 shared/bh）</h2></p><p>| 命令 | 說明 |<br>
 |------|------|<br>
-| <code>sh/cli.sh</code> | 互動模式（預設） |<br>
-| <code>sh/cli.sh --hi-direct</code> | Direct 壓力測試 |<br>
-| <code>sh/cli.sh --hi-agentic</code> | Agentic AI 壓力測試 |<br>
-| <code>sh/cli.sh --test</code> | 執行單元測試 |</p><p><h2>專案路徑</h2></p><p><code>projects/nchc-botrun-cli/</code><br>
+| <code>shared/bh nchc ask "問題"</code> | 國網 LLM 提問（推薦） |<br>
+| <code>shared/bh nchc models</code> | 列出可用模型 |<br>
+| <code>shared/bh nchc ask "問題" --model=Ministral-Large-3-675B-Instruct-2512</code> | 指定模型 |<br>
+| <code>sh/cli.sh --hi-direct</code> | Direct 壓力測試（舊版，保留） |<br>
+| <code>sh/cli.sh --hi-agentic</code> | Agentic AI 壓力測試（舊版，保留） |</p><p><h2>專案路徑</h2></p><p><code>projects/nchc-botrun-cli/</code><br>
 </p>
       </div>
     </div>

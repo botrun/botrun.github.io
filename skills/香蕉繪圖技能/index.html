@@ -65,14 +65,12 @@
 8. 🍃 侘寂美學風（wabi-sabi）— 不完美的美，適合哲學、禪意</p><p>或者告訴我你想要的氛圍（例如：溫暖的、專業的、科幻的），我來推薦。<br>
 <code>`</code></p><p><h3>如果用戶已指定風格，直接使用</h3></p><p>用戶說了風格關鍵字（如「水彩」「寫實」「扁平」）就直接採用，不再詢問。</p><p><h2>執行方式</h2></p><p><h3>基本繪圖</h3></p><p><code>`</code>bash<br>
 cd /Users/40gpu/coding_projects/timeless-bowen && \<br>
-GEMINI_API_KEY=$(grep GEMINI_API_KEY .env | cut -d= -f2) \<br>
-node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
-  "圖片描述 prompt" \<br>
-  --style "風格描述" \<br>
-  --aspect "1:1" \<br>
-  --size "1K" \<br>
-  --output "./html/output.png"<br>
-<code>`</code></p><p><h3>參數說明</h3></p><p>| 參數 | 說明 | 預設值 |<br>
+shared/bh imagen generate "圖片描述 prompt, 風格描述 style" \<br>
+  --aspect="1:1" \<br>
+  --size="1K" \<br>
+  --output="./html/output.png"<br>
+<code>`</code></p><p>> <strong>DRY 原則</strong>：統一透過 <code>shared/bh</code> 呼叫 botrun-horse modules/imagen，不再直接呼叫 banana-draw.mjs。<br>
+> 改圖（session 延續）：<code>shared/bh imagen edit ./前圖.png "修改描述" --output="./後圖.png"</code></p><p><h3>參數說明</h3></p><p>| 參數 | 說明 | 預設值 |<br>
 |------|------|--------|<br>
 | 第一個參數 | 圖片描述（支援繁體中文） | 必填 |<br>
 | --style, -s | 藝術風格（必須指定） | 無預設，必須先討論 |<br>
@@ -107,7 +105,7 @@ node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
 | 侘寂 | wabi-sabi aesthetic, muted earth tones, organic imperfections, minimalist |</p><p><h2>平行生成（子代理加速）</h2></p><p>當需要同時生成多張圖片時，<strong>必須使用子代理平行執行</strong>以加速：</p><p><code>`</code><br>
 使用 Agent tool，subagent_type: general-purpose，model: sonnet<br>
 每張圖片一個子代理，同時發出，大幅縮短等待時間<br>
-<code>`</code></p><p>範例：需要 3 張圖片 → 啟動 3 個 sonnet 子代理 → 各自呼叫 banana-draw.mjs → 全部完成後匯總</p><p><h2>與 html-slides 技能整合</h2></p><p>當 html-slides 需要情境插圖時：</p><p>1. 先用香蕉繪圖技能生成圖片（512px 解析度即可）<br>
+<code>`</code></p><p>範例：需要 3 張圖片 → 啟動 3 個 sonnet 子代理 → 各自呼叫 <code>shared/bh imagen generate</code> → 全部完成後匯總</p><p><h2>與 html-slides 技能整合</h2></p><p>當 html-slides 需要情境插圖時：</p><p>1. 先用香蕉繪圖技能生成圖片（512px 解析度即可）<br>
 2. 圖片存到 <code>./html/</code> 目錄<br>
 3. 在 HTML 中用 <code><img></code> 引用或用 base64 內嵌</p><p><code>`</code>html<br>
 <!-- 方式 A：檔案引用 --><br>
@@ -120,7 +118,11 @@ node .claude/skills/香蕉繪圖技能/scripts/banana-draw.mjs \<br>
 | 速度 | 4-6 秒 |<br>
 | 價格 | ~$0.067/張 |<br>
 | 中文渲染 | 優於 Pro 版 |<br>
-| SDK | @google/genai |</p><p><h2>地雷紀錄</h2></p><p><h3>地雷 1：風格未指定就繪圖 — 2026-03-16</h3></p><p>- <strong>問題</strong>：未討論風格就直接生成，產出風格不符用戶期待<br>
+| SDK | @google/genai |</p><p><h2>與絲滑動畫技能串接</h2></p><p>當需要將多張圖片做成流暢動畫時：</p><p>1. 先用香蕉繪圖技能生成 keyframes（例如 4 張連續場景）<br>
+2. 再用「絲滑動畫」技能組裝：Nano Banana 2 session 延續在 keyframes 之間生成過渡幀<br>
+3. ffmpeg 最佳化組裝成 GIF（Google Chat 自動播放）</p><p><code>`</code><br>
+香蕉繪圖 → 4 張 keyframes → 絲滑動畫 → 16 張（含過渡幀）→ GIF<br>
+<code>`</code></p><p>技能路徑：<code>.claude/skills/絲滑動畫/</code></p><p><h2>地雷紀錄</h2></p><p><h3>地雷 1：風格未指定就繪圖 — 2026-03-16</h3></p><p>- <strong>問題</strong>：未討論風格就直接生成，產出風格不符用戶期待<br>
 - <strong>正確</strong>：必須先確認風格，再開始繪製<br>
 - <strong>驗證</strong>：每次繪圖前確認 --style 參數有值</p><p><h3>地雷 2：Prompt 要用英文為主 — 2026-03-16</h3></p><p>- <strong>問題</strong>：純中文 prompt 有時品質不穩定<br>
 - <strong>正確</strong>：主體描述用英文，風格和氛圍可混用中文<br>

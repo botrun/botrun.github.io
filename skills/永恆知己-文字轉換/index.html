@@ -112,22 +112,13 @@ find . -type f \( -name "<em>.pdf" -o -name "</em>.mp3" -o -name "*.m4a" \<br>
 - ✅ LLM 友善格式（適合 AI 理解和檢索）<br>
 - ✅ 自動去除雜訊（頁碼、頁首頁尾）<br>
 - ✅ 保持語義完整性<br>
-<code>`</code></p><p>---</p><p><h2>🚀 使用方式</h2></p><p><h3>自動掃描並轉換</h3><br>
-<code>`</code>bash<br>
-python3 scripts/convert_to_text.py --scan<br>
-<code>`</code></p><p><h3>轉換特定檔案</h3><br>
-<code>`</code>bash<br>
-python3 scripts/convert_to_text.py "path/to/file.pdf"<br>
-<code>`</code></p><p><h3>強制重新轉換</h3><br>
-<code>`</code>bash<br>
-python3 scripts/convert_to_text.py "path/to/file.pdf" --force<br>
-<code>`</code></p><p><h3>批次轉換特定類型</h3><br>
-<code>`</code>bash<br>
-python3 scripts/convert_to_text.py --type pdf<br>
-python3 scripts/convert_to_text.py --type audio<br>
-python3 scripts/convert_to_text.py --type image<br>
-python3 scripts/convert_to_text.py --type office<br>
-<code>`</code></p><p>---</p><p><h2>🔍 檢索使用</h2></p><p><h3>搜尋所有內容（包含原本不可搜尋的檔案）</h3><br>
+<code>`</code></p><p>---</p><p><h2>🚀 使用方式</h2></p><p><h3>DRY: 優先使用 shared/bh（botrun-horse modules/doc）</h3></p><p><code>`</code>bash<br>
+<h1>PDF 轉文字</h1><br>
+shared/bh doc text "path/to/file.pdf"</p><p><h1>Office 全系列轉文字</h1><br>
+shared/bh doc text "path/to/file.docx"</p><p><h1>批次入庫（含 FTS5 全文索引）</h1><br>
+shared/bh doc ingest --dir="素材庫/原始檔案/"</p><p><h1>批次拆頁</h1><br>
+shared/bh doc split "path/to/large.pdf" --outdir="./pages/"<br>
+<code>`</code></p><p>> 備選（舊版）：<code>python3 scripts/convert_to_text.py --scan</code>（保留但不推薦）</p><p>---</p><p><h2>🔍 檢索使用</h2></p><p><h3>搜尋所有內容（包含原本不可搜尋的檔案）</h3><br>
 <code>`</code>bash<br>
 <h1>搜尋 PDF 內容</h1><br>
 rg -C 3 "關鍵字" . --glob "*.pdf.txt"</p><p><h1>搜尋所有轉換後的檔案</h1><br>

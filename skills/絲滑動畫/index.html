@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>絲滑動畫 - 波特人技能</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .skill-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .skill-content h1 { margin-top: 2rem; margin-bottom: 1rem; }
+    .skill-content h2 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .skill-content h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+    .skill-content code {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .skill-content pre {
+      background: rgba(124, 58, 237, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .skill-content pre code {
+      background: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="../../"><i data-lucide="arrow-left"></i> 返回首頁</a></nav>
+  </header>
+  <main>
+    <div class="skill-content">
+      <h1><i data-lucide="book-open"></i> 絲滑動畫</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        |
+      </p>
+      <div>
+        <p>
+<h1>絲滑動畫技能 v2</h1></p><p>> Nano Banana 2 Session 延續圖片 + ffmpeg 最佳化 GIF</p><p><h2>核心原理</h2></p><p><code>`</code><br>
+原始 4 張圖:  [A] --------- [B] --------- [C] --------- [D]<br>
+                     ↓              ↓              ↓<br>
+Nano Banana 2:  生成 3 張過渡幀  生成 3 張過渡幀  生成 3 張過渡幀<br>
+                     ↓              ↓              ↓<br>
+最終序列:      [A] a1 a2 a3 [B] b1 b2 b3 [C] c1 c2 c3 [D]<br>
+                           (共 16 張 → 絲滑 GIF)<br>
+<code>`</code></p><p><strong>關鍵技術：Gemini Multi-Turn Session</strong><br>
+- 模型 ID：<code>gemini-3.1-flash-image-preview</code>（Nano Banana 2）<br>
+- 每次 API 呼叫傳入前後兩張 keyframe（via <code>inlineData</code>）<br>
+- 指定過渡進度百分比（33%、67% 等）<br>
+- 模型根據兩張圖的差異生成中間幀，保持角色/風格一致性<br>
+- REST API 需手動管理 thought signatures（SDK chat 自動處理）</p><p><h2>何時使用</h2></p><p>- 用戶說「絲滑動畫」「silky animation」「做動畫」「圖片變動畫」<br>
+- 有 2-8 張連續插圖/照片想做成流暢動畫<br>
+- 目標平台：Google Chat（GIF 自動播放，上限 200MB）<br>
+- 也適用：LINE、Slack、Discord、Email</p><p><h2>執行方式</h2></p><p><h3>基本用法</h3></p><p><code>`</code>bash<br>
+cd /Users/40gpu/coding_projects/timeless-bowen && \<br>
+GEMINI_API_KEY=$(grep GEMINI_API_KEY .env | cut -d= -f2) \<br>
+<h1>繪圖部分 DRY: shared/bh imagen generate/edit</h1><br>
+<h1>ffmpeg 組裝仍用本地腳本</h1><br>
+node .claude/skills/絲滑動畫/scripts/silky-animate.mjs \<br>
+  --images "img1.jpg,img2.jpg,img3.jpg,img4.jpg" \<br>
+  --style "watercolor illustration" \<br>
+  --frames 3 \<br>
+  --subtitles "字幕一,字幕二,字幕三,字幕四" \<br>
+  --duration 2.5 \<br>
+  --fps 12 \<br>
+  --width 480 \<br>
+  --output "./output/story.gif"<br>
+<code>`</code></p><p><h3>參數說明</h3></p><p>| 參數 | 說明 | 預設值 |<br>
+|------|------|--------|<br>
+| --images | 逗號分隔的圖片路徑（必填，至少 2 張） | 必填 |<br>
+| --style | 藝術風格描述（英文為主） | 無 |<br>
+| --frames | 每兩張之間插幾張過渡幀 | 3 |<br>
+| --subtitles | 逗號分隔的字幕（對應每張原始圖） | 無 |<br>
+| --duration | 每張原始圖顯示秒數 | 2.5 |<br>
+| --fps | 幀率 | 12 |<br>
+| --width | 輸出寬度（px） | 480 |<br>
+| --fade | 轉場秒數 | 0.6 |<br>
+| --output | 輸出路徑 | ./story.gif |</p><p><h3>過渡幀數建議</h3></p><p>| 場景 | --frames | 效果 |<br>
+|------|----------|------|<br>
+| 快速簡單 | 1 | 基本過渡，API 呼叫少 |<br>
+| 推薦預設 | 3 | 絲滑自然，性價比最高 |<br>
+| 極致絲滑 | 5 | 電影級流暢，API 呼叫多 |</p><p><h3>API 成本估算</h3></p><p>| 原始圖片 | --frames | API 呼叫數 | 預估成本 |<br>
+|----------|----------|-----------|---------|<br>
+| 4 張 | 1 | 3 | ~$0.20 |<br>
+| 4 張 | 3 | 9 | ~$0.60 |<br>
+| 4 張 | 5 | 15 | ~$1.00 |<br>
+| 8 張 | 3 | 21 | ~$1.40 |</p><p><h2>Gemini Multi-Turn Session 技術細節</h2></p><p><h3>REST API 結構（手動管理 thought signatures）</h3></p><p><code>`</code>json<br>
+{<br>
+  "contents": [<br>
+    {<br>
+      "role": "user",<br>
+      "parts": [<br>
+        { "text": "Here is the first keyframe image (Image A):" },<br>
+        { "inlineData": { "mimeType": "image/jpeg", "data": "<BASE64_A>" } }<br>
+      ]<br>
+    },<br>
+    {<br>
+      "role": "model",<br>
+      "parts": [<br>
+        { "text": "I can see Image A. Please provide Image B and your instructions." }<br>
+      ]<br>
+    },<br>
+    {<br>
+      "role": "user",<br>
+      "parts": [<br>
+        { "text": "Here is the second keyframe image (Image B):" },<br>
+        { "inlineData": { "mimeType": "image/jpeg", "data": "<BASE64_B>" } },<br>
+        { "text": "Generate transition frame at 50% progress between A and B..." }<br>
+      ]<br>
+    }<br>
+  ],<br>
+  "generationConfig": {<br>
+    "responseModalities": ["IMAGE"],<br>
+    "temperature": 0.4<br>
+  }<br>
+}<br>
+<code>`</code></p><p><h3>Thought Signatures 注意事項</h3></p><p>- <code>gemini-3.1-flash-image-preview</code> 的 model response 中，每個 part 可能帶 <code>thoughtSignature</code><br>
+- 若要做 3+ 輪的真正 session 延續，必須將 <code>thoughtSignature</code> 原封不動傳回<br>
+- 目前腳本使用「每段獨立 2 輪」策略（避免 signature 管理複雜度）<br>
+- 未來可升級為 SDK chat 模式（自動管理 signatures）</p><p><h2>Google Chat 最佳化</h2></p><p>| 指標 | 建議值 | 原因 |<br>
+|------|--------|------|<br>
+| 檔案格式 | GIF | Google Chat 自動播放 |<br>
+| 檔案大小 | < 5MB | 載入快，不卡頓 |<br>
+| 寬度 | 480px | 手機/桌機都清楚 |<br>
+| 時長 | 8-15 秒 | 注意力最佳區間 |<br>
+| 幀率 | 12 fps | 絲滑且檔案不爆 |<br>
+| 色彩數 | 128 | palette 最佳化 |</p><p><h2>產出檔案</h2></p><p>| 檔案 | 用途 |<br>
+|------|------|<br>
+| <code>*.gif</code> | Google Chat / LINE / Slack 直接丟（自動播放） |<br>
+| <code>*.mp4</code> | 備用高品質版（可加音樂後期） |</p><p><h2>與香蕉繪圖技能的關係</h2></p><p>- <strong>香蕉繪圖技能</strong>：生成單張圖片<br>
+- <strong>絲滑動畫技能</strong>：接收多張圖片 → 插值過渡 → 組裝動畫<br>
+- 可串接：先用香蕉繪圖技能生成 keyframes → 再用絲滑動畫組裝</p><p><h2>地雷紀錄</h2></p><p><h3>地雷 1：ffmpeg zoompan 幀數爆炸 — 2026-03-16</h3></p><p>- <strong>問題</strong>：<code>-loop 1</code> 輸入 + <code>zoompan</code> 導致幀數 ×75 倍，GIF 300MB+<br>
+- <strong>正確</strong>：用 <code>-framerate $FPS</code> 控制輸入幀率，或改用 concat demuxer<br>
+- <strong>驗證</strong>：輸出前檢查 duration 和 file size</p><p><h3>地雷 2：ffmpeg drawtext CJK 編碼 — 2026-03-16</h3></p><p>- <strong>問題</strong>：filter_complex 內直接寫中文字幕會報 "text must be provided" 錯誤<br>
+- <strong>正確</strong>：用 <code>textfile=</code> 參數指向外部文字檔<br>
+- <strong>驗證</strong>：確認 .txt 檔案以 UTF-8 編碼寫入</p><p><h3>地雷 3：Gemini 2.0 Flash 已過時 — 2026-03-16</h3></p><p>- <strong>問題</strong>：不要用 gemini-2.0-flash-exp-image-generation，已是舊版<br>
+- <strong>正確</strong>：使用 <code>gemini-3.1-flash-image-preview</code>（Nano Banana 2）<br>
+- <strong>驗證</strong>：檢查 MODEL 變數</p><p><h3>地雷 4：thoughtSignature 是 camelCase — 2026-03-16</h3></p><p>- <strong>問題</strong>：研究文件寫 <code>thought_signature</code>（snake_case），但實際 API 回傳是 <code>thoughtSignature</code>（camelCase）<br>
+- <strong>正確</strong>：REST API response/request 都用 <strong>camelCase</strong> <code>thoughtSignature</code><br>
+- <strong>驗證</strong>：debug 時用 <code>Object.keys(part)</code> 檢查實際欄位名稱<br>
+- <strong>影響</strong>：漏傳 thoughtSignature 會導致 400 INVALID_ARGUMENT 錯誤</p><p><h3>地雷 5：ffmpeg concat 需要絕對路徑 — 2026-03-16</h3></p><p>- <strong>問題</strong>：concat demuxer 的 file 列表用相對路徑，ffmpeg 找不到檔案<br>
+- <strong>正確</strong>：所有路徑用 <code>path.resolve()</code> 轉為絕對路徑<br>
+- <strong>影響</strong>：MP4/GIF 產出為 0 或 ENOENT</p><p><h3>地雷 6：序列算圖太慢 — 2026-03-16</h3></p><p>- <strong>問題</strong>：3 段 segment 序列執行，每段 ~15 秒，總共 45 秒<br>
+- <strong>正確</strong>：用 <code>Promise.all</code> 平行發射所有 segment，速度快 N 倍<br>
+- <strong>關鍵</strong>：每段 segment 獨立（不同 keyframe pair），可安全平行</p><p><h3>地雷 7：不要刪除過渡幀 — 2026-03-16</h3></p><p>- <strong>問題</strong>：腳本自動 <code>rmSync(tmpDir)</code> 刪除所有 AI 過渡幀，用戶無法檢查品質<br>
+- <strong>正確</strong>：保留 <code>_silky_tmp/</code> 目錄，並產出 <code>frames/</code> 流水號目錄供檢閱<br>
+- <strong>關鍵</strong>：用戶需要逐張檢查過渡幀品質，決定是否需要重新生成</p><p><h3>地雷 8：過渡幀需要流水號重命名 — 2026-03-16</h3></p><p>- <strong>問題</strong>：過渡幀命名 <code>seg0_frame0.png</code> 不直覺，用戶難以判斷播放順序<br>
+- <strong>正確</strong>：產出 <code>frames/</code> 目錄，按播放順序 <code>01-keyframe-A.jpg</code>、<code>02-transition-A-B-33.png</code> 等<br>
+- <strong>範例</strong>：<code>--frames 2</code> + 4 張原圖 → 10 張流水號檔案</p><p><h3>地雷 9：純 concat 硬切不夠絲滑 — 2026-03-16</h3></p><p>- <strong>問題</strong>：ffmpeg concat demuxer 只是硬切（幀跳幀），沒有 crossfade<br>
+- <strong>正確</strong>：改用 HTML + CSS crossfade + Playwright 錄影，或 ffmpeg xfade<br>
+- <strong>最佳方案</strong>：HTML 方式可加落葉等裝飾動畫，效果遠超純 ffmpeg<br>
+- <strong>HTML 錄影流程</strong>：HTML（CSS 動畫 + 落葉）→ Playwright recordVideo → WebM → ffmpeg → MP4/GIF</p><p><h3>地雷 10：GIF 幀數需要裁切 — 2026-03-16</h3></p><p>- <strong>問題</strong>：Playwright 錄影尾段有多餘空白幀，GIF 太長<br>
+- <strong>正確</strong>：用 <code>ffmpeg -t</code> 裁切到指定秒數/幀數<br>
+- <strong>範例</strong>：<code>ffmpeg -y -i input.mp4 -t 13.17 ...</code>（158 幀 @ 12fps）</p><p><h2>進階：HTML 錄影模式</h2></p><p>除了純 ffmpeg 組裝，還支援 HTML + Playwright 錄影模式：</p><p><code>`</code><br>
+10 張幀圖 → silky-player.html（CSS crossfade + 落葉動畫 + 字幕）<br>
+                    ↓<br>
+            Playwright recordVideo（headless Chrome）<br>
+                    ↓<br>
+            WebM → ffmpeg → MP4 + GIF<br>
+<code>`</code></p><p><strong>優點</strong>：CSS 動畫比 ffmpeg 更絲滑、可加落葉/粒子/暈影等裝飾<br>
+<strong>HTML 位置</strong>：與 <code>frames/</code> 同目錄的 <code>silky-player.html</code><br>
+<strong>錄影腳本</strong>：<code>record-video.mjs</code>（需要 Playwright 環境）</p><p><h2>模型資訊</h2></p><p>| 項目 | 值 |<br>
+|------|-----|<br>
+| 模型 ID | gemini-3.1-flash-image-preview |<br>
+| 代號 | Nano Banana 2 |<br>
+| 能力 | 多輪對話圖片生成、圖片編輯、風格一致性 |<br>
+| Session | 透過 contents 陣列傳遞對話歷史 + inlineData |<br>
+| Thought Signatures | REST API 需手動管理，SDK chat 自動處理 |<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Boosted by <a href="https://botrun.ai">botrun.ai</a></p>
+  </footer>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

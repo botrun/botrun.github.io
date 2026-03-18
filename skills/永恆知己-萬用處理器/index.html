@@ -104,8 +104,8 @@ sh/cli.sh ask "你的指令"<br>
 | API 回應 | .cache/api/ | 24 小時 |<br>
 | 評分結果 | .cache/scores/ | 30 天 |</p><p><h2>相關檔案</h2></p><p>- 零框架後設提示配置: <code>配置/規則/零框架後設提示.yaml</code><br>
 - CLI 入口: <code>sh/cli.sh</code><br>
-- 處理器模組: <code>scripts/universal/</code><br>
-- 評測模組: <code>scripts/benchmark/</code></p><p><h2>預設模型</h2></p><p>評測使用以下模型：<br>
+- 處理器模組: <code>shared/bh doc</code> + <code>shared/bh openrouter</code>（DRY）<br>
+- 評測模組: <code>shared/bh benchmark</code>（DRY，botrun-horse modules/benchmark）</p><p><h2>預設模型</h2></p><p>評測使用以下模型：<br>
 - openai/gpt-oss-120b<br>
 - meta-llama/llama-4-maverick-17b-128e-instruct<br>
 - google/gemini-3-flash-preview-20251217<br>
