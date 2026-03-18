@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-18T12:14:43+08:00"
+    "lastUpdated": "2026-03-18T13:10:00+08:00"
   },
   "items": [
+    {
+      "id": "battleground-quiz",
+      "title": "編排層 × Harness 街機闖關 — 全公司排行榜",
+      "subtitle": "5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？",
+      "href": "https://battleground-quiz.vercel.app",
+      "icon": "gamepad-2",
+      "badge": "街機",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-18T13:10:00+08:00",
+      "tags": ["zap:15題闖關", "trophy:排行榜", "sparkles:八角框架"]
+    },
     {
       "id": "env-ministry-agentic-ai",
       "title": "環境部 Agentic AI 導入策略 — 波龍蝦個人版與團隊版",
