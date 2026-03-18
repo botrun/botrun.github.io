@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "line-botrun-ai-teaching",
+      "title": "Line x 波特人 AI 教學平台 — 語音即教室",
+      "subtitle": "Line 錄音 5 分鐘自動產出會議記錄，語音修正就是提示工程課，每日驚喜圖片黏住使用者",
+      "href": "https://line-botrun-ai-teaching.vercel.app",
+      "icon": "message-circle",
+      "badge": "簡報",
+      "badgeColor": "#06c755",
+      "publishDate": "2026-03-18T17:06:09+08:00",
+      "tags": ["mic:語音轉文字", "sparkles:每日驚喜", "users:慈濟志工"]
+    },
+    {
       "id": "battleground-quiz",
       "title": "編排層 × Harness 街機闖關 — 全公司排行榜",
       "subtitle": "5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？",
