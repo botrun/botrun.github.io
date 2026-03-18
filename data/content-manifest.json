@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "10khp-yukaichou",
+      "title": "10,000 Hours of Play — 遊戲化人生六步框架",
+      "subtitle": "Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統",
+      "href": "https://10khp-yukaichou.vercel.app",
+      "icon": "gamepad-2",
+      "badge": "書摘",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-18T12:49:09+08:00",
+      "tags": ["book:Yu-kai Chou", "sparkles:Gamification", "users:5 Cases"]
+    },
+    {
       "id": "nchc-todo-v3",
       "title": "國網中心 × 波特人 — 波公子 Agentic AI 派工單 L 系列",
       "subtitle": "21 個 BDD 驗收 TODO（L01~L21），PM/RD 分工，3/31 前交出 Live Demo（密碼保護）",
