@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "env-ministry-agentic-ai",
+      "title": "環境部 Agentic AI 導入策略 — 波龍蝦個人版與團隊版",
+      "subtitle": "永恆知己雙軌架構：首長獨立 VM 個人版 + Botrun Play 團隊版，國網中心台灣自主算力",
+      "href": "https://env-ministry-agentic-ai.vercel.app",
+      "icon": "shield-check",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-18T12:55:00+08:00",
+      "tags": ["building:環境部", "lock:封閉地端", "sparkles:Agentic AI"]
+    },
+    {
       "id": "10khp-yukaichou",
       "title": "10,000 Hours of Play — 遊戲化人生六步框架",
       "subtitle": "Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統",
