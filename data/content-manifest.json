@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "nchc-agentic-ai-govdoc",
+      "title": "國網波特人 Agentic AI 公文自動化",
+      "subtitle": "G-TAIDE 基礎上再進化，Agentic AI 掃描舊公文生成新公文，國網中心先行驗證再推廣國科會",
+      "href": "https://nchc-agentic-ai-govdoc.vercel.app",
+      "icon": "file-text",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-18T17:18:39+08:00",
+      "tags": ["bot:Agentic AI", "file-text:公文自動化", "building:國網中心"]
+    },
+    {
       "id": "line-botrun-ai-teaching",
       "title": "Line x 波特人 AI 教學平台 — 語音即教室",
       "subtitle": "Line 錄音 5 分鐘自動產出會議記錄，語音修正就是提示工程課，每日驚喜圖片黏住使用者",
