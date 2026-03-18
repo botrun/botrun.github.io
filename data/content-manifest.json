@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-18T11:45:00+08:00"
+    "lastUpdated": "2026-03-18T12:14:43+08:00"
   },
   "items": [
+    {
+      "id": "nchc-todo-v3",
+      "title": "國網中心 × 波特人 — 公文 Agentic AI 派工單 L 系列",
+      "subtitle": "21 個 BDD 驗收 TODO（L01~L21），PM/RD 分工，3/31 前交出 Live Demo（密碼保護）",
+      "href": "https://nchc-todo-v3.vercel.app",
+      "icon": "clipboard",
+      "badge": "派工",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-18T12:14:43+08:00",
+      "tags": ["lock:密碼保護", "building:國網中心", "list:21 TODO"]
+    },
     {
       "id": "eems-ai-sroi",
       "title": "EEMS 環境案件 AI 數據分析 — SROI 效益評估",
