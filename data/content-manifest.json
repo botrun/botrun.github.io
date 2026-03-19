@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "bdd-arcade-hacker-incident",
+      "title": "BDD 街機排行榜駭客事件 — 從入侵到修復",
+      "subtitle": "排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程",
+      "href": "https://bdd-arcade-hacker-incident.vercel.app",
+      "icon": "shield-alert",
+      "badge": "資安",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T11:53:56+08:00",
+      "tags": ["shield-alert:Anti-Cheat", "gamepad-2:Pac-Man", "lock:HMAC-SHA256"]
+    },
+    {
       "id": "bdd-pacman-arcade",
       "title": "BDD 小精靈 — 六行魔法迷宮",
       "subtitle": "八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
