@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "law-handover",
+      "title": "法規檢索系統交接 — 28 Commits in 3 Days",
+      "subtitle": "法務部全國法規資料庫 AI 智慧檢索 v4.2.1，四種態樣格式 + 100 種意圖容錯 + 7 個必知地雷（密碼保護）",
+      "href": "https://law-handover.vercel.app",
+      "icon": "scale",
+      "badge": "技術交接",
+      "badgeColor": "#2563eb",
+      "publishDate": "2026-03-19T16:10:00+08:00",
+      "tags": ["lock:密碼保護", "scale:法規檢索", "shield:7地雷"]
+    },
+    {
       "id": "bdd-arcade-hacker-incident",
       "title": "BDD 大型電動排行榜駭客事件 — 從入侵到修復",
       "subtitle": "排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程",
