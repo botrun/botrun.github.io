@@ -39,7 +39,7 @@
     },
     {
       "id": "ida-poc-handover",
-      "title": "IDA-POC 產發署智慧入口 — 技術交接",
+      "title": "IDA-POC 經濟部產發署智慧入口 — 技術交接",
       "subtitle": "BM25+RRF 三路搜尋引擎 + Gemini 串流 + Hono SSE + Cloud Run 部署，含 16 個地雷經驗",
       "href": "https://ida-poc-handover.vercel.app",
       "icon": "database",
