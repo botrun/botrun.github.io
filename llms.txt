@@ -1,10 +1,12 @@
-# 五言波特人 — AI 友善索引
+# 五言波特人
 
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
-> 本站所有內容皆可由 AI 純文字讀取。
-> 完整全文版：https://botrun.github.io/llms-full.txt
+> 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
+> 首頁：https://botrun.github.io
 
-## 最新發佈
+完整全文版請見 [llms-full.txt](https://botrun.github.io/llms-full.txt)。
+
+## 發佈內容
 
 - [BDD 小精靈 — 六行魔法迷宮](https://bdd-pacman-arcade.vercel.app): 八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）
 - [BDD 六行魔法指令 — AI Coding SOP 教學](https://bdd-slash-command-teaching.vercel.app): 複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）
@@ -14,12 +16,9 @@
 - [編排層 × Harness 街機闖關 — 全公司排行榜](https://battleground-quiz.vercel.app): 5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？
 - [環境部 Agentic AI 導入策略 — 波龍蝦個人版與團隊版](https://env-ministry-agentic-ai.vercel.app): 永恆知己雙軌架構：首長獨立 VM 個人版 + Botrun Play 團隊版，國網中心台灣自主算力
 - [10,000 Hours of Play — 遊戲化人生六步框架](https://10khp-yukaichou.vercel.app): Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統
-- [國網中心 × 波特人 — 波公子 Agentic AI 派工單 L 系列](https://nchc-todo-v3.vercel.app): 21 個 BDD 驗收 TODO（L01~L21），PM/RD 分工，3/31 前交出 Live Demo（密碼保護）
-- [EEMS 環境案件 AI 數據分析 — SROI 效益評估](https://eems-ai-sroi.vercel.app): 10 小時→1 小時，26.7 萬筆裁處數據鑑往知來，每投入 1 元創造 10-25 元社會價值（密碼保護）
 - [編排層 + Harness = 2026 全球必爭之地](https://orchestration-harness-battleground.vercel.app): 大模型紅海，真正值錢的是自動路由（快省準）和品質管控（長跑不分心）— 6 個全球案例
 - [波特人編排層戰略 — 從 CLI 工具到產業定價權](https://botrun-orchestration-strategy.vercel.app): 8 大行動方案 x 18 個月路線圖：編排層、算過即忘、AI 採購決策引擎、無人教室
 - [「波特人」高品味題庫設計指南 — 30 頁完整攻略](https://benchmark-guide.vercel.app): Top 5 公司題庫設計方法論，PM + 技術人都能上手，從 GAIA 到 Tau-bench 六大方法
-- [One Drag — aiplay 波特人 AI 專利](https://one-drag-patent.vercel.app): 拖拉 Folder 就完成高品味題庫，無需 Prompt、無需 Chat，Agentic AI 全自動解析+驗算
 - [駕馭框架 Harness — 六大垂直 AI 管控工程](https://agent-harness-engineering.vercel.app): 波駿馬 Harness：Git Submodule 共享 SKILL.md，六大類 22 項政府 AI 應用自動進化，含 AI 生成奔馳駿馬圖
 - [時間序列預測三年巨變 2023→2026](https://timeseries-ai-revolution.vercel.app): AI Foundation Model 讓預測從「數週調參」變「零樣本秒出」，精準度提升 15-25%，真實數據全面對比
 - [鏡像學習教室 — AI 自動化教學與無人教室願景](https://mirror-classroom-ai-education.vercel.app): Agent Teams + DAG + Playwright 自動產製 59 秒教材，教育轉型三部曲：教材自動化 → 適性化教學 → 適性化評量
@@ -32,11 +31,16 @@
 - [零差別教室 Zero-Gap Classroom](https://zero-gap-classroom.vercel.app): 任何 YouTube 教學影片變成可認證課程，AI 評分個人化學習
 - [機敏龍蝦 × Claude 公務員協作](https://lobster-claude.vercel.app): 5 頁矽谷流敘事、無為使用策略、雙引擎架構
 
-## 關於
+## AI 友善端點
 
-- 品牌：五言波特人（Botrun）
-- 首頁：https://botrun.github.io
-- 內容格式：矽谷流敘事簡報（HTML 靜態頁面）
-- 技術棧：純 HTML + CSS + MJS，零框架零編譯
-- 部署：GitHub Pages + Vercel
-- AI 友善標準：llms.txt (https://llmstxt.org/)
+- [llms.txt](https://botrun.github.io/llms.txt): 本檔案，站點摘要索引
+- [llms-full.txt](https://botrun.github.io/llms-full.txt): 所有項目的完整描述
+- [content-manifest.json](https://botrun.github.io/data/content-manifest.json): 結構化元資料（JSON）
+
+各專案也提供獨立 llms.txt，格式為 `{專案網址}/llms.txt`。
+
+## Optional
+
+- [國網中心 × 波特人 — 波公子 Agentic AI 派工單 L 系列](https://nchc-todo-v3.vercel.app): 21 個 BDD 驗收 TODO（L01~L21），PM/RD 分工，3/31 前交出 Live Demo（密碼保護）
+- [EEMS 環境案件 AI 數據分析 — SROI 效益評估](https://eems-ai-sroi.vercel.app): 10 小時→1 小時，26.7 萬筆裁處數據鑑往知來，每投入 1 元創造 10-25 元社會價值（密碼保護）
+- [One Drag — aiplay 波特人 AI 專利](https://one-drag-patent.vercel.app): 拖拉 Folder 就完成高品味題庫，無需 Prompt、無需 Chat，Agentic AI 全自動解析+驗算
