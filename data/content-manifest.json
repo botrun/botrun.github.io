@@ -13,6 +13,7 @@
       "badge": "技術交接",
       "badgeColor": "#2563eb",
       "publishDate": "2026-03-19T16:10:00+08:00",
+      "protected": true,
       "tags": ["lock:密碼保護", "scale:法規檢索", "shield:7地雷"]
     },
     {
@@ -57,7 +58,8 @@
       "badge": "技術交接",
       "badgeColor": "#2563eb",
       "publishDate": "2026-03-18T22:30:19+08:00",
-      "tags": ["database:知識庫", "search:BM25+RRF", "cloud:Cloud Run"]
+      "protected": true,
+      "tags": ["lock:密碼保護", "database:知識庫", "search:BM25+RRF", "cloud:Cloud Run"]
     },
     {
       "id": "nchc-agentic-ai-govdoc",
@@ -123,6 +125,7 @@
       "badge": "派工",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-18T12:14:43+08:00",
+      "protected": true,
       "tags": ["lock:密碼保護", "building:國網中心", "list:21 TODO"]
     },
     {
@@ -134,6 +137,7 @@
       "badge": "機密",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-18T11:45:00+08:00",
+      "protected": true,
       "tags": ["lock:密碼保護", "activity:SROI", "database:26.7萬筆"]
     },
     {
@@ -178,6 +182,7 @@
       "badge": "機密",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-16T22:56:17+08:00",
+      "protected": true,
       "tags": ["shield:專利", "lock:密碼保護"]
     },
     {

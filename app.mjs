@@ -38,8 +38,12 @@ function renderCard(item) {
     return `<span>${svg(icon)}${label}</span>`;
   }).join('');
 
+  const isProtected = item.protected === true;
+  const hiddenStyle = isProtected ? ' style="display:none;position:relative;"' : ' style="position:relative;"';
+  const protectedAttr = isProtected ? ' data-protected="true"' : '';
+
   return `
-    <a class="card" href="${item.href}"${target} style="position:relative;">
+    <a class="card" href="${item.href}"${target}${hiddenStyle}${protectedAttr}>
       <div class="badge" style="background:${item.badgeColor};">${item.badge}</div>
       <div class="card-icon" style="background:${item.badgeColor};">${svg(item.icon)}</div>
       <div class="card-body">
@@ -54,6 +58,61 @@ function renderCard(item) {
     </a>`;
 }
 
+// Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A
+// 容錯：滑動視窗匹配，不管前後按了什麼都能觸發
+function initKonamiCode() {
+  const SECRET = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA'];
+  const buf = [];
+  let unlocked = false;
+
+  document.addEventListener('keydown', function(e) {
+    if (unlocked) return;
+    buf.push(e.code);
+    // 只保留最近 N 個按鍵（N = 序列長度 + 容錯緩衝）
+    if (buf.length > 30) buf.shift();
+    // 滑動視窗：檢查 buf 尾端是否匹配 SECRET
+    if (buf.length >= SECRET.length) {
+      const tail = buf.slice(-SECRET.length);
+      if (tail.every((k, i) => k === SECRET[i])) {
+        unlocked = true;
+        revealProtectedCards();
+      }
+    }
+  });
+}
+
+function revealProtectedCards() {
+  const cards = document.querySelectorAll('[data-protected="true"]');
+  if (cards.length === 0) return;
+
+  // 顯示隱藏卡片，帶動畫
+  cards.forEach((card, i) => {
+    card.style.display = '';
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, i * 100 + 50);
+  });
+
+  // 更新計數
+  const countEl = document.getElementById('item-count');
+  if (countEl) {
+    const total = document.querySelectorAll('.card').length;
+    countEl.textContent = `${total} 項`;
+  }
+
+  // 顯示提示 toast
+  const toast = document.createElement('div');
+  toast.textContent = `🔓 已解鎖 ${cards.length} 篇密碼保護文章`;
+  toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#7c3aed;color:#fff;padding:.8rem 1.5rem;border-radius:12px;font-size:.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(124,58,237,.4);animation:toastIn .4s ease';
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .4s'; }, 3000);
+  setTimeout(() => toast.remove(), 3500);
+}
+
 async function init() {
   try {
     const res = await fetch(MANIFEST_URL);
@@ -66,13 +125,18 @@ async function init() {
     const container = document.getElementById('card-list');
     container.innerHTML = items.map(renderCard).join('');
 
+    // 公開項目計數（不含 protected）
+    const publicCount = items.filter(i => !i.protected).length;
+    document.getElementById('item-count').textContent = `${publicCount} 項`;
+
     // 更新時間
     const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
     document.getElementById('update-time').textContent = manifest.metadata?.lastUpdated
       ? formatDate(manifest.metadata.lastUpdated)
       : now;
 
-    document.getElementById('item-count').textContent = `${items.length} 項`;
+    // 啟動 Konami Code 監聽
+    initKonamiCode();
   } catch (err) {
     console.error('載入失敗:', err);
     document.getElementById('card-list').innerHTML = '<p style="text-align:center;color:#999;">載入中...</p>';
