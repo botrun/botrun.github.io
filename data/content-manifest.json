@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "bdd-slash-command-teaching",
+      "title": "BDD 六行魔法指令 — AI Coding SOP 教學",
+      "subtitle": "複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）",
+      "href": "https://bdd-slash-command-teaching.vercel.app",
+      "icon": "terminal",
+      "badge": "教學",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T08:19:16+08:00",
+      "tags": ["terminal:Slash Command", "shield:BDD+TDD", "git-branch:DRY+KISS"]
+    },
+    {
       "id": "ida-poc-handover",
       "title": "IDA-POC 產發署智慧入口 — 技術交接",
       "subtitle": "BM25+RRF 三路搜尋引擎 + Gemini 串流 + Hono SSE + Cloud Run 部署，含 16 個地雷經驗",
