@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "bdd-pacman-arcade",
+      "title": "BDD 小精靈 — 六行魔法迷宮",
+      "subtitle": "八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
+      "href": "https://bdd-pacman-arcade.vercel.app",
+      "icon": "gamepad-2",
+      "badge": "街機",
+      "badgeColor": "#ff6b9d",
+      "publishDate": "2026-03-19T08:44:51+08:00",
+      "tags": ["gamepad-2:Pac-Man", "brain:Octalysis", "terminal:bdd.md"]
+    },
+    {
       "id": "bdd-slash-command-teaching",
       "title": "BDD 六行魔法指令 — AI Coding SOP 教學",
       "subtitle": "複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）",
