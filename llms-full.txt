@@ -10,11 +10,11 @@
 
 ## BDD 小精靈 — 六行魔法迷宮
 
-> 八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）
+> 八角遊戲框架 x Pac-Man 大型電動，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）
 
 - [線上版](https://bdd-pacman-arcade.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://bdd-pacman-arcade.vercel.app/llms.txt): 該專案的 llms.txt
-- 類型：街機
+- 類型：大型電動
 - 發佈日期：2026-03-19T08:44:51+08:00
 - 標籤：Pac-Man、Octalysis、bdd.md
 
@@ -58,13 +58,13 @@
 - 發佈日期：2026-03-18T17:06:09+08:00
 - 標籤：語音轉文字、每日驚喜、慈濟志工
 
-## 編排層 × Harness 街機闖關 — 全公司排行榜
+## 編排層 × Harness 大型電動闖關 — 全公司排行榜
 
-> 5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？
+> 5 關 15 題，八角遊戲化設計，復古大型電動留名排行榜，你真的懂編排層 + Harness 嗎？
 
 - [線上版](https://battleground-quiz.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://battleground-quiz.vercel.app/llms.txt): 該專案的 llms.txt
-- 類型：街機
+- 類型：大型電動
 - 發佈日期：2026-03-18T13:10:00+08:00
 - 標籤：15題闖關、排行榜、八角框架
 

@@ -6,7 +6,7 @@
   "items": [
     {
       "id": "bdd-arcade-hacker-incident",
-      "title": "BDD 街機排行榜駭客事件 — 從入侵到修復",
+      "title": "BDD 大型電動排行榜駭客事件 — 從入侵到修復",
       "subtitle": "排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程",
       "href": "https://bdd-arcade-hacker-incident.vercel.app",
       "icon": "shield-alert",
@@ -18,10 +18,10 @@
     {
       "id": "bdd-pacman-arcade",
       "title": "BDD 小精靈 — 六行魔法迷宮",
-      "subtitle": "八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
+      "subtitle": "八角遊戲框架 x Pac-Man 大型電動，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
       "href": "https://bdd-pacman-arcade.vercel.app",
       "icon": "gamepad-2",
-      "badge": "街機",
+      "badge": "大型電動",
       "badgeColor": "#ff6b9d",
       "publishDate": "2026-03-19T08:44:51+08:00",
       "tags": ["gamepad-2:Pac-Man", "brain:Octalysis", "terminal:bdd.md"]
@@ -72,11 +72,11 @@
     },
     {
       "id": "battleground-quiz",
-      "title": "編排層 × Harness 街機闖關 — 全公司排行榜",
-      "subtitle": "5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？",
+      "title": "編排層 × Harness 大型電動闖關 — 全公司排行榜",
+      "subtitle": "5 關 15 題，八角遊戲化設計，復古大型電動留名排行榜，你真的懂編排層 + Harness 嗎？",
       "href": "https://battleground-quiz.vercel.app",
       "icon": "gamepad-2",
-      "badge": "街機",
+      "badge": "大型電動",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-18T13:10:00+08:00",
       "tags": ["zap:15題闖關", "trophy:排行榜", "sparkles:八角框架"]

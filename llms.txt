@@ -8,12 +8,12 @@
 
 ## 發佈內容
 
-- [BDD 小精靈 — 六行魔法迷宮](https://bdd-pacman-arcade.vercel.app): 八角遊戲框架 x Pac-Man 街機，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）
+- [BDD 小精靈 — 六行魔法迷宮](https://bdd-pacman-arcade.vercel.app): 八角遊戲框架 x Pac-Man 大型電動，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）
 - [BDD 六行魔法指令 — AI Coding SOP 教學](https://bdd-slash-command-teaching.vercel.app): 複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）
 - [IDA-POC 產發署智慧入口 — 技術交接](https://ida-poc-handover.vercel.app): BM25+RRF 三路搜尋引擎 + Gemini 串流 + Hono SSE + Cloud Run 部署，含 16 個地雷經驗
 - [國網波特人 Agentic AI 公文自動化](https://nchc-agentic-ai-govdoc.vercel.app): G-TAIDE 基礎上再進化，Agentic AI 掃描舊公文生成新公文，國網中心先行驗證再推廣國科會
 - [Line x 波特人 AI 教學平台 — 語音即教室](https://line-botrun-ai-teaching.vercel.app): Line 錄音 5 分鐘自動產出會議記錄，語音修正就是提示工程課，每日驚喜圖片黏住使用者
-- [編排層 × Harness 街機闖關 — 全公司排行榜](https://battleground-quiz.vercel.app): 5 關 15 題，八角遊戲化設計，復古街機留名排行榜，你真的懂編排層 + Harness 嗎？
+- [編排層 × Harness 大型電動闖關 — 全公司排行榜](https://battleground-quiz.vercel.app): 5 關 15 題，八角遊戲化設計，復古大型電動留名排行榜，你真的懂編排層 + Harness 嗎？
 - [環境部 Agentic AI 導入策略 — 波龍蝦個人版與團隊版](https://env-ministry-agentic-ai.vercel.app): 永恆知己雙軌架構：首長獨立 VM 個人版 + Botrun Play 團隊版，國網中心台灣自主算力
 - [10,000 Hours of Play — 遊戲化人生六步框架](https://10khp-yukaichou.vercel.app): Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統
 - [編排層 + Harness = 2026 全球必爭之地](https://orchestration-harness-battleground.vercel.app): 大模型紅海，真正值錢的是自動路由（快省準）和品質管控（長跑不分心）— 6 個全球案例
