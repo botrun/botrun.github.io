@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "gov-ai-tetris",
+      "title": "AI 方塊 — 六大類政府 AI 堆疊挑戰",
+      "subtitle": "俄羅斯方塊 × 八角遊戲框架，問答+期末考學會六大類 19 項政府 AI 應用",
+      "href": "https://gov-ai-tetris.vercel.app",
+      "icon": "gamepad-2",
+      "badge": "大型電動",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T17:30:00+08:00",
+      "tags": ["gamepad-2:俄羅斯方塊", "brain:Octalysis", "building:政府AI"]
+    },
+    {
       "id": "law-handover",
       "title": "法規檢索系統交接 — 28 Commits in 3 Days",
       "subtitle": "法務部全國法規資料庫 AI 智慧檢索 v4.2.1，四種態樣格式 + 100 種意圖容錯 + 7 個必知地雷（密碼保護）",
