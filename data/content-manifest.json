@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "claude-agent-teams-2026",
+      "title": "Claude Agent Teams：AI 協作新紀元",
+      "subtitle": "從單兵作戰到團隊協同 — 零幻覺引證、即時中斷、動態策略，支援 Claude Agent SDK",
+      "href": "https://claude-agent-teams-2026.vercel.app",
+      "icon": "users",
+      "badge": "技術分析",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-20T10:10:57+08:00",
+      "tags": ["users:Agent Teams", "shield-check:零幻覺", "zap:Opus 4.6"]
+    },
+    {
       "id": "mamba-llm-2026",
       "title": "Mamba LLM 2026：你該押注嗎？",
       "subtitle": "Mamba-3 ICLR 2026 vs Transformer 數據對決，業界混合架構趨勢，微調實戰指南與三方案比較",
