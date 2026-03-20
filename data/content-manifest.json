@@ -5,6 +5,18 @@
   },
   "items": [
     {
+      "id": "botrun-hammer",
+      "title": "波特槌 — 五分鐘學會用嘴巴寫程式",
+      "subtitle": "fn+F5 一鍵錄音轉文字，三步驟安裝，Gemini API 免費用，自動備援國網中心",
+      "href": "https://botrun-hammer.vercel.app",
+      "icon": "hammer",
+      "badge": "工具教學",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-20T12:20:22+08:00",
+      "protected": true,
+      "tags": ["lock:密碼保護", "hammer:波特槌", "mic:語音轉文字"]
+    },
+    {
       "id": "claude-agent-teams-2026",
       "title": "Claude Agent Teams：AI 協作新紀元",
       "subtitle": "從單兵作戰到團隊協同 — 零幻覺引證、即時中斷、動態策略，支援 Claude Agent SDK",
