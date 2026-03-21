@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-21T05:39:49.234Z
+> 生成時間：2026-03-21T05:40:05.597Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 33 個項目，按發佈日期降序排列。
+共 34 個項目，按發佈日期降序排列。
+
+## Karpathy 談 Code Agents 與 AI Loopy 時代
+
+> 12 張投影片學習 Andrej Karpathy 對 Code Agent、AutoResearch、模型物種化、Jevons 悖論的洞見
+
+- [線上版](https://karpathy-code-agents.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://karpathy-code-agents.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：學習筆記
+- 發佈日期：2026-03-21T13:39:26+08:00
+- 標籤：Karpathy、Code Agents、AutoResearch
 
 ## MAS Factory — 用自然語言指揮 AI 大軍
 
