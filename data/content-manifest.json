@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-21T14:35:00+08:00"
+    "lastUpdated": "2026-03-21T20:14:32+08:00"
   },
   "items": [
+    {
+      "id": "botrun-c-k3s-architecture",
+      "title": "Botrun-C K3s 架構 — 大白話版",
+      "subtitle": "12 張圖解每人獨立房間、9 層安全防護、48 小時 41 commit 從零建起智慧公寓管理系統",
+      "href": "https://botrun-c-k3s-architecture.vercel.app",
+      "icon": "server",
+      "badge": "架構解說",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-21T20:14:32+08:00",
+      "tags": ["server:K3s", "shield:9 層防護", "box:Per-user Pod"]
+    },
     {
       "id": "openclaw-vs-claude-code",
       "title": "OpenClaw 失控記：Groq 3 + NemoClaw vs Claude Code",
