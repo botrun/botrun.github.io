@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-21T20:14:32+08:00"
+    "lastUpdated": "2026-03-21T21:42:13+08:00"
   },
   "items": [
+    {
+      "id": "stanford-self-improving-ai",
+      "title": "AI 自我進化：史丹佛博士論文拆解",
+      "subtitle": "楊紫瞳答辯全解析 — 合成持續訓練、SBP 自我拔靴、AI 設計 AI 三大突破方向",
+      "href": "https://stanford-self-improving-ai.vercel.app",
+      "icon": "sparkles",
+      "badge": "學習筆記",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T21:42:13+08:00",
+      "tags": ["sparkles:自我進化", "brain:合成訓練", "cpu:AI 設計 AI"]
+    },
     {
       "id": "botrun-c-k3s-architecture",
       "title": "Botrun-C K3s 架構 — 大白話版",

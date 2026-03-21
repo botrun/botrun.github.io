@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-21T12:14:50.148Z
+> 生成時間：2026-03-21T13:42:37.264Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 36 個項目，按發佈日期降序排列。
+共 37 個項目，按發佈日期降序排列。
+
+## AI 自我進化：史丹佛博士論文拆解
+
+> 楊紫瞳答辯全解析 — 合成持續訓練、SBP 自我拔靴、AI 設計 AI 三大突破方向
+
+- [線上版](https://stanford-self-improving-ai.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://stanford-self-improving-ai.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：學習筆記
+- 發佈日期：2026-03-21T21:42:13+08:00
+- 標籤：自我進化、合成訓練、AI 設計 AI
 
 ## Botrun-C K3s 架構 — 大白話版
 
