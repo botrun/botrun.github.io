@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "karpathy-code-agents",
+      "title": "Karpathy 談 Code Agents 與 AI Loopy 時代",
+      "subtitle": "12 張投影片學習 Andrej Karpathy 對 Code Agent、AutoResearch、模型物種化、Jevons 悖論的洞見",
+      "href": "https://karpathy-code-agents.vercel.app",
+      "icon": "brain",
+      "badge": "學習筆記",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-21T13:39:26+08:00",
+      "tags": ["brain:Karpathy", "cpu:Code Agents", "zap:AutoResearch"]
+    },
+    {
+      "id": "mas-factory",
+      "title": "MAS Factory — 用自然語言指揮 AI 大軍",
+      "subtitle": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
+      "href": "https://mas-factory.vercel.app",
+      "icon": "git-branch",
+      "badge": "論文精讀",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-21T20:00:00+08:00",
+      "tags": ["book:arXiv 2603.06007", "cpu:Vibe Graphing", "zap:97% 程式碼減少"]
+    },
+    {
       "id": "botrun-agent-teams",
       "title": "波特人小隊 — Agent Teams 工作實戰",
       "subtitle": "Claude Code Agent Teams 兩天實戰心得：即時廣播、獨立做事、隊長監控，波特貓進化成波龍",
