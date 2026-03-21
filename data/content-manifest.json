@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "botrun-agent-teams",
+      "title": "波特人小隊 — Agent Teams 工作實戰",
+      "subtitle": "Claude Code Agent Teams 兩天實戰心得：即時廣播、獨立做事、隊長監控，波特貓進化成波龍",
+      "href": "https://botrun-agent-teams.vercel.app",
+      "icon": "users",
+      "badge": "工作實戰",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T07:58:17+08:00",
+      "tags": ["users:Agent Teams", "cpu:Opus 4.6", "zap:波龍"]
+    },
+    {
       "id": "botrun-hammer",
       "title": "波特槌 — 五分鐘學會用嘴巴寫程式",
       "subtitle": "fn+F5 一鍵錄音轉文字，三步驟安裝，Gemini API 免費用，自動備援國網中心",
