@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-18T13:10:00+08:00"
+    "lastUpdated": "2026-03-21T14:35:00+08:00"
   },
   "items": [
+    {
+      "id": "openclaw-vs-claude-code",
+      "title": "OpenClaw 失控記：Groq 3 + NemoClaw vs Claude Code",
+      "subtitle": "NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比",
+      "href": "https://openclaw-vs-claude-code.vercel.app",
+      "icon": "shield",
+      "badge": "學習筆記",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T14:35:00+08:00",
+      "tags": ["shield:Agentic AI", "cpu:Groq 3 LPU", "zap:NemoClaw"]
+    },
     {
       "id": "karpathy-code-agents",
       "title": "Karpathy 談 Code Agents 與 AI Loopy 時代",
