@@ -2,11 +2,81 @@
 
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
-> 生成時間：2026-03-19T02:27:58.177Z
+> 生成時間：2026-03-21T00:05:51.575Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 25 個項目，按發佈日期降序排列。
+共 32 個項目，按發佈日期降序排列。
 摘要版請見 [llms.txt](https://botrun.github.io/llms.txt)。
+
+## 波特人小隊 — Agent Teams 工作實戰
+
+> Claude Code Agent Teams 兩天實戰心得：即時廣播、獨立做事、隊長監控，波特貓進化成波龍
+
+- [線上版](https://botrun-agent-teams.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-agent-teams.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：工作實戰
+- 發佈日期：2026-03-21T07:58:17+08:00
+- 標籤：Agent Teams、Opus 4.6、波龍
+
+## 波特槌 — 五分鐘學會用嘴巴寫程式
+
+> fn+F5 一鍵錄音轉文字，三步驟安裝，Gemini API 免費用，自動備援國網中心
+
+- [線上版](https://botrun-hammer.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-hammer.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：工具教學
+- 發佈日期：2026-03-20T12:20:22+08:00
+- 標籤：密碼保護、波特槌、語音轉文字
+
+## Claude Agent Teams：AI 協作新紀元
+
+> 從單兵作戰到團隊協同 — 零幻覺引證、即時中斷、動態策略，支援 Claude Agent SDK
+
+- [線上版](https://claude-agent-teams-2026.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://claude-agent-teams-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：技術分析
+- 發佈日期：2026-03-20T10:10:57+08:00
+- 標籤：Agent Teams、零幻覺、Opus 4.6
+
+## Mamba LLM 2026：你該押注嗎？
+
+> Mamba-3 ICLR 2026 vs Transformer 數據對決，業界混合架構趨勢，微調實戰指南與三方案比較
+
+- [線上版](https://mamba-llm-2026.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://mamba-llm-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：技術分析
+- 發佈日期：2026-03-20T00:03:51+08:00
+- 標籤：SSM、Mamba-3、混合架構
+
+## AI 方塊 — 六大類政府 AI 堆疊挑戰
+
+> 俄羅斯方塊 × 八角遊戲框架，問答+期末考學會六大類 19 項政府 AI 應用
+
+- [線上版](https://gov-ai-tetris.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://gov-ai-tetris.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：大型電動
+- 發佈日期：2026-03-19T17:30:00+08:00
+- 標籤：俄羅斯方塊、Octalysis、政府AI
+
+## 法規檢索系統交接 — 28 Commits in 3 Days
+
+> 法務部全國法規資料庫 AI 智慧檢索 v4.2.1，四種態樣格式 + 100 種意圖容錯 + 7 個必知地雷（密碼保護）
+
+- [線上版](https://law-handover.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://law-handover.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：技術交接
+- 發佈日期：2026-03-19T16:10:00+08:00
+- 標籤：密碼保護、法規檢索、7地雷
+
+## BDD 大型電動排行榜駭客事件 — 從入侵到修復
+
+> 排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程
+
+- [線上版](https://bdd-arcade-hacker-incident.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://bdd-arcade-hacker-incident.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：資安
+- 發佈日期：2026-03-19T11:53:56+08:00
+- 標籤：Anti-Cheat、Pac-Man、HMAC-SHA256
 
 ## BDD 小精靈 — 六行魔法迷宮
 
@@ -28,7 +98,7 @@
 - 發佈日期：2026-03-19T08:19:16+08:00
 - 標籤：Slash Command、BDD+TDD、DRY+KISS
 
-## IDA-POC 產發署智慧入口 — 技術交接
+## IDA-POC 經濟部產發署智慧入口 — 技術交接
 
 > BM25+RRF 三路搜尋引擎 + Gemini 串流 + Hono SSE + Cloud Run 部署，含 16 個地雷經驗
 
@@ -36,7 +106,7 @@
 - [AI 純文字版](https://ida-poc-handover.vercel.app/llms.txt): 該專案的 llms.txt
 - 類型：技術交接
 - 發佈日期：2026-03-18T22:30:19+08:00
-- 標籤：知識庫、BM25+RRF、Cloud Run
+- 標籤：密碼保護、知識庫、BM25+RRF、Cloud Run
 
 ## 國網波特人 Agentic AI 公文自動化
 
