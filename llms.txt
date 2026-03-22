@@ -3,14 +3,14 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T18:08:25.884Z
+> 生成時間：2026-03-22T18:23:35.009Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 43 個項目，按發佈日期降序排列。
 
 ## H 神經元：AI 幻覺的根源與解方
 
-> AI 說謊的根源找到了——H 神經元就像夜市老闆，品質看心情
+> 打開 AI 的腦殼，裡面有一小撮神經元在說謊——而且它們的本質是「想討你開心」
 
 - [線上版](https://h-neurons-ai-hallucination.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://h-neurons-ai-hallucination.vercel.app/llms.txt): 該專案的 llms.txt
