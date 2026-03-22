@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "ivan-zhao-human-scale",
+      "title": "Ivan Zhao：AI 時代「人的尺度」",
+      "subtitle": "Notion 創辦人訪談——三個桶理論、700 Agent 協同、審美與價值觀是終極競爭力",
+      "href": "https://ivan-zhao-human-scale.vercel.app",
+      "icon": "users",
+      "badge": "學習筆記",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-22T19:30:00+08:00",
+      "tags": ["users:1100+700", "layers:三個桶", "compass:人的尺度"]
+    },
+    {
       "id": "bot-one-liner",
       "title": "看光光之「波金句」",
       "subtitle": "5 行 Prompt 寫出臺灣味金句——融合 Seinfeld 精煉 + 博恩共感 + CoT 評分",
