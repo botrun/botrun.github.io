@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-21T13:42:37.264Z
+> 生成時間：2026-03-22T06:09:04.226Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 37 個項目，按發佈日期降序排列。
+共 38 個項目，按發佈日期降序排列。
+
+## AC One Liner 寫作術——讓 AI 幫你驗收
+
+> 教非技術人寫出 AI Agent 秒懂的驗收條件：殺形容詞、用人話、可直接驗
+
+- [線上版](https://ac-one-liner.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://ac-one-liner.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：實戰教學
+- 發佈日期：2026-03-22T14:05:17+08:00
+- 標籤：AC One Liner、非技術人、Agentic AI
 
 ## AI 自我進化：史丹佛博士論文拆解
 
