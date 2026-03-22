@@ -3,12 +3,12 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T23:40:22.147Z
+> 生成時間：2026-03-22T23:46:29.378Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 48 個項目，按發佈日期降序排列。
 
-## 你的 IDE 在裝忙，終端機已經在寫程式了
+## 沙盒風暴：你的 IDE 在裝忙，終端機已經在寫程式了
 
 > 主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理
 
@@ -18,9 +18,9 @@
 - 發佈日期：2026-03-23T18:00:00+08:00
 - 標籤：Agentic AI、沙盒、CLI/API
 
-## 前 1% 學習者把 AI 當同事，不是工具
+## 前 1% 學習者對 AI 謙虛請益，彼此啟發
 
-> Anthropic 教育負責人 Drew Bent 拆解：社交技能 > 提示工程、帶問題不帶答案、脈絡決定一切
+> 他不是工具人，他是我們的夥伴 — Drew Bent（Anthropic）拆解：謙虛請益、彼此啟發、共同成長
 
 - [線上版](https://top1-learner-ai.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://top1-learner-ai.vercel.app/llms.txt): 該專案的 llms.txt

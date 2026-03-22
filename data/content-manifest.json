@@ -6,7 +6,7 @@
   "items": [
     {
       "id": "sandbox-storm",
-      "title": "你的 IDE 在裝忙，終端機已經在寫程式了",
+      "title": "沙盒風暴：你的 IDE 在裝忙，終端機已經在寫程式了",
       "subtitle": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
       "href": "https://sandbox-storm.vercel.app",
       "icon": "zap",
@@ -17,8 +17,8 @@
     },
     {
       "id": "top1-learner-ai",
-      "title": "前 1% 學習者把 AI 當同事，不是工具",
-      "subtitle": "Anthropic 教育負責人 Drew Bent 拆解：社交技能 > 提示工程、帶問題不帶答案、脈絡決定一切",
+      "title": "前 1% 學習者對 AI 謙虛請益，彼此啟發",
+      "subtitle": "他不是工具人，他是我們的夥伴 — Drew Bent（Anthropic）拆解：謙虛請益、彼此啟發、共同成長",
       "href": "https://top1-learner-ai.vercel.app",
       "icon": "brain",
       "badge": "AI 教育",
