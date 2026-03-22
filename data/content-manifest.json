@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "crystallization-spiral",
+      "title": "結晶螺旋：Opus 想一次，Haiku 跑一萬行",
+      "subtitle": "帳單或翻車你選哪個？結晶、平行、審計三步收工，省 85% 成本品質零損耗",
+      "href": "https://crystallization-spiral.vercel.app",
+      "icon": "gem",
+      "badge": "AI 架構",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T02:28:19+08:00",
+      "tags": ["gem:結晶螺旋", "zap:Agentic AI", "dollar-sign:省85%"]
+    },
+    {
       "id": "h-neurons-ai-hallucination",
       "title": "H 神經元：AI 幻覺的根源與解方",
       "subtitle": "打開 AI 的腦殼，裡面有一小撮神經元在說謊——而且它們的本質是「想討你開心」",

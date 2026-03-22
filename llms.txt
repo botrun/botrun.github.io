@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T18:23:35.009Z
+> 生成時間：2026-03-22T18:28:48.095Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 43 個項目，按發佈日期降序排列。
+共 44 個項目，按發佈日期降序排列。
+
+## 結晶螺旋：Opus 想一次，Haiku 跑一萬行
+
+> 帳單或翻車你選哪個？結晶、平行、審計三步收工，省 85% 成本品質零損耗
+
+- [線上版](https://crystallization-spiral.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://crystallization-spiral.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 架構
+- 發佈日期：2026-03-23T02:28:19+08:00
+- 標籤：結晶螺旋、Agentic AI、省85%
 
 ## H 神經元：AI 幻覺的根源與解方
 
