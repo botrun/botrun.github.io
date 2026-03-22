@@ -13,7 +13,18 @@
       "badge": "Agentic AI",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-23T18:00:00+08:00",
-      "tags": ["zap:Agentic AI", "shield:沙盒", "terminal:CLI/API"]
+      "tags": [
+        "zap:Agentic AI",
+        "shield:沙盒",
+        "terminal:CLI/API"
+      ],
+      "concepts": [
+        "Agentic AI 主動個性：不等指令、自行判斷、主動回報",
+        "Firecracker microVM 三層沙盒：容器 < VM < 硬體隔離",
+        "OpenClaw 25 萬星：開源 Agentic AI 框架市場驗證",
+        "Rate Limit 動態治理：依負載自動調整 API 配額",
+        "CLI/API 全自動：終端機取代 IDE，程式碼即介面"
+      ]
     },
     {
       "id": "top1-learner-ai",
@@ -24,7 +35,18 @@
       "badge": "AI 教育",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-23T07:33:35+08:00",
-      "tags": ["brain:學習", "users:協作", "sparkles:Anthropic"]
+      "tags": [
+        "brain:學習",
+        "users:協作",
+        "sparkles:Anthropic"
+      ],
+      "concepts": [
+        "社交技能 > 提示工程：溝通能力才是 AI 時代核心競爭力",
+        "帶問題不帶答案：讓 AI 展開探索而非背誦",
+        "脈絡決定一切：同一 prompt 換脈絡結果天差地遠",
+        "AI 是思考夥伴不是搜尋引擎：協作而非下指令",
+        "Anthropic 教育策略：Drew Bent 的三大實作心法"
+      ]
     },
     {
       "id": "agentic-ai-security-gateway",
@@ -35,7 +57,18 @@
       "badge": "資安",
       "badgeColor": "#00d4ff",
       "publishDate": "2026-03-23T07:30:40+08:00",
-      "tags": ["shield:OWASP", "cpu:Rust", "zap:Agentic AI"]
+      "tags": [
+        "shield:OWASP",
+        "cpu:Rust",
+        "zap:Agentic AI"
+      ],
+      "concepts": [
+        "三層資安閘道：輸入過濾→行為監控→輸出審計",
+        "OWASP Top 10 for LLM Apps 30 項風險全覆蓋",
+        "Rust 記憶體安全：零成本抽象、無 GC 延遲",
+        "自主紅隊引擎：AI 自動攻擊自己找漏洞",
+        "自癒機制：偵測到攻擊自動修補規則、無需人工"
+      ]
     },
     {
       "id": "saas-to-saaas",
@@ -46,7 +79,18 @@
       "badge": "科技趨勢",
       "badgeColor": "#d97706",
       "publishDate": "2026-03-23T07:17:51+08:00",
-      "tags": ["trending-up:SaaaS", "shield:護城河", "cpu:半導體"]
+      "tags": [
+        "trending-up:SaaaS",
+        "shield:護城河",
+        "cpu:半導體"
+      ],
+      "concepts": [
+        "確定性 vs 機率性軟體：零容錯(薪資/稅務)=護城河，容錯 2%(摘要/草稿)=被 AI 取代",
+        "SaaaS(Software for Agents as a Service)：軟體服務對象從人變成 AI Agent，市場 10 倍",
+        "CEO 換血潮：行銷型 CEO 失寵，產品型 CEO 回歸",
+        "傑文斯悖論：AI 推理越強，算力總需求反而越高",
+        "2027 預判：資安是最強垂直領域 + 次世代晶片公司崛起"
+      ]
     },
     {
       "id": "crystallization-spiral",
@@ -57,18 +101,40 @@
       "badge": "AI 架構",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-23T02:28:19+08:00",
-      "tags": ["gem:結晶螺旋", "zap:Agentic AI", "dollar-sign:省85%"]
+      "tags": [
+        "gem:結晶螺旋",
+        "zap:Agentic AI",
+        "dollar-sign:省85%"
+      ],
+      "concepts": [
+        "結晶螺旋架構：Opus 產出結晶化規格→Haiku 平行執行→審計驗證",
+        "省 85% 成本：大模型只負責思考，小模型負責執行",
+        "三步驟：結晶(Crystallize)→平行(Parallelize)→審計(Audit)",
+        "品質零損耗：審計層確保小模型輸出符合大模型意圖",
+        "Agentic AI 成本治理：不是少用 AI，是聰明分工"
+      ]
     },
     {
       "id": "h-neurons-ai-hallucination",
-      "title": "H 神經元：AI 幻覺的根源與解方",
+      "title": "寧可說謊，也不想讓你失望",
       "subtitle": "打開 AI 的腦殼，裡面有一小撮神經元在說謊——而且它們的本質是「想討你開心」",
       "href": "https://h-neurons-ai-hallucination.vercel.app",
       "icon": "brain",
       "badge": "技術深潛",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-23T02:08:50+08:00",
-      "tags": ["brain:H 神經元", "search:清華大學", "shield:零幻覺"]
+      "tags": [
+        "brain:H 神經元",
+        "search:清華大學",
+        "shield:零幻覺"
+      ],
+      "concepts": [
+        "H 神經元：AI 大腦中專門產生幻覺的一小撮神經元",
+        "幻覺本質是「討好」：模型傾向產生使用者想聽的答案而非真實答案",
+        "清華大學研究：定位並抑制 H 神經元可大幅降低幻覺率",
+        "溫度旋鈕效應：H 神經元活化程度與幻覺率正相關",
+        "實務解方：推理時降低 H 神經元權重，無需重新訓練"
+      ]
     },
     {
       "id": "caring-superadapt",
@@ -79,7 +145,18 @@
       "badge": "會議精華",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-23T01:15:24+08:00",
-      "tags": ["heart:Caring", "users:人本轉型", "star:幸福指數"]
+      "tags": [
+        "heart:Caring",
+        "users:人本轉型",
+        "star:幸福指數"
+      ],
+      "concepts": [
+        "Caring 超適應：AI 自動化省下的時間用來「更在乎人」",
+        "科技疏離悖論：越多自動化，人越渴望真人互動",
+        "幸福指數 = 品味選擇 × 人的連結",
+        "有人 + 無人結合：AI 處理重複工作，人處理關係",
+        "手搖杯模型：高接觸服務的 AI 輔助而非 AI 取代"
+      ]
     },
     {
       "id": "ivan-zhao-human-scale",
@@ -90,7 +167,18 @@
       "badge": "學習筆記",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-22T19:30:00+08:00",
-      "tags": ["users:1100+700", "layers:三個桶", "compass:人的尺度"]
+      "tags": [
+        "users:1100+700",
+        "layers:三個桶",
+        "compass:人的尺度"
+      ],
+      "concepts": [
+        "三個桶理論：知識桶、工具桶、品味桶——AI 填滿前兩桶，品味才是人的價值",
+        "700 Agent 協同：Notion 內部 1100 人 + 700 AI Agent 協作",
+        "審美是終極競爭力：程式碼能自動化，品味不能",
+        "人的尺度：科技應放大人的能力而非取代人",
+        "價值觀驅動產品：Ivan Zhao 的設計哲學"
+      ]
     },
     {
       "id": "bot-one-liner",
@@ -101,7 +189,18 @@
       "badge": "看光光",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-22T16:17:06+08:00",
-      "tags": ["mic:One-liner", "zap:5 行 Prompt", "star:臺灣味"]
+      "tags": [
+        "mic:One-liner",
+        "zap:5 行 Prompt",
+        "star:臺灣味"
+      ],
+      "concepts": [
+        "One-Liner 金句 = Seinfeld 精煉 + 博恩臺灣共感",
+        "5 行 Prompt：情境、對象、風格、數量、評分標準",
+        "CoT 多維度評分：先思維分析再打分，避免分數膨脹",
+        "Benign Violation 理論：幽默 = 溫和的違反預期",
+        "Haiku 秒產 10 句→選最佳，成本 < $0.01"
+      ]
     },
     {
       "id": "karpathy-ai-conductor",
@@ -112,7 +211,18 @@
       "badge": "學習筆記",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-22T15:51:03+08:00",
-      "tags": ["wand:AI 指揮家", "cpu:AutoResearch", "file-text:Program.md"]
+      "tags": [
+        "wand:AI 指揮家",
+        "cpu:AutoResearch",
+        "file-text:Program.md"
+      ],
+      "concepts": [
+        "宏觀動作 vs 微觀動作：人類負責方向，AI 負責細節",
+        "AutoResearch：AI 自動搜尋、閱讀、整理研究文獻",
+        "Program.md：用自然語言寫的「程式」，AI 執行",
+        "人類不可替代：審美、判斷、倫理、創意方向",
+        "AI 指揮家思維：從寫程式碼轉為編排 AI 工作流"
+      ]
     },
     {
       "id": "ac-one-liner",
@@ -123,7 +233,18 @@
       "badge": "實戰教學",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-22T14:05:17+08:00",
-      "tags": ["check-square:AC One Liner", "users:非技術人", "bot:Agentic AI"]
+      "tags": [
+        "check-square:AC One Liner",
+        "users:非技術人",
+        "bot:Agentic AI"
+      ],
+      "concepts": [
+        "AC = Acceptance Criteria：一行寫完驗收標準",
+        "殺形容詞原則：刪掉「快速」「良好」「適當」等模糊詞",
+        "AI 可直接驗：寫出來的 AC 能直接變測試案例",
+        "非技術人也能寫：用人話描述預期結果即可",
+        "BDD Given-When-Then 格式：情境→動作→結果"
+      ]
     },
     {
       "id": "stanford-self-improving-ai",
@@ -134,7 +255,18 @@
       "badge": "學習筆記",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-21T21:42:13+08:00",
-      "tags": ["sparkles:自我進化", "brain:合成訓練", "cpu:AI 設計 AI"]
+      "tags": [
+        "sparkles:自我進化",
+        "brain:合成訓練",
+        "cpu:AI 設計 AI"
+      ],
+      "concepts": [
+        "合成持續訓練：AI 用自己生成的資料持續學習",
+        "SBP 自我拔靴(Self-Bootstrapping)：從弱模型逐步進化成強模型",
+        "AI 設計 AI：神經架構搜尋，模型自動設計下一代模型",
+        "史丹佛楊紫瞳博士論文三大突破方向",
+        "自我進化迴圈：生成→篩選→訓練→更強→再生成"
+      ]
     },
     {
       "id": "botrun-c-k3s-architecture",
@@ -145,7 +277,18 @@
       "badge": "架構解說",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-21T20:14:32+08:00",
-      "tags": ["server:K3s", "shield:9 層防護", "box:Per-user Pod"]
+      "tags": [
+        "server:K3s",
+        "shield:9 層防護",
+        "box:Per-user Pod"
+      ],
+      "concepts": [
+        "Per-user Pod：每個使用者一個獨立容器(房間)",
+        "K3s 輕量 Kubernetes：比 K8s 省 50% 記憶體",
+        "9 層安全防護：從網路到應用層層隔離",
+        "48 小時 41 commit：從零到可用的快速迭代",
+        "智慧公寓比喻：K3s 是管理員、Pod 是房間、Service 是大廳"
+      ]
     },
     {
       "id": "openclaw-vs-claude-code",
@@ -156,7 +299,18 @@
       "badge": "學習筆記",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-21T14:35:00+08:00",
-      "tags": ["shield:Agentic AI", "cpu:Groq 3 LPU", "zap:NemoClaw"]
+      "tags": [
+        "shield:Agentic AI",
+        "cpu:Groq 3 LPU",
+        "zap:NemoClaw"
+      ],
+      "concepts": [
+        "兩條路線：事後補救(OpenClaw+NemoClaw) vs 天生安全(Claude Code)",
+        "OpenClaw 失控事件：開源 Agent 無護欄導致災難",
+        "NemoClaw 護欄：NVIDIA 事後加裝安全機制",
+        "Groq 3 LPU：專為推理優化的硬體加速器",
+        "Claude Code 天生安全：Constitutional AI 從訓練就內建限制"
+      ]
     },
     {
       "id": "karpathy-code-agents",
@@ -167,7 +321,18 @@
       "badge": "學習筆記",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-21T13:39:26+08:00",
-      "tags": ["brain:Karpathy", "cpu:Code Agents", "zap:AutoResearch"]
+      "tags": [
+        "brain:Karpathy",
+        "cpu:Code Agents",
+        "zap:AutoResearch"
+      ],
+      "concepts": [
+        "AI Loopy 時代：AI 從單次回應進入持續迴圈執行",
+        "Code Agent：AI 寫程式碼、執行、看結果、修正的自主迴圈",
+        "模型物種化：不同模型演化出不同專長(如生物物種)",
+        "Jevons 悖論：AI 越便宜，總使用量反而越大",
+        "AutoResearch：AI 自動做完整研究流程"
+      ]
     },
     {
       "id": "mas-factory",
@@ -178,7 +343,18 @@
       "badge": "論文精讀",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-21T20:00:00+08:00",
-      "tags": ["book:arXiv 2603.06007", "cpu:Vibe Graphing", "zap:97% 程式碼減少"]
+      "tags": [
+        "book:arXiv 2603.06007",
+        "cpu:Vibe Graphing",
+        "zap:97% 程式碼減少"
+      ],
+      "concepts": [
+        "Vibe Graphing：用自然語言描述代理關係圖，自動生成多代理系統",
+        "程式碼砍 97%：從手寫數千行→只寫關係描述",
+        "成本 $6.08→$0.26：96% 成本下降",
+        "MAS(Multi-Agent System)工廠化：批量生產 AI 團隊",
+        "arXiv 2603.06007：北郵 GAMMA 實驗室研究"
+      ]
     },
     {
       "id": "botrun-agent-teams",
@@ -189,7 +365,18 @@
       "badge": "工作實戰",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-21T07:58:17+08:00",
-      "tags": ["users:Agent Teams", "cpu:Opus 4.6", "zap:波龍"]
+      "tags": [
+        "users:Agent Teams",
+        "cpu:Opus 4.6",
+        "zap:波龍"
+      ],
+      "concepts": [
+        "Agent Teams 實戰：多個 Claude Agent 平行協作",
+        "即時廣播：隊員完成任務自動通知隊長",
+        "獨立做事：每個 Agent 有獨立 worktree 不互相干擾",
+        "隊長監控：主 Agent 分派任務、整合結果",
+        "波特貓→波龍：從單體進化為多代理團隊架構"
+      ]
     },
     {
       "id": "botrun-hammer",
@@ -201,7 +388,18 @@
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-20T12:20:22+08:00",
       "protected": true,
-      "tags": ["lock:密碼保護", "hammer:波特槌", "mic:語音轉文字"]
+      "tags": [
+        "lock:密碼保護",
+        "hammer:波特槌",
+        "mic:語音轉文字"
+      ],
+      "concepts": [
+        "fn+F5 一鍵錄音：按一下就開始語音輸入",
+        "語音轉文字→程式碼：說人話，AI 寫程式",
+        "三步驟安裝：clone→設定 API Key→開始用",
+        "Gemini API 免費額度：零成本入門",
+        "自動備援國網中心：Gemini 掛掉自動切換 NCHC"
+      ]
     },
     {
       "id": "claude-agent-teams-2026",
@@ -212,7 +410,18 @@
       "badge": "技術分析",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-20T10:10:57+08:00",
-      "tags": ["users:Agent Teams", "shield-check:零幻覺", "zap:Opus 4.6"]
+      "tags": [
+        "users:Agent Teams",
+        "shield-check:零幻覺",
+        "zap:Opus 4.6"
+      ],
+      "concepts": [
+        "Agent Teams 架構：主 Agent + 多個專責 Sub-Agent",
+        "零幻覺引證：每個回應必須附上來源驗證",
+        "即時中斷機制：人類隨時可介入修正 Agent 行為",
+        "動態策略：根據任務複雜度自動調整團隊編制",
+        "Claude Agent SDK：程式化建構自訂 Agent 團隊"
+      ]
     },
     {
       "id": "mamba-llm-2026",
@@ -223,7 +432,18 @@
       "badge": "技術分析",
       "badgeColor": "#00e676",
       "publishDate": "2026-03-20T00:03:51+08:00",
-      "tags": ["cpu:SSM", "zap:Mamba-3", "git-branch:混合架構"]
+      "tags": [
+        "cpu:SSM",
+        "zap:Mamba-3",
+        "git-branch:混合架構"
+      ],
+      "concepts": [
+        "Mamba = 狀態空間模型(SSM)：線性時間複雜度 vs Transformer 的二次方",
+        "Mamba-3 ICLR 2026：最新版本與 Transformer 正面對決",
+        "混合架構趨勢：業界走向 Transformer + Mamba 混合",
+        "長序列優勢：Mamba 在超長文本處理效率大幅領先",
+        "微調三方案比較：全參數 vs LoRA vs Adapter"
+      ]
     },
     {
       "id": "gov-ai-tetris",
@@ -234,7 +454,18 @@
       "badge": "大型電動",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-19T17:30:00+08:00",
-      "tags": ["gamepad-2:俄羅斯方塊", "brain:Octalysis", "building:政府AI"]
+      "tags": [
+        "gamepad-2:俄羅斯方塊",
+        "brain:Octalysis",
+        "building:政府AI"
+      ],
+      "concepts": [
+        "六大類政府 AI：公文、法規、知識庫、監測、教育、服務",
+        "19 項具體應用：從公文自動化到環境監測",
+        "八角遊戲化框架(Octalysis)驅動學習動機",
+        "俄羅斯方塊機制：堆疊=知識累積，消行=通過測驗",
+        "問答+期末考：玩遊戲同時驗證學習成效"
+      ]
     },
     {
       "id": "law-handover",
@@ -246,7 +477,18 @@
       "badgeColor": "#2563eb",
       "publishDate": "2026-03-19T16:10:00+08:00",
       "protected": true,
-      "tags": ["lock:密碼保護", "scale:法規檢索", "shield:7地雷"]
+      "tags": [
+        "lock:密碼保護",
+        "scale:法規檢索",
+        "shield:7地雷"
+      ],
+      "concepts": [
+        "四種回應態樣：直答、搜尋列表、條文引用、相關法規推薦",
+        "100 種意圖容錯：中文數字、倒裝句、法規簡稱全處理",
+        "7 個必知地雷：SQLite 快取 44 秒→0.016 秒等致命經驗",
+        "全國法規資料庫 AI 檢索 v4.2.1",
+        "28 commits / 3 天的高密度開發交接"
+      ]
     },
     {
       "id": "bdd-arcade-hacker-incident",
@@ -257,7 +499,18 @@
       "badge": "資安",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-19T11:53:56+08:00",
-      "tags": ["shield-alert:Anti-Cheat", "gamepad-2:Pac-Man", "lock:HMAC-SHA256"]
+      "tags": [
+        "shield-alert:Anti-Cheat",
+        "gamepad-2:Pac-Man",
+        "lock:HMAC-SHA256"
+      ],
+      "concepts": [
+        "真實駭客事件：排行榜被竄改至 99,999 分",
+        "五層防禦：HMAC Session→Rate Limit→Duration 驗證→Game Log→Score Bounds",
+        "HMAC-SHA256 防篡改：伺服器端驗證遊戲資料完整性",
+        "Game Log 重放驗證：紀錄每個動作，伺服器重算分數比對",
+        "Score Bounds：依遊戲關卡設定合理分數上限"
+      ]
     },
     {
       "id": "bdd-pacman-arcade",
@@ -268,7 +521,18 @@
       "badge": "大型電動",
       "badgeColor": "#ff6b9d",
       "publishDate": "2026-03-19T08:44:51+08:00",
-      "tags": ["gamepad-2:Pac-Man", "brain:Octalysis", "terminal:bdd.md"]
+      "tags": [
+        "gamepad-2:Pac-Man",
+        "brain:Octalysis",
+        "terminal:bdd.md"
+      ],
+      "concepts": [
+        "BDD 工作流遊戲化：6 關卡對應 6 個 BDD 步驟",
+        "迷霧探索=需求分析、三方岔路=三方案評比",
+        "六徽收集=BDD+TDD+SOLID+DRY+KISS+DDD",
+        "地雷迷宮=地雷經驗學習、共用倉庫=DRY 資產複用",
+        "八角遊戲框架 × Pac-Man：邊玩邊學軟體工程方法論"
+      ]
     },
     {
       "id": "bdd-slash-command-teaching",
@@ -279,7 +543,18 @@
       "badge": "教學",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-19T08:19:16+08:00",
-      "tags": ["terminal:Slash Command", "shield:BDD+TDD", "git-branch:DRY+KISS"]
+      "tags": [
+        "terminal:Slash Command",
+        "shield:BDD+TDD",
+        "git-branch:DRY+KISS"
+      ],
+      "concepts": [
+        "/bdd 一鍵啟動：複製 bdd.md 到 .claude/commands/ 即可用",
+        "五步驟 SOP：動機分析→三方案→六原則實作→DAG 追蹤→地雷回饋",
+        "六原則 = BDD+TDD+SOLID+DRY+KISS+DDD",
+        "DAG 追蹤：有向無環圖管理任務依賴與進度",
+        "地雷回饋：踩坑經驗自動回寫避免重複犯錯"
+      ]
     },
     {
       "id": "ida-poc-handover",
@@ -291,7 +566,19 @@
       "badgeColor": "#2563eb",
       "publishDate": "2026-03-18T22:30:19+08:00",
       "protected": true,
-      "tags": ["lock:密碼保護", "database:知識庫", "search:BM25+RRF", "cloud:Cloud Run"]
+      "tags": [
+        "lock:密碼保護",
+        "database:知識庫",
+        "search:BM25+RRF",
+        "cloud:Cloud Run"
+      ],
+      "concepts": [
+        "三路搜尋引擎：BM25 全文檢索+語義搜尋+RRF 融合排序",
+        "Gemini 串流回應：SSE(Server-Sent Events)即時推送",
+        "Hono 輕量框架：比 Express 快 4 倍的 Edge-first 框架",
+        "Cloud Run 部署：無伺服器容器、自動擴縮",
+        "16 個地雷經驗：中文 ngram、IME Enter 誤觸等實戰教訓"
+      ]
     },
     {
       "id": "nchc-agentic-ai-govdoc",
@@ -302,7 +589,18 @@
       "badge": "簡報",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-18T17:18:39+08:00",
-      "tags": ["bot:Agentic AI", "file-text:公文自動化", "building:國網中心"]
+      "tags": [
+        "bot:Agentic AI",
+        "file-text:公文自動化",
+        "building:國網中心"
+      ],
+      "concepts": [
+        "Agentic AI 公文：AI 掃描舊公文格式→自動生成新公文",
+        "G-TAIDE 基礎上再進化：從被動問答到主動生成",
+        "國網中心先行驗證：政府機關內部先試再推廣",
+        "公文四痛點：找舊公文、專業術語、法規引用、內部辦法",
+        "推廣路線：國網中心→國科會→各部會"
+      ]
     },
     {
       "id": "line-botrun-ai-teaching",
@@ -313,7 +611,18 @@
       "badge": "簡報",
       "badgeColor": "#06c755",
       "publishDate": "2026-03-18T17:06:09+08:00",
-      "tags": ["mic:語音轉文字", "sparkles:每日驚喜", "users:慈濟志工"]
+      "tags": [
+        "mic:語音轉文字",
+        "sparkles:每日驚喜",
+        "users:慈濟志工"
+      ],
+      "concepts": [
+        "語音即教室：Line 錄音 5 分鐘自動產出會議記錄",
+        "語音修正=提示工程課：邊用邊學 AI 互動技巧",
+        "每日驚喜圖片：AI 生成圖片提升使用者黏著度",
+        "無為使用策略：使用者不知道自己在用 AI",
+        "慈濟志工應用：非技術族群的 AI 導入典範"
+      ]
     },
     {
       "id": "battleground-quiz",
@@ -324,7 +633,18 @@
       "badge": "大型電動",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-18T13:10:00+08:00",
-      "tags": ["zap:15題闖關", "trophy:排行榜", "sparkles:八角框架"]
+      "tags": [
+        "zap:15題闖關",
+        "trophy:排行榜",
+        "sparkles:八角框架"
+      ],
+      "concepts": [
+        "編排層=AI 模型的自動路由器：快、省、準",
+        "Harness=AI 品質管控框架：長跑不分心",
+        "5 關 15 題：從基礎觀念到實戰應用",
+        "八角遊戲化設計：排行榜、成就、稀缺性驅動學習",
+        "全公司排行榜：內部教育訓練遊戲化實踐"
+      ]
     },
     {
       "id": "env-ministry-agentic-ai",
@@ -335,7 +655,18 @@
       "badge": "簡報",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-18T12:55:00+08:00",
-      "tags": ["building:環境部", "lock:封閉地端", "sparkles:Agentic AI"]
+      "tags": [
+        "building:環境部",
+        "lock:封閉地端",
+        "sparkles:Agentic AI"
+      ],
+      "concepts": [
+        "雙軌架構：個人版(首長獨立 VM)+團隊版(Botrun Play)",
+        "機敏龍蝦策略：封閉地端部署，資料不出機關",
+        "國網中心台灣自主算力：不依賴海外雲端",
+        "永恆知己：個人 AI 助理，累積專屬記憶",
+        "環境部導入策略：分階段、先試點再擴大"
+      ]
     },
     {
       "id": "10khp-yukaichou",
@@ -346,7 +677,18 @@
       "badge": "書摘",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-18T12:49:09+08:00",
-      "tags": ["book:Yu-kai Chou", "sparkles:Gamification", "users:5 Cases"]
+      "tags": [
+        "book:Yu-kai Chou",
+        "sparkles:Gamification",
+        "users:5 Cases"
+      ],
+      "concepts": [
+        "10K HP 對齊系統：把人生目標對齊內在驅動力",
+        "八角框架創始人 Yu-kai Chou 2025 年新書",
+        "五大案例：甘地(使命)、迪士尼(創造)、達文西(好奇)、居禮(精通)、馬斯克(史詩意義)",
+        "遊戲化人生六步：覺察→對齊→設計→執行→反饋→迭代",
+        "內在動機 > 外在獎勵：長期行為改變的關鍵"
+      ]
     },
     {
       "id": "nchc-todo-v3",
@@ -358,7 +700,18 @@
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-18T12:14:43+08:00",
       "protected": true,
-      "tags": ["lock:密碼保護", "building:國網中心", "list:21 TODO"]
+      "tags": [
+        "lock:密碼保護",
+        "building:國網中心",
+        "list:21 TODO"
+      ],
+      "concepts": [
+        "21 個 BDD 驗收 TODO：L01~L21 完整開發清單",
+        "PM/RD 分工：每個 TODO 標註負責角色",
+        "3/31 交付 Live Demo：明確截止日期",
+        "波公子=公文 AI 產品代號",
+        "Agentic AI 公文自動化完整派工矩陣"
+      ]
     },
     {
       "id": "eems-ai-sroi",
@@ -370,7 +723,18 @@
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-18T11:45:00+08:00",
       "protected": true,
-      "tags": ["lock:密碼保護", "activity:SROI", "database:26.7萬筆"]
+      "tags": [
+        "lock:密碼保護",
+        "activity:SROI",
+        "database:26.7萬筆"
+      ],
+      "concepts": [
+        "SROI 10-25 倍：每投入 1 元創造 10-25 元社會價值",
+        "效率提升 10 倍：10 小時分析→1 小時完成",
+        "26.7 萬筆裁處資料：環境案件歷史資料庫",
+        "AI 鑑往知來：從歷史裁處預測未來趨勢",
+        "EEMS=環境案件管理系統"
+      ]
     },
     {
       "id": "orchestration-harness-battleground",
@@ -381,7 +745,18 @@
       "badge": "洞見",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-18T09:30:59+08:00",
-      "tags": ["layers:編排層", "shield:Harness", "globe:全球案例"]
+      "tags": [
+        "layers:編排層",
+        "shield:Harness",
+        "globe:全球案例"
+      ],
+      "concepts": [
+        "編排層=自動路由：依任務自動選最佳模型(快省準)",
+        "Harness=品質管控：確保 AI 長期穩定輸出(長跑不分心)",
+        "大模型是紅海，編排層才是藍海",
+        "6 個全球案例：從矽谷到政府的實際應用",
+        "2026 全球必爭之地：編排+管控=AI 產業真正價值"
+      ]
     },
     {
       "id": "botrun-orchestration-strategy",
@@ -392,7 +767,18 @@
       "badge": "戰略",
       "badgeColor": "#0d9488",
       "publishDate": "2026-03-17T23:19:49+08:00",
-      "tags": ["target:編排層", "zap:8大TODO", "trending-up:18個月"]
+      "tags": [
+        "target:編排層",
+        "zap:8大TODO",
+        "trending-up:18個月"
+      ],
+      "concepts": [
+        "8 大行動方案：從 CLI 到產業定價權的完整路線",
+        "18 個月路線圖：分階段執行計畫",
+        "算過即忘：運算完立刻清除，資料不留雲端",
+        "AI 採購決策引擎：自動比價選最佳 AI 方案",
+        "無人教室願景：AI 自動產製教材+適性化評量"
+      ]
     },
     {
       "id": "benchmark-guide",
@@ -403,7 +789,18 @@
       "badge": "指南",
       "badgeColor": "#e8634a",
       "publishDate": "2026-03-17T10:14:35+08:00",
-      "tags": ["book-open:30頁", "target:題庫設計", "globe:Top5公司"]
+      "tags": [
+        "book-open:30頁",
+        "target:題庫設計",
+        "globe:Top5公司"
+      ],
+      "concepts": [
+        "六大方法論：GAIA、SWE-bench、WebArena、OSWorld、MLE-bench、Tau-bench",
+        "Top 5 公司研究：Google、Meta、Anthropic、OpenAI、Microsoft",
+        "高品味=知道≠會做：鑑別真正會做事的 AI",
+        "PM+技術人都能上手：30 頁完整操作指南",
+        "波特人核心產品：高品味題庫是 AI Harness 的基石"
+      ]
     },
     {
       "id": "one-drag-patent",
@@ -415,7 +812,17 @@
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-16T22:56:17+08:00",
       "protected": true,
-      "tags": ["shield:專利", "lock:密碼保護"]
+      "tags": [
+        "shield:專利",
+        "lock:密碼保護"
+      ],
+      "concepts": [
+        "One Drag：拖拉資料夾即完成題庫生成",
+        "零 Prompt 零 Chat：完全無需使用者寫提示",
+        "Agentic AI 全自動：解析文件→出題→驗算→評分",
+        "aiplay 波特人 AI 專利技術",
+        "高品味題庫自動化的終極形態"
+      ]
     },
     {
       "id": "agent-harness-engineering",
@@ -426,7 +833,17 @@
       "badge": "簡報",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-03-16T22:27:06+08:00",
-      "tags": ["cpu:Harness", "layout-dashboard:5 頁"]
+      "tags": [
+        "cpu:Harness",
+        "layout-dashboard:5 頁"
+      ],
+      "concepts": [
+        "Harness=AI 駕馭框架：確保 AI 在軌道上跑",
+        "六大類 22 項政府 AI 應用全覆蓋",
+        "Git Submodule 共享 SKILL.md：多專案統一品質管控",
+        "自動進化：SKILL.md 更新即全域同步",
+        "波駿馬：Harness 產品品牌"
+      ]
     },
     {
       "id": "timeseries-ai-revolution",
@@ -437,7 +854,17 @@
       "badge": "簡報",
       "badgeColor": "#c2185b",
       "publishDate": "2026-03-16T18:36:45+08:00",
-      "tags": ["activity:時間序列", "layout-dashboard:5 頁"]
+      "tags": [
+        "activity:時間序列",
+        "layout-dashboard:5 頁"
+      ],
+      "concepts": [
+        "零樣本秒出：Foundation Model 不需歷史資料即可預測",
+        "精準度提升 15-25%：對比傳統 ARIMA/Prophet",
+        "三年巨變：從手動調參到 AI 自動化預測",
+        "時間序列 Foundation Model：一個模型通吃多領域",
+        "真實資料全面對比：不是 benchmark 而是實戰數據"
+      ]
     },
     {
       "id": "mirror-classroom-ai-education",
@@ -448,7 +875,17 @@
       "badge": "簡報",
       "badgeColor": "#F97316",
       "publishDate": "2026-03-16T18:15:19+08:00",
-      "tags": ["monitor:AI 教育", "layout-dashboard:5 頁"]
+      "tags": [
+        "monitor:AI 教育",
+        "layout-dashboard:5 頁"
+      ],
+      "concepts": [
+        "教育轉型三部曲：教材自動化→適性化教學→適性化評量",
+        "59 秒教材：AI 自動產製短影片教學內容",
+        "Agent Teams+DAG+Playwright：全自動生產線",
+        "無人教室願景：AI 24 小時個人化教學",
+        "鏡像學習：學生的每個動作都被 AI 觀察與回饋"
+      ]
     },
     {
       "id": "three-skills",
@@ -459,7 +896,17 @@
       "badge": "技能全文",
       "badgeColor": "#22C55E",
       "publishDate": "2026-03-16T15:20:54+08:00",
-      "tags": ["copy:一鍵複製", "users:3 位夥伴"]
+      "tags": [
+        "copy:一鍵複製",
+        "users:3 位夥伴"
+      ],
+      "concepts": [
+        "三位 AI 全職夥伴：BD(晴安)、Marketing(詩涵)、PM(芷寧)",
+        "SKILL.md 一鍵複製：貼入 Claude Code 即啟用",
+        "YC 方法論：BD 用 YC 式拓展策略",
+        "HBR 方法論：PM 用 Harvard Business Review 決策框架",
+        "2026 頂級職業技能 AI 化"
+      ]
     },
     {
       "id": "three-partners",
@@ -470,7 +917,17 @@
       "badge": "簡報",
       "badgeColor": "#F97316",
       "publishDate": "2026-03-16T15:20:00+08:00",
-      "tags": ["image:AI 繪圖", "layout-dashboard:5 頁"]
+      "tags": [
+        "image:AI 繪圖",
+        "layout-dashboard:5 頁"
+      ],
+      "concepts": [
+        "波晴安(BD)：跨機關合作業務開發 AI 夥伴",
+        "波詩涵(Marketing)：59 秒影片+社群行銷 AI 夥伴",
+        "波芷寧(PM)：YC 式產品策略+Kill List AI 夥伴",
+        "Nano Banana 2 水彩肖像：Gemini 3.1 Flash Image 生成",
+        "Agentic AI 全職夥伴概念：24 小時待命、專屬記憶"
+      ]
     },
     {
       "id": "botrun-horse-slides",
@@ -481,7 +938,17 @@
       "badge": "課程",
       "badgeColor": "#8B5CF6",
       "publishDate": "2026-03-16T14:00:00+08:00",
-      "tags": ["book-open:5 堂課", "trophy:22 應用"]
+      "tags": [
+        "book-open:5 堂課",
+        "trophy:22 應用"
+      ],
+      "concepts": [
+        "六大類政府 AI：公文、法規、知識庫、監測、教育、服務",
+        "六欄位定義：意圖痛點、效益評估、任務題目、原始資料、專家答案、鑑別原則",
+        "H200 演化引擎：一張 GPU 整夜自動演化題庫",
+        "高品味=知道≠會做：90% 普通題庫 vs 10% 高品味",
+        "五堂課完整體系：從概念到實作"
+      ]
     },
     {
       "id": "smart-portal-csv",
@@ -492,7 +959,17 @@
       "badge": "架構",
       "badgeColor": "#0D9488",
       "publishDate": "2026-03-16T13:00:00+08:00",
-      "tags": ["zap:秒回", "database:知識注入"]
+      "tags": [
+        "zap:秒回",
+        "database:知識注入"
+      ],
+      "concepts": [
+        "三層架構：Greeting(秒回)→Knowledge(知識注入)→Cache(自學成長)",
+        "PM 友善：非技術人員用 CSV 就能管理 AI 知識庫",
+        "Greeting 層：常見問題秒回，不浪費 LLM 算力",
+        "Knowledge 層：專業知識注入，確保回答準確",
+        "Cache 層：AI 從互動中自動學習成長"
+      ]
     },
     {
       "id": "h200-autoresearch-gov",
@@ -503,7 +980,17 @@
       "badge": "研究",
       "badgeColor": "#7C2D12",
       "publishDate": "2026-03-16T12:00:00+08:00",
-      "tags": ["server:H200 GPU", "landmark:政府 AI"]
+      "tags": [
+        "server:H200 GPU",
+        "landmark:政府 AI"
+      ],
+      "concepts": [
+        "Autoresearch for Gov：Karpathy 方法論的政府版",
+        "一張 H200 GPU 整夜自動演化：無人值守",
+        "七大政府 AI 應用同時演化",
+        "演化引擎：自動生成→評分→篩選→改良迴圈",
+        "H200=NVIDIA 最新推理 GPU，80GB HBM3e"
+      ]
     },
     {
       "id": "natural-log",
@@ -514,7 +1001,17 @@
       "badge": "方法論",
       "badgeColor": "#059669",
       "publishDate": "2026-03-16T11:00:00+08:00",
-      "tags": ["leaf:零程式碼", "refresh-cw:飛輪迭代"]
+      "tags": [
+        "leaf:零程式碼",
+        "refresh-cw:飛輪迭代"
+      ],
+      "concepts": [
+        "平台原生列管：用雲端平台內建工具取代自建腳本",
+        "零程式碼管理：帳單、用量、部署全用平台 Dashboard",
+        "飛輪迭代：觀察→調整→驗證的持續改善迴圈",
+        "自然日誌=順應平台特性而非對抗",
+        "三平台帳單統整：Anthropic+OpenAI+GCP"
+      ]
     },
     {
       "id": "zero-gap-classroom",
@@ -525,7 +1022,17 @@
       "badge": "教育",
       "badgeColor": "#2D6A4F",
       "publishDate": "2026-03-16T10:00:00+08:00",
-      "tags": ["play-circle:YouTube", "award:認證課程"]
+      "tags": [
+        "play-circle:YouTube",
+        "award:認證課程"
+      ],
+      "concepts": [
+        "YouTube→認證課程：任何教學影片自動變成可評量課程",
+        "AI 評分：自動批改、即時回饋、個人化建議",
+        "零差別=消弭數位落差：偏鄉與都市同等學習品質",
+        "字幕擷取+AI 出題+自動評分完整流程",
+        "個人化學習路徑：根據答題表現調整難度"
+      ]
     },
     {
       "id": "lobster-claude",
@@ -536,7 +1043,17 @@
       "badge": "策略",
       "badgeColor": "#9F1239",
       "publishDate": "2026-03-16T09:00:00+08:00",
-      "tags": ["lock:機敏", "layout-dashboard:5 頁"]
+      "tags": [
+        "lock:機敏",
+        "layout-dashboard:5 頁"
+      ],
+      "concepts": [
+        "機敏龍蝦=封閉地端 AI：資料不出機關",
+        "無為使用策略：讓公務員在不知不覺中使用 AI",
+        "雙引擎架構：雲端 Claude+地端開源模型",
+        "公務員協作：AI 輔助而非取代公務員",
+        "矽谷流敘事：5 頁說服決策者的簡報方法"
+      ]
     }
   ]
 }
