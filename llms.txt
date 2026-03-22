@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T23:46:29.378Z
+> 生成時間：2026-03-22T23:51:16.537Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 48 個項目，按發佈日期降序排列。
@@ -28,9 +28,9 @@
 - 發佈日期：2026-03-23T07:33:35+08:00
 - 標籤：學習、協作、Anthropic
 
-## 你的防火牆在睡覺，駭客沒有
+## 最強的防禦，是自己打自己
 
-> Rust + Agentic AI 三層資安閘道器：OWASP 30 項風險全覆蓋 + 自主紅隊自癒引擎
+> 80% 組織出現 AI Agent 高風險行為 — Rust + Agentic AI 自主紅隊：1,000+ 攻擊演算法先打自己，不等駭客來
 
 - [線上版](https://agentic-ai-security-gateway.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://agentic-ai-security-gateway.vercel.app/llms.txt): 該專案的 llms.txt
@@ -40,7 +40,7 @@
 
 ## SaaS 已死，SaaaS 正在吞噬世界
 
-> 摩根士丹利 TMT 峰會 2026：萬億市值蒸發、確定性 vs 機率性護城河、Agent 即服務崛起
+> 軟體，不再只是為人類而寫——80% 給 AI Agent，20% 給人類｜摩根士丹利 TMT 峰會 2026
 
 - [線上版](https://saas-to-saaas.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://saas-to-saaas.vercel.app/llms.txt): 該專案的 llms.txt

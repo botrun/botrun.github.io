@@ -28,8 +28,8 @@
     },
     {
       "id": "agentic-ai-security-gateway",
-      "title": "你的防火牆在睡覺，駭客沒有",
-      "subtitle": "Rust + Agentic AI 三層資安閘道器：OWASP 30 項風險全覆蓋 + 自主紅隊自癒引擎",
+      "title": "最強的防禦，是自己打自己",
+      "subtitle": "80% 組織出現 AI Agent 高風險行為 — Rust + Agentic AI 自主紅隊：1,000+ 攻擊演算法先打自己，不等駭客來",
       "href": "https://agentic-ai-security-gateway.vercel.app",
       "icon": "shield",
       "badge": "資安",
@@ -40,7 +40,7 @@
     {
       "id": "saas-to-saaas",
       "title": "SaaS 已死，SaaaS 正在吞噬世界",
-      "subtitle": "摩根士丹利 TMT 峰會 2026：萬億市值蒸發、確定性 vs 機率性護城河、Agent 即服務崛起",
+      "subtitle": "軟體，不再只是為人類而寫——80% 給 AI Agent，20% 給人類｜摩根士丹利 TMT 峰會 2026",
       "href": "https://saas-to-saaas.vercel.app",
       "icon": "trending-up",
       "badge": "科技趨勢",
