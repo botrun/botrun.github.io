@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "top1-learner-ai",
+      "title": "前 1% 學習者把 AI 當同事，不是工具",
+      "subtitle": "Anthropic 教育負責人 Drew Bent 拆解：社交技能 > 提示工程、帶問題不帶答案、脈絡決定一切",
+      "href": "https://top1-learner-ai.vercel.app",
+      "icon": "brain",
+      "badge": "AI 教育",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T07:33:35+08:00",
+      "tags": ["brain:學習", "users:協作", "sparkles:Anthropic"]
+    },
+    {
       "id": "agentic-ai-security-gateway",
       "title": "你的防火牆在睡覺，駭客沒有",
       "subtitle": "Rust + Agentic AI 三層資安閘道器：OWASP 30 項風險全覆蓋 + 自主紅隊自癒引擎",
