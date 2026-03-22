@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "agentic-ai-security-gateway",
+      "title": "你的防火牆在睡覺，駭客沒有",
+      "subtitle": "Rust + Agentic AI 三層資安閘道器：OWASP 30 項風險全覆蓋 + 自主紅隊自癒引擎",
+      "href": "https://agentic-ai-security-gateway.vercel.app",
+      "icon": "shield",
+      "badge": "資安",
+      "badgeColor": "#00d4ff",
+      "publishDate": "2026-03-23T07:30:40+08:00",
+      "tags": ["shield:OWASP", "cpu:Rust", "zap:Agentic AI"]
+    },
+    {
       "id": "saas-to-saaas",
       "title": "SaaS 已死，SaaaS 正在吞噬世界",
       "subtitle": "摩根士丹利 TMT 峰會 2026：萬億市值蒸發、確定性 vs 機率性護城河、Agent 即服務崛起",
