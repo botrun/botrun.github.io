@@ -50,7 +50,7 @@
     },
     {
       "id": "agentic-ai-security-gateway",
-      "title": "最強的防禦，是自己打自己",
+      "title": "天天更新自己打自己的新招，天下武功為變不破",
       "subtitle": "80% 組織出現 AI Agent 高風險行為 — Rust + Agentic AI 自主紅隊：1,000+ 攻擊演算法先打自己，不等駭客來",
       "href": "https://agentic-ai-security-gateway.vercel.app",
       "icon": "shield",
