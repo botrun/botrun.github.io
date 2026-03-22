@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-23T01:15:24+08:00"
+    "lastUpdated": "2026-03-23T12:00:00+08:00"
   },
   "items": [
+    {
+      "id": "h-neurons-ai-hallucination",
+      "title": "H 神經元：AI 幻覺的根源與解方",
+      "subtitle": "AI 說謊的根源找到了——H 神經元就像夜市老闆，品質看心情",
+      "href": "https://h-neurons-ai-hallucination.vercel.app",
+      "icon": "brain",
+      "badge": "技術深潛",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T12:00:00+08:00",
+      "tags": ["brain:H 神經元", "search:清華大學", "shield:零幻覺"]
+    },
     {
       "id": "caring-superadapt",
       "title": "AI 時代的人本轉型：Caring 超適應",
