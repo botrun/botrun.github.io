@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T23:33:57.433Z
+> 生成時間：2026-03-22T23:40:22.147Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 47 個項目，按發佈日期降序排列。
+共 48 個項目，按發佈日期降序排列。
+
+## 你的 IDE 在裝忙，終端機已經在寫程式了
+
+> 主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理
+
+- [線上版](https://sandbox-storm.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://sandbox-storm.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：Agentic AI
+- 發佈日期：2026-03-23T18:00:00+08:00
+- 標籤：Agentic AI、沙盒、CLI/API
 
 ## 前 1% 學習者把 AI 當同事，不是工具
 
@@ -55,7 +65,7 @@
 - [線上版](https://h-neurons-ai-hallucination.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://h-neurons-ai-hallucination.vercel.app/llms.txt): 該專案的 llms.txt
 - 類型：技術深潛
-- 發佈日期：2026-03-23T12:00:00+08:00
+- 發佈日期：2026-03-23T02:08:50+08:00
 - 標籤：H 神經元、清華大學、零幻覺
 
 ## AI 時代的人本轉型：Caring 超適應

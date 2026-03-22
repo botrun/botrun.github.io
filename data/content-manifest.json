@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "sandbox-storm",
+      "title": "你的 IDE 在裝忙，終端機已經在寫程式了",
+      "subtitle": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
+      "href": "https://sandbox-storm.vercel.app",
+      "icon": "zap",
+      "badge": "Agentic AI",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T18:00:00+08:00",
+      "tags": ["zap:Agentic AI", "shield:沙盒", "terminal:CLI/API"]
+    },
+    {
       "id": "top1-learner-ai",
       "title": "前 1% 學習者把 AI 當同事，不是工具",
       "subtitle": "Anthropic 教育負責人 Drew Bent 拆解：社交技能 > 提示工程、帶問題不帶答案、脈絡決定一切",
@@ -56,7 +67,7 @@
       "icon": "brain",
       "badge": "技術深潛",
       "badgeColor": "#7c3aed",
-      "publishDate": "2026-03-23T12:00:00+08:00",
+      "publishDate": "2026-03-23T02:08:50+08:00",
       "tags": ["brain:H 神經元", "search:清華大學", "shield:零幻覺"]
     },
     {
