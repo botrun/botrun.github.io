@@ -30,7 +30,7 @@
 
 ## 從程式設計師到 AI 指揮家
 
-> Karpathy 的範式革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力
+> Karpathy 的典範革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力
 
 - [線上版](https://karpathy-ai-conductor.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://karpathy-ai-conductor.vercel.app/llms.txt): 該專案的 llms.txt
