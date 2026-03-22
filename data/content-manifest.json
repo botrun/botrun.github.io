@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-22T15:51:03+08:00"
+    "lastUpdated": "2026-03-22T16:17:06+08:00"
   },
   "items": [
+    {
+      "id": "bot-one-liner",
+      "title": "看光光之「波金句」",
+      "subtitle": "5 行 Prompt 寫出臺灣味金句——融合 Seinfeld 精煉 + 博恩共感 + CoT 評分",
+      "href": "https://bot-one-liner.vercel.app",
+      "icon": "mic",
+      "badge": "看光光",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-22T16:17:06+08:00",
+      "tags": ["mic:One-liner", "zap:5 行 Prompt", "star:臺灣味"]
+    },
     {
       "id": "karpathy-ai-conductor",
       "title": "從程式設計師到 AI 指揮家",

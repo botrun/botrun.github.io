@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T08:03:54.991Z
+> 生成時間：2026-03-22T08:17:57.277Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 39 個項目，按發佈日期降序排列。
+共 40 個項目，按發佈日期降序排列。
+
+## 看光光之「波金句」
+
+> 5 行 Prompt 寫出臺灣味金句——融合 Seinfeld 精煉 + 博恩共感 + CoT 評分
+
+- [線上版](https://bot-one-liner.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://bot-one-liner.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：看光光
+- 發佈日期：2026-03-22T16:17:06+08:00
+- 標籤：One-liner、5 行 Prompt、臺灣味
 
 ## 從程式設計師到 AI 指揮家
 
