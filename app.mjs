@@ -2,6 +2,7 @@
 // 零編譯、零框架，純 ES Module
 
 const MANIFEST_URL = `./data/content-manifest.json?t=${Date.now()}`;
+const STATS_URL = `./data/stats.json?t=${Date.now()}`;
 
 // Lucide icon SVG 模板（手繪 24x24 viewBox, stroke-width 1.8）
 const ICONS = {
@@ -128,6 +129,18 @@ async function init() {
     // 公開項目計數（不含 protected）
     const publicCount = items.filter(i => !i.protected).length;
     document.getElementById('item-count').textContent = `${publicCount} 項`;
+
+    // Stats bar: 發表篇數從 manifest 即時算
+    document.getElementById('stat-posts').textContent = publicCount;
+
+    // Stats bar: GA4 數字從 stats.json 讀取
+    try {
+      const statsRes = await fetch(STATS_URL);
+      const stats = await statsRes.json();
+      const fmtNum = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'K' : String(n);
+      if (stats.totalPageviews) document.getElementById('stat-views').textContent = fmtNum(stats.totalPageviews);
+      if (stats.activeUsers30d) document.getElementById('stat-users').textContent = fmtNum(stats.activeUsers30d);
+    } catch { /* stats.json 不存在時靜默失敗 */ }
 
     // 更新時間
     const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
