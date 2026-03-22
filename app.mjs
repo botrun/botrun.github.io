@@ -138,8 +138,8 @@ async function init() {
       const statsRes = await fetch(STATS_URL);
       const stats = await statsRes.json();
       const fmtNum = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'K' : String(n);
-      if (stats.totalPageviews) document.getElementById('stat-views').textContent = fmtNum(stats.totalPageviews);
-      if (stats.activeUsers30d) document.getElementById('stat-users').textContent = fmtNum(stats.activeUsers30d);
+      if (stats.pageviews7d != null) document.getElementById('stat-views').textContent = fmtNum(stats.pageviews7d);
+      if (stats.activeUsers7d != null) document.getElementById('stat-users').textContent = fmtNum(stats.activeUsers7d);
     } catch { /* stats.json 不存在時靜默失敗 */ }
 
     // 更新時間

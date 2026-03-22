@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-22T16:30:00+08:00",
-  "totalPageviews": 0,
-  "activeUsers30d": 0,
-  "note": "GA4 數字由 bh stats fetch 更新，或手動從 analytics.google.com 填入"
+  "lastUpdated": "2026-03-22T22:30:00+08:00",
+  "pageviews7d": 514,
+  "activeUsers7d": 198,
+  "note": "GA4 7 天統計，由 bh stats fetch 或 HTML slides 部署時自動更新"
 }
