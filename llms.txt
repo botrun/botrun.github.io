@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T18:28:48.095Z
+> 生成時間：2026-03-22T23:22:09.106Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 44 個項目，按發佈日期降序排列。
+共 45 個項目，按發佈日期降序排列。
+
+## SaaS 已死，SaaaS 正在吞噬世界
+
+> 摩根士丹利 TMT 峰會 2026：萬億市值蒸發、確定性 vs 機率性護城河、智能體即服務崛起
+
+- [線上版](https://saas-to-saaas.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://saas-to-saaas.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：科技趨勢
+- 發佈日期：2026-03-23T07:17:51+08:00
+- 標籤：SaaaS、護城河、半導體
 
 ## 結晶螺旋：Opus 想一次，Haiku 跑一萬行
 

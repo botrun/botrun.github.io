@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "saas-to-saaas",
+      "title": "SaaS 已死，SaaaS 正在吞噬世界",
+      "subtitle": "摩根士丹利 TMT 峰會 2026：萬億市值蒸發、確定性 vs 機率性護城河、智能體即服務崛起",
+      "href": "https://saas-to-saaas.vercel.app",
+      "icon": "trending-up",
+      "badge": "科技趨勢",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-23T07:17:51+08:00",
+      "tags": ["trending-up:SaaaS", "shield:護城河", "cpu:半導體"]
+    },
+    {
       "id": "crystallization-spiral",
       "title": "結晶螺旋：Opus 想一次，Haiku 跑一萬行",
       "subtitle": "帳單或翻車你選哪個？結晶、平行、審計三步收工，省 85% 成本品質零損耗",
