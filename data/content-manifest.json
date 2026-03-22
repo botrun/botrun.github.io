@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-22T16:17:06+08:00"
+    "lastUpdated": "2026-03-23T01:15:24+08:00"
   },
   "items": [
+    {
+      "id": "caring-superadapt",
+      "title": "AI 時代的人本轉型：Caring 超適應",
+      "subtitle": "手搖杯小姐比 Netflix 更懂你——因為她選擇浪費時間跟你聊天",
+      "href": "https://caring-superadapt.vercel.app",
+      "icon": "heart",
+      "badge": "會議精華",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T01:15:24+08:00",
+      "tags": ["heart:Caring", "users:人本轉型", "star:幸福指數"]
+    },
     {
       "id": "ivan-zhao-human-scale",
       "title": "Ivan Zhao：AI 時代「人的尺度」",

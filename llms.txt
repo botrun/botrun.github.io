@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-22T08:33:42.606Z
+> 生成時間：2026-03-22T17:16:02.011Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 41 個項目，按發佈日期降序排列。
+共 42 個項目，按發佈日期降序排列。
+
+## AI 時代的人本轉型：Caring 超適應
+
+> 手搖杯小姐比 Netflix 更懂你——因為她選擇浪費時間跟你聊天
+
+- [線上版](https://caring-superadapt.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://caring-superadapt.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：會議精華
+- 發佈日期：2026-03-23T01:15:24+08:00
+- 標籤：Caring、人本轉型、幸福指數
 
 ## Ivan Zhao：AI 時代「人的尺度」
 
@@ -30,7 +40,7 @@
 
 ## 從程式設計師到 AI 指揮家
 
-> Karpathy 的典範革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力
+> Karpathy 的範式革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力
 
 - [線上版](https://karpathy-ai-conductor.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://karpathy-ai-conductor.vercel.app/llms.txt): 該專案的 llms.txt
