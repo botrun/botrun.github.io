@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "human-verify-ai-quiz",
+      "protected": true,
       "title": "你的 AI 題庫，18 個月後還有用嗎？",
       "subtitle": "人本驗證 vs 自動化題庫：教機關出題 SOP 與六大主題多步驟任務題庫的關鍵差異",
       "href": "https://human-verify-ai-quiz.vercel.app",
