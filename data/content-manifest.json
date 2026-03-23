@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-23T12:00:00+08:00"
+    "lastUpdated": "2026-03-23T13:42:20+08:00"
   },
   "items": [
+    {
+      "id": "living-slides-ai",
+      "title": "活的投影片 — 五言波特人 AI 多人交談進化簡報",
+      "subtitle": "投影片不再做完就死！多人 AI 交談、大型電玩排行榜考試、知識隨互動自然演化，越多人問越好懂",
+      "href": "https://living-slides-ai.vercel.app",
+      "icon": "message-circle",
+      "badge": "AI 互動",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-23T13:42:20+08:00",
+      "tags": [
+        "message-circle:AI 交談",
+        "users:多人協作",
+        "trophy:排行榜"
+      ],
+      "concepts": [
+        "全球每天 3,000 萬份簡報，99% 看完就死——知識止步在第一次播放",
+        "五言波特人活投影片四步迴圈：問 → 懂 → 考 → 進化，越多人問越好懂",
+        "多人 AI 交談：五個人看同一份投影片，五種困惑讓 AI 學會更好的解釋",
+        "大型電玩式考試排行榜：不只看懂，還要確認真的懂，分數多人即時競爭",
+        "2026 趨勢驗證：Gamma、Google Arcade、360Learning 已證明互動式知識傳遞提升 3-10 倍效果"
+      ]
+    },
     {
       "id": "vad-silence-hallucination",
       "title": "靜音幻覺：Whisper 聽到靜音卻吐出一堆鬼話",
