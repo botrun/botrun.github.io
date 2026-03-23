@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-23T13:42:20+08:00"
+    "lastUpdated": "2026-03-23T16:10:40+08:00"
   },
   "items": [
+    {
+      "id": "human-verify-ai-quiz",
+      "title": "你的 AI 題庫，18 個月後還有用嗎？",
+      "subtitle": "人本驗證 vs 自動化題庫：教機關出題 SOP 與六大主題多步驟任務題庫的關鍵差異",
+      "href": "https://human-verify-ai-quiz.vercel.app",
+      "icon": "clipboard-check",
+      "badge": "AI 驗證",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T16:10:40+08:00",
+      "tags": [
+        "clipboard-check:人本驗證",
+        "database:題庫進化",
+        "brain:Agentic AI"
+      ],
+      "concepts": [
+        "大模型 4-5 個月會背完全球考題，18 個月後題庫鑑別力歸零",
+        "好題庫不死：舊題維持 + 新題堆疊 + 滿分題淘汰的三層進化機制",
+        "今年教機關出題 SOP（六欄位），第三年開發六大主題多步驟任務題庫",
+        "AI 輔助出題 35→60 分：需 Agentic AI 系統調教，不會自動進步",
+        "Anthropic 同功能 6 個月丟 80% 程式碼重寫，AI 系統必須持續演進"
+      ]
+    },
     {
       "id": "living-slides-ai",
       "title": "活的投影片 — 五言波特人 AI 多人交談進化簡報",
