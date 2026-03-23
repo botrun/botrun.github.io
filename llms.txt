@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-23T00:38:31.282Z
+> 生成時間：2026-03-23T02:16:59.134Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 48 個項目，按發佈日期降序排列。
+共 49 個項目，按發佈日期降序排列。
+
+## 靜音幻覺：Whisper 聽到靜音卻吐出一堆鬼話
+
+> VAD 語音活動偵測 — 沒有它，語音轉文字靜音段幻覺率 100%。法國 INA + Silero + pyannote 三大開源解方
+
+**關鍵觀念：**
+- VAD 是語音轉文字的必答題：沒有靜音偵測，ASR 在靜音段幻覺率 100%
+- Whisper Seq2Seq 架構缺陷：輸入必定產出，靜音 = 無意義輸入 = 幻覺輸出
+- 法國 INA inaSpeechSegmenter：CNN 三分類（speech/music/noise），法國 TV/Radio VAD 第一名
+- Silero VAD 僅 1.8MB：6000+ 語言、1ms 處理 30ms 音訊，適合即時串流與邊緣裝置
+- 四步驟 pipeline：音訊輸入 → VAD 切段 → 只送語音段 → 乾淨零幻覺逐字稿
+
+- [線上版](https://vad-silence-hallucination.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://vad-silence-hallucination.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：語音 AI
+- 發佈日期：2026-03-23T10:13:32+08:00
+- 標籤：VAD、幻覺防治、Pipeline
 
 ## 沙盒風暴：把颱風關進瓶子裡，然後搖出閃電
 

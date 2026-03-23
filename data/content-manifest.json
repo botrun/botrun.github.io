@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "vad-silence-hallucination",
+      "title": "靜音幻覺：Whisper 聽到靜音卻吐出一堆鬼話",
+      "subtitle": "VAD 語音活動偵測 — 沒有它，語音轉文字靜音段幻覺率 100%。法國 INA + Silero + pyannote 三大開源解方",
+      "href": "https://vad-silence-hallucination.vercel.app",
+      "icon": "mic-off",
+      "badge": "語音 AI",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T10:13:32+08:00",
+      "tags": [
+        "mic-off:VAD",
+        "brain:幻覺防治",
+        "terminal:Pipeline"
+      ],
+      "concepts": [
+        "VAD 是語音轉文字的必答題：沒有靜音偵測，ASR 在靜音段幻覺率 100%",
+        "Whisper Seq2Seq 架構缺陷：輸入必定產出，靜音 = 無意義輸入 = 幻覺輸出",
+        "法國 INA inaSpeechSegmenter：CNN 三分類（speech/music/noise），法國 TV/Radio VAD 第一名",
+        "Silero VAD 僅 1.8MB：6000+ 語言、1ms 處理 30ms 音訊，適合即時串流與邊緣裝置",
+        "四步驟 pipeline：音訊輸入 → VAD 切段 → 只送語音段 → 乾淨零幻覺逐字稿"
+      ]
+    },
+    {
       "id": "sandbox-storm",
       "title": "沙盒風暴：把颱風關進瓶子裡，然後搖出閃電",
       "subtitle": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
