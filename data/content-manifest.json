@@ -270,7 +270,7 @@
     },
     {
       "id": "botrun-c-k3s-architecture",
-      "title": "Botrun-C K3s 架構 — 大白話版",
+      "title": "不敢用牛刀k8s？k3s瑞士刀出鞘",
       "subtitle": "12 張圖解每人獨立房間、9 層安全防護、48 小時 41 commit 從零建起智慧公寓管理系統",
       "href": "https://botrun-c-k3s-architecture.vercel.app",
       "icon": "server",
