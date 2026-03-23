@@ -226,7 +226,7 @@
     },
     {
       "id": "ac-one-liner",
-      "title": "AC One Liner 寫作術——讓 AI 幫你驗收",
+      "title": "AC: 誰？做什麼？過了沒？",
       "subtitle": "教非技術人寫出 AI Agent 秒懂的驗收條件：殺形容詞、用人話、可直接驗",
       "href": "https://ac-one-liner.vercel.app",
       "icon": "check-square",
