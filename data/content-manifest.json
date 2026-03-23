@@ -6,7 +6,7 @@
   "items": [
     {
       "id": "sandbox-storm",
-      "title": "沙盒風暴：你的 IDE 在裝忙，終端機已經在寫程式了",
+      "title": "沙盒風暴：把颱風關進瓶子裡，然後搖出閃電",
       "subtitle": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
       "href": "https://sandbox-storm.vercel.app",
       "icon": "zap",
