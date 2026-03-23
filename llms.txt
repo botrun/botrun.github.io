@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-23T00:36:34.354Z
+> 生成時間：2026-03-23T00:38:31.282Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 48 個項目，按發佈日期降序排列。
@@ -229,7 +229,7 @@
 - 發佈日期：2026-03-21T20:14:32+08:00
 - 標籤：K3s、9 層防護、Per-user Pod
 
-## OpenClaw 失控記：Groq 3 + NemoClaw vs Claude Code
+## 給權限還是選安全？巨大龍蝦的沙盒新海洋
 
 > NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比
 

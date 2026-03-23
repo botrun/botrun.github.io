@@ -292,7 +292,7 @@
     },
     {
       "id": "openclaw-vs-claude-code",
-      "title": "OpenClaw 失控記：Groq 3 + NemoClaw vs Claude Code",
+      "title": "給權限還是選安全？巨大龍蝦的沙盒新海洋",
       "subtitle": "NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比",
       "href": "https://openclaw-vs-claude-code.vercel.app",
       "icon": "shield",
