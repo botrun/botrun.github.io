@@ -336,7 +336,7 @@
     },
     {
       "id": "mas-factory",
-      "title": "MAS Factory — 用自然語言指揮 AI 大軍",
+      "title": "不再演奏改做指揮，五句話意圖 DAG 勝千言萬語",
       "subtitle": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
       "href": "https://mas-factory.vercel.app",
       "icon": "git-branch",
