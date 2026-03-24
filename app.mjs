@@ -39,12 +39,8 @@ function renderCard(item) {
     return `<span>${svg(icon)}${label}</span>`;
   }).join('');
 
-  const isProtected = item.protected === true;
-  const hiddenStyle = isProtected ? ' style="display:none;position:relative;"' : ' style="position:relative;"';
-  const protectedAttr = isProtected ? ' data-protected="true"' : '';
-
   return `
-    <a class="card" href="${item.href}"${target}${hiddenStyle}${protectedAttr}>
+    <a class="card" href="${item.href}"${target} style="position:relative;">
       <div class="badge" style="background:${item.badgeColor};">${item.badge}</div>
       <div class="card-icon" style="background:${item.badgeColor};">${svg(item.icon)}</div>
       <div class="card-body">
@@ -83,31 +79,42 @@ function initKonamiCode() {
 }
 
 function revealProtectedCards() {
-  const cards = document.querySelectorAll('[data-protected="true"]');
+  const section = document.getElementById('protected-section');
+  if (!section) return;
+  const cards = section.querySelectorAll('.card');
   if (cards.length === 0) return;
 
-  // 顯示隱藏卡片，帶動畫
+  // 顯示整個獨立區塊
+  section.style.display = '';
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(-10px)';
+  section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  setTimeout(() => {
+    section.style.opacity = '1';
+    section.style.transform = 'translateY(0)';
+  }, 50);
+
+  // 卡片逐個淡入動畫
   cards.forEach((card, i) => {
-    card.style.display = '';
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     setTimeout(() => {
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
-    }, i * 100 + 50);
+    }, i * 100 + 200);
   });
 
-  // 更新計數
+  // 更新計數（公開 + 機密）
   const countEl = document.getElementById('item-count');
   if (countEl) {
-    const total = document.querySelectorAll('.card').length;
-    countEl.textContent = `${total} 項`;
+    const publicCards = document.getElementById('card-list').querySelectorAll('.card').length;
+    countEl.textContent = `${publicCards + cards.length} 項`;
   }
 
   // 顯示提示 toast
   const toast = document.createElement('div');
-  toast.textContent = `🔓 已解鎖 ${cards.length} 篇密碼保護文章`;
+  toast.textContent = `🔓 已解鎖 ${cards.length} 篇機密文章`;
   toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#7c3aed;color:#fff;padding:.8rem 1.5rem;border-radius:12px;font-size:.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(124,58,237,.4);animation:toastIn .4s ease';
   document.body.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .4s'; }, 3000);
@@ -123,11 +130,22 @@ async function init() {
     // 按日期排序（最新在前）
     items.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
+    // 分離機密文章與公開文章
+    const protectedItems = items.filter(i => i.protected === true);
+    const publicItems = items.filter(i => !i.protected);
+
+    // 渲染公開文章
     const container = document.getElementById('card-list');
-    container.innerHTML = items.map(renderCard).join('');
+    container.innerHTML = publicItems.map(renderCard).join('');
+
+    // 渲染機密文章到獨立區塊（初始隱藏，Konami Code 解鎖）
+    const protectedList = document.getElementById('protected-list');
+    if (protectedItems.length > 0) {
+      protectedList.innerHTML = protectedItems.map(renderCard).join('');
+    }
 
     // 公開項目計數（不含 protected）
-    const publicCount = items.filter(i => !i.protected).length;
+    const publicCount = publicItems.length;
     document.getElementById('item-count').textContent = `${publicCount} 項`;
 
     // Stats bar: 發表篇數從 manifest 即時算
