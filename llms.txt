@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-24T14:54:35.089Z
+> 生成時間：2026-03-24T15:08:06.750Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 60 個項目，按發佈日期降序排列。
+共 61 個項目，按發佈日期降序排列。
+
+## YC 的初心 — AI 正在改變創業的一切
+
+> YC 核心管理層深度對談精華：1 人 90 小時超越 5 人 2 年、Prompting 取代履歷、SaaS 已死、零員工百萬 ARR
+
+**關鍵觀念：**
+- Gary Tan 用 Claude Code 90 小時重構 7 萬行程式碼，等同過去 $5M + 5 工程師 + 2 年的產出
+- YC 2026 春季班首次引入 AI 實操環節：Prompting Agents 能力取代傳統 CS 學位篩選
+- SaaS 已死：通用型 CRM（如 Salesforce）的護城河正被 AI 消解，交易市場與強監管產品仍安全
+- 兩極分化：零員工可達百萬美元 ARR，但達標後 B 輪融資規模史無前例大
+- YC 不變的初心：增加世界上偉大初創公司的數量，從 10 家變成 100 家
+
+- [線上版](https://yc-ai-era-insights.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://yc-ai-era-insights.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：創業洞見
+- 發佈日期：2026-03-24T23:04:34+08:00
+- 標籤：YC 奧義、AI 創業、兩極分化
 
 ## 智安心 — TryAI 代理人基準線驗測服務
 
