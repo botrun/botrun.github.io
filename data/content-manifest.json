@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T23:04:34+08:00"
+    "lastUpdated": "2026-03-25T07:07:30+08:00"
   },
   "items": [
+    {
+      "id": "tryai-api-stress-test",
+      "title": "治本不治標：TryAI API 全面壓力測試方案",
+      "subtitle": "2 人呼叫卡死 40 秒 → 個案變通案：所有商用產品 API 全數通過 50 人 × 0.5 秒壓力測試",
+      "href": "https://tryai-api-stress-test.vercel.app",
+      "icon": "shield-alert",
+      "badge": "緊急方案",
+      "badgeColor": "#dc2626",
+      "publishDate": "2026-03-25T07:07:30+08:00",
+      "protected": true,
+      "tags": [
+        "shield-alert:壓力測試",
+        "zap:API 效能",
+        "users:50 人標準"
+      ],
+      "concepts": [
+        "hatch list + mcp list API 僅 2 人同時呼叫就凍結 40 秒以上，第二次重大復發",
+        "治標惡性循環：每次修好一個 API，下次另一個 API 卡死，原因不同徵兆相同",
+        "通案標準：非 LLM API 50 人平行 0.5 秒回應、LLM API 50 人平行 5 秒 TTFT",
+        "Claude Code 全自動壓力測試框架 + Playwright 介面測試，任何新 API 自動納入",
+        "成立獨立大訓稽核單位，每次大訓前必跑壓力測試報告，未通過禁止上線"
+      ]
+    },
     {
       "id": "yc-ai-era-insights",
       "title": "YC 的初心 — AI 正在改變創業的一切",

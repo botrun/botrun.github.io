@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-24T15:08:06.750Z
+> 生成時間：2026-03-24T23:12:07.107Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 61 個項目，按發佈日期降序排列。
+共 62 個項目，按發佈日期降序排列。
+
+## 治本不治標：TryAI API 全面壓力測試方案
+
+> 2 人呼叫卡死 40 秒 → 個案變通案：所有商用產品 API 全數通過 50 人 × 0.5 秒壓力測試
+
+**關鍵觀念：**
+- hatch list + mcp list API 僅 2 人同時呼叫就凍結 40 秒以上，第二次重大復發
+- 治標惡性循環：每次修好一個 API，下次另一個 API 卡死，原因不同徵兆相同
+- 通案標準：非 LLM API 50 人平行 0.5 秒回應、LLM API 50 人平行 5 秒 TTFT
+- Claude Code 全自動壓力測試框架 + Playwright 介面測試，任何新 API 自動納入
+- 成立獨立大訓稽核單位，每次大訓前必跑壓力測試報告，未通過禁止上線
+
+- [線上版](https://tryai-api-stress-test.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://tryai-api-stress-test.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：緊急方案
+- 發佈日期：2026-03-25T07:07:30+08:00
+- 標籤：壓力測試、API 效能、50 人標準
 
 ## YC 的初心 — AI 正在改變創業的一切
 
