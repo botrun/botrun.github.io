@@ -1,9 +1,54 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T12:34:07+08:00"
+    "lastUpdated": "2026-03-24T13:05:37+08:00"
   },
   "items": [
+    {
+      "id": "wiki-distributed-mgmt",
+      "title": "6 千萬篇文章，0 個老闆：Wikipedia 分散管理四法則",
+      "subtitle": "踩坑傳播、實作自主、原則可改、無論誰說 — 正反例子秒懂",
+      "href": "https://wiki-distributed-mgmt.vercel.app",
+      "icon": "book-open",
+      "badge": "領導統御",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-24T14:31:08+08:00",
+      "tags": [
+        "book-open:Wikipedia",
+        "users:管理",
+        "zap:法則"
+      ],
+      "concepts": [
+        "踩坑傳播：一人踩的坑全公司都知道，Wikipedia Seigenthaler 事件 → BLP 政策誕生",
+        "實作自主：只給目標不管 HOW，2011 SOPA 關站抗議由社群自發投票執行",
+        "原則可改：Wikipedia 第五支柱 no firm rules，2020 關注度指引修訂消除系統性偏見",
+        "無論誰說：只看編輯品質不看身份，匿名高中生修正物理教授的量子色動力學錯誤",
+        "正反對比：每個法則配 Wikipedia 真實案例（正面）vs 一般公司常見做法（反面）"
+      ]
+    },
+    {
+      "id": "gcp-iam-plan-b",
+      "title": "2 個 Project，擋住 5 種資料外洩路徑",
+      "subtitle": "GCP IAM 方案 B — 機關機敏資料 × 組織大腦分層存取設計",
+      "href": "https://gcp-iam-plan-b.vercel.app",
+      "icon": "shield",
+      "badge": "架構設計",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-24T13:05:37+08:00",
+      "protected": true,
+      "tags": [
+        "shield:IAM",
+        "server:GCP",
+        "lock:機敏"
+      ],
+      "concepts": [
+        "雙 Project 隔離：機密區 + 組織大腦，Project 層級天然邊界",
+        "SA Impersonation：不帶鑰匙出門，現場印臨時通行證（禁止 SA Key JSON）",
+        "Google Group 兩人群組：每個主管一個保險箱，換幕僚 30 秒搞定",
+        "Claude Code MCP 存取：@google-cloud/storage-mcp 官方套件直接操作 GCS",
+        "10 個地雷（LM-056~065）：ADC 過期、Firestore Rules≠IAM、Tag 提權風險等"
+      ]
+    },
     {
       "id": "moenv-agentic-ai-org-brain",
       "title": "230 個系統，一顆組織大腦",
