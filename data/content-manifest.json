@@ -12,6 +12,7 @@
       "icon": "shield-check",
       "badge": "架構設計",
       "badgeColor": "#7c3aed",
+      "protected": true,
       "publishDate": "2026-03-24T16:22:27+08:00",
       "tags": [
         "shield-check:零知識",
