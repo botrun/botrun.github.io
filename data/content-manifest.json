@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T13:05:37+08:00"
+    "lastUpdated": "2026-03-24T16:12:19+08:00"
   },
   "items": [
+    {
+      "id": "open-weight-120b-compare",
+      "title": "120B 三巨頭，誰值得你的 H100？",
+      "subtitle": "Devstral 123B vs Nemotron-3 Super 120B vs GPT-OSS 120B — 規格·價格·智慧一次看完",
+      "href": "https://open-weight-120b-compare.vercel.app",
+      "icon": "cpu",
+      "badge": "模型比較",
+      "badgeColor": "#22c55e",
+      "publishDate": "2026-03-24T16:12:19+08:00",
+      "tags": [
+        "cpu:開源模型",
+        "zap:MoE",
+        "server:GCP"
+      ],
+      "concepts": [
+        "Dense vs MoE：同樣 120B 參數，實際跑的參數差 24 倍（123B vs 5.1B），決定成本與速度",
+        "GCP 台灣 H100 自架：MoE 模型只需 1 張 H100 Spot $2,577/月，Dense 要 2 張 $5,147/月",
+        "Devstral 123B 程式修 bug SWE-bench 72.2% 碾壓，但偏科嚴重只會寫程式",
+        "GPT-OSS 120B 數學 AIME 97.9% 從 o3 蒸餾，Apache 2.0 最自由但知識截止最舊",
+        "Nemotron-3 Super 全科均衡 80+ 分、414 tok/s 最快、1M Context、性價比最佳推薦"
+      ]
+    },
     {
       "id": "wiki-distributed-mgmt",
       "title": "6 千萬篇文章，0 個老闆：Wikipedia 分散管理四法則",
