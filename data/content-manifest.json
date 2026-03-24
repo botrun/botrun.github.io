@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-23T16:10:40+08:00"
+    "lastUpdated": "2026-03-24T12:34:07+08:00"
   },
   "items": [
+    {
+      "id": "incubation-vs-training",
+      "title": "孵化 vs 訓練：不是程度差，是物種差",
+      "subtitle": "孵化波特人三大根本差異：高品味題庫、零框架動態探索、自演化有機成長",
+      "href": "https://incubation-vs-training.vercel.app",
+      "icon": "egg",
+      "badge": "AI 孵化",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-24T12:34:07+08:00",
+      "tags": [
+        "egg:孵化",
+        "layers:高品味",
+        "bar-chart:自演化"
+      ],
+      "concepts": [
+        "高品味：法務部四任務以人為中心題庫 vs 產發署 40 題普通試算表",
+        "零框架：環境部動態探索不預設立場 vs 限定範圍比 Gemini 3 Pro 還難用",
+        "71% 機關使用者愛用 Gemini 3 Pro，限定範圍的訓練 AI 留不住人",
+        "自演化：永恆知己每小時成長彼此啟發 vs 預訓練微調 RAG 要與時俱進得重新關進去練",
+        "孵化是有機成長的物種差異，不是訓練程度的量變"
+      ]
+    },
     {
       "id": "human-verify-ai-quiz",
       "protected": true,
