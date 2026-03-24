@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-24T04:40:03.184Z
+> 生成時間：2026-03-24T04:41:29.838Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 53 個項目，按發佈日期降序排列。
@@ -17,7 +17,7 @@
 - 國科會填報公文三段結構：依據 → 本案起因 → 後續執行
 - 簡述是層層上報的關鍵，長官沒空看全文，AI 自動摘要可秒解
 - 機關敬語對照（上級/平級/下級）目前全靠人類判斷，AI 可建對照表
-- 國家文官學院公文教科書可作為 RAG 知識庫基礎素材
+- 國家文官學院公文教科書可作為 Agentic AI 基礎素材
 
 - [線上版](https://nstc-govdoc-pain-points.vercel.app): HTML 簡報原始頁面
 - [AI 純文字版](https://nstc-govdoc-pain-points.vercel.app/llms.txt): 該專案的 llms.txt
