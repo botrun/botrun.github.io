@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T22:18:14+08:00"
+    "lastUpdated": "2026-03-24T22:48:56+08:00"
   },
   "items": [
+    {
+      "id": "tryai-ai-assurance",
+      "title": "智安心 — TryAI 代理人基準線驗測服務",
+      "subtitle": "TryAI 學員孵化 AI 後的品質健檢站 — 對比 Gemini 免費版基準線，三步驟拿到整案改善建議",
+      "href": "https://tryai-ai-assurance.vercel.app",
+      "icon": "heart-pulse",
+      "badge": "TryAI 服務",
+      "protected": true,
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-24T22:48:56+08:00",
+      "tags": [
+        "heart-pulse:品質健檢",
+        "shield-check:基準線驗測",
+        "users:TryAI"
+      ],
+      "concepts": [
+        "智安心：TryAI 學員 AI 孵化後的品質健檢服務，確保上線品質超越免費工具",
+        "基準線對手：Gemini 2.5 Flash 免費版，71% 環境部公務員已日常使用",
+        "三步驟流程：TryAI 孵化 → 智安心自測（對比 Gemini）→ 整案建議 → 安心上線",
+        "角色扮演演示法：一張對比表讓司長三秒看出 AI 品質差距，具體可驗證",
+        "人本驗測 + 紅隊攻擊：只比機關自身業務範圍內的問題，公平具體可信"
+      ]
+    },
     {
       "id": "moda-ai-baseline",
       "title": "數位政府司 AI 智慧入口輔導：九維度基準線評測服務",
