@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-24T04:41:29.838Z
+> 生成時間：2026-03-24T04:43:39.786Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 53 個項目，按發佈日期降序排列。
+共 54 個項目，按發佈日期降序排列。
+
+## 230 個系統，一顆組織大腦
+
+> 環境部 AI 轉型規劃：Mirror 鏡像架構、LLMS.txt 知識體、小 Agent 逐步累積策略
+
+**關鍵觀念：**
+- 環境部 AI 司建「組織版永恆知己」，整合 230 個資訊系統
+- Mirror 策略：資料鏡像至 GCP 彰化機房，唯讀快速檢索，寫回原系統 API
+- 15,000 本 PDF 轉 LLMS.txt 類網頁串連型知識體
+- Google IAM 三級權限：全員/主管/機密
+- 小 Agent 累積策略：Botrun Play 低程式碼環境逐步孵化
+- Opus 4.6 一天做完 CLI + API，從前處理到上線
+
+- [線上版](https://moenv-agentic-ai-org-brain.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://moenv-agentic-ai-org-brain.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：環境部
+- 發佈日期：2026-03-24T12:43:00+08:00
+- 標籤：組織大腦、架構、會議
 
 ## 寫一份公文，翻六次舊檔
 

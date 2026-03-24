@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "moenv-agentic-ai-org-brain",
+      "title": "230 個系統，一顆組織大腦",
+      "subtitle": "環境部 AI 轉型規劃：Mirror 鏡像架構、LLMS.txt 知識體、小 Agent 逐步累積策略",
+      "href": "https://moenv-agentic-ai-org-brain.vercel.app",
+      "icon": "brain",
+      "badge": "環境部",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-24T12:43:00+08:00",
+      "protected": true,
+      "tags": [
+        "brain:組織大腦",
+        "server:架構",
+        "users:會議"
+      ],
+      "concepts": [
+        "環境部 AI 司建「組織版永恆知己」，整合 230 個資訊系統",
+        "Mirror 策略：資料鏡像至 GCP 彰化機房，唯讀快速檢索，寫回原系統 API",
+        "15,000 本 PDF 轉 LLMS.txt 類網頁串連型知識體",
+        "Google IAM 三級權限：全員/主管/機密",
+        "小 Agent 累積策略：Botrun Play 低程式碼環境逐步孵化",
+        "Opus 4.6 一天做完 CLI + API，從前處理到上線"
+      ]
+    },
+    {
       "id": "nstc-govdoc-pain-points",
       "title": "寫一份公文，翻六次舊檔",
       "subtitle": "國科會公文 AI 六大痛點訪談成果：找舊公文、專業術語、法規引用、內部辦法、簡述生成、機關敬語",
