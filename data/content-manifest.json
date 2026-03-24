@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T16:12:19+08:00"
+    "lastUpdated": "2026-03-24T16:22:27+08:00"
   },
   "items": [
+    {
+      "id": "zero-knowledge-conductor",
+      "title": "零知識指揮家：省 109 倍成本，機密零外洩",
+      "subtitle": "Opus 指揮 + 梅花鹿執行 = 通用子代理省 3 倍 + 零知識架構不碰機敏資料",
+      "href": "https://zero-knowledge-conductor.vercel.app",
+      "icon": "shield-check",
+      "badge": "架構設計",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-24T16:22:27+08:00",
+      "tags": [
+        "shield-check:零知識",
+        "zap:子代理",
+        "coins:成本優化"
+      ],
+      "concepts": [
+        "梅花鹿 vs Sonnet 4 成本差 109 倍：$0.082 vs $9.00/M tokens，100 萬成本降到不到 1 萬",
+        "通用子代理：Opus 當隊長、Haiku 當隊員，省 3 倍成本且速度快 42%（52s vs 89s）",
+        "零知識指揮家：Opus 從頭到尾不碰機敏資料，梅花鹿處理資料後僅回報成功或失敗",
+        "驗算機制：第二隻梅花鹿用零知識證明驗算，Opus 確認正確但不知道內容",
+        "LangFuse 審計追蹤可驗證 Opus 確實未接觸任何機敏資料"
+      ]
+    },
     {
       "id": "open-weight-120b-compare",
       "title": "120B 三巨頭，誰值得你的 H100？",
