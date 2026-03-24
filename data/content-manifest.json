@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-24T16:22:27+08:00"
+    "lastUpdated": "2026-03-24T22:18:14+08:00"
   },
   "items": [
+    {
+      "id": "moda-ai-baseline",
+      "title": "數位政府司 AI 智慧入口輔導：九維度基準線評測服務",
+      "subtitle": "TryAI 輔導延伸 — 以 Gemini 免費搜尋為基準線，波特人九維度評分，主動掃描全國政府 AI 入口品質",
+      "href": "https://moda-ai-baseline.vercel.app",
+      "icon": "shield-check",
+      "badge": "政策提案",
+      "badgeColor": "#0d9488",
+      "protected": true,
+      "publishDate": "2026-03-24T22:18:14+08:00",
+      "tags": [
+        "shield-check:品質基準",
+        "search:AI 評測",
+        "building-2:數位發展部"
+      ],
+      "concepts": [
+        "數位政府司職掌：政府數位服務再造之輔導、實證機制之規劃、績效評估、跨域協調整合",
+        "TryAI 輔導延伸：30+ 機關、32 語言模型已導入，基準線評測作為 TryAI 品質輔導項目",
+        "Gemini 免費版搜尋（5,000 次/月 + Google Search Grounding）= 人人可得的最低品質基準線",
+        "波特人九維度評分法（真新全快省準人安穩）100 分制加權評測，政府 AI 至少要贏過免費工具",
+        "三步輔導：發現（新聞爬蟲）→ 評測（九維度雙盲比對）→ 輔導（報告 + 題庫教學 + 改善建議）"
+      ]
+    },
     {
       "id": "zero-knowledge-conductor",
       "title": "零知識指揮家：省 109 倍成本，機密零外洩",
