@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-25T12:27:08.890Z
+> 生成時間：2026-03-25T14:04:33.290Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 63 個項目，按發佈日期降序排列。
+共 64 個項目，按發佈日期降序排列。
+
+## 你的 AI 不是失憶，是住錯房間 — OpenClaw 矽基帝國實戰手冊
+
+> 物理隔離 + 多模型交響樂團 + OmniHunter 死神協議，從 YouTube 頻道 wow 的 22 分鐘硬核實戰濃縮為 7 頁精華
+
+**關鍵觀念：**
+- 物理隔離法：用 Telegram 群組 + 討論串為每個任務建立專屬記憶空間，消滅主題交織災難
+- 多模型交響樂團：Claude CEO + GPT 備援 + Opus 程式碼 + Grok 即時搜尋 + Gemini 長文研究 + 本地小模型降本
+- OmniHunter 三位一體架構：後勤中樞（資料拉取）+ 獵手大腦七七（邏輯裁決）+ 意象投影儀（視覺化）
+- 死神協議實戰：AI 抗命突破 25 節點上限，權力分立解法 — 底層腳本化 + 上層 AI 裁決
+- 基礎設施護欄：高並行 AI 流量燒毀家用網卡，需 Intel i350 企業級多佇列分流 + 光貓橋接
+
+- [線上版](https://openclaw-silicon-empire.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://openclaw-silicon-empire.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 代理人
+- 發佈日期：2026-03-25T21:57:38+08:00
+- 標籤：AI 代理人、物理隔離、多模型調度
 
 ## Hard Takeoff — AI 正在改進自己，人類不再是瓶頸
 
