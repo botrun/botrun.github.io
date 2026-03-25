@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-24T23:12:07.107Z
+> 生成時間：2026-03-25T12:27:08.890Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 62 個項目，按發佈日期降序排列。
+共 63 個項目，按發佈日期降序排列。
+
+## Hard Takeoff — AI 正在改進自己，人類不再是瓶頸
+
+> MiniMax、OpenAI、Anthropic、Google 全部在做同一件事：讓 AI 參與建造下一代 AI
+
+**關鍵觀念：**
+- 遞迴自我改進：AI 模型參與建造下一版自己，MiniMax M2.7 承擔 30-50% 工作流
+- OpenAI GPT 5.3 Codex 是首個參與自身開發的模型，除錯訓練、管理部署、診斷評估
+- Anthropic Claude Code 驅動所有主要代理迴圈，Google AlphaEvolve 發現 50 年來首次更快矩陣乘法
+- Karpathy auto-research 開源框架讓個人無 ML 背景也能跑自主研究，一夜跑出最快 GPT-2 訓練
+- Leopold Aschenbrenner 情境意識論文預測的智能爆炸正在起點，Sam Altman 目標 2028 年自動化 AI 研究員
+
+- [線上版](https://hard-takeoff-ai-self-improvement.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://hard-takeoff-ai-self-improvement.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 趨勢
+- 發佈日期：2026-03-25T20:23:33+08:00
+- 標籤：遞迴自改、智能爆炸、自主研究
 
 ## 治本不治標：TryAI API 全面壓力測試方案
 

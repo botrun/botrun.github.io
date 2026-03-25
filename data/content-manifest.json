@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "hard-takeoff-ai-self-improvement",
+      "title": "Hard Takeoff — AI 正在改進自己，人類不再是瓶頸",
+      "subtitle": "MiniMax、OpenAI、Anthropic、Google 全部在做同一件事：讓 AI 參與建造下一代 AI",
+      "href": "https://hard-takeoff-ai-self-improvement.vercel.app",
+      "icon": "repeat",
+      "badge": "AI 趨勢",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-25T20:23:33+08:00",
+      "tags": [
+        "repeat:遞迴自改",
+        "brain:智能爆炸",
+        "zap:自主研究"
+      ],
+      "concepts": [
+        "遞迴自我改進：AI 模型參與建造下一版自己，MiniMax M2.7 承擔 30-50% 工作流",
+        "OpenAI GPT 5.3 Codex 是首個參與自身開發的模型，除錯訓練、管理部署、診斷評估",
+        "Anthropic Claude Code 驅動所有主要代理迴圈，Google AlphaEvolve 發現 50 年來首次更快矩陣乘法",
+        "Karpathy auto-research 開源框架讓個人無 ML 背景也能跑自主研究，一夜跑出最快 GPT-2 訓練",
+        "Leopold Aschenbrenner 情境意識論文預測的智能爆炸正在起點，Sam Altman 目標 2028 年自動化 AI 研究員"
+      ]
+    },
+    {
       "id": "tryai-api-stress-test",
       "title": "治本不治標：TryAI API 全面壓力測試方案",
       "subtitle": "2 人呼叫卡死 40 秒 → 個案變通案：所有商用產品 API 全數通過 50 人 × 0.5 秒壓力測試",
