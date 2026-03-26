@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "pm25-research-trends",
+      "title": "PM2.5 研究趨勢：每吸一口氣的真相與解方",
+      "subtitle": "全球 490 萬人因 PM2.5 提前離世，臺灣亞洲最嚴 12 μg/m³ 標準仍無安全下限 — 三顆衛星 + GNN 即時溯源 + AI 戰情室三大突破",
+      "href": "https://pm25-research-trends.vercel.app",
+      "icon": "wind",
+      "badge": "環境部",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-26T09:27:21+08:00",
+      "tags": [
+        "wind:空氣品質",
+        "activity:PM2.5",
+        "cpu:AI 監測"
+      ],
+      "concepts": [
+        "2023 年全球 PM2.5 長期暴露歸因死亡 490 萬人，經濟損失 8.1 兆美元（GDP 6.1%）",
+        "臺灣 2025 年空品標準加嚴至年均 12 μg/m³，亞洲最嚴，但國衛院證實仍無安全閾值",
+        "三顆同步軌道衛星（GEMS + TEMPO + Sentinel-4）組成全球首個空品星座，每小時掃描北半球",
+        "GNN-Transformer 模型 3 小時預測 R² = 0.97，RT-SA 即時來源解析從數週縮短至分鐘級",
+        "PM2.5 年均降至 10 μg/m³ 可年省健保 47.4 億，環境部 AI 戰情室目標 4 小時壓縮到 1 小時"
+      ]
+    },
+    {
       "id": "openclaw-silicon-empire",
       "title": "你的 AI 不是失憶，是住錯房間 — OpenClaw 矽基帝國實戰手冊",
       "subtitle": "物理隔離 + 多模型交響樂團 + OmniHunter 死神協議，從 YouTube 頻道 wow 的 22 分鐘硬核實戰濃縮為 7 頁精華",
