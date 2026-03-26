@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "tryai-org-lobster",
+      "title": "一個組織養一隻：TryAI 組織龍蝦提案",
+      "subtitle": "31 中央二級機關 × LINE 共養龍蝦 × 限量體驗 — 讓 AI 素養從機關內部自然長出來",
+      "href": "https://tryai-org-lobster.vercel.app",
+      "icon": "users",
+      "badge": "TryAI 提案",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-26T12:19:30+08:00",
+      "tags": [
+        "users:組織共養",
+        "message-circle:LINE Bot",
+        "zap:AI 素養"
+      ],
+      "concepts": [
+        "TryAI 痛點：個人試用 ≠ 會用，31 機關試完 AI 回辦公室還是用 Word",
+        "組織龍蝦：一個機關共養一隻 AI，在 LINE 群組裡上傳文件、問問題，知識自動累積不斷裂",
+        "三大差異：LINE 零門檻（vs 開瀏覽器）、吃你的業務資料（vs 通用模型）、組織記憶不消失（vs 每次從零）",
+        "限量體驗策略：每月 1,000 次問答 + 50 個文件上傳，讓需求從機關內部自然長出來",
+        "成效可量化：上傳量、問答數、節省時間全記錄，直接成為 TryAI 的成果報告"
+      ]
+    },
+    {
       "id": "lobster-dragon-king",
       "title": "波龍蝦 \u00d7 波龍王 \u2014 用證據面對機關真實訴求",
       "subtitle": "環境部司長一小時內自己設計七隻龍蝦部署方案 \u2014 共享大腦、數據決策週變天、沙盒風暴三大訴求實證",
