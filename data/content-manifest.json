@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "tryai-org-lobster",
+      "protected": true,
       "title": "一個組織養一隻：TryAI 組織龍蝦提案",
       "subtitle": "31 中央二級機關 × LINE 共養龍蝦 × 限量體驗 — 讓 AI 素養從機關內部自然長出來",
       "href": "https://tryai-org-lobster.vercel.app",
