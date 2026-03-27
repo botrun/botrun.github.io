@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "claude-code-ssh-tunnel-method",
+      "title": "10 分鐘編譯 3 次白費？SSH Tunnel 秒級迭代術",
+      "subtitle": "Claude Code × GCP SSH Tunnel 遠端迭代方法學 — 打通道、改遠端、驗通過、才回家",
+      "href": "https://claude-code-ssh-tunnel-method.vercel.app",
+      "icon": "terminal",
+      "badge": "方法學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-27T21:20:59+08:00",
+      "tags": [
+        "terminal:SSH Tunnel",
+        "zap:秒級迭代",
+        "server:GCP VM"
+      ],
+      "concepts": [
+        "Docker 編譯迴圈地獄：改 code → build 10 分鐘 → 錯誤 → 重來 3 輪 = 30 分鐘白費",
+        "SSH Tunnel 一條指令打通道：gcloud compute ssh -- -L port 直連 VM 內部服務",
+        "五步驟秒級迭代：打通道 → scp 推檔 → docker cp → curl 測試 → 全過才同步本地",
+        "實戰驗證：K3s per-user Pod 改造 10 輪迭代 20 分鐘完成，原估 2 小時",
+        "核心心法：遠端是戰場、本地是淨室，驗證通過的程式碼才回到 git"
+      ]
+    },
+    {
       "id": "ai-agent-era",
       "title": "AI 鏟子都造好了，你還在用手挖？",
       "subtitle": "Steve Yegge 訪談精華 — 從工程師到指揮官，軟體工程邁向多 Agent 時代的五階段演化",

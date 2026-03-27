@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-27T13:21:28.912Z
+> 生成時間：2026-03-27T13:24:44.161Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 68 個項目，按發佈日期降序排列。
+共 69 個項目，按發佈日期降序排列。
+
+## 10 分鐘編譯 3 次白費？SSH Tunnel 秒級迭代術
+
+> Claude Code × GCP SSH Tunnel 遠端迭代方法學 — 打通道、改遠端、驗通過、才回家
+
+**關鍵觀念：**
+- Docker 編譯迴圈地獄：改 code → build 10 分鐘 → 錯誤 → 重來 3 輪 = 30 分鐘白費
+- SSH Tunnel 一條指令打通道：gcloud compute ssh -- -L port 直連 VM 內部服務
+- 五步驟秒級迭代：打通道 → scp 推檔 → docker cp → curl 測試 → 全過才同步本地
+- 實戰驗證：K3s per-user Pod 改造 10 輪迭代 20 分鐘完成，原估 2 小時
+- 核心心法：遠端是戰場、本地是淨室，驗證通過的程式碼才回到 git
+
+- [線上版](https://claude-code-ssh-tunnel-method.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://claude-code-ssh-tunnel-method.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：方法學
+- 發佈日期：2026-03-27T21:20:59+08:00
+- 標籤：SSH Tunnel、秒級迭代、GCP VM
 
 ## AI 鏟子都造好了，你還在用手挖？
 
