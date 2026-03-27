@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "ai-agent-era",
+      "title": "AI 鏟子都造好了，你還在用手挖？",
+      "subtitle": "Steve Yegge 訪談精華 — 從碼農到軍師，軟體工程邁向多 Agent 時代的五階段演化",
+      "href": "https://ai-agent-era.vercel.app",
+      "icon": "cpu",
+      "badge": "AI 趨勢",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-27T13:38:23+08:00",
+      "tags": [
+        "cpu:多 Agent 編排",
+        "trending-up:100 倍產出",
+        "zap:吸血鬼效應"
+      ],
+      "concepts": [
+        "Steve Yegge 四十年矽谷老兵觀點：軟體工程正經歷 AI 驅動的範式轉移",
+        "五階段演化：拒絕 → 自動補全 → 放手一搏 → Agent 主導 → 多 Agent 編排",
+        "吸血鬼效應：AI 讓產能暴增 100 倍，但認知超載讓工程師 3 小時就枯竭",
+        "苦澀的教訓（Rich Sutton）：人類巧思在絕對算力面前不值一提",
+        "未來屬於會編排 AI 軍團的架構師，不是手寫程式碼的工匠"
+      ]
+    },
+    {
       "id": "tryai-org-lobster",
       "protected": true,
       "title": "一個組織養一隻：TryAI 組織龍蝦提案",
