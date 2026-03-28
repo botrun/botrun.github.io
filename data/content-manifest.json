@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-28T23:09:42+08:00"
+    "lastUpdated": "2026-03-28T23:26:35+08:00"
   },
   "items": [
+    {
+      "id": "dytopo-dynamic-topology",
+      "title": "80 億參數絞殺 1200 億 — DyTopo 動態拓撲路由讓小模型逆襲巨獸",
+      "subtitle": "上下文污染 × 384 維語義匹配 × 貪婪循環打破 — 系統組織力跨維度抹平性能落差",
+      "href": "https://dytopo-dynamic-topology.vercel.app",
+      "icon": "network",
+      "badge": "AI 論文",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T23:26:35+08:00",
+      "tags": [
+        "network:動態拓撲",
+        "brain:多 Agent",
+        "chart:Scaling Law"
+      ],
+      "concepts": [
+        "上下文污染 (Context Pollution)：多 Agent 廣播溝通導致注意力分散、推理崩潰，模型越大受災越重",
+        "動態拓撲路由 (DyTopo)：把靜態群聊改為按需配對的自由交易集市，Query/Key 輕量描述取代全文廣播",
+        "閾值 τ 無黃金參數：程式碼 0.3 寬容有彈性、奧數 0.4+ 冷酷嚴苛，不同任務需不同溝通門檻",
+        "8B 絞殺 120B：Qwen3-8B + DyTopo 在 OmniMATH 拿 51.43% 勝過 GPT-oss-120B 的 41.43%",
+        "康威定律反轉：AI 探索出的最優資訊組織形態可能反向重塑人類組織架構"
+      ]
+    },
     {
       "id": "blizzard-jeff-kaplan",
       "title": "金鵝不下蛋了 — 暴雪 Jeff Kaplan 五小時真心話的 12 個大白話洞見",
