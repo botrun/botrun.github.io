@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-28T15:58:07.531Z
+> 生成時間：2026-03-28T23:40:59.942Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 75 個項目，按發佈日期降序排列。
+共 76 個項目，按發佈日期降序排列。
+
+## 四大開源 AI Agent 專案 — 一人抵一隊的秘密武器
+
+> GStack、Hermes Agent、Superpowers、Paperclip — 21 萬顆 GitHub 星，獨立開發者的團隊級戰力
+
+**關鍵觀念：**
+- GStack：YC 總裁 Garry Tan 開源，6 種角色 prompt 灌進 Claude Code（~50K stars）
+- Hermes Agent：Nous Research 自我改善學習迴圈，支援 Telegram/Discord/Slack（~12K stars）
+- Superpowers：Claude Code 外掛強制 TDD/YAGNI/DRY，Work Trees 平行開發（~115K stars）
+- Paperclip：零人公司調度系統，多 Agent 工單 + Token 成本追蹤（~33K stars）
+- 四專案合計 21 萬顆 GitHub stars，2026 年獨立開發者 = 整支團隊
+
+- [線上版](https://opensource-ai-agents-2026.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://opensource-ai-agents-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：開源工具
+- 發佈日期：2026-03-29T07:36:44+08:00
+- 標籤：AI Agent、開源、Claude Code
 
 ## DyTopo 落地三補丁 — OpenCode 動態拓撲實作圖解
 

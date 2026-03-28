@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-28T23:53:39+08:00"
+    "lastUpdated": "2026-03-29T07:36:44+08:00"
   },
   "items": [
+    {
+      "id": "opensource-ai-agents-2026",
+      "title": "四大開源 AI Agent 專案 — 一人抵一隊的秘密武器",
+      "subtitle": "GStack、Hermes Agent、Superpowers、Paperclip — 21 萬顆 GitHub 星，獨立開發者的團隊級戰力",
+      "href": "https://opensource-ai-agents-2026.vercel.app",
+      "icon": "cpu",
+      "badge": "開源工具",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-29T07:36:44+08:00",
+      "tags": [
+        "cpu:AI Agent",
+        "git-branch:開源",
+        "zap:Claude Code"
+      ],
+      "concepts": [
+        "GStack：YC 總裁 Garry Tan 開源，6 種角色 prompt 灌進 Claude Code（~50K stars）",
+        "Hermes Agent：Nous Research 自我改善學習迴圈，支援 Telegram/Discord/Slack（~12K stars）",
+        "Superpowers：Claude Code 外掛強制 TDD/YAGNI/DRY，Work Trees 平行開發（~115K stars）",
+        "Paperclip：零人公司調度系統，多 Agent 工單 + Token 成本追蹤（~33K stars）",
+        "四專案合計 21 萬顆 GitHub stars，2026 年獨立開發者 = 整支團隊"
+      ]
+    },
     {
       "id": "dytopo-opencode-impl",
       "title": "DyTopo 落地三補丁 — OpenCode 動態拓撲實作圖解",
