@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-28T23:26:35+08:00"
+    "lastUpdated": "2026-03-28T23:21:38+08:00"
   },
   "items": [
+    {
+      "id": "dytopo-multi-agent-routing",
+      "title": "AI 代理人聊天也要挑對象 — DyTopo 動態拓撲路由",
+      "subtitle": "語義配對 × 稀疏有向圖 × Manager 元控制 — 平均 +6.2% 全面碾壓固定拓撲",
+      "href": "https://dytopo-multi-agent-routing.vercel.app",
+      "icon": "network",
+      "badge": "AI 論文",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T23:21:38+08:00",
+      "tags": [
+        "network:動態拓撲",
+        "brain:多 Agent",
+        "zap:語義配對"
+      ],
+      "concepts": [
+        "DyTopo 每輪重建稀疏有向圖：Agent 用 Query/Key 描述符做語義配對，只傳相關訊息",
+        "22M 小模型 all-MiniLM-L6-v2 做嵌入：384 維向量餘弦相似度，毫秒級路由決策",
+        "16 場全勝：4 模型 × 4 基準，平均超越最強對照 +6.2%，Qwen3-8B 從 18% 飆到 89%",
+        "省 48% tokens 還更準：比 AgentScope 省一半 token 消耗，延遲快 44%",
+        "門檻 τ 倒 U 型：程式碼 0.3、數學 0.4 最佳，太鬆噪音多、太緊資訊斷"
+      ]
+    },
     {
       "id": "dytopo-dynamic-topology",
       "title": "80 億參數絞殺 1200 億 — DyTopo 動態拓撲路由讓小模型逆襲巨獸",
