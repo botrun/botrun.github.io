@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-25T07:07:30+08:00"
+    "lastUpdated": "2026-03-28T23:09:42+08:00"
   },
   "items": [
+    {
+      "id": "blizzard-jeff-kaplan",
+      "title": "金鵝不下蛋了 — 暴雪 Jeff Kaplan 五小時真心話的 12 個大白話洞見",
+      "subtitle": "170 封退稿信 × 8,300 萬美元失敗 × 95%→50% 開發者比例 — 偉大公司走向平庸的真正原因",
+      "href": "https://blizzard-jeff-kaplan.vercel.app",
+      "icon": "gamepad",
+      "badge": "洞見",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-28T23:09:42+08:00",
+      "tags": [
+        "gamepad:遊戲產業",
+        "brain:領導力",
+        "chart:組織衰落"
+      ],
+      "concepts": [
+        "所有權 (Ownership)：手藝再好，把決策權交給不做手藝的人，最終會失去一切",
+        "開發者比例指標：95% 開發者到 50:50 是暴雪從偉大走向平庸的根因",
+        "想法 vs 願景：Titan 8,300 萬美元失敗 — 一百個好點子不等於一個可執行的願景",
+        "10 人孵化期：資訊透明、全員參與決策是最佳狀態，團隊膨脹帶來妖魔化",
+        "金繼山哲學：傷痕不用遮，34 人小團隊、只拿需要的錢、優化控制權而非資金數量"
+      ]
+    },
     {
       "id": "antifragile-prompt-eng",
       "title": "反脆弱提示工程 — AI Coding 不該弱化你，而該讓你更強",
