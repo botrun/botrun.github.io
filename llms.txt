@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-27T13:24:44.161Z
+> 生成時間：2026-03-28T14:03:44.860Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 69 個項目，按發佈日期降序排列。
+共 70 個項目，按發佈日期降序排列。
+
+## 按 Enter 就祈禱？Vibe Coding 的五個致命陷阱
+
+> Kaggle 前總裁 Jeremy Howard 深度批判 Vibe Coding — 控制的幻覺、心智模型斷裂、METR 實證
+
+**關鍵觀念：**
+- 控制的幻覺：Vibe Coding 像老虎機，按 Enter 祈禱程式碼能跑通，使用者從來不是贏家
+- METR 研究：資深開發者用 AI 輔助處理複雜問題，耗時反而增加 19%
+- 正確的 AI 協作：自動化低價值雜訊（如放射學標記結節），讓專家聚焦核心判斷
+- ULMFit 三階段架構：Howard & Ruder (2018) 一張 2080 Ti 就打破所有 SOTA 紀錄
+- 終極風險不是 AI 覺醒，而是科技巨頭利用恐慌壟斷技術、集中權力
+
+- [線上版](https://vibe-coding-jeremy-howard.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://vibe-coding-jeremy-howard.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：深度解讀
+- 發佈日期：2026-03-28T21:59:05+08:00
+- 標籤：心智模型、Vibe Coding、METR 研究
 
 ## 10 分鐘編譯 3 次白費？SSH Tunnel 秒級迭代術
 

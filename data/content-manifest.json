@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "vibe-coding-jeremy-howard",
+      "title": "按 Enter 就祈禱？Vibe Coding 的五個致命陷阱",
+      "subtitle": "Kaggle 前總裁 Jeremy Howard 深度批判 Vibe Coding — 控制的幻覺、心智模型斷裂、METR 實證",
+      "href": "https://vibe-coding-jeremy-howard.vercel.app",
+      "icon": "brain",
+      "badge": "深度解讀",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T21:59:05+08:00",
+      "tags": [
+        "brain:心智模型",
+        "alert-triangle:Vibe Coding",
+        "bar-chart:METR 研究"
+      ],
+      "concepts": [
+        "控制的幻覺：Vibe Coding 像老虎機，按 Enter 祈禱程式碼能跑通，使用者從來不是贏家",
+        "METR 研究：資深開發者用 AI 輔助處理複雜問題，耗時反而增加 19%",
+        "正確的 AI 協作：自動化低價值雜訊（如放射學標記結節），讓專家聚焦核心判斷",
+        "ULMFit 三階段架構：Howard & Ruder (2018) 一張 2080 Ti 就打破所有 SOTA 紀錄",
+        "終極風險不是 AI 覺醒，而是科技巨頭利用恐慌壟斷技術、集中權力"
+      ]
+    },
+    {
       "id": "claude-code-ssh-tunnel-method",
       "title": "10 分鐘編譯 3 次白費？SSH Tunnel 秒級迭代術",
       "subtitle": "Claude Code × GCP SSH Tunnel 遠端迭代方法學 — 打通道、改遠端、驗通過、才回家",
