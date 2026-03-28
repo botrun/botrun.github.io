@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "antifragile-prompt-eng",
+      "title": "反脆弱提示工程 — AI Coding 不該弱化你，而該讓你更強",
+      "subtitle": "五層根因 × 三方案打分 × BDD 五情境 — 用提示工程對抗 Vibe Coding 弱化人類的陷阱",
+      "href": "https://antifragile-prompt-eng.vercel.app",
+      "icon": "shield",
+      "badge": "方法學",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T22:16:32+08:00",
+      "tags": [
+        "shield:反脆弱",
+        "brain:心智模型",
+        "terminal:提示工程"
+      ],
+      "concepts": [
+        "反脆弱提示工程 (Antifragile Prompt Engineering)：AI 互動讓人類越用越強，而非越用越弱",
+        "五層根因鏈 (5 Whys)：挖到第五層才是真正根因，治本不治標",
+        "三方案打分比較：BDD+TDD+SOLID+DRY+KISS+DDD 六大原則多維度評分選最高分",
+        "遠端通道除錯 (SSH Tunnel)：真實環境迭代，BDD 五情境全過才 sync 本地才 commit",
+        "呼應 Jeremy Howard 批判：AI 的工作是啟發人類建立心智模型，不是取代人類思考"
+      ]
+    },
+    {
       "id": "vibe-coding-jeremy-howard",
       "title": "按 Enter 就祈禱？Vibe Coding 的五個致命陷阱",
       "subtitle": "Kaggle 前總裁 Jeremy Howard 深度批判 Vibe Coding — 控制的幻覺、心智模型斷裂、METR 實證",
