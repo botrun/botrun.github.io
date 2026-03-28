@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-28T15:27:53.195Z
+> 生成時間：2026-03-28T15:58:07.531Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 74 個項目，按發佈日期降序排列。
+共 75 個項目，按發佈日期降序排列。
+
+## DyTopo 落地三補丁 — OpenCode 動態拓撲實作圖解
+
+> 辦公室已蓋好，只缺一個智慧媒人 — 1 個 .ts + 2 個 prompt 零核心改動
+
+**關鍵觀念：**
+- OpenCode Agent Teams 已有 80%：team_spawn/team_message/P2P Full Mesh/Auto-wake/JSONL Inbox/Multi-Model
+- 補丁 1 舉牌子：改 prompt 讓每個 Agent 輸出 QUERY（我要什麼）和 KEY（我會什麼）
+- 補丁 2 智慧媒人：.opencode/tools/dytopo-match.ts 用嵌入向量算餘弦相似度配對
+- 補丁 3 每輪重開市集：Lead prompt 加迴圈邏輯，每輪重新收集配對，只用 team_message 定向送
+- 省 48% tokens 更準：固定廣播 6 條線 vs DyTopo 每輪只花 1-2 條精準配對線
+
+- [線上版](https://dytopo-opencode-impl.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://dytopo-opencode-impl.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：實作指南
+- 發佈日期：2026-03-28T23:53:39+08:00
+- 標籤：動態拓撲、OpenCode、實作
 
 ## AI 代理人聊天也要挑對象 — DyTopo 動態拓撲路由
 

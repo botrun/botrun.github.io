@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-28T23:21:38+08:00"
+    "lastUpdated": "2026-03-28T23:53:39+08:00"
   },
   "items": [
+    {
+      "id": "dytopo-opencode-impl",
+      "title": "DyTopo 落地三補丁 — OpenCode 動態拓撲實作圖解",
+      "subtitle": "辦公室已蓋好，只缺一個智慧媒人 — 1 個 .ts + 2 個 prompt 零核心改動",
+      "href": "https://dytopo-opencode-impl.vercel.app",
+      "icon": "git-branch",
+      "badge": "實作指南",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-28T23:53:39+08:00",
+      "tags": [
+        "git-branch:動態拓撲",
+        "brain:OpenCode",
+        "zap:實作"
+      ],
+      "concepts": [
+        "OpenCode Agent Teams 已有 80%：team_spawn/team_message/P2P Full Mesh/Auto-wake/JSONL Inbox/Multi-Model",
+        "補丁 1 舉牌子：改 prompt 讓每個 Agent 輸出 QUERY（我要什麼）和 KEY（我會什麼）",
+        "補丁 2 智慧媒人：.opencode/tools/dytopo-match.ts 用嵌入向量算餘弦相似度配對",
+        "補丁 3 每輪重開市集：Lead prompt 加迴圈邏輯，每輪重新收集配對，只用 team_message 定向送",
+        "省 48% tokens 更準：固定廣播 6 條線 vs DyTopo 每輪只花 1-2 條精準配對線"
+      ]
+    },
     {
       "id": "dytopo-multi-agent-routing",
       "title": "AI 代理人聊天也要挑對象 — DyTopo 動態拓撲路由",
