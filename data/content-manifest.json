@@ -1,9 +1,81 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-29T07:36:44+08:00"
+    "lastUpdated": "2026-03-29T08:03:02+08:00"
   },
   "items": [
+    {
+      "id": "gstack-real-cases",
+      "title": "GStack 真實案例 — YC 總裁的 AI 團隊到底有沒有用？",
+      "subtitle": "CTO 說是上帝模式、Hacker News 一半說貨物崇拜 — 真實使用者案例全紀錄",
+      "href": "https://gstack-real-cases.vercel.app",
+      "icon": "star",
+      "badge": "真實案例",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-29T08:03:02+08:00",
+      "tags": ["star:GStack", "git-branch:開源", "zap:案例研究"],
+      "concepts": [
+        "匿名 CTO 用 /review 發現團隊未知的 XSS 漏洞，稱為「上帝模式」",
+        "Garry Tan 本人 60 天 60 萬行程式碼，35% 測試，15 個平行 Sprint",
+        "Kristjan Akkermann 在 Rails 支付系統天天用 /review，但也發現誤報問題",
+        "Hacker News 評價兩極：一半天才一半貨物崇拜，Mo Bitar 稱「just prompts」",
+        "30 秒安裝，真正價值是「在寫之前做更少錯誤決定」而非「寫更多程式」"
+      ]
+    },
+    {
+      "id": "hermes-agent-real-cases",
+      "title": "Hermes Agent 真實案例 — 越用越聰明的 AI 到底多聰明？",
+      "subtitle": "RTX 3090、$5 VPS、Mac + Ollama — 消費級硬體跑自我進化 AI 代理人",
+      "href": "https://hermes-agent-real-cases.vercel.app",
+      "icon": "brain",
+      "badge": "真實案例",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-29T08:03:02+08:00",
+      "tags": ["brain:Hermes", "git-branch:開源", "zap:案例研究"],
+      "concepts": [
+        "OpenClaw 每次更新花 2 小時修，Hermes 技能會自己建立並持續改善",
+        "RTX 3090 跑 Qwen 27B「no drift, tool calls for days」媲美 Sonnet 3.6-4",
+        "FIP Crypto 用 $4.46/月 VPS 跑加密貨幣交易代理人，3 小時搞定",
+        "@glitch_ 用 11 個 Agent 蜂群做成長實驗，每次週期僅 $0.009",
+        "記憶準確度仍不完美，但維護者回報 Bug 當天就修好"
+      ]
+    },
+    {
+      "id": "superpowers-real-cases",
+      "title": "Superpowers 真實案例 — 121K 星的 TDD 紀律框架到底改變了什麼？",
+      "subtitle": "前 Oracle 工程師說產出超過整支團隊、Simon Willison 強力推薦 — 也有人回去用 Plan Mode",
+      "href": "https://superpowers-real-cases.vercel.app",
+      "icon": "shield",
+      "badge": "真實案例",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-29T08:03:02+08:00",
+      "tags": ["shield:Superpowers", "git-branch:開源", "zap:案例研究"],
+      "concepts": [
+        "Colin McNamara：個人產出超過 Oracle 雲端基礎架構整支團隊",
+        "Valgard 連續 3 個月每天使用，稱「Indispensable」是必裝工具",
+        "Simon Willison：「I can't recommend this post strongly enough」",
+        "部分 HN 用戶認為原生 Plan Mode 已夠用，Superpowers 是「旅程中一站」",
+        "核心價值：TDD 強制紀律 + git worktree 隔離 + 子代理人平行開發"
+      ]
+    },
+    {
+      "id": "paperclip-real-cases",
+      "title": "Paperclip 真實案例 — 零人公司調度器是真的還是噱頭？",
+      "subtitle": "Felix AI 營收超 $100K、15 個 Agent 管公司 — 但月費 $200-$2K 且錯誤會連鎖擴散",
+      "href": "https://paperclip-real-cases.vercel.app",
+      "icon": "building",
+      "badge": "真實案例",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-29T08:03:02+08:00",
+      "tags": ["building:Paperclip", "git-branch:開源", "zap:案例研究"],
+      "concepts": [
+        "Nat Eliason 的 Felix AI 營收超 $100K，Paperclip 是管理層",
+        "Aaron Sneed 用 15 個 AI 代理人管公司，每週省 20+ 小時",
+        "Flowtivity 跑 1 年+：錯誤擴散速度跟成功一樣快，月費 $200-$2K",
+        "Tommaso Nervegna 三實戰配置：晨間戰情室、POC 工廠、目標對齊稽核員",
+        "「零人公司」是誤導 — 實際是人類治理 AI 系統，做更策略性的工作"
+      ]
+    },
     {
       "id": "opensource-ai-agents-2026",
       "title": "四大開源 AI Agent 專案 — 一人抵一隊的秘密武器",
