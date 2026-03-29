@@ -3,10 +3,78 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-29T00:19:59.615Z
+> 生成時間：2026-03-29T00:26:20.562Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 81 個項目，按發佈日期降序排列。
+共 85 個項目，按發佈日期降序排列。
+
+## GStack 原理拆解 — 為什麼「一堆 Prompt」能讓你寫出 60 萬行？
+
+> 七階段 Sprint 流水線 + 20 個專家角色 + 真實瀏覽器測試 + 自我更新機制
+
+**關鍵觀念：**
+- 七階段 Sprint 流水線：Think→Plan→Build→Review→Test→Ship→Reflect
+- 20+ Slash Command 各有獨立角色人設 + 強制流程 + 產出格式
+- /qa 開真實 Chromium 跑端對端測試，不是模擬
+- 自動版本檢查 + 遙測 + 跨 Agent 可攜（Claude/Codex/Gemini/Cursor）
+- 品質由流程保證而非 AI 自覺 — 角色隔離 + 階段閘門
+
+- [線上版](https://gstack-deep-dive.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://gstack-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：原理拆解
+- 發佈日期：2026-03-29T08:25:43+08:00
+- 標籤：GStack、原始碼、原理
+
+## Hermes Agent 原理拆解 — Prompt Cache 是第一公民
+
+> Frozen Snapshot Pattern + 原子性技能 + SQLite WAL Jitter + 11 種模型翻譯器
+
+**關鍵觀念：**
+- Frozen Snapshot Pattern：記憶快照凍結，中途不改 system prompt 保護 prompt cache
+- 技能原子性寫入 tempfile+os.replace + Tirith 安全掃描閘門
+- SQLite WAL + 隨機 20-150ms jitter 打破 convoy effect
+- 11 種模型專用 tool call 解析器（Decorator Registry 模式）
+- 記憶注入安全掃描防 prompt injection + SSH backdoor + 憑證外洩
+
+- [線上版](https://hermes-deep-dive.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://hermes-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：原理拆解
+- 發佈日期：2026-03-29T08:25:43+08:00
+- 標籤：Hermes、原始碼、原理
+
+## Superpowers 原理拆解 — 零程式碼，全靠 Markdown 控制 AI 行為
+
+> Cialdini 說服原則 + 11 種藉口封殺 + Description 陷阱 + 子代理人雙階段審查
+
+**關鍵觀念：**
+- 100% Markdown 零程式碼框架，用心理學控制 AI 行為
+- Cialdini 說服原則讓 TDD 遵從率從 33% 升到 72%（N=28,000）
+- Controller-Worker 子代理人 + Spec Reviewer 不信任原則
+- CSO 理論：description 描述 workflow 時 Claude 跳過正文（Description 陷阱）
+- 技能本身用 RED-GREEN-REFACTOR 測試，6 次迭代封殺 10+ 種合理化藉口
+
+- [線上版](https://superpowers-deep-dive.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://superpowers-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：原理拆解
+- 發佈日期：2026-03-29T08:25:43+08:00
+- 標籤：Superpowers、原始碼、原理
+
+## Paperclip 原理拆解 — Promise Chain Mutex 不用分散式鎖
+
+> 三層預算閘門 + 對話延續 + 10 種 Agent 適配器 + 不可變稽核鏈
+
+**關鍵觀念：**
+- Promise Chain Mutex：Map<agentId,Promise> 不用分散式鎖保證原子性
+- 三層預算閘門（company/project/agent）+ hard_stop 自動暫停 + 人類核准
+- Session 延續：Agent 睡醒後接續上次對話 + handoff markdown 壓縮
+- 10 種 Agent 適配器統一 execute() 介面（Claude/Codex/Cursor/Gemini/OpenClaw/Hermes...）
+- 不可變稽核三層：activity_log + run_events + config_revisions + SHA-256 完整性
+
+- [線上版](https://paperclip-deep-dive.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://paperclip-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：原理拆解
+- 發佈日期：2026-03-29T08:25:43+08:00
+- 標籤：Paperclip、原始碼、原理
 
 ## 公文 AI 評比 — 14B 小模型逆襲 675B 巨獸
 
