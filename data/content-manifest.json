@@ -12,6 +12,7 @@
       "icon": "shield",
       "badge": "政府 AI 治理",
       "badgeColor": "#e8634a",
+      "protected": true,
       "publishDate": "2026-03-29T09:02:00+08:00",
       "tags": ["shield:治理", "zap:波龍蝦", "brain:Agentic AI"],
       "concepts": [
