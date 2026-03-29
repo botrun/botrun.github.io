@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-29T00:03:41.103Z
+> 生成時間：2026-03-29T00:19:59.615Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 80 個項目，按發佈日期降序排列。
+共 81 個項目，按發佈日期降序排列。
+
+## 公文 AI 評比 — 14B 小模型逆襲 675B 巨獸
+
+> NCHC 五模型三輪實測，Prompt Engineering 讓 14B 超越 123B
+
+**關鍵觀念：**
+- Devstral-2-123B 三輪平均 89.7 穩坐冠軍，標準差僅 1.5 極穩定
+- 參數量不等於品質：14B 打敗 120B，123B 打敗 675B
+- Prompt Engineering 讓 14B 從 77 分躍升至 92 分（+19.5%），超越 123B
+- 五個泛化 prompt 技巧：術語表、思考鏈、結構化輸出、具體數字、去除混淆
+- 公文方向是零容錯生死線：設備費→業務費寫反整份報廢
+
+- [線上版](https://nchc-govdoc-model-benchmark.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://nchc-govdoc-model-benchmark.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 評比
+- 發佈日期：2026-03-29T08:15:57+08:00
+- 標籤：評比、NCHC、公文
 
 ## GStack 真實案例 — YC 總裁的 AI 團隊到底有沒有用？
 

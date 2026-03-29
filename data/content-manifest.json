@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-29T08:03:02+08:00"
+    "lastUpdated": "2026-03-29T08:15:57+08:00"
   },
   "items": [
+    {
+      "id": "nchc-govdoc-model-benchmark",
+      "title": "公文 AI 評比 — 14B 小模型逆襲 675B 巨獸",
+      "subtitle": "NCHC 五模型三輪實測，Prompt Engineering 讓 14B 超越 123B",
+      "href": "https://nchc-govdoc-model-benchmark.vercel.app",
+      "icon": "trophy",
+      "badge": "AI 評比",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-29T08:15:57+08:00",
+      "tags": ["trophy:評比", "cpu:NCHC", "file-text:公文"],
+      "concepts": [
+        "Devstral-2-123B 三輪平均 89.7 穩坐冠軍，標準差僅 1.5 極穩定",
+        "參數量不等於品質：14B 打敗 120B，123B 打敗 675B",
+        "Prompt Engineering 讓 14B 從 77 分躍升至 92 分（+19.5%），超越 123B",
+        "五個泛化 prompt 技巧：術語表、思考鏈、結構化輸出、具體數字、去除混淆",
+        "公文方向是零容錯生死線：設備費→業務費寫反整份報廢"
+      ]
+    },
     {
       "id": "gstack-real-cases",
       "title": "GStack 真實案例 — YC 總裁的 AI 團隊到底有沒有用？",
