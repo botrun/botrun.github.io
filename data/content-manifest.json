@@ -1,9 +1,28 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-29T09:28:20+08:00"
+    "lastUpdated": "2026-03-29T10:52:24+08:00"
   },
   "items": [
+    {
+      "id": "master-apprentice-v2",
+      "title": "師徒模型第二回 — 讓小模型當師父會怎樣？",
+      "subtitle": "14B 把寫公文教成資料轉換、120B 教不動自己、14B 當徒弟反而考贏 120B",
+      "href": "https://master-apprentice-v2.vercel.app",
+      "icon": "users",
+      "badge": "方法學",
+      "badgeColor": "#e8634a",
+      "protected": true,
+      "publishDate": "2026-03-29T10:52:24+08:00",
+      "tags": ["users:師徒模型", "zap:Meta Prompt", "brain:公文 AI"],
+      "concepts": [
+        "五模型輪流當師父：675B 拿 83 分冠軍，14B 拿 18 分把公文教成 Pandas 資料轉換",
+        "V2 十條教學守則對大模型有效（+15）、對小模型有害（-14），14B 十條全放棄",
+        "Nemotron 120B 當師父教全班平均 78.8 分 vs Claude 97.4 分（差 18.6 分）",
+        "14B 當師父 18 分、當徒弟 87 分 — 擅長照做不擅長設計，師徒需要不同能力",
+        "結論：師父用最強的（Claude），徒弟選最快最便宜的（14B 都能 87-94 分）"
+      ]
+    },
     {
       "id": "master-apprentice-dag",
       "title": "師徒模型方法學 — 24B 小模型拿 99 分的秘密",
