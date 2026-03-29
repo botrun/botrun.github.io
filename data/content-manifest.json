@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-29T08:25:43+08:00"
+    "lastUpdated": "2026-03-29T09:02:00+08:00"
   },
   "items": [
+    {
+      "id": "lobster-agentic-gov",
+      "title": "波龍蝦給政府的五堂課 — AI 助理不能沒人管",
+      "subtitle": "信用卡額度、收據不能改、AI 自己學、知道為誰做事、主管儀表板",
+      "href": "https://lobster-agentic-gov.vercel.app",
+      "icon": "shield",
+      "badge": "政府 AI 治理",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-29T09:02:00+08:00",
+      "tags": ["shield:治理", "zap:波龍蝦", "brain:Agentic AI"],
+      "concepts": [
+        "三層預算熔斷：機關總額→處室月額→每個 AI 日額，花完自動凍結通知主管",
+        "零竄改審計鏈：每張收據印前一張指紋，偷改任何一張立刻被發現",
+        "技能自動沉澱：AI 完成複雜任務後自動記成技能包，經人工審查後全機關共用",
+        "目標層級串聯：觀護 AI 知道自己在「降低再犯率」目標下，決策自動對齊",
+        "主管儀表板：花多少錢、有沒有出狀況、AI 越來越聰明嗎 — 三個指標一眼看"
+      ]
+    },
     {
       "id": "gstack-deep-dive",
       "title": "GStack 原理拆解 — 為什麼「一堆 Prompt」能讓你寫出 60 萬行？",
