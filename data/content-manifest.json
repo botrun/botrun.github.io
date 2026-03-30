@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-29T10:52:24+08:00"
+    "lastUpdated": "2026-03-30T14:42:21+08:00"
   },
   "items": [
+    {
+      "id": "anthropic-harness-gan",
+      "title": "你叫 AI 打分數，它永遠說「很棒」",
+      "subtitle": "Anthropic 生成對抗框架：拆開做事的 AI 和評審的 AI，讓品質迴圈真的轉起來",
+      "href": "https://anthropic-harness-gan.vercel.app",
+      "icon": "swords",
+      "badge": "AI 工程",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-30T14:42:21+08:00",
+      "tags": ["swords:生成對抗", "brain:框架設計", "zap:Anthropic"],
+      "concepts": [
+        "自我評估偏見：AI 評自己永遠偏高，獨立評估器是唯一解方",
+        "GAN 式三代理架構：規劃器展開規格 + 生成器逐 Sprint 開發 + 評估器 Playwright 實測驗收",
+        "Sprint 合約機制：開發前先協商「完成」定義，27+ 條標準逐一驗收",
+        "$9 vs $200 品質差距：單一代理遊戲核心壞掉，三代理框架真的能玩",
+        "Opus 4.6 簡化：移除 Sprint 分解和上下文重置，評估器僅在能力邊緣任務才值得用"
+      ]
+    },
     {
       "id": "master-apprentice-v2",
       "title": "師徒模型第二回 — 讓小模型當師父會怎樣？",

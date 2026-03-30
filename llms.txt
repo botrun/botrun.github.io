@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-03-29T02:52:53.969Z
+> 生成時間：2026-03-30T06:47:43.380Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 88 個項目，按發佈日期降序排列。
+共 89 個項目，按發佈日期降序排列。
+
+## 你叫 AI 打分數，它永遠說「很棒」
+
+> Anthropic 生成對抗框架：拆開做事的 AI 和評審的 AI，讓品質迴圈真的轉起來
+
+**關鍵觀念：**
+- 自我評估偏見：AI 評自己永遠偏高，獨立評估器是唯一解方
+- GAN 式三代理架構：規劃器展開規格 + 生成器逐 Sprint 開發 + 評估器 Playwright 實測驗收
+- Sprint 合約機制：開發前先協商「完成」定義，27+ 條標準逐一驗收
+- $9 vs $200 品質差距：單一代理遊戲核心壞掉，三代理框架真的能玩
+- Opus 4.6 簡化：移除 Sprint 分解和上下文重置，評估器僅在能力邊緣任務才值得用
+
+- [線上版](https://anthropic-harness-gan.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://anthropic-harness-gan.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 工程
+- 發佈日期：2026-03-30T14:42:21+08:00
+- 標籤：生成對抗、框架設計、Anthropic
 
 ## 師徒模型第二回 — 讓小模型當師父會怎樣？
 
