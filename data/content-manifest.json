@@ -1,9 +1,28 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-31T13:30:00+08:00"
+    "lastUpdated": "2026-03-31T15:10:00+08:00"
   },
   "items": [
+    {
+      "id": "zero-touch-prompt",
+      "title": "零接觸提示：大模型寫劇本，小模型演好戲",
+      "subtitle": "Copy-Paste 即戰力模板 — 改三個欄位就能讓任何小模型跑出大模型品質，機敏永遠不出境",
+      "href": "https://zero-touch-prompt.vercel.app",
+      "icon": "wand-sparkles",
+      "badge": "Prompt 工程",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-31T15:10:00+08:00",
+      "tags": ["wand-sparkles:零接觸提示", "cpu:大小模型協作", "shield-check:機敏零外洩"],
+      "concepts": [
+        "零接觸提示（Zero-Touch Prompting）：大模型生成 Prompt 劇本，小模型拿劇本+本地機敏資料執行",
+        "四步驟方法論：寫死領域知識 → 給模板填空 → 預填中間結果 → 附品質自檢清單",
+        "Copy-Paste 即戰力模板：改三個欄位（任務+領域+模板）就能跑，適用公文/法規/教育",
+        "兩階段架構：Phase 1 雲端零機敏寫劇本 → Phase 2 地端機敏執行任務",
+        "109x 成本差距 + 0 資料外洩 + 無限次 Prompt 複用"
+      ],
+      "protected": true
+    },
     {
       "id": "water-transformation-game",
       "title": "水的變身術：10 分鐘讓四年級生愛上三態變化",
