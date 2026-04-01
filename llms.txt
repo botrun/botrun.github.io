@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-01T07:08:08.379Z
+> 生成時間：2026-04-01T09:27:03.629Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 93 個項目，按發佈日期降序排列。
@@ -1596,4 +1596,4 @@
 - [llms.txt](https://botrun.github.io/llms.txt): 本檔案，AI 友善完整索引
 - [content-manifest.json](https://botrun.github.io/data/content-manifest.json): 結構化元資料（JSON）
 - 技術棧：純 HTML + CSS + MJS，零框架零編譯
-- 部署：GitHub Pages + Vercel
+- 部署：GitHub Pages + GCS (gs://botrun-slides)
