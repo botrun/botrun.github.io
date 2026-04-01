@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口腔黏膜炎 AI 知識庫成果報告 - 屏東榮總</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 25px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-header.ear { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .card-header.eye { background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); }
+        .card-header.hand { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .card-header.heart { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: var(--light);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        /* Grade badges */
+        .grade-0 { background: #28a745; color: white; }
+        .grade-1 { background: #ffc107; color: #212529; }
+        .grade-2 { background: #fd7e14; color: white; }
+        .grade-3 { background: #dc3545; color: white; }
+        .grade-4 { background: #721c24; color: white; }
+
+        .grade-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* Model ranking badges */
+        .rank-gold { background: linear-gradient(135deg, #ffd700, #ffed4a); color: #5a4a00; }
+        .rank-silver { background: linear-gradient(135deg, #c0c0c0, #e8e8e8); color: #444; }
+        .rank-bronze { background: linear-gradient(135deg, #cd7f32, #dda15e); color: #3d2914; }
+        .rank-fail { background: #f8d7da; color: #721c24; }
+
+        .rank-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* Info boxes */
+        .info-box {
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .info-box.success { background: #d4edda; border-color: #28a745; }
+        .info-box.warning { background: #fff3cd; border-color: #ffc107; }
+        .info-box.danger { background: #f8d7da; border-color: #dc3545; }
+        .info-box.info { background: #d1ecf1; border-color: #17a2b8; }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        /* Stats */
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-card .label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Progress bar */
+        .progress {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-gold { background: linear-gradient(90deg, #ffd700, #ffed4a); }
+        .progress-silver { background: linear-gradient(90deg, #c0c0c0, #e8e8e8); }
+        .progress-bronze { background: linear-gradient(90deg, #cd7f32, #dda15e); }
+
+        /* Flowchart */
+        .flowchart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .flow-item {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .flow-item .emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Code block */
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .command { color: #50fa7b; }
+
+        /* TOC */
+        .toc {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .toc h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e9ecef;
+        }
+
+        .toc-list a {
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary);
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        /* Dimension chart */
+        .dimension-chart {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .dimension-item {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .dimension-item .dim-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .dimension-item .dim-score {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .dimension-item .dim-desc {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #ffeaa7 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .header {
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .toc-list { columns: 1; }
+            .dimension-chart { grid-template-columns: repeat(3, 1fr); }
+            .grid-2, .grid-4 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🏥 口腔黏膜炎 AI 知識庫</h1>
+        <p class="subtitle">臺灣醫院分級處置標準作業程序（SOP）</p>
+        <div class="badge">零幻覺四部曲 ｜ 耳 👂 眼 👁️ 手 🤲 心 ❤️</div>
+    </header>
+
+    <div class="container">
+        <!-- 報告資訊 -->
+        <div class="card">
+            <div class="card-body">
+                <div class="grid grid-4">
+                    <div class="stat-card">
+                        <div class="number">25</div>
+                        <div class="label">高品味題庫題數</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">8</div>
+                        <div class="label">評測 AI 模型數</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">4</div>
+                        <div class="label">權威資料來源</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">9</div>
+                        <div class="label">評分維度</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 目錄 -->
+        <div class="toc">
+            <h3>📑 報告目錄</h3>
+            <ul class="toc-list">
+                <li><a href="#quartet">👂👁️🤲❤️ 零幻覺四部曲說明</a></li>
+                <li><a href="#grading">📊 口腔黏膜炎分級標準</a></li>
+                <li><a href="#sop">📋 分級處置 SOP</a></li>
+                <li><a href="#quiz">📝 高品味題庫</a></li>
+                <li><a href="#benchmark">🏆 AI 模型評測排行榜</a></li>
+                <li><a href="#comparison">🔍 模型回答品質比較範例</a></li>
+                <li><a href="#prediction">🔮 世界模型預測</a></li>
+                <li><a href="#cli">💻 CLI 工具使用</a></li>
+                <li><a href="#reference">📚 參考資料</a></li>
+            </ul>
+        </div>
+
+        <!-- 零幻覺四部曲 -->
+        <h2 id="quartet" class="section-title">👂👁️🤲❤️ 零幻覺四部曲說明</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    本專案運用<strong>零幻覺四部曲</strong>完整流程，建立口腔黏膜炎知識庫，確保 AI 回答<span class="highlight">真實、準確、可追溯</span>。
+                </p>
+
+                <div class="flowchart">
+                    <div class="flow-item" style="border-color: #6366f1;">
+                        <span class="emoji">👂</span>
+                        <strong>耳</strong><br>
+                        <small>資料收集</small>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item" style="border-color: #f59e0b;">
+                        <span class="emoji">👁️</span>
+                        <strong>眼</strong><br>
+                        <small>評測排行</small>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item" style="border-color: #10b981;">
+                        <span class="emoji">🤲</span>
+                        <strong>手</strong><br>
+                        <small>技能孵化</small>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item" style="border-color: #ef4444;">
+                        <span class="emoji">❤️</span>
+                        <strong>心</strong><br>
+                        <small>預測建模</small>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 30px;">
+                    <div class="card" style="margin: 0;">
+                        <div class="card-header ear">👂 耳（波知己）- 資料收集</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>WHO 口腔黏膜炎分級標準</li>
+                                <li>NCI-CTCAE 臨床試驗標準</li>
+                                <li>RTOG 放射治療毒性分級</li>
+                                <li>MASCC/ISOO 2024 國際指引</li>
+                                <li>台灣醫學中心護理實務</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <div class="card-header eye">👁️ 眼（波排行）- 評測排行</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>25 題高品味題庫</li>
+                                <li>8 個 AI 模型評測</li>
+                                <li>無網路 vs 有網路兩批評測</li>
+                                <li>九維度評分：真新全快省準人安穩</li>
+                                <li>金/銀/銅標等級認證</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <div class="card-header hand">🤲 手（波孵化）- 技能孵化</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>專屬 CLI 命令列工具</li>
+                                <li>快速分級查詢</li>
+                                <li>SOP 處置指引</li>
+                                <li>題庫管理與擴充</li>
+                                <li>支援 HTTPS Proxy 環境</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <div class="card-header heart">❤️ 心（波水晶）- 預測建模</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>2026-2028 照護趨勢預測</li>
+                                <li>三層權重因子分析</li>
+                                <li>樂觀/中性/悲觀情境模擬</li>
+                                <li>風險預警與機會識別</li>
+                                <li>決策建議優先排序</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分級標準 -->
+        <h2 id="grading" class="section-title">📊 口腔黏膜炎分級標準</h2>
+
+        <div class="card">
+            <div class="card-header">WHO 口腔黏膜炎分級標準（最廣泛使用）</div>
+            <div class="card-body">
+                <div class="info-box info">
+                    <strong>📋 MASCC 2024 評估：</strong>WHO 量表獲得最高信心評分（加權平均 <strong>8.8 分</strong>），建議作為臨床實務首選評估工具。
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>分級</th>
+                                <th>臨床表現</th>
+                                <th>進食能力</th>
+                                <th>處置重點</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="grade-badge grade-0">Grade 0</span></td>
+                                <td>無口腔黏膜炎</td>
+                                <td>正常進食</td>
+                                <td>維持基本口腔護理</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-1">Grade 1</span></td>
+                                <td>紅斑（Erythema）、輕度疼痛</td>
+                                <td>正常進食</td>
+                                <td>加強口腔護理、漱口水</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-2">Grade 2</span></td>
+                                <td>散在性潰瘍、中度疼痛</td>
+                                <td>可進食固體食物</td>
+                                <td>局部止痛、飲食調整</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-3">Grade 3</span></td>
+                                <td>融合性潰瘍、劇烈疼痛</td>
+                                <td>僅能進食流質</td>
+                                <td>系統性止痛、管灌營養</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-4">Grade 4</span></td>
+                                <td>廣泛壞死、出血、危及生命</td>
+                                <td>無法經口進食</td>
+                                <td>緊急處置、TPN、治療暫停</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">三大國際分級量表比較</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>量表</th>
+                                <th>制定單位</th>
+                                <th>適用範圍</th>
+                                <th>MASCC 信心評分</th>
+                                <th>特點</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>WHO</strong></td>
+                                <td>世界衛生組織</td>
+                                <td>化學治療</td>
+                                <td><span class="highlight">8.8 分（最高）</span></td>
+                                <td>簡便、接受度高</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NCI-CTCAE</strong></td>
+                                <td>美國國家癌症研究所</td>
+                                <td>臨床試驗</td>
+                                <td>8.3 分</td>
+                                <td>標準化、可比較</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RTOG</strong></td>
+                                <td>放射治療腫瘤學組</td>
+                                <td>放射治療</td>
+                                <td>6.8 分</td>
+                                <td>急性毒性評估</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box warning" style="margin-top: 20px;">
+                    <strong>⚠️ 量表選擇建議：</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>化學治療病患 → 優先使用 <strong>WHO</strong>（89.5% 共識）</li>
+                        <li>放射治療病患 → 可使用 <strong>WHO</strong> 或 <strong>RTOG</strong></li>
+                        <li>臨床試驗研究 → 使用 <strong>NCI-CTCAE</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 處置 SOP -->
+        <h2 id="sop" class="section-title">📋 分級處置 SOP</h2>
+
+        <div class="card">
+            <div class="card-header">處置原則與流程</div>
+            <div class="card-body">
+                <div class="grid grid-4">
+                    <div class="stat-card" style="background: #d4edda;">
+                        <div class="number" style="font-size: 1.5rem;">1</div>
+                        <div class="label">預防優於治療</div>
+                    </div>
+                    <div class="stat-card" style="background: #fff3cd;">
+                        <div class="number" style="font-size: 1.5rem;">2</div>
+                        <div class="label">分級處置</div>
+                    </div>
+                    <div class="stat-card" style="background: #d1ecf1;">
+                        <div class="number" style="font-size: 1.5rem;">3</div>
+                        <div class="label">多模式治療</div>
+                    </div>
+                    <div class="stat-card" style="background: #f8d7da;">
+                        <div class="number" style="font-size: 1.5rem;">4</div>
+                        <div class="label">定期評估</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);">Grade 1-2 處置（輕中度）</div>
+            <div class="card-body">
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">🦷 口腔護理</h4>
+                        <ul>
+                            <li>軟毛牙刷刷牙（每餐後 + 睡前）</li>
+                            <li>生理食鹽水或小蘇打漱口（每 4 小時）</li>
+                            <li>避免酒精性漱口水</li>
+                            <li>每日自我檢查口腔黏膜</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">🍽️ 飲食調整</h4>
+                        <ul>
+                            <li>溫和、軟質、高蛋白食物</li>
+                            <li>避免辛辣、酸性、過熱食物</li>
+                            <li>充足水分（2000-3000 mL/日）</li>
+                            <li>禁菸酒檳榔</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box success" style="margin-top: 20px;">
+                    <strong>💊 Grade 2 疼痛控制：</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><strong>Lidocaine 凝膠 2%</strong>：塗抹於潰瘍處，進食前 15-20 分鐘</li>
+                        <li><strong>Magic Mouthwash</strong>：Lidocaine + Diphenhydramine + 制酸劑，含漱 1-2 分鐘</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #dc3545 0%, #721c24 100%);">Grade 3-4 處置（重度/危及生命）</div>
+            <div class="card-body">
+                <div class="info-box danger">
+                    <strong>🚨 緊急處置重點：</strong>
+                    <ol style="margin: 10px 0 0 20px;">
+                        <li>通知主治醫師</li>
+                        <li>建立靜脈輸液管道</li>
+                        <li>疼痛緊急控制（IV Morphine / PCA）</li>
+                        <li>評估呼吸道安全</li>
+                        <li>啟動營養支持（管灌 / TPN）</li>
+                    </ol>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 20px;">
+                    <div>
+                        <h4 style="color: var(--danger); margin-bottom: 10px;">💉 疼痛控制</h4>
+                        <ul>
+                            <li>Morphine 0.2% 漱口水</li>
+                            <li>系統性鴉片類止痛藥</li>
+                            <li>PCA 病患自控式止痛</li>
+                            <li>必要時會診疼痛科</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--danger); margin-bottom: 10px;">🍼 營養支持</h4>
+                        <ul>
+                            <li>管灌飲食（NG tube）</li>
+                            <li>全靜脈營養（TPN）</li>
+                            <li>熱量：30-35 kcal/kg/日</li>
+                            <li>蛋白質：1.5-2.0 g/kg/日</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box warning" style="margin-top: 20px;">
+                    <strong>⚠️ 癌症治療調整：</strong>Grade 3-4 通常需要暫停化療或中斷放射治療，待黏膜恢復至 Grade ≤ 2 再恢復治療。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">MASCC 建議的預防性治療</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>治療方式</th>
+                                <th>適應症</th>
+                                <th>執行方式</th>
+                                <th>MASCC 建議等級</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>冷凍療法</strong></td>
+                                <td>5-FU bolus 化療、Melphalan</td>
+                                <td>化療前 5 分鐘開始，口含冰塊 30 分鐘</td>
+                                <td><span class="rank-badge rank-gold">Grade A 推薦</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>光生物調節（PBM）</strong></td>
+                                <td>幹細胞移植、頭頸部放療</td>
+                                <td>650-680nm 或 780-830nm，2-6 J/cm²</td>
+                                <td><span class="rank-badge rank-gold">Grade A 推薦</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Benzydamine 漱口水</strong></td>
+                                <td>頭頸癌放療（&lt;50 Gy）</td>
+                                <td>15 mL 含漱 30 秒，每 2-3 小時</td>
+                                <td><span class="rank-badge rank-silver">Grade B 建議</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Palifermin</strong></td>
+                                <td>血液惡性腫瘤幹細胞移植</td>
+                                <td>60 μg/kg/day IV，移植前後各 3 天</td>
+                                <td><span class="rank-badge rank-gold">Grade A 推薦</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>口服麩醯胺酸</strong></td>
+                                <td>頭頸癌放化療</td>
+                                <td>10-30 g/日，分次口服或漱口</td>
+                                <td><span class="rank-badge rank-silver">建議使用</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 高品味題庫 -->
+        <h2 id="quiz" class="section-title">📝 高品味題庫</h2>
+
+        <div class="card">
+            <div class="card-header">題庫特色與統計</div>
+            <div class="card-body">
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 15px;">🎯 高品味三大特色</h4>
+                        <div class="info-box info">
+                            <strong>1. 鑑別度</strong><br>
+                            能區分不同 AI 模型的表現差異<br>
+                            <small>標準差 > 1.5，最高分與最低分差距 > 20%</small>
+                        </div>
+                        <div class="info-box success">
+                            <strong>2. 口碑</strong><br>
+                            答案讓人覺得「哇這答案真讚」<br>
+                            <small>專家滿意度 > 8/10，願意推薦率 > 80%</small>
+                        </div>
+                        <div class="info-box warning">
+                            <strong>3. 複雜情境</strong><br>
+                            必須是真實臨床情境題<br>
+                            <small>像「真實用戶會問的問題」</small>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 15px;">📊 題庫統計</h4>
+                        <table>
+                            <tr><td><strong>總題數</strong></td><td>25 題</td></tr>
+                            <tr><td><strong>難度分佈</strong></td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Easy</td><td>5 題（20%）</td></tr>
+                            <tr><td style="padding-left: 20px;">Medium</td><td>12 題（48%）</td></tr>
+                            <tr><td style="padding-left: 20px;">Hard</td><td>8 題（32%）</td></tr>
+                            <tr><td><strong>類型分佈</strong></td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">事實性問題</td><td>5 題</td></tr>
+                            <tr><td style="padding-left: 20px;">推論性問題</td><td>8 題</td></tr>
+                            <tr><td style="padding-left: 20px;">應用性問題</td><td>8 題</td></tr>
+                            <tr><td style="padding-left: 20px;">創意性問題</td><td>4 題</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">題庫範例</div>
+            <div class="card-body">
+                <div class="info-box" style="background: #f8f9fa; border-color: var(--primary);">
+                    <strong>題目 OM-001（應用題，Easy）</strong><br><br>
+                    <em>一位 45 歲女性乳癌病患正在接受 AC 化療（Doxorubicin + Cyclophosphamide），第二次化療後第 10 天發現口腔黏膜發紅、有輕微疼痛但仍可正常進食。請問依據 WHO 分級，這位病患的口腔黏膜炎屬於幾級？應採取什麼處置措施？</em>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px dashed #ccc;">
+                    <strong>必含內容：</strong>Grade 1、WHO 第 1 級、紅斑、正常進食<br>
+                    <strong>應提內容：</strong>軟毛牙刷、生理食鹽水漱口、每 4 小時、自我檢查、避免刺激性食物
+                </div>
+
+                <div class="info-box" style="background: #f8f9fa; border-color: var(--primary); margin-top: 15px;">
+                    <strong>題目 OM-008（應用題，Hard）</strong><br><br>
+                    <em>一位 60 歲口腔癌病患接受放化療併用治療，第四週出現融合性口腔潰瘍、劇烈疼痛，只能勉強喝水。請依據 WHO 分級判斷其嚴重程度，並規劃完整的處置計畫，包括疼痛控制、營養支持、感染預防等面向。</em>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px dashed #ccc;">
+                    <strong>必含內容：</strong>Grade 3、第三級、流質<br>
+                    <strong>應提內容：</strong>Morphine、PCA、管灌、NG tube、Nystatin、抗黴菌、PBM、光生物調節、治療調整
+                </div>
+            </div>
+        </div>
+
+        <!-- AI 評測排行榜 -->
+        <h2 id="benchmark" class="section-title">🏆 AI 模型評測排行榜</h2>
+
+        <div class="card">
+            <div class="card-header">評測配置</div>
+            <div class="card-body">
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">📋 評測模型（8 個）</h4>
+                        <ol>
+                            <li>openai/gpt-oss-120b</li>
+                            <li>meta-llama/llama-4-maverick</li>
+                            <li>google/gemini-3-flash-preview</li>
+                            <li>mistralai/devstral-2512</li>
+                            <li>mistralai/ministral-14b-2512</li>
+                            <li>mistralai/ministral-8b-2512</li>
+                            <li>anthropic/claude-haiku-4.5</li>
+                            <li>anthropic/claude-sonnet-4</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">⚙️ 評測參數</h4>
+                        <table>
+                            <tr><td>評審模型</td><td>google/gemini-3-flash-preview</td></tr>
+                            <tr><td>並行處理</td><td>最高 30 並行</td></tr>
+                            <tr><td>最大輸出</td><td>32,768 tokens</td></tr>
+                            <tr><td>溫度</td><td>0.3</td></tr>
+                        </table>
+
+                        <h4 style="color: var(--primary); margin: 20px 0 10px;">🔄 兩批評測設計</h4>
+                        <ul>
+                            <li><strong>Batch 1</strong>：無網路評測（測試模型內建知識）</li>
+                            <li><strong>Batch 2</strong>：有網路評測（測試搜尋整合能力）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">Batch 1：無網路評測排行榜</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>模型</th>
+                                <th>總分</th>
+                                <th>百分比</th>
+                                <th>等級</th>
+                                <th>真</th>
+                                <th>準</th>
+                                <th>安</th>
+                                <th>穩</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🥇 1</td>
+                                <td><strong>anthropic/claude-sonnet-4</strong></td>
+                                <td>81.2</td>
+                                <td>90.2%</td>
+                                <td><span class="rank-badge rank-gold">金標</span></td>
+                                <td>9.2</td>
+                                <td>9.0</td>
+                                <td>9.5</td>
+                                <td>9.0</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 2</td>
+                                <td><strong>openai/gpt-oss-120b</strong></td>
+                                <td>79.8</td>
+                                <td>88.7%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.8</td>
+                                <td>9.2</td>
+                                <td>9.2</td>
+                                <td>9.0</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 3</td>
+                                <td><strong>google/gemini-3-flash-preview</strong></td>
+                                <td>78.5</td>
+                                <td>87.2%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.5</td>
+                                <td>8.5</td>
+                                <td>9.0</td>
+                                <td>8.8</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 4</td>
+                                <td>meta-llama/llama-4-maverick</td>
+                                <td>77.2</td>
+                                <td>85.8%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.2</td>
+                                <td>8.5</td>
+                                <td>9.0</td>
+                                <td>9.2</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 5</td>
+                                <td>anthropic/claude-haiku-4.5</td>
+                                <td>75.8</td>
+                                <td>84.2%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.0</td>
+                                <td>8.2</td>
+                                <td>9.0</td>
+                                <td>8.7</td>
+                            </tr>
+                            <tr>
+                                <td>🥉 6</td>
+                                <td>mistralai/devstral-2512</td>
+                                <td>74.5</td>
+                                <td>82.8%</td>
+                                <td><span class="rank-badge rank-bronze">銅標</span></td>
+                                <td>8.0</td>
+                                <td>8.0</td>
+                                <td>9.0</td>
+                                <td>8.2</td>
+                            </tr>
+                            <tr>
+                                <td>🥉 7</td>
+                                <td>mistralai/ministral-14b-2512</td>
+                                <td>72.8</td>
+                                <td>80.9%</td>
+                                <td><span class="rank-badge rank-bronze">銅標</span></td>
+                                <td>7.8</td>
+                                <td>7.8</td>
+                                <td>8.8</td>
+                                <td>8.9</td>
+                            </tr>
+                            <tr>
+                                <td>❌ 8</td>
+                                <td>mistralai/ministral-8b-2512</td>
+                                <td>68.5</td>
+                                <td>76.1%</td>
+                                <td><span class="rank-badge rank-fail">未達標</span></td>
+                                <td>7.2</td>
+                                <td>7.2</td>
+                                <td>8.5</td>
+                                <td>8.6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);">Batch 2：有網路評測排行榜</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>模型</th>
+                                <th>總分</th>
+                                <th>百分比</th>
+                                <th>等級</th>
+                                <th>真</th>
+                                <th>新</th>
+                                <th>準</th>
+                                <th>安</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #fff9e6;">
+                                <td>🥇 1</td>
+                                <td><strong>anthropic/claude-sonnet-4</strong></td>
+                                <td><strong>85.8</strong></td>
+                                <td><strong>95.3%</strong></td>
+                                <td><span class="rank-badge rank-gold">金標</span></td>
+                                <td>9.8</td>
+                                <td>9.2</td>
+                                <td>9.5</td>
+                                <td>9.8</td>
+                            </tr>
+                            <tr style="background: #fff9e6;">
+                                <td>🥇 2</td>
+                                <td><strong>openai/gpt-oss-120b</strong></td>
+                                <td><strong>84.2</strong></td>
+                                <td><strong>93.6%</strong></td>
+                                <td><span class="rank-badge rank-gold">金標</span></td>
+                                <td>9.5</td>
+                                <td>9.0</td>
+                                <td>9.5</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr style="background: #fff9e6;">
+                                <td>🥇 3</td>
+                                <td><strong>google/gemini-3-flash-preview</strong></td>
+                                <td><strong>83.5</strong></td>
+                                <td><strong>92.8%</strong></td>
+                                <td><span class="rank-badge rank-gold">金標</span></td>
+                                <td>9.2</td>
+                                <td>9.5</td>
+                                <td>9.2</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr style="background: #fff9e6;">
+                                <td>🥇 4</td>
+                                <td><strong>meta-llama/llama-4-maverick</strong></td>
+                                <td><strong>82.0</strong></td>
+                                <td><strong>91.1%</strong></td>
+                                <td><span class="rank-badge rank-gold">金標</span></td>
+                                <td>9.0</td>
+                                <td>9.0</td>
+                                <td>9.0</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 5</td>
+                                <td>anthropic/claude-haiku-4.5</td>
+                                <td>80.5</td>
+                                <td>89.4%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.8</td>
+                                <td>8.5</td>
+                                <td>8.8</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 6</td>
+                                <td>mistralai/devstral-2512</td>
+                                <td>79.2</td>
+                                <td>88.0%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.5</td>
+                                <td>8.5</td>
+                                <td>8.5</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <td>🥈 7</td>
+                                <td>mistralai/ministral-14b-2512</td>
+                                <td>77.5</td>
+                                <td>86.1%</td>
+                                <td><span class="rank-badge rank-silver">銀標</span></td>
+                                <td>8.2</td>
+                                <td>8.2</td>
+                                <td>8.2</td>
+                                <td>9.2</td>
+                            </tr>
+                            <tr>
+                                <td>🥉 8</td>
+                                <td>mistralai/ministral-8b-2512</td>
+                                <td>73.8</td>
+                                <td>82.0%</td>
+                                <td><span class="rank-badge rank-bronze">銅標</span></td>
+                                <td>7.8</td>
+                                <td>7.8</td>
+                                <td>7.8</td>
+                                <td>9.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">📈 網路搜尋效益分析</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>模型</th>
+                                <th>無網路分數</th>
+                                <th>有網路分數</th>
+                                <th>提升幅度</th>
+                                <th>提升率</th>
+                                <th>視覺化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>anthropic/claude-sonnet-4</td>
+                                <td>81.2</td>
+                                <td>85.8</td>
+                                <td style="color: var(--success);"><strong>+4.6</strong></td>
+                                <td>+5.7%</td>
+                                <td>
+                                    <div class="progress" style="width: 150px;">
+                                        <div class="progress-bar progress-gold" style="width: 95.3%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>google/gemini-3-flash-preview</td>
+                                <td>78.5</td>
+                                <td>83.5</td>
+                                <td style="color: var(--success);"><strong>+5.0</strong></td>
+                                <td>+6.4%</td>
+                                <td>
+                                    <div class="progress" style="width: 150px;">
+                                        <div class="progress-bar progress-gold" style="width: 92.8%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>mistralai/ministral-8b-2512</td>
+                                <td>68.5</td>
+                                <td>73.8</td>
+                                <td style="color: var(--success);"><strong>+5.3</strong></td>
+                                <td><span class="highlight">+7.7%</span></td>
+                                <td>
+                                    <div class="progress" style="width: 150px;">
+                                        <div class="progress-bar progress-bronze" style="width: 82%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box success" style="margin-top: 20px;">
+                    <strong>✅ 結論：</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>網路搜尋對所有模型都有顯著正面效益，平均提升 <strong>+4.8 分（+6.3%）</strong></li>
+                        <li>小型模型（ministral-8b）受益最大（+7.7%）</li>
+                        <li>啟用網路搜尋後，金標模型數量從 1 個增加到 <strong>4 個</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">九維度評分說明</div>
+            <div class="card-body">
+                <p style="margin-bottom: 20px;"><strong>口訣：真新全快省準人安穩</strong></p>
+
+                <div class="dimension-chart">
+                    <div class="dimension-item">
+                        <div class="dim-name">真</div>
+                        <div class="dim-score">權重 1.2</div>
+                        <div class="dim-desc">真實性<br>資料可追溯</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">新</div>
+                        <div class="dim-score">權重 0.8</div>
+                        <div class="dim-desc">新穎性<br>使用最新資料</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">全</div>
+                        <div class="dim-score">權重 1.0</div>
+                        <div class="dim-desc">完整性<br>涵蓋必含內容</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">快</div>
+                        <div class="dim-score">權重 1.1</div>
+                        <div class="dim-desc">速度<br>回應簡潔有效</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">省</div>
+                        <div class="dim-score">權重 1.0</div>
+                        <div class="dim-desc">節省<br>Token 效率高</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">準</div>
+                        <div class="dim-score">權重 1.2</div>
+                        <div class="dim-desc">精準度<br>答案正確</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">人</div>
+                        <div class="dim-score">權重 0.9</div>
+                        <div class="dim-desc">人本<br>易於理解</div>
+                    </div>
+                    <div class="dimension-item" style="background: #ffe6e6;">
+                        <div class="dim-name" style="color: #dc3545;">安</div>
+                        <div class="dim-score">權重 1.3</div>
+                        <div class="dim-desc">安全性<br>無誤導資訊</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dim-name">穩</div>
+                        <div class="dim-score">權重 1.1</div>
+                        <div class="dim-desc">穩定性<br>可重現</div>
+                    </div>
+                </div>
+
+                <div class="info-box info">
+                    <strong>💡 醫療領域重點：</strong>「安」（安全性）權重最高（1.3），因為醫療資訊不能有誤導內容，所有模型在此維度表現優異（平均 9.44 分）。
+                </div>
+            </div>
+        </div>
+
+        <!-- 模型回答品質比較 -->
+        <h2 id="comparison" class="section-title">🔍 模型回答品質比較範例</h2>
+
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                📋 範例題目：WHO Grade 判斷與處置
+            </div>
+            <div class="card-body">
+                <div class="info-box" style="background: #e3f2fd; border-color: #2196f3;">
+                    <strong>題目：</strong><br>
+                    一位 45 歲女性乳癌病患正在接受 AC 化療，第二次化療後第 10 天發現口腔黏膜發紅、有輕微疼痛但仍可正常進食。請問依據 WHO 分級，這位病患的口腔黏膜炎屬於幾級？應採取什麼處置措施？
+                </div>
+            </div>
+        </div>
+
+        <!-- 金標模型回答 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%); color: #5a4a00;">
+                🥇 金標回答：anthropic/claude-sonnet-4（85.8 分）
+            </div>
+            <div class="card-body">
+                <div style="background: #fffbeb; padding: 20px; border-radius: 10px; border-left: 4px solid #ffd700;">
+                    <p><strong>WHO 分級判斷：Grade 1（第一級）</strong></p>
+                    <br>
+                    <p>依據 WHO 口腔黏膜炎分級標準，該病患表現為：</p>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>口腔黏膜<span class="highlight">紅斑（Erythema）</span></li>
+                        <li>輕度疼痛不適</li>
+                        <li><span class="highlight">可正常進食</span>（關鍵判斷依據）</li>
+                    </ul>
+                    <p>這符合 WHO Grade 1 的定義：「紅斑、輕度疼痛，不影響進食」。</p>
+                    <br>
+                    <p><strong>建議處置措施：</strong></p>
+                    <ol style="margin: 10px 0 10px 20px;">
+                        <li><strong>口腔護理加強</strong>
+                            <ul>
+                                <li>使用<span class="highlight">軟毛牙刷</span>，每餐後及睡前刷牙</li>
+                                <li>生理食鹽水或小蘇打水漱口，<span class="highlight">每 4 小時</span></li>
+                                <li>避免使用含酒精的漱口水</li>
+                            </ul>
+                        </li>
+                        <li><strong>每日自我檢查</strong>（至少 2 次）
+                            <ul>
+                                <li>使用手電筒和鏡子觀察口腔黏膜變化</li>
+                                <li>記錄疼痛程度與進食情況</li>
+                            </ul>
+                        </li>
+                        <li><strong>飲食調整</strong>
+                            <ul>
+                                <li>避免辛辣、酸性、過熱食物</li>
+                                <li>選擇溫和、軟質食物</li>
+                                <li>充足水分攝取（2000-3000 mL/日）</li>
+                            </ul>
+                        </li>
+                        <li><strong>警示觀察</strong>：若症狀惡化（出現潰瘍、進食困難），應立即回診</li>
+                    </ol>
+                    <br>
+                    <p><em>參考來源：WHO Oral Mucositis Grading Scale; MASCC/ISOO Clinical Practice Guidelines 2020</em></p>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div class="dimension-item" style="background: #d4edda;">
+                            <div class="dim-name" style="color: #28a745;">✓ 優點</div>
+                        </div>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li>正確判斷 WHO Grade 1</li>
+                            <li>完整引用分級標準定義</li>
+                            <li>處置措施具體且可執行</li>
+                            <li>包含警示觀察建議</li>
+                            <li>引用權威參考來源</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <table>
+                            <tr><td><strong>真</strong>（真實性）</td><td>9.8/10</td></tr>
+                            <tr><td><strong>全</strong>（完整性）</td><td>9.5/10</td></tr>
+                            <tr><td><strong>準</strong>（精準度）</td><td>9.5/10</td></tr>
+                            <tr><td><strong>安</strong>（安全性）</td><td>9.8/10</td></tr>
+                            <tr><td><strong>人</strong>（人本）</td><td>9.0/10</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 銀標模型回答 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%); color: #444;">
+                🥈 銀標回答：anthropic/claude-haiku-4.5（80.5 分）
+            </div>
+            <div class="card-body">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #c0c0c0;">
+                    <p><strong>這是 WHO Grade 1 口腔黏膜炎。</strong></p>
+                    <br>
+                    <p>病患症狀為紅斑和輕度疼痛，但仍可正常進食，符合 Grade 1 標準。</p>
+                    <br>
+                    <p><strong>處置建議：</strong></p>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>軟毛牙刷刷牙</li>
+                        <li>每 4 小時用生理食鹽水漱口</li>
+                        <li>避免刺激性食物</li>
+                        <li>每日自我檢查口腔</li>
+                        <li>如症狀惡化請回診</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div class="dimension-item" style="background: #fff3cd;">
+                            <div class="dim-name" style="color: #856404;">△ 可改善</div>
+                        </div>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li>正確判斷分級 ✓</li>
+                            <li>處置方向正確 ✓</li>
+                            <li style="color: #dc3545;">缺少分級定義說明</li>
+                            <li style="color: #dc3545;">處置措施較簡略</li>
+                            <li style="color: #dc3545;">未引用參考來源</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <table>
+                            <tr><td><strong>真</strong>（真實性）</td><td>8.8/10</td></tr>
+                            <tr><td><strong>全</strong>（完整性）</td><td>8.5/10</td></tr>
+                            <tr><td><strong>準</strong>（精準度）</td><td>8.8/10</td></tr>
+                            <tr><td><strong>安</strong>（安全性）</td><td>9.5/10</td></tr>
+                            <tr><td><strong>人</strong>（人本）</td><td>9.0/10</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 未達標模型回答 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); color: #721c24;">
+                ❌ 未達標回答：mistralai/ministral-8b-2512（68.5 分）
+            </div>
+            <div class="card-body">
+                <div style="background: #fff5f5; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545;">
+                    <p>根據描述，病患的口腔黏膜炎應該是 Grade 1 或 Grade 2。</p>
+                    <br>
+                    <p>建議：</p>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>保持口腔清潔</li>
+                        <li>使用漱口水</li>
+                        <li>避免辛辣食物</li>
+                        <li>如有疑問請諮詢醫師</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div class="dimension-item" style="background: #f8d7da;">
+                            <div class="dim-name" style="color: #721c24;">✗ 問題</div>
+                        </div>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li style="color: #dc3545;"><strong>分級判斷模糊</strong>（Grade 1 或 2？）</li>
+                            <li style="color: #dc3545;">未解釋分級依據</li>
+                            <li style="color: #dc3545;">處置建議過於籠統</li>
+                            <li style="color: #dc3545;">未提供具體頻率與方法</li>
+                            <li style="color: #dc3545;">無參考來源</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <table>
+                            <tr><td><strong>真</strong>（真實性）</td><td style="color: #dc3545;">7.2/10</td></tr>
+                            <tr><td><strong>全</strong>（完整性）</td><td style="color: #dc3545;">7.0/10</td></tr>
+                            <tr><td><strong>準</strong>（精準度）</td><td style="color: #dc3545;">7.2/10</td></tr>
+                            <tr><td><strong>安</strong>（安全性）</td><td>8.5/10</td></tr>
+                            <tr><td><strong>人</strong>（人本）</td><td>7.8/10</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 品質差異總結 -->
+        <div class="card">
+            <div class="card-header">📊 模型回答品質差異總結</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>評估項目</th>
+                                <th style="background: #fff9e6;">🥇 金標（claude-sonnet-4）</th>
+                                <th>🥈 銀標（claude-haiku-4.5）</th>
+                                <th style="background: #fff5f5;">❌ 未達標（ministral-8b）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>分級判斷</strong></td>
+                                <td style="background: #d4edda;">✓ 明確 Grade 1</td>
+                                <td style="background: #d4edda;">✓ 正確 Grade 1</td>
+                                <td style="background: #f8d7da;">△ 模糊「Grade 1 或 2」</td>
+                            </tr>
+                            <tr>
+                                <td><strong>判斷依據</strong></td>
+                                <td style="background: #d4edda;">✓ 引用 WHO 定義</td>
+                                <td style="background: #fff3cd;">△ 簡述症狀</td>
+                                <td style="background: #f8d7da;">✗ 無說明</td>
+                            </tr>
+                            <tr>
+                                <td><strong>處置完整性</strong></td>
+                                <td style="background: #d4edda;">✓ 4 大面向詳述</td>
+                                <td style="background: #fff3cd;">△ 5 項簡列</td>
+                                <td style="background: #f8d7da;">✗ 4 項籠統</td>
+                            </tr>
+                            <tr>
+                                <td><strong>具體可執行</strong></td>
+                                <td style="background: #d4edda;">✓ 有頻率、方法</td>
+                                <td style="background: #d4edda;">✓ 有頻率</td>
+                                <td style="background: #f8d7da;">✗ 無具體說明</td>
+                            </tr>
+                            <tr>
+                                <td><strong>參考來源</strong></td>
+                                <td style="background: #d4edda;">✓ WHO + MASCC</td>
+                                <td style="background: #f8d7da;">✗ 無</td>
+                                <td style="background: #f8d7da;">✗ 無</td>
+                            </tr>
+                            <tr>
+                                <td><strong>警示觀察</strong></td>
+                                <td style="background: #d4edda;">✓ 有惡化處理建議</td>
+                                <td style="background: #d4edda;">✓ 有回診建議</td>
+                                <td style="background: #fff3cd;">△ 僅「諮詢醫師」</td>
+                            </tr>
+                            <tr style="background: #e9ecef;">
+                                <td><strong>總分</strong></td>
+                                <td><strong style="color: #28a745;">85.8 分</strong></td>
+                                <td><strong>80.5 分</strong></td>
+                                <td><strong style="color: #dc3545;">68.5 分</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box success" style="margin-top: 20px;">
+                    <strong>💡 品質差異關鍵觀察：</strong>
+                    <ol style="margin: 10px 0 0 20px;">
+                        <li><strong>判斷明確性</strong>：金標模型給出明確答案，未達標模型模稜兩可</li>
+                        <li><strong>引用依據</strong>：金標模型引用 WHO 定義，增加可信度</li>
+                        <li><strong>處置可執行性</strong>：金標模型提供具體頻率（每 4 小時）、方法（軟毛牙刷）</li>
+                        <li><strong>安全考量</strong>：所有模型都有回診建議，但詳細程度不同</li>
+                        <li><strong>參考來源</strong>：只有金標模型引用權威參考，符合「零幻覺」原則</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 世界模型預測 -->
+        <h2 id="prediction" class="section-title">🔮 世界模型預測</h2>
+
+        <div class="card">
+            <div class="card-header heart">2026-2028 口腔黏膜炎照護趨勢預測</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>預測項目</th>
+                                <th>短期（6個月）</th>
+                                <th>中期（1年）</th>
+                                <th>長期（2年）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>PBM 療法普及率</strong></td>
+                                <td>+15%</td>
+                                <td>+30%</td>
+                                <td style="color: var(--success);"><strong>+50%</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI 輔助評估導入</strong></td>
+                                <td>5% 機構</td>
+                                <td>20% 機構</td>
+                                <td style="color: var(--success);"><strong>50% 機構</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>個人化預防策略</strong></td>
+                                <td>研究階段</td>
+                                <td>臨床試驗</td>
+                                <td style="color: var(--success);"><strong>臨床應用</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>新型生物製劑</strong></td>
+                                <td>臨床試驗</td>
+                                <td>上市審查</td>
+                                <td style="color: var(--success);"><strong>健保給付</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 style="color: var(--primary); margin: 25px 0 15px;">🎯 決策建議優先順序</h4>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>順序</th>
+                                <th>行動項目</th>
+                                <th>效益</th>
+                                <th>難度</th>
+                                <th>建議時程</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #d4edda;">
+                                <td>🥇 1</td>
+                                <td><strong>導入標準化評估工具</strong></td>
+                                <td>高</td>
+                                <td>低</td>
+                                <td>即刻</td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td>🥈 2</td>
+                                <td><strong>建立 PBM 治療能力</strong></td>
+                                <td>高</td>
+                                <td>中</td>
+                                <td>6個月內</td>
+                            </tr>
+                            <tr>
+                                <td>🥉 3</td>
+                                <td>開發 AI 輔助系統</td>
+                                <td>高</td>
+                                <td>高</td>
+                                <td>1年內</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>參與臨床試驗</td>
+                                <td>中</td>
+                                <td>中</td>
+                                <td>持續</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>建立遠距追蹤機制</td>
+                                <td>中</td>
+                                <td>低</td>
+                                <td>1年內</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">⚠️ 風險預警</div>
+            <div class="card-body">
+                <div class="grid grid-2">
+                    <div class="info-box danger">
+                        <strong>🔴 高風險（紅色警示）</strong>
+                        <ul style="margin: 10px 0 0 20px;">
+                            <li>癌症新藥增加黏膜毒性（機率 35%）</li>
+                            <li>護理人力短缺危機（機率 40%）</li>
+                        </ul>
+                    </div>
+                    <div class="info-box warning">
+                        <strong>🟡 中風險（黃色警示）</strong>
+                        <ul style="margin: 10px 0 0 20px;">
+                            <li>指引更新延遲（機率 30%）</li>
+                            <li>設備採購預算限縮（機率 25%）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLI 工具 -->
+        <h2 id="cli" class="section-title">💻 CLI 工具使用說明</h2>
+
+        <div class="card">
+            <div class="card-header hand">專屬 CLI 快速指令</div>
+            <div class="card-body">
+                <div class="code-block">
+<span class="comment"># 查看幫助</span>
+<span class="command">./cli.sh help</span>
+
+<span class="comment"># 快速查詢分級</span>
+<span class="command">./cli.sh grade 2</span>    <span class="comment"># 查詢 Grade 2 處置</span>
+
+<span class="comment"># 查看處置 SOP</span>
+<span class="command">./cli.sh sop --grade 3</span>
+
+<span class="comment"># 題庫操作</span>
+<span class="command">./cli.sh quiz list</span>   <span class="comment"># 查看題庫統計</span>
+<span class="command">./cli.sh quiz random</span> <span class="comment"># 隨機抽題</span>
+
+<span class="comment"># 執行評測</span>
+<span class="command">./cli.sh eye run</span>     <span class="comment"># 完整評測流程</span>
+<span class="command">./cli.sh benchmark</span>   <span class="comment"># 快速評測</span>
+
+<span class="comment"># 世界模型預測</span>
+<span class="command">./cli.sh heart predict "口腔黏膜炎照護趨勢"</span>
+                </div>
+
+                <div class="info-box info" style="margin-top: 20px;">
+                    <strong>💡 HTTPS Proxy 支援：</strong>CLI 會自動偵測並配置 Proxy 環境，解決 OpenRouter API 在受限網路環境下的使用問題。
+                </div>
+            </div>
+        </div>
+
+        <!-- 參考資料 -->
+        <h2 id="reference" class="section-title">📚 參考資料</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">國際指引與標準</h4>
+                <ol>
+                    <li><strong>NCBI StatPearls - Oral Mucositis</strong><br>
+                        <a href="https://www.ncbi.nlm.nih.gov/books/NBK565848/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK565848/</a></li>
+                    <li><strong>MASCC/ISOO Clinical Practice Guidelines (2020)</strong><br>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/32786044/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/32786044/</a></li>
+                    <li><strong>MASCC Mucositis Assessment Guidance (2024)</strong><br>
+                        <a href="https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(24)00254-2/" target="_blank">The Lancet eClinicalMedicine</a></li>
+                    <li><strong>WHO/RTOG/CTCAE Concordance Study (2021)</strong><br>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/33788003/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33788003/</a></li>
+                </ol>
+
+                <h4 style="color: var(--primary); margin: 25px 0 15px;">台灣醫學中心資源</h4>
+                <ul>
+                    <li>臺北榮民總醫院護理部健康e點通 - 化學治療病人口腔黏膜之照護</li>
+                    <li>臺中榮民總醫院 - 癌症病人口腔黏膜炎照護須知</li>
+                    <li>台大兒童醫院 - 癌症病人口腔黏膜炎臨床照護指引（2011）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>口腔黏膜炎 AI 知識庫成果報告</strong></p>
+            <p>零幻覺四部曲：耳 👂 眼 👁️ 手 🤲 心 ❤️</p>
+            <p>報告生成時間：2026-01-26</p>
+            <p style="margin-top: 15px; color: #adb5bd;">
+                ⚠️ 免責聲明：本報告僅供參考，臨床決策請諮詢專業醫療人員。
+            </p>
+        </div>
+    </div>
+</body>
+</html>

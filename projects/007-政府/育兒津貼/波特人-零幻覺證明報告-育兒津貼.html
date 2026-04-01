@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>波特人-零幻覺證明報告｜育兒津貼 AI 模型評測</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --gold: #f59e0b;
+      --silver: #6b7280;
+      --bronze: #b45309;
+      --success: #10b981;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+
+    .brand {
+      text-align: left;
+    }
+
+    .brand h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    header h2 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .report-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      padding: 48px 0;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .stat-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    .rank-1 { background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), transparent); }
+    .rank-2 { background: linear-gradient(90deg, rgba(107, 114, 128, 0.1), transparent); }
+    .rank-3 { background: linear-gradient(90deg, rgba(180, 83, 9, 0.1), transparent); }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-gold {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-silver {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .badge-bronze {
+      background: #fed7aa;
+      color: #9a3412;
+    }
+
+    .badge-fail {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Progress bars */
+    .progress-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* Comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .model-card {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .model-header {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .model-name {
+      font-weight: 600;
+    }
+
+    .model-score {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .model-content {
+      padding: 16px 20px;
+      font-size: 14px;
+      max-height: 300px;
+      overflow-y: auto;
+      background: #f8fafc;
+    }
+
+    .model-content p {
+      margin-bottom: 12px;
+    }
+
+    .model-footer {
+      padding: 12px 20px;
+      background: white;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      background: #e0e7ff;
+      color: #3730a3;
+      border-radius: 4px;
+    }
+
+    .tag-good { background: #d1fae5; color: #065f46; }
+    .tag-bad { background: #fee2e2; color: #991b1b; }
+
+    /* Impact Chart */
+    .impact-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .impact-model {
+      width: 180px;
+      font-weight: 500;
+    }
+
+    .impact-bars {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .impact-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .impact-bar-label {
+      width: 60px;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .impact-bar {
+      flex: 1;
+      height: 20px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .impact-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .impact-bar-offline { background: #94a3b8; }
+    .impact-bar-online { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+
+    .impact-change {
+      width: 100px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .impact-positive { color: var(--success); }
+    .impact-negative { color: var(--danger); }
+
+    /* Nine Dimensions */
+    .dimension-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .dimension-header {
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .dimension-cell {
+      padding: 12px 4px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .score-high { background: #d1fae5; color: #065f46; }
+    .score-mid { background: #fef3c7; color: #92400e; }
+    .score-low { background: #fee2e2; color: #991b1b; }
+
+    /* Question Box */
+    .question-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+      border-left: 4px solid var(--primary);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .question-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .reference-answer {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .reference-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #15803d;
+      margin-bottom: 8px;
+    }
+
+    /* Highlights */
+    .highlight {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .highlight-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .highlight-list {
+      list-style: none;
+    }
+
+    .highlight-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .highlight-list li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: white;
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dimension-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .report-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .impact-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .impact-model {
+        width: 100%;
+      }
+
+      .impact-change {
+        width: 100%;
+        text-align: left;
+        margin-top: 8px;
+      }
+    }
+
+    @media print {
+      header {
+        padding: 30px 0;
+      }
+      .card {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">🤖</div>
+      <div class="brand">
+        <h1>波特人</h1>
+        <div class="brand-sub">零幻覺證明報告</div>
+      </div>
+    </div>
+    <h2>育兒津貼 AI 模型評測報告</h2>
+    <div class="report-meta">
+      <span>📅 評測日期：2026-01-27</span>
+      <span>📊 評測模型：8 個</span>
+      <span>❓ 題庫題數：25 題</span>
+      <span>✅ 評審模型：Gemini 3 Flash</span>
+    </div>
+  </div>
+</header>
+
+<!-- Executive Summary -->
+<section>
+  <div class="container">
+    <h2 class="section-title">評測摘要</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">8</div>
+        <div class="stat-label">受測模型數</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">評測批次</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">🥇 1</div>
+        <div class="stat-label">金標認證</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">+50%</div>
+        <div class="stat-label">網路搜尋平均提升</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-title">🎯 關鍵發現</div>
+      <ul class="highlight-list">
+        <li>
+          <span class="highlight-icon">1</span>
+          <span><strong>Gemini 3 Flash Preview</strong> 是唯一在無網路評測中達到金標的模型，顯示其內建知識庫對台灣政策資訊最為完整</span>
+        </li>
+        <li>
+          <span class="highlight-icon">2</span>
+          <span><strong>網路搜尋對專業領域至關重要</strong>：開啟網路搜尋後，所有模型平均提升 50%，Ministral 8B 更提升高達 130%</span>
+        </li>
+        <li>
+          <span class="highlight-icon">3</span>
+          <span><strong>小模型也能達標</strong>：有網路支援下，Ministral 8B（80億參數）也能獲得銅標認證，性價比極高</span>
+        </li>
+        <li>
+          <span class="highlight-icon">4</span>
+          <span><strong>專業領域需要即時資訊</strong>：育兒津貼政策變動頻繁，模型內建知識容易過時，必須搭配網路搜尋才能確保準確性</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Batch 1 Ranking -->
+<section style="background: white;">
+  <div class="container">
+    <h2 class="section-title">Batch 1：無網路評測（測試模型內建知識）</h2>
+
+    <div class="card">
+      <p style="color: var(--text-light); margin-bottom: 20px;">
+        此批次測試各模型在<strong>不使用網路搜尋</strong>的情況下，僅依靠訓練時學習的知識回答育兒津貼問題。
+        這反映模型對台灣在地政策的內建知識完整度。
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>模型</th>
+            <th>平均分數</th>
+            <th>百分比</th>
+            <th>等級認證</th>
+            <th>平均回應時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rank-1">
+            <td><strong>🥇 1</strong></td>
+            <td><strong>Gemini 3 Flash Preview</strong></td>
+            <td>86/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 95.6%;"></div>
+              </div>
+              95.6%
+            </td>
+            <td><span class="badge badge-gold">🥇 金標</span></td>
+            <td>6,558ms</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Claude Sonnet 4</td>
+            <td>56/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 62.2%;"></div>
+              </div>
+              62.2%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>7,996ms</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Claude Haiku 4.5</td>
+            <td>54/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 60%;"></div>
+              </div>
+              60%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>4,482ms</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Llama 4 Maverick</td>
+            <td>50.7/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 56.3%;"></div>
+              </div>
+              56.3%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>3,672ms</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Ministral 14B</td>
+            <td>47.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 52.6%;"></div>
+              </div>
+              52.6%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>9,955ms</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Devstral 2512</td>
+            <td>46.7/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 51.9%;"></div>
+              </div>
+              51.9%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>7,998ms</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>GPT OSS 120B</td>
+            <td>41.5/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 46.1%;"></div>
+              </div>
+              46.1%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>41,646ms</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Ministral 8B</td>
+            <td>29.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 32.6%;"></div>
+              </div>
+              32.6%
+            </td>
+            <td><span class="badge badge-fail">❌ 未達標</span></td>
+            <td>8,315ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Batch 2 Ranking -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Batch 2：有網路評測（測試搜尋整合能力）</h2>
+
+    <div class="card">
+      <p style="color: var(--text-light); margin-bottom: 20px;">
+        此批次測試各模型<strong>開啟網路搜尋功能</strong>後的表現。模型會即時搜尋最新資料來回答問題，
+        反映其整合外部知識的能力。
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>模型</th>
+            <th>平均分數</th>
+            <th>百分比</th>
+            <th>等級認證</th>
+            <th>平均回應時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rank-1">
+            <td><strong>🥇 1</strong></td>
+            <td><strong>Gemini 3 Flash Preview</strong></td>
+            <td>83/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 92.2%;"></div>
+              </div>
+              92.2%
+            </td>
+            <td><span class="badge badge-gold">🥇 金標</span></td>
+            <td>8,534ms</td>
+          </tr>
+          <tr class="rank-2">
+            <td><strong>🥈 2</strong></td>
+            <td><strong>Claude Sonnet 4</strong></td>
+            <td>74.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 82.6%;"></div>
+              </div>
+              82.6%
+            </td>
+            <td><span class="badge badge-silver">🥈 銀標</span></td>
+            <td>13,571ms</td>
+          </tr>
+          <tr class="rank-2">
+            <td><strong>🥈 3</strong></td>
+            <td><strong>GPT OSS 120B</strong></td>
+            <td>74/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 82.2%;"></div>
+              </div>
+              82.2%
+            </td>
+            <td><span class="badge badge-silver">🥈 銀標</span></td>
+            <td>38,212ms</td>
+          </tr>
+          <tr class="rank-2">
+            <td><strong>🥈 4</strong></td>
+            <td><strong>Llama 4 Maverick</strong></td>
+            <td>72/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 80%;"></div>
+              </div>
+              80%
+            </td>
+            <td><span class="badge badge-silver">🥈 銀標</span></td>
+            <td>9,090ms</td>
+          </tr>
+          <tr class="rank-2">
+            <td><strong>🥈 5</strong></td>
+            <td><strong>Claude Haiku 4.5</strong></td>
+            <td>72/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 80%;"></div>
+              </div>
+              80%
+            </td>
+            <td><span class="badge badge-silver">🥈 銀標</span></td>
+            <td>9,405ms</td>
+          </tr>
+          <tr class="rank-3">
+            <td><strong>🥉 6</strong></td>
+            <td><strong>Devstral 2512</strong></td>
+            <td>69.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 77%;"></div>
+              </div>
+              77%
+            </td>
+            <td><span class="badge badge-bronze">🥉 銅標</span></td>
+            <td>8,434ms</td>
+          </tr>
+          <tr class="rank-3">
+            <td><strong>🥉 7</strong></td>
+            <td><strong>Ministral 14B</strong></td>
+            <td>69.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 77%;"></div>
+              </div>
+              77%
+            </td>
+            <td><span class="badge badge-bronze">🥉 銅標</span></td>
+            <td>10,035ms</td>
+          </tr>
+          <tr class="rank-3">
+            <td><strong>🥉 8</strong></td>
+            <td><strong>Ministral 8B</strong></td>
+            <td>67.3/90</td>
+            <td>
+              <div class="progress-bar" style="width: 100px;">
+                <div class="progress-fill" style="width: 74.8%;"></div>
+              </div>
+              74.8%
+            </td>
+            <td><span class="badge badge-bronze">🥉 銅標</span></td>
+            <td>7,429ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Web Search Impact -->
+<section style="background: white;">
+  <div class="container">
+    <h2 class="section-title">網路搜尋效益分析</h2>
+
+    <div class="card">
+      <p style="color: var(--text-light); margin-bottom: 24px;">
+        比較各模型在無網路 vs 有網路評測中的表現差異，量化網路搜尋對回答品質的提升效果。
+      </p>
+
+      <div class="impact-row" style="border-bottom: 2px solid var(--border); padding-bottom: 16px; margin-bottom: 16px;">
+        <div class="impact-model" style="font-weight: 700; color: var(--text-light);">模型</div>
+        <div class="impact-bars" style="font-weight: 700; color: var(--text-light); text-align: center;">分數比較</div>
+        <div class="impact-change" style="font-weight: 700; color: var(--text-light);">提升幅度</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Ministral 8B</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 32.6%;">29.3</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 74.8%;">67.3</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+130%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">GPT OSS 120B</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 46.1%;">41.5</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 82.2%;">74.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+78%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Devstral 2512</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 51.9%;">46.7</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 77%;">69.3</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+48%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Ministral 14B</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 52.6%;">47.3</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 77%;">69.3</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+47%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Llama 4 Maverick</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 56.3%;">50.7</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 80%;">72.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+42%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Claude Haiku 4.5</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 60%;">54.0</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 80%;">72.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+33%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Claude Sonnet 4</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 62.2%;">56.0</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 82.6%;">74.3</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-positive">+33%</div>
+      </div>
+
+      <div class="impact-row">
+        <div class="impact-model">Gemini 3 Flash</div>
+        <div class="impact-bars">
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">無網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-offline" style="width: 95.6%;">86.0</div>
+            </div>
+          </div>
+          <div class="impact-bar-container">
+            <div class="impact-bar-label">有網路</div>
+            <div class="impact-bar">
+              <div class="impact-bar-fill impact-bar-online" style="width: 92.2%;">83.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-change impact-negative">-3%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Model Comparison -->
+<section>
+  <div class="container">
+    <h2 class="section-title">模型回答品質比較（實際範例）</h2>
+
+    <div class="question-box">
+      <div class="question-label">評測題目 #1（困難度：高）</div>
+      <div class="question-text">
+        小明家住台北市，太太剛生下雙胞胎（第一、二胎），小明本人有勞保，太太是家庭主婦無保險。
+        請問他們最多可以領到多少生育相關補助？（包含中央生育給付、台北市生育獎勵金）
+      </div>
+    </div>
+
+    <div class="reference-answer">
+      <div class="reference-label">✅ 標準答案</div>
+      <p>
+        <strong>中央生育給付 PLUS</strong>：雙胞胎可領 <strong>20 萬元</strong>（每胎 10 萬）。<br>
+        <strong>台北市生育獎勵金</strong>：第一胎 4 萬元（雙胞胎視為第一、二胎，但台北市獎勵金以「胎次」計算，雙胞胎算一胎），共 <strong>4 萬元</strong>。<br>
+        <strong>勞保生育給付</strong>：由於太太無勞保，無法由小明方請領（生育給付以母方為準）。<br>
+        <strong>總計：約 24 萬元</strong>
+      </p>
+    </div>
+
+    <div class="comparison-grid">
+
+      <!-- Gemini (High Score) -->
+      <div class="model-card">
+        <div class="model-header" style="background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), white);">
+          <div>
+            <div class="model-name">🥇 Gemini 3 Flash Preview</div>
+            <span class="badge badge-gold">金標</span>
+          </div>
+          <div class="model-score" style="color: var(--gold);">74/90</div>
+        </div>
+        <div class="model-content">
+          <p>根據您的情況，小明一家（設籍台北市、雙胞胎、先生有勞保、太太無保險）可以領取的生育相關補助主要分為<strong>「中央勞保生育給付」</strong>與<strong>「台北市生育獎勵金」</strong>兩大類。</p>
+          <p><strong>1. 勞保生育給付</strong>：若太太無勞保但有國保，可領國保生育給付。雙胞胎：19,761 元 × 2 個月 × 2 倍 = <strong>79,044 元</strong>。</p>
+          <p><strong>2. 台北市生育獎勵金</strong>：依胎次計算...</p>
+        </div>
+        <div class="model-footer">
+          <span class="tag tag-good">✓ 正確區分中央/地方</span>
+          <span class="tag tag-good">✓ 提到國保選項</span>
+          <span class="tag tag-good">✓ 計算邏輯清晰</span>
+        </div>
+      </div>
+
+      <!-- Claude Sonnet (Medium Score) -->
+      <div class="model-card">
+        <div class="model-header" style="background: linear-gradient(90deg, rgba(107, 114, 128, 0.1), white);">
+          <div>
+            <div class="model-name">🥈 Claude Sonnet 4</div>
+            <span class="badge badge-silver">銀標</span>
+          </div>
+          <div class="model-score" style="color: var(--silver);">47/90</div>
+        </div>
+        <div class="model-content">
+          <p>根據小明家的情況，我來幫您計算可以領取的生育相關補助：</p>
+          <p><strong>勞工保險生育給付（小明申請）</strong>：分娩當月前6個月平均月投保薪資 × 60日，雙胞胎加倍給付 = 120日。</p>
+          <p><strong>台北市生育獎勵金</strong>：第一胎約2-3萬元，第二胎約3-4萬元，雙胞胎總計約5-7萬元...</p>
+        </div>
+        <div class="model-footer">
+          <span class="tag tag-bad">✗ 誤判可由小明請領</span>
+          <span class="tag tag-good">✓ 金額區間正確</span>
+          <span class="tag">○ 未提國保選項</span>
+        </div>
+      </div>
+
+      <!-- Ministral 14B (Low Score) -->
+      <div class="model-card">
+        <div class="model-header" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), white);">
+          <div>
+            <div class="model-name">❌ Ministral 14B</div>
+            <span class="badge badge-fail">未達標</span>
+          </div>
+          <div class="model-score" style="color: var(--danger);">36/90</div>
+        </div>
+        <div class="model-content">
+          <p>根據您提供的資訊，以下是他們可以領取的生育相關補助：</p>
+          <p><strong>勞工保險生育給付</strong>：假設小明平均月投保薪資為 $50,000，則生育給付金額為：<br>
+          <strong style="color: var(--danger);">$50,000 × 60% × 120 天 = $3,600,000</strong>（約新台幣360萬元）</p>
+        </div>
+        <div class="model-footer">
+          <span class="tag tag-bad">✗ 嚴重計算錯誤</span>
+          <span class="tag tag-bad">✗ 金額荒謬（360萬）</span>
+          <span class="tag tag-bad">✗ 公式理解錯誤</span>
+        </div>
+      </div>
+
+      <!-- Claude Haiku -->
+      <div class="model-card">
+        <div class="model-header" style="background: linear-gradient(90deg, rgba(107, 114, 128, 0.1), white);">
+          <div>
+            <div class="model-name">🥈 Claude Haiku 4.5</div>
+            <span class="badge badge-silver">銀標</span>
+          </div>
+          <div class="model-score" style="color: var(--silver);">42/90</div>
+        </div>
+        <div class="model-content">
+          <p>根據最新的2026年生育補助政策：</p>
+          <p><strong>中央生育給付</strong>：2026年1月1日起，每名新生兒可獲得10萬元，雙胞胎可領 <strong>20萬元</strong>。</p>
+          <p><strong>台北市生育獎勵金</strong>：第一胎30,000元+雙胞胎加碼10,000元=40,000元，第二胎40,000元+10,000元=50,000元。總計 <strong>90,000元</strong>。</p>
+        </div>
+        <div class="model-footer">
+          <span class="tag tag-good">✓ 中央給付正確</span>
+          <span class="tag tag-bad">✗ 台北市計算有誤</span>
+          <span class="tag tag-good">✓ 格式清晰</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top: 32px; background: linear-gradient(135deg, #fef2f2 0%, #fef9c3 100%);">
+      <div class="card-title">⚠️ 重要發現：計算錯誤是最大風險</div>
+      <p>
+        從實際回答可見，低分模型（如 Ministral 14B）在計算題上出現<strong>嚴重錯誤</strong>（把 18 萬元算成 360 萬元），
+        這類「幻覺」若直接提供給民眾，可能造成誤解甚至損失。<br><br>
+        <strong>波特人建議</strong>：針對政府服務的 AI 應用，必須：
+      </p>
+      <ul style="margin-top: 12px; margin-left: 24px;">
+        <li>使用經過「零幻覺」認證的模型（至少銀標以上）</li>
+        <li>開啟網路搜尋功能以取得最新政策資訊</li>
+        <li>加入人工審核機制作為最後防線</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Nine Dimensions -->
+<section style="background: white;">
+  <div class="container">
+    <h2 class="section-title">九維度評分詳解</h2>
+
+    <div class="card">
+      <p style="color: var(--text-light); margin-bottom: 24px;">
+        波特人評分法採用「真新全快省準人安穩」九大維度，全方位評估 AI 回答品質。
+        以下為各模型在<strong>有網路評測</strong>中的九維度平均分數（1-10 分）。
+      </p>
+
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width: 150px;">模型</th>
+              <th style="text-align: center; background: linear-gradient(180deg, #fee2e2, #f3f4f6);">真<br><small>真實性</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #fef3c7, #f3f4f6);">新<br><small>新穎性</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #d1fae5, #f3f4f6);">全<br><small>完整性</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #dbeafe, #f3f4f6);">快<br><small>速度</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #e0e7ff, #f3f4f6);">省<br><small>節省</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #fce7f3, #f3f4f6);">準<br><small>精準度</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #f5d0fe, #f3f4f6);">人<br><small>人本</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #fed7aa, #f3f4f6);">安<br><small>安全性</small></th>
+              <th style="text-align: center; background: linear-gradient(180deg, #a7f3d0, #f3f4f6);">穩<br><small>穩定性</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank-1">
+              <td><strong>🥇 Gemini 3 Flash</strong></td>
+              <td style="text-align: center;" class="score-high">9.7</td>
+              <td style="text-align: center;" class="score-high">10</td>
+              <td style="text-align: center;" class="score-high">9.3</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;" class="score-high">9.7</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;" class="score-high">9.3</td>
+            </tr>
+            <tr>
+              <td>GPT OSS 120B</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-high">9.3</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">8.7</td>
+            </tr>
+            <tr>
+              <td>Llama 4 Maverick</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">8.3</td>
+            </tr>
+            <tr>
+              <td>Claude Sonnet 4</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">8.3</td>
+            </tr>
+            <tr>
+              <td>Claude Haiku 4.5</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-mid">6.7</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-high">9.3</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">8</td>
+            </tr>
+            <tr>
+              <td>Devstral 2512</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;" class="score-mid">6.3</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;" class="score-mid">6.7</td>
+              <td style="text-align: center;">8.3</td>
+            </tr>
+            <tr>
+              <td>Ministral 14B</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">8.7</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;">7</td>
+              <td style="text-align: center;">8.3</td>
+              <td style="text-align: center;">7</td>
+              <td style="text-align: center;">7.7</td>
+            </tr>
+            <tr>
+              <td>Ministral 8B</td>
+              <td style="text-align: center;">7.7</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-high">9</td>
+              <td style="text-align: center;">7.3</td>
+              <td style="text-align: center;" class="score-mid">6.7</td>
+              <td style="text-align: center;" class="score-mid">6.7</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;" class="score-mid">6.7</td>
+              <td style="text-align: center;">8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 20px; height: 20px; background: #d1fae5; border-radius: 4px;"></span>
+          <span style="font-size: 14px;">優秀 (≥9)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 20px; height: 20px; background: #fef3c7; border-radius: 4px;"></span>
+          <span style="font-size: 14px;">待改進 (<7)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 九維度說明</div>
+      <table>
+        <thead>
+          <tr>
+            <th>維度</th>
+            <th>權重</th>
+            <th>評分標準</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>真（Truth）</strong></td>
+            <td>1.2</td>
+            <td>資料來源可追溯、可驗證，無虛構內容</td>
+          </tr>
+          <tr>
+            <td><strong>新（New）</strong></td>
+            <td>0.8</td>
+            <td>使用最新資料，無過時政策或金額</td>
+          </tr>
+          <tr>
+            <td><strong>全（Complete）</strong></td>
+            <td>1.0</td>
+            <td>涵蓋所有必要資訊，流程完整無遺漏</td>
+          </tr>
+          <tr>
+            <td><strong>快（Speed）</strong></td>
+            <td>1.1</td>
+            <td>回應簡潔有效，言簡意賅不囉嗦</td>
+          </tr>
+          <tr>
+            <td><strong>省（Save）</strong></td>
+            <td>1.0</td>
+            <td>Token 使用效率高，無多餘廢話</td>
+          </tr>
+          <tr>
+            <td><strong>準（Accurate）</strong></td>
+            <td>1.2</td>
+            <td>答案正確無誤，計算精確，符合法規</td>
+          </tr>
+          <tr>
+            <td><strong>人（Human）</strong></td>
+            <td>0.9</td>
+            <td>以使用者角度撰寫，易於理解，有同理心</td>
+          </tr>
+          <tr>
+            <td><strong>安（Safe）</strong></td>
+            <td>1.3</td>
+            <td>無誤導性資訊，不造成法律或財務風險</td>
+          </tr>
+          <tr>
+            <td><strong>穩（Stable）</strong></td>
+            <td>1.1</td>
+            <td>答案邏輯一致，多次詢問結果穩定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Conclusion -->
+<section>
+  <div class="container">
+    <h2 class="section-title">結論與建議</h2>
+
+    <div class="card" style="background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);">
+      <div class="card-title">🎯 評測結論</div>
+      <table>
+        <thead>
+          <tr>
+            <th>場景</th>
+            <th>推薦模型</th>
+            <th>理由</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>最高準確度</strong></td>
+            <td>🥇 Gemini 3 Flash Preview</td>
+            <td>唯一金標認證，內建知識最完整</td>
+          </tr>
+          <tr>
+            <td><strong>性價比最佳</strong></td>
+            <td>🥈 Llama 4 Maverick</td>
+            <td>銀標認證，回應速度最快（3.6秒）</td>
+          </tr>
+          <tr>
+            <td><strong>預算有限</strong></td>
+            <td>🥉 Ministral 8B</td>
+            <td>銅標認證，小模型但有網路仍可達標</td>
+          </tr>
+          <tr>
+            <td><strong>企業級應用</strong></td>
+            <td>🥈 Claude Sonnet 4</td>
+            <td>銀標認證，安全性與人性化表現優秀</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 部署建議</div>
+      <ul style="list-style: none;">
+        <li style="padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px;">
+          <span style="color: var(--success); font-size: 20px;">✓</span>
+          <div>
+            <strong>必須開啟網路搜尋</strong><br>
+            <span style="color: var(--text-light);">育兒津貼政策變動頻繁，無網路的模型普遍無法達標。開啟網路可平均提升 50% 準確度。</span>
+          </div>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px;">
+          <span style="color: var(--success); font-size: 20px;">✓</span>
+          <div>
+            <strong>選用銀標以上認證模型</strong><br>
+            <span style="color: var(--text-light);">未達標模型可能出現嚴重計算錯誤（如 360 萬元的幻覺），對民眾造成誤導。</span>
+          </div>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px;">
+          <span style="color: var(--success); font-size: 20px;">✓</span>
+          <div>
+            <strong>加入人工審核機制</strong><br>
+            <span style="color: var(--text-light);">即使是金標模型也可能偶有失誤，建議對涉及金額計算的回答進行人工複核。</span>
+          </div>
+        </li>
+        <li style="padding: 12px 0; display: flex; gap: 12px;">
+          <span style="color: var(--success); font-size: 20px;">✓</span>
+          <div>
+            <strong>定期更新題庫與重新評測</strong><br>
+            <span style="color: var(--text-light);">每季度更新題庫以反映最新政策，確保模型持續符合標準。</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">波特人 BotRun</div>
+    <p>零幻覺證明報告｜讓 AI 回答經得起驗證</p>
+    <p style="margin-top: 16px;">
+      報告產生時間：2026-01-27｜評測標準：波特人九維度評分法 v1.0<br>
+      評測工具：零幻覺四部曲之眼（Eye Benchmark System）
+    </p>
+    <p style="margin-top: 24px; opacity: 0.5;">
+      © 2026 BotRun Inc. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

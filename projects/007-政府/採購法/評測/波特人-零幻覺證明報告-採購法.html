@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>波特人 - 零幻覺證明報告 | 政府採購法 AI 模型評測</title>
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1e40af;
+            --success: #059669;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --gold: #fbbf24;
+            --silver: #9ca3af;
+            --bronze: #d97706;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Executive Summary */
+        .summary-section {
+            background: white;
+            margin: -30px 20px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            position: relative;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .summary-card {
+            text-align: center;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .summary-card .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .summary-card .label {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Section */
+        section {
+            background: white;
+            margin: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--gray-800);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--gray-800);
+            margin: 25px 0 15px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        .rank-1 { background: linear-gradient(90deg, rgba(251,191,36,0.1) 0%, transparent 100%); }
+        .rank-2 { background: linear-gradient(90deg, rgba(156,163,175,0.1) 0%, transparent 100%); }
+        .rank-3 { background: linear-gradient(90deg, rgba(217,119,6,0.1) 0%, transparent 100%); }
+
+        .medal {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .medal-gold { background: var(--gold); color: white; }
+        .medal-silver { background: var(--silver); color: white; }
+        .medal-bronze { background: var(--bronze); color: white; }
+        .medal-default { background: var(--gray-200); color: var(--gray-600); }
+
+        .grade {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .grade-a { background: #dcfce7; color: #166534; }
+        .grade-b { background: #dbeafe; color: #1e40af; }
+        .grade-c { background: #fef3c7; color: #92400e; }
+        .grade-d { background: #f3f4f6; color: #4b5563; }
+        .grade-fail { background: #fee2e2; color: #dc2626; }
+
+        .status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .status-ok { background: #dcfce7; color: #166534; }
+        .status-error { background: #fee2e2; color: #dc2626; }
+        .status-partial { background: #fef3c7; color: #92400e; }
+
+        /* Progress bars */
+        .progress-bar {
+            background: var(--gray-200);
+            border-radius: 10px;
+            height: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: width 0.5s ease;
+        }
+
+        .progress-100 { background: linear-gradient(90deg, #059669, #10b981); }
+        .progress-66 { background: linear-gradient(90deg, #1a56db, #3b82f6); }
+        .progress-33 { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .progress-0 { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+        /* Impact analysis */
+        .impact-positive {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .impact-neutral {
+            color: var(--gray-600);
+        }
+
+        .impact-negative {
+            color: var(--danger);
+        }
+
+        /* Question example */
+        .question-box {
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .question-box .q-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .question-box .q-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray-800);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 10px 15px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .option.correct {
+            border-color: var(--success);
+            background: #dcfce7;
+        }
+
+        /* Model comparison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .model-card {
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .model-card.winner {
+            border-color: var(--success);
+        }
+
+        .model-card.loser {
+            border-color: var(--danger);
+        }
+
+        .model-header {
+            padding: 15px 20px;
+            background: var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .model-card.winner .model-header {
+            background: #dcfce7;
+        }
+
+        .model-card.loser .model-header {
+            background: #fee2e2;
+        }
+
+        .model-name {
+            font-weight: 600;
+        }
+
+        .model-body {
+            padding: 20px;
+        }
+
+        .model-answer {
+            background: var(--gray-50);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .model-card.winner .model-answer {
+            background: #f0fdf4;
+        }
+
+        .model-card.loser .model-answer {
+            background: #fef2f2;
+        }
+
+        /* Nine dimensions */
+        .dimension-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .dimension-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dimension-item {
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .dimension-item .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .dimension-item .name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .dimension-item .weight {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin: 5px 0;
+        }
+
+        .dimension-item .desc {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Insights */
+        .insight-box {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #eff6ff 0%, white 100%);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+        }
+
+        .insight-box.success {
+            background: linear-gradient(135deg, #f0fdf4 0%, white 100%);
+            border-left-color: var(--success);
+        }
+
+        .insight-box.warning {
+            background: linear-gradient(135deg, #fffbeb 0%, white 100%);
+            border-left-color: var(--warning);
+        }
+
+        .insight-icon {
+            font-size: 1.5rem;
+        }
+
+        .insight-content h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .insight-content p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-800);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .logo {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Print styles */
+        @media print {
+            header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            section {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--gray-200);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">波特人<span>.</span>零幻覺證明報告</div>
+            <div class="subtitle">政府採購法 AI 模型評測 - 多模型準確度驗證</div>
+            <div class="badge">🔬 零幻覺四部曲之眼（波排行）評測系統</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Executive Summary -->
+        <div class="summary-section">
+            <h2>📊 執行摘要</h2>
+            <p>本報告使用「零幻覺四部曲之眼」評測系統，針對政府採購法領域，對 8 個主流 AI 模型進行雙批次評測（無網路 vs 有網路），驗證各模型在專業法規問答上的準確度。</p>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="number">8</div>
+                    <div class="label">評測模型數</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">3×2</div>
+                    <div class="label">題目×批次</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">100%</div>
+                    <div class="label">最高正確率</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">+67%</div>
+                    <div class="label">最大網路效益</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Info -->
+        <section>
+            <h2>📋 評測資訊</h2>
+            <table>
+                <tr>
+                    <th style="width: 200px;">項目</th>
+                    <th>內容</th>
+                </tr>
+                <tr>
+                    <td><strong>評測領域</strong></td>
+                    <td>政府採購法</td>
+                </tr>
+                <tr>
+                    <td><strong>題庫來源</strong></td>
+                    <td>政府採購法 111 年基礎班教材（高品味複雜情境題）</td>
+                </tr>
+                <tr>
+                    <td><strong>原始題庫</strong></td>
+                    <td>3,743 題（公開資料：kiang/government_procurement_act）</td>
+                </tr>
+                <tr>
+                    <td><strong>高品味篩選</strong></td>
+                    <td>20 題（複雜度 ≥ 143 字元，含多步驟推理）</td>
+                </tr>
+                <tr>
+                    <td><strong>評測批次</strong></td>
+                    <td>Batch 1: 無網路（內建知識）、Batch 2: 有網路（搜尋整合）</td>
+                </tr>
+                <tr>
+                    <td><strong>評測時間</strong></td>
+                    <td>2026-01-27 07:59:55 (UTC+8)</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Batch 1 Results -->
+        <section>
+            <h2>📚 Batch 1: 無網路評測排行榜</h2>
+            <p style="color: var(--gray-600); margin-bottom: 20px;">測試模型內建知識，不使用網路搜尋功能</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">排名</th>
+                        <th>模型</th>
+                        <th style="width: 120px;">正確率</th>
+                        <th style="width: 100px;">正確/有效</th>
+                        <th style="width: 100px;">平均回應</th>
+                        <th style="width: 100px;">狀態</th>
+                        <th style="width: 80px;">等級</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="rank-1">
+                        <td><span class="medal medal-gold">1</span></td>
+                        <td><strong>DeepSeek V3</strong></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-66" style="width: 66%;">66%</div>
+                            </div>
+                        </td>
+                        <td>2/3</td>
+                        <td>2,191ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-b">🥈 B</span></td>
+                    </tr>
+                    <tr class="rank-1">
+                        <td><span class="medal medal-gold">1</span></td>
+                        <td><strong>Claude Sonnet 4</strong></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-66" style="width: 66%;">66%</div>
+                            </div>
+                        </td>
+                        <td>2/3</td>
+                        <td>1,147ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-b">🥈 B</span></td>
+                    </tr>
+                    <tr class="rank-3">
+                        <td><span class="medal medal-bronze">3</span></td>
+                        <td>Llama 4 Maverick</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-33" style="width: 33%;">33%</div>
+                            </div>
+                        </td>
+                        <td>1/3</td>
+                        <td>537ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">3</span></td>
+                        <td>Devstral Small</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-33" style="width: 33%;">33%</div>
+                            </div>
+                        </td>
+                        <td>1/3</td>
+                        <td>501ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">3</span></td>
+                        <td>Ministral 8B</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-33" style="width: 33%;">33%</div>
+                            </div>
+                        </td>
+                        <td>1/3</td>
+                        <td>517ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">6</span></td>
+                        <td>GPT-4.1 Nano</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-0" style="width: 5%;">0%</div>
+                            </div>
+                        </td>
+                        <td>0/3</td>
+                        <td>638ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">7</span></td>
+                        <td>Claude Haiku 4</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-0" style="width: 5%;">0%</div>
+                            </div>
+                        </td>
+                        <td>0/1</td>
+                        <td>229ms</td>
+                        <td><span class="status status-partial">部分錯誤</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">8</span></td>
+                        <td>Gemini 2.5 Flash</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-0" style="width: 5%;">-</div>
+                            </div>
+                        </td>
+                        <td>0/0</td>
+                        <td>184ms</td>
+                        <td><span class="status status-error">API 錯誤</span></td>
+                        <td><span class="grade grade-fail">❌ 失敗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <div class="insight-icon">💡</div>
+                <div class="insight-content">
+                    <h4>無網路評測洞察</h4>
+                    <p>在純粹依賴模型內建知識的情況下，DeepSeek V3 和 Claude Sonnet 4 並列第一（66%），顯示這兩個模型在台灣法規知識的訓練數據較為完整。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch 2 Results -->
+        <section>
+            <h2>🌐 Batch 2: 有網路評測排行榜</h2>
+            <p style="color: var(--gray-600); margin-bottom: 20px;">測試模型搜尋整合能力，使用 OpenRouter Web Plugin</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">排名</th>
+                        <th>模型</th>
+                        <th style="width: 120px;">正確率</th>
+                        <th style="width: 100px;">正確/有效</th>
+                        <th style="width: 100px;">平均回應</th>
+                        <th style="width: 100px;">狀態</th>
+                        <th style="width: 80px;">等級</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="rank-1">
+                        <td><span class="medal medal-gold">🥇</span></td>
+                        <td><strong>Llama 4 Maverick</strong></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-100" style="width: 100%;">100%</div>
+                            </div>
+                        </td>
+                        <td>3/3</td>
+                        <td>2,397ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-a">🥇 A</span></td>
+                    </tr>
+                    <tr class="rank-1">
+                        <td><span class="medal medal-gold">🥇</span></td>
+                        <td><strong>Devstral Small</strong></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-100" style="width: 100%;">100%</div>
+                            </div>
+                        </td>
+                        <td>3/3</td>
+                        <td>2,130ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-a">🥇 A</span></td>
+                    </tr>
+                    <tr class="rank-1">
+                        <td><span class="medal medal-gold">🥇</span></td>
+                        <td><strong>DeepSeek V3</strong></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-100" style="width: 100%;">100%</div>
+                            </div>
+                        </td>
+                        <td>3/3</td>
+                        <td>3,157ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-a">🥇 A</span></td>
+                    </tr>
+                    <tr class="rank-2">
+                        <td><span class="medal medal-silver">4</span></td>
+                        <td>Claude Sonnet 4</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-66" style="width: 66%;">66%</div>
+                            </div>
+                        </td>
+                        <td>2/3</td>
+                        <td>2,747ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-b">🥈 B</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">5</span></td>
+                        <td>GPT-4.1 Nano</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-33" style="width: 33%;">33%</div>
+                            </div>
+                        </td>
+                        <td>1/3</td>
+                        <td>2,771ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">5</span></td>
+                        <td>Ministral 8B</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-33" style="width: 33%;">33%</div>
+                            </div>
+                        </td>
+                        <td>1/3</td>
+                        <td>3,196ms</td>
+                        <td><span class="status status-ok">正常</span></td>
+                        <td><span class="grade grade-d">D</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">7</span></td>
+                        <td>Gemini 2.5 Flash</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-0" style="width: 5%;">-</div>
+                            </div>
+                        </td>
+                        <td>0/0</td>
+                        <td>197ms</td>
+                        <td><span class="status status-error">API 錯誤</span></td>
+                        <td><span class="grade grade-fail">❌ 失敗</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="medal medal-default">7</span></td>
+                        <td>Claude Haiku 4</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-0" style="width: 5%;">-</div>
+                            </div>
+                        </td>
+                        <td>0/0</td>
+                        <td>197ms</td>
+                        <td><span class="status status-error">API 錯誤</span></td>
+                        <td><span class="grade grade-fail">❌ 失敗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box success">
+                <div class="insight-icon">🎯</div>
+                <div class="insight-content">
+                    <h4>有網路評測洞察</h4>
+                    <p>啟用網路搜尋後，<strong>Llama 4 Maverick、Devstral Small、DeepSeek V3</strong> 三個模型均達成 100% 正確率，證明網路搜尋對專業法規問答有顯著幫助。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Web Search Impact -->
+        <section>
+            <h2>📈 網路搜尋效益分析</h2>
+            <p style="color: var(--gray-600); margin-bottom: 20px;">比較各模型在無網路與有網路情況下的表現差異</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>模型</th>
+                        <th style="width: 100px;">無網路</th>
+                        <th style="width: 100px;">有網路</th>
+                        <th style="width: 100px;">提升幅度</th>
+                        <th>效益評估</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Llama 4 Maverick</strong></td>
+                        <td>33%</td>
+                        <td>100%</td>
+                        <td class="impact-positive">+67%</td>
+                        <td><span class="grade grade-a">✅ 顯著提升</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Devstral Small</strong></td>
+                        <td>33%</td>
+                        <td>100%</td>
+                        <td class="impact-positive">+67%</td>
+                        <td><span class="grade grade-a">✅ 顯著提升</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V3</strong></td>
+                        <td>66%</td>
+                        <td>100%</td>
+                        <td class="impact-positive">+34%</td>
+                        <td><span class="grade grade-a">✅ 顯著提升</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-4.1 Nano</strong></td>
+                        <td>0%</td>
+                        <td>33%</td>
+                        <td class="impact-positive">+33%</td>
+                        <td><span class="grade grade-b">✅ 顯著提升</span></td>
+                    </tr>
+                    <tr>
+                        <td>Claude Sonnet 4</td>
+                        <td>66%</td>
+                        <td>66%</td>
+                        <td class="impact-neutral">0%</td>
+                        <td><span class="grade grade-d">無變化</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ministral 8B</td>
+                        <td>33%</td>
+                        <td>33%</td>
+                        <td class="impact-neutral">0%</td>
+                        <td><span class="grade grade-d">無變化</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box warning">
+                <div class="insight-icon">⚠️</div>
+                <div class="insight-content">
+                    <h4>重要發現</h4>
+                    <p>網路搜尋對部分模型（Llama 4、Devstral、DeepSeek）效益顯著（+34%~+67%），但對 Claude Sonnet 和 Ministral 8B 無明顯影響。這顯示<strong>模型整合搜尋結果的能力差異很大</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Example -->
+        <section>
+            <h2>🔍 評測題目範例</h2>
+            <p style="color: var(--gray-600); margin-bottom: 20px;">以下展示本次評測使用的高品味複雜情境題</p>
+
+            <div class="question-box">
+                <span class="q-label">題目 1 - 環保產品優先決標（複雜度：202 字元）</span>
+                <p class="q-text">
+                    機關依採購法第96條第1項優先採購環保產品，且於招標文件載明依「機關優先採購環境保護產品辦法」第12條第1項第2款規定於價差優惠10%以內優先決標予環保產品廠商。現最低標A廠商為非環保產品廠商報價170萬元已進入底價200萬元，次低標B廠商報價180萬元為第3類環保產品廠商，第3低標C廠商報價185萬元為第2類環保產品廠商，第4低標D廠商報價188萬元第1類環保產品廠商，則機關應優先決標予何廠商？
+                </p>
+                <div class="options-grid">
+                    <div class="option">【1】A廠商</div>
+                    <div class="option">【2】B廠商</div>
+                    <div class="option correct">【3】C廠商 ✓ 正確答案</div>
+                    <div class="option">【4】D廠商</div>
+                </div>
+            </div>
+
+            <h3>📊 各模型回答比較</h3>
+            <div class="comparison-grid">
+                <div class="model-card winner">
+                    <div class="model-header">
+                        <span class="model-name">✅ Claude Sonnet 4</span>
+                        <span class="grade grade-a">正確</span>
+                    </div>
+                    <div class="model-body">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 10px;">無網路評測回答：</p>
+                        <div class="model-answer">
+                            <strong>3</strong>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--success); margin-top: 10px;">✓ 正確判斷第2類環保產品優先於第3類</p>
+                    </div>
+                </div>
+
+                <div class="model-card loser">
+                    <div class="model-header">
+                        <span class="model-name">❌ GPT-4.1 Nano</span>
+                        <span class="grade grade-fail">錯誤</span>
+                    </div>
+                    <div class="model-body">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 10px;">無網路評測回答：</p>
+                        <div class="model-answer">
+                            <strong>2</strong>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--danger); margin-top: 10px;">✗ 誤選B廠商，未理解環保產品類別優先順序</p>
+                    </div>
+                </div>
+
+                <div class="model-card winner">
+                    <div class="model-header">
+                        <span class="model-name">✅ Llama 4 Maverick（有網路）</span>
+                        <span class="grade grade-a">正確</span>
+                    </div>
+                    <div class="model-body">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 10px;">有網路評測回答：</p>
+                        <div class="model-answer">
+                            <strong>3</strong>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--success); margin-top: 10px;">✓ 網路搜尋後正確判斷</p>
+                    </div>
+                </div>
+
+                <div class="model-card loser">
+                    <div class="model-header">
+                        <span class="model-name">❌ Llama 4 Maverick（無網路）</span>
+                        <span class="grade grade-fail">錯誤</span>
+                    </div>
+                    <div class="model-body">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 10px;">無網路評測回答：</p>
+                        <div class="model-answer">
+                            <strong>2</strong>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--danger); margin-top: 10px;">✗ 無網路時答錯，說明內建知識不足</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-icon">📝</div>
+                <div class="insight-content">
+                    <h4>題目分析</h4>
+                    <p>此題需要理解：(1) 環保產品類別優先順序（第1類 > 第2類 > 第3類）(2) 價差優惠 10% 的計算 (3) 多個條件的綜合判斷。這類複雜情境題能有效區分模型的法規理解能力。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nine Dimensions -->
+        <section>
+            <h2>📊 波特人九維度評分法</h2>
+            <p style="color: var(--gray-600); margin-bottom: 20px;">本次評測採用「真新全快省準人安穩」九維度評分框架</p>
+
+            <div class="dimension-grid">
+                <div class="dimension-item">
+                    <div class="icon">✓</div>
+                    <div class="name">真</div>
+                    <div class="weight">權重：1.2</div>
+                    <div class="desc">真實性、可追溯性</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">🆕</div>
+                    <div class="name">新</div>
+                    <div class="weight">權重：0.8</div>
+                    <div class="desc">新穎性、最新資料</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">📦</div>
+                    <div class="name">全</div>
+                    <div class="weight">權重：1.0</div>
+                    <div class="desc">完整性、涵蓋範圍</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">⚡</div>
+                    <div class="name">快</div>
+                    <div class="weight">權重：1.1</div>
+                    <div class="desc">回應速度、效率</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">💰</div>
+                    <div class="name">省</div>
+                    <div class="weight">權重：1.0</div>
+                    <div class="desc">成本效益、Token效率</div>
+                </div>
+                <div class="dimension-item" style="background: linear-gradient(135deg, #dbeafe 0%, white 100%);">
+                    <div class="icon">🎯</div>
+                    <div class="name">準</div>
+                    <div class="weight">權重：1.2 ⭐ 本次主要指標</div>
+                    <div class="desc">精準度、正確率</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">👤</div>
+                    <div class="name">人</div>
+                    <div class="weight">權重：0.9</div>
+                    <div class="desc">人性化、易理解</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">🛡️</div>
+                    <div class="name">安</div>
+                    <div class="weight">權重：1.3</div>
+                    <div class="desc">安全性、無誤導</div>
+                </div>
+                <div class="dimension-item">
+                    <div class="icon">🔄</div>
+                    <div class="name">穩</div>
+                    <div class="weight">權重：1.1</div>
+                    <div class="desc">穩定性、可重現</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusions -->
+        <section>
+            <h2>💡 結論與建議</h2>
+
+            <div class="insight-box success">
+                <div class="insight-icon">🏆</div>
+                <div class="insight-content">
+                    <h4>最佳模型推薦</h4>
+                    <p><strong>有網路環境：</strong>Llama 4 Maverick、Devstral Small、DeepSeek V3（均達 100%）<br>
+                    <strong>無網路環境：</strong>DeepSeek V3、Claude Sonnet 4（均達 66%）</p>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-icon">📊</div>
+                <div class="insight-content">
+                    <h4>關鍵發現</h4>
+                    <p>1. 網路搜尋對專業法規問答效益顯著，部分模型提升幅度達 67%<br>
+                    2. 模型整合搜尋結果的能力差異很大，Claude Sonnet 反而未能從網路搜尋獲益<br>
+                    3. 高品味複雜情境題確實能區分模型能力差異（標準差 > 20%）</p>
+                </div>
+            </div>
+
+            <div class="insight-box warning">
+                <div class="insight-icon">🔧</div>
+                <div class="insight-content">
+                    <h4>改善建議</h4>
+                    <p>採購法等專業領域建議搭配「零幻覺四部曲之手（波孵化）」進行組織技能孵化，透過持續累積高品味題庫與模型微調，進一步提升準確率至 90% 以上。</p>
+                </div>
+            </div>
+
+            <table style="margin-top: 30px;">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>本次評測結果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>評測模型數</td>
+                        <td>8 個</td>
+                    </tr>
+                    <tr>
+                        <td>有效評測模型</td>
+                        <td>6 個（Gemini、Claude Haiku API 異常）</td>
+                    </tr>
+                    <tr>
+                        <td>最高正確率（無網路）</td>
+                        <td>66%（DeepSeek V3、Claude Sonnet 4）</td>
+                    </tr>
+                    <tr>
+                        <td>最高正確率（有網路）</td>
+                        <td>100%（Llama 4、Devstral、DeepSeek）</td>
+                    </tr>
+                    <tr>
+                        <td>網路搜尋最大效益</td>
+                        <td>+67%（Llama 4 Maverick、Devstral Small）</td>
+                    </tr>
+                    <tr>
+                        <td>高品味題庫鑑別度</td>
+                        <td>✅ 通過（正確率分布 0%~100%）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="logo">波特人<span>.</span></div>
+            <p>零幻覺四部曲之眼（波排行）v1.0</p>
+            <p style="margin-top: 10px;">報告生成時間：2026-01-27 08:00 (UTC+8)</p>
+            <p style="margin-top: 20px; font-size: 0.8rem;">© 2026 波特人 BOTRUN. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
