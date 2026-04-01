@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-01T05:00:01.258Z
+> 生成時間：2026-04-01T07:08:08.379Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 93 個項目，按發佈日期降序排列。
@@ -19,8 +19,8 @@
 - 大模型教小模型：Opus 4.6 閱卷五次迭代，65→91 分穩定上線
 - 合成資料零風險：全程虛構個案，不碰真實機密
 
-- [線上版](https://skill-incubation-sprint-deploy.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://skill-incubation-sprint-deploy.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/skill-incubation-sprint.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/skill-incubation-sprint.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-04-01T20:00:00+08:00
 - 標籤：Design Sprint、AI 技能、觀護人案例
@@ -36,8 +36,8 @@
 - 五大黃金原則：< 500 行、3+ 範例、負面範例、分階段自檢、重複 > 3 次就建 Skill
 - 來源：Anthropic 官方文件 + DEV.to + Builder.io 50 Tips + awesome-claude-code 社群
 
-- [線上版](https://skill-best-practices.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://skill-best-practices.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/skill-best-practices.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/skill-best-practices.html/llms.txt): 該專案的 llms.txt
 - 類型：研究筆記
 - 發佈日期：2026-04-01T12:02:46+08:00
 - 標籤：Skill 設計、Claude Code、最佳實踐
@@ -53,8 +53,8 @@
 - 兩階段架構：Phase 1 雲端零機敏寫劇本 → Phase 2 地端機敏執行任務
 - 109x 成本差距 + 0 資料外洩 + 無限次 Prompt 複用
 
-- [線上版](https://zero-touch-prompt.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://zero-touch-prompt.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/zero-touch-prompt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zero-touch-prompt.html/llms.txt): 該專案的 llms.txt
 - 類型：Prompt 工程
 - 發佈日期：2026-03-31T15:10:00+08:00
 - 標籤：零接觸提示、大小模型協作、機敏零外洩
@@ -70,8 +70,8 @@
 - 自由實驗塔設計：開放探索 6 種變化 + 2 個隱藏組合，創造力驅力核心
 - GAN 式設計迭代：獨立批評家角色消除設計師自評偏差（32% → 0%）
 
-- [線上版](https://water-transformation-game.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://water-transformation-game.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/water-transformation-game.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/water-transformation-game.html/llms.txt): 該專案的 llms.txt
 - 類型：教育遊戲
 - 發佈日期：2026-03-31T13:30:00+08:00
 - 標籤：水的三態、遊戲化學習、八角框架
@@ -87,8 +87,8 @@
 - $9 vs $200 品質差距：單一代理遊戲核心壞掉，三代理框架真的能玩
 - Opus 4.6 簡化：移除 Sprint 分解和上下文重置，評估器僅在能力邊緣任務才值得用
 
-- [線上版](https://anthropic-harness-gan.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://anthropic-harness-gan.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/anthropic-harness-gan.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/anthropic-harness-gan.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 工程
 - 發佈日期：2026-03-30T14:42:21+08:00
 - 標籤：生成對抗、框架設計、Anthropic
@@ -104,8 +104,8 @@
 - 14B 當師父 18 分、當徒弟 87 分 — 擅長照做不擅長設計，師徒需要不同能力
 - 結論：師父用最強的（Claude），徒弟選最快最便宜的（14B 都能 87-94 分）
 
-- [線上版](https://master-apprentice-v2.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://master-apprentice-v2.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/master-apprentice-v2.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/master-apprentice-v2.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-29T10:52:24+08:00
 - 標籤：師徒模型、Meta Prompt、公文 AI
@@ -121,8 +121,8 @@
 - 四大原則：給模板不給規則、禁止+替代、明確隱含關係、封閉式輸出
 - 九步可複製 SOP：適用於合約/報告/申請書等所有有固定格式的任務
 
-- [線上版](https://master-apprentice-dag.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://master-apprentice-dag.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/master-apprentice-dag.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/master-apprentice-dag.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-29T09:28:20+08:00
 - 標籤：師徒模型、DAG Prompt、公文 AI
@@ -138,8 +138,8 @@
 - 目標層級串聯：觀護 AI 知道自己在「降低再犯率」目標下，決策自動對齊
 - 主管儀表板：花多少錢、有沒有出狀況、AI 越來越聰明嗎 — 三個指標一眼看
 
-- [線上版](https://lobster-agentic-gov.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://lobster-agentic-gov.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/lobster-agentic-gov.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lobster-agentic-gov.html/llms.txt): 該專案的 llms.txt
 - 類型：政府 AI 治理
 - 發佈日期：2026-03-29T09:02:00+08:00
 - 標籤：治理、波龍蝦、Agentic AI
@@ -155,8 +155,8 @@
 - 自動版本檢查 + 遙測 + 跨 Agent 可攜（Claude/Codex/Gemini/Cursor）
 - 品質由流程保證而非 AI 自覺 — 角色隔離 + 階段閘門
 
-- [線上版](https://gstack-deep-dive.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://gstack-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html/llms.txt): 該專案的 llms.txt
 - 類型：原理拆解
 - 發佈日期：2026-03-29T08:25:43+08:00
 - 標籤：GStack、原始碼、原理
@@ -172,8 +172,8 @@
 - 11 種模型專用 tool call 解析器（Decorator Registry 模式）
 - 記憶注入安全掃描防 prompt injection + SSH backdoor + 憑證外洩
 
-- [線上版](https://hermes-deep-dive.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://hermes-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/hermes-deep-dive.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hermes-deep-dive.html/llms.txt): 該專案的 llms.txt
 - 類型：原理拆解
 - 發佈日期：2026-03-29T08:25:43+08:00
 - 標籤：Hermes、原始碼、原理
@@ -189,8 +189,8 @@
 - CSO 理論：description 描述 workflow 時 Claude 跳過正文（Description 陷阱）
 - 技能本身用 RED-GREEN-REFACTOR 測試，6 次迭代封殺 10+ 種合理化藉口
 
-- [線上版](https://superpowers-deep-dive.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://superpowers-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/superpowers-deep-dive.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/superpowers-deep-dive.html/llms.txt): 該專案的 llms.txt
 - 類型：原理拆解
 - 發佈日期：2026-03-29T08:25:43+08:00
 - 標籤：Superpowers、原始碼、原理
@@ -206,8 +206,8 @@
 - 10 種 Agent 適配器統一 execute() 介面（Claude/Codex/Cursor/Gemini/OpenClaw/Hermes...）
 - 不可變稽核三層：activity_log + run_events + config_revisions + SHA-256 完整性
 
-- [線上版](https://paperclip-deep-dive.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://paperclip-deep-dive.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/paperclip-deep-dive.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/paperclip-deep-dive.html/llms.txt): 該專案的 llms.txt
 - 類型：原理拆解
 - 發佈日期：2026-03-29T08:25:43+08:00
 - 標籤：Paperclip、原始碼、原理
@@ -223,8 +223,8 @@
 - 五個泛化 prompt 技巧：術語表、思考鏈、結構化輸出、具體數字、去除混淆
 - 公文方向是零容錯生死線：設備費→業務費寫反整份報廢
 
-- [線上版](https://nchc-govdoc-model-benchmark.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://nchc-govdoc-model-benchmark.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/nchc-govdoc-model-benchmark.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nchc-govdoc-model-benchmark.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 評比
 - 發佈日期：2026-03-29T08:15:57+08:00
 - 標籤：評比、NCHC、公文
@@ -240,8 +240,8 @@
 - Hacker News 評價兩極：一半天才一半貨物崇拜，Mo Bitar 稱「just prompts」
 - 30 秒安裝，真正價值是「在寫之前做更少錯誤決定」而非「寫更多程式」
 
-- [線上版](https://gstack-real-cases.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://gstack-real-cases.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/gstack-real-cases.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gstack-real-cases.html/llms.txt): 該專案的 llms.txt
 - 類型：真實案例
 - 發佈日期：2026-03-29T08:03:02+08:00
 - 標籤：GStack、開源、案例研究
@@ -257,8 +257,8 @@
 - @glitch_ 用 11 個 Agent 蜂群做成長實驗，每次週期僅 $0.009
 - 記憶準確度仍不完美，但維護者回報 Bug 當天就修好
 
-- [線上版](https://hermes-agent-real-cases.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://hermes-agent-real-cases.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/hermes-agent-real-cases.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hermes-agent-real-cases.html/llms.txt): 該專案的 llms.txt
 - 類型：真實案例
 - 發佈日期：2026-03-29T08:03:02+08:00
 - 標籤：Hermes、開源、案例研究
@@ -274,8 +274,8 @@
 - 部分 HN 用戶認為原生 Plan Mode 已夠用，Superpowers 是「旅程中一站」
 - 核心價值：TDD 強制紀律 + git worktree 隔離 + 子代理人平行開發
 
-- [線上版](https://superpowers-real-cases.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://superpowers-real-cases.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/superpowers-real-cases.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/superpowers-real-cases.html/llms.txt): 該專案的 llms.txt
 - 類型：真實案例
 - 發佈日期：2026-03-29T08:03:02+08:00
 - 標籤：Superpowers、開源、案例研究
@@ -291,8 +291,8 @@
 - Tommaso Nervegna 三實戰配置：晨間戰情室、POC 工廠、目標對齊稽核員
 - 「零人公司」是誤導 — 實際是人類治理 AI 系統，做更策略性的工作
 
-- [線上版](https://paperclip-real-cases.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://paperclip-real-cases.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/paperclip-real-cases.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/paperclip-real-cases.html/llms.txt): 該專案的 llms.txt
 - 類型：真實案例
 - 發佈日期：2026-03-29T08:03:02+08:00
 - 標籤：Paperclip、開源、案例研究
@@ -308,8 +308,8 @@
 - Paperclip：零人公司調度系統，多 Agent 工單 + Token 成本追蹤（~33K stars）
 - 四專案合計 21 萬顆 GitHub stars，2026 年獨立開發者 = 整支團隊
 
-- [線上版](https://opensource-ai-agents-2026.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://opensource-ai-agents-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/opensource-ai-agents-2026.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/opensource-ai-agents-2026.html/llms.txt): 該專案的 llms.txt
 - 類型：開源工具
 - 發佈日期：2026-03-29T07:36:44+08:00
 - 標籤：AI Agent、開源、Claude Code
@@ -325,8 +325,8 @@
 - 補丁 3 每輪重開市集：Lead prompt 加迴圈邏輯，每輪重新收集配對，只用 team_message 定向送
 - 省 48% tokens 更準：固定廣播 6 條線 vs DyTopo 每輪只花 1-2 條精準配對線
 
-- [線上版](https://dytopo-opencode-impl.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://dytopo-opencode-impl.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/dytopo-opencode-impl.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/dytopo-opencode-impl.html/llms.txt): 該專案的 llms.txt
 - 類型：實作指南
 - 發佈日期：2026-03-28T23:53:39+08:00
 - 標籤：動態拓撲、OpenCode、實作
@@ -342,8 +342,8 @@
 - 省 48% tokens 還更準：比 AgentScope 省一半 token 消耗，延遲快 44%
 - 門檻 τ 倒 U 型：程式碼 0.3、數學 0.4 最佳，太鬆噪音多、太緊資訊斷
 
-- [線上版](https://dytopo-multi-agent-routing.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://dytopo-multi-agent-routing.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/dytopo-multi-agent-routing.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/dytopo-multi-agent-routing.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 論文
 - 發佈日期：2026-03-28T23:21:38+08:00
 - 標籤：動態拓撲、多 Agent、語義配對
@@ -359,8 +359,8 @@
 - 8B 絞殺 120B：Qwen3-8B + DyTopo 在 OmniMATH 拿 51.43% 勝過 GPT-oss-120B 的 41.43%
 - 康威定律反轉：AI 探索出的最優資訊組織形態可能反向重塑人類組織架構
 
-- [線上版](https://dytopo-dynamic-topology.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://dytopo-dynamic-topology.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 論文
 - 發佈日期：2026-03-28T23:26:35+08:00
 - 標籤：動態拓撲、多 Agent、Scaling Law
@@ -376,8 +376,8 @@
 - 10 人孵化期：資訊透明、全員參與決策是最佳狀態，團隊膨脹帶來妖魔化
 - 金繼山哲學：傷痕不用遮，34 人小團隊、只拿需要的錢、優化控制權而非資金數量
 
-- [線上版](https://blizzard-jeff-kaplan.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://blizzard-jeff-kaplan.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/blizzard-jeff-kaplan.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/blizzard-jeff-kaplan.html/llms.txt): 該專案的 llms.txt
 - 類型：洞見
 - 發佈日期：2026-03-28T23:09:42+08:00
 - 標籤：遊戲產業、領導力、組織衰落
@@ -393,8 +393,8 @@
 - 遠端通道除錯 (SSH Tunnel)：真實環境迭代，BDD 五情境全過才 sync 本地才 commit
 - 呼應 Jeremy Howard 批判：AI 的工作是啟發人類建立心智模型，不是取代人類思考
 
-- [線上版](https://antifragile-prompt-eng.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://antifragile-prompt-eng.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/antifragile-prompt-eng.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/antifragile-prompt-eng.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-28T22:16:32+08:00
 - 標籤：反脆弱、心智模型、提示工程
@@ -410,8 +410,8 @@
 - ULMFit 三階段架構：Howard & Ruder (2018) 一張 2080 Ti 就打破所有 SOTA 紀錄
 - 終極風險不是 AI 覺醒，而是科技巨頭利用恐慌壟斷技術、集中權力
 
-- [線上版](https://vibe-coding-jeremy-howard.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://vibe-coding-jeremy-howard.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/vibe-coding-jeremy-howard.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/vibe-coding-jeremy-howard.html/llms.txt): 該專案的 llms.txt
 - 類型：深度解讀
 - 發佈日期：2026-03-28T21:59:05+08:00
 - 標籤：心智模型、Vibe Coding、METR 研究
@@ -427,8 +427,8 @@
 - 實戰驗證：K3s per-user Pod 改造 10 輪迭代 20 分鐘完成，原估 2 小時
 - 核心心法：遠端是戰場、本地是淨室，驗證通過的程式碼才回到 git
 
-- [線上版](https://claude-code-ssh-tunnel-method.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://claude-code-ssh-tunnel-method.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-ssh-tunnel-method.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-ssh-tunnel-method.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-27T21:20:59+08:00
 - 標籤：SSH Tunnel、秒級迭代、GCP VM
@@ -444,8 +444,8 @@
 - 苦澀的教訓（Rich Sutton）：人類巧思在絕對算力面前不值一提
 - 未來屬於會編排 AI 軍團的架構師，不是手寫程式碼的工匠
 
-- [線上版](https://ai-agent-era.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://ai-agent-era.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/ai-agent-era.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ai-agent-era.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 趨勢
 - 發佈日期：2026-03-27T13:38:23+08:00
 - 標籤：多 Agent 編排、100 倍產出、吸血鬼效應
@@ -461,8 +461,8 @@
 - 限量體驗策略：每月 1,000 次問答 + 50 個文件上傳，讓需求從機關內部自然長出來
 - 成效可量化：上傳量、問答數、節省時間全記錄，直接成為 TryAI 的成果報告
 
-- [線上版](https://tryai-org-lobster.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://tryai-org-lobster.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/tryai-org-lobster.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-org-lobster.html/llms.txt): 該專案的 llms.txt
 - 類型：TryAI 提案
 - 發佈日期：2026-03-26T12:19:30+08:00
 - 標籤：組織共養、LINE Bot、AI 素養
@@ -478,8 +478,8 @@
 - 定價：波龍蝦 24 萬/年/人、波龍王 48 萬/年/人，七隻 = 168 萬
 - 買單訊號判斷：看客戶有沒有主動算經費、設計 SOP，不看說好厲害幾次
 
-- [線上版](https://lobster-dragon-king.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://lobster-dragon-king.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/lobster-dragon-king.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lobster-dragon-king.html/llms.txt): 該專案的 llms.txt
 - 類型：產品
 - 發佈日期：2026-03-26T11:16:42+08:00
 - 標籤：波龍蝦、組織大腦、數據決策
@@ -495,8 +495,8 @@
 - GNN-Transformer 模型 3 小時預測 R² = 0.97，RT-SA 即時來源解析從數週縮短至分鐘級
 - PM2.5 年均降至 10 μg/m³ 可年省健保 47.4 億，環境部 AI 戰情室目標 4 小時壓縮到 1 小時
 
-- [線上版](https://pm25-research-trends.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://pm25-research-trends.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/pm25-research-trends.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/pm25-research-trends.html/llms.txt): 該專案的 llms.txt
 - 類型：環境部
 - 發佈日期：2026-03-26T09:27:21+08:00
 - 標籤：空氣品質、PM2.5、AI 監測
@@ -512,8 +512,8 @@
 - 死神協議實戰：AI 抗命突破 25 節點上限，權力分立解法 — 底層腳本化 + 上層 AI 裁決
 - 基礎設施護欄：高並行 AI 流量燒毀家用網卡，需 Intel i350 企業級多佇列分流 + 光貓橋接
 
-- [線上版](https://openclaw-silicon-empire.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://openclaw-silicon-empire.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/openclaw-silicon-empire.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/openclaw-silicon-empire.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 代理人
 - 發佈日期：2026-03-25T21:57:38+08:00
 - 標籤：AI 代理人、物理隔離、多模型調度
@@ -529,8 +529,8 @@
 - Karpathy auto-research 開源框架讓個人無 ML 背景也能跑自主研究，一夜跑出最快 GPT-2 訓練
 - Leopold Aschenbrenner 情境意識論文預測的智能爆炸正在起點，Sam Altman 目標 2028 年自動化 AI 研究員
 
-- [線上版](https://hard-takeoff-ai-self-improvement.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://hard-takeoff-ai-self-improvement.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/hard-takeoff-ai-self-improvement.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hard-takeoff-ai-self-improvement.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 趨勢
 - 發佈日期：2026-03-25T20:23:33+08:00
 - 標籤：遞迴自改、智能爆炸、自主研究
@@ -546,8 +546,8 @@
 - Claude Code 全自動壓力測試框架 + Playwright 介面測試，任何新 API 自動納入
 - 成立獨立大訓稽核單位，每次大訓前必跑壓力測試報告，未通過禁止上線
 
-- [線上版](https://tryai-api-stress-test.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://tryai-api-stress-test.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/tryai-api-stress-test.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-api-stress-test.html/llms.txt): 該專案的 llms.txt
 - 類型：緊急方案
 - 發佈日期：2026-03-25T07:07:30+08:00
 - 標籤：壓力測試、API 效能、50 人標準
@@ -563,8 +563,8 @@
 - 兩極分化：零員工可達百萬美元 ARR，但達標後 B 輪融資規模史無前例大
 - YC 不變的初心：增加世界上偉大初創公司的數量，從 10 家變成 100 家
 
-- [線上版](https://yc-ai-era-insights.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://yc-ai-era-insights.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/yc-ai-era-insights.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/yc-ai-era-insights.html/llms.txt): 該專案的 llms.txt
 - 類型：創業洞見
 - 發佈日期：2026-03-24T23:04:34+08:00
 - 標籤：YC 奧義、AI 創業、兩極分化
@@ -580,8 +580,8 @@
 - 角色扮演演示法：一張對比表讓司長三秒看出 AI 品質差距，具體可驗證
 - 人本驗測 + 紅隊攻擊：只比機關自身業務範圍內的問題，公平具體可信
 
-- [線上版](https://tryai-ai-assurance.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://tryai-ai-assurance.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/tryai-ai-assurance.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-ai-assurance.html/llms.txt): 該專案的 llms.txt
 - 類型：TryAI 服務
 - 發佈日期：2026-03-24T22:48:56+08:00
 - 標籤：品質健檢、基準線驗測、TryAI
@@ -597,8 +597,8 @@
 - 波特人九維度評分法（真新全快省準人安穩）100 分制加權評測，政府 AI 至少要贏過免費工具
 - 三步輔導：發現（新聞爬蟲）→ 評測（九維度雙盲比對）→ 輔導（報告 + 題庫教學 + 改善建議）
 
-- [線上版](https://moda-ai-baseline.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://moda-ai-baseline.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/moda-ai-baseline.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/moda-ai-baseline.html/llms.txt): 該專案的 llms.txt
 - 類型：政策提案
 - 發佈日期：2026-03-24T22:18:14+08:00
 - 標籤：品質基準、AI 評測、數位發展部
@@ -614,8 +614,8 @@
 - 師父確認機制：第二隻梅花鹿驗算結果，Opus 確認正確但零接觸資料內容
 - LangFuse 審計追蹤可驗證 Opus 確實未接觸任何機敏資料
 
-- [線上版](https://zero-knowledge-conductor.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://zero-knowledge-conductor.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/zero-knowledge-conductor.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zero-knowledge-conductor.html/llms.txt): 該專案的 llms.txt
 - 類型：架構設計
 - 發佈日期：2026-03-24T16:22:27+08:00
 - 標籤：零接觸、子代理、成本優化
@@ -631,8 +631,8 @@
 - GPT-OSS 120B 數學 AIME 97.9% 從 o3 蒸餾，Apache 2.0 最自由但知識截止最舊
 - Nemotron-3 Super 全科均衡 80+ 分、414 tok/s 最快、1M Context、性價比最佳推薦
 
-- [線上版](https://open-weight-120b-compare.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://open-weight-120b-compare.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/open-weight-120b-compare.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/open-weight-120b-compare.html/llms.txt): 該專案的 llms.txt
 - 類型：模型比較
 - 發佈日期：2026-03-24T16:12:19+08:00
 - 標籤：開源模型、MoE、GCP
@@ -648,8 +648,8 @@
 - 無論誰說：只看編輯品質不看身份，匿名高中生修正物理教授的量子色動力學錯誤
 - 正反對比：每個法則配 Wikipedia 真實案例（正面）vs 一般公司常見做法（反面）
 
-- [線上版](https://wiki-distributed-mgmt.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://wiki-distributed-mgmt.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/wiki-distributed-mgmt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/wiki-distributed-mgmt.html/llms.txt): 該專案的 llms.txt
 - 類型：領導統御
 - 發佈日期：2026-03-24T14:31:08+08:00
 - 標籤：Wikipedia、管理、法則
@@ -665,8 +665,8 @@
 - Claude Code MCP 存取：@google-cloud/storage-mcp 官方套件直接操作 GCS
 - 10 個地雷（LM-056~065）：ADC 過期、Firestore Rules≠IAM、Tag 提權風險等
 
-- [線上版](https://gcp-iam-plan-b.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://gcp-iam-plan-b.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/gcp-iam-plan-b.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gcp-iam-plan-b.html/llms.txt): 該專案的 llms.txt
 - 類型：架構設計
 - 發佈日期：2026-03-24T13:05:37+08:00
 - 標籤：IAM、GCP、機敏
@@ -683,8 +683,8 @@
 - 小 Agent 累積策略：Botrun Play 低程式碼環境逐步孵化
 - Opus 4.6 一天做完 CLI + API，從前處理到上線
 
-- [線上版](https://moenv-agentic-ai-org-brain.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://moenv-agentic-ai-org-brain.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/moenv-agentic-ai-org-brain.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/moenv-agentic-ai-org-brain.html/llms.txt): 該專案的 llms.txt
 - 類型：環境部
 - 發佈日期：2026-03-24T12:43:00+08:00
 - 標籤：組織大腦、架構、會議
@@ -700,8 +700,8 @@
 - 機關敬語對照（上級/平級/下級）目前全靠人類判斷，AI 可建對照表
 - 國家文官學院公文教科書可作為 Agentic AI 基礎素材
 
-- [線上版](https://nstc-govdoc-pain-points.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://nstc-govdoc-pain-points.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/nstc-govdoc-pain-points.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nstc-govdoc-pain-points.html/llms.txt): 該專案的 llms.txt
 - 類型：公文 AI
 - 發佈日期：2026-03-24T12:36:04+08:00
 - 標籤：公文、訪談、痛點
@@ -717,8 +717,8 @@
 - 自演化：永恆知己每小時成長彼此啟發 vs 預訓練微調 RAG 要與時俱進得重新關進去練
 - 孵化是有機成長的物種差異，不是訓練程度的量變
 
-- [線上版](https://incubation-vs-training.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://incubation-vs-training.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/incubation-vs-training.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/incubation-vs-training.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 孵化
 - 發佈日期：2026-03-24T12:34:07+08:00
 - 標籤：孵化、高品味、自演化
@@ -734,8 +734,8 @@
 - AI 輔助出題 35→60 分：需 Agentic AI 系統調教，不會自動進步
 - Anthropic 同功能 6 個月丟 80% 程式碼重寫，AI 系統必須持續演進
 
-- [線上版](https://human-verify-ai-quiz.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://human-verify-ai-quiz.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/human-verify-ai-quiz.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/human-verify-ai-quiz.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 驗證
 - 發佈日期：2026-03-23T16:10:40+08:00
 - 標籤：人本驗證、題庫進化、Agentic AI
@@ -751,8 +751,8 @@
 - 大型電玩式考試排行榜：不只看懂，還要確認真的懂，分數多人即時競爭
 - 2026 趨勢驗證：Gamma、Google Arcade、360Learning 已證明互動式知識傳遞提升 3-10 倍效果
 
-- [線上版](https://living-slides-ai.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://living-slides-ai.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/living-slides-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/living-slides-ai.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 互動
 - 發佈日期：2026-03-23T13:42:20+08:00
 - 標籤：AI 交談、多人協作、排行榜
@@ -768,8 +768,8 @@
 - Silero VAD 僅 1.8MB：6000+ 語言、1ms 處理 30ms 音訊，適合即時串流與邊緣裝置
 - 四步驟 pipeline：音訊輸入 → VAD 切段 → 只送語音段 → 乾淨零幻覺逐字稿
 
-- [線上版](https://vad-silence-hallucination.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://vad-silence-hallucination.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/vad-silence-hallucination.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/vad-silence-hallucination.html/llms.txt): 該專案的 llms.txt
 - 類型：語音 AI
 - 發佈日期：2026-03-23T10:13:32+08:00
 - 標籤：VAD、幻覺防治、Pipeline
@@ -785,8 +785,8 @@
 - Rate Limit 動態治理：依負載自動調整 API 配額
 - CLI/API 全自動：終端機取代 IDE，程式碼即介面
 
-- [線上版](https://sandbox-storm.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://sandbox-storm.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/sandbox-storm.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/sandbox-storm.html/llms.txt): 該專案的 llms.txt
 - 類型：Agentic AI
 - 發佈日期：2026-03-23T08:00:17+08:00
 - 標籤：Agentic AI、沙盒、CLI/API
@@ -802,8 +802,8 @@
 - AI 是思考夥伴不是搜尋引擎：協作而非下指令
 - Anthropic 教育策略：Drew Bent 的三大實作心法
 
-- [線上版](https://top1-learner-ai.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://top1-learner-ai.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/top1-learner-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/top1-learner-ai.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 教育
 - 發佈日期：2026-03-23T07:33:35+08:00
 - 標籤：學習、協作、Anthropic
@@ -819,8 +819,8 @@
 - 自主紅隊引擎：AI 自動攻擊自己找漏洞
 - 自癒機制：偵測到攻擊自動修補規則、無需人工
 
-- [線上版](https://agentic-ai-security-gateway.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://agentic-ai-security-gateway.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/agentic-ai-security-gateway.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agentic-ai-security-gateway.html/llms.txt): 該專案的 llms.txt
 - 類型：資安
 - 發佈日期：2026-03-23T07:30:40+08:00
 - 標籤：OWASP、Rust、Agentic AI
@@ -836,8 +836,8 @@
 - 傑文斯悖論：AI 推理越強，算力總需求反而越高
 - 2027 預判：資安是最強垂直領域 + 次世代晶片公司崛起
 
-- [線上版](https://saas-to-saaas.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://saas-to-saaas.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/saas-to-saaas.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/saas-to-saaas.html/llms.txt): 該專案的 llms.txt
 - 類型：科技趨勢
 - 發佈日期：2026-03-23T07:17:51+08:00
 - 標籤：SaaaS、護城河、半導體
@@ -853,8 +853,8 @@
 - 品質零損耗：審計層確保小模型輸出符合大模型意圖
 - Agentic AI 成本治理：不是少用 AI，是聰明分工
 
-- [線上版](https://crystallization-spiral.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://crystallization-spiral.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/crystallization-spiral.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/crystallization-spiral.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 架構
 - 發佈日期：2026-03-23T02:28:19+08:00
 - 標籤：結晶螺旋、Agentic AI、省85%
@@ -870,8 +870,8 @@
 - 溫度旋鈕效應：H 神經元活化程度與幻覺率正相關
 - 實務解方：推理時降低 H 神經元權重，無需重新訓練
 
-- [線上版](https://h-neurons-ai-hallucination.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://h-neurons-ai-hallucination.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/h-neurons-ai-hallucination.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/h-neurons-ai-hallucination.html/llms.txt): 該專案的 llms.txt
 - 類型：技術深潛
 - 發佈日期：2026-03-23T02:08:50+08:00
 - 標籤：H 神經元、清華大學、零幻覺
@@ -887,8 +887,8 @@
 - 有人 + 無人結合：AI 處理重複工作，人處理關係
 - 手搖杯模型：高接觸服務的 AI 輔助而非 AI 取代
 
-- [線上版](https://caring-superadapt.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://caring-superadapt.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/caring-superadapt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/caring-superadapt.html/llms.txt): 該專案的 llms.txt
 - 類型：會議精華
 - 發佈日期：2026-03-23T01:15:24+08:00
 - 標籤：Caring、人本轉型、幸福指數
@@ -904,8 +904,8 @@
 - 人的尺度：科技應放大人的能力而非取代人
 - 價值觀驅動產品：Ivan Zhao 的設計哲學
 
-- [線上版](https://ivan-zhao-human-scale.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://ivan-zhao-human-scale.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/ivan-zhao-human-scale.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ivan-zhao-human-scale.html/llms.txt): 該專案的 llms.txt
 - 類型：學習筆記
 - 發佈日期：2026-03-22T19:30:00+08:00
 - 標籤：1100+700、三個桶、人的尺度
@@ -921,8 +921,8 @@
 - Benign Violation 理論：幽默 = 溫和的違反預期
 - Haiku 秒產 10 句→選最佳，成本 < $0.01
 
-- [線上版](https://bot-one-liner.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://bot-one-liner.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/bot-one-liner.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/bot-one-liner.html/llms.txt): 該專案的 llms.txt
 - 類型：看光光
 - 發佈日期：2026-03-22T16:17:06+08:00
 - 標籤：One-liner、5 行 Prompt、臺灣味
@@ -938,8 +938,8 @@
 - 人類不可替代：審美、判斷、倫理、創意方向
 - AI 指揮家思維：從寫程式碼轉為編排 AI 工作流
 
-- [線上版](https://karpathy-ai-conductor.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://karpathy-ai-conductor.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/karpathy-ai-conductor.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/karpathy-ai-conductor.html/llms.txt): 該專案的 llms.txt
 - 類型：學習筆記
 - 發佈日期：2026-03-22T15:51:03+08:00
 - 標籤：AI 指揮家、AutoResearch、Program.md
@@ -955,8 +955,8 @@
 - 非技術人也能寫：用人話描述預期結果即可
 - BDD Given-When-Then 格式：情境→動作→結果
 
-- [線上版](https://ac-one-liner.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://ac-one-liner.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/ac-one-liner.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ac-one-liner.html/llms.txt): 該專案的 llms.txt
 - 類型：實戰教學
 - 發佈日期：2026-03-22T14:05:17+08:00
 - 標籤：AC One Liner、非技術人、Agentic AI
@@ -972,8 +972,8 @@
 - 史丹佛楊紫瞳博士論文三大突破方向
 - 自我進化迴圈：生成→篩選→訓練→更強→再生成
 
-- [線上版](https://stanford-self-improving-ai.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://stanford-self-improving-ai.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/stanford-self-improving-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/stanford-self-improving-ai.html/llms.txt): 該專案的 llms.txt
 - 類型：學習筆記
 - 發佈日期：2026-03-21T21:42:13+08:00
 - 標籤：自我進化、合成訓練、AI 設計 AI
@@ -989,8 +989,8 @@
 - 48 小時 41 commit：從零到可用的快速迭代
 - 智慧公寓比喻：K3s 是管理員、Pod 是房間、Service 是大廳
 
-- [線上版](https://botrun-c-k3s-architecture.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://botrun-c-k3s-architecture.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/botrun-c-k3s-architecture.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-c-k3s-architecture.html/llms.txt): 該專案的 llms.txt
 - 類型：架構解說
 - 發佈日期：2026-03-21T20:14:32+08:00
 - 標籤：K3s、9 層防護、Per-user Pod
@@ -1006,8 +1006,8 @@
 - Groq 3 LPU：專為推理優化的硬體加速器
 - Claude Code 天生安全：Constitutional AI 從訓練就內建限制
 
-- [線上版](https://openclaw-vs-claude-code.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://openclaw-vs-claude-code.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/openclaw-vs-claude-code.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/openclaw-vs-claude-code.html/llms.txt): 該專案的 llms.txt
 - 類型：學習筆記
 - 發佈日期：2026-03-21T14:35:00+08:00
 - 標籤：Agentic AI、Groq 3 LPU、NemoClaw
@@ -1023,8 +1023,8 @@
 - Jevons 悖論：AI 越便宜，總使用量反而越大
 - AutoResearch：AI 自動做完整研究流程
 
-- [線上版](https://karpathy-code-agents.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://karpathy-code-agents.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/karpathy-code-agents.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/karpathy-code-agents.html/llms.txt): 該專案的 llms.txt
 - 類型：學習筆記
 - 發佈日期：2026-03-21T13:39:26+08:00
 - 標籤：Karpathy、Code Agents、AutoResearch
@@ -1040,8 +1040,8 @@
 - MAS(Multi-Agent System)工廠化：批量生產 AI 團隊
 - arXiv 2603.06007：北郵 GAMMA 實驗室研究
 
-- [線上版](https://mas-factory.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://mas-factory.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/mas-factory.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/mas-factory.html/llms.txt): 該專案的 llms.txt
 - 類型：論文精讀
 - 發佈日期：2026-03-21T20:00:00+08:00
 - 標籤：arXiv 2603.06007、Vibe Graphing、97% 程式碼減少
@@ -1057,8 +1057,8 @@
 - 隊長監控：主 Agent 分派任務、整合結果
 - 波特貓→波龍：從單體進化為多代理團隊架構
 
-- [線上版](https://botrun-agent-teams.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://botrun-agent-teams.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/botrun-agent-teams.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-agent-teams.html/llms.txt): 該專案的 llms.txt
 - 類型：工作實戰
 - 發佈日期：2026-03-21T07:58:17+08:00
 - 標籤：Agent Teams、Opus 4.6、波龍
@@ -1074,8 +1074,8 @@
 - Gemini API 免費額度：零成本入門
 - 自動備援國網中心：Gemini 掛掉自動切換 NCHC
 
-- [線上版](https://botrun-hammer.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://botrun-hammer.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/botrun-hammer.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-hammer.html/llms.txt): 該專案的 llms.txt
 - 類型：工具教學
 - 發佈日期：2026-03-20T12:20:22+08:00
 - 標籤：密碼保護、波特槌、語音轉文字
@@ -1091,8 +1091,8 @@
 - 動態策略：根據任務複雜度自動調整團隊編制
 - Claude Agent SDK：程式化建構自訂 Agent 團隊
 
-- [線上版](https://claude-agent-teams-2026.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://claude-agent-teams-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-agent-teams-2026.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-agent-teams-2026.html/llms.txt): 該專案的 llms.txt
 - 類型：技術分析
 - 發佈日期：2026-03-20T10:10:57+08:00
 - 標籤：Agent Teams、零幻覺、Opus 4.6
@@ -1108,8 +1108,8 @@
 - 長序列優勢：Mamba 在超長文本處理效率大幅領先
 - 微調三方案比較：全參數 vs LoRA vs Adapter
 
-- [線上版](https://mamba-llm-2026.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://mamba-llm-2026.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/mamba-llm-2026.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/mamba-llm-2026.html/llms.txt): 該專案的 llms.txt
 - 類型：技術分析
 - 發佈日期：2026-03-20T00:03:51+08:00
 - 標籤：SSM、Mamba-3、混合架構
@@ -1125,8 +1125,8 @@
 - 俄羅斯方塊機制：堆疊=知識累積，消行=通過測驗
 - 問答+期末考：玩遊戲同時驗證學習成效
 
-- [線上版](https://gov-ai-tetris.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://gov-ai-tetris.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/gov-ai-tetris.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gov-ai-tetris.html/llms.txt): 該專案的 llms.txt
 - 類型：大型電動
 - 發佈日期：2026-03-19T17:30:00+08:00
 - 標籤：俄羅斯方塊、Octalysis、政府AI
@@ -1142,8 +1142,8 @@
 - 全國法規資料庫 AI 檢索 v4.2.1
 - 28 commits / 3 天的高密度開發交接
 
-- [線上版](https://law-handover.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://law-handover.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/law-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/law-handover.html/llms.txt): 該專案的 llms.txt
 - 類型：技術交接
 - 發佈日期：2026-03-19T16:10:00+08:00
 - 標籤：密碼保護、法規檢索、7地雷
@@ -1159,8 +1159,8 @@
 - Game Log 重放驗證：紀錄每個動作，伺服器重算分數比對
 - Score Bounds：依遊戲關卡設定合理分數上限
 
-- [線上版](https://bdd-arcade-hacker-incident.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://bdd-arcade-hacker-incident.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/bdd-arcade-hacker-incident.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/bdd-arcade-hacker-incident.html/llms.txt): 該專案的 llms.txt
 - 類型：資安
 - 發佈日期：2026-03-19T11:53:56+08:00
 - 標籤：Anti-Cheat、Pac-Man、HMAC-SHA256
@@ -1176,8 +1176,8 @@
 - 地雷迷宮=地雷經驗學習、共用倉庫=DRY 資產複用
 - 八角遊戲框架 × Pac-Man：邊玩邊學軟體工程方法論
 
-- [線上版](https://bdd-pacman-arcade.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://bdd-pacman-arcade.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/bdd-pacman-arcade.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/bdd-pacman-arcade.html/llms.txt): 該專案的 llms.txt
 - 類型：大型電動
 - 發佈日期：2026-03-19T08:44:51+08:00
 - 標籤：Pac-Man、Octalysis、bdd.md
@@ -1193,8 +1193,8 @@
 - DAG 追蹤：有向無環圖管理任務依賴與進度
 - 地雷回饋：踩坑經驗自動回寫避免重複犯錯
 
-- [線上版](https://bdd-slash-command-teaching.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://bdd-slash-command-teaching.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/bdd-slash-command-teaching.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/bdd-slash-command-teaching.html/llms.txt): 該專案的 llms.txt
 - 類型：教學
 - 發佈日期：2026-03-19T08:19:16+08:00
 - 標籤：Slash Command、BDD+TDD、DRY+KISS
@@ -1210,8 +1210,8 @@
 - Cloud Run 部署：無伺服器容器、自動擴縮
 - 16 個地雷經驗：中文 ngram、IME Enter 誤觸等實戰教訓
 
-- [線上版](https://ida-poc-handover.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://ida-poc-handover.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/ida-poc-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ida-poc-handover.html/llms.txt): 該專案的 llms.txt
 - 類型：技術交接
 - 發佈日期：2026-03-18T22:30:19+08:00
 - 標籤：密碼保護、知識庫、BM25+RRF、Cloud Run
@@ -1227,8 +1227,8 @@
 - 公文四痛點：找舊公文、專業術語、法規引用、內部辦法
 - 推廣路線：國網中心→國科會→各部會
 
-- [線上版](https://nchc-agentic-ai-govdoc.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://nchc-agentic-ai-govdoc.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/nchc-agentic-ai-govdoc.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nchc-agentic-ai-govdoc.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-18T17:18:39+08:00
 - 標籤：Agentic AI、公文自動化、國網中心
@@ -1244,8 +1244,8 @@
 - 無為使用策略：使用者不知道自己在用 AI
 - 慈濟志工應用：非技術族群的 AI 導入典範
 
-- [線上版](https://line-botrun-ai-teaching.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://line-botrun-ai-teaching.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/line-botrun-ai-teaching.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/line-botrun-ai-teaching.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-18T17:06:09+08:00
 - 標籤：語音轉文字、每日驚喜、慈濟志工
@@ -1261,8 +1261,8 @@
 - 八角遊戲化設計：排行榜、成就、稀缺性驅動學習
 - 全公司排行榜：內部教育訓練遊戲化實踐
 
-- [線上版](https://battleground-quiz.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://battleground-quiz.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/battleground-quiz.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/battleground-quiz.html/llms.txt): 該專案的 llms.txt
 - 類型：大型電動
 - 發佈日期：2026-03-18T13:10:00+08:00
 - 標籤：15題闖關、排行榜、八角框架
@@ -1278,8 +1278,8 @@
 - 永恆知己：個人 AI 助理，累積專屬記憶
 - 環境部導入策略：分階段、先試點再擴大
 
-- [線上版](https://env-ministry-agentic-ai.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://env-ministry-agentic-ai.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/env-ministry-agentic-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/env-ministry-agentic-ai.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-18T12:55:00+08:00
 - 標籤：環境部、封閉地端、Agentic AI
@@ -1295,8 +1295,8 @@
 - 遊戲化人生六步：覺察→對齊→設計→執行→反饋→迭代
 - 內在動機 > 外在獎勵：長期行為改變的關鍵
 
-- [線上版](https://10khp-yukaichou.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://10khp-yukaichou.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/10khp-yukaichou.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/10khp-yukaichou.html/llms.txt): 該專案的 llms.txt
 - 類型：書摘
 - 發佈日期：2026-03-18T12:49:09+08:00
 - 標籤：Yu-kai Chou、Gamification、5 Cases
@@ -1312,8 +1312,8 @@
 - 波公子=公文 AI 產品代號
 - Agentic AI 公文自動化完整派工矩陣
 
-- [線上版](https://nchc-todo-v3.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://nchc-todo-v3.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/nchc-todo-v3.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nchc-todo-v3.html/llms.txt): 該專案的 llms.txt
 - 類型：派工
 - 發佈日期：2026-03-18T12:14:43+08:00
 - 標籤：密碼保護、國網中心、21 TODO
@@ -1329,8 +1329,8 @@
 - AI 鑑往知來：從歷史裁處預測未來趨勢
 - EEMS=環境案件管理系統
 
-- [線上版](https://eems-ai-sroi.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://eems-ai-sroi.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/eems-ai-sroi.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/eems-ai-sroi.html/llms.txt): 該專案的 llms.txt
 - 類型：機密
 - 發佈日期：2026-03-18T11:45:00+08:00
 - 標籤：密碼保護、SROI、26.7萬筆
@@ -1346,8 +1346,8 @@
 - 6 個全球案例：從矽谷到政府的實際應用
 - 2026 全球必爭之地：編排+管控=AI 產業真正價值
 
-- [線上版](https://orchestration-harness-battleground.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://orchestration-harness-battleground.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/orchestration-harness-battleground.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/orchestration-harness-battleground.html/llms.txt): 該專案的 llms.txt
 - 類型：洞見
 - 發佈日期：2026-03-18T09:30:59+08:00
 - 標籤：編排層、Harness、全球案例
@@ -1363,8 +1363,8 @@
 - AI 採購決策引擎：自動比價選最佳 AI 方案
 - 無人教室願景：AI 自動產製教材+適性化評量
 
-- [線上版](https://botrun-orchestration-strategy.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://botrun-orchestration-strategy.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/botrun-orchestration-strategy.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-orchestration-strategy.html/llms.txt): 該專案的 llms.txt
 - 類型：戰略
 - 發佈日期：2026-03-17T23:19:49+08:00
 - 標籤：編排層、8大TODO、18個月
@@ -1380,8 +1380,8 @@
 - PM+技術人都能上手：30 頁完整操作指南
 - 波特人核心產品：高品味題庫是 AI Harness 的基石
 
-- [線上版](https://benchmark-guide.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://benchmark-guide.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/benchmark-guide.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/benchmark-guide.html/llms.txt): 該專案的 llms.txt
 - 類型：指南
 - 發佈日期：2026-03-17T10:14:35+08:00
 - 標籤：30頁、題庫設計、Top5公司
@@ -1397,8 +1397,8 @@
 - aiplay 波特人 AI 專利技術
 - 高品味題庫自動化的終極形態
 
-- [線上版](https://one-drag-patent.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://one-drag-patent.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/one-drag-patent.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/one-drag-patent.html/llms.txt): 該專案的 llms.txt
 - 類型：機密
 - 發佈日期：2026-03-16T22:56:17+08:00
 - 標籤：專利、密碼保護
@@ -1414,8 +1414,8 @@
 - 自動進化：SKILL.md 更新即全域同步
 - 波駿馬：Harness 產品品牌
 
-- [線上版](https://agent-harness-engineering.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://agent-harness-engineering.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/agent-harness-engineering.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agent-harness-engineering.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-16T22:27:06+08:00
 - 標籤：Harness、5 頁
@@ -1431,8 +1431,8 @@
 - 時間序列 Foundation Model：一個模型通吃多領域
 - 真實資料全面對比：不是 benchmark 而是實戰數據
 
-- [線上版](https://timeseries-ai-revolution.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://timeseries-ai-revolution.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/timeseries-ai-revolution.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/timeseries-ai-revolution.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-16T18:36:45+08:00
 - 標籤：時間序列、5 頁
@@ -1448,8 +1448,8 @@
 - 無人教室願景：AI 24 小時個人化教學
 - 鏡像學習：學生的每個動作都被 AI 觀察與回饋
 
-- [線上版](https://mirror-classroom-ai-education.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://mirror-classroom-ai-education.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/mirror-classroom-ai-education.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/mirror-classroom-ai-education.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-16T18:15:19+08:00
 - 標籤：AI 教育、5 頁
@@ -1465,8 +1465,8 @@
 - HBR 方法論：PM 用 Harvard Business Review 決策框架
 - 2026 頂級職業技能 AI 化
 
-- [線上版](https://three-skills.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://three-skills.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/three-skills.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/three-skills.html/llms.txt): 該專案的 llms.txt
 - 類型：技能全文
 - 發佈日期：2026-03-16T15:20:54+08:00
 - 標籤：一鍵複製、3 位夥伴
@@ -1482,8 +1482,8 @@
 - Nano Banana 2 水彩肖像：Gemini 3.1 Flash Image 生成
 - Agentic AI 全職夥伴概念：24 小時待命、專屬記憶
 
-- [線上版](https://three-partners.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://three-partners.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/three-partners.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/three-partners.html/llms.txt): 該專案的 llms.txt
 - 類型：簡報
 - 發佈日期：2026-03-16T15:20:00+08:00
 - 標籤：AI 繪圖、5 頁
@@ -1499,8 +1499,8 @@
 - 高品味=知道≠會做：90% 普通題庫 vs 10% 高品味
 - 五堂課完整體系：從概念到實作
 
-- [線上版](https://botrun-horse-slides.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://botrun-horse-slides.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/botrun-horse-slides.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-horse-slides.html/llms.txt): 該專案的 llms.txt
 - 類型：課程
 - 發佈日期：2026-03-16T14:00:00+08:00
 - 標籤：5 堂課、22 應用
@@ -1516,8 +1516,8 @@
 - Knowledge 層：專業知識注入，確保回答準確
 - Cache 層：AI 從互動中自動學習成長
 
-- [線上版](https://smart-portal-csv.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://smart-portal-csv.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/smart-portal-csv.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/smart-portal-csv.html/llms.txt): 該專案的 llms.txt
 - 類型：架構
 - 發佈日期：2026-03-16T13:00:00+08:00
 - 標籤：秒回、知識注入
@@ -1533,8 +1533,8 @@
 - 演化引擎：自動生成→評分→篩選→改良迴圈
 - H200=NVIDIA 最新推理 GPU，80GB HBM3e
 
-- [線上版](https://h200-autoresearch-gov.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://h200-autoresearch-gov.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/h200-autoresearch-gov.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/h200-autoresearch-gov.html/llms.txt): 該專案的 llms.txt
 - 類型：研究
 - 發佈日期：2026-03-16T12:00:00+08:00
 - 標籤：H200 GPU、政府 AI
@@ -1550,8 +1550,8 @@
 - 自然日誌=順應平台特性而非對抗
 - 三平台帳單統整：Anthropic+OpenAI+GCP
 
-- [線上版](https://natural-log.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://natural-log.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/natural-log.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/natural-log.html/llms.txt): 該專案的 llms.txt
 - 類型：方法論
 - 發佈日期：2026-03-16T11:00:00+08:00
 - 標籤：零程式碼、飛輪迭代
@@ -1567,8 +1567,8 @@
 - 字幕擷取+AI 出題+自動評分完整流程
 - 個人化學習路徑：根據答題表現調整難度
 
-- [線上版](https://zero-gap-classroom.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://zero-gap-classroom.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/zero-gap-classroom.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zero-gap-classroom.html/llms.txt): 該專案的 llms.txt
 - 類型：教育
 - 發佈日期：2026-03-16T10:00:00+08:00
 - 標籤：YouTube、認證課程
@@ -1584,8 +1584,8 @@
 - 公務員協作：AI 輔助而非取代公務員
 - 矽谷流敘事：5 頁說服決策者的簡報方法
 
-- [線上版](https://lobster-claude.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://lobster-claude.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/lobster-claude.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lobster-claude.html/llms.txt): 該專案的 llms.txt
 - 類型：策略
 - 發佈日期：2026-03-16T09:00:00+08:00
 - 標籤：機敏、5 頁
