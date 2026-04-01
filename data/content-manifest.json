@@ -1,9 +1,45 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-03-31T15:10:00+08:00"
+    "lastUpdated": "2026-04-01T20:00:00+08:00"
   },
   "items": [
+    {
+      "id": "skill-incubation-sprint",
+      "title": "五小時從零孵出高品質 AI 技能",
+      "subtitle": "Design Sprint × AI — 聚焦痛點、發散三種做法、投票選冠軍、五情境雛形、大模型教小模型迭代五次",
+      "href": "https://skill-incubation-sprint-deploy.vercel.app",
+      "icon": "rocket",
+      "badge": "方法學",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-01T20:00:00+08:00",
+      "tags": ["rocket:Design Sprint", "brain:AI 技能", "target:觀護人案例"],
+      "concepts": [
+        "五小時衝刺法：聚焦→發散→投票→雛形→迭代，從想法到上線",
+        "六維度打分選痛點：痛苦×頻率×AI可行×影響×錯誤代價×替代少",
+        "三種做法比較：一口氣(59分) vs 問答(69分) vs 流水線(89分)",
+        "大模型教小模型：Opus 4.6 閱卷五次迭代，65→91 分穩定上線",
+        "合成資料零風險：全程虛構個案，不碰真實機密"
+      ]
+    },
+    {
+      "id": "skill-best-practices",
+      "title": "Skill 最佳實踐：寫 3 行指令，AI 照做 300 次",
+      "subtitle": "Anthropic 官方 + 社群實證 — 五分鐘搞懂 Claude Code Skill 怎麼寫、怎麼選模式、怎麼避坑",
+      "href": "https://skill-best-practices.vercel.app",
+      "icon": "book-open",
+      "badge": "研究筆記",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-01T12:02:46+08:00",
+      "tags": ["book-open:Skill 設計", "code:Claude Code", "sparkles:最佳實踐"],
+      "concepts": [
+        "Skill 架構：SKILL.md（< 500 行導覽）+ references/（細節）+ templates/（模板）+ examples/（錨點）",
+        "好 vs 壞對比：分階段+品質閘門+好壞範例 vs 模糊一句話指令",
+        "六大設計模式：生成器、工作流、審查、查閱、測驗、稽核 — 選對模式贏一半",
+        "五大黃金原則：< 500 行、3+ 範例、負面範例、分階段自檢、重複 > 3 次就建 Skill",
+        "來源：Anthropic 官方文件 + DEV.to + Builder.io 50 Tips + awesome-claude-code 社群"
+      ]
+    },
     {
       "id": "zero-touch-prompt",
       "title": "零接觸提示：大模型寫劇本，小模型演好戲",
