@@ -12,6 +12,7 @@
       "icon": "rocket",
       "badge": "方法學",
       "badgeColor": "#e8634a",
+      "protected": true,
       "publishDate": "2026-04-01T20:00:00+08:00",
       "tags": [
         "rocket:Design Sprint",
