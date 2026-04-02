@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-02T05:39:15.410Z
+> 生成時間：2026-04-02T09:39:39.501Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 94 個項目，按發佈日期降序排列。
@@ -19,8 +19,8 @@
 - KAIROS 自主守護模式：15 秒心跳、主動巡邏、append-only 決策日誌
 - 三層記憶架構（Index→Topic→Transcript）與永恆知己不謀而合，autoDream 自動整理
 
-- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-leak-20-lessons.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-leak-20-lessons.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-leak-20-lessons.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-leak-20-lessons.html/llms.txt): 該專案的 llms.txt
 - 類型：技術深潛
 - 發佈日期：2026-04-02T13:38:37+08:00
 - 標籤：供應鏈安全、AI 架構、密碼保護
@@ -36,8 +36,8 @@
 - 大模型教小模型：Opus 4.6 閱卷五次迭代，65→91 分穩定上線
 - 合成資料零風險：全程虛構個案，不碰真實機密
 
-- [線上版](https://storage.googleapis.com/botrun-slides/skill-incubation-sprint.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/skill-incubation-sprint.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/skill-incubation-sprint.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/skill-incubation-sprint.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-04-01T20:00:00+08:00
 - 標籤：Design Sprint、AI 技能、觀護人案例
@@ -70,8 +70,8 @@
 - 兩階段架構：Phase 1 雲端零機敏寫劇本 → Phase 2 地端機敏執行任務
 - 109x 成本差距 + 0 資料外洩 + 無限次 Prompt 複用
 
-- [線上版](https://storage.googleapis.com/botrun-slides/zero-touch-prompt.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zero-touch-prompt.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/zero-touch-prompt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/zero-touch-prompt.html/llms.txt): 該專案的 llms.txt
 - 類型：Prompt 工程
 - 發佈日期：2026-03-31T15:10:00+08:00
 - 標籤：零接觸提示、大小模型協作、機敏零外洩
@@ -121,8 +121,8 @@
 - 14B 當師父 18 分、當徒弟 87 分 — 擅長照做不擅長設計，師徒需要不同能力
 - 結論：師父用最強的（Claude），徒弟選最快最便宜的（14B 都能 87-94 分）
 
-- [線上版](https://storage.googleapis.com/botrun-slides/master-apprentice-v2.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/master-apprentice-v2.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/master-apprentice-v2.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/master-apprentice-v2.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-29T10:52:24+08:00
 - 標籤：師徒模型、Meta Prompt、公文 AI
@@ -138,8 +138,8 @@
 - 四大原則：給模板不給規則、禁止+替代、明確隱含關係、封閉式輸出
 - 九步可複製 SOP：適用於合約/報告/申請書等所有有固定格式的任務
 
-- [線上版](https://storage.googleapis.com/botrun-slides/master-apprentice-dag.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/master-apprentice-dag.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/master-apprentice-dag.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/master-apprentice-dag.html/llms.txt): 該專案的 llms.txt
 - 類型：方法學
 - 發佈日期：2026-03-29T09:28:20+08:00
 - 標籤：師徒模型、DAG Prompt、公文 AI
@@ -155,8 +155,8 @@
 - 目標層級串聯：觀護 AI 知道自己在「降低再犯率」目標下，決策自動對齊
 - 主管儀表板：花多少錢、有沒有出狀況、AI 越來越聰明嗎 — 三個指標一眼看
 
-- [線上版](https://storage.googleapis.com/botrun-slides/lobster-agentic-gov.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lobster-agentic-gov.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/lobster-agentic-gov.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/lobster-agentic-gov.html/llms.txt): 該專案的 llms.txt
 - 類型：政府 AI 治理
 - 發佈日期：2026-03-29T09:02:00+08:00
 - 標籤：治理、波龍蝦、Agentic AI
@@ -478,8 +478,8 @@
 - 限量體驗策略：每月 1,000 次問答 + 50 個文件上傳，讓需求從機關內部自然長出來
 - 成效可量化：上傳量、問答數、節省時間全記錄，直接成為 TryAI 的成果報告
 
-- [線上版](https://storage.googleapis.com/botrun-slides/tryai-org-lobster.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-org-lobster.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-org-lobster.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-org-lobster.html/llms.txt): 該專案的 llms.txt
 - 類型：TryAI 提案
 - 發佈日期：2026-03-26T12:19:30+08:00
 - 標籤：組織共養、LINE Bot、AI 素養
@@ -495,8 +495,8 @@
 - 定價：波龍蝦 24 萬/年/人、波龍王 48 萬/年/人，七隻 = 168 萬
 - 買單訊號判斷：看客戶有沒有主動算經費、設計 SOP，不看說好厲害幾次
 
-- [線上版](https://storage.googleapis.com/botrun-slides/lobster-dragon-king.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lobster-dragon-king.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/lobster-dragon-king.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/lobster-dragon-king.html/llms.txt): 該專案的 llms.txt
 - 類型：產品
 - 發佈日期：2026-03-26T11:16:42+08:00
 - 標籤：波龍蝦、組織大腦、數據決策
@@ -563,8 +563,8 @@
 - Claude Code 全自動壓力測試框架 + Playwright 介面測試，任何新 API 自動納入
 - 成立獨立大訓稽核單位，每次大訓前必跑壓力測試報告，未通過禁止上線
 
-- [線上版](https://storage.googleapis.com/botrun-slides/tryai-api-stress-test.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-api-stress-test.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-api-stress-test.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-api-stress-test.html/llms.txt): 該專案的 llms.txt
 - 類型：緊急方案
 - 發佈日期：2026-03-25T07:07:30+08:00
 - 標籤：壓力測試、API 效能、50 人標準
@@ -597,8 +597,8 @@
 - 角色扮演演示法：一張對比表讓司長三秒看出 AI 品質差距，具體可驗證
 - 人本驗測 + 紅隊攻擊：只比機關自身業務範圍內的問題，公平具體可信
 
-- [線上版](https://storage.googleapis.com/botrun-slides/tryai-ai-assurance.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tryai-ai-assurance.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-ai-assurance.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-ai-assurance.html/llms.txt): 該專案的 llms.txt
 - 類型：TryAI 服務
 - 發佈日期：2026-03-24T22:48:56+08:00
 - 標籤：品質健檢、基準線驗測、TryAI
@@ -614,8 +614,8 @@
 - 波特人九維度評分法（真新全快省準人安穩）100 分制加權評測，政府 AI 至少要贏過免費工具
 - 三步輔導：發現（新聞爬蟲）→ 評測（九維度雙盲比對）→ 輔導（報告 + 題庫教學 + 改善建議）
 
-- [線上版](https://storage.googleapis.com/botrun-slides/moda-ai-baseline.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/moda-ai-baseline.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/moda-ai-baseline.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/moda-ai-baseline.html/llms.txt): 該專案的 llms.txt
 - 類型：政策提案
 - 發佈日期：2026-03-24T22:18:14+08:00
 - 標籤：品質基準、AI 評測、數位發展部
@@ -631,8 +631,8 @@
 - 師父確認機制：第二隻梅花鹿驗算結果，Opus 確認正確但零接觸資料內容
 - LangFuse 審計追蹤可驗證 Opus 確實未接觸任何機敏資料
 
-- [線上版](https://storage.googleapis.com/botrun-slides/zero-knowledge-conductor.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zero-knowledge-conductor.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-conductor.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-conductor.html/llms.txt): 該專案的 llms.txt
 - 類型：架構設計
 - 發佈日期：2026-03-24T16:22:27+08:00
 - 標籤：零接觸、子代理、成本優化
@@ -682,8 +682,8 @@
 - Claude Code MCP 存取：@google-cloud/storage-mcp 官方套件直接操作 GCS
 - 10 個地雷（LM-056~065）：ADC 過期、Firestore Rules≠IAM、Tag 提權風險等
 
-- [線上版](https://storage.googleapis.com/botrun-slides/gcp-iam-plan-b.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gcp-iam-plan-b.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gcp-iam-plan-b.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gcp-iam-plan-b.html/llms.txt): 該專案的 llms.txt
 - 類型：架構設計
 - 發佈日期：2026-03-24T13:05:37+08:00
 - 標籤：IAM、GCP、機敏
@@ -700,8 +700,8 @@
 - 小 Agent 累積策略：Botrun Play 低程式碼環境逐步孵化
 - Opus 4.6 一天做完 CLI + API，從前處理到上線
 
-- [線上版](https://storage.googleapis.com/botrun-slides/moenv-agentic-ai-org-brain.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/moenv-agentic-ai-org-brain.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-agentic-ai-org-brain.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-agentic-ai-org-brain.html/llms.txt): 該專案的 llms.txt
 - 類型：環境部
 - 發佈日期：2026-03-24T12:43:00+08:00
 - 標籤：組織大腦、架構、會議
@@ -717,8 +717,8 @@
 - 機關敬語對照（上級/平級/下級）目前全靠人類判斷，AI 可建對照表
 - 國家文官學院公文教科書可作為 Agentic AI 基礎素材
 
-- [線上版](https://storage.googleapis.com/botrun-slides/nstc-govdoc-pain-points.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nstc-govdoc-pain-points.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/nstc-govdoc-pain-points.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/nstc-govdoc-pain-points.html/llms.txt): 該專案的 llms.txt
 - 類型：公文 AI
 - 發佈日期：2026-03-24T12:36:04+08:00
 - 標籤：公文、訪談、痛點
@@ -751,8 +751,8 @@
 - AI 輔助出題 35→60 分：需 Agentic AI 系統調教，不會自動進步
 - Anthropic 同功能 6 個月丟 80% 程式碼重寫，AI 系統必須持續演進
 
-- [線上版](https://storage.googleapis.com/botrun-slides/human-verify-ai-quiz.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/human-verify-ai-quiz.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/human-verify-ai-quiz.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/human-verify-ai-quiz.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 驗證
 - 發佈日期：2026-03-23T16:10:40+08:00
 - 標籤：人本驗證、題庫進化、Agentic AI
@@ -1091,8 +1091,8 @@
 - Gemini API 免費額度：零成本入門
 - 自動備援國網中心：Gemini 掛掉自動切換 NCHC
 
-- [線上版](https://storage.googleapis.com/botrun-slides/botrun-hammer.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/botrun-hammer.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-hammer.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-hammer.html/llms.txt): 該專案的 llms.txt
 - 類型：工具教學
 - 發佈日期：2026-03-20T12:20:22+08:00
 - 標籤：密碼保護、波特槌、語音轉文字
@@ -1159,8 +1159,8 @@
 - 全國法規資料庫 AI 檢索 v4.2.1
 - 28 commits / 3 天的高密度開發交接
 
-- [線上版](https://storage.googleapis.com/botrun-slides/law-handover.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/law-handover.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/law-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/law-handover.html/llms.txt): 該專案的 llms.txt
 - 類型：技術交接
 - 發佈日期：2026-03-19T16:10:00+08:00
 - 標籤：密碼保護、法規檢索、7地雷
@@ -1227,8 +1227,8 @@
 - Cloud Run 部署：無伺服器容器、自動擴縮
 - 16 個地雷經驗：中文 ngram、IME Enter 誤觸等實戰教訓
 
-- [線上版](https://storage.googleapis.com/botrun-slides/ida-poc-handover.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ida-poc-handover.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ida-poc-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ida-poc-handover.html/llms.txt): 該專案的 llms.txt
 - 類型：技術交接
 - 發佈日期：2026-03-18T22:30:19+08:00
 - 標籤：密碼保護、知識庫、BM25+RRF、Cloud Run
@@ -1329,8 +1329,8 @@
 - 波公子=公文 AI 產品代號
 - Agentic AI 公文自動化完整派工矩陣
 
-- [線上版](https://storage.googleapis.com/botrun-slides/nchc-todo-v3.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/nchc-todo-v3.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-todo-v3.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-todo-v3.html/llms.txt): 該專案的 llms.txt
 - 類型：派工
 - 發佈日期：2026-03-18T12:14:43+08:00
 - 標籤：密碼保護、國網中心、21 TODO
@@ -1346,8 +1346,8 @@
 - AI 鑑往知來：從歷史裁處預測未來趨勢
 - EEMS=環境案件管理系統
 
-- [線上版](https://storage.googleapis.com/botrun-slides/eems-ai-sroi.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/eems-ai-sroi.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/eems-ai-sroi.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/eems-ai-sroi.html/llms.txt): 該專案的 llms.txt
 - 類型：機密
 - 發佈日期：2026-03-18T11:45:00+08:00
 - 標籤：密碼保護、SROI、26.7萬筆
@@ -1414,8 +1414,8 @@
 - aiplay 波特人 AI 專利技術
 - 高品味題庫自動化的終極形態
 
-- [線上版](https://storage.googleapis.com/botrun-slides/one-drag-patent.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/one-drag-patent.html/llms.txt): 該專案的 llms.txt
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/one-drag-patent.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/one-drag-patent.html/llms.txt): 該專案的 llms.txt
 - 類型：機密
 - 發佈日期：2026-03-16T22:56:17+08:00
 - 標籤：專利、密碼保護
