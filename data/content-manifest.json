@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "claude-code-leak-20-lessons",
+      "title": "Claude Code 洩漏解剖學 — 20 個底層設計",
+      "subtitle": "512K 行原始碼意外公開，每一個設計決策都是波特人產品進化的結晶螺旋養分",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-leak-20-lessons.html",
+      "icon": "shield-alert",
+      "badge": "技術深潛",
+      "badgeColor": "#7c3aed",
+      "protected": true,
+      "publishDate": "2026-04-02T13:38:37+08:00",
+      "tags": [
+        "shield:供應鏈安全",
+        "brain:AI 架構",
+        "lock:密碼保護"
+      ],
+      "concepts": [
+        "Source Map 洩漏根因：.npmignore 遺漏 + Bun 預設產 .map，CI 必須掃描 artifact",
+        "40+ 離散工具架構：每能力一模組，自帶 schema + 權限閘門 + feature gate",
+        "Anti-Distillation 雙層防禦：fake_tools 注入 + 推理摘要簽名，防競爭對手蒸餾",
+        "KAIROS 自主守護模式：15 秒心跳、主動巡邏、append-only 決策日誌",
+        "三層記憶架構（Index→Topic→Transcript）與永恆知己不謀而合，autoDream 自動整理"
+      ]
+    },
+    {
       "id": "skill-incubation-sprint",
       "title": "五小時從零孵出高品質 AI 技能",
       "subtitle": "Design Sprint × AI — 聚焦痛點、發散三種做法、投票選冠軍、五情境雛形、大模型教小模型迭代五次",

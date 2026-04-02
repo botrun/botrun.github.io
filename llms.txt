@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-01T09:27:03.629Z
+> 生成時間：2026-04-02T05:39:15.410Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 93 個項目，按發佈日期降序排列。
+共 94 個項目，按發佈日期降序排列。
+
+## Claude Code 洩漏解剖學 — 20 個底層設計
+
+> 512K 行原始碼意外公開，每一個設計決策都是波特人產品進化的結晶螺旋養分
+
+**關鍵觀念：**
+- Source Map 洩漏根因：.npmignore 遺漏 + Bun 預設產 .map，CI 必須掃描 artifact
+- 40+ 離散工具架構：每能力一模組，自帶 schema + 權限閘門 + feature gate
+- Anti-Distillation 雙層防禦：fake_tools 注入 + 推理摘要簽名，防競爭對手蒸餾
+- KAIROS 自主守護模式：15 秒心跳、主動巡邏、append-only 決策日誌
+- 三層記憶架構（Index→Topic→Transcript）與永恆知己不謀而合，autoDream 自動整理
+
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-leak-20-lessons.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-leak-20-lessons.html/llms.txt): 該專案的 llms.txt
+- 類型：技術深潛
+- 發佈日期：2026-04-02T13:38:37+08:00
+- 標籤：供應鏈安全、AI 架構、密碼保護
 
 ## 五小時從零孵出高品質 AI 技能
 
