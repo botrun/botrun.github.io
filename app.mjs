@@ -148,8 +148,8 @@ async function init() {
     const publicCount = publicItems.length;
     document.getElementById('item-count').textContent = `${publicCount} 項`;
 
-    // Stats bar: 發表篇數從 manifest 即時算
-    document.getElementById('stat-posts').textContent = publicCount;
+    // Stats bar: 發表篇數從 manifest 即時算（公開 + protected 全部計入）
+    document.getElementById('stat-posts').textContent = items.length;
 
     // Stats bar: GA4 數字從 stats.json 讀取
     try {
