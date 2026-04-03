@@ -3,10 +3,26 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T09:35:46.698Z
+> 生成時間：2026-04-03T14:58:35.124Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 97 個項目，按發佈日期降序排列。
+共 98 個項目，按發佈日期降序排列。
+
+## Rust WASM 瀏覽器 AI Agent — 開發經驗全紀錄
+
+> 3,498 行 Rust、零 JavaScript、從 wasm-bindgen 到 streaming chat 的完整開發歷程與踩坑實錄
+
+**關鍵觀念：**
+- Rust WASM 瀏覽器 AI Agent 完整開發經驗
+- 3,498 行 Rust、零 JavaScript 的架構實踐
+- wasm-bindgen、web-sys、streaming chat 技術細節
+- 開發過程踩坑與解決方案全紀錄
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/dev-experience-article.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/dev-experience-article.html/llms.txt): 該專案的 llms.txt
+- 類型：開發經驗
+- 發佈日期：2026-04-03T22:57:00+08:00
+- 標籤：Rust WASM、Browser Agent、密碼保護
 
 ## Browser Agent — 20 分鐘造出純瀏覽器 Agentic AI
 

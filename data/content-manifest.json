@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-03T17:35:00+08:00"
+    "lastUpdated": "2026-04-03T22:57:00+08:00"
   },
   "items": [
+    {
+      "id": "dev-experience-article",
+      "title": "Rust WASM 瀏覽器 AI Agent — 開發經驗全紀錄",
+      "subtitle": "3,498 行 Rust、零 JavaScript、從 wasm-bindgen 到 streaming chat 的完整開發歷程與踩坑實錄",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/dev-experience-article.html",
+      "icon": "code",
+      "badge": "開發經驗",
+      "badgeColor": "#dc2626",
+      "protected": true,
+      "publishDate": "2026-04-03T22:57:00+08:00",
+      "tags": [
+        "brain:Rust WASM",
+        "scale:Browser Agent",
+        "lock:密碼保護"
+      ],
+      "concepts": [
+        "Rust WASM 瀏覽器 AI Agent 完整開發經驗",
+        "3,498 行 Rust、零 JavaScript 的架構實踐",
+        "wasm-bindgen、web-sys、streaming chat 技術細節",
+        "開發過程踩坑與解決方案全紀錄"
+      ]
+    },
     {
       "id": "opencode-browser-agent",
       "title": "Browser Agent — 20 分鐘造出純瀏覽器 Agentic AI",
