@@ -166,8 +166,19 @@ async function init() {
       ? formatDate(manifest.metadata.lastUpdated)
       : now;
 
-    // 啟動 Konami Code 監聽
-    initKonamiCode();
+    // IAP 域名：預設亮出機密文章（已有 IAP 保護，不需 Konami Code）
+    const isIAPProtected = location.hostname.includes('botrun-protected');
+    if (isIAPProtected) {
+      const section = document.getElementById('protected-section');
+      if (section) {
+        section.style.display = '';
+        section.querySelector('.protected-label').textContent = '🔓 機密文章（IAP 保護中）';
+      }
+      document.getElementById('item-count').textContent = `${items.length} 項`;
+    } else {
+      // 公開首頁：Konami Code 解鎖
+      initKonamiCode();
+    }
   } catch (err) {
     console.error('載入失敗:', err);
     document.getElementById('card-list').innerHTML = '<p style="text-align:center;color:#999;">載入中...</p>';
