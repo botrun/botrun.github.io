@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T02:12:24.315Z
+> 生成時間：2026-04-03T07:41:00.844Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 95 個項目，按發佈日期降序排列。
+共 96 個項目，按發佈日期降序排列。
+
+## KISS 資安架構 — 攻不破 vs 唯一破口
+
+> 四模組一鑰匙一小時歸零：非技術人也能看懂的 TEE + KMS + FIDO2 + AI Gate 白話圖解
+
+**關鍵觀念：**
+- KISS 原則：四模組（WebAuthn + KMS Envelope + Claude Agent + 1hr 自毀）
+- 六種攻不破：駭客偷 GCS、偷 KMS、假 VM、監聽網路、釣魚、偷看 TEE
+- 兩個唯一破口：端點電腦被裝後門、內鬼改程式碼
+- AI Gate 自動掃描：CI/CD 加 LLM 審查 diff，六大惡意模式攔截
+- 殘餘風險誠實揭露：DNS Tunneling、供應鏈、時間炸彈、語意偽裝
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/kiss-security-architecture.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/kiss-security-architecture.html/llms.txt): 該專案的 llms.txt
+- 類型：資安架構
+- 發佈日期：2026-04-03T15:40:00+08:00
+- 標籤：KISS、TEE、密碼保護
 
 ## 結晶螺旋 — 觀護人師徒蒸餾教材
 
