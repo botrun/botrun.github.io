@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "zero-knowledge-security-architecture",
+      "title": "我幫你傳信，但信封是你自己封的 — Zero-Knowledge 資安架構",
+      "subtitle": "YubiKey Bio 指紋 + AES-256 端對端加密 + GCP/國網雙備援 + 五角色間諜滲透分析",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-security-architecture.html",
+      "icon": "lock",
+      "badge": "資安架構",
+      "badgeColor": "#ff6b6b",
+      "protected": true,
+      "publishDate": "2026-04-04T07:50:45+08:00",
+      "tags": [
+        "lock:Zero-Knowledge",
+        "shield:AES-256",
+        "key:YubiKey Bio"
+      ],
+      "concepts": [
+        "Zero-Knowledge 架構：我方無法解密，純粹管道角色",
+        "YubiKey Bio 指紋零帳密 FIDO2 + AES-256-GCM 端對端加密",
+        "GCP Confidential VM + 國網中心雙備援（接近 100% SLA）",
+        "ECDH 臨時金鑰交換 + SEV-SNP 遠端證明",
+        "五角色間諜滲透分析（檢察官/法務部/Google/卡米爾/國網）",
+        "Gateway 多格式轉文字（PDF/Office/OCR/Audio/Video）不落碟",
+        "純瀏覽器零安裝：Chrome + YubiKey 摸指紋即用"
+      ]
+    },
+    {
       "id": "browser-ai-business-model",
       "title": "一個 HTML 打天下 — 純瀏覽器 AI 零伺服器商業模式全解析",
       "subtitle": "國網 1/10 價格、檔案不出電腦、三層火箭架構、法規版 Grammarly、20 大應用場景、孵化器商業模式",

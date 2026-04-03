@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T15:11:50.320Z
+> 生成時間：2026-04-03T23:56:11.392Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 99 個項目，按發佈日期降序排列。
+共 100 個項目，按發佈日期降序排列。
+
+## 我幫你傳信，但信封是你自己封的 — Zero-Knowledge 資安架構
+
+> YubiKey Bio 指紋 + AES-256 端對端加密 + GCP/國網雙備援 + 五角色間諜滲透分析
+
+**關鍵觀念：**
+- Zero-Knowledge 架構：我方無法解密，純粹管道角色
+- YubiKey Bio 指紋零帳密 FIDO2 + AES-256-GCM 端對端加密
+- GCP Confidential VM + 國網中心雙備援（接近 100% SLA）
+- ECDH 臨時金鑰交換 + SEV-SNP 遠端證明
+- 五角色間諜滲透分析（檢察官/法務部/Google/卡米爾/國網）
+- Gateway 多格式轉文字（PDF/Office/OCR/Audio/Video）不落碟
+- 純瀏覽器零安裝：Chrome + YubiKey 摸指紋即用
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-security-architecture.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-security-architecture.html/llms.txt): 該專案的 llms.txt
+- 類型：資安架構
+- 發佈日期：2026-04-04T07:50:45+08:00
+- 標籤：Zero-Knowledge、AES-256、YubiKey Bio
 
 ## 一個 HTML 打天下 — 純瀏覽器 AI 零伺服器商業模式全解析
 
