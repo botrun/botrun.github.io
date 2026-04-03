@@ -1,9 +1,34 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-03T22:57:00+08:00"
+    "lastUpdated": "2026-04-03T23:03:00+08:00"
   },
   "items": [
+    {
+      "id": "browser-ai-business-model",
+      "title": "一個 HTML 打天下 — 純瀏覽器 AI 零伺服器商業模式全解析",
+      "subtitle": "國網 1/10 價格、檔案不出電腦、三層火箭架構、法規版 Grammarly、20 大應用場景、孵化器商業模式",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/browser-ai-business-model.html",
+      "icon": "briefcase",
+      "badge": "商業模式",
+      "badgeColor": "#e8634a",
+      "protected": true,
+      "publishDate": "2026-04-03T23:03:00+08:00",
+      "tags": [
+        "brain:商業模式",
+        "scale:Browser AI",
+        "lock:IAP 保護"
+      ],
+      "concepts": [
+        "純瀏覽器 AI 零伺服器架構：使用者數量與營運成本完全脫鉤",
+        "國網 1/10 價格 + Gateway 商業控制 + Google IAP 付費管道",
+        "三層火箭：離線 BM25 蒸餾問答 → 法規檢索 → 付費 AI 推論",
+        "法規版 Grammarly：貼入合約自動比對法規標記風險",
+        "20 大 Agentic AI 應用場景（合約/財報/保險/KYC 交叉審閱）",
+        "孵化器商業模式：一題 NT$100 蒸餾離線問答工具",
+        "法律界 Google Ads：精準推薦律師事務所"
+      ]
+    },
     {
       "id": "dev-experience-article",
       "title": "Rust WASM 瀏覽器 AI Agent — 開發經驗全紀錄",

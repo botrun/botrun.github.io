@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T14:58:35.124Z
+> 生成時間：2026-04-03T15:11:50.320Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 98 個項目，按發佈日期降序排列。
+共 99 個項目，按發佈日期降序排列。
+
+## 一個 HTML 打天下 — 純瀏覽器 AI 零伺服器商業模式全解析
+
+> 國網 1/10 價格、檔案不出電腦、三層火箭架構、法規版 Grammarly、20 大應用場景、孵化器商業模式
+
+**關鍵觀念：**
+- 純瀏覽器 AI 零伺服器架構：使用者數量與營運成本完全脫鉤
+- 國網 1/10 價格 + Gateway 商業控制 + Google IAP 付費管道
+- 三層火箭：離線 BM25 蒸餾問答 → 法規檢索 → 付費 AI 推論
+- 法規版 Grammarly：貼入合約自動比對法規標記風險
+- 20 大 Agentic AI 應用場景（合約/財報/保險/KYC 交叉審閱）
+- 孵化器商業模式：一題 NT$100 蒸餾離線問答工具
+- 法律界 Google Ads：精準推薦律師事務所
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/browser-ai-business-model.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/browser-ai-business-model.html/llms.txt): 該專案的 llms.txt
+- 類型：商業模式
+- 發佈日期：2026-04-03T23:03:00+08:00
+- 標籤：商業模式、Browser AI、IAP 保護
 
 ## Rust WASM 瀏覽器 AI Agent — 開發經驗全紀錄
 
