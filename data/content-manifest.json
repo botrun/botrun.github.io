@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "結晶螺旋-觀護人師徒蒸餾教材",
+      "title": "結晶螺旋 — 觀護人師徒蒸餾教材",
+      "subtitle": "五次迭代進化：Opus 4.6 閱卷 × Devstral-2-123B 答題，65→91 分的師徒蒸餾全紀錄",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/結晶螺旋-觀護人師徒蒸餾教材.html",
+      "icon": "graduation-cap",
+      "badge": "師徒蒸餾",
+      "badgeColor": "#2d5a27",
+      "protected": true,
+      "publishDate": "2026-04-03T09:58:00+08:00",
+      "tags": [
+        "brain:師徒蒸餾",
+        "scale:觀護人",
+        "lock:密碼保護"
+      ],
+      "concepts": [
+        "五次迭代蒸餾：大模型閱卷教小模型，65→91 分穩定上線",
+        "五角色協作：情境編劇、考題師父、攻略寫手、找碴官、老闆",
+        "合成資料零風險：全程虛構個案，不碰真實機密",
+        "AGENTS.md 泛化原則：禁止 overfitting，必須通用各種類似情境",
+        "botrun-oc 國網中心 CLI：多模型驅動 agentic AI 考試"
+      ]
+    },
+    {
       "id": "claude-code-leak-20-lessons",
       "title": "Claude Code 洩漏解剖學 — 20 個底層設計",
       "subtitle": "512K 行原始碼意外公開，每一個設計決策都是波特人產品進化的結晶螺旋養分",
