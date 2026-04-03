@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T07:41:00.844Z
+> 生成時間：2026-04-03T09:35:46.698Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 96 個項目，按發佈日期降序排列。
+共 97 個項目，按發佈日期降序排列。
+
+## Browser Agent — 20 分鐘造出純瀏覽器 Agentic AI
+
+> 零伺服器、8 個 AI 工具、VFS 檔案系統、run_code JS 引擎、多模態 GCP API 擴充架構全解說
+
+**關鍵觀念：**
+- Pure Browser Agentic AI：14 檔案 45KB bundle，零伺服器
+- 8 個 AI 工具：read/write/edit/list/glob/grep/apply_patch/run_code
+- VFS 虛擬檔案系統：Solid.js reactive，AI 改檔 UI 即時更新
+- run_code 引擎：async/await + VFS CRUD + importVFS ES Module + fetch
+- 多模態架構：GCP Speech-to-Text/Document AI/Vision/Video + NCHC LLM
+- 容量精算：60 PDF×1000 頁=120MB 佔 Chrome 3%，50 萬筆 CSV 秒回
+- 5 個地雷：micromatch Node.js 依賴/注音 IME/CORS/ES Module import/反引號
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/opencode-browser-agent.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/opencode-browser-agent.html/llms.txt): 該專案的 llms.txt
+- 類型：Browser Agent
+- 發佈日期：2026-04-03T17:35:00+08:00
+- 標籤：Agentic AI、Browser、密碼保護
 
 ## KISS 資安架構 — 攻不破 vs 唯一破口
 

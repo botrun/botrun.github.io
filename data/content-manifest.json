@@ -1,9 +1,34 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-03T15:40:00+08:00"
+    "lastUpdated": "2026-04-03T17:35:00+08:00"
   },
   "items": [
+    {
+      "id": "opencode-browser-agent",
+      "title": "Browser Agent — 20 分鐘造出純瀏覽器 Agentic AI",
+      "subtitle": "零伺服器、8 個 AI 工具、VFS 檔案系統、run_code JS 引擎、多模態 GCP API 擴充架構全解說",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/opencode-browser-agent.html",
+      "icon": "globe",
+      "badge": "Browser Agent",
+      "badgeColor": "#2563eb",
+      "protected": true,
+      "publishDate": "2026-04-03T17:35:00+08:00",
+      "tags": [
+        "brain:Agentic AI",
+        "scale:Browser",
+        "lock:密碼保護"
+      ],
+      "concepts": [
+        "Pure Browser Agentic AI：14 檔案 45KB bundle，零伺服器",
+        "8 個 AI 工具：read/write/edit/list/glob/grep/apply_patch/run_code",
+        "VFS 虛擬檔案系統：Solid.js reactive，AI 改檔 UI 即時更新",
+        "run_code 引擎：async/await + VFS CRUD + importVFS ES Module + fetch",
+        "多模態架構：GCP Speech-to-Text/Document AI/Vision/Video + NCHC LLM",
+        "容量精算：60 PDF×1000 頁=120MB 佔 Chrome 3%，50 萬筆 CSV 秒回",
+        "5 個地雷：micromatch Node.js 依賴/注音 IME/CORS/ES Module import/反引號"
+      ]
+    },
     {
       "id": "kiss-security-architecture",
       "title": "KISS 資安架構 — 攻不破 vs 唯一破口",
