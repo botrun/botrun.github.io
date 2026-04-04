@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "gemma4-fast-cheap-accurate",
+      "title": "128 個專家只叫 8 個：Gemma 4 的快省準三連招",
+      "subtitle": "MoE 稀疏激活 + KV Cache 影分身 + 混合注意力，大白話搭配可實作程式碼",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-fast-cheap-accurate.html",
+      "icon": "zap",
+      "badge": "技術解析",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T17:33:29+08:00",
+      "tags": [
+        "zap:快省準",
+        "cpu:Gemma 4 MoE",
+        "shield:資料主權"
+      ],
+      "concepts": [
+        "快：KV Cache 差量送法 455x 加速 + deepcopy 影分身平行問答 + Speculative Decoding",
+        "省：MoE 128 專家只激活 8 個（4B 電費跑 26B 腦） + 4-bit 量化損失僅 0.26% + Sliding Window + Shared KV 跨層共用",
+        "準：LMArena 全球開源 #6、AIME 88.3%、Codeforces ELO 2150（都是 3.8B 活用量打出來的）",
+        "RTX PRO 6000 月租 8,755 TWD（H100 的 1/8），或 Mac M4 Max 128GB 零雲端費完全本地",
+        "唯一能完全本地跑的前段班模型——GPT-5、Claude 都要上傳資料，Gemma 4 資料不出門"
+      ]
+    },
+    {
       "id": "gemma4-kvcache-100pages",
       "title": "67 秒 → 0.15 秒：KV Cache 讓 100 頁 PDF 問答飛起來",
       "subtitle": "Gemma 4 26B MoE 在 M4 Max 128GB 上的 KV Cache 差量送法實測",

@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T08:12:34.059Z
+> 生成時間：2026-04-04T09:41:14.086Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 101 個項目，按發佈日期降序排列。
+共 102 個項目，按發佈日期降序排列。
+
+## 128 個專家只叫 8 個：Gemma 4 的快省準三連招
+
+> MoE 稀疏激活 + KV Cache 影分身 + 混合注意力，大白話搭配可實作程式碼
+
+**關鍵觀念：**
+- 快：KV Cache 差量送法 455x 加速 + deepcopy 影分身平行問答 + Speculative Decoding
+- 省：MoE 128 專家只激活 8 個（4B 電費跑 26B 腦） + 4-bit 量化損失僅 0.26% + Sliding Window + Shared KV 跨層共用
+- 準：LMArena 全球開源 #6、AIME 88.3%、Codeforces ELO 2150（都是 3.8B 活用量打出來的）
+- RTX PRO 6000 月租 8,755 TWD（H100 的 1/8），或 Mac M4 Max 128GB 零雲端費完全本地
+- 唯一能完全本地跑的前段班模型——GPT-5、Claude 都要上傳資料，Gemma 4 資料不出門
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gemma4-fast-cheap-accurate.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gemma4-fast-cheap-accurate.html/llms.txt): 該專案的 llms.txt
+- 類型：技術解析
+- 發佈日期：2026-04-04T17:33:29+08:00
+- 標籤：快省準、Gemma 4 MoE、資料主權
 
 ## 67 秒 → 0.15 秒：KV Cache 讓 100 頁 PDF 問答飛起來
 
