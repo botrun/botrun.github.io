@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T09:45:59.416Z
+> 生成時間：2026-04-04T10:11:58.354Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 104 個項目，按發佈日期降序排列。
+共 105 個項目，按發佈日期降序排列。
+
+## 173 字 vs 51 萬行：極簡武士刀與瑞士軍刀的 Coding Agent 哲學戰
+
+> libGDX 之父 Mario Zechner 的 Pi 極簡主義 vs Claude Code 洩漏原始碼的生產級架構
+
+**關鍵觀念：**
+- Pi 用 173 字系統提示、4 個工具、零權限檢查，Terminal-Bench 排名與巨型 harness 接近
+- Claude Code 洩漏 512,000 行 TypeScript、40+ 工具、23 層安全閘門、KAIROS 自治 daemon
+- 安全哲學對比：Pi 信任基礎設施層（容器隔離）vs Claude Code 信任應用層（逐層檢查）
+- 可觀測性是 Mario 最核心批評：context 被隱藏注入、sub-agent 黑箱、壓縮策略不透明
+- 深層啟示：模型能力商品化後，harness（包裝層）才是真正戰場，兩條路都會活下來
+
+- [線上版](https://storage.googleapis.com/botrun-slides/pi-vs-claude-code-philosophy.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/pi-vs-claude-code-philosophy.html/llms.txt): 該專案的 llms.txt
+- 類型：Philosophy Battle
+- 發佈日期：2026-04-04T18:10:00+08:00
+- 標籤：Pi vs Claude Code、173 Words Prompt、512K Lines
 
 ## 51.2 萬行洩漏真相：Claude Code 不是工具，是 Agent Runtime
 
