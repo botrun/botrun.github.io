@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T09:41:14.086Z
+> 生成時間：2026-04-04T09:45:13.323Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 102 個項目，按發佈日期降序排列。
+共 103 個項目，按發佈日期降序排列。
+
+## 一鍋大雜燴害 AI 失憶，自助餐讓它想起一切
+
+> Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構
+
+**關鍵觀念：**
+- 注意力殘差核心：softmax attention over depth，讓每層選擇性取用前層表徵，取代盲目累加的殘差連接
+- 效率實證：達到相同效能水準計算量減少 1.25x，GPQA Diamond +7.5 分，推理延遲增加 <2%
+- Block AttnRes 工程解法：模組內完整注意力、模組間摘要傳遞，解決多伺服器通訊瓶頸
+- 類腦結構湧現：局部性 + 遠距連結 + 專業化分工，AI 首次具備動態重新配置自身結構的能力
+- Harness Engineering 啟發：選擇性聚合優於盲目累加，適用於 Context Engineering、記憶分層、評估框架設計
+
+- [線上版](https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html/llms.txt): 該專案的 llms.txt
+- 類型：AI Architecture
+- 發佈日期：2026-04-04T17:38:31+08:00
+- 標籤：Attention Residuals、1.25x Efficiency、Kimi / Moonshot AI
 
 ## 128 個專家只叫 8 個：Gemma 4 的快省準三連招
 

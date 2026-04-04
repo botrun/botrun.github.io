@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "kimi-attention-residuals",
+      "title": "一鍋大雜燴害 AI 失憶，自助餐讓它想起一切",
+      "subtitle": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
+      "href": "https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html",
+      "icon": "brain",
+      "badge": "AI Architecture",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T17:38:31+08:00",
+      "tags": [
+        "brain:Attention Residuals",
+        "zap:1.25x Efficiency",
+        "cpu:Kimi / Moonshot AI"
+      ],
+      "concepts": [
+        "注意力殘差核心：softmax attention over depth，讓每層選擇性取用前層表徵，取代盲目累加的殘差連接",
+        "效率實證：達到相同效能水準計算量減少 1.25x，GPQA Diamond +7.5 分，推理延遲增加 <2%",
+        "Block AttnRes 工程解法：模組內完整注意力、模組間摘要傳遞，解決多伺服器通訊瓶頸",
+        "類腦結構湧現：局部性 + 遠距連結 + 專業化分工，AI 首次具備動態重新配置自身結構的能力",
+        "Harness Engineering 啟發：選擇性聚合優於盲目累加，適用於 Context Engineering、記憶分層、評估框架設計"
+      ]
+    },
+    {
       "id": "gemma4-fast-cheap-accurate",
       "title": "128 個專家只叫 8 個：Gemma 4 的快省準三連招",
       "subtitle": "MoE 稀疏激活 + KV Cache 影分身 + 混合注意力，大白話搭配可實作程式碼",
