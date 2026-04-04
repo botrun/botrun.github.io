@@ -6,7 +6,7 @@
   "items": [
     {
       "id": "zero-knowledge-security-architecture",
-      "title": "我幫你傳信，但信封是你自己封的 — Zero-Knowledge 資安架構",
+      "title": "指紋解鎖硬體金鑰，零信任傳輸，系統不留存金鑰 — 資安架構設計",
       "subtitle": "YubiKey Bio 指紋 + AES-256 端對端加密 + GCP/國網雙備援 + 五角色內部威脅分析",
       "href": "https://botrun-protected-257949799705.asia-east1.run.app/zero-knowledge-security-architecture.html",
       "icon": "lock",
