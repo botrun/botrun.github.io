@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "right-brain-seeds-left-brain-waters",
+      "title": "右腦播種 左腦澆水 — 90 秒決定你長成什麼樣的人",
+      "subtitle": "Jill Bolte Taylor 腦神經科學 x 佛學：情緒只活 90 秒，之後都是你的左腦在續命",
+      "href": "https://storage.googleapis.com/botrun-slides/right-brain-seeds-left-brain-waters.html",
+      "icon": "brain",
+      "badge": "腦科學 x 佛學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-04T23:46:16+08:00",
+      "tags": [
+        "brain:腦神經科學",
+        "droplets:90 秒法則",
+        "heart:佛學修行"
+      ],
+      "concepts": [
+        "Jill Bolte Taylor 中風後發現：任何情緒的生化反應只活 90 秒，之後是左腦選擇重播",
+        "右腦播種（當下真實感受）→ 左腦澆水（選擇匱乏水壺或豐盛水壺）→ 長出不同人生",
+        "匱乏水壺（你輸我贏、防衛、控制）vs 豐盛水壺（多贏、好奇、合作），辨別法：身體縮緊或打開",
+        "修行三步驟：覺察（我在生氣）→ 辨認（90 秒種子還是左腦重播）→ 選擇（換水壺）",
+        "左腦是好員工壞老闆、右腦是好度假壞住所，能自由切換才是真正自在"
+      ]
+    },
+    {
       "id": "pi-vs-claude-code-philosophy",
       "title": "173 字 vs 51 萬行：極簡武士刀與瑞士軍刀的 Coding Agent 哲學戰",
       "subtitle": "libGDX 之父 Mario Zechner 的 Pi 極簡主義 vs Claude Code 洩漏原始碼的生產級架構",
