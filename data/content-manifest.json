@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-03T23:03:00+08:00"
+    "lastUpdated": "2026-04-05T00:40:37+08:00"
   },
   "items": [
+    {
+      "id": "harness-framework-comparison",
+      "title": "買車看規格，造車看設計圖 — 三大框架五維比較",
+      "subtitle": "Claude Code · OpenCode · Pi Mono 以 Rust WASM 瀏覽器 AI Agent 為目標的架構移植性加權評分",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/harness-framework-comparison.html",
+      "icon": "git-compare",
+      "badge": "架構比較",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T00:40:37+08:00",
+      "protected": true,
+      "tags": [
+        "git-compare:框架比較",
+        "code:Rust WASM",
+        "shield:政府資安"
+      ],
+      "concepts": [
+        "五維加權比較：架構可移植性(30%)、工具系統設計(20%)、多模型供應商(20%)、安全模型(15%)、Agent Loop(15%)",
+        "Pi Mono 8.93 分勝出，分層 Package 可直接對應 Rust Crate，工具集吻合 VFS POSIX",
+        "Claude Code 全球使用量第一（13.5 萬 commits/天）但架構不可移植，OpenCode 星數第一（137K）但 Effect 系統無 Rust 對應物",
+        "核心洞見：「最好的 AI Coding Agent」≠「最適合移植的架構參考」— 買車看規格，造車看設計圖",
+        "建議：Pi Mono 為主要架構參考、OpenCode 為 Prompt 工程參考、Claude Code 為 System Prompt 參考"
+      ]
+    },
     {
       "id": "harness-engineering-playbook",
       "title": "Harness Engineering — 模型再聰明，沒韁繩照樣翻車",

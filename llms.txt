@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T15:57:32.834Z
+> 生成時間：2026-04-04T16:41:06.478Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 107 個項目，按發佈日期降序排列。
+共 108 個項目，按發佈日期降序排列。
+
+## 買車看規格，造車看設計圖 — 三大框架五維比較
+
+> Claude Code · OpenCode · Pi Mono 以 Rust WASM 瀏覽器 AI Agent 為目標的架構移植性加權評分
+
+**關鍵觀念：**
+- 五維加權比較：架構可移植性(30%)、工具系統設計(20%)、多模型供應商(20%)、安全模型(15%)、Agent Loop(15%)
+- Pi Mono 8.93 分勝出，分層 Package 可直接對應 Rust Crate，工具集吻合 VFS POSIX
+- Claude Code 全球使用量第一（13.5 萬 commits/天）但架構不可移植，OpenCode 星數第一（137K）但 Effect 系統無 Rust 對應物
+- 核心洞見：「最好的 AI Coding Agent」≠「最適合移植的架構參考」— 買車看規格，造車看設計圖
+- 建議：Pi Mono 為主要架構參考、OpenCode 為 Prompt 工程參考、Claude Code 為 System Prompt 參考
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/harness-framework-comparison.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/harness-framework-comparison.html/llms.txt): 該專案的 llms.txt
+- 類型：架構比較
+- 發佈日期：2026-04-05T00:40:37+08:00
+- 標籤：框架比較、Rust WASM、政府資安
 
 ## Harness Engineering — 模型再聰明，沒韁繩照樣翻車
 
