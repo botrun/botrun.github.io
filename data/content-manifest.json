@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "harness-engineering-playbook",
+      "title": "Harness Engineering — 模型再聰明，沒韁繩照樣翻車",
+      "subtitle": "Anthropic 兩篇論文拆解：AI Agent 長任務失敗的四大模式，與 GAN 式三代理人解法",
+      "href": "https://storage.googleapis.com/botrun-slides/harness-engineering-playbook.html",
+      "icon": "settings",
+      "badge": "Agent 工程",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T23:48:05+08:00",
+      "tags": [
+        "settings:Harness Engineering",
+        "bot:AI Agent",
+        "git-branch:GAN 架構"
+      ],
+      "concepts": [
+        "AI Agent 長任務四大翻車模式：一次做太多、Context Anxiety、過早宣布勝利、自我評估偏差",
+        "Phase 1 雙代理人：Initializer 建環境 + Coding Agent 每 session 一個功能、用 Puppeteer 真人測試",
+        "Phase 2 GAN 式三代理人：Planner（規格）→ Generator（建構）⇄ Evaluator（Playwright 四維度硬門檻評分）",
+        "Harness 不是 prompt 或 system message，而是約束 + 工具 + 回饋迴圈 + 交接產物的完整環境",
+        "五大原則：任務分解、Session 連續性、外部評估、機械式約束、漸進式驗證"
+      ]
+    },
+    {
       "id": "right-brain-seeds-left-brain-waters",
       "title": "右腦播種 左腦澆水 — 90 秒決定你長成什麼樣的人",
       "subtitle": "Jill Bolte Taylor 腦神經科學 x 佛學：情緒只活 90 秒，之後都是你的左腦在續命",

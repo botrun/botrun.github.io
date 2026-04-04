@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T15:51:25.818Z
+> 生成時間：2026-04-04T15:57:32.834Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 106 個項目，按發佈日期降序排列。
+共 107 個項目，按發佈日期降序排列。
+
+## Harness Engineering — 模型再聰明，沒韁繩照樣翻車
+
+> Anthropic 兩篇論文拆解：AI Agent 長任務失敗的四大模式，與 GAN 式三代理人解法
+
+**關鍵觀念：**
+- AI Agent 長任務四大翻車模式：一次做太多、Context Anxiety、過早宣布勝利、自我評估偏差
+- Phase 1 雙代理人：Initializer 建環境 + Coding Agent 每 session 一個功能、用 Puppeteer 真人測試
+- Phase 2 GAN 式三代理人：Planner（規格）→ Generator（建構）⇄ Evaluator（Playwright 四維度硬門檻評分）
+- Harness 不是 prompt 或 system message，而是約束 + 工具 + 回饋迴圈 + 交接產物的完整環境
+- 五大原則：任務分解、Session 連續性、外部評估、機械式約束、漸進式驗證
+
+- [線上版](https://storage.googleapis.com/botrun-slides/harness-engineering-playbook.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/harness-engineering-playbook.html/llms.txt): 該專案的 llms.txt
+- 類型：Agent 工程
+- 發佈日期：2026-04-04T23:48:05+08:00
+- 標籤：Harness Engineering、AI Agent、GAN 架構
 
 ## 右腦播種 左腦澆水 — 90 秒決定你長成什麼樣的人
 
