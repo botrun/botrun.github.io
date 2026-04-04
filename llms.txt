@@ -3,21 +3,38 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-03T23:56:11.392Z
+> 生成時間：2026-04-04T08:12:34.059Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 100 個項目，按發佈日期降序排列。
+共 101 個項目，按發佈日期降序排列。
 
-## 我幫你傳信，但信封是你自己封的 — Zero-Knowledge 資安架構
+## 67 秒 → 0.15 秒：KV Cache 讓 100 頁 PDF 問答飛起來
 
-> YubiKey Bio 指紋 + AES-256 端對端加密 + GCP/國網雙備援 + 五角色間諜滲透分析
+> Gemma 4 26B MoE 在 M4 Max 128GB 上的 KV Cache 差量送法實測
+
+**關鍵觀念：**
+- KV Cache 跨輪重用：Turn 2+ 只送差量 ~30 tokens，TTFT 從 67s 降到 0.15s（455x 加速）
+- Gemma 4 混合注意力：5 層 Sliding Window（1024 tokens）+ 1 層 Full Attention（全歷史），遠距離記憶靠 Full 層
+- KV Cache 記憶體穩定：模型 15.7GB + Cache 2.6GB = 22.66GB，10 輪不增長
+- mlx-vlm 0.4.3 是 Mac 上唯一支援 Gemma 4 的推論引擎（mlx-lm 不支援）
+- 100 頁 PDF（61,689 tokens）10 輪連續問答實測，M4 Max 128GB 完全本地執行
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gemma4-kvcache-100pages.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gemma4-kvcache-100pages.html/llms.txt): 該專案的 llms.txt
+- 類型：Benchmark
+- 發佈日期：2026-04-04T16:05:38+08:00
+- 標籤：KV Cache、Gemma 4 26B、M4 Max
+
+## 指紋解鎖硬體金鑰，雙層加密傳輸，系統不留存金鑰 — 資安架構設計
+
+> YubiKey Bio 指紋 + AES-256 端對端加密 + GCP/國網雙備援 + 五角色內部威脅分析
 
 **關鍵觀念：**
 - Zero-Knowledge 架構：我方無法解密，純粹管道角色
 - YubiKey Bio 指紋零帳密 FIDO2 + AES-256-GCM 端對端加密
 - GCP Confidential VM + 國網中心雙備援（接近 100% SLA）
 - ECDH 臨時金鑰交換 + SEV-SNP 遠端證明
-- 五角色間諜滲透分析（檢察官/法務部/Google/卡米爾/國網）
+- 五角色內部威脅分析（檢察官/法務部/Google/卡米爾/國網）
 - Gateway 多格式轉文字（PDF/Office/OCR/Audio/Video）不落碟
 - 純瀏覽器零安裝：Chrome + YubiKey 摸指紋即用
 
