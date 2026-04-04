@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "claude-code-agent-runtime",
+      "title": "51.2 萬行洩漏真相：Claude Code 不是工具，是 Agent Runtime",
+      "subtitle": "1,906 個 TypeScript 檔案全面審計 — 98.4% 不是 AI，是生產級工程",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-agent-runtime.html",
+      "icon": "cpu",
+      "badge": "Agent Architecture",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-04T17:37:55+08:00",
+      "tags": [
+        "cpu:Agent Runtime",
+        "shield:23 Security Checks",
+        "brain:5-Layer Memory"
+      ],
+      "concepts": [
+        "核心比例：51.2 萬行 TypeScript 只有 8,000 行（1.6%）碰模型 API，其餘 98.4% 是 Agent Runtime 工程",
+        "ReAct 五階段迴圈：上下文準備 → 流式呼叫 → 工具執行 → 附件收集 → 終止決策，用 Async Generator yield 推送",
+        "七層恢復防線：API 退避 / 529 過載 / Token 恢復 / 響應壓縮 / 上下文排空 / 模型 Fallback / 6 小時持久重試",
+        "投機執行：Copy-on-Write Overlay FS 預執行，確認套用、拒絕清除，像 CPU 流水線隱藏延遲",
+        "Prompt 快取分割：靜態段全局共享 + 動態段每輪重算，14 個失效向量追蹤，每百萬 Token $5 → $0.5"
+      ]
+    },
+    {
       "id": "kimi-attention-residuals",
       "title": "一鍋大雜燴害 AI 失憶，自助餐讓它想起一切",
       "subtitle": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
