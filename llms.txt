@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T04:49:24.671Z
+> 生成時間：2026-04-05T04:59:01.941Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 116 個項目，按發佈日期降序排列。
+共 117 個項目，按發佈日期降序排列。
+
+## 8 模型 Agentic AI 排行榜 — 完整技術傳承文件
+
+> Pi Mono V3 方法論、逐情境得分、速度/長度數據、語料庫設計、部署三層架構，夥伴傳承用完整文件
+
+**關鍵觀念：**
+- Pi Mono V3 五大特性：零預知、工具自主、多輪迴圈、截斷 metadata 提醒、精簡 prompt
+- 8 模型 70 次實測完整數據：排行榜、逐情境得分、速度、回答長度全收錄
+- 五大發現：14B=675B、31B 補跑第三但 11 倍慢、E4B 離線殺手、TIMEOUT 試金石、14B 驗證未偷看
+- 17 檔案語料庫交叉關聯設計：共犯/證人/累犯/觀護人關係圖，測試多跳推理
+- 三層部署架構 Rust 實作：離線 E4B → 日常 14B → 最強 675B，含自動選模型程式碼
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-benchmark-report.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-benchmark-report.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承文件
+- 發佈日期：2026-04-05T12:58:35+08:00
+- 標籤：傳承、排行榜、Agentic AI
 
 ## 兩萬元 Mac mini — 機關 OCR + AI 閘道器
 
