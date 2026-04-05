@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-04T18:05:41.876Z
+> 生成時間：2026-04-05T01:13:12.542Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 109 個項目，按發佈日期降序排列。
+共 110 個項目，按發佈日期降序排列。
+
+## 零安裝 91% 冠軍 — 繁體中文 OCR 10 工具實測排行榜
+
+> macOS Vision 稱王，中國百度工具最強但臺灣機關禁用，Gemma 4 小模型打大模型
+
+**關鍵觀念：**
+- macOS Vision OCR 91.3% 零安裝冠軍（Apple 美國），只漏 unicode 圓圈差異
+- PaddleOCR 87% / RapidOCR 0.8s 最快 — 均為百度中國製，臺灣政府機關依法禁用
+- 專業 OCR 碾壓 LLM Vision：PaddleOCR 87% vs Gemma4-E4B 78.3%，差距 9%
+- 小 LLM 比大 LLM 更適合 OCR：E4B 4.5B (78%) > 31B (65%) > 26B-MoE (52%)
+- 最佳實踐兩階段：macOS Vision/Marker 做 OCR 轉錄 + Gemma4-E4B/Claude 做語意理解
+
+- [線上版](https://storage.googleapis.com/botrun-slides/ocr-benchmark-tc.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ocr-benchmark-tc.html/llms.txt): 該專案的 llms.txt
+- 類型：Benchmark
+- 發佈日期：2026-04-05T09:11:51+08:00
+- 標籤：OCR、Benchmark、國安合規
 
 ## Pi 6:1 勝 — 準度不是運氣，是多讀那兩個檔案
 
