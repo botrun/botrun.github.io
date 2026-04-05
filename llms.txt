@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T04:23:12.951Z
+> 生成時間：2026-04-05T04:24:08.803Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 113 個項目，按發佈日期降序排列。
+共 114 個項目，按發佈日期降序排列。
+
+## 餵越多錯越多：一針見血的超級提示，4B 追平 72B
+
+> Agentic AI 管家先整理再提問——Context Engineering 讓小模型品質飆升 5 倍，全地端部署資料不出門
+
+**關鍵觀念：**
+- 多步驟處理讓 AI 混淆：GPT-4 準確度從 99% 掉到 70%，Claude 3.5 Sonnet 從 88% 掉到 30%（Context Rot 2026）
+- 一次乾淨 Context Injection 品質飆升 5 倍：聚焦 300 tokens 遠勝 113K tokens 全文（Chroma Research 2026）
+- Qwen3-4B 追平 72B、Gemma-3n E4B 超越 17B、Phi-4 14B MMLU 85.2 逼近 GPT-4 86.4
+- Agentic AI 工作流：收集多模態→過濾雜訊→組裝超級提示→小模型精準生成
+- 全地端部署處理 PDF/Office/音訊/影像，機敏資料不出門，AI 管家持續迭代進化
+
+- [線上版](https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html/llms.txt): 該專案的 llms.txt
+- 類型：方法論
+- 發佈日期：2026-04-05T12:12:48+08:00
+- 標籤：超級提示、Context Engineering、全地端
 
 ## 三人一組的 AI 小隊，迭代五輪打敗單兵作戰
 

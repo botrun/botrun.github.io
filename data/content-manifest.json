@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T12:17:15+08:00"
+    "lastUpdated": "2026-04-05T12:12:48+08:00"
   },
   "items": [
+    {
+      "id": "one-shot-super-prompt",
+      "title": "餵越多錯越多：一針見血的超級提示，4B 追平 72B",
+      "subtitle": "Agentic AI 管家先整理再提問——Context Engineering 讓小模型品質飆升 5 倍，全地端部署資料不出門",
+      "href": "https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html",
+      "icon": "zap",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T12:12:48+08:00",
+      "tags": [
+        "zap:超級提示",
+        "cpu:Context Engineering",
+        "shield:全地端"
+      ],
+      "concepts": [
+        "多步驟處理讓 AI 混淆：GPT-4 準確度從 99% 掉到 70%，Claude 3.5 Sonnet 從 88% 掉到 30%（Context Rot 2026）",
+        "一次乾淨 Context Injection 品質飆升 5 倍：聚焦 300 tokens 遠勝 113K tokens 全文（Chroma Research 2026）",
+        "Qwen3-4B 追平 72B、Gemma-3n E4B 超越 17B、Phi-4 14B MMLU 85.2 逼近 GPT-4 86.4",
+        "Agentic AI 工作流：收集多模態→過濾雜訊→組裝超級提示→小模型精準生成",
+        "全地端部署處理 PDF/Office/音訊/影像，機敏資料不出門，AI 管家持續迭代進化"
+      ]
+    },
     {
       "id": "agentic-squad-dag",
       "title": "三人一組的 AI 小隊，迭代五輪打敗單兵作戰",
