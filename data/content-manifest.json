@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "mac-mini-ocr-gateway",
+      "title": "兩萬元 Mac mini — 機關 OCR + AI 閘道器",
+      "subtitle": "Apple Vision OCR 91% 精準度、繁中第一、開源排行榜第一。一台 Mac mini 三合一：文件辨識 + CORS 閘道器 + 機密資料過濾",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/mac-mini-ocr-gateway.html",
+      "icon": "monitor",
+      "badge": "機關方案",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-05T12:28:54+08:00",
+      "protected": true,
+      "tags": [
+        "monitor:Mac mini OCR",
+        "shield:機密過濾",
+        "server:CORS 閘道器"
+      ],
+      "concepts": [
+        "Mac mini 兩萬元臺幣，Apple Vision OCR 91% 精準度，開源排行榜第一（含中國大陸排行榜），繁體中文第一名",
+        "三合一架構：OCR 文件辨識 + 國網中心 CORS Gateway + 機密資料大模型過濾遮蔽",
+        "辦公室內網部署：接電源接螢幕就上線，資料不出內網，等同實體版 Confidential VM",
+        "升級一台等於全機關升級：波特人 Agentic AI 服務安裝拉取都在內網環境",
+        "MacBook Neo 替代方案：小型 MacBook 也能做到同樣 OCR 能力，銀色或黑色適合公家機關"
+      ]
+    },
+    {
       "id": "agentic-five-roles-workflow",
       "title": "五角 AI 特攻隊 — 機關文件不再迷路",
       "subtitle": "5 個 AI 角色分工合作：大隊長指揮、清資料員轉檔、偵察兵檢索、撰寫官生成、對抗官評分，反覆迭代五輪取代傳統 RAG",
