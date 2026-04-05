@@ -29,7 +29,7 @@
     },
     {
       "id": "agentic-five-roles-workflow",
-      "title": "五角 AI 特攻隊 — 機關文件不再迷路",
+      "title": "五角流水線 — 機關文件不再迷路",
       "subtitle": "5 個 AI 角色分工合作：大隊長指揮、清資料員轉檔、偵察兵檢索、撰寫官生成、對抗官評分，反覆迭代五輪取代傳統 RAG",
       "href": "https://storage.googleapis.com/botrun-slides/agentic-five-roles-workflow.html",
       "icon": "users",
