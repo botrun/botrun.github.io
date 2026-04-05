@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T09:11:51+08:00"
+    "lastUpdated": "2026-04-05T10:36:18+08:00"
   },
   "items": [
+    {
+      "id": "premium-exam-five-levels",
+      "title": "高品味題庫五等級：從「對，就是我」到「分數我服氣」",
+      "subtitle": "L1 身分→L2 任務→L3 情境→L4 素材→L5 答案，機關不用懂 AI 就能出鑑別力題庫",
+      "href": "https://storage.googleapis.com/botrun-slides/premium-exam-five-levels.html",
+      "icon": "layers",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T10:36:18+08:00",
+      "tags": [
+        "layers:題庫",
+        "target:鑑別力",
+        "building:機關"
+      ],
+      "concepts": [
+        "五級遞進框架：身分→任務→情境→素材→答案，對應使用者旅程「我是誰→我要做什麼→什麼情況下做→拿什麼來做→做對長什麼樣」",
+        "L1 一句話啟動：機關只要說出名稱、角色、最痛什麼，就能開始建題",
+        "L4 多模態素材：PDF/DOCX/XLSX/掃描/錄音/影片/截圖，機關去識別化丟過來即可",
+        "L5 逐項扣分表：老手寫標準成品 + 白紙黑字扣分標準，五個模型跑完直接排名",
+        "國科會公文實例：計畫變更核定函從 L1 一句話到 L5 扣分表的完整示範"
+      ]
+    },
     {
       "id": "ocr-benchmark-tc",
       "title": "零安裝 91% 冠軍 — 繁體中文 OCR 10 工具實測排行榜",
