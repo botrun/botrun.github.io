@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T04:59:01.941Z
+> 生成時間：2026-04-05T10:14:52.353Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 117 個項目，按發佈日期降序排列。
+共 118 個項目，按發佈日期降序排列。
+
+## 蜂蜜知識庫：101 題 × 105 分鐘的符號推理之旅
+
+> 從零到一的 BM25 自然語言問答引擎開發歷程，Rust WASM 雙用移植，239 題驗測 99.2% 通過
+
+**關鍵觀念：**
+- 101 題蜂蜜知識庫從零到一只花 105 分鐘，9 次 Git commit 完成
+- BM25 分層加權引擎：question ×3 > keywords ×2.5 > answer ×1，零向量技術
+- JSONL 平行建構架構：7 Agent 同時查證，merge.mjs 一鍵合併零衝突
+- 5 種人格多元問法迭代：日本人 49 題、大學生 20 題、達人 20 題全數 100%
+- Rust WASM 雙用移植：Browser + WASI 同一份原始碼，shared/ JSON 單一真相源
+
+- [線上版](https://storage.googleapis.com/botrun-slides/honey-qa-build-story.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/honey-qa-build-story.html/llms.txt): 該專案的 llms.txt
+- 類型：開發歷程
+- 發佈日期：2026-04-05T18:08:40+08:00
+- 標籤：BM25、Rust WASM、105 分鐘
 
 ## 8 模型 Agentic AI 排行榜 — 完整技術傳承文件
 

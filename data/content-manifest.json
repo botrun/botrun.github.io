@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T12:58:35+08:00"
+    "lastUpdated": "2026-04-05T18:08:40+08:00"
   },
   "items": [
+    {
+      "id": "honey-qa-build-story",
+      "title": "蜂蜜知識庫：101 題 × 105 分鐘的符號推理之旅",
+      "subtitle": "從零到一的 BM25 自然語言問答引擎開發歷程，Rust WASM 雙用移植，239 題驗測 99.2% 通過",
+      "href": "https://storage.googleapis.com/botrun-slides/honey-qa-build-story.html",
+      "icon": "search",
+      "badge": "開發歷程",
+      "badgeColor": "#8a6d2b",
+      "publishDate": "2026-04-05T18:08:40+08:00",
+      "tags": [
+        "search:BM25",
+        "code:Rust WASM",
+        "zap:105 分鐘"
+      ],
+      "concepts": [
+        "101 題蜂蜜知識庫從零到一只花 105 分鐘，9 次 Git commit 完成",
+        "BM25 分層加權引擎：question ×3 > keywords ×2.5 > answer ×1，零向量技術",
+        "JSONL 平行建構架構：7 Agent 同時查證，merge.mjs 一鍵合併零衝突",
+        "5 種人格多元問法迭代：日本人 49 題、大學生 20 題、達人 20 題全數 100%",
+        "Rust WASM 雙用移植：Browser + WASI 同一份原始碼，shared/ JSON 單一真相源"
+      ]
+    },
     {
       "id": "agentic-benchmark-report",
       "title": "8 模型 Agentic AI 排行榜 — 完整技術傳承文件",
