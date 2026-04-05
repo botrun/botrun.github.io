@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T10:36:18+08:00"
+    "lastUpdated": "2026-04-05T10:56:54+08:00"
   },
   "items": [
+    {
+      "id": "agentic-benchmark-8models",
+      "title": "8 模型 Agentic AI 排行榜：14B 追平 675B，4.5B 打敗 120B",
+      "subtitle": "法律觀護人 Benchmark 70 次實測——模型大小不等於實力，工具使用能力才是王道",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/agentic-benchmark-8models.html",
+      "icon": "trophy",
+      "badge": "Benchmark",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-04-05T10:56:54+08:00",
+      "protected": true,
+      "tags": [
+        "trophy:排行榜",
+        "cpu:Agentic AI",
+        "scale:Benchmark"
+      ],
+      "concepts": [
+        "Ministral 14B 追平 Mistral-Large 675B（9.8/10），參數量差 48 倍但分數相同",
+        "Gemma4 E4B（4.5B）打敗 24B/26B/120B 三個對手，離線殺手 8.4GB RAM 零費用",
+        "Dense 架構在 Agentic 多輪場景致命：31B Dense 58s/題 vs 26B MoE 47s vs E4B 28s",
+        "TIMEOUT 是工具使用能力試金石：不是模型笨，是不知道何時停止讀檔開始回答",
+        "三層部署：離線 E4B（機敏）→ 日常 14B（最快最準）→ 最強 675B（複雜分析）"
+      ]
+    },
     {
       "id": "premium-exam-five-levels",
       "title": "高品味題庫五等級：從「對，就是我」到「分數我服氣」",
