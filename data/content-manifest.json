@@ -28,8 +28,8 @@
     },
     {
       "id": "one-shot-super-prompt",
-      "title": "餵越多錯越多：一針見血的超級提示，4B 追平 72B",
-      "subtitle": "Agentic AI 管家先整理再提問——Context Engineering 讓小模型品質飆升 5 倍，全地端部署資料不出門",
+      "title": "乾淨大提示：Agentic AI 碾出超大 Prompt，4B 追平 72B",
+      "subtitle": "Agentic AI 唯一目標就是碾出乾淨大提示——小模型品質飆升 5 倍，全地端部署資料不出門",
       "href": "https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html",
       "icon": "zap",
       "badge": "方法論",
