@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "agentic-five-roles-workflow",
+      "title": "五角 AI 特攻隊 — 機關文件不再迷路",
+      "subtitle": "5 個 AI 角色分工合作：大隊長指揮、清資料員轉檔、偵察兵檢索、撰寫官生成、對抗官評分，反覆迭代五輪取代傳統 RAG",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-five-roles-workflow.html",
+      "icon": "users",
+      "badge": "Agentic AI",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T12:21:29+08:00",
+      "tags": [
+        "users:五角色工作流",
+        "repeat:迭代對抗",
+        "shield:取代 RAG"
+      ],
+      "concepts": [
+        "五角色 Agentic AI 工作流：大隊長（指揮）、清資料員（多模態轉純文字）、搜尋偵察兵（Agentic 檢索）、生成撰寫官、評分對抗官",
+        "不用 RAG 向量搜尋：Agentic AI 主動探索判斷，像派真人助理翻資料而非丟關鍵字進大海撈魚",
+        "迭代機制：角色 1-2 做一次，角色 3-4-5 反覆五輪精煉，生成與對抗交替直到品質過關",
+        "Gartner 2024→2025 多 Agent 系統詢問量暴增 1,445%，企業導入後流程時間縮短 30-50%",
+        "非技術人員大白話操作：匯入文件→下指令→收成果，從三天變三分鐘"
+      ]
+    },
+    {
       "id": "one-shot-super-prompt",
       "title": "餵越多錯越多：一針見血的超級提示，4B 追平 72B",
       "subtitle": "Agentic AI 管家先整理再提問——Context Engineering 讓小模型品質飆升 5 倍，全地端部署資料不出門",
