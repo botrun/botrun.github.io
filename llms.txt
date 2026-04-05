@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T13:56:48.291Z
+> 生成時間：2026-04-05T14:20:21.214Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 120 個項目，按發佈日期降序排列。
+共 121 個項目，按發佈日期降序排列。
+
+## Magpie Federation — 六個欄位讓 WASM 專家全球聯邦互通
+
+> 藍鵲聯邦：六輪批評砍掉 76% 設計，剩下的每個欄位都有存在理由
+
+**關鍵觀念：**
+- Magpie Federation：WASM 領域專家聯邦互通 JSON 格式，6 個必填欄位
+- WASM 只 export 一個函式 search(json)→json，永不改簽名，零破壞性變更
+- Registry 是靜態 JSON 清單（如 RSS），任何人可發佈，Router 自由訂閱
+- 信任模型：HTTPS 傳輸 + WASM 沙箱隔離，不需 PKI/簽名/多數決
+- 部署四步：寫知識庫→編譯 WASM→寫 manifest→上傳 CDN，零伺服器
+
+- [線上版](https://storage.googleapis.com/botrun-slides/magpie-federation.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/magpie-federation.html/llms.txt): 該專案的 llms.txt
+- 類型：規格設計
+- 發佈日期：2026-04-05T22:20:00+0800
+- 標籤：WebAssembly、六個欄位、Federation
 
 ## WASM 聯邦架構：一個問題，十個專家搶著回答
 

@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T21:55:54+08:00"
+    "lastUpdated": "2026-04-05T22:20:00+08:00"
   },
   "items": [
+    {
+      "id": "magpie-federation",
+      "title": "Magpie Federation — 六個欄位讓 WASM 專家全球聯邦互通",
+      "subtitle": "藍鵲聯邦：六輪批評砍掉 76% 設計，剩下的每個欄位都有存在理由",
+      "href": "https://storage.googleapis.com/botrun-slides/magpie-federation.html",
+      "icon": "cpu",
+      "badge": "規格設計",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-05T22:20:00+0800",
+      "tags": [
+        "cpu:WebAssembly",
+        "zap:六個欄位",
+        "code:Federation"
+      ],
+      "concepts": [
+        "Magpie Federation：WASM 領域專家聯邦互通 JSON 格式，6 個必填欄位",
+        "WASM 只 export 一個函式 search(json)→json，永不改簽名，零破壞性變更",
+        "Registry 是靜態 JSON 清單（如 RSS），任何人可發佈，Router 自由訂閱",
+        "信任模型：HTTPS 傳輸 + WASM 沙箱隔離，不需 PKI/簽名/多數決",
+        "部署四步：寫知識庫→編譯 WASM→寫 manifest→上傳 CDN，零伺服器"
+      ]
+    },
     {
       "id": "wasm-federation-architecture",
       "title": "WASM 聯邦架構：一個問題，十個專家搶著回答",
