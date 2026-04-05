@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T22:20:00+08:00"
+    "lastUpdated": "2026-04-05T22:24:44+08:00"
   },
   "items": [
+    {
+      "id": "wasm-browser-superpower",
+      "title": "Wasm 純前端超能力：從平行運算到音訊處理",
+      "subtitle": "你的瀏覽器是被封印的超級電腦，Wasm 3.0 解開封印",
+      "href": "https://storage.googleapis.com/botrun-slides/wasm-browser-superpower.html",
+      "icon": "zap",
+      "badge": "技術洞見",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-05T22:24:44+08:00",
+      "tags": [
+        "zap:WebAssembly",
+        "cpu:SIMD",
+        "music:音訊處理"
+      ],
+      "concepts": [
+        "瀏覽器 8 核 CPU 只用 1 核，87.5% 算力閒置——Wasm 3.0 解開封印",
+        "多執行緒 + SIMD 組合達 JS 的 30-50 倍效能，Figma / Photoshop Web 已驗證",
+        "ffmpeg.wasm 音訊精簡版 3MB，瀏覽器內切割 / 轉檔 / 降噪，資料不經伺服器",
+        "AudioWorklet + Rust SIMD 即時音訊延遲 < 10ms，Spotify Soundtrap 生產驗證",
+        "90% 場景用標準 Wasm 3.0 就夠，WASIX 只在需要 VFS/fork/TCP Server 時才考慮"
+      ]
+    },
     {
       "id": "magpie-federation",
       "title": "Magpie Federation — 六個欄位讓 WASM 專家全球聯邦互通",

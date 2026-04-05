@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T14:20:21.214Z
+> 生成時間：2026-04-05T14:32:01.055Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 121 個項目，按發佈日期降序排列。
+共 122 個項目，按發佈日期降序排列。
+
+## Wasm 純前端超能力：從平行運算到音訊處理
+
+> 你的瀏覽器是被封印的超級電腦，Wasm 3.0 解開封印
+
+**關鍵觀念：**
+- 瀏覽器 8 核 CPU 只用 1 核，87.5% 算力閒置——Wasm 3.0 解開封印
+- 多執行緒 + SIMD 組合達 JS 的 30-50 倍效能，Figma / Photoshop Web 已驗證
+- ffmpeg.wasm 音訊精簡版 3MB，瀏覽器內切割 / 轉檔 / 降噪，資料不經伺服器
+- AudioWorklet + Rust SIMD 即時音訊延遲 < 10ms，Spotify Soundtrap 生產驗證
+- 90% 場景用標準 Wasm 3.0 就夠，WASIX 只在需要 VFS/fork/TCP Server 時才考慮
+
+- [線上版](https://storage.googleapis.com/botrun-slides/wasm-browser-superpower.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/wasm-browser-superpower.html/llms.txt): 該專案的 llms.txt
+- 類型：技術洞見
+- 發佈日期：2026-04-05T22:24:44+08:00
+- 標籤：WebAssembly、SIMD、音訊處理
 
 ## Magpie Federation — 六個欄位讓 WASM 專家全球聯邦互通
 
