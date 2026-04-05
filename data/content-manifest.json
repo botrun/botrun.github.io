@@ -1,9 +1,53 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T18:08:40+08:00"
+    "lastUpdated": "2026-04-05T21:55:54+08:00"
   },
   "items": [
+    {
+      "id": "wasm-federation-architecture",
+      "title": "WASM 聯邦架構：一個問題，十個專家搶著回答",
+      "subtitle": "JS Router 動態 import 多領域 WASM，純靜態 CDN 零 Server，把伺服器搬進瀏覽器",
+      "href": "https://storage.googleapis.com/botrun-slides/wasm-federation-architecture.html",
+      "icon": "cpu",
+      "badge": "技術架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-05T21:55:54+08:00",
+      "tags": [
+        "cpu:WebAssembly",
+        "zap:零伺服器",
+        "code:Rust WASM"
+      ],
+      "concepts": [
+        "WASM 聯邦架構：多領域知識庫各自獨立編譯，JS Router 按意圖動態載入對應 WASM",
+        "WASM 沙箱限制：模組無法自行載入另一模組，必須經 JS Host 中介（wasm-bindgen 橋接）",
+        "三步串接：fetch() 下載 → instantiateStreaming() 編譯 → exports.search() 查詢，三行搞定",
+        "Service Worker 快取：首次 2-3 秒，之後零延遲，離線也能查（PWA / LRU Cache）",
+        "純靜態 CDN 部署：一個 Bucket 放所有 .wasm，不需 Docker/K8s/DevOps，會上傳就會部署"
+      ]
+    },
+    {
+      "id": "honey-qa-app",
+      "title": "波蜂蜜 — 蜂蜜知識智慧問答",
+      "subtitle": "懂蜜的人，問蜜的事。101 題台灣蜂蜜知識，一問就懂",
+      "href": "https://storage.googleapis.com/botrun-slides/honey-qa/index.html",
+      "icon": "search",
+      "badge": "互動應用",
+      "badgeColor": "#c8956c",
+      "publishDate": "2026-04-05T18:42:03+08:00",
+      "tags": [
+        "search:蜂蜜問答",
+        "zap:即時回答",
+        "code:Rust WASM"
+      ],
+      "concepts": [
+        "101 題台灣蜂蜜知識庫，涵蓋選購、保存、健康、品種、養蜂",
+        "智慧搜尋引擎即時比對，一問就懂",
+        "模擬串流回答效果，專業品牌體驗",
+        "落花動畫 + Lucide 圖示，北歐簡約設計",
+        "完全離線可用，載入後不需網路"
+      ]
+    },
     {
       "id": "honey-qa-build-story",
       "title": "蜂蜜知識庫：101 題 × 105 分鐘的符號推理之旅",
