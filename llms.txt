@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-05T02:57:23.076Z
+> 生成時間：2026-04-05T04:23:12.951Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 112 個項目，按發佈日期降序排列。
+共 113 個項目，按發佈日期降序排列。
+
+## 三人一組的 AI 小隊，迭代五輪打敗單兵作戰
+
+> 隊長+撰寫者+評分者組成對抗小隊，大隊長用 DAG 指揮五支小隊平行精煉，小模型也能交出大模型品質
+
+**關鍵觀念：**
+- 三角色小隊：隊長驅動節奏、撰寫者生成答案、評分者挑毛病 — GAN 生成對抗概念應用於 LLM Agent
+- 每隊迭代 5 輪：品質門檻未達自動重來，小模型反覆修正逼近大模型品質
+- DAG 待辦清單指揮：大隊長排工五支小隊（計畫/美學/前端/後端/測試），能平行就平行、有先後就排序
+- 2026 三篇研究佐證：Anthropic 三代理框架、Google ADK Generator-Critic-Refiner、Stanford Meta-Harness +4.7 分
+- 核心訊息：你不需要最貴的模型，你需要最聰明的編制 — 14B 迭代五輪可交出 675B 品質
+
+- [線上版](https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html/llms.txt): 該專案的 llms.txt
+- 類型：架構
+- 發佈日期：2026-04-05T12:17:15+08:00
+- 標籤：AI 小隊、Agentic AI、DAG
 
 ## 8 模型 Agentic AI 排行榜：14B 追平 675B，4.5B 打敗 120B
 
