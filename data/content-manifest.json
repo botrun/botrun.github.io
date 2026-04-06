@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "gstack-deep-dive",
+      "title": "gstack 深度解剖 — 真實回饋 × 優缺點 × 潛力天花板",
+      "subtitle": "持久化 Chromium + 58MB Bun 二進位 + 23 個技能 + 70 分鐘自主迴圈 Bug + 經濟代理剔除系統，8 頁技術深度解析",
+      "href": "https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html",
+      "icon": "cpu",
+      "badge": "最深技術",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-06T09:45:00+08:00",
+      "tags": [
+        "cpu:gstack",
+        "zap:Claude Code",
+        "box:多 Agent"
+      ],
+      "protected": false
+    },
+    {
       "id": "three-ai-coding-frameworks",
       "title": "三大 AI 程式框架深度解析 — Superpowers × GSD × gstack",
       "subtitle": "11 分鐘拆解 Claude Code 生態三大框架：約束過程、約束環境、約束視角，以及 Build 階段的結構性空缺",

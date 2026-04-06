@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-06T01:37:48.305Z
+> 生成時間：2026-04-06T02:00:01.650Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 124 個項目，按發佈日期降序排列。
+共 125 個項目，按發佈日期降序排列。
+
+## gstack 深度解剖 — 真實回饋 × 優缺點 × 潛力天花板
+
+> 持久化 Chromium + 58MB Bun 二進位 + 23 個技能 + 70 分鐘自主迴圈 Bug + 經濟代理剔除系統，8 頁技術深度解析
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html/llms.txt): 該專案的 llms.txt
+- 類型：最深技術
+- 發佈日期：2026-04-06T09:45:00+08:00
+- 標籤：gstack、Claude Code、多 Agent
 
 ## 三大 AI 程式框架深度解析 — Superpowers × GSD × gstack
 
