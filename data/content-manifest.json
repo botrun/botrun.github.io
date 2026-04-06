@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "porting-guide",
+      "title": "Claude Agent Teams → pi-mono 移植指南 — 搬家不拆牆，加裝對講機就好",
+      "subtitle": "9 步圖解：概念對照、四層移植順序、通訊信箱、指揮官模式、完整資料流，用大白話帶你從 Claude Code 搬進 pi-mono",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/porting-guide.html",
+      "icon": "cpu",
+      "badge": "移植教學",
+      "badgeColor": "#6366f1",
+      "publishDate": "2026-04-06T21:30:00+08:00",
+      "tags": [
+        "cpu:Agent Teams",
+        "box:pi-mono",
+        "zap:移植"
+      ],
+      "concepts": [
+        "pi-mono 已有引擎（Agent）、油箱（AI Provider）、方向盤（Tools），只需加裝車隊管理系統",
+        "四層由下往上：Team 地基 → 通訊信箱 → Agent 生產線 → 指揮官模式",
+        "Mailbox 信箱系統：file-based JSON + file lock，Agent 間非同步通訊",
+        "Coordinator 指揮官只動嘴不動手：只有 AgentTool + SendMessage，沒有 Bash/Read/Edit",
+        "新增 packages/agent-teams/ 不改現有程式碼，只 import 已有 packages"
+      ],
+      "protected": true
+    },
+    {
       "id": "bolan-pearl-edu-cloud",
       "title": "波藍珠 × 教育雲 — 一顆珠一個世界，兩個孩子笑翻天",
       "subtitle": "Rust/Wasm 瀏覽器推論成本 1%、共學排行榜 2 倍動力、四大臺灣動物吉祥物守護策展式學習生態",
