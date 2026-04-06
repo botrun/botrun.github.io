@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-06T13:02:08.832Z
+> 生成時間：2026-04-06T14:38:18.693Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 127 個項目，按發佈日期降序排列。
+共 128 個項目，按發佈日期降序排列。
+
+## 不爽飛輪：誰有 User Log，誰就掌握 Agentic AI 的未來
+
+> 一個月 118 個地雷、20 個真實案例、69 對抗測試 — 從真實使用者行為挖出不滿足，AI 自動修正的指數飛輪
+
+**關鍵觀念：**
+- User 真實操作 → Log 記錄 → AI 自動找不滿足 → AI 自動修正 → 部署 → 下一輪 Log
+- 24.6% 訊息完全沒收到回覆，從 Log 才發現
+- 合成資料永遠追不上真人的奇怪用法（Big5 ZIP、古籍 OCR、YouTube 封鎖 GCP IP）
+- 有 Log 的團隊一個月修 118 個地雷，沒 Log 的團隊修 5 個「以為」的需求
+- 模型人人都有，不爽資料只有你有 — 這是 Agentic AI 產品的真正護城河
+
+- [線上版](https://storage.googleapis.com/botrun-slides/frustration-flywheel.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/frustration-flywheel.html/llms.txt): 該專案的 llms.txt
+- 類型：不爽飛輪
+- 發佈日期：2026-04-06T22:37:00+08:00
+- 標籤：User Log、Agentic AI、護城河
 
 ## Claude Agent Teams → pi-mono 移植指南 — 搬家不拆牆，加裝對講機就好
 

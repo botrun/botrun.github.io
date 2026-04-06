@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "frustration-flywheel",
+      "title": "不爽飛輪：誰有 User Log，誰就掌握 Agentic AI 的未來",
+      "subtitle": "一個月 118 個地雷、20 個真實案例、69 對抗測試 — 從真實使用者行為挖出不滿足，AI 自動修正的指數飛輪",
+      "href": "https://storage.googleapis.com/botrun-slides/frustration-flywheel.html",
+      "icon": "refresh-cw",
+      "badge": "不爽飛輪",
+      "badgeColor": "#c44230",
+      "publishDate": "2026-04-06T22:37:00+08:00",
+      "tags": [
+        "refresh-cw:User Log",
+        "zap:Agentic AI",
+        "target:護城河"
+      ],
+      "concepts": [
+        "User 真實操作 → Log 記錄 → AI 自動找不滿足 → AI 自動修正 → 部署 → 下一輪 Log",
+        "24.6% 訊息完全沒收到回覆，從 Log 才發現",
+        "合成資料永遠追不上真人的奇怪用法（Big5 ZIP、古籍 OCR、YouTube 封鎖 GCP IP）",
+        "有 Log 的團隊一個月修 118 個地雷，沒 Log 的團隊修 5 個「以為」的需求",
+        "模型人人都有，不爽資料只有你有 — 這是 Agentic AI 產品的真正護城河"
+      ]
+    },
+    {
       "id": "porting-guide",
       "title": "Claude Agent Teams → pi-mono 移植指南 — 搬家不拆牆，加裝對講機就好",
       "subtitle": "9 步圖解：概念對照、四層移植順序、通訊信箱、指揮官模式、完整資料流，用大白話帶你從 Claude Code 搬進 pi-mono",
