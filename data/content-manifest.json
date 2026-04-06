@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "three-ai-coding-frameworks",
+      "title": "三大 AI 程式框架深度解析 — Superpowers × GSD × gstack",
+      "subtitle": "11 分鐘拆解 Claude Code 生態三大框架：約束過程、約束環境、約束視角，以及 Build 階段的結構性空缺",
+      "href": "https://storage.googleapis.com/botrun-slides/three-ai-coding-frameworks.html",
+      "icon": "layers",
+      "badge": "技術深度",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-06T09:32:00+08:00",
+      "tags": [
+        "cpu:Claude Code",
+        "zap:Superpowers",
+        "box:gstack"
+      ],
+      "protected": false
+    },
+    {
       "id": "wasm-gcp-top5",
       "title": "WASM × GCP 五大超級特色 — 真實數據不唬爛",
       "subtitle": "冷啟動 0.5ms、帳單砍 90%、沙箱零逃逸，網友正反評價一次看",
