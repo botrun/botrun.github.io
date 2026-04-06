@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-05T22:41:17+08:00"
+    "lastUpdated": "2026-04-06T18:00:20+08:00"
   },
   "items": [
+    {
+      "id": "bolan-pearl-edu-cloud",
+      "title": "波藍珠 × 教育雲 — 一顆珠一個世界，兩個孩子笑翻天",
+      "subtitle": "Rust/Wasm 瀏覽器推論成本 1%、共學排行榜 2 倍動力、四大臺灣動物吉祥物守護策展式學習生態",
+      "href": "https://storage.googleapis.com/botrun-slides/bolan-pearl-edu-cloud.html",
+      "icon": "sparkles",
+      "badge": "教育提案",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-06T18:00:20+08:00",
+      "tags": [
+        "sparkles:波藍珠",
+        "users:共學",
+        "cpu:Rust/Wasm"
+      ],
+      "concepts": [
+        "瀏覽器推論成本 1%：Rust/Wasm 在用戶端推論，免雲端 GPU，省 99% 費用",
+        "共學二的力量：兩個孩子一起學，排行榜渲染彼此啟發，動力倍增",
+        "四大臺灣動物吉祥物：黑熊(底層)、梅花鹿(共學)、藍鵲(啟發)、石虎(闖關)",
+        "啟發中心萬物皆可學：老師丟影片/Podcast，系統引導一步步實作",
+        "策展式學習：LINE 策展、短影音策展，像聊天像陪伴，跟吃喝品味結合"
+      ],
+      "protected": false
+    },
     {
       "id": "gstack-deep-dive",
       "title": "gstack 深度解剖 — 真實回饋 × 優缺點 × 潛力天花板",
