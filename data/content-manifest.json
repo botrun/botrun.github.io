@@ -5,6 +5,50 @@
   },
   "items": [
     {
+      "id": "logic-graph-impreve",
+      "title": "AI 學壞了？32B 打敗 GPT-4o 的秘密",
+      "subtitle": "LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o",
+      "href": "https://storage.googleapis.com/botrun-slides/logic-graph-impreve.html",
+      "icon": "cpu",
+      "badge": "AI 邏輯革命",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:30:00+08:00",
+      "tags": [
+        "brain:LogicGraph 多路徑推理",
+        "code:IMPREVE 顯式推理圖",
+        "zap:32B > GPT-4o"
+      ],
+      "concepts": [
+        "RLHF 造就「滑頭文科生」：只看開頭結尾、中間推導全跳過，語言越流暢邏輯越脆弱",
+        "LogicGraph 揭露「過早承諾」缺陷：找到第一條路就收工，8-19 條有效路徑只走 1-2 條",
+        "兩大錯誤：事實幻覺（算不下去硬塞前提）+ 前提不足（把「且」降級成「或」）",
+        "IMPREVE 顯式推理圖：知識節點＋數學節點＋條件節點，Python 編譯器取代人類閱卷員",
+        "32B 小模型在嚴格邏輯訓練後逼近/超越 GPT-4o，打破大算力必勝神話"
+      ]
+    },
+    {
+      "id": "multi-agent-production-arch",
+      "title": "多 Agent 生產架構：別讓系統在凌晨兩點崩潰",
+      "subtitle": "Databricks 資深工程師 Sandipan Bhaumik 在 AI Engineer 大會拆解多 Agent 系統為何在生產環境爆炸——不可變狀態、資料契約、斷路器、Saga 補償五大武器",
+      "href": "https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html",
+      "icon": "cpu",
+      "badge": "多 Agent 架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:05:00+08:00",
+      "tags": [
+        "cpu:多 Agent 編排",
+        "shield:斷路器模式",
+        "refresh-cw:Saga 補償"
+      ],
+      "concepts": [
+        "1 個 Agent 是功能，5 個 Agent 是分散式系統災難——5 Agent 就有 10 個潛在協調點",
+        "編舞（事件驅動）vs 編排（LangGraph 集中控制）——選錯後悔三個月",
+        "不可變狀態快照：只 INSERT 不 UPDATE，消滅競態條件，支援版本二分查找",
+        "資料契約：信心分數低於 0.7 直接拒絕交接，問題在邊界攔截不讓垃圾進下游",
+        "斷路器：連續失敗 5 次跳脫，60 秒後半開測試；Saga 補償：每個 Agent 都有 compensate() 方法"
+      ]
+    },
+    {
       "id": "agentic-harness-engineering",
       "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
       "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",

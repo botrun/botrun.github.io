@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T14:02:56.967Z
+> 生成時間：2026-04-08T14:04:03.790Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 134 個項目，按發佈日期降序排列。
+共 135 個項目，按發佈日期降序排列。
+
+## 多 Agent 生產架構：別讓系統在凌晨兩點崩潰
+
+> Databricks 資深工程師 Sandipan Bhaumik 在 AI Engineer 大會拆解多 Agent 系統為何在生產環境爆炸——不可變狀態、資料契約、斷路器、Saga 補償五大武器
+
+**關鍵觀念：**
+- 1 個 Agent 是功能，5 個 Agent 是分散式系統災難——5 Agent 就有 10 個潛在協調點
+- 編舞（事件驅動）vs 編排（LangGraph 集中控制）——選錯後悔三個月
+- 不可變狀態快照：只 INSERT 不 UPDATE，消滅競態條件，支援版本二分查找
+- 資料契約：信心分數低於 0.7 直接拒絕交接，問題在邊界攔截不讓垃圾進下游
+- 斷路器：連續失敗 5 次跳脫，60 秒後半開測試；Saga 補償：每個 Agent 都有 compensate() 方法
+
+- [線上版](https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html/llms.txt): 該專案的 llms.txt
+- 類型：多 Agent 架構
+- 發佈日期：2026-04-08T22:05:00+08:00
+- 標籤：多 Agent 編排、斷路器模式、Saga 補償
 
 ## Agentic Harness Engineering — Claude Code 代理程式設計指南
 
