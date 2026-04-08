@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T14:04:03.790Z
+> 生成時間：2026-04-08T14:04:17.400Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 135 個項目，按發佈日期降序排列。
+共 136 個項目，按發佈日期降序排列。
+
+## AI 學壞了？32B 打敗 GPT-4o 的秘密
+
+> LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o
+
+**關鍵觀念：**
+- RLHF 造就「滑頭文科生」：只看開頭結尾、中間推導全跳過，語言越流暢邏輯越脆弱
+- LogicGraph 揭露「過早承諾」缺陷：找到第一條路就收工，8-19 條有效路徑只走 1-2 條
+- 兩大錯誤：事實幻覺（算不下去硬塞前提）+ 前提不足（把「且」降級成「或」）
+- IMPREVE 顯式推理圖：知識節點＋數學節點＋條件節點，Python 編譯器取代人類閱卷員
+- 32B 小模型在嚴格邏輯訓練後逼近/超越 GPT-4o，打破大算力必勝神話
+
+- [線上版](https://storage.googleapis.com/botrun-slides/logic-graph-impreve.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/logic-graph-impreve.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 邏輯革命
+- 發佈日期：2026-04-08T22:30:00+08:00
+- 標籤：LogicGraph 多路徑推理、IMPREVE 顯式推理圖、32B > GPT-4o
 
 ## 多 Agent 生產架構：別讓系統在凌晨兩點崩潰
 
