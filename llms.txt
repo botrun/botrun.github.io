@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T13:59:40.564Z
+> 生成時間：2026-04-08T14:00:12.310Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 132 個項目，按發佈日期降序排列。
+共 133 個項目，按發佈日期降序排列。
+
+## 744B 怪獸，一張 H100 搞定
+
+> CPU+GPU 混合卸載 × Unsloth UDIQ2M 量化 × llama.cpp 本地推理——完整實戰示範如何在單張 H100（80GB VRAM）+ 125GB RAM 的伺服器上跑起 GLM 5.1 744B 開源大模型
+
+**關鍵觀念：**
+- 744B MoE 稀疏啟動：GLM 5.1 總參數 744B，每次推理只啟動 40B（5.4%），256 專家每 Token 選 8 個，動態稀疏注意力（DSA）支援 200K 上下文
+- 記憶體工程公式：GPU VRAM 80GB + RAM 125GB + Swap 64GB = 268GB > 量化模型 236GB；擴充 Swap Space 是裝下超大模型的關鍵
+- UDIQ2M 智慧量化：識別關鍵層升精度到 8/16-bit，其餘 2-bit；1.65TB → 236GB 縮 80%，品質接近全精度，遠優於普通暴力 2-bit
+- llama.cpp 自動卸載機制：`--n-gpu-layers 999` 讓 GPU 優先裝層，剩餘溢出 RAM，Swap 兜底；無需手動指定每層去處
+- 實測結果：首個 Token 177 秒，生成速度 0.75 tok/s；煙火特效 HTML 正確生成，完全本地運行無資料外洩
+
+- [線上版](https://storage.googleapis.com/botrun-slides/glm51-h100-local.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/glm51-h100-local.html/llms.txt): 該專案的 llms.txt
+- 類型：本地推理
+- 發佈日期：2026-04-08T21:55:03+08:00
+- 標籤：混合卸載、UDIQ2M 量化、GLM 5.1
 
 ## 認知廢氣——唯讀 AI 的逆向思維
 
