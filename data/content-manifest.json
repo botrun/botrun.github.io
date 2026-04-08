@@ -5,9 +5,31 @@
   },
   "items": [
     {
+      "id": "agentic-harness-engineering",
+      "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
+      "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html",
+      "icon": "zap",
+      "badge": "代理程式設計",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-08T21:57:24+08:00",
+      "tags": [
+        "zap:Agent Harness",
+        "cpu:多 Agent 編排",
+        "refresh-cw:Token 快取"
+      ],
+      "concepts": [
+        "Agent Harness = 確定性程式碼 + Token 快取 + 編排 + Prompt + 技能 + 模型控制 — 六大組件",
+        "三層架構：指揮官（決策）→ 隊長（協調）→ Worker（超專科），並行執行無狀態任務",
+        "同一 Harness 可產生 100+ UI 變體，成本降 50%、速度快 2 倍（Token 快取效果）",
+        "Agentic Security 是 2026 最大淘金地 — 每秒威脅決策、多模型競技、Agent 信任擴大",
+        "Claude Sonnet 4.6（指揮官）+ Minimax 2.7（隊長）+ StepFun 3.5（Worker）= 全場最優成本效能比"
+      ]
+    },
+    {
       "id": "glm51-h100-local",
-      "title": "744B 怪獸，一張 H100 搞定",
-      "subtitle": "CPU+GPU 混合卸載 × Unsloth UDIQ2M 量化 × llama.cpp 本地推理——完整實戰示範如何在單張 H100（80GB VRAM）+ 125GB RAM 的伺服器上跑起 GLM 5.1 744B 開源大模型",
+      "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
+      "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
       "href": "https://storage.googleapis.com/botrun-slides/glm51-h100-local.html",
       "icon": "cpu",
       "badge": "本地推理",

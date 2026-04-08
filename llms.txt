@@ -3,14 +3,31 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T14:00:12.310Z
+> 生成時間：2026-04-08T14:02:56.967Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 133 個項目，按發佈日期降序排列。
+共 134 個項目，按發佈日期降序排列。
 
-## 744B 怪獸，一張 H100 搞定
+## Agentic Harness Engineering — Claude Code 代理程式設計指南
 
-> CPU+GPU 混合卸載 × Unsloth UDIQ2M 量化 × llama.cpp 本地推理——完整實戰示範如何在單張 H100（80GB VRAM）+ 125GB RAM 的伺服器上跑起 GLM 5.1 744B 開源大模型
+> Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會
+
+**關鍵觀念：**
+- Agent Harness = 確定性程式碼 + Token 快取 + 編排 + Prompt + 技能 + 模型控制 — 六大組件
+- 三層架構：指揮官（決策）→ 隊長（協調）→ Worker（超專科），並行執行無狀態任務
+- 同一 Harness 可產生 100+ UI 變體，成本降 50%、速度快 2 倍（Token 快取效果）
+- Agentic Security 是 2026 最大淘金地 — 每秒威脅決策、多模型競技、Agent 信任擴大
+- Claude Sonnet 4.6（指揮官）+ Minimax 2.7（隊長）+ StepFun 3.5（Worker）= 全場最優成本效能比
+
+- [線上版](https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html/llms.txt): 該專案的 llms.txt
+- 類型：代理程式設計
+- 發佈日期：2026-04-08T21:57:24+08:00
+- 標籤：Agent Harness、多 Agent 編排、Token 快取
+
+## Agentic Harness Engineering — Claude Code 代理程式設計指南
+
+> Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會
 
 **關鍵觀念：**
 - 744B MoE 稀疏啟動：GLM 5.1 總參數 744B，每次推理只啟動 40B（5.4%），256 專家每 Token 選 8 個，動態稀疏注意力（DSA）支援 200K 上下文
