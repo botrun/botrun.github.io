@@ -8,11 +8,12 @@
       "id": "binary-rubric",
       "title": "Binary Rubric 二元評分法 — 讓弱模型做出強模型的評審品質",
       "subtitle": "把「給幾分」降格為「有沒有」，23 條 True/False 條件讓 Gem 31B 評審 MAE 從 3.5 降至 2.0，系統偏差歸零，Decomposed LLM-as-a-Judge 全球術語一次學會",
-      "href": "https://storage.googleapis.com/botrun-slides/binary-rubric.html",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/binary-rubric.html",
       "icon": "check-square",
       "badge": "AI 評測",
       "badgeColor": "#0d9488",
       "publishDate": "2026-04-08T12:50:00+08:00",
+      "protected": true,
       "tags": ["AI評測", "LLM-as-a-Judge", "評分方法論", "Binary Rubric"]
     },
     {
