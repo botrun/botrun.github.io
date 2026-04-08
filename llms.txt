@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-06T14:38:18.693Z
+> 生成時間：2026-04-08T04:54:37.533Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 128 個項目，按發佈日期降序排列。
+共 129 個項目，按發佈日期降序排列。
+
+## Binary Rubric 二元評分法 — 讓弱模型做出強模型的評審品質
+
+> 把「給幾分」降格為「有沒有」，23 條 True/False 條件讓 Gem 31B 評審 MAE 從 3.5 降至 2.0，系統偏差歸零，Decomposed LLM-as-a-Judge 全球術語一次學會
+
+- [線上版](https://storage.googleapis.com/botrun-slides/binary-rubric.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/binary-rubric.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 評測
+- 發佈日期：2026-04-08T12:50:00+08:00
+- 標籤：AI評測、LLM-as-a-Judge、評分方法論、Binary Rubric
 
 ## 不爽飛輪：誰有 User Log，誰就掌握 Agentic AI 的未來
 
