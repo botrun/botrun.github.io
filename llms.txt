@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T14:04:17.400Z
+> 生成時間：2026-04-08T14:06:53.530Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 136 個項目，按發佈日期降序排列。
+共 137 個項目，按發佈日期降序排列。
+
+## Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢
+
+> GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則
+
+**關鍵觀念：**
+- RAG 失效：高級版 grep 碎片塞上下文，Agent 不知道改了 A 會不會讓下游系統崩潰
+- 金魚瓶頸：窗口關閉 Agent 死亡，7 秒記憶無法承擔長期任務
+- GitNexus：tree-sitter + 圖資料庫建全局依賴圖，Haiku 裝 MCP 暴打 Opus
+- SpringDrift：Git 後端永久記憶 + CBR 經驗案例 + 確定性安全門控 + 環境自知力
+- 23 天實驗：Agent 無人指令自行診斷底層 Bug、定位架構漏洞、分類失敗模式
+- Google Gallery（1.8 萬星）+ LiteRT-LM（2100+ 星）：端側 AI 正規軍雙軌標準
+
+- [線上版](https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html/llms.txt): 該專案的 llms.txt
+- 類型：AI Agent 架構革命
+- 發佈日期：2026-04-08T22:01:30+08:00
+- 標籤：GitNexus 程式碼知識圖譜、SpringDrift 矽基家臣、Google EdgeML 端側革命
 
 ## AI 學壞了？32B 打敗 GPT-4o 的秘密
 

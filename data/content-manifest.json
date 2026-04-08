@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "agent-architecture-revolution",
+      "title": "Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢",
+      "subtitle": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html",
+      "icon": "cpu",
+      "badge": "AI Agent 架構革命",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-08T22:01:30+08:00",
+      "tags": [
+        "map:GitNexus 程式碼知識圖譜",
+        "brain:SpringDrift 矽基家臣",
+        "phone:Google EdgeML 端側革命"
+      ],
+      "concepts": [
+        "RAG 失效：高級版 grep 碎片塞上下文，Agent 不知道改了 A 會不會讓下游系統崩潰",
+        "金魚瓶頸：窗口關閉 Agent 死亡，7 秒記憶無法承擔長期任務",
+        "GitNexus：tree-sitter + 圖資料庫建全局依賴圖，Haiku 裝 MCP 暴打 Opus",
+        "SpringDrift：Git 後端永久記憶 + CBR 經驗案例 + 確定性安全門控 + 環境自知力",
+        "23 天實驗：Agent 無人指令自行診斷底層 Bug、定位架構漏洞、分類失敗模式",
+        "Google Gallery（1.8 萬星）+ LiteRT-LM（2100+ 星）：端側 AI 正規軍雙軌標準"
+      ]
+    },
+    {
       "id": "logic-graph-impreve",
       "title": "AI 學壞了？32B 打敗 GPT-4o 的秘密",
       "subtitle": "LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o",
