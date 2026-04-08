@@ -3,10 +3,44 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T13:57:40.770Z
+> 生成時間：2026-04-08T13:59:40.564Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 130 個項目，按發佈日期降序排列。
+共 132 個項目，按發佈日期降序排列。
+
+## 認知廢氣——唯讀 AI 的逆向思維
+
+> 你每天留下的數位廢氣，是你最被低估的資料集。Šimon Podhajský 用 11 分鐘顛覆「AI 越自主越好」的主流思維，提出六個來源、零寫入、三層分離的私人 AI 架構
+
+**關鍵觀念：**
+- 認知廢氣（Cognitive Exhaust）：每天的數位痕跡——郵件、日記、瀏覽記錄——單獨看是廢物，交叉分析卻能診斷你的認知引擎
+- 唯讀 AI 的核心優勢：唯讀錯誤代價為零，寫入錯誤代價無窮；寫入後廢氣被污染，你看見的是「人類＋AI 混合體」而非真實的自己
+- 三層分離架構：來源層（六個唯讀來源）→ 工作區層（Python 腳本）→ 輸出層（Obsidian 獨立審閱），AI 永遠不回覆、不修改來源
+- 跨來源才能發現的三大用途：意圖行動差距、分心偵測、關係衰退——任何單一工具都看不到這些問題
+- 觀察者 ≠ 代理人：「市長不是失靈的管家」——兩種是不同的產品，填補不同的需求空白
+
+- [線上版](https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html/llms.txt): 該專案的 llms.txt
+- 類型：唯讀 AI
+- 發佈日期：2026-04-08T21:54:56+08:00
+- 標籤：唯讀 Observer、三層分離架構、風險不對稱
+
+## 31B 小裁判 × Binary Rubric：全地端也能打大模型
+
+> 一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來
+
+**關鍵觀念：**
+- 31B 同時判 130 維 → 65% 準確率崩潰；每次 10 維 → 接近 90% 大模型水準
+- Prometheus（Mozilla AI）：Apache 2.0，與人類 Pearson 相關係數 0.897，on par with GPT-4
+- 任務分批：130 維拆 13 組，13 次呼叫合併，零成本架構改動即可顯著提升準確率
+- SFT + DPO：小 7B 充分標注後達 80%+ 人類一致性，31B 起點更佳
+- EvalPlanner：先規劃後評估（meta-thinking），RewardBench 93.9，打敗多數大模型
+
+- [線上版](https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html/llms.txt): 該專案的 llms.txt
+- 類型：地端評估
+- 發佈日期：2026-04-08T22:00:00+08:00
+- 標籤：全地端裁判、Binary Rubric、Prometheus 0.897
 
 ## Agentic Harness Engineering — Claude Code 代理編程指南
 

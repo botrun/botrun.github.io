@@ -5,6 +5,72 @@
   },
   "items": [
     {
+      "id": "glm51-h100-local",
+      "title": "744B 怪獸，一張 H100 搞定",
+      "subtitle": "CPU+GPU 混合卸載 × Unsloth UDIQ2M 量化 × llama.cpp 本地推理——完整實戰示範如何在單張 H100（80GB VRAM）+ 125GB RAM 的伺服器上跑起 GLM 5.1 744B 開源大模型",
+      "href": "https://storage.googleapis.com/botrun-slides/glm51-h100-local.html",
+      "icon": "cpu",
+      "badge": "本地推理",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T21:55:03+08:00",
+      "tags": [
+        "cpu:混合卸載",
+        "zap:UDIQ2M 量化",
+        "server:GLM 5.1"
+      ],
+      "concepts": [
+        "744B MoE 稀疏啟動：GLM 5.1 總參數 744B，每次推理只啟動 40B（5.4%），256 專家每 Token 選 8 個，動態稀疏注意力（DSA）支援 200K 上下文",
+        "記憶體工程公式：GPU VRAM 80GB + RAM 125GB + Swap 64GB = 268GB > 量化模型 236GB；擴充 Swap Space 是裝下超大模型的關鍵",
+        "UDIQ2M 智慧量化：識別關鍵層升精度到 8/16-bit，其餘 2-bit；1.65TB → 236GB 縮 80%，品質接近全精度，遠優於普通暴力 2-bit",
+        "llama.cpp 自動卸載機制：`--n-gpu-layers 999` 讓 GPU 優先裝層，剩餘溢出 RAM，Swap 兜底；無需手動指定每層去處",
+        "實測結果：首個 Token 177 秒，生成速度 0.75 tok/s；煙火特效 HTML 正確生成，完全本地運行無資料外洩"
+      ]
+    },
+    {
+      "id": "cognitive-exhaust-readonly-ai",
+      "title": "認知廢氣——唯讀 AI 的逆向思維",
+      "subtitle": "你每天留下的數位廢氣，是你最被低估的資料集。Šimon Podhajský 用 11 分鐘顛覆「AI 越自主越好」的主流思維，提出六個來源、零寫入、三層分離的私人 AI 架構",
+      "href": "https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html",
+      "icon": "eye",
+      "badge": "唯讀 AI",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T21:54:56+08:00",
+      "tags": [
+        "eye:唯讀 Observer",
+        "layers:三層分離架構",
+        "shield:風險不對稱"
+      ],
+      "concepts": [
+        "認知廢氣（Cognitive Exhaust）：每天的數位痕跡——郵件、日記、瀏覽記錄——單獨看是廢物，交叉分析卻能診斷你的認知引擎",
+        "唯讀 AI 的核心優勢：唯讀錯誤代價為零，寫入錯誤代價無窮；寫入後廢氣被污染，你看見的是「人類＋AI 混合體」而非真實的自己",
+        "三層分離架構：來源層（六個唯讀來源）→ 工作區層（Python 腳本）→ 輸出層（Obsidian 獨立審閱），AI 永遠不回覆、不修改來源",
+        "跨來源才能發現的三大用途：意圖行動差距、分心偵測、關係衰退——任何單一工具都看不到這些問題",
+        "觀察者 ≠ 代理人：「市長不是失靈的管家」——兩種是不同的產品，填補不同的需求空白"
+      ]
+    },
+    {
+      "id": "31b-judge-rubric-eval",
+      "title": "31B 小裁判 × Binary Rubric：全地端也能打大模型",
+      "subtitle": "一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來",
+      "href": "https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html",
+      "icon": "cpu",
+      "badge": "地端評估",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:00:00+08:00",
+      "tags": [
+        "cpu:全地端裁判",
+        "layers:Binary Rubric",
+        "zap:Prometheus 0.897"
+      ],
+      "concepts": [
+        "31B 同時判 130 維 → 65% 準確率崩潰；每次 10 維 → 接近 90% 大模型水準",
+        "Prometheus（Mozilla AI）：Apache 2.0，與人類 Pearson 相關係數 0.897，on par with GPT-4",
+        "任務分批：130 維拆 13 組，13 次呼叫合併，零成本架構改動即可顯著提升準確率",
+        "SFT + DPO：小 7B 充分標注後達 80%+ 人類一致性，31B 起點更佳",
+        "EvalPlanner：先規劃後評估（meta-thinking），RewardBench 93.9，打敗多數大模型"
+      ]
+    },
+    {
       "id": "agentic-harness-engineering",
       "title": "Agentic Harness Engineering — Claude Code 代理編程指南",
       "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
