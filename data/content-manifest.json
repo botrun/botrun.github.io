@@ -160,28 +160,6 @@
       ]
     },
     {
-      "id": "agentic-harness-engineering",
-      "title": "Agentic Harness Engineering — Claude Code 代理編程指南",
-      "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
-      "href": "https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html",
-      "icon": "zap",
-      "badge": "代理編程",
-      "badgeColor": "#e8634a",
-      "publishDate": "2026-04-08T21:57:24+08:00",
-      "tags": [
-        "zap:Agent Harness",
-        "cpu:多 Agent 編排",
-        "refresh-cw:Token 快取"
-      ],
-      "concepts": [
-        "Agent Harness = 確定性程式碼 + Token 快取 + 編排 + Prompt + 技能 + 模型控制 — 六大組件",
-        "三層架構：指揮官（決策）→ 隊長（協調）→ Worker（超專科），並行執行無狀態任務",
-        "同一 Harness 可產生 100+ UI 變體，成本降 50%、速度快 2 倍（Token 快取效果）",
-        "Agentic Security 是 2026 最大淘金地 — 每秒威脅決策、多模型競技、Agent 信任擴大",
-        "Claude Sonnet 4.6（指揮官）+ Minimax 2.7（隊長）+ StepFun 3.5（Worker）= 全場最優成本效能比"
-      ]
-    },
-    {
       "id": "binary-rubric",
       "title": "Binary Rubric 二元評分法 — 讓弱模型做出強模型的評審品質",
       "subtitle": "把「給幾分」降格為「有沒有」，23 條 True/False 條件讓 Gem 31B 評審 MAE 從 3.5 降至 2.0，系統偏差歸零，Decomposed LLM-as-a-Judge 全球術語一次學會",
