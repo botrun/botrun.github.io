@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "binary-rubric-v4-teaching",
+      "title": "讓 Gemma 學會當裁判——84.5 進化到 92.8 分",
+      "subtitle": "Binary Rubric v1→v4 完整經驗教學：後設方法論、同窗口約束、程式碼品質關卡，8 張投影片帶你從零複製整套 LLM 自動評分系統",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/binary-rubric-v4-teaching.html",
+      "icon": "cpu",
+      "badge": "Binary Rubric v4",
+      "badgeColor": "#1a1a2e",
+      "publishDate": "2026-04-10T00:25:00+08:00",
+      "protected": true,
+      "tags": [
+        "method:Binary Rubric LLM 自動評分",
+        "insight:同窗口約束 > 分離約束",
+        "result:84.5 → 92.8 分四次迭代"
+      ]
+    },
+    {
       "id": "seo-aeo-2026-top5",
       "title": "每 3 次搜尋，AI 就吃掉你 1 次",
       "subtitle": "2026 SEO × AEO 五大最有效益做法：定義先行結構、Schema 結構化標記、跨平台權威佈局、語意向量最佳化、原創研究 E-E-A-T 信號",
