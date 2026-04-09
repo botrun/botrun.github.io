@@ -1,9 +1,24 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-06T18:00:20+08:00"
+    "lastUpdated": "2026-04-10T00:41:00+08:00"
   },
   "items": [
+    {
+      "id": "pearson-binary-rubric-explain",
+      "title": "誰是最像大裁判的小裁判？Pearson 大白話圖解",
+      "subtitle": "Pearson 相關係數 × Binary Rubric 25 題——超大白話 SVG 圖解，從比賽架構到數學公式，一圖讀懂 AI 評分一致性的核心指標",
+      "href": "https://storage.googleapis.com/botrun-slides/pearson-binary-rubric-explain.html",
+      "icon": "chart-bar",
+      "badge": "Pearson 圖解",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-10T00:41:00+08:00",
+      "tags": [
+        "method:Pearson 相關係數 × Binary Rubric",
+        "insight:超大白話 SVG 圖解",
+        "result:AI 評分一致性核心指標"
+      ]
+    },
     {
       "id": "binary-rubric-v4-teaching",
       "title": "讓 Gemma 學會當裁判——84.5 進化到 92.8 分",

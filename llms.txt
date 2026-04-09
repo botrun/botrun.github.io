@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-09T16:31:29.133Z
+> 生成時間：2026-04-09T16:41:29.240Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 139 個項目，按發佈日期降序排列。
+共 140 個項目，按發佈日期降序排列。
+
+## 誰是最像大裁判的小裁判？Pearson 大白話圖解
+
+> Pearson 相關係數 × Binary Rubric 25 題——超大白話 SVG 圖解，從比賽架構到數學公式，一圖讀懂 AI 評分一致性的核心指標
+
+- [線上版](https://storage.googleapis.com/botrun-slides/pearson-binary-rubric-explain.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/pearson-binary-rubric-explain.html/llms.txt): 該專案的 llms.txt
+- 類型：Pearson 圖解
+- 發佈日期：2026-04-10T00:41:00+08:00
+- 標籤：Pearson 相關係數 × Binary Rubric、超大白話 SVG 圖解、AI 評分一致性核心指標
 
 ## 讓 Gemma 學會當裁判——84.5 進化到 92.8 分
 
