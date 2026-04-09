@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-09T08:58:06.520Z
+> 生成時間：2026-04-09T09:00:06.113Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 137 個項目，按發佈日期降序排列。
+共 138 個項目，按發佈日期降序排列。
+
+## 每 3 次搜尋，AI 就吃掉你 1 次
+
+> 2026 SEO × AEO 五大最有效益做法：定義先行結構、Schema 結構化標記、跨平台權威佈局、語意向量最佳化、原創研究 E-E-A-T 信號
+
+- [線上版](https://storage.googleapis.com/botrun-slides/seo-aeo-2026-top5.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/seo-aeo-2026-top5.html/llms.txt): 該專案的 llms.txt
+- 類型：SEO × AEO 2026
+- 發佈日期：2026-04-09T20:00:00+08:00
+- 標籤：AEO Answer Engine Optimization、Schema JSON-LD 結構化標記、AI Overview 39.4% 搜尋影響
 
 ## 選錯一條路，開發預算燒 10 倍沒商量
 
