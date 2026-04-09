@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-08T14:06:53.530Z
+> 生成時間：2026-04-09T08:58:06.520Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 137 個項目，按發佈日期降序排列。
+
+## 選錯一條路，開發預算燒 10 倍沒商量
+
+> VSCode + Hono MJS 支援自然語言的商用編輯器，Top 5 商用關鍵：架構選型、後端架構、用戶體驗、外掛整合、Webview 安全
+
+- [線上版](https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html/llms.txt): 該專案的 llms.txt
+- 類型：VSCode + Hono MJS
+- 發佈日期：2026-04-09T18:00:00+08:00
+- 標籤：Custom Editor + LM API 架構選型、Hono IPC 後端分層、自然語言確認→執行→撤銷
 
 ## Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢
 
@@ -127,23 +137,6 @@
 - 類型：地端評估
 - 發佈日期：2026-04-08T22:00:00+08:00
 - 標籤：全地端裁判、Binary Rubric、Prometheus 0.897
-
-## Agentic Harness Engineering — Claude Code 代理編程指南
-
-> Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會
-
-**關鍵觀念：**
-- Agent Harness = 確定性程式碼 + Token 快取 + 編排 + Prompt + 技能 + 模型控制 — 六大組件
-- 三層架構：指揮官（決策）→ 隊長（協調）→ Worker（超專科），並行執行無狀態任務
-- 同一 Harness 可產生 100+ UI 變體，成本降 50%、速度快 2 倍（Token 快取效果）
-- Agentic Security 是 2026 最大淘金地 — 每秒威脅決策、多模型競技、Agent 信任擴大
-- Claude Sonnet 4.6（指揮官）+ Minimax 2.7（隊長）+ StepFun 3.5（Worker）= 全場最優成本效能比
-
-- [線上版](https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html/llms.txt): 該專案的 llms.txt
-- 類型：代理編程
-- 發佈日期：2026-04-08T21:57:24+08:00
-- 標籤：Agent Harness、多 Agent 編排、Token 快取
 
 ## Binary Rubric 二元評分法 — 讓弱模型做出強模型的評審品質
 

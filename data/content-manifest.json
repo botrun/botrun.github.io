@@ -5,6 +5,21 @@
   },
   "items": [
     {
+      "id": "vscode-hono-mjs-top5",
+      "title": "選錯一條路，開發預算燒 10 倍沒商量",
+      "subtitle": "VSCode + Hono MJS 支援自然語言的商用編輯器，Top 5 商用關鍵：架構選型、後端架構、用戶體驗、外掛整合、Webview 安全",
+      "href": "https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html",
+      "icon": "code",
+      "badge": "VSCode + Hono MJS",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-09T18:00:00+08:00",
+      "tags": [
+        "arch:Custom Editor + LM API 架構選型",
+        "code:Hono IPC 後端分層",
+        "user:自然語言確認→執行→撤銷"
+      ]
+    },
+    {
       "id": "agent-architecture-revolution",
       "title": "Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢",
       "subtitle": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
