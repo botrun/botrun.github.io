@@ -5,6 +5,54 @@
   },
   "items": [
     {
+      "id": "ai-eval-v3-to-v8-handoff",
+      "title": "AI 法務評測管線 v3→v8 演化技術交接",
+      "subtitle": "從人工清單 95.5 分，到 AI 全自動零種子推論 95.0 分。v5 慘敗 29 分的根本教訓、Sanitizer 雙層隱私保護機制、Zero-Seed P0 六步推論流程，完整 SVG 圖解給工程師接手。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-v3-to-v8-handoff.html",
+      "icon": "code",
+      "badge": "技術交接",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-04-10T23:00:00+08:00",
+      "tags": [
+        "method:Zero-Seed 推論 — AI 自己判斷題型，4/4 全猜對",
+        "insight:清單是任務錨 — Oracle 無法取代，v5 慘敗 29 分的根本教訓",
+        "result:95.0 分跨領域 — 只差人工版 0.5 分，但具備完全通用性"
+      ]
+    },
+    {
+      "id": "ai-text-blast-experience",
+      "title": "上游乾淨，下游才乾淨 — AI 友善純文字批次轉換大白話經驗",
+      "subtitle": "波清資 bh ai-text blast：一個資料夾丟進去，PDF 切頁、音訊切分鐘、DOCX/XLSX 全格式統吃，檔名即引證，19/19 測試全綠。需求要講三次、SSoT 契約、真檔案測試三大方法論完整紀錄。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ai-text-blast-experience.html",
+      "icon": "zap",
+      "badge": "波清資",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-04-10T22:00:00+08:00",
+      "tags": [
+        "method:行為語言需求 — 資料夾進資料夾出，比功能清單更精準",
+        "insight:檔名即引證 — 頁碼分鐘 sheet 名全在檔名，AI 幻覺大幅減少",
+        "result:19/19 全綠 — 12 項 citation + 7 項 blast E2E，真檔案不用 mock"
+      ]
+    },
+    {
+      "id": "bh-gdrive-sync-e2e",
+      "title": "bh gdrive — rclone 薄包七戰七勝，Google Drive 同步終於不再是黑箱",
+      "subtitle": "botrun-horse gdrive 模組完整經驗紀錄：方案評比（rclone 4.55 勝出）、auto-discover 架構、OAuth vs SA 認證、E2E 7/7 全通過、五大地雷 LM-061~065 完整解法",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/bh-gdrive-sync-e2e.html",
+      "icon": "cloud",
+      "badge": "botrun-horse",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-04-10T20:11:00+08:00",
+      "tags": [
+        "method:rclone 薄包 — auto-discover + bisync 衝突解法 + HTTPS_PROXY 子進程繼承",
+        "insight:SA 無個人 Drive quota — 配額綁 SA 帳號維度，分享資料夾也無效",
+        "result:PASS=7/FAIL=0 真實 Google Drive E2E，Hono API 自動掛載零設定"
+      ]
+    },
+    {
       "id": "p271-api-one-endpoint",
       "title": "P271 津貼 AI — 1 個 Endpoint，雙向通吃",
       "subtitle": "e-gov 網頁 ↔ AI API ↔ LINE Bot，同一條路。POST /v1/generateContent 單一 Handler 同時服務政府網頁與 LINE Bot，零重複邏輯，Gemini + Google Search 幻覺過濾",

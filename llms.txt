@@ -3,10 +3,30 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-10T06:30:36.077Z
+> 生成時間：2026-04-10T12:21:33.346Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 144 個項目，按發佈日期降序排列。
+共 146 個項目，按發佈日期降序排列。
+
+## 上游乾淨，下游才乾淨 — AI 友善純文字批次轉換大白話經驗
+
+> 波清資 bh ai-text blast：一個資料夾丟進去，PDF 切頁、音訊切分鐘、DOCX/XLSX 全格式統吃，檔名即引證，19/19 測試全綠。需求要講三次、SSoT 契約、真檔案測試三大方法論完整紀錄。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ai-text-blast-experience.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ai-text-blast-experience.html/llms.txt): 該專案的 llms.txt
+- 類型：波清資
+- 發佈日期：2026-04-10T22:00:00+08:00
+- 標籤：行為語言需求 — 資料夾進資料夾出，比功能清單更精準、檔名即引證 — 頁碼分鐘 sheet 名全在檔名，AI 幻覺大幅減少、19/19 全綠 — 12 項 citation + 7 項 blast E2E，真檔案不用 mock
+
+## bh gdrive — rclone 薄包七戰七勝，Google Drive 同步終於不再是黑箱
+
+> botrun-horse gdrive 模組完整經驗紀錄：方案評比（rclone 4.55 勝出）、auto-discover 架構、OAuth vs SA 認證、E2E 7/7 全通過、五大地雷 LM-061~065 完整解法
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/bh-gdrive-sync-e2e.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/bh-gdrive-sync-e2e.html/llms.txt): 該專案的 llms.txt
+- 類型：botrun-horse
+- 發佈日期：2026-04-10T20:11:00+08:00
+- 標籤：rclone 薄包 — auto-discover + bisync 衝突解法 + HTTPS_PROXY 子進程繼承、SA 無個人 Drive quota — 配額綁 SA 帳號維度，分享資料夾也無效、PASS=7/FAIL=0 真實 Google Drive E2E，Hono API 自動掛載零設定
 
 ## P271 津貼 AI — 1 個 Endpoint，雙向通吃
 
