@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-10T06:04:49.064Z
+> 生成時間：2026-04-10T06:30:36.077Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 143 個項目，按發佈日期降序排列。
+共 144 個項目，按發佈日期降序排列。
+
+## P271 津貼 AI — 1 個 Endpoint，雙向通吃
+
+> e-gov 網頁 ↔ AI API ↔ LINE Bot，同一條路。POST /v1/generateContent 單一 Handler 同時服務政府網頁與 LINE Bot，零重複邏輯，Gemini + Google Search 幻覺過濾
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/p271-api-one-endpoint.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/p271-api-one-endpoint.html/llms.txt): 該專案的 llms.txt
+- 類型：API 架構
+- 發佈日期：2026-04-10T14:10:00+08:00
+- 標籤：1 Endpoint 雙向通吃 — e-gov 網頁 + LINE Bot 共用同一 Handler、POST /v1/generateContent + N-gram 快取 + Gemini + Google Search 幻覺過濾、前端 render Markdown / 後端送 LINE Flex Message，後處理邏輯唯一差異
 
 ## MCP vs CLI：AI Agent 工具之戰，誰才是未來？
 

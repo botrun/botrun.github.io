@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "p271-api-one-endpoint",
+      "title": "P271 津貼 AI — 1 個 Endpoint，雙向通吃",
+      "subtitle": "e-gov 網頁 ↔ AI API ↔ LINE Bot，同一條路。POST /v1/generateContent 單一 Handler 同時服務政府網頁與 LINE Bot，零重複邏輯，Gemini + Google Search 幻覺過濾",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/p271-api-one-endpoint.html",
+      "icon": "link",
+      "badge": "API 架構",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-04-10T14:10:00+08:00",
+      "tags": [
+        "method:1 Endpoint 雙向通吃 — e-gov 網頁 + LINE Bot 共用同一 Handler",
+        "insight:POST /v1/generateContent + N-gram 快取 + Gemini + Google Search 幻覺過濾",
+        "result:前端 render Markdown / 後端送 LINE Flex Message，後處理邏輯唯一差異"
+      ]
+    },
+    {
       "id": "mcp-vs-cli",
       "title": "MCP vs CLI：AI Agent 工具之戰，誰才是未來？",
       "subtitle": "Perplexity CTO 放棄 MCP、YC CEO 選 CLI。Token 消耗差 10 倍、執行效率天壤之別。5 張投影片看懂 CLI 與 MCP 的最終格局：CLI 征服個人，MCP 留守企業",
