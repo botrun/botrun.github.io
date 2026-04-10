@@ -1,9 +1,25 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-10T12:00:00+08:00"
+    "lastUpdated": "2026-04-10T14:00:00+08:00"
   },
   "items": [
+    {
+      "id": "agentic-mece-v3",
+      "title": "Agentic MECE v3：帝雉 95.4 分交接文件",
+      "subtitle": "七輪實驗淬鍊的法務 AI 最高分策略：MECE 拆解 + 28 Session 平行作答 + 品質清單 v3（15條）+ 符號推理後處理器（8模組），Gemma 4 31B 達近零幻覺",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/agentic-mece-v3.html",
+      "icon": "award",
+      "badge": "帝雉 95.4 分",
+      "badgeColor": "#7c3aed",
+      "protected": true,
+      "publishDate": "2026-04-10T14:00:00+08:00",
+      "tags": [
+        "method:MECE Agentic v3 + 品質清單 v3（15條）",
+        "insight:Gemma 4 31B × 28 Session × 符號推理後處理",
+        "result:帝雉徽章 95.4/100，近零幻覺法務評測策略"
+      ]
+    },
     {
       "id": "ai-eval-strategy-evolution",
       "title": "AI 法務評測策略演化全紀錄",

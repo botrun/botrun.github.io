@@ -3,10 +3,30 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-09T16:41:29.240Z
+> 生成時間：2026-04-10T04:23:31.754Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 140 個項目，按發佈日期降序排列。
+共 142 個項目，按發佈日期降序排列。
+
+## Agentic MECE v3：帝雉 95.4 分交接文件
+
+> 七輪實驗淬鍊的法務 AI 最高分策略：MECE 拆解 + 28 Session 平行作答 + 品質清單 v3（15條）+ 符號推理後處理器（8模組），Gemma 4 31B 達近零幻覺
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-mece-v3.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-mece-v3.html/llms.txt): 該專案的 llms.txt
+- 類型：帝雉 95.4 分
+- 發佈日期：2026-04-10T14:00:00+08:00
+- 標籤：MECE Agentic v3 + 品質清單 v3（15條）、Gemma 4 31B × 28 Session × 符號推理後處理、帝雉徽章 95.4/100，近零幻覺法務評測策略
+
+## AI 法務評測策略演化全紀錄
+
+> 從 v1 到 v3：MECE Agentic 框架、Binary Rubric 準則製造機、Gemma 4 31B 達 Opus 水準——波駿馬 AI 評測策略完整演化史
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-strategy-evolution.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-strategy-evolution.html/llms.txt): 該專案的 llms.txt
+- 類型：評測策略演化
+- 發佈日期：2026-04-10T12:00:00+08:00
+- 標籤：MECE Agentic + Binary Rubric、Gemma 4 31B 達 Opus 評審水準、AI 法務評測策略完整演化史
 
 ## 誰是最像大裁判的小裁判？Pearson 大白話圖解
 
