@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "dag-four-mece-v10-to-v15-self-consult-matrix",
+      "title": "六款模型自諮詢矩陣：MECE v10–v15 實驗報告",
+      "subtitle": "同一款 NCHC 國網模型同時擔任 Worker + Oracle。Gemma 31B 是甜蜜點（93.5），Ministral 14B 是失效下限（69），Mistral 675B T01 打出史上最高 98 分卻 T04 只拿 40 分。六大失敗模式 + Oracle 決策樹完整圖解。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/dag-four-mece-v10-to-v15-self-consult-matrix.html",
+      "icon": "flask",
+      "badge": "AI 評測",
+      "badgeColor": "#6d3eb5",
+      "protected": true,
+      "publishDate": "2026-04-11T08:00:00+08:00",
+      "tags": [
+        "result:93.5 自諮詢甜蜜點 — Gemma 31B self-consult，172s 完成四題",
+        "result:98 史上最高 — v15 Bear 675B T01 刑事筆錄超越 Gemini Pro grounding",
+        "insight:六大失敗模式 — A法條錯誤/B meta-drift/C格式崩潰/D幻覺/E verbose/F過度去識別"
+      ]
+    },
+    {
       "id": "ai-eval-v3-to-v8-handoff",
       "title": "AI 法務評測管線 v3→v8 演化技術交接",
       "subtitle": "從人工清單 95.5 分，到 AI 全自動零種子推論 95.0 分。v5 慘敗 29 分的根本教訓、Sanitizer 雙層隱私保護機制、Zero-Seed P0 六步推論流程，完整 SVG 圖解給工程師接手。",
