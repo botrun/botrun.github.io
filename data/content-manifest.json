@@ -1,9 +1,25 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-10T00:41:00+08:00"
+    "lastUpdated": "2026-04-10T12:00:00+08:00"
   },
   "items": [
+    {
+      "id": "ai-eval-strategy-evolution",
+      "title": "AI 法務評測策略演化全紀錄",
+      "subtitle": "從 v1 到 v3：MECE Agentic 框架、Binary Rubric 準則製造機、Gemma 4 31B 達 Opus 水準——波駿馬 AI 評測策略完整演化史",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-strategy-evolution.html",
+      "icon": "chart-line",
+      "badge": "評測策略演化",
+      "badgeColor": "#7c3aed",
+      "protected": true,
+      "publishDate": "2026-04-10T12:00:00+08:00",
+      "tags": [
+        "method:MECE Agentic + Binary Rubric",
+        "insight:Gemma 4 31B 達 Opus 評審水準",
+        "result:AI 法務評測策略完整演化史"
+      ]
+    },
     {
       "id": "pearson-binary-rubric-explain",
       "title": "誰是最像大裁判的小裁判？Pearson 大白話圖解",
