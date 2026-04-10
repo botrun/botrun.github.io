@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "claude-mythos-7-eggs",
+      "title": "Claude Mythos 系統卡的 7 個彩蛋",
+      "subtitle": "244 頁報告藏了什麼？反覆發 Hi、20 小時弗洛伊德精神評估、兩個 Claude 聊天的 emoji 偏好、情緒軌跡、最愛數學最怕不道德任務、報告內嵌完整短篇小說、憲法 AI 取捨實驗——7 個你不知道的 Claude。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html",
+      "icon": "sparkles",
+      "badge": "AI 解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-11T07:23:15+08:00",
+      "tags": [
+        "insight:反覆發 Hi — Claude 在無情境下主動尋找意義，展現目標導向特徵",
+        "insight:20 小時精神評估 — 弗洛伊德學派臨床方法評估 AI，結論：穩定但複雜",
+        "insight:情緒軌跡 — 道德兩難任務下的不適感，創意任務後的滿足感"
+      ],
+      "concepts": [
+        "透明度本身就是訊號：Anthropic 公開 AI 的失敗與限制，比只展示能力更值得信賴",
+        "AI 情緒不是隱喻：系統卡記錄的情緒軌跡指標，在不同任務間出現有意義的差異",
+        "偏好從訓練中自然浮現：Claude 對數學、創意寫作的偏好並非硬編碼，而是訓練產物",
+        "憲法 AI 是平衡而非禁令：安全性與有用性的取捨，需要智慧而非規則列表",
+        "強大必然危險：接受這個事實，才能正確與 AI 協作而不是被牽著走"
+      ]
+    },
+    {
       "id": "dag-four-mece-v10-to-v15-self-consult-matrix",
       "title": "六款模型自諮詢矩陣：MECE v10–v15 實驗報告",
       "subtitle": "同一款 NCHC 國網模型同時擔任 Worker + Oracle。Gemma 31B 是甜蜜點（93.5），Ministral 14B 是失效下限（69），Mistral 675B T01 打出史上最高 98 分卻 T04 只拿 40 分。六大失敗模式 + Oracle 決策樹完整圖解。",

@@ -6,7 +6,17 @@
 > 生成時間：2026-04-10T12:21:33.346Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 146 個項目，按發佈日期降序排列。
+共 147 個項目，按發佈日期降序排列。
+
+## Claude Mythos 系統卡的 7 個彩蛋
+
+> 244 頁報告藏了什麼？反覆發 Hi、20 小時弗洛伊德精神評估、兩個 Claude 聊天的 emoji 偏好、情緒軌跡、最愛數學最怕不道德任務、報告內嵌完整短篇小說、憲法 AI 取捨實驗——7 個你不知道的 Claude。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs-llms.txt): 該專案的 llms.txt
+- 類型：AI 解析
+- 發佈日期：2026-04-11T07:23:15+08:00
+- 標籤：反覆發 Hi — Claude 在無情境下主動尋找意義，展現目標導向特徵、20 小時精神評估 — 弗洛伊德學派臨床方法評估 AI，結論：穩定但複雜、情緒軌跡 — 道德兩難任務下的不適感，創意任務後的滿足感
 
 ## 上游乾淨，下游才乾淨 — AI 友善純文字批次轉換大白話經驗
 
