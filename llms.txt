@@ -6,7 +6,17 @@
 > 生成時間：2026-04-10T12:21:33.346Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 146 個項目，按發佈日期降序排列。
+共 147 個項目，按發佈日期降序排列。
+
+## AI 法務評測管線 v3→v8 演化技術交接
+
+> 從人工清單 95.5 分，到 AI 全自動零種子推論 95.0 分。v5 慘敗 29 分的根本教訓、Sanitizer 雙層隱私保護機制、Zero-Seed P0 六步推論流程，完整 SVG 圖解給工程師接手。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/ai-eval-v3-to-v8-handoff.html): HTML 圖解原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ai-eval-v3-to-v8-llms.txt): 該專案的 llms.txt
+- 類型：技術交接
+- 發佈日期：2026-04-10T23:00:00+08:00
+- 標籤：Zero-Seed 推論 — AI 自己判斷題型，4/4 全猜對、清單是任務錨 — Oracle 無法取代，v5 慘敗 29 分的根本教訓、95.0 分跨領域 — 只差人工版 0.5 分，但具備完全通用性
 
 ## 上游乾淨，下游才乾淨 — AI 友善純文字批次轉換大白話經驗
 
