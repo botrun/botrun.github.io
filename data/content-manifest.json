@@ -5,6 +5,21 @@
   },
   "items": [
     {
+      "id": "mcp-vs-cli",
+      "title": "MCP vs CLI：AI Agent 工具之戰，誰才是未來？",
+      "subtitle": "Perplexity CTO 放棄 MCP、YC CEO 選 CLI。Token 消耗差 10 倍、執行效率天壤之別。5 張投影片看懂 CLI 與 MCP 的最終格局：CLI 征服個人，MCP 留守企業",
+      "href": "https://storage.googleapis.com/botrun-slides/mcp-vs-cli.html",
+      "icon": "terminal",
+      "badge": "AI 工具之戰",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-10T14:01:31+08:00",
+      "tags": [
+        "method:MCP vs CLI 對比分析 + UNIX 哲學管線組合",
+        "insight:44 工具 = 14,268 Tokens vs bash 1 個工具近零成本",
+        "result:CLI 輕量個人 / MCP 企業雲端：物種分化已成定局"
+      ]
+    },
+    {
       "id": "agentic-mece-v3",
       "title": "Agentic MECE v3：帝雉 95.4 分交接文件",
       "subtitle": "七輪實驗淬鍊的法務 AI 最高分策略：MECE 拆解 + 28 Session 平行作答 + 品質清單 v3（15條）+ 符號推理後處理器（8模組），Gemma 4 31B 達近零幻覺",

@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-10T04:23:31.754Z
+> 生成時間：2026-04-10T06:04:49.064Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 142 個項目，按發佈日期降序排列。
+共 143 個項目，按發佈日期降序排列。
+
+## MCP vs CLI：AI Agent 工具之戰，誰才是未來？
+
+> Perplexity CTO 放棄 MCP、YC CEO 選 CLI。Token 消耗差 10 倍、執行效率天壤之別。5 張投影片看懂 CLI 與 MCP 的最終格局：CLI 征服個人，MCP 留守企業
+
+- [線上版](https://storage.googleapis.com/botrun-slides/mcp-vs-cli.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/mcp-vs-cli.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 工具之戰
+- 發佈日期：2026-04-10T14:01:31+08:00
+- 標籤：MCP vs CLI 對比分析 + UNIX 哲學管線組合、44 工具 = 14,268 Tokens vs bash 1 個工具近零成本、CLI 輕量個人 / MCP 企業雲端：物種分化已成定局
 
 ## Agentic MECE v3：帝雉 95.4 分交接文件
 
