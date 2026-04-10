@@ -8,10 +8,11 @@
       "id": "ai-eval-v3-to-v8-handoff",
       "title": "AI 法務評測管線 v3→v8 演化技術交接",
       "subtitle": "從人工清單 95.5 分，到 AI 全自動零種子推論 95.0 分。v5 慘敗 29 分的根本教訓、Sanitizer 雙層隱私保護機制、Zero-Seed P0 六步推論流程，完整 SVG 圖解給工程師接手。",
-      "href": "https://storage.googleapis.com/botrun-slides/ai-eval-v3-to-v8-handoff.html",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-v3-to-v8-handoff.html",
       "icon": "code",
       "badge": "技術交接",
       "badgeColor": "#3b6fa0",
+      "protected": true,
       "publishDate": "2026-04-10T23:00:00+08:00",
       "tags": [
         "method:Zero-Seed 推論 — AI 自己判斷題型，4/4 全猜對",
