@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-11T00:12:03.481Z
+> 生成時間：2026-04-11T00:50:50.782Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 150 個項目，按發佈日期降序排列。
+共 151 個項目，按發佈日期降序排列。
+
+## v10 vs v16 手動重評：隱私防護層對品質無顯著影響
+
+> 同批親手打分（C 法）確認：v10=86.5 / v16=88.75，差距在 ±3 分雜訊範圍內。過去 93.5 的高分是評分法寬鬆 7 分的幻覺，隱私層是零成本防護，應保留。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/report-v10-v16-reeval-privacy-layer.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/report-v10-v16-reeval-privacy-layer.html/llms.txt): 該專案的 llms.txt
+- 類型：內部報告
+- 發佈日期：2026-04-11T08:29:12+08:00
+- 標籤：隱私層零成本 — v10 sanitized 與 v16 naked 實質等同，差距僅 +2.25 分在雜訊範圍內、歷史分數偏高 — 過去 93.5 在同批嚴格評分下只有 86.5，系統性偏高 5~7 分、API 自動評分最穩定 — judge-opus-naked.mjs 誤差僅 0.5 分，應為 SSoT
 
 ## Claude Code × Gemma 4：本地模型當副駕，付費額度當主駕
 
