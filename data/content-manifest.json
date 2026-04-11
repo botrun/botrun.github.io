@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "v24-yaml-dag-compiler-2026-04-11",
+      "title": "為什麼 YAML 的順序，就是 LLM 的優先權？— v23→v24 到 Prompt-to-DAG 編譯器",
+      "subtitle": "從 U 型注意力痛點出發，解剖 v23→v24 結構演化，泛化成 7 階段 LLM 編譯管線。大白話 × 技術深度雙軌、含自舉（Bootstrap）洞察。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/v24-yaml-dag-compiler-2026-04-11.html",
+      "icon": "chart",
+      "badge": "編譯器設計",
+      "badgeColor": "#0f766e",
+      "publishDate": "2026-04-11T18:43:00+08:00",
+      "protected": true,
+      "tags": [
+        "insight:YAML list 有序 = prompt 優先權 = 注意力順序",
+        "arch:Prompt → DAG 7 階段自舉編譯管線（LLM parser + 程式 backend）",
+        "lesson:結構 > 字串 · 每 phase 規則 ≤5 條消滅 U 型中間段"
+      ]
+    },
+    {
       "id": "v24-帝雉徽章突破-2026-04-11",
       "title": "v24 帝雉徽章突破：分階段 Meta-Prompt 讓 96 分成為新常態",
       "subtitle": "法務四題庫 v24 技術傳承文件。Phase-by-Phase Meta-Prompt 分離、帝雉徽章 96+ 解析、v23→v24 關鍵演化。",
