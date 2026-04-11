@@ -5,6 +5,21 @@
   },
   "items": [
     {
+      "id": "opencode-neuralnine-5pages-2026-04-12",
+      "title": "OpenCode 五頁速覽｜NeuralNine 實測精華",
+      "subtitle": "18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 插件 + Ollama 地端模型。",
+      "href": "https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html",
+      "icon": "chart",
+      "badge": "終端代理人",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-12T05:57:00+08:00",
+      "tags": [
+        "tool:OpenCode 開源社群驅動終端 AI 代理",
+        "habit:opencode.json 把 edit/bash 預設 ask，白名單 ls",
+        "feature:undo/redo/jump-to-message/fork 對話分叉"
+      ]
+    },
+    {
       "id": "v24-yaml-dag-compiler-2026-04-11",
       "title": "為什麼 YAML 的順序，就是 LLM 的優先權？— v23→v24 到 Prompt-to-DAG 編譯器",
       "subtitle": "從 U 型注意力痛點出發，解剖 v23→v24 結構演化，泛化成 7 階段 LLM 編譯管線。大白話 × 技術深度雙軌、含自舉（Bootstrap）洞察。",

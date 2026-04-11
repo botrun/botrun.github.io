@@ -3,10 +3,30 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-11T09:56:50.512Z
+> 生成時間：2026-04-11T21:58:26.043Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 153 個項目，按發佈日期降序排列。
+共 155 個項目，按發佈日期降序排列。
+
+## OpenCode 五頁速覽｜NeuralNine 實測精華
+
+> 18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 插件 + Ollama 地端模型。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html/llms.txt): 該專案的 llms.txt
+- 類型：終端代理人
+- 發佈日期：2026-04-12T05:57:00+08:00
+- 標籤：OpenCode 開源社群驅動終端 AI 代理、opencode.json 把 edit/bash 預設 ask，白名單 ls、undo/redo/jump-to-message/fork 對話分叉
+
+## 為什麼 YAML 的順序，就是 LLM 的優先權？— v23→v24 到 Prompt-to-DAG 編譯器
+
+> 從 U 型注意力痛點出發，解剖 v23→v24 結構演化，泛化成 7 階段 LLM 編譯管線。大白話 × 技術深度雙軌、含自舉（Bootstrap）洞察。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/v24-yaml-dag-compiler-2026-04-11.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/v24-yaml-dag-compiler-2026-04-11.html/llms.txt): 該專案的 llms.txt
+- 類型：編譯器設計
+- 發佈日期：2026-04-11T18:43:00+08:00
+- 標籤：YAML list 有序 = prompt 優先權 = 注意力順序、Prompt → DAG 7 階段自舉編譯管線（LLM parser + 程式 backend）、結構 > 字串 · 每 phase 規則 ≤5 條消滅 U 型中間段
 
 ## v24 帝雉徽章突破：分階段 Meta-Prompt 讓 96 分成為新常態
 
