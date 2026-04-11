@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-10T14:00:00+08:00"
+    "lastUpdated": "2026-04-11T08:11:00+08:00"
   },
   "items": [
+    {
+      "id": "claude-code-gemma-4-local-llms",
+      "title": "Claude Code × Gemma 4：本地模型當副駕，付費額度當主駕",
+      "subtitle": "Zero to MVP 的 Nick 10 分鐘實測：本地 LLM 不是 Gemini/Claude 替代品，是額度見底時的補位替補。M4 Pro 7.5B Task 2 連修三次翻車、Nick 手動補 HTML；Ryzen 7 + RTX 4060 Ti 16GB 跑 26B 三題通關 Task 2 花 8 分鐘。關鍵洞察：agentic loop ≠ 聊天回應，多花的分鐘買回你不用坐螢幕前的時間。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-gemma-4-local-llms.html",
+      "icon": "code",
+      "badge": "YouTube 筆記",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-11T08:11:00+08:00",
+      "tags": [
+        "setup:兩個環境變數 — ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN + --model 旗標，零中介層",
+        "result:7.5B 翻車 — Task 2 連修三次同樣 console error，Nick 手動補 HTML 區塊才會動",
+        "result:26B 三題通關 — Task1 ~3min / Task2 ~8min / Task3 刪除線切換，Ryzen 7 + RTX 4060 Ti 16GB",
+        "insight:agentic loop ≠ 聊天回應 — Claude Code 一個任務內代你跟模型對話幾十次，8 分鐘買回不用坐螢幕前的時間"
+      ],
+      "concepts": [
+        "本地 LLM 是補位不是替代：留著付費額度打硬仗，本地模型頂雜事與額度救援",
+        "Agentic coding tool 的本質是互動模式：不是問一題答一題，是代理人自己讀寫檔、跑命令、驗證迭代",
+        "LM Studio 勝 Ollama 在設定選項與 API server 設計，但 Nick 兩個都用",
+        "7B 級小模型寫不出能跑的產品碼，26B 起跳才穩——要寫真東西請直接挑大的",
+        "同一張配線圖換 Qwen Coder Next、Qwen 3.5、DeepSeek Coder 全通用，只要對方會說 OpenAI 相容 API"
+      ]
+    },
     {
       "id": "claude-mythos-7-eggs",
       "title": "Claude Mythos 系統卡的 7 個彩蛋",

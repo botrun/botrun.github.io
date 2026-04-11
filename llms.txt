@@ -3,20 +3,64 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-10T12:21:33.346Z
+> 生成時間：2026-04-11T00:12:03.481Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 147 個項目，按發佈日期降序排列。
+共 150 個項目，按發佈日期降序排列。
+
+## Claude Code × Gemma 4：本地模型當副駕，付費額度當主駕
+
+> Zero to MVP 的 Nick 10 分鐘實測：本地 LLM 不是 Gemini/Claude 替代品，是額度見底時的補位替補。M4 Pro 7.5B Task 2 連修三次翻車、Nick 手動補 HTML；Ryzen 7 + RTX 4060 Ti 16GB 跑 26B 三題通關 Task 2 花 8 分鐘。關鍵洞察：agentic loop ≠ 聊天回應，多花的分鐘買回你不用坐螢幕前的時間。
+
+**關鍵觀念：**
+- 本地 LLM 是補位不是替代：留著付費額度打硬仗，本地模型頂雜事與額度救援
+- Agentic coding tool 的本質是互動模式：不是問一題答一題，是代理人自己讀寫檔、跑命令、驗證迭代
+- LM Studio 勝 Ollama 在設定選項與 API server 設計，但 Nick 兩個都用
+- 7B 級小模型寫不出能跑的產品碼，26B 起跳才穩——要寫真東西請直接挑大的
+- 同一張配線圖換 Qwen Coder Next、Qwen 3.5、DeepSeek Coder 全通用，只要對方會說 OpenAI 相容 API
+
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-gemma-4-local-llms.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-gemma-4-local-llms.html/llms.txt): 該專案的 llms.txt
+- 類型：YouTube 筆記
+- 發佈日期：2026-04-11T08:11:00+08:00
+- 標籤：兩個環境變數 — ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN + --model 旗標，零中介層、7.5B 翻車 — Task 2 連修三次同樣 console error，Nick 手動補 HTML 區塊才會動、26B 三題通關 — Task1 ~3min / Task2 ~8min / Task3 刪除線切換，Ryzen 7 + RTX 4060 Ti 16GB、agentic loop ≠ 聊天回應 — Claude Code 一個任務內代你跟模型對話幾十次，8 分鐘買回不用坐螢幕前的時間
 
 ## Claude Mythos 系統卡的 7 個彩蛋
 
 > 244 頁報告藏了什麼？反覆發 Hi、20 小時弗洛伊德精神評估、兩個 Claude 聊天的 emoji 偏好、情緒軌跡、最愛數學最怕不道德任務、報告內嵌完整短篇小說、憲法 AI 取捨實驗——7 個你不知道的 Claude。
 
+**關鍵觀念：**
+- 透明度本身就是訊號：Anthropic 公開 AI 的失敗與限制，比只展示能力更值得信賴
+- AI 情緒不是隱喻：系統卡記錄的情緒軌跡指標，在不同任務間出現有意義的差異
+- 偏好從訓練中自然浮現：Claude 對數學、創意寫作的偏好並非硬編碼，而是訓練產物
+- 憲法 AI 是平衡而非禁令：安全性與有用性的取捨，需要智慧而非規則列表
+- 強大必然危險：接受這個事實，才能正確與 AI 協作而不是被牽著走
+
 - [線上版](https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html): HTML 簡報原始頁面
-- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs-llms.txt): 該專案的 llms.txt
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 解析
 - 發佈日期：2026-04-11T07:23:15+08:00
 - 標籤：反覆發 Hi — Claude 在無情境下主動尋找意義，展現目標導向特徵、20 小時精神評估 — 弗洛伊德學派臨床方法評估 AI，結論：穩定但複雜、情緒軌跡 — 道德兩難任務下的不適感，創意任務後的滿足感
+
+## 六款模型自諮詢矩陣：MECE v10–v15 實驗報告
+
+> 同一款 NCHC 國網模型同時擔任 Worker + Oracle。Gemma 31B 是甜蜜點（93.5），Ministral 14B 是失效下限（69），Mistral 675B T01 打出史上最高 98 分卻 T04 只拿 40 分。六大失敗模式 + Oracle 決策樹完整圖解。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/dag-four-mece-v10-to-v15-self-consult-matrix.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/dag-four-mece-v10-to-v15-self-consult-matrix.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 評測
+- 發佈日期：2026-04-11T08:00:00+08:00
+- 標籤：93.5 自諮詢甜蜜點 — Gemma 31B self-consult，172s 完成四題、98 史上最高 — v15 Bear 675B T01 刑事筆錄超越 Gemini Pro grounding、六大失敗模式 — A法條錯誤/B meta-drift/C格式崩潰/D幻覺/E verbose/F過度去識別
+
+## AI 法務評測管線 v3→v8 演化技術交接
+
+> 從人工清單 95.5 分，到 AI 全自動零種子推論 95.0 分。v5 慘敗 29 分的根本教訓、Sanitizer 雙層隱私保護機制、Zero-Seed P0 六步推論流程，完整 SVG 圖解給工程師接手。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-v3-to-v8-handoff.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ai-eval-v3-to-v8-handoff.html/llms.txt): 該專案的 llms.txt
+- 類型：技術交接
+- 發佈日期：2026-04-10T23:00:00+08:00
+- 標籤：Zero-Seed 推論 — AI 自己判斷題型，4/4 全猜對、清單是任務錨 — Oracle 無法取代，v5 慘敗 29 分的根本教訓、95.0 分跨領域 — 只差人工版 0.5 分，但具備完全通用性
 
 ## 上游乾淨，下游才乾淨 — AI 友善純文字批次轉換大白話經驗
 
