@@ -1,9 +1,25 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-11T08:11:00+08:00"
+    "lastUpdated": "2026-04-11T14:00:00+08:00"
   },
   "items": [
+    {
+      "id": "v24-帝雉徽章突破-2026-04-11",
+      "title": "v24 帝雉徽章突破：分階段 Meta-Prompt 讓 96 分成為新常態",
+      "subtitle": "法務四題庫 v24 技術傳承文件。Phase-by-Phase Meta-Prompt 分離、帝雉徽章 96+ 解析、v23→v24 關鍵演化。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/v24-帝雉徽章突破-2026-04-11.html",
+      "icon": "chart",
+      "badge": "技術傳承",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-11T14:00:00+08:00",
+      "protected": true,
+      "tags": [
+        "champion:v24 帝雉徽章 96+ 分新常態",
+        "arch:Phase-by-Phase Meta-Prompt 分離架構",
+        "lesson:分階段提示 → 注意力集中 → 分數突破"
+      ]
+    },
     {
       "id": "four-rubric-v16-v23-handover",
       "title": "一天 8 版從 86 衝到 94.75：法務四題庫 v16→v23 全日方法學演化交接",

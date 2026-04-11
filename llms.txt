@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-11T02:43:08.933Z
+> 生成時間：2026-04-11T09:56:50.512Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 152 個項目，按發佈日期降序排列。
+共 153 個項目，按發佈日期降序排列。
+
+## v24 帝雉徽章突破：分階段 Meta-Prompt 讓 96 分成為新常態
+
+> 法務四題庫 v24 技術傳承文件。Phase-by-Phase Meta-Prompt 分離、帝雉徽章 96+ 解析、v23→v24 關鍵演化。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/v24-帝雉徽章突破-2026-04-11.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/v24-帝雉徽章突破-2026-04-11.html/llms.txt): 該專案的 llms.txt
+- 類型：技術傳承
+- 發佈日期：2026-04-11T14:00:00+08:00
+- 標籤：v24 帝雉徽章 96+ 分新常態、Phase-by-Phase Meta-Prompt 分離架構、分階段提示 → 注意力集中 → 分數突破
 
 ## 一天 8 版從 86 衝到 94.75：法務四題庫 v16→v23 全日方法學演化交接
 
