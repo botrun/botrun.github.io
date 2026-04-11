@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-11T00:50:50.782Z
+> 生成時間：2026-04-11T02:43:08.933Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 151 個項目，按發佈日期降序排列。
+共 152 個項目，按發佈日期降序排列。
+
+## 一天 8 版從 86 衝到 94.75：法務四題庫 v16→v23 全日方法學演化交接
+
+> Gemma 4 31B × Claude Opus 4.6 評審。5-Phase 檢索-推理分離、6-Track M 軌橫切、lookup_reference 外部法條、12 條通用 Meta-Prompt、Phase 4.5 結構自我修復。T03=99⭐ T04=98⭐ 歷史最高。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/four-rubric-v16-v23-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/four-rubric-v16-v23-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：技術交接
+- 發佈日期：2026-04-11T10:29:38+08:00
+- 標籤：v23 平均 94.75，T03=99⭐ T04=98⭐ 歷史單題最高、5-Phase 檢索-推理分離 → 6-Track+M軌橫切 → lookup外部法條 → Phase4.5自我修復、規則太多稀釋注意力，分階段 meta-prompt 是 v24 關鍵修復方向
 
 ## v10 vs v16 手動重評：隱私防護層對品質無顯著影響
 

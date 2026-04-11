@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "four-rubric-v16-v23-handover",
+      "title": "一天 8 版從 86 衝到 94.75：法務四題庫 v16→v23 全日方法學演化交接",
+      "subtitle": "Gemma 4 31B × Claude Opus 4.6 評審。5-Phase 檢索-推理分離、6-Track M 軌橫切、lookup_reference 外部法條、12 條通用 Meta-Prompt、Phase 4.5 結構自我修復。T03=99⭐ T04=98⭐ 歷史最高。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/four-rubric-v16-v23-handover.html",
+      "icon": "chart",
+      "badge": "技術交接",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-11T10:29:38+08:00",
+      "protected": true,
+      "tags": [
+        "champion:v23 平均 94.75，T03=99⭐ T04=98⭐ 歷史單題最高",
+        "arch:5-Phase 檢索-推理分離 → 6-Track+M軌橫切 → lookup外部法條 → Phase4.5自我修復",
+        "lesson:規則太多稀釋注意力，分階段 meta-prompt 是 v24 關鍵修復方向"
+      ]
+    },
+    {
       "id": "report-v10-v16-reeval-privacy-layer",
       "title": "v10 vs v16 手動重評：隱私防護層對品質無顯著影響",
       "subtitle": "同批親手打分（C 法）確認：v10=86.5 / v16=88.75，差距在 ±3 分雜訊範圍內。過去 93.5 的高分是評分法寬鬆 7 分的幻覺，隱私層是零成本防護，應保留。",
