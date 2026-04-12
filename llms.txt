@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-11T21:58:26.043Z
+> 生成時間：2026-04-12T06:59:21.633Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 155 個項目，按發佈日期降序排列。
+共 156 個項目，按發佈日期降序排列。
+
+## Privacy Oracle — 小模型自由問診，大模型永遠不碰你的個資
+
+> 31B 地端模型收集機敏資料後，經四層縱深防禦（Sanitizer → PII Guard → Oracle Call → Audit Log）請示雲端大模型。程式碼保證遮蔽，LLM 決定問什麼。v8~v29 全版本 Production 使用中。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-architecture.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-architecture.html/llms.txt): 該專案的 llms.txt
+- 類型：隱私架構
+- 發佈日期：2026-04-12T18:00:00+08:00
+- 標籤：四層縱深防禦 Sanitizer→PII Guard→Oracle Call→Audit Log、隱私保護不降品質，去識別化迫使 Oracle 聚焦方法論反而提升、LLM 決定 WHAT · 程式碼保證 HOW · Atomic ask_oracle 不可拆
 
 ## OpenCode 五頁速覽｜NeuralNine 實測精華
 

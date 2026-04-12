@@ -1,9 +1,25 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-11T14:00:00+08:00"
+    "lastUpdated": "2026-04-12T18:00:00+08:00"
   },
   "items": [
+    {
+      "id": "privacy-oracle-architecture-2026-04-12",
+      "title": "Privacy Oracle — 小模型自由問診，大模型永遠不碰你的個資",
+      "subtitle": "31B 地端模型收集機敏資料後，經四層縱深防禦（Sanitizer → PII Guard → Oracle Call → Audit Log）請示雲端大模型。程式碼保證遮蔽，LLM 決定問什麼。v8~v29 全版本 Production 使用中。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-architecture.html",
+      "icon": "chart",
+      "badge": "隱私架構",
+      "badgeColor": "#0f766e",
+      "publishDate": "2026-04-12T18:00:00+08:00",
+      "protected": true,
+      "tags": [
+        "arch:四層縱深防禦 Sanitizer→PII Guard→Oracle Call→Audit Log",
+        "insight:隱私保護不降品質，去識別化迫使 Oracle 聚焦方法論反而提升",
+        "pattern:LLM 決定 WHAT · 程式碼保證 HOW · Atomic ask_oracle 不可拆"
+      ]
+    },
     {
       "id": "opencode-neuralnine-5pages-2026-04-12",
       "title": "OpenCode 五頁速覽｜NeuralNine 實測精華",
