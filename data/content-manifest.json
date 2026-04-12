@@ -1,9 +1,25 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-12T18:00:00+08:00"
+    "lastUpdated": "2026-04-12T22:00:00+08:00"
   },
   "items": [
+    {
+      "id": "multiwin-porcupine-2026-04-12",
+      "title": "多贏的豪豬：善良需要武力守護，刺朝外、量剛好",
+      "subtitle": "慈濟悖論 × 2026 地緣政治正反六例驗證。三層結構（多贏之心、防衛之刺、價值創造）。正向飛輪 vs 死亡螺旋。三條件缺一不可：要有刺、刺朝外、刺適量。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/multiwin-porcupine.html",
+      "icon": "chart",
+      "badge": "地緣哲學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-12T22:00:00+08:00",
+      "protected": true,
+      "tags": [
+        "insight:善良需要武力守護，利他需要自保來持續",
+        "pattern:多贏豪豬＝內核多贏＋外刺防衛＋行動創造價值",
+        "formula:要有刺・刺朝外・刺適量，三條件缺一不可"
+      ]
+    },
     {
       "id": "privacy-oracle-architecture-2026-04-12",
       "title": "Privacy Oracle — 小模型自由問診，大模型永遠不碰你的個資",

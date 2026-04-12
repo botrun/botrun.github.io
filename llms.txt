@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-12T06:59:21.633Z
+> 生成時間：2026-04-12T14:00:00.000Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 156 個項目，按發佈日期降序排列。
+共 157 個項目，按發佈日期降序排列。
+
+## 多贏的豪豬：善良需要武力守護，刺朝外、量剛好
+
+> 慈濟悖論 × 2026 地緣政治正反六例驗證。三層結構（多贏之心、防衛之刺、價值創造）。正向飛輪 vs 死亡螺旋。三條件缺一不可：要有刺、刺朝外、刺適量。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/multiwin-porcupine.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/multiwin-porcupine.html/llms.txt): 該專案的 llms.txt
+- 類型：地緣哲學
+- 發佈日期：2026-04-12T22:00:00+08:00
+- 標籤：善良需要武力守護，利他需要自保來持續、多贏豪豬＝內核多贏＋外刺防衛＋行動創造價值、要有刺・刺朝外・刺適量，三條件缺一不可
 
 ## Privacy Oracle — 小模型自由問診，大模型永遠不碰你的個資
 
