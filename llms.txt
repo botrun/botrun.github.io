@@ -3,10 +3,70 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-12T14:00:00.000Z
+> 生成時間：2026-04-14T00:25:14.376Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 157 個項目，按發佈日期降序排列。
+共 163 個項目，按發佈日期降序排列。
+
+## Hermes Agent 越用越聰明 — 自我進化 × 雙層記憶 × Claude Code 最佳分工
+
+> 每 10 次工具呼叫觸發背景反思 Skill、每 10 輪對話更新 Memory。Frozen Snapshot Pattern 讓 Prompt Cache 命中率最大化。40K⭐ 七大地雷全公開，與 Claude Code MCP 最佳分工架構。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/hermes-memory-evolution-claude-code.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hermes-memory-evolution-claude-code.html/llms.txt): 該專案的 llms.txt
+- 類型：原理解析
+- 發佈日期：2026-04-14T08:30:00+08:00
+- 標籤：自我進化三步循環——做事→反思→Skill 固化，每 10 次工具呼叫觸發，非阻塞背景執行、Memory 記人、Skill 記事，兩者不能混，防止記憶爆炸的核心設計原則、Hermes（記憶層）+ Claude Code（主力）= 越用越聰明的完整 AI 工程師助手
+
+## AI 任務管理的隱藏秘密 — Claude Code Todo List 機制完全解密
+
+> 180 行 prompt.ts × 3 態狀態機 × 串列原則。5 觸發條件、雙層保護（Prompt+程式碼）、V1記憶體 vs V2檔案持久化、5 個移植地雷。讓 AI 不跳步驟、不遺忘任務、多 Agent 不衝突。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-mono-todo-engine.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-mono-todo-engine.html/llms.txt): 該專案的 llms.txt
+- 類型：逆向工程
+- 發佈日期：2026-04-13T10:00:00+08:00
+- 標籤：串列原則——同時只有一個 in_progress，是防 AI 跳步驟的核心機制、雙層保護 = System Prompt 語言規則 + 程式碼邏輯強制，缺一不可、V2 多 Agent 必備：lockfile / Redis SETNX 序列化寫入防競態
+
+## 永不忘記的 AI 同事 — Claude Code 記憶模式 × pi-mono 移植完全指南
+
+> 四種記憶類型（user/feedback/project/reference）× 三層架構（主代理+兩背景代理）× 五個地雷。MEMORY.md 200行截斷無警告、竟態條件、feedback必須含Why+How。Independent API 方案 21/25 勝出。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-memory-mode-porting.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-memory-mode-porting.html/llms.txt): 該專案的 llms.txt
+- 類型：逆向工程
+- 發佈日期：2026-04-13T10:00:00+08:00
+- 標籤：四種記憶各司其職——user管人、feedback管規則、project管事、reference管位置、三層架構——主代理注入記憶、背景代理1萃取、背景代理2 AutoDream 整合、MEMORY.md 上限 200 行，超出靜靜截斷無警告——定期用 wc -l 監控
+
+## 用戶行為看得見 — mo Analytics 移植三方案完整指南
+
+> 從 Claude Code index.ts/datadog.ts/sink.ts 逆向分析 6 大模組架構。SQLite + API Server + IAP 最短移植路徑（20/25）。pi-mono 事件對應表、三階段實作計畫（7天上線）、2個關鍵地雷（SQLite揮發/佇列遺失）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/mo-analytics-porting.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/mo-analytics-porting.html/llms.txt): 該專案的 llms.txt
+- 類型：逆向工程
+- 發佈日期：2026-04-13T10:00:00+08:00
+- 標籤：sink.ts 路由器設計讓新增資料目的地零改動主流程——開放封閉原則典範、超市類比——攝影機=session追蹤、收據=event log、VIP閘門=IAP、Minimal SQLite 20/25 勝出——自主掌控 + IAP 隱私保護 + 長期維護成本最低
+
+## AI 要記得做夢 — AutoDream × AutoCompact × SessionMemory 移植全解析
+
+> 5 用戶痛點（每次重新介紹/AI越用越笨/費用爆炸）驅動三機制設計。AutoDream 3 道閘門 4 個階段。AutoCompact 9 段式摘要 + 電路斷路器。Extension Hook 方案 39/50 最短移植路徑。4 個地雷。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-dream-porting.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-dream-porting.html/llms.txt): 該專案的 llms.txt
+- 類型：逆向工程
+- 發佈日期：2026-04-13T10:00:00+08:00
+- 標籤：三機制各司其職——AutoDream管人、AutoCompact管錢、SessionMemory管事、仿人類REM睡眠——session結束時非阻塞fork子代理，用戶感覺不到AI在做夢、setImmediate 脫離主執行緒——記憶萃取必須非同步，否則session回應延遲3-8秒
+
+## 工具壞了不靜悄悄 — Claude Code 錯誤通報四層防線完整解析
+
+> 從 toolExecution.ts 逆向分析：4 種失敗定義、classifyToolError() 隱私過濾器、Datadog+1P BigQuery 雙軌通報、指數退避重試（500ms→30s+jitter）、0 隱私洩漏設計。Botrun 三步 MVP。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-error-telemetry.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/claude-code-error-telemetry.html/llms.txt): 該專案的 llms.txt
+- 類型：逆向工程
+- 發佈日期：2026-04-13T10:00:00+08:00
+- 標籤：「壞了」的定義非常精確——不是未達用戶期望，而是系統拋出例外，讓錯誤率數據保持客觀、雙軌通報設計——Datadog 外部監控（生產環境）+ 1P BigQuery 全環境，互為備份、隱私過濾四層——TelemetrySafeError→telemetryMessage / Node錯誤→code / 已知→classname / 其他→Error
 
 ## 多贏仙人掌：刺適量朝外，全球開花
 
@@ -16,7 +76,7 @@
 - [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/multiwin-porcupine.html/llms.txt): 該專案的 llms.txt
 - 類型：仙人掌哲學
 - 發佈日期：2026-04-12T22:00:00+08:00
-- 標籤：從墨子豪豬演化到仙人掌、花＋刺＋根三層結構、五條件：有刺・朝外・適量・有根・能開花
+- 標籤：從墨子���豬演化到仙人掌——善要有刺有根才能全球開花、花（多贏之心）＋刺（防衛朝外）＋根（制度化傳���）、五條件：有刺・朝外・適量・有根・能開花
 
 ## Privacy Oracle — 小模型自由問診，大模型永遠不碰你的個資
 

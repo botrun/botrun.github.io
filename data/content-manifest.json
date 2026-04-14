@@ -5,6 +5,21 @@
   },
   "items": [
     {
+      "id": "hermes-memory-evolution-claude-code-2026-04-14",
+      "title": "Hermes Agent 越用越聰明 — 自我進化 × 雙層記憶 × Claude Code 最佳分工",
+      "subtitle": "每 10 次工具呼叫觸發背景反思 Skill、每 10 輪對話更新 Memory。Frozen Snapshot Pattern 讓 Prompt Cache 命中率最大化。40K⭐ 七大地雷全公開，與 Claude Code MCP 最佳分工架構。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-memory-evolution-claude-code.html",
+      "icon": "chart",
+      "badge": "原理解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-14T08:30:00+08:00",
+      "tags": [
+        "insight:自我進化三步循環——做事→反思→Skill 固化，每 10 次工具呼叫觸發，非阻塞背景執行",
+        "pattern:Memory 記人、Skill 記事，兩者不能混，防止記憶爆炸的核心設計原則",
+        "formula:Hermes（記憶層）+ Claude Code（主力）= 越用越聰明的完整 AI 工程師助手"
+      ]
+    },
+    {
       "id": "pi-mono-todo-engine-2026-04-13",
       "title": "AI 任務管理的隱藏秘密 — Claude Code Todo List 機制完全解密",
       "subtitle": "180 行 prompt.ts × 3 態狀態機 × 串列原則。5 觸發條件、雙層保護（Prompt+程式碼）、V1記憶體 vs V2檔案持久化、5 個移植地雷。讓 AI 不跳步驟、不遺忘任務、多 Agent 不衝突。",
