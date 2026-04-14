@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "tryai-skill-production-runtime",
+      "title": "孵完帶走不求人：四種 Runtime，機敏環境跑真實 Production",
+      "subtitle": "TryAI 孵化的 SKILL.md 不是沙盒玩具，孵完帶回機關機敏環境自主運行。四條路徑：001 開源 opencode、002 claude-code、003 開源 gemini cli、004 另案採購波特人平台授權。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/tryai-skill-production-runtime.html",
+      "icon": "shield",
+      "badge": "IAP 保護",
+      "badgeColor": "#1f2933",
+      "publishDate": "2026-04-14T09:44:53+08:00",
+      "protected": true,
+      "tags": [
+        "insight:SKILL.md 孵完即可帶回機關——不依賴 TryAI 平台，機敏環境自主運行",
+        "pattern:四條 Runtime 路徑——開源零費用到企業授權，依機關技術能力與預算彈性選擇",
+        "formula:從試用到 Production——司長要求「至少講得出去有小規模 production」的具體實現路徑"
+      ],
+      "concepts": [
+        "TryAI 孵化 → SKILL.md 產出 → 帶回機關機敏環境，實現小規模 Production",
+        "001 開源 opencode：社群維護、零授權費、全地端或國網可部署，技術型機關適用",
+        "002 claude-code：頂流 Agentic 能力，API Key 模式資料本地，接受雲端 API 的機關適用",
+        "003 開源 gemini cli：Google 官方、免費版即可起跑，Google Workspace 機關與預算最低方案",
+        "004 另案採購波特人平台授權：整合式管理、企業支援、需要全套服務的機關適用"
+      ]
+    },
+    {
       "id": "privacy-oracle-moda-2026-04-14",
       "title": "Privacy Oracle × 數位發展部 — 機敏波特人 × 國網波特人的零接觸協作",
       "subtitle": "31B 地端機敏波特人自由收集案卷，675B 國網波特人永遠不碰個資。不只是字串替換——連犯罪手法、攻擊部位、器械類型都能被實體級遮蔽。四層縱深防禦 × JSONL 完整稽核 × 法務四題 97.75 分帝雉徽章。",
