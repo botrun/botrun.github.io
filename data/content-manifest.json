@@ -29,8 +29,8 @@
     },
     {
       "id": "privacy-oracle-moda-2026-04-14",
-      "title": "Privacy Oracle × 數位發展部 — 機敏波特人 × 國網波特人的零接觸協作",
-      "subtitle": "31B 地端機敏波特人自由收集案卷，675B 國網波特人永遠不碰個資。不只是字串替換——連犯罪手法、攻擊部位、器械類型都能被實體級遮蔽。四層縱深防禦 × JSONL 完整稽核 × 法務四題 97.75 分帝雉徽章。",
+      "title": "零接觸教練模型 × 數位發展部 — 機敏選手 × 雲端教練的零接觸協作",
+      "subtitle": "內網機敏選手模型 31B 自由讀案卷，外網零接觸教練模型（國網波特人 675B + AWS 東京 Claude Sonnet 4.6）永遠不碰個資。不只字串替換——連犯罪手法、攻擊部位、器械類型都能被實體級遮蔽。機關內網 Mac Studio 波火眼 OCR 前處理 × AAA Sec + AIEC 雙軌第三方驗測 × 法務四題 97.75 分帝雉徽章。",
       "href": "https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-moda.html",
       "icon": "chart",
       "badge": "IAP 保護",
@@ -39,8 +39,8 @@
       "protected": true,
       "tags": [
         "insight:語意實體遮蔽——連犯罪手法、攻擊部位、器械類型都能蓋掉，這才是真正的零接觸去識別",
-        "pattern:程式碼保證 × 四層縱深——Sanitizer → PII Guard → Oracle Call → Audit Log，LLM 無法繞過",
-        "formula:去識別 + 帝雉徽章——啟用隱私保護後分數 +9 反升，因為去識別逼大模型聚焦方法論"
+        "pattern:機敏選手 × 零接觸教練——內網 31B 讀原始、外網 675B/Claude S4.6 只看去識別問題，程式碼保證 LLM 無法繞過",
+        "formula:AAA Sec 資安驗測 + AIEC 模型能力驗測——雙軌第三方把關才是機關敢導入的基礎"
       ]
     },
     {
