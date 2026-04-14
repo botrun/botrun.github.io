@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "privacy-oracle-moda-2026-04-14",
+      "title": "Privacy Oracle × 數位發展部 — 機敏波特人 × 國網波特人的零接觸協作",
+      "subtitle": "31B 地端機敏波特人自由收集案卷，675B 國網波特人永遠不碰個資。不只是字串替換——連犯罪手法、攻擊部位、器械類型都能被實體級遮蔽。四層縱深防禦 × JSONL 完整稽核 × 法務四題 97.75 分帝雉徽章。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-moda.html",
+      "icon": "chart",
+      "badge": "IAP 保護",
+      "badgeColor": "#1f2933",
+      "publishDate": "2026-04-14T08:54:00+08:00",
+      "protected": true,
+      "tags": [
+        "insight:語意實體遮蔽——連犯罪手法、攻擊部位、器械類型都能蓋掉，這才是真正的零接觸去識別",
+        "pattern:程式碼保證 × 四層縱深——Sanitizer → PII Guard → Oracle Call → Audit Log，LLM 無法繞過",
+        "formula:去識別 + 帝雉徽章——啟用隱私保護後分數 +9 反升，因為去識別逼大模型聚焦方法論"
+      ]
+    },
+    {
       "id": "hermes-memory-evolution-claude-code-2026-04-14",
       "title": "Hermes Agent 越用越聰明 — 自我進化 × 雙層記憶 × Claude Code 最佳分工",
       "subtitle": "每 10 次工具呼叫觸發背景反思 Skill、每 10 輪對話更新 Memory。Frozen Snapshot Pattern 讓 Prompt Cache 命中率最大化。40K⭐ 七大地雷全公開，與 Claude Code MCP 最佳分工架構。",

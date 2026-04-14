@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-14T00:25:14.376Z
+> 生成時間：2026-04-14T00:54:38.132Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 163 個項目，按發佈日期降序排列。
+共 164 個項目，按發佈日期降序排列。
+
+## Privacy Oracle × 數位發展部 — 機敏波特人 × 國網波特人的零接觸協作
+
+> 31B 地端機敏波特人自由收集案卷，675B 國網波特人永遠不碰個資。不只是字串替換——連犯罪手法、攻擊部位、器械類型都能被實體級遮蔽。四層縱深防禦 × JSONL 完整稽核 × 法務四題 97.75 分帝雉徽章。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-moda.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/privacy-oracle-moda.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP 保護
+- 發佈日期：2026-04-14T08:54:00+08:00
+- 標籤：語意實體遮蔽——連犯罪手法、攻擊部位、器械類型都能蓋掉，這才是真正的零接觸去識別、程式碼保證 × 四層縱深——Sanitizer → PII Guard → Oracle Call → Audit Log，LLM 無法繞過、去識別 + 帝雉徽章——啟用隱私保護後分數 +9 反升，因為去識別逼大模型聚焦方法論
 
 ## Hermes Agent 越用越聰明 — 自我進化 × 雙層記憶 × Claude Code 最佳分工
 
