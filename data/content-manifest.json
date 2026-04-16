@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "playwright-cli-vs-mcp",
+      "title": "CLI 還是 MCP？選錯工具，你在多燒的 tokens 都是真金白銀",
+      "subtitle": "microsoft/playwright-cli 重磅登場。5 頁決策框架：token 效率 vs 豐富上下文，SKILL 機制 vs self-healing，一次搞清楚什麼場景用哪個。",
+      "href": "https://storage.googleapis.com/botrun-slides/playwright-cli-vs-mcp.html",
+      "icon": "tool",
+      "badge": "工具選型",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-16T21:00:00+08:00",
+      "tags": [
+        "tool:Playwright CLI vs MCP 完整比較",
+        "agent:coding agent token 效率決策框架",
+        "ref:microsoft/playwright-cli v0.1.8"
+      ],
+      "llmsTxt": "https://storage.googleapis.com/botrun-slides/playwright-cli-vs-mcp-llms.txt"
+    },
+    {
       "id": "desens-aho-corasick-perf",
       "title": "零機敏轉換，別猜瓶頸 — Aho-Corasick 讓 50K 行從 165 秒到 5.8 秒",
       "subtitle": "用 1K/2K/4K/8K 指數上升法，10 分鐘精準定位 V8 Regex 9K 懸崖 + O(n²) 嵌套地雷，Aho-Corasick 一次修復，全流程加速 89 倍。",
