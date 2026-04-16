@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-14T02:34:27.942Z
+> 生成時間：2026-04-16T12:11:42.383Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 165 個項目，按發佈日期降序排列。
+共 166 個項目，按發佈日期降序排列。
+
+## 零機敏轉換，別猜瓶頸 — Aho-Corasick 讓 50K 行從 165 秒到 5.8 秒
+
+> 用 1K/2K/4K/8K 指數上升法，10 分鐘精準定位 V8 Regex 9K 懸崖 + O(n²) 嵌套地雷，Aho-Corasick 一次修復，全流程加速 89 倍。
+
+**關鍵觀念：**
+- 指數上升法：用 1K/2K/4K/8K 測倍率，2× 線性健康、4× O(n²) 危險、200× 炸彈；看到趨勢即可開始修，不用跑完
+- V8 Regex 9K 懸崖：alternation 超過 ~9,000 個選項時，DFA 退化為 NFA，從 7ms 暴增到 3,747ms（500倍）
+- O(n²) suppress 陷阱：100K entities 交叉比對 = 500 億次；洞見是不同 ID 類型不可能互為子字串，直接跳過
+- String.slice 炸彈：迴圈內每次命中重建整個字串，5MB 文字 × 數千次 = 數 GB 字串配置；改用 Aho-Corasick
+- Aho-Corasick 設計決策：≤8K 用 V8 DFA regex（JIT 最快），>8K 自動切換 AC（線性時間），兩全其美
+
+- [線上版](https://storage.googleapis.com/botrun-slides/desens-aho-corasick-perf.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/desens-aho-corasick-perf.html/llms.txt): 該專案的 llms.txt
+- 類型：效能優化
+- 發佈日期：2026-04-16T20:07:10+08:00
+- 標籤：Aho-Corasick 多模式匹配演算法，零外部依賴純 JS 實作、指數上升法——1K/2K/4K/8K 倍率法定位效能拐點、50K 行端到端 5.8 秒（不含 LLM），全 stage 線性成長
 
 ## 孵完帶走不求人：四種 Runtime，機敏環境跑真實 Production
 

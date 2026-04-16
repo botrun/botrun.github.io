@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "desens-aho-corasick-perf",
+      "title": "零機敏轉換，別猜瓶頸 — Aho-Corasick 讓 50K 行從 165 秒到 5.8 秒",
+      "subtitle": "用 1K/2K/4K/8K 指數上升法，10 分鐘精準定位 V8 Regex 9K 懸崖 + O(n²) 嵌套地雷，Aho-Corasick 一次修復，全流程加速 89 倍。",
+      "href": "https://storage.googleapis.com/botrun-slides/desens-aho-corasick-perf.html",
+      "icon": "zap",
+      "badge": "效能優化",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-16T20:07:10+08:00",
+      "tags": [
+        "algo:Aho-Corasick 多模式匹配演算法，零外部依賴純 JS 實作",
+        "debug:指數上升法——1K/2K/4K/8K 倍率法定位效能拐點",
+        "perf:50K 行端到端 5.8 秒（不含 LLM），全 stage 線性成長"
+      ],
+      "concepts": [
+        "指數上升法：用 1K/2K/4K/8K 測倍率，2× 線性健康、4× O(n²) 危險、200× 炸彈；看到趨勢即可開始修，不用跑完",
+        "V8 Regex 9K 懸崖：alternation 超過 ~9,000 個選項時，DFA 退化為 NFA，從 7ms 暴增到 3,747ms（500倍）",
+        "O(n²) suppress 陷阱：100K entities 交叉比對 = 500 億次；洞見是不同 ID 類型不可能互為子字串，直接跳過",
+        "String.slice 炸彈：迴圈內每次命中重建整個字串，5MB 文字 × 數千次 = 數 GB 字串配置；改用 Aho-Corasick",
+        "Aho-Corasick 設計決策：≤8K 用 V8 DFA regex（JIT 最快），>8K 自動切換 AC（線性時間），兩全其美"
+      ]
+    },
+    {
       "id": "tryai-skill-production-runtime",
       "title": "孵完帶走不求人：四種 Runtime，機敏環境跑真實 Production",
       "subtitle": "TryAI 孵化的 SKILL.md 不是沙盒玩具，孵完帶回機關機敏環境自主運行。四條路徑：001 開源 opencode、002 claude-code、003 開源 gemini cli、004 另案採購波特人平台授權。",
