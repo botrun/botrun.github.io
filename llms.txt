@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-16T13:00:41.789Z
+> 生成時間：2026-04-16T13:33:53.524Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 167 個項目，按發佈日期降序排列。
+共 168 個項目，按發佈日期降序排列。
+
+## 你的 AI 評審是在打分還是在亂猜？
+
+> Judge the Judge：GEPA 進化演算法讓 LLM 評審真正可信。四步驟校準流程、Pareto 前沿選擇、ASI 可行側資訊、資料飛輪——比強化學習快 35 倍、成本省 90 倍。
+
+**關鍵觀念：**
+- LLM 評審有 3 種天生偏差（偷懶、討好、位置偏差），直接用=給你假的安全感
+- GEPA（基因進化提示詞演算法）：讓評審提示詞不斷突變競爭，存活的就是最準的
+- 四步驟：定義指標 → 人工標注 50+ 筆 → GEPA 優化 → 驗證迭代，校準完成
+- ASI（可行側資訊）：不只說「你錯了」，給出錯誤訊息+執行日誌+因果分析，比強化學習快 35 倍
+- 資料飛輪：用越多→評審越準→應用越好→更多資料→永動機，成本省 90 倍
+
+- [線上版](https://storage.googleapis.com/botrun-slides/judge-the-judge-llm-evaluator.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/judge-the-judge-llm-evaluator.html/llms.txt): 該專案的 llms.txt
+- 類型：LLM 評審
+- 發佈日期：2026-04-16T21:27:52+08:00
+- 標籤：GEPA 四步驟校準流程、LLM-as-a-Judge 偏差校正、Agenta AI / Mahmoud Mabrouk
 
 ## CLI 還是 MCP？選錯工具，你在多燒的 tokens 都是真金白銀
 

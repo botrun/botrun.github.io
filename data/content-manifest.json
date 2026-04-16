@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "judge-the-judge-llm-evaluator",
+      "title": "你的 AI 評審是在打分還是在亂猜？",
+      "subtitle": "Judge the Judge：GEPA 進化演算法讓 LLM 評審真正可信。四步驟校準流程、Pareto 前沿選擇、ASI 可行側資訊、資料飛輪——比強化學習快 35 倍、成本省 90 倍。",
+      "href": "https://storage.googleapis.com/botrun-slides/judge-the-judge-llm-evaluator.html",
+      "icon": "shield-check",
+      "badge": "LLM 評審",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-16T21:27:52+08:00",
+      "tags": [
+        "method:GEPA 四步驟校準流程",
+        "tech:LLM-as-a-Judge 偏差校正",
+        "ref:Agenta AI / Mahmoud Mabrouk"
+      ],
+      "concepts": [
+        "LLM 評審有 3 種天生偏差（偷懶、討好、位置偏差），直接用=給你假的安全感",
+        "GEPA（基因進化提示詞演算法）：讓評審提示詞不斷突變競爭，存活的就是最準的",
+        "四步驟：定義指標 → 人工標注 50+ 筆 → GEPA 優化 → 驗證迭代，校準完成",
+        "ASI（可行側資訊）：不只說「你錯了」，給出錯誤訊息+執行日誌+因果分析，比強化學習快 35 倍",
+        "資料飛輪：用越多→評審越準→應用越好→更多資料→永動機，成本省 90 倍"
+      ]
+    },
+    {
       "id": "playwright-cli-vs-mcp",
       "title": "CLI 還是 MCP？選錯工具，你在多燒的 tokens 都是真金白銀",
       "subtitle": "microsoft/playwright-cli 重磅登場。5 頁決策框架：token 效率 vs 豐富上下文，SKILL 機制 vs self-healing，一次搞清楚什麼場景用哪個。",
