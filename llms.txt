@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-18T14:58:46.980Z
+> 生成時間：2026-04-18T15:38:59.750Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 172 個項目，按發佈日期降序排列。
+共 173 個項目，按發佈日期降序排列。
+
+## 六萬筆 CSV 包成 .db，31B 一次掃對 62 筆
+
+> 環管署廢清法 112 年餵食流浪貓犬告發 — SQLite + _meta 自證表讓 Gemma 4 31B 不靠程式碼、不靠 RAG、不幻覺就能精準檢索機敏裁罰資料。同一個 .db 檔包 cases + _meta + _meta_pitfalls 三張表，小模型讀完 _meta 就知道怎麼下多重條件 SQL，62 筆命中逐筆打勾核對。
+
+**關鍵觀念：**
+- 痛點：6 萬筆裁罰 CSV 丟小模型會漏、會編、會混家貓流浪 — RAG top-k 外的案件全部幻覺
+- 關鍵設計：CSV 包成 .db，附 _meta（欄位+同義字+查詢法）和 _meta_pitfalls（地雷表），小模型第一步 SELECT * FROM _meta 就會查
+- Pipeline：多重條件 OR 組合 SQL（餵食|餵養|飼料 AND 貓|狗|犬|流浪|野），全量掃描不丟 context
+- 實證：62 筆命中 → 54 明確流浪 + 5 情境判定（監視器/公共路面）+ 1 家貓剔除（ID 42379 所飼養）
+- 成果：零程式碼、零幻覺、每筆可回溯 case id；_meta 是人類寫、小模型讀、審計員看，結晶螺旋三方對齊
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-sqlite-pipeline-31b.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-sqlite-pipeline-31b.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP 保護 · 資料管線
+- 發佈日期：2026-04-18T23:36:14+08:00
+- 標籤：環管署機敏 CSV、廢清法 112 年餵食流浪貓犬告發、SQLite + _meta 自證表、Gemma 4 31B
 
 ## 環境稽查找法規：四大模型 PK 全紀錄
 
