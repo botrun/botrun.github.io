@@ -5,6 +5,32 @@
   },
   "items": [
     {
+      "id": "meta-sop-drives-model-2026-04-19",
+      "title": "_meta 寫進 SOP，675B 從 78 → 90 分",
+      "subtitle": "環境稽查找法規實測：同一題、同一個 legal_kg.db、同一個 675B 模型，差別只有把「六輪拆解」SOP 寫進 _meta 表——分數從 78 跳到 90，關鍵刑事罰 §46-4 從漏抓變成自動反查命中。新增 12 條泛化規則（id 22–33），全部動詞化、跨 6 類污染通用、零硬編碼條號。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/meta-sop-drives-model-2026-04-19.html",
+      "icon": "database",
+      "badge": "IAP 保護 · _meta 驅動",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-19T02:30:00+08:00",
+      "protected": true,
+      "tags": [
+        "domain:環境稽查找法規",
+        "tech:SQLite _meta 反向設計",
+        "model:NCHC Mistral 675B",
+        "case:廢橡膠稽查 31B 35→675B v1 78→v2 90"
+      ],
+      "concepts": [
+        "核心發現：同模型同 DB，只改 _meta 12 筆記錄，675B 從 78 → 90（+12）",
+        "675B v1 兩個失誤：§28 vs §41 主體誤判、漏刑事罰 §46-4（題目明寫「移送司法機關」）",
+        "六輪拆解 SOP：R1 拆條 → R2 主體分流 → R3 CTE 下鑽子法 → R4 刑事訊號反查 → R5 pitfalls 回歸 → R6 雙軌驗證",
+        "R4 刑事訊號反查是關鍵：「移送/偵辦/刑責」觸發罰則鏈 CTE 反查，v2 自動命中 §46-4",
+        "泛化原則：禁止硬寫條號對應（「§28 vs §41」是本題解答），只寫動詞式流程規則（「先分流、必下鑽、反查、雙軌」）",
+        "因果證據：v2 答題過程明確執行 R4 CTE 查詢並命中 §46-4，不是取樣雜訊",
+        "可攜教訓：SOP 寫進 schema > system prompt；序列式拆解 > 並行式查詢；反向設計安全預設（LM-FLASH-034）"
+      ]
+    },
+    {
       "id": "env-legal-kg-v9-handoff",
       "title": "給 Haiku 一個 .db 檔就能打贏 23 題法規 QA",
       "subtitle": "環境稽查找法規 SQLite KG 10 輪迭代交接（v9）— 8 張表 1.2MB 單檔取代 Neo4j + Vector DB + RAG pipeline；_meta 自證文件 + pcode 死鎖表是 killer feature；23 題 hold-out 平均 96/100、≥95 達標率 87%；完整 R1→R10 軌跡、雙軌策略、罰則反查、子法下鑽、10 條反 overfit 守則、跨專案 9 步移植 checklist。",
