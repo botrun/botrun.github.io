@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-18T09:01:27.417Z
+> 生成時間：2026-04-18T10:52:28.505Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 169 個項目，按發佈日期降序排列。
+共 170 個項目，按發佈日期降序排列。
+
+## Gemma 4 31B × H100 80GB × 40k Context — 使用者容量驗證報告
+
+> 單張 H100 80GB 同時能服務幾位使用者？FP8 動態量化 + vLLM PagedAttention，實測 TTFT / TPS 全數據。結論：實用並發 2–3 人，7 人 TTFT 爆 50s。總花費 USD 1.56。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gemma4-31b-h100-40k-benchmark.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gemma4-31b-h100-40k-benchmark.html/llms.txt): 該專案的 llms.txt
+- 類型：效能驗證
+- 發佈日期：2026-04-18T22:00:00+08:00
+- 標籤：Gemma 4 31B FP8、H100 80GB HBM3、vLLM + GCP SPOT、TTFT / TPS 40k context
 
 ## 讓 LLM 成為資料分析師：一場關於「解耦」的革命
 

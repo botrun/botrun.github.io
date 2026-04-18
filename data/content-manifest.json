@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "gemma4-31b-h100-40k-benchmark",
+      "title": "Gemma 4 31B × H100 80GB × 40k Context — 使用者容量驗證報告",
+      "subtitle": "單張 H100 80GB 同時能服務幾位使用者？FP8 動態量化 + vLLM PagedAttention，實測 TTFT / TPS 全數據。結論：實用並發 2–3 人，7 人 TTFT 爆 50s。總花費 USD 1.56。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-31b-h100-40k-benchmark.html",
+      "icon": "cpu",
+      "badge": "效能驗證",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-18T22:00:00+08:00",
+      "tags": [
+        "model:Gemma 4 31B FP8",
+        "hw:H100 80GB HBM3",
+        "infra:vLLM + GCP SPOT",
+        "metric:TTFT / TPS 40k context"
+      ]
+    },
+    {
       "id": "llm-data-analyst-decoupling",
       "title": "讓 LLM 成為資料分析師：一場關於「解耦」的革命",
       "subtitle": "Andy Raskin 矽谷策略敘事五幕。LLM 當指揮官、cli.py 當肢體，6 萬筆 CSV 在 8 秒內漏斗到 38 筆可稽核結論。全程臺灣機房、NCHC 31B + Hermes Agent，附完整 cli.py 原始碼。",
