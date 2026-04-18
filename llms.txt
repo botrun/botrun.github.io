@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-18T16:39:55.667Z
+> 生成時間：2026-04-18T23:04:44.596Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 175 個項目，按發佈日期降序排列。
+共 176 個項目，按發佈日期降序排列。
+
+## 六模型同一題分數從 0 到 98
+
+> 環境稽查找法規 legal_kg.db 閉卷評測：Gemini 3 Flash 98 分靠交叉比對 cases 表、Opus 75 分憑記憶取巧、hermes 26B 55 分捏造子法、NCHC 675B 第一次 0 分 Fake Execution 通篇幻覺。差別不在參數量，在有沒有老實執行 SOP。五條高品質法規 Agent 避坑指南 + 三軌檢索架構 + 三層法規結構 Checklist。
+
+**關鍵觀念：**
+- Gemini 3 Flash Preview 98 分：當正向查 law_edges 斷鏈，懂得轉查 cases 表從案例 12 萃取法條鏈（交叉比對能力）
+- Claude Opus 75 分：結論對但取巧憑記憶，沒把案例法條回丟 laws 表驗證 official_url（違反 Rule 19）
+- NCHC 675B 第一次 0 分：Fake Execution 通篇文字模擬 Tool/Result，SQL 和結果全是自編（幻覺）
+- NCHC 675B 第二次 45 分：半途而廢，跳過 official_url 查詢捏造水污法網址為 O0020001（實為空污法 pcode）
+- 五條避坑：多軌檢索（正向+案例+陷阱）、輸出前 Pre-Output Verification、三層結構 Checklist、強制 Function Calling 隔離 Thought/Action、專有縮寫對齊 _meta
+- 反直覺結論：675B 比 26B 多 26 倍參數，分數反從 55 掉到 0——勝負不在智商，在工程紀律
+- 最佳 CP 組合：題目先 bh desens 去機敏 → Gemini 3 Flash Preview + sqlite3 Function Calling → 雙軌驗證輸出
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/legal-kg-6models-benchmark.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/legal-kg-6models-benchmark.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP 保護 · 模型評測
+- 發佈日期：2026-04-19T07:03:50+08:00
+- 標籤：環境稽查找法規、閉卷 DB 評測 · 六模型 PK、Gemini 3 Flash Preview 98、Fake Execution · 幻覺 URL
 
 ## _meta 寫進 SOP，675B 從 78 → 90 分
 
