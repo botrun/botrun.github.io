@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "moenv-law-finding-4ai-pk",
+      "title": "環境稽查找法規：四大模型 PK 全紀錄",
+      "subtitle": "一份真實環境稽查紀錄（去機敏），丟給 Hermes 31B / Gemini 3 Flash / Claude Opus 4.7 / Gemini 3.1 Pro 四個當代最強 AI，比對人類法規專家 J 欄標準答案。結論出乎意料：Gemini 3 Flash Preview 以 82 分勝出。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/moenv-law-finding-4ai-pk.html",
+      "icon": "scale",
+      "badge": "IAP 保護 · 法規 AI",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-18T23:30:00+08:00",
+      "protected": true,
+      "tags": [
+        "domain:環管署稽查",
+        "case:廢棄物清理法 §39 §31 §41",
+        "subreg:經濟部事業廢棄物再利用管理辦法 §19 §20",
+        "benchmark:4 模型 PK"
+      ],
+      "concepts": [
+        "考題：成冠實業南崗廠廢橡膠再利用案，236.89 公噸無證處理",
+        "標準答案：廢清法 §39 I + §31 I 1 款 + 經濟部再利用辦法 §19、§20",
+        "Gemini 3 Flash Preview（82）：母法對 + 子法具體條號 §18、§19 勝出",
+        "Claude Opus 4.7（72）：分析最深，深挖 ORG_4 委託端 §28、§48，但子法 §16 錯",
+        "Hermes 31B（62）：申報違規歸錯到 §31 I 2 款，子法完全遺漏",
+        "最佳實務：地端 Hermes 去機敏 → Gemini CLI 自由 GoogleSearch 查 law.moj.gov.tw → 法規專家覆核"
+      ]
+    },
+    {
       "id": "compression-is-intelligence",
       "title": "壓縮即智慧：從 3000 年數學史到此刻 AI 實戰的同構",
       "subtitle": "弗里德曼（菲爾茲獎得主）說數學的本質是壓縮——在無限邏輯空間裡挑出人類走得通的路線。我們今天做 harness + 高品味題庫，是同一件事的 2026 年版本。0→100 幾分才是此刻真實的地圖。",

@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-18T14:31:39.401Z
+> 生成時間：2026-04-18T14:45:33.897Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 171 個項目，按發佈日期降序排列。
+共 172 個項目，按發佈日期降序排列。
+
+## 環境稽查找法規：四大模型 PK 全紀錄
+
+> 一份真實環境稽查紀錄（去機敏），丟給 Hermes 31B / Gemini 3 Flash / Claude Opus 4.7 / Gemini 3.1 Pro 四個當代最強 AI，比對人類法規專家 J 欄標準答案。結論出乎意料：Gemini 3 Flash Preview 以 82 分勝出。
+
+**關鍵觀念：**
+- 考題：成冠實業南崗廠廢橡膠再利用案，236.89 公噸無證處理
+- 標準答案：廢清法 §39 I + §31 I 1 款 + 經濟部再利用辦法 §19、§20
+- Gemini 3 Flash Preview（82）：母法對 + 子法具體條號 §18、§19 勝出
+- Claude Opus 4.7（72）：分析最深，深挖 ORG_4 委託端 §28、§48，但子法 §16 錯
+- Hermes 31B（62）：申報違規歸錯到 §31 I 2 款，子法完全遺漏
+- 最佳實務：地端 Hermes 去機敏 → Gemini CLI 自由 GoogleSearch 查 law.moj.gov.tw → 法規專家覆核
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-law-finding-4ai-pk.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/moenv-law-finding-4ai-pk.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP 保護 · 法規 AI
+- 發佈日期：2026-04-18T23:30:00+08:00
+- 標籤：環管署稽查、廢棄物清理法 §39 §31 §41、經濟部事業廢棄物再利用管理辦法 §19 §20、4 模型 PK
 
 ## 壓縮即智慧：從 3000 年數學史到此刻 AI 實戰的同構
 
