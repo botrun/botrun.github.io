@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-16T13:33:53.524Z
+> 生成時間：2026-04-18T09:01:27.417Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 168 個項目，按發佈日期降序排列。
+共 169 個項目，按發佈日期降序排列。
+
+## 讓 LLM 成為資料分析師：一場關於「解耦」的革命
+
+> Andy Raskin 矽谷策略敘事五幕。LLM 當指揮官、cli.py 當肢體，6 萬筆 CSV 在 8 秒內漏斗到 38 筆可稽核結論。全程臺灣機房、NCHC 31B + Hermes Agent，附完整 cli.py 原始碼。
+
+**關鍵觀念：**
+- 把 LLM 當指揮官不當工程師：只翻譯意圖，不碰資料
+- 原子化六指令 s:/f:/c/top:/diff/save: LLM 只拼積木不寫程式
+- 漏斗透明報告：65,854 → 168 → 44 → 38 每步可稽核
+- 結晶螺旋：每次分析沉澱成新指令，工具越用越鋒利
+- 主權 AI 堆疊：零境外 API、資料不離家、合規入場券
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/llm-data-analyst-decoupling.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/llm-data-analyst-decoupling.html/llms.txt): 該專案的 llms.txt
+- 類型：解耦架構
+- 發佈日期：2026-04-18T20:00:00+08:00
+- 標籤：LLM 大腦 + cli.py 肢體解耦、原子化指令集 + 漏斗透明報告、NCHC 31B + Hermes 地端封閉
 
 ## 你的 AI 評審是在打分還是在亂猜？
 

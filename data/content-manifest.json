@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "llm-data-analyst-decoupling",
+      "title": "讓 LLM 成為資料分析師：一場關於「解耦」的革命",
+      "subtitle": "Andy Raskin 矽谷策略敘事五幕。LLM 當指揮官、cli.py 當肢體，6 萬筆 CSV 在 8 秒內漏斗到 38 筆可稽核結論。全程臺灣機房、NCHC 31B + Hermes Agent，附完整 cli.py 原始碼。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/llm-data-analyst-decoupling.html",
+      "icon": "layers",
+      "badge": "解耦架構",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-04-18T20:00:00+08:00",
+      "tags": [
+        "arch:LLM 大腦 + cli.py 肢體解耦",
+        "method:原子化指令集 + 漏斗透明報告",
+        "sovereign:NCHC 31B + Hermes 地端封閉"
+      ],
+      "concepts": [
+        "把 LLM 當指揮官不當工程師：只翻譯意圖，不碰資料",
+        "原子化六指令 s:/f:/c/top:/diff/save: LLM 只拼積木不寫程式",
+        "漏斗透明報告：65,854 → 168 → 44 → 38 每步可稽核",
+        "結晶螺旋：每次分析沉澱成新指令，工具越用越鋒利",
+        "主權 AI 堆疊：零境外 API、資料不離家、合規入場券"
+      ]
+    },
+    {
       "id": "judge-the-judge-llm-evaluator",
       "title": "你的 AI 評審是在打分還是在亂猜？",
       "subtitle": "Judge the Judge：GEPA 進化演算法讓 LLM 評審真正可信。四步驟校準流程、Pareto 前沿選擇、ASI 可行側資訊、資料飛輪——比強化學習快 35 倍、成本省 90 倍。",
