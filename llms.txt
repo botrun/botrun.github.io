@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-18T10:52:28.505Z
+> 生成時間：2026-04-18T14:31:39.401Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 170 個項目，按發佈日期降序排列。
+共 171 個項目，按發佈日期降序排列。
+
+## 壓縮即智慧：從 3000 年數學史到此刻 AI 實戰的同構
+
+> 弗里德曼（菲爾茲獎得主）說數學的本質是壓縮——在無限邏輯空間裡挑出人類走得通的路線。我們今天做 harness + 高品味題庫，是同一件事的 2026 年版本。0→100 幾分才是此刻真實的地圖。
+
+**關鍵觀念：**
+- 數學的本質是壓縮：600 字元命題展開成 10^104 底層邏輯，比全宇宙原子還多，暴力算力永遠追不上
+- 可表示 ≠ 可壓縮：LaTeX/Lean/SymPy 能打出手寫數學，但真正貴的是背後 3000 年的引理庫
+- DSL 是路標、知識塔是路線本身：Brendan Eich 10 天寫完 JavaScript 語法，但 npm 生態系長了 15 年
+- 六層可行區地圖：理論/硬體/模型（不可控）→ harness/資料集/領域分數（你的戰場）
+- 此刻可行區會移動：三個月前 30 分的任務現在可能 85 分，重測才是真地圖
+
+- [線上版](https://storage.googleapis.com/botrun-slides/compression-is-intelligence.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/compression-is-intelligence.html/llms.txt): 該專案的 llms.txt
+- 類型：方法學
+- 發佈日期：2026-04-18T22:28:15+08:00
+- 標籤：Michael Freedman 數學壓縮、harness + 題庫 = 壓縮器、0→100 幾分才是真地圖、波題庫 + Binary Rubric + NCHC
 
 ## Gemma 4 31B × H100 80GB × 40k Context — 使用者容量驗證報告
 
