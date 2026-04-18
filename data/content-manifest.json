@@ -5,6 +5,32 @@
   },
   "items": [
     {
+      "id": "env-legal-kg-v9-handoff",
+      "title": "給 Haiku 一個 .db 檔就能打贏 23 題法規 QA",
+      "subtitle": "環境稽查找法規 SQLite KG 10 輪迭代交接（v9）— 8 張表 1.2MB 單檔取代 Neo4j + Vector DB + RAG pipeline；_meta 自證文件 + pcode 死鎖表是 killer feature；23 題 hold-out 平均 96/100、≥95 達標率 87%；完整 R1→R10 軌跡、雙軌策略、罰則反查、子法下鑽、10 條反 overfit 守則、跨專案 9 步移植 checklist。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/env-legal-kg-v9-handoff.html",
+      "icon": "database",
+      "badge": "IAP 保護 · 結晶螺旋",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-19T00:15:45+08:00",
+      "protected": true,
+      "tags": [
+        "domain:環境稽查找法規",
+        "case:8 部法律 + 23 題 hold-out",
+        "tech:SQLite recursive CTE + _meta 自證文件",
+        "model:Claude Haiku / Gemma 31B"
+      ],
+      "concepts": [
+        "核心成果：23 題平均 96/100，≥95 達標率 87%、≥80 達標率 100%；laws 1393、edges 63、patterns 809、cases 33、_meta 58 列",
+        "Killer Feature #1 _meta 自證文件：7 種 topic（overview/workflow/column/query_example/top_mistake/pcode_lock/anti_pattern）取代 system prompt，小模型 SELECT * FROM _meta 就會用",
+        "Killer Feature #2 pcode 死鎖表：白名單 + 黑名單 + 觸發關鍵字，J0030049 ≠ J0030047、O0070001 ≠ O0060012 等 3 大坑全部抓回",
+        "雙軌策略：DB 擴充治標（R6 毒管法入庫 +17.5 分）vs _meta 規則治本（R7 刑事條 note +23 分）",
+        "強制 Workflow：子法下鑽三級（條-項-款）+ 罰則主動反查（law_edges 無邊時查原文）",
+        "R10 血淚：達標後必做「已達標題目煙霧測試」，否則「修一壞一」無感（q3 100→86、q10 100→84）",
+        "10 條反 overfit 硬守則 + 跨專案 9 步移植 checklist（醫療 ICD-10 / 金融 CUSIP / 資安 CVE-ID 皆適用）"
+      ]
+    },
+    {
       "id": "moenv-sqlite-pipeline-31b",
       "title": "六萬筆 CSV 包成 .db，31B 一次掃對 62 筆",
       "subtitle": "環管署廢清法 112 年餵食流浪貓犬告發 — SQLite + _meta 自證表讓 Gemma 4 31B 不靠程式碼、不靠 RAG、不幻覺就能精準檢索機敏裁罰資料。同一個 .db 檔包 cases + _meta + _meta_pitfalls 三張表，小模型讀完 _meta 就知道怎麼下多重條件 SQL，62 筆命中逐筆打勾核對。",
