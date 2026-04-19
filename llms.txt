@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-19T02:55:00.243Z
+> 生成時間：2026-04-19T15:14:32.840Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 178 個項目，按發佈日期降序排列。
+共 179 個項目，按發佈日期降序排列。
+
+## 會自己長大的 Agentic AI — 七層演化架構
+
+> 排行榜不是我排的，是「使用者會不會再打開」排的。從 AI 友善文件、技能自動演化、SQLite 結構化記憶，到任務專屬 Meta CLI、不爽飛輪、神經符號推理、主動式知識更新七層，上面的做好，下面才接得上。打分 10-10-10-9-9-8-8，底座三支滿分打穩，其餘四層自己會長大。
+
+**關鍵觀念：**
+- L1 AI 友善文件（10 分）：PDF/Office/音訊全榨成純文字 + metadata，llms.txt 一個 URL 秒讀
+- L2 技能自動演化（10 分）：做過的事結晶成 Skill，下次關鍵字秒觸發，技能會自己生技能
+- L3 結構化記憶 SQLite（10 分）：laws/entities/edges/_meta 四張表 + Recursive CTE 多跳，冷啟 <10ms 取代 Neo4j
+- L5 不爽飛輪（9 分）：偵測使用者糾正/當機/等太久/答錯 → 自動定位根因 → 修 Prompt/部署/記憶/訓練樣本
+- L6 神經符號（8 分）：小模型說不清的法規，先轉 DSL JSONL 再程式查 KG，錯了自動補樣本自訓練
+- 先做 L1+L2+L3 三支 10 分底座，剩餘四層靠不爽飛輪自己長出來
+
+- [線上版](https://storage.googleapis.com/botrun-slides/agentic-harness-seven-layers.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agentic-harness-seven-layers.html/llms.txt): 該專案的 llms.txt
+- 類型：方法學 · Agentic Harness
+- 發佈日期：2026-04-19T23:10:01+08:00
+- 標籤：Agentic AI 自我演化、七層架構、SQLite + Meta CLI + Skills
 
 ## Hermes 記憶架構 — 開箱即用的成長之己
 
