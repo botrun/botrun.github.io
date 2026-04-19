@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "bluemagpie-big-small",
+      "title": "波藍鵲 — 一大帶六小，機關組織大腦",
+      "subtitle": "機關司長當場規劃：一科一隻小藍鵲＋我一隻大藍鵲＝七隻。沙盒風暴讓資料單向進入炸掉也沒關係、共享大腦讓跨科調閱全自動、數據決策從一週壓到一小時。判斷機關買單訊號不看「好厲害」幾次，看有沒有主動算經費、設計部署方案。24萬×6 + 48萬 = 192 萬養出整個司不漏接的組織記憶。",
+      "href": "https://storage.googleapis.com/botrun-slides/bluemagpie-big-small.html",
+      "icon": "layers",
+      "badge": "產品簡介 · 波藍鵲",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-19T10:03:51+08:00",
+      "tags": [
+        "product:波藍鵲",
+        "scene:機關組織大腦",
+        "pricing:大藍鵲 48 萬 · 小藍鵲 24 萬"
+      ],
+      "concepts": [
+        "架構：一隻大藍鵲（總管）帶六隻小藍鵲（一科一隻），共七隻波藍鵲",
+        "沙盒風暴：資料單向進入容器、炸掉也沒關係，資安障礙直接消失",
+        "共享大腦：大藍鵲跨科調閱會議十點摘要 + 動態分析報表",
+        "數據決策週變天：一週資料分析壓到一小時",
+        "買單訊號：主動算經費、設計部署 SOP，不看「好厲害」幾次",
+        "定價：小藍鵲 24 萬/年 × 6 + 大藍鵲 48 萬/年 = 192 萬/年"
+      ]
+    },
+    {
       "id": "legal-kg-6models-benchmark",
       "title": "六模型同一題分數從 0 到 98",
       "subtitle": "環境稽查找法規 legal_kg.db 閉卷評測：Gemini 3 Flash 98 分靠交叉比對 cases 表、Opus 75 分憑記憶取巧、hermes 26B 55 分捏造子法、NCHC 675B 第一次 0 分 Fake Execution 通篇幻覺。差別不在參數量，在有沒有老實執行 SOP。五條高品質法規 Agent 避坑指南 + 三軌檢索架構 + 三層法規結構 Checklist。",
