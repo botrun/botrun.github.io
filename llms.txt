@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-19T02:15:17.394Z
+> 生成時間：2026-04-19T02:55:00.243Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 177 個項目，按發佈日期降序排列。
+共 178 個項目，按發佈日期降序排列。
+
+## Hermes 記憶架構 — 開箱即用的成長之己
+
+> Hermes vs Claude Code 差異：技術都辦得到，差別在誰能用得起來。記憶四層（128k／個人設定檔／SQLite／fact+skill）外掛不炸裂，跨日 recall 流浪貓狗分析 SOP 完全正確，還主動提示「下次 113 年不用重教」。法務部 31B Gemma 4 內網可跑，H100 單張 100 萬撐 10 位檢察官，50 位只需 5 張。
+
+**關鍵觀念：**
+- 開箱即用：Claude Code 都辦得到但要懂 skill/system prompt/memory，Hermes 讓領域專家零門檻養代理人
+- 記憶四層：128k 短期 + 個人設定檔長期 + SQLite 對話歷程 + fact/skill 核心事實，七個月不炸裂
+- 跨日實證：recall 流浪貓狗 112 年 SOP 完全正確，還主動說「113 年不用重教」
+- 法務部 POC：31B Gemma 4 內網可跑，螢幕擷取+語音轉文字 → 實習生模式 → computer use 自動化
+- H100 成本：單張 100 萬撐 10 檢察官（3-4 人同時在線），每秒 20 字，50 檢察官 5 張 500-700 萬
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-memory-moj-h100.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-memory-moj-h100.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · Hermes × 記憶 × 法務部
+- 發佈日期：2026-04-19T10:51:52+08:00
+- 標籤：Hermes Agent、法務部檢察官 know-how 傳承、H100 100 萬/張
 
 ## 波藍鵲 — 成長知己，一大帶六小
 
