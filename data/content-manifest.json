@@ -21,7 +21,7 @@
       ],
       "concepts": [
         "Day 1 上午：遮蔽機敏資料（PII 去識別化 × Column-Based）",
-        "Day 1 下午：公文自動化（Agentic AI × rg 全文檢索，反面案例：不推薦向量 RAG）",
+        "Day 1 下午：多模態文件 + 網站處理（PDF/Office/圖片/網頁 × rg 全文檢索，反面案例：不推薦向量 RAG）",
         "Day 2 上午：CSV 數據分析（Text-to-SQL × Pandas Agent × SEGIS）",
         "Day 2 下午：全地端部署（H200 × 2 + 31B 知識蒸餾）",
         "Day 3 上午：評測與訓練（Binary Rubric × 十輪迭代 60→95）",
