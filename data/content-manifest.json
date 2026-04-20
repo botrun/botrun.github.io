@@ -1,9 +1,55 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-12T22:00:00+08:00"
+    "lastUpdated": "2026-04-20T17:07:19+08:00"
   },
   "items": [
+    {
+      "id": "moenv-nl-dsl-overfit-methodology",
+      "title": "NL→DSL 零幻覺找法規 × Overfit 分層驗證方法學",
+      "subtitle": "16 張 SVG 簡報帶你看懂：稽查員寫一段話→封閉 DSL→純 SQL 推理→條項款命中（Haiku 99.2、NCHC 31B 99.04）。並首次量化 overfit：建三個對照版本剝出架構真實能力 93.33 分（黑熊）、content regex 貢獻 3.83 分、examples 貢獻 1.88 分。附七層 overfit 風險模型、驗證 SOP、三級信度架構、跨領域移植 SOP。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/moenv-nl-dsl-overfit-methodology.html",
+      "protected": true,
+      "icon": "shield",
+      "badge": "IAP · NL→DSL · Overfit 量化",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-20T22:00:00+08:00",
+      "tags": [
+        "audience:技術/法制",
+        "theme:nl-to-dsl-symbolic-reasoning",
+        "stack:sqlite-claude-nchc-gemma"
+      ],
+      "concepts": [
+        "三步驟：NL→DSL（LLM 封閉 enum 翻譯）→符號推理（純 SQL）→輸出 trace",
+        "DB-as-SSoT：prompt/規則/詞彙/反模式全進 law_dsl.db，.mjs 只做 I/O",
+        "Haiku 10 輪 79.8→99.2、NCHC 31B 5 輪 90.75→99.04（免費快 60 倍）",
+        "Overfit 量化三版本：007 vA 99.04、008 vB 95.21、009 vC 93.33",
+        "七層 overfit 風險模型 L1–L7：內容性 vs 結構性 overfit 分層處理"
+      ]
+    },
+    {
+      "id": "機敏AI-四層縱深-調查局刑警局",
+      "title": "AWS+波特人 Agentic AI，機敏不出門",
+      "subtitle": "機關三層縱深機敏 AI 方案：L1 去識別機敏（六層脫敏＋犯罪手法過濾＋替身化）、L2 零接觸機敏（大模型教小模型 + Binary Rubric 自評）、L3 全地端（H100／H200 機櫃 + YubiKey Bio 指紋鑰匙）。新增 AWS Bedrock 跨境老師角色與 AWS Taipei Local Zone 臺灣封閉地端兩種雲端組合選項。流式版型、PDF 印表友善、大量專業 SVG 圖示。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/機敏AI-四層縱深-調查局刑警局.html",
+      "protected": true,
+      "icon": "shield",
+      "badge": "IAP · 機敏 AI · AWS × 波特人",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-20T17:07:19+08:00",
+      "tags": [
+        "audience:機關",
+        "theme:sensitive-ai-defense",
+        "stack:aws-bedrock-taipei-local-zone"
+      ],
+      "concepts": [
+        "L1 去識別機敏：六層脫敏 + 犯罪手法過濾 + 替身化（可雙向還原）",
+        "L2 零接觸機敏：大模型只產樣板與 25 條 Binary Rubric 評分準則",
+        "L3 全地端：H100／H200 機櫃進自家機房 + YubiKey Bio 指紋鑰匙",
+        "AWS Bedrock：Claude Opus 跨境老師角色、CloudTrail／PrivateLink／Guardrails 合規加值",
+        "AWS Taipei Local Zone：臺灣封閉地端承擔 L1 脫敏管線、對照表儲存、VPC 網路縱深"
+      ]
+    },
     {
       "id": "內政黑客松-AI課程-18小時",
       "title": "內政黑客松 AI 課程 — 3 天 18 小時",
