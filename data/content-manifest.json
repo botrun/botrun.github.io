@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "內政黑客松-AI課程-18小時",
+      "title": "內政黑客松 AI 課程 — 3 天 18 小時",
+      "subtitle": "把 AI 實習生訓練成得力助手：6 個半天 × 3 小時 = 18 小時。從「秘密怎麼遮」到「組隊黑客松」，每小時一門專業、動手操作。動機：打造一隻能跟著機關一起長大的 Agentic AI，形成學習型飛輪。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/內政黑客松-AI課程-18小時.html",
+      "protected": true,
+      "icon": "book",
+      "badge": "IAP · 公務員培訓 · Agentic AI",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-20T14:30:00+08:00",
+      "tags": [
+        "audience:內政部",
+        "format:3天18小時",
+        "theme:agentic-ai-learning-flywheel"
+      ],
+      "concepts": [
+        "Day 1 上午：遮蔽機敏資料（PII 去識別化 × Column-Based）",
+        "Day 1 下午：公文自動化（Agentic AI × rg 全文檢索，反面案例：不推薦向量 RAG）",
+        "Day 2 上午：CSV 數據分析（Text-to-SQL × Pandas Agent × SEGIS）",
+        "Day 2 下午：全地端部署（H200 × 2 + 31B 知識蒸餾）",
+        "Day 3 上午：評測與訓練（Binary Rubric × 十輪迭代 60→95）",
+        "Day 3 下午：黑客松實戰（組隊 Demo + 九維度評分）"
+      ]
+    },
+    {
       "id": "bo-shen-fu-waste-law",
       "title": "波神符 — AI 別猜法條，程式碼鎖死「從一重處罰」",
       "subtitle": "神經符號推理應用在廢清法：31B 再強也推不出「從一重處罰」。把法理競合寫進 Bun DSL — AI 只抓事實、Bun 引擎決定罰哪條排除哪條、31B 潤飾成公文。電鍍污泥＋廢塑膠混置 → 選 §53 排除 §52，罰 72 萬，連「為什麼不用 §52」都白紙黑字寫出，訴願防禦力點滿。",
