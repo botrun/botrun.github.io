@@ -5,6 +5,27 @@
   },
   "items": [
     {
+      "id": "multihop-dsl-reasoning-explainer-2026-04-21",
+      "title": "NL→DSL→Reasoner→JSONL：N-hop 多跳推理白話書",
+      "subtitle": "用一個故事讓你懂「3 跳」是什麼：稽查員寫一段話 → 封閉 DSL → Reasoner 走 SQL 多跳 → JSONL 條項款命中。含全流程示意圖、關鍵迷思澄清、技術架構解說。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/multihop-dsl-reasoning-explainer-2026-04-21.html",
+      "protected": true,
+      "icon": "shield",
+      "badge": "IAP · N-hop 多跳推理",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-21T12:30:00+08:00",
+      "tags": [
+        "audience:技術",
+        "theme:multihop-reasoning",
+        "stack:nl-dsl-sql"
+      ],
+      "concepts": [
+        "NL→DSL→Reasoner→JSONL 四段流水線",
+        "N-hop 多跳推理白話解釋",
+        "關鍵迷思澄清與技術架構"
+      ]
+    },
+    {
       "id": "hermes-acp-zed-recap",
       "title": "Hermes 沒 REST，只好認識 ACP — 五頁脈絡梳理",
       "subtitle": "從「想串 Hermes SDK」一路梳理到 ACP 協定崛起：Hermes 為何只給 CLI/ACP/MCP 而沒 REST、ACP 是什麼（Zed 2025 提出的 JSON-RPC over stdio）、MCP vs ACP vs REST 五大開發差異、ACP 生態系（Gemini reference impl + Claude Code Beta + OpenCode 官方 + Pi adapter 全進 Zed Registry）、Zed 本尊 Rust + GPUI 技術棧 vs Cursor / VSCode + Claude Code 五大差異。",
