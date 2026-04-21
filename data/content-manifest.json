@@ -5,6 +5,26 @@
   },
   "items": [
     {
+      "id": "bodiso-fast-furious-2026-04-21",
+      "title": "波迪索 × 玩命關頭 — 唐老大也能看懂的 AI 找法規",
+      "subtitle": "一張圖、一部電影、四幕戲：警察開單 → 小模型填封閉選單 → mjs 程式跑規則 → 道交條例 §53-1 罰 12,000 美元。用 Dom、NOS、1/4 英里競速、家人精神，讓非技術人秒懂波迪索 NL→DSL→mjs 流程。地端 Gemma 31B 從 60 → 93 分。",
+      "href": "https://storage.googleapis.com/botrun-slides/bodiso-fast-furious-2026-04-21.html",
+      "icon": "lightning",
+      "badge": "電影版 · 非技術人版",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-04-21T13:30:00+08:00",
+      "tags": [
+        "audience:非技術",
+        "theme:bodiso-dsl",
+        "stack:movie-analogy"
+      ],
+      "concepts": [
+        "用玩命關頭劇情解釋波迪索",
+        "四幕戲：NL → DSL → mjs → 法條命中",
+        "Dom + NOS + 家人 = 零幻覺找法規"
+      ]
+    },
+    {
       "id": "bodiso-dsl-overview-2026-04-21",
       "title": "波迪索 — NL→DSL→mjs 小模型也能當法規專家",
       "subtitle": "寫給非技術人的 5 頁爬梳：波迪索 = NL→DSL→mjs 符號多跳推理。環管署找法規 Gemma 4 31B 從 60 分拉到 93 分，地端小模型、機敏不出門。從六大文章時間軸梳理踩過的坑，到三步驟上手、四大可套用領域（環境/警政/司法/採購）。架構 > 參數，一個做對整機關抄。",

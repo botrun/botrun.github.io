@@ -3,10 +3,57 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-21T02:17:17.688Z
+> 生成時間：2026-04-21T05:28:38.764Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 184 個項目，按發佈日期降序排列。
+共 187 個項目，按發佈日期降序排列。
+
+## 波迪索 × 玩命關頭 — 唐老大也能看懂的 AI 找法規
+
+> 一張圖、一部電影、四幕戲：警察開單 → 小模型填封閉選單 → mjs 程式跑規則 → 道交條例 §53-1 罰 12,000 美元。用 Dom、NOS、1/4 英里競速、家人精神，讓非技術人秒懂波迪索 NL→DSL→mjs 流程。地端 Gemma 31B 從 60 → 93 分。
+
+**關鍵觀念：**
+- 用玩命關頭劇情解釋波迪索
+- 四幕戲：NL → DSL → mjs → 法條命中
+- Dom + NOS + 家人 = 零幻覺找法規
+
+- [線上版](https://storage.googleapis.com/botrun-slides/bodiso-fast-furious-2026-04-21.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/bodiso-fast-furious-2026-04-21.html/llms.txt): 該專案的 llms.txt
+- 類型：電影版 · 非技術人版
+- 發佈日期：2026-04-21T13:30:00+08:00
+- 標籤：非技術、bodiso-dsl、movie-analogy
+
+## 波迪索 — NL→DSL→mjs 小模型也能當法規專家
+
+> 寫給非技術人的 5 頁爬梳：波迪索 = NL→DSL→mjs 符號多跳推理。環管署找法規 Gemma 4 31B 從 60 分拉到 93 分，地端小模型、機敏不出門。從六大文章時間軸梳理踩過的坑，到三步驟上手、四大可套用領域（環境/警政/司法/採購）。架構 > 參數，一個做對整機關抄。
+
+**關鍵觀念：**
+- 波迪索 = 波特人 DSL + 符號推索
+- Gemma 4 31B 環管署找法規 60 → 93 分
+- 四大可套用領域：環境、警政、司法、採購
+- 六大相關文章時間軸爬梳
+- 三步驟上手：圈法規 → 寫 DSL → 跑 mjs
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/bodiso-dsl-overview-2026-04-21.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/bodiso-dsl-overview-2026-04-21.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · 波迪索方法學
+- 發佈日期：2026-04-21T13:00:00+08:00
+- 標籤：非技術、bodiso-dsl、nl-dsl-mjs
+
+## NL→DSL→Reasoner→JSONL：N-hop 多跳推理白話書
+
+> 用一個故事讓你懂「3 跳」是什麼：稽查員寫一段話 → 封閉 DSL → Reasoner 走 SQL 多跳 → JSONL 條項款命中。含全流程示意圖、關鍵迷思澄清、技術架構解說。
+
+**關鍵觀念：**
+- NL→DSL→Reasoner→JSONL 四段流水線
+- N-hop 多跳推理白話解釋
+- 關鍵迷思澄清與技術架構
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/multihop-dsl-reasoning-explainer-2026-04-21.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/multihop-dsl-reasoning-explainer-2026-04-21.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · N-hop 多跳推理
+- 發佈日期：2026-04-21T12:30:00+08:00
+- 標籤：技術、multihop-reasoning、nl-dsl-sql
 
 ## Hermes 沒 REST，只好認識 ACP — 五頁脈絡梳理
 
