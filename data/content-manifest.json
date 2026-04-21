@@ -1,9 +1,29 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-21T10:14:05+08:00"
+    "lastUpdated": "2026-04-21T18:41:30+08:00"
   },
   "items": [
+    {
+      "id": "small-model-cli-agentic-handoff-2026-04-21",
+      "title": "錯誤訊息夾小抄 — 小模型神遊時 CLI 把它撈回來",
+      "subtitle": "SVG 說明一切：Skill 寫 10 條地雷小模型就神遊。把硬判斷搬進 CLI if-else，錯誤訊息內建修正建議（例如 0 筆→拆「勒令停業」成兩字兩字）。程式碼扛硬判斷、小模型扛彈性修正，Agentic AI 少神遊。",
+      "href": "https://storage.googleapis.com/botrun-slides/small-model-cli-agentic-handoff.html",
+      "icon": "lightning",
+      "badge": "工程心法 · SVG 簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-21T18:41:30+08:00",
+      "tags": [
+        "audience:工程師",
+        "theme:agentic-ai",
+        "stack:cli-small-model"
+      ],
+      "concepts": [
+        "硬判斷搬到 CLI if-else 程式碼",
+        "錯誤訊息內建修正建議（夾小抄）",
+        "程式碼扛硬判斷、小模型扛彈性修正"
+      ]
+    },
     {
       "id": "rclone-gdrive-shortcut-loop-2026-04-21",
       "title": "9GB 不下載也能畫地圖 — rclone × Google Drive 捷徑循環地雷",

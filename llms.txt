@@ -3,10 +3,40 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-21T05:28:38.764Z
+> 生成時間：2026-04-21T10:41:53.037Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 187 個項目，按發佈日期降序排列。
+共 189 個項目，按發佈日期降序排列。
+
+## 錯誤訊息夾小抄 — 小模型神遊時 CLI 把它撈回來
+
+> SVG 說明一切：Skill 寫 10 條地雷小模型就神遊。把硬判斷搬進 CLI if-else，錯誤訊息內建修正建議（例如 0 筆→拆「勒令停業」成兩字兩字）。程式碼扛硬判斷、小模型扛彈性修正，Agentic AI 少神遊。
+
+**關鍵觀念：**
+- 硬判斷搬到 CLI if-else 程式碼
+- 錯誤訊息內建修正建議（夾小抄）
+- 程式碼扛硬判斷、小模型扛彈性修正
+
+- [線上版](https://storage.googleapis.com/botrun-slides/small-model-cli-agentic-handoff.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/small-model-cli-agentic-handoff.html/llms.txt): 該專案的 llms.txt
+- 類型：工程心法 · SVG 簡報
+- 發佈日期：2026-04-21T18:41:30+08:00
+- 標籤：工程師、agentic-ai、cli-small-model
+
+## 9GB 不下載也能畫地圖 — rclone × Google Drive 捷徑循環地雷
+
+> 為 LLM 題庫先抓目錄樹：metadata-only 跑 35 分吐 371MB JSON 只有 12,700 entries 才發現 Google Drive shortcut 循環。解法：--drive-skip-shortcuts + bytes/entry 比例監控 + timeout。五條可攜 checklist：metadata 先行、比例監控、shortcut 預設跳過、timeout 必配、先畫熱區。
+
+**關鍵觀念：**
+- LLM 題庫建構前必先抓目錄地圖
+- Google Drive 捷徑循環地雷與解法
+- bytes/entry 比例監控早期發現異常
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/rclone-gdrive-shortcut-loop.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/rclone-gdrive-shortcut-loop.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · 工程地雷
+- 發佈日期：2026-04-21T16:40:00+08:00
+- 標籤：工程師、data-engineering、rclone-gdrive
 
 ## 波迪索 × 玩命關頭 — 唐老大也能看懂的 AI 找法規
 
