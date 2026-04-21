@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "bodiso-dsl-overview-2026-04-21",
+      "title": "波迪索 — NL→DSL→mjs 小模型也能當法規專家",
+      "subtitle": "寫給非技術人的 5 頁爬梳：波迪索 = NL→DSL→mjs 符號多跳推理。環管署找法規 Gemma 4 31B 從 60 分拉到 93 分，地端小模型、機敏不出門。從六大文章時間軸梳理踩過的坑，到三步驟上手、四大可套用領域（環境/警政/司法/採購）。架構 > 參數，一個做對整機關抄。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/bodiso-dsl-overview-2026-04-21.html",
+      "protected": true,
+      "icon": "shield",
+      "badge": "IAP · 波迪索方法學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-21T13:00:00+08:00",
+      "tags": [
+        "audience:非技術",
+        "theme:bodiso-dsl",
+        "stack:nl-dsl-mjs"
+      ],
+      "concepts": [
+        "波迪索 = 波特人 DSL + 符號推索",
+        "Gemma 4 31B 環管署找法規 60 → 93 分",
+        "四大可套用領域：環境、警政、司法、採購",
+        "六大相關文章時間軸爬梳",
+        "三步驟上手：圈法規 → 寫 DSL → 跑 mjs"
+      ]
+    },
+    {
       "id": "multihop-dsl-reasoning-explainer-2026-04-21",
       "title": "NL→DSL→Reasoner→JSONL：N-hop 多跳推理白話書",
       "subtitle": "用一個故事讓你懂「3 跳」是什麼：稽查員寫一段話 → 封閉 DSL → Reasoner 走 SQL 多跳 → JSONL 條項款命中。含全流程示意圖、關鍵迷思澄清、技術架構解說。",
