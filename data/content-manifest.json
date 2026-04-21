@@ -1,9 +1,30 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-21T18:41:30+08:00"
+    "lastUpdated": "2026-04-21T21:15:41+08:00"
   },
   "items": [
+    {
+      "id": "gcp-project-migration-handoff-2026-04-21",
+      "title": "GCP 專案跨帳號遷移手冊（方法 C · Project Move）",
+      "subtitle": "bohachu 個人 Gmail 專案遷入 cameo.tw Org + 切 OPEN billing，5 分鐘搞定。網址、Project ID、Service Account、Secret、Artifact Registry image 全部保留不變。反向授權（目標帳號給源帳號 projectCreator）解 SOLO_MUST_INVITE_OWNERS，Cloud Run 不需 redeploy 自動冷啟復活。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gcp-project-migration-handoff.html",
+      "icon": "lightning",
+      "badge": "IAP · GCP 遷移手冊",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-21T21:15:00+08:00",
+      "protected": true,
+      "tags": [
+        "audience:工程師",
+        "theme:gcp-migration",
+        "stack:gcloud-cli"
+      ],
+      "concepts": [
+        "Project Move 跨 Org 遷移",
+        "反向授權解 SOLO_MUST_INVITE_OWNERS",
+        "Cloud Run 不需 redeploy 自動冷啟復活"
+      ]
+    },
     {
       "id": "small-model-cli-agentic-handoff-2026-04-21",
       "title": "錯誤訊息夾小抄 — 小模型神遊時 CLI 把它撈回來",
