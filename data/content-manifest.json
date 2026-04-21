@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-20T17:07:19+08:00"
+    "lastUpdated": "2026-04-21T10:14:05+08:00"
   },
   "items": [
+    {
+      "id": "hermes-acp-zed-recap",
+      "title": "Hermes 沒 REST，只好認識 ACP — 五頁脈絡梳理",
+      "subtitle": "從「想串 Hermes SDK」一路梳理到 ACP 協定崛起：Hermes 為何只給 CLI/ACP/MCP 而沒 REST、ACP 是什麼（Zed 2025 提出的 JSON-RPC over stdio）、MCP vs ACP vs REST 五大開發差異、ACP 生態系（Gemini reference impl + Claude Code Beta + OpenCode 官方 + Pi adapter 全進 Zed Registry）、Zed 本尊 Rust + GPUI 技術棧 vs Cursor / VSCode + Claude Code 五大差異。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-acp-zed-recap.html",
+      "icon": "lightning",
+      "badge": "ACP · Zed · Agent 協定",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-21T10:14:05+08:00",
+      "tags": [
+        "audience:工程",
+        "theme:agent-protocol",
+        "stack:hermes-zed-acp-mcp"
+      ],
+      "concepts": [
+        "Hermes SDK 沒 REST：只有 CLI / ACP（JSON-RPC over stdio）/ MCP",
+        "ACP = Zed 2025 提出的 Agent Client Protocol，IDE ↔ agent 雙向 JSON-RPC",
+        "MCP vs ACP vs REST 五大差異：設計對象、傳輸、Session、能力發現、Streaming/雙向",
+        "ACP Registry 全家桶：Gemini CLI（reference）、Claude Code（Beta）、OpenCode、Pi、Codex",
+        "Zed 100% Rust + GPUI：啟動 <0.5s、180 MB、原生協作；vs Cursor / VSCode + Claude Code"
+      ]
+    },
     {
       "id": "moenv-nl-dsl-overfit-methodology",
       "title": "NL→DSL 零幻覺找法規 × Overfit 分層驗證方法學",
