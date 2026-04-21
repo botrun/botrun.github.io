@@ -5,6 +5,27 @@
   },
   "items": [
     {
+      "id": "rclone-gdrive-shortcut-loop-2026-04-21",
+      "title": "9GB 不下載也能畫地圖 — rclone × Google Drive 捷徑循環地雷",
+      "subtitle": "為 LLM 題庫先抓目錄樹：metadata-only 跑 35 分吐 371MB JSON 只有 12,700 entries 才發現 Google Drive shortcut 循環。解法：--drive-skip-shortcuts + bytes/entry 比例監控 + timeout。五條可攜 checklist：metadata 先行、比例監控、shortcut 預設跳過、timeout 必配、先畫熱區。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/rclone-gdrive-shortcut-loop.html",
+      "icon": "lightning",
+      "badge": "IAP · 工程地雷",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-21T16:40:00+08:00",
+      "protected": true,
+      "tags": [
+        "audience:工程師",
+        "theme:data-engineering",
+        "stack:rclone-gdrive"
+      ],
+      "concepts": [
+        "LLM 題庫建構前必先抓目錄地圖",
+        "Google Drive 捷徑循環地雷與解法",
+        "bytes/entry 比例監控早期發現異常"
+      ]
+    },
+    {
       "id": "bodiso-fast-furious-2026-04-21",
       "title": "波迪索 × 玩命關頭 — 唐老大也能看懂的 AI 找法規",
       "subtitle": "一張圖、一部電影、四幕戲：警察開單 → 小模型填封閉選單 → mjs 程式跑規則 → 道交條例 §53-1 罰 12,000 美元。用 Dom、NOS、1/4 英里競速、家人精神，讓非技術人秒懂波迪索 NL→DSL→mjs 流程。地端 Gemma 31B 從 60 → 93 分。",
