@@ -1,9 +1,30 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-21T21:15:41+08:00"
+    "lastUpdated": "2026-04-22T10:00:00+08:00"
   },
   "items": [
+    {
+      "id": "dual-verify-eval-bank-2026-04-22",
+      "title": "雙人證妥 — 高品味題庫不變低品質題庫的唯一解",
+      "subtitle": "想要「高品味題庫」卻做出「低品質題庫」？根因是題目跟答案不是 PM + RD 同時做出來的。案例 001 環管署停工工廠數字全錯（PM + 客戶都看過還是錯）、案例 002 立委詢答題庫去年資料混今年問答。SOP：PM + RD 同桌出題、雙人肉眼驗證、Live demo 破解才算雙人過關。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/dual-verify-eval-bank.html",
+      "icon": "lightning",
+      "badge": "IAP · 題庫品管心法",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-22T10:00:00+08:00",
+      "protected": true,
+      "tags": [
+        "audience:PM",
+        "audience:RD",
+        "theme:eval-bank-quality"
+      ],
+      "concepts": [
+        "PM + RD 同桌出題",
+        "雙人肉眼驗證答案",
+        "Live demo 破解才算過關"
+      ]
+    },
     {
       "id": "gcp-project-migration-handoff-2026-04-21",
       "title": "GCP 專案跨帳號遷移手冊（方法 C · Project Move）",

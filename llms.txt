@@ -3,10 +3,40 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-21T10:41:53.037Z
+> 生成時間：2026-04-22T04:08:03.538Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 189 個項目，按發佈日期降序排列。
+共 191 個項目，按發佈日期降序排列。
+
+## 雙人證妥 — 高品味題庫不變低品質題庫的唯一解
+
+> 想要「高品味題庫」卻做出「低品質題庫」？根因是題目跟答案不是 PM + RD 同時做出來的。案例 001 環管署停工工廠數字全錯（PM + 客戶都看過還是錯）、案例 002 立委詢答題庫去年資料混今年問答。SOP：PM + RD 同桌出題、雙人肉眼驗證、Live demo 破解才算雙人過關。
+
+**關鍵觀念：**
+- PM + RD 同桌出題
+- 雙人肉眼驗證答案
+- Live demo 破解才算過關
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/dual-verify-eval-bank.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/dual-verify-eval-bank.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · 題庫品管心法
+- 發佈日期：2026-04-22T10:00:00+08:00
+- 標籤：PM、RD、eval-bank-quality
+
+## GCP 專案跨帳號遷移手冊（方法 C · Project Move）
+
+> bohachu 個人 Gmail 專案遷入 cameo.tw Org + 切 OPEN billing，5 分鐘搞定。網址、Project ID、Service Account、Secret、Artifact Registry image 全部保留不變。反向授權（目標帳號給源帳號 projectCreator）解 SOLO_MUST_INVITE_OWNERS，Cloud Run 不需 redeploy 自動冷啟復活。
+
+**關鍵觀念：**
+- Project Move 跨 Org 遷移
+- 反向授權解 SOLO_MUST_INVITE_OWNERS
+- Cloud Run 不需 redeploy 自動冷啟復活
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gcp-project-migration-handoff.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gcp-project-migration-handoff.html/llms.txt): 該專案的 llms.txt
+- 類型：IAP · GCP 遷移手冊
+- 發佈日期：2026-04-21T21:15:00+08:00
+- 標籤：工程師、gcp-migration、gcloud-cli
 
 ## 錯誤訊息夾小抄 — 小模型神遊時 CLI 把它撈回來
 
