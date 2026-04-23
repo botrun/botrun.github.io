@@ -6,11 +6,11 @@
   "items": [
     {
       "id": "hermes-agent-last-month",
-      "title": "Hermes Agent 一個月五版本 — Nous Research 的自我進化代理",
-      "subtitle": "2026/3/23→4/23 紀實：v0.6→v0.10 平均 6 天一版。--yolo 旗標、ACP Server 回歸、Web UI Dashboard、Homebrew/Termux、Ollama Cloud 內建、openai-codex plugin。CLI + Telegram/Discord/Slack/WhatsApp/Signal 六介面同一大腦。",
+      "title": "Hermes Agent 三個月九版本總盤點 — Nous Research 的自我進化代理",
+      "subtitle": "2026/1/23→4/23 盤點 v0.2→v0.10 共 9 版，平均 10 天一版。13 個訊息平台（Telegram/Discord/Slack/WhatsApp/Signal/iMessage/WeChat/飛書/WeCom/Matrix/Mattermost/SMS/Email）、400+ 模型、MCP+ACP 雙協定、Web Dashboard、Profiles 多實例、Tool Gateway 訂閱制。值得抄：PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout。",
       "href": "https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html",
       "icon": "rocket",
-      "badge": "開源追蹤 · 5 頁簡報",
+      "badge": "開源追蹤 · 9 頁簡報",
       "badgeColor": "#e8634a",
       "publishDate": "2026-04-23T20:46:58+08:00",
       "tags": [
@@ -20,11 +20,11 @@
         "theme:release-notes"
       ],
       "concepts": [
-        "5 個版本 v0.6→v0.10 · 30 天發車節奏",
-        "--yolo 旗標 bypass approval · 開發期免按 y",
-        "ACP Server 回歸 · Zed 編輯器可直接當 AI Agent 接",
-        "Web UI Dashboard · 瀏覽器管理 session 不再盯 terminal",
-        "Homebrew + Termux + Ollama Cloud · 安裝門檻全拆"
+        "90 天 9 版 v0.2→v0.10 · 平均 10 天一版發車節奏",
+        "13 個訊息平台同一大腦 · 涵蓋歐美中台與企業生態",
+        "v0.9 Local Web Dashboard · 瀏覽器管理 session 不再盯 terminal",
+        "v0.10 Nous Tool Gateway · Portal 訂戶免 API Key 直接用搜尋/繪圖/TTS/瀏覽器",
+        "值得抄的設計 · PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout"
       ]
     },
     {
