@@ -3,10 +3,25 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-22T04:08:03.538Z
+> 生成時間：2026-04-23T12:45:13.228Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 191 個項目，按發佈日期降序排列。
+共 192 個項目，按發佈日期降序排列。
+
+## Browser Harness — 給 LLM 一把鑰匙，它自己配鎖
+
+> browser-use/browser-harness 5 頁簡報：效益說明 + 真實口碑。592 行 Python、一條 WebSocket 直連 Chrome CDP，缺的 helper agent 任務中自己寫。GitHub ★ 5.5k / Fork 481 / MIT。上網找了三處（GitHub README、Hacker News Show HN、Progressive Robot 2026-04-23），評價是什麼就寫什麼。附 Claude Code setup prompt，三分鐘開箱。
+
+**關鍵觀念：**
+- Self-healing harness · agent 自己寫 helper
+- 直連 CDP · 一條 WebSocket 到 Chrome
+- 592 行 Python · 不蓋框架的 Bitter Lesson
+
+- [線上版](https://storage.googleapis.com/botrun-slides/browser-harness-5pages.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/browser-harness-5pages.html/llms.txt): 該專案的 llms.txt
+- 類型：工具評測 · 5 頁簡報
+- 發佈日期：2026-04-23T20:45:00+08:00
+- 標籤：工程師、agent-researcher、browser-automation、agent-harness
 
 ## 雙人證妥 — 高品味題庫不變低品質題庫的唯一解
 

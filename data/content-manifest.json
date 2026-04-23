@@ -1,9 +1,30 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-22T10:00:00+08:00"
+    "lastUpdated": "2026-04-23T20:45:00+08:00"
   },
   "items": [
+    {
+      "id": "browser-harness-5pages-2026-04-23",
+      "title": "Browser Harness — 給 LLM 一把鑰匙，它自己配鎖",
+      "subtitle": "browser-use/browser-harness 5 頁簡報：效益說明 + 真實口碑。592 行 Python、一條 WebSocket 直連 Chrome CDP，缺的 helper agent 任務中自己寫。GitHub ★ 5.5k / Fork 481 / MIT。上網找了三處（GitHub README、Hacker News Show HN、Progressive Robot 2026-04-23），評價是什麼就寫什麼。附 Claude Code setup prompt，三分鐘開箱。",
+      "href": "https://storage.googleapis.com/botrun-slides/browser-harness-5pages.html",
+      "icon": "lightning",
+      "badge": "工具評測 · 5 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-23T20:45:00+08:00",
+      "tags": [
+        "audience:工程師",
+        "audience:agent-researcher",
+        "theme:browser-automation",
+        "theme:agent-harness"
+      ],
+      "concepts": [
+        "Self-healing harness · agent 自己寫 helper",
+        "直連 CDP · 一條 WebSocket 到 Chrome",
+        "592 行 Python · 不蓋框架的 Bitter Lesson"
+      ]
+    },
     {
       "id": "dual-verify-eval-bank-2026-04-22",
       "title": "雙人證妥 — 高品味題庫不變低品質題庫的唯一解",
