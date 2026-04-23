@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-23T13:02:01.979Z
+> 生成時間：2026-04-23T13:04:03.225Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 193 個項目，按發佈日期降序排列。
@@ -575,7 +575,7 @@
 
 ## OpenCode 五頁速覽｜NeuralNine 實測精華
 
-> 18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 插件 + Ollama 地端模型。
+> 18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 外掛 + Ollama 地端模型。
 
 - [線上版](https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html): HTML 簡報原始頁面
 - [AI 純文字版](https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html/llms.txt): 該專案的 llms.txt
@@ -985,7 +985,7 @@
 **關鍵觀念：**
 - WASM 冷啟動 < 1ms vs Docker 100-500ms，快 100-500 倍，Fermyon 實測 < 0.5ms
 - 1000 並行實例 WASM $0.50/hr vs Docker $10/hr，記憶體省 93%、帳單砍 95%
-- GCP Service Extensions 原生 WASM 插件跑在 Load Balancer 邊緣，零額外延遲
+- GCP Service Extensions 原生 WASM 外掛跑在 Load Balancer 邊緣，零額外延遲
 - WASM 沙箱預設禁止檔案/網路存取，AI Agent 生成程式碼在沙箱內安全執行
 - 2026 Component Model 讓 Rust/Go/C++ 模組像樂高拼接，WIT 共享型別零序列化
 
