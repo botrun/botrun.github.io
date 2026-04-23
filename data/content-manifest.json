@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-23T20:45:00+08:00"
+    "lastUpdated": "2026-04-23T20:46:58+08:00"
   },
   "items": [
+    {
+      "id": "hermes-agent-last-month",
+      "title": "Hermes Agent 一個月五版本 — Nous Research 的自我進化代理",
+      "subtitle": "2026/3/23→4/23 紀實：v0.6→v0.10 平均 6 天一版。--yolo 旗標、ACP Server 回歸、Web UI Dashboard、Homebrew/Termux、Ollama Cloud 內建、openai-codex plugin。CLI + Telegram/Discord/Slack/WhatsApp/Signal 六介面同一大腦。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html",
+      "icon": "rocket",
+      "badge": "開源追蹤 · 5 頁簡報",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-23T20:46:58+08:00",
+      "tags": [
+        "audience:工程師",
+        "audience:agent-user",
+        "theme:hermes-agent",
+        "theme:release-notes"
+      ],
+      "concepts": [
+        "5 個版本 v0.6→v0.10 · 30 天發車節奏",
+        "--yolo 旗標 bypass approval · 開發期免按 y",
+        "ACP Server 回歸 · Zed 編輯器可直接當 AI Agent 接",
+        "Web UI Dashboard · 瀏覽器管理 session 不再盯 terminal",
+        "Homebrew + Termux + Ollama Cloud · 安裝門檻全拆"
+      ]
+    },
     {
       "id": "browser-harness-5pages-2026-04-23",
       "title": "Browser Harness — 給 LLM 一把鑰匙，它自己配鎖",

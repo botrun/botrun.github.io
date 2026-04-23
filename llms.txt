@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-23T12:45:13.228Z
+> 生成時間：2026-04-23T12:47:40.573Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 192 個項目，按發佈日期降序排列。
+共 193 個項目，按發佈日期降序排列。
+
+## Hermes Agent 一個月五版本 — Nous Research 的自我進化代理
+
+> 2026/3/23→4/23 紀實：v0.6→v0.10 平均 6 天一版。--yolo 旗標、ACP Server 回歸、Web UI Dashboard、Homebrew/Termux、Ollama Cloud 內建、openai-codex plugin。CLI + Telegram/Discord/Slack/WhatsApp/Signal 六介面同一大腦。
+
+**關鍵觀念：**
+- 5 個版本 v0.6→v0.10 · 30 天發車節奏
+- --yolo 旗標 bypass approval · 開發期免按 y
+- ACP Server 回歸 · Zed 編輯器可直接當 AI Agent 接
+- Web UI Dashboard · 瀏覽器管理 session 不再盯 terminal
+- Homebrew + Termux + Ollama Cloud · 安裝門檻全拆
+
+- [線上版](https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html/llms.txt): 該專案的 llms.txt
+- 類型：開源追蹤 · 5 頁簡報
+- 發佈日期：2026-04-23T20:46:58+08:00
+- 標籤：工程師、agent-user、hermes-agent、release-notes
 
 ## Browser Harness — 給 LLM 一把鑰匙，它自己配鎖
 
