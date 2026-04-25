@@ -3,10 +3,20 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-23T13:04:03.225Z
+> 生成時間：2026-04-25T00:49:21.662Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 193 個項目，按發佈日期降序排列。
+共 194 個項目，按發佈日期降序排列。
+
+## 三個工程層級，別再搞混 — AI Agent 的真實地圖
+
+> 高中生能懂的 AI 工程故事。提示詞工程→上下文工程→Harness 工程三層地圖；Stripe Minions 每週 1,300 PR 案例；五大失敗模式與解法；GPT-5.5、GDIO 無創擴容、Space Agent 三大底層突破；五大技能工具箱（Grill Me、統一語言、TDD、深層模組、Grey Box）。矽谷流 7 頁簡報。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/three-engineering-levels.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/three-engineering-levels.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 工程 · 7 頁簡報
+- 發佈日期：2026-04-25T12:00:00+08:00
+- 標籤：AI、Harness、工程、高中生、矽谷流
 
 ## Hermes Agent 三個月九版本總盤點 — Nous Research 的自我進化代理
 

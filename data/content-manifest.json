@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "three-engineering-levels",
+      "title": "三個工程層級，別再搞混 — AI Agent 的真實地圖",
+      "subtitle": "高中生能懂的 AI 工程故事。提示詞工程→上下文工程→Harness 工程三層地圖；Stripe Minions 每週 1,300 PR 案例；五大失敗模式與解法；GPT-5.5、GDIO 無創擴容、Space Agent 三大底層突破；五大技能工具箱（Grill Me、統一語言、TDD、深層模組、Grey Box）。矽谷流 7 頁簡報。",
+      "href": "https://storage.googleapis.com/botrun-slides/three-engineering-levels.html",
+      "icon": "layers",
+      "badge": "AI 工程 · 7 頁簡報",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-25T12:00:00+08:00",
+      "tags": ["AI", "Harness", "工程", "高中生", "矽谷流"]
+    },
+    {
       "id": "hermes-agent-last-month",
       "title": "Hermes Agent 三個月九版本總盤點 — Nous Research 的自我進化代理",
       "subtitle": "2026/1/23→4/23 盤點 v0.2→v0.10 共 9 版，平均 10 天一版。13 個訊息平台（Telegram/Discord/Slack/WhatsApp/Signal/iMessage/WeChat/飛書/WeCom/Matrix/Mattermost/SMS/Email）、400+ 模型、MCP+ACP 雙協定、Web Dashboard、Profiles 多實例、Tool Gateway 訂閱制。值得抄：PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout。",
