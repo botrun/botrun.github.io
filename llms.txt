@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-25T00:49:21.662Z
+> 生成時間：2026-04-25T01:53:32.941Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 194 個項目，按發佈日期降序排列。
+共 195 個項目，按發佈日期降序排列。
+
+## 機敏孵化雙容器架構：需求過牆，資料不動
+
+> 機敏容器 --network none 斷網 + 孵化容器 Opus 生成 CLI 工具庫 + PII 閘門強制驗證；四步驟 pipeline 全自動；Gemma 31B 地端跑真實資料，Opus 只碰合成描述；今天就能落地。
+
+**關鍵觀念：**
+- 機敏容器 --network none：OS 層級強制斷網，即使程式碼寫錯也無法對外連線，不靠人的自律
+- PII 閘門是程式碼不是規定：50 行 regex 腳本掃描 YAML，偵測到個資整條 pipeline 自動中止
+- Gemma 31B 讀真實資料只輸出欄位統計 YAML，Opus 只看統計不看原始資料，機敏零洩漏
+- 孵化迴圈：Opus 生成合成 CSV + CLI 工具庫 → Gemma 31B 試跑 → Binary Rubric 評分 → 品質達標才鎖定版本
+- 共享 volume 是唯一通道：inbox/（需求）+ synthetic/（產出），兩容器永遠不直接連線
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/sensitive-incubate-docker.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/sensitive-incubate-docker.html/llms.txt): 該專案的 llms.txt
+- 類型：資安架構 · 5 頁簡報
+- 發佈日期：2026-04-25T09:49:49+08:00
+- 標籤：資安、Docker、AI 地端
 
 ## 三個工程層級，別再搞混 — AI Agent 的真實地圖
 
