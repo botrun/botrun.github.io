@@ -1,9 +1,26 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-23T20:46:58+08:00"
+    "lastUpdated": "2026-04-28T07:33:12+08:00"
   },
   "items": [
+    {
+      "id": "google-cloud-ai-updates",
+      "title": "沒人談的 Google Cloud AI：深研究 Agent × 多代理協作上線了",
+      "subtitle": "Google Cloud Next 2026 重點：Deep Research Agent 榮登 Benchmark 榜首、CX Agent Studio 6 週上線、Gemini Enterprise 單一提示驅動多代理、AI 運動分析解構毫秒動作",
+      "href": "https://google-cloud-ai-updates.vercel.app",
+      "icon": "cloud",
+      "badge": "Google Cloud AI · 8 頁簡報",
+      "badgeColor": "#1a73e8",
+      "publishDate": "2026-04-28T07:33:12+08:00",
+      "tags": ["cloud:Google Cloud", "cpu:多代理", "zap:Deep Research"],
+      "concepts": [
+        "Deep Research Agent：全 Benchmark 榜首，跨模態連接定量與定性數據，已在製藥/金融領域落地",
+        "CX Agent Studio：YouTube TV 客服 6 週從零到生產，視覺化多代理流程 + 自然語言業務邏輯",
+        "Gemini Enterprise：一個 prompt 觸發市場研究→庫存分析→再行銷→網站部署的完整多代理鏈",
+        "AI 運動分析：Google DeepMind 2D 影片轉 3D 姿態追蹤，旋轉速度/飛行時間/壓縮角即時量測"
+      ]
+    },
     {
       "id": "matt-ai-workflow",
       "title": "AI 寫爛 code？是你讓它爛的",

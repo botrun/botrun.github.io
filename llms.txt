@@ -3,10 +3,26 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-27T23:24:26.992Z
+> 生成時間：2026-04-27T23:33:38.438Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 196 個項目，按發佈日期降序排列。
+共 197 個項目，按發佈日期降序排列。
+
+## 沒人談的 Google Cloud AI：深研究 Agent × 多代理協作上線了
+
+> Google Cloud Next 2026 重點：Deep Research Agent 榮登 Benchmark 榜首、CX Agent Studio 6 週上線、Gemini Enterprise 單一提示驅動多代理、AI 運動分析解構毫秒動作
+
+**關鍵觀念：**
+- Deep Research Agent：全 Benchmark 榜首，跨模態連接定量與定性數據，已在製藥/金融領域落地
+- CX Agent Studio：YouTube TV 客服 6 週從零到生產，視覺化多代理流程 + 自然語言業務邏輯
+- Gemini Enterprise：一個 prompt 觸發市場研究→庫存分析→再行銷→網站部署的完整多代理鏈
+- AI 運動分析：Google DeepMind 2D 影片轉 3D 姿態追蹤，旋轉速度/飛行時間/壓縮角即時量測
+
+- [線上版](https://google-cloud-ai-updates.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://google-cloud-ai-updates.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：Google Cloud AI · 8 頁簡報
+- 發佈日期：2026-04-28T07:33:12+08:00
+- 標籤：Google Cloud、多代理、Deep Research
 
 ## AI 寫爛 code？是你讓它爛的
 
