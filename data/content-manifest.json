@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "matt-ai-workflow",
+      "title": "AI 寫爛 code？是你讓它爛的",
+      "subtitle": "Matt 的 2 小時實戰工作流：Grill Me 對齊 → PRD 目的地 → Kanban 垂直切片 → Ralph AFK 迴圈 → TDD 護欄 → 深度模組 → Sand Castle 平行化",
+      "href": "https://matt-ai-workflow.vercel.app",
+      "icon": "cpu",
+      "badge": "AI 開發工作流 · 10 頁簡報",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-28T07:19:30+08:00",
+      "tags": ["cpu:AI 工程", "zap:TDD", "layers:架構設計"],
+      "concepts": [
+        "Smart Zone / Dumb Zone：LLM 約 100K tokens 後品質驟降，任務切小、隨時 Clear 是基本功",
+        "Grill Me 技能：讓 AI 逼問你 40 個問題並給推薦答案，比你自己寫 PRD 更快達到共同理解",
+        "Tracer Bullet 垂直切片：每個 Issue 必須穿透 DB+API+UI，禁止水平分層（AI 天然傾向水平）",
+        "TDD 是 AI 的護欄：先寫失敗測試再實作，反饋迴圈品質 = AI 輸出品質天花板",
+        "深度模組 vs 薄模組：小介面+大實作才易測易改，壞 codebase 直接導致壞 AI 輸出"
+      ]
+    },
+    {
       "id": "sensitive-incubate-docker",
       "title": "機敏孵化雙容器架構：需求過牆，資料不動",
       "subtitle": "機敏容器 --network none 斷網 + 孵化容器 Opus 生成 CLI 工具庫 + PII 閘門強制驗證；四步驟 pipeline 全自動；Gemma 31B 地端跑真實資料，Opus 只碰合成描述；今天就能落地。",

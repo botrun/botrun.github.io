@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-25T01:53:32.941Z
+> 生成時間：2026-04-27T23:24:26.992Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 195 個項目，按發佈日期降序排列。
+共 196 個項目，按發佈日期降序排列。
+
+## AI 寫爛 code？是你讓它爛的
+
+> Matt 的 2 小時實戰工作流：Grill Me 對齊 → PRD 目的地 → Kanban 垂直切片 → Ralph AFK 迴圈 → TDD 護欄 → 深度模組 → Sand Castle 平行化
+
+**關鍵觀念：**
+- Smart Zone / Dumb Zone：LLM 約 100K tokens 後品質驟降，任務切小、隨時 Clear 是基本功
+- Grill Me 技能：讓 AI 逼問你 40 個問題並給推薦答案，比你自己寫 PRD 更快達到共同理解
+- Tracer Bullet 垂直切片：每個 Issue 必須穿透 DB+API+UI，禁止水平分層（AI 天然傾向水平）
+- TDD 是 AI 的護欄：先寫失敗測試再實作，反饋迴圈品質 = AI 輸出品質天花板
+- 深度模組 vs 薄模組：小介面+大實作才易測易改，壞 codebase 直接導致壞 AI 輸出
+
+- [線上版](https://matt-ai-workflow.vercel.app): HTML 簡報原始頁面
+- [AI 純文字版](https://matt-ai-workflow.vercel.app/llms.txt): 該專案的 llms.txt
+- 類型：AI 開發工作流 · 10 頁簡報
+- 發佈日期：2026-04-28T07:19:30+08:00
+- 標籤：AI 工程、TDD、架構設計
 
 ## 機敏孵化雙容器架構：需求過牆，資料不動
 
