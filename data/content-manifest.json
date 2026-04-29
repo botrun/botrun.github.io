@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-28T07:33:12+08:00"
+    "lastUpdated": "2026-04-29T08:38:49+08:00"
   },
   "items": [
+    {
+      "id": "playwright-cli-social-listening",
+      "title": "把這段話複製貼上，AI 就會幫你爬全網社群",
+      "subtitle": "Playwright CLI 社群輿情爬蟲入門｜高中生也能懂：5 步驟 prompt 一鍵複製，引導你裝工具、有頭登入 FB/IG/X/Threads/Dcard/PTT、平行爬資料出情緒熱度報表，附爬蟲倫理 5 條",
+      "href": "https://storage.googleapis.com/botrun-slides/playwright-cli-社群輿情爬蟲.html",
+      "icon": "zap",
+      "badge": "Playwright CLI · 5 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-29T08:38:49+08:00",
+      "tags": ["zap:Playwright CLI", "cpu:輿情爬蟲", "layers:社群監測"],
+      "concepts": [
+        "Copy-Paste Prompt：5 步驟（001~005）一鍵複製貼到 Claude Code/Cursor，AI 引導你完成全流程",
+        "有頭模式登入：playwright-cli --headed --persistent，使用者親手輸入帳密+2FA，密碼不交給 AI",
+        "多 Session 隔離：-s=fb / -s=ig / -s=x 各用獨立 profile，避免 cookie 互污，平行爬省 5 倍時間",
+        "人機共用畫面：playwright-cli show dashboard 即時觀察，按 Esc 切換 AI/手動接管",
+        "爬蟲倫理 5 條：繁體中文輸出、限速 1 req/2-5s+jitter、只爬公開內容、守 ToS+robots.txt、只取摘要+原文連結"
+      ]
+    },
     {
       "id": "google-cloud-ai-updates",
       "title": "沒人談的 Google Cloud AI：深研究 Agent × 多代理協作上線了",

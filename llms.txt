@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-27T23:33:38.438Z
+> 生成時間：2026-04-29T00:39:05.835Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 197 個項目，按發佈日期降序排列。
+共 198 個項目，按發佈日期降序排列。
+
+## 把這段話複製貼上，AI 就會幫你爬全網社群
+
+> Playwright CLI 社群輿情爬蟲入門｜高中生也能懂：5 步驟 prompt 一鍵複製，引導你裝工具、有頭登入 FB/IG/X/Threads/Dcard/PTT、平行爬資料出情緒熱度報表，附爬蟲倫理 5 條
+
+**關鍵觀念：**
+- Copy-Paste Prompt：5 步驟（001~005）一鍵複製貼到 Claude Code/Cursor，AI 引導你完成全流程
+- 有頭模式登入：playwright-cli --headed --persistent，使用者親手輸入帳密+2FA，密碼不交給 AI
+- 多 Session 隔離：-s=fb / -s=ig / -s=x 各用獨立 profile，避免 cookie 互污，平行爬省 5 倍時間
+- 人機共用畫面：playwright-cli show dashboard 即時觀察，按 Esc 切換 AI/手動接管
+- 爬蟲倫理 5 條：繁體中文輸出、限速 1 req/2-5s+jitter、只爬公開內容、守 ToS+robots.txt、只取摘要+原文連結
+
+- [線上版](https://storage.googleapis.com/botrun-slides/playwright-cli-社群輿情爬蟲.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/playwright-cli-社群輿情爬蟲.html/llms.txt): 該專案的 llms.txt
+- 類型：Playwright CLI · 5 頁簡報
+- 發佈日期：2026-04-29T08:38:49+08:00
+- 標籤：Playwright CLI、輿情爬蟲、社群監測
 
 ## 沒人談的 Google Cloud AI：深研究 Agent × 多代理協作上線了
 
@@ -18,8 +35,8 @@
 - Gemini Enterprise：一個 prompt 觸發市場研究→庫存分析→再行銷→網站部署的完整多代理鏈
 - AI 運動分析：Google DeepMind 2D 影片轉 3D 姿態追蹤，旋轉速度/飛行時間/壓縮角即時量測
 
-- [線上版](https://google-cloud-ai-updates.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://google-cloud-ai-updates.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/google-cloud-ai-updates.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/google-cloud-ai-updates.html/llms.txt): 該專案的 llms.txt
 - 類型：Google Cloud AI · 8 頁簡報
 - 發佈日期：2026-04-28T07:33:12+08:00
 - 標籤：Google Cloud、多代理、Deep Research
@@ -35,8 +52,8 @@
 - TDD 是 AI 的護欄：先寫失敗測試再實作，反饋迴圈品質 = AI 輸出品質天花板
 - 深度模組 vs 薄模組：小介面+大實作才易測易改，壞 codebase 直接導致壞 AI 輸出
 
-- [線上版](https://matt-ai-workflow.vercel.app): HTML 簡報原始頁面
-- [AI 純文字版](https://matt-ai-workflow.vercel.app/llms.txt): 該專案的 llms.txt
+- [線上版](https://storage.googleapis.com/botrun-slides/matt-ai-workflow.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/matt-ai-workflow.html/llms.txt): 該專案的 llms.txt
 - 類型：AI 開發工作流 · 10 頁簡報
 - 發佈日期：2026-04-28T07:19:30+08:00
 - 標籤：AI 工程、TDD、架構設計
