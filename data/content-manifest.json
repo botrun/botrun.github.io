@@ -1,9 +1,28 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-04-29T08:38:49+08:00"
+    "lastUpdated": "2026-04-29T17:57:00+08:00"
   },
   "items": [
+    {
+      "id": "moenv-news-pr-ai-2026-04-29",
+      "title": "讓老同事的判斷力傳承給新人，讓部長看見事件的同時就看到三種解法",
+      "subtitle": "環境部新聞公關組 AI 輔助方案說明：5 大痛點 → 三大差異（Binary Rubric 25 條 / 紅黃藍三色燈 / 三選一對策）→ 4/29 真實素材跑分（402 則新聞 + 兩頁半晨報）→ 訪談邀請。給非資訊背景同仁 12 分鐘看懂。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/moenv-news-pr-ai-2026-04-29.html",
+      "icon": "compass",
+      "badge": "輿情 AI · 6 章長頁",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-04-29T17:57:00+08:00",
+      "tags": ["compass:輿情監測", "filter:Binary Rubric", "layers:三色燈"],
+      "concepts": [
+        "5 大痛點原文引證：花時間沒效果、人工再回社群、媒體報才知道、別人告訴才知道、解法資料沒備齊",
+        "Binary Rubric 25 條總分 100 分：S 級 5×8 + A 級 10×4 + B 級 10×2，提煉自過去 6 個月部長有回應的 15 題真實事件",
+        "紅黃藍三色燈：紅燈必看必回應、黃燈備位、藍燈最易 miss（環境部還沒顧到但社會在發酵）",
+        "三選一對策：每則紅燈強制四件套（是什麼+為什麼+三選一+佐證），部長看了不會慌",
+        "4/29 跑分排行 Top 10：空污法 78 紅 / 名間 62 紅 / 台中環保局 58 紅 / 雲豹好事循環 42 黃 / AIT 關切 14 藍"
+      ]
+    },
     {
       "id": "playwright-cli-social-listening",
       "title": "把這段話複製貼上，AI 就會幫你爬全網社群",
