@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-04-30T11:13:42.564Z",
+  "total": 12,
+  "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
+  "articles": [
+    {
+      "title": "Agentic AI 18 個月預測研究",
+      "date": "2026-02-07",
+      "content": "2026-02 至 2027-08 的 5 個 80% 機率驚人預言",
+      "tags": [
+        "研究",
+        "5 個預言",
+        "18 個月"
+      ],
+      "url": "https://botrun.github.io/projects/003-agentic-ai-predictions-2026/"
+    },
+    {
+      "title": "國網中心 AI 服務模型排行榜",
+      "date": "2026-01-31",
+      "content": "10 個 AI 模型 × 5 題國網專業知識查詢 — Ministral 14B 奪冠",
+      "tags": [
+        "模型評測",
+        "冠軍 Ministral 14B",
+        "Open Data"
+      ],
+      "url": "https://botrun.github.io/projects/007-政府/國網中心-AI服務/評測/v2/報告/排行簡報-2026-01-31.html"
+    },
+    {
+      "title": "AI 模型評測排行榜 2026.01",
+      "date": "2026-01-31",
+      "content": "11 個主流模型 × 5 大專業領域 × 275 題零幻覺評測",
+      "tags": [
+        "評測報告",
+        "九維度評分",
+        "Open Data"
+      ],
+      "url": "https://botrun.github.io/reports/ai-model-evaluation-2026-01.html"
+    },
+    {
+      "title": "AI 時代生存攻略",
+      "date": "2026-01-31",
+      "content": "讓機器人幫你賺錢，而不是搶你飯碗",
+      "tags": [
+        "文章",
+        "全球研究",
+        "團隊指南"
+      ],
+      "url": "https://botrun.github.io/articles/ai-survival-guide.html"
+    },
+    {
+      "title": "私有 AI 硬體測試報告 2026",
+      "date": "2026-01-31",
+      "content": "Mac Studio M3 Ultra vs DGX Spark vs AMD Strix Halo vs RTX 5090",
+      "tags": [
+        "硬體評測",
+        "99 t/s 單用戶",
+        "518 t/s 並發"
+      ],
+      "url": "https://botrun.github.io/projects/002-AI硬體測試/web/index.html"
+    },
+    {
+      "title": "政府 AI 瀏覽器自動化方案比較",
+      "date": "2026-01-30",
+      "content": "Claude Computer Use vs Claude in Chrome vs Vercel Agent Browser vs Playwright MCP",
+      "tags": [
+        "技術評測",
+        "數位發展部",
+        "8 頁投影片"
+      ],
+      "url": "https://botrun.github.io/projects/007-政府/數位發展部-瀏覽器自動化方案比較.html"
+    },
+    {
+      "title": "政府專案",
+      "date": "2026-01-15",
+      "content": "數位發展部、國網中心等政府 AI 相關專案",
+      "tags": [
+        "專案集",
+        "7 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/007-政府/"
+    },
+    {
+      "title": "學校專案",
+      "date": "2026-01-10",
+      "content": "教育領域 AI 應用",
+      "tags": [
+        "專案集",
+        "1 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/006-學校/"
+    },
+    {
+      "title": "醫療專案",
+      "date": "2026-01-08",
+      "content": "醫療健康領域 AI 應用",
+      "tags": [
+        "專案集",
+        "1 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/010-醫療/"
+    },
+    {
+      "title": "波特榜",
+      "date": "2026-01-05",
+      "content": "AI 模型評測排行榜系統",
+      "tags": [
+        "專案",
+        "2 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/004-botrun-board/"
+    },
+    {
+      "title": "3D HTML 遊戲",
+      "date": "2025-12-20",
+      "content": "純 HTML/CSS/JS 3D 遊戲展示",
+      "tags": [
+        "專案",
+        "1 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/001-3d-html-game/"
+    },
+    {
+      "title": "AI 硬體測試專案",
+      "date": "2025-12-15",
+      "content": "私有 AI 硬體效能測試集",
+      "tags": [
+        "專案集",
+        "1 個檔案"
+      ],
+      "url": "https://botrun.github.io/projects/002-AI硬體測試/"
+    }
+  ]
+}
