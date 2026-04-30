@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T12:19:16.163Z",
+  "generatedAt": "2026-04-30T04:39:53.588Z",
   "total": 125,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
@@ -299,6 +299,18 @@
       "url": "https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html"
     },
     {
+      "title": "Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢",
+      "date": "2026-04-08T22:01:30+08:00",
+      "content": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
+      "tags": [
+        "AI Agent 架構革命",
+        "GitNexus 程式碼知識圖譜",
+        "SpringDrift 矽基家臣",
+        "Google EdgeML 端側革命"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html"
+    },
+    {
       "title": "AI 學壞了？32B 打敗 GPT-4o 的秘密",
       "date": "2026-04-08T22:30:00+08:00",
       "content": "LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o",
@@ -321,30 +333,6 @@
         "Saga 補償"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html"
-    },
-    {
-      "title": "Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢",
-      "date": "2026-04-08T22:01:30+08:00",
-      "content": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
-      "tags": [
-        "AI Agent 架構革命",
-        "GitNexus 程式碼知識圖譜",
-        "SpringDrift 矽基家臣",
-        "Google EdgeML 端側革命"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html"
-    },
-    {
-      "title": "31B 小裁判 × Binary Rubric：全地端也能打大模型",
-      "date": "2026-04-08T22:00:00+08:00",
-      "content": "一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來",
-      "tags": [
-        "地端評估",
-        "全地端裁判",
-        "Binary Rubric",
-        "Prometheus 0.897"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html"
     },
     {
       "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
@@ -381,6 +369,18 @@
         "風險不對稱"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html"
+    },
+    {
+      "title": "31B 小裁判 × Binary Rubric：全地端也能打大模型",
+      "date": "2026-04-08T22:00:00+08:00",
+      "content": "一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來",
+      "tags": [
+        "地端評估",
+        "全地端裁判",
+        "Binary Rubric",
+        "Prometheus 0.897"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html"
     },
     {
       "title": "不爽飛輪：誰有 User Log，誰就掌握 Agentic AI 的未來",
@@ -515,18 +515,6 @@
       "url": "https://storage.googleapis.com/botrun-slides/agentic-five-roles-workflow.html"
     },
     {
-      "title": "三人一組的 AI 小隊，迭代五輪打敗單兵作戰",
-      "date": "2026-04-05T12:17:15+08:00",
-      "content": "隊長+撰寫者+評分者組成對抗小隊，大隊長用 DAG 指揮五支小隊平行精煉，小模型也能交出大模型品質",
-      "tags": [
-        "架構",
-        "AI 小隊",
-        "Agentic AI",
-        "DAG"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html"
-    },
-    {
       "title": "乾淨大提示：Agentic AI 碾出超大 Prompt，4B 追平 72B",
       "date": "2026-04-05T12:12:48+08:00",
       "content": "Agentic AI 唯一目標就是碾出乾淨大提示——小模型品質飆升 5 倍，全地端部署資料不出門",
@@ -537,6 +525,18 @@
         "全地端"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html"
+    },
+    {
+      "title": "三人一組的 AI 小隊，迭代五輪打敗單兵作戰",
+      "date": "2026-04-05T12:17:15+08:00",
+      "content": "隊長+撰寫者+評分者組成對抗小隊，大隊長用 DAG 指揮五支小隊平行精煉，小模型也能交出大模型品質",
+      "tags": [
+        "架構",
+        "AI 小隊",
+        "Agentic AI",
+        "DAG"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html"
     },
     {
       "title": "高品味題庫五等級：從「對，就是我」到「分數我服氣」",
@@ -599,18 +599,6 @@
       "url": "https://storage.googleapis.com/botrun-slides/pi-vs-claude-code-philosophy.html"
     },
     {
-      "title": "一鍋大雜燴害 AI 失憶，自助餐讓它想起一切",
-      "date": "2026-04-04T17:38:31+08:00",
-      "content": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
-      "tags": [
-        "AI Architecture",
-        "Attention Residuals",
-        "1.25x Efficiency",
-        "Kimi / Moonshot AI"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html"
-    },
-    {
       "title": "51.2 萬行洩漏真相：Claude Code 不是工具，是 Agent Runtime",
       "date": "2026-04-04T17:37:55+08:00",
       "content": "1,906 個 TypeScript 檔案全面審計 — 98.4% 不是 AI，是生產級工程",
@@ -621,6 +609,18 @@
         "5-Layer Memory"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/claude-code-agent-runtime.html"
+    },
+    {
+      "title": "一鍋大雜燴害 AI 失憶，自助餐讓它想起一切",
+      "date": "2026-04-04T17:38:31+08:00",
+      "content": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
+      "tags": [
+        "AI Architecture",
+        "Attention Residuals",
+        "1.25x Efficiency",
+        "Kimi / Moonshot AI"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html"
     },
     {
       "title": "128 個專家只叫 8 個：Gemma 4 的快省準三連招",
@@ -815,18 +815,6 @@
       "url": "https://storage.googleapis.com/botrun-slides/dytopo-opencode-impl.html"
     },
     {
-      "title": "80 億參數絞殺 1200 億 — DyTopo 動態拓撲路由讓小模型逆襲巨獸",
-      "date": "2026-03-28T23:26:35+08:00",
-      "content": "上下文污染 × 384 維語義匹配 × 貪婪循環打破 — 系統組織力跨維度抹平性能落差",
-      "tags": [
-        "AI 論文",
-        "動態拓撲",
-        "多 Agent",
-        "Scaling Law"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html"
-    },
-    {
       "title": "AI 代理人聊天也要挑對象 — DyTopo 動態拓撲路由",
       "date": "2026-03-28T23:21:38+08:00",
       "content": "語義配對 × 稀疏有向圖 × Manager 元控制 — 平均 +6.2% 全面碾壓固定拓撲",
@@ -837,6 +825,18 @@
         "語義配對"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/dytopo-multi-agent-routing.html"
+    },
+    {
+      "title": "80 億參數絞殺 1200 億 — DyTopo 動態拓撲路由讓小模型逆襲巨獸",
+      "date": "2026-03-28T23:26:35+08:00",
+      "content": "上下文污染 × 384 維語義匹配 × 貪婪循環打破 — 系統組織力跨維度抹平性能落差",
+      "tags": [
+        "AI 論文",
+        "動態拓撲",
+        "多 Agent",
+        "Scaling Law"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html"
     },
     {
       "title": "金鵝不下蛋了 — 暴雪 Jeff Kaplan 五小時真心話的 12 個大白話洞見",
@@ -1163,18 +1163,6 @@
       "url": "https://storage.googleapis.com/botrun-slides/botrun-c-k3s-architecture.html"
     },
     {
-      "title": "不再演奏改做指揮，五句話意圖 DAG 勝千言萬語",
-      "date": "2026-03-21T20:00:00+08:00",
-      "content": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
-      "tags": [
-        "論文精讀",
-        "arXiv 2603.06007",
-        "Vibe Graphing",
-        "97% 程式碼減少"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/mas-factory.html"
-    },
-    {
       "title": "給權限還是選安全？巨大龍蝦的沙盒新海洋",
       "date": "2026-03-21T14:35:00+08:00",
       "content": "NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比",
@@ -1197,6 +1185,18 @@
         "AutoResearch"
       ],
       "url": "https://storage.googleapis.com/botrun-slides/karpathy-code-agents.html"
+    },
+    {
+      "title": "不再演奏改做指揮，五句話意圖 DAG 勝千言萬語",
+      "date": "2026-03-21T20:00:00+08:00",
+      "content": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
+      "tags": [
+        "論文精讀",
+        "arXiv 2603.06007",
+        "Vibe Graphing",
+        "97% 程式碼減少"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/mas-factory.html"
     },
     {
       "title": "波特人小隊 — Agent Teams 工作實戰",
