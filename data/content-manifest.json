@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-01T20:09:18+08:00"
+    "lastUpdated": "2026-05-01T20:55:55+08:00"
   },
   "items": [
+    {
+      "id": "precision-bible-2026",
+      "title": "2026 精準度聖經 — 全新題目逼近 99.9% 的最小配方",
+      "subtitle": "Few-Shot First, Fine-Tune Last。30 筆黃金種子 + regex 分流 + 2-shot 動態範例 + 一個抓漏 prompt = F1 ≥ 0.99；四天工程勝過兩個月收資料訓練。每步驟給業界通用英文術語 + 臺灣白話標題，高中生也能懂。",
+      "href": "https://storage.googleapis.com/botrun-slides/precision-bible-2026.html",
+      "icon": "target",
+      "badge": "方法學 · 9 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-01T20:55:55+08:00",
+      "tags": ["target:精準度聖經", "zap:RAFS", "book:方法學"],
+      "concepts": [
+        "核心哲學 Few-Shot First, Fine-Tune Last：先用範例餵模型逼到最高分；準度還不夠才考慮訓練",
+        "Day 1 打地基：Specification Anchoring（規格鐵律）+ Gold Seed Annotation（30 筆黃金種子）+ Holdout Split（留考試題）",
+        "Day 2 搭骨架：Rule-based Routing（regex 分流櫃台）+ Exemplar Retrieval RAFS（動態抓範例）+ Baseline Probing，目標 F1 ≥ 0.90",
+        "Day 3-4 打磨：Failure Mode Clustering（抓三大魔王）+ Targeted Shot Expansion 對症下藥 + Chain-of-Verification（二次抓漏 prompt）= F1 ≥ 0.99",
+        "七大 Premature 不要做：不要先囤資料 / 不要先訓練 / 不要先壓縮 / 不要先 ensemble / 不要先 embedding / 不要先 HITL UI / 不要追完美 spec"
+      ]
+    },
     {
       "id": "gemma4-finetune-fail-rafs-win",
       "title": "微調燒兩週、Prompting 兩例搞定 — Gemma 4 公文 PII 完整經驗紀錄",
