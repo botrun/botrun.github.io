@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-01T22:51:26.183Z",
-  "total": 129,
+  "generatedAt": "2026-05-01T23:13:07.165Z",
+  "total": 130,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試",
+      "date": "2026-05-02T07:09:09+08:00",
+      "content": "2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。",
+      "tags": [
+        "資安實驗",
+        "PII脫敏",
+        "本地模型",
+        "政府公文",
+        "OpenAI開源"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html"
+    },
     {
       "title": "Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相",
       "date": "2026-05-02T06:47:23+08:00",

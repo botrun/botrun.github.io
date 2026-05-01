@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "privacy-filter-taiwan-gov-experiment",
+      "title": "Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試",
+      "subtitle": "2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。",
+      "href": "https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html",
+      "icon": "shield",
+      "badge": "資安實驗",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-02T07:09:09+08:00",
+      "tags": ["shield:PII脫敏", "cpu:本地模型", "file-text:政府公文", "zap:OpenAI開源"],
+      "concepts": [
+        "Privacy Filter 1.5B MoE 本地執行，推理僅啟用 50M 參數，Apache 2.0 可商用，單次 Forward Pass 標注全文",
+        "電話/Email/身分證號命中率接近 100%；中文人名（冒號後緊接）漏標 ~25%；民國年日期漏標 ~60%；統一編號漏標 ~80%",
+        "企業裁罰情境整體漏標率 39%，遠高於個人文件 17.5%，主因：多筆密集排列 Attention 分散 + 統一編號無訓練樣本",
+        "CPU float32 達 1,802 tok/s；MPS float16 只有 543 tok/s（慢 3.3×）；MLX 無社群 port，CPU 是最快選擇",
+        "三層補強配方：Privacy Filter 英數 PII ＋ regex 補民國日期/統一編號 ＋ NER 補中文人名，漏標率可從 39% 降至 <5%"
+      ]
+    },
+    {
       "id": "claude-code-lm-studio-local-model",
       "title": "Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相",
       "subtitle": "2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。",
