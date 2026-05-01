@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-01T12:06:38+08:00"
+    "lastUpdated": "2026-05-01T20:09:18+08:00"
   },
   "items": [
+    {
+      "id": "gemma4-finetune-fail-rafs-win",
+      "title": "微調燒兩週、Prompting 兩例搞定 — Gemma 4 公文 PII 完整經驗紀錄",
+      "subtitle": "MLX 生態 5 條 fine-tune 路徑全爆（multimodal 不認 / 4-bit ScaledLinear 崩 / Tied Embed 過擬合 / E2B F1 只到 0.49）；反向勝出 = 26B 4-bit + RAFS 動態 2-shot，F1=0.98、Recall=0.99、漏標率 0.6%、半天工程；Haiku × Sonnet 混搭產 1500 筆訓練資料 ~$45。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-finetune-fail-rafs-win.html",
+      "icon": "alert-triangle",
+      "badge": "經驗紀錄 · 3 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-01T20:09:18+08:00",
+      "tags": ["alert-triangle:微調踩雷", "cpu:Gemma 4 26B", "zap:RAFS"],
+      "concepts": [
+        "終極勝出 = 26B 4-bit + RAFS 動態 2-shot：F1 0.980 / Recall 0.99 / 漏標率 0.6% / 73% 樣本完美 1.00 / M4 Max 60-80 tok/s",
+        "微調 13 道陰影：mlx-lm 不認多模態、PEFT 撞 ClippableLinear、ScaledLinear 4-bit 量化崩、Tied Embeddings 讓 lm_head 學不到 emoji、解凍 embed 過擬合災難",
+        "小模型天花板：E2B 微調 F1 只到 0.49，仍遠輸給未訓練 26B 的 0.93；台灣公文結構複雜，5B 以下吃不下足夠模式",
+        "資料合成 Haiku × Sonnet 混搭：30 agents 平行 Sonnet 產 1500 筆 ~$45 美金；audit_batch.py 嚴格驗 emoji 對稱、無竄改",
+        "算力策略：推論留 Apple Silicon（MLX + M4 Max），大規模微調才上 Modal Serverless（試錯週期數天壓到數小時）"
+      ]
+    },
     {
       "id": "gemma4-pii-rafs",
       "title": "微調燒兩週，Prompting 兩例搞定 — Gemma 4 邊緣 PII 標註 RAFS 實戰",

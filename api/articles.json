@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-01T04:10:30.577Z",
-  "total": 126,
+  "generatedAt": "2026-05-01T12:11:58.761Z",
+  "total": 127,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "微調燒兩週、Prompting 兩例搞定 — Gemma 4 公文 PII 完整經驗紀錄",
+      "date": "2026-05-01T20:09:18+08:00",
+      "content": "MLX 生態 5 條 fine-tune 路徑全爆（multimodal 不認 / 4-bit ScaledLinear 崩 / Tied Embed 過擬合 / E2B F1 只到 0.49）；反向勝出 = 26B 4-bit + RAFS 動態 2-shot，F1=0.98、Recall=0.99、漏標率 0.6%、半天工程；Haiku × Sonnet 混搭產 1500 筆訓練資料 ~$45。",
+      "tags": [
+        "經驗紀錄 · 3 頁簡報",
+        "微調踩雷",
+        "Gemma 4 26B",
+        "RAFS"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/gemma4-finetune-fail-rafs-win.html"
+    },
     {
       "title": "微調燒兩週，Prompting 兩例搞定 — Gemma 4 邊緣 PII 標註 RAFS 實戰",
       "date": "2026-05-01T12:06:38+08:00",
