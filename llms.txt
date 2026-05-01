@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-01T12:59:32.994Z
+> 生成時間：2026-05-01T22:51:25.526Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 202 個項目，按發佈日期降序排列。
+共 203 個項目，按發佈日期降序排列。
+
+## Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相
+
+> 2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。
+
+**關鍵觀念：**
+- Anthropic 靜悄悄支援 local model：2026年1月 Ollama v0.14 + LM Studio v0.4.1 主動靠攏 /v1/messages 格式，無官方公告
+- KV cache 關鍵地雷：CLAUDE_CODE_ATTRIBUTION_HEADER=0 必須放 settings.json（非 shell export），否則 prefill 慢 10 倍
+- 完全實體隔離目前仍是 Feature Request：GitHub #39847/#41638 尚未實現，網路教學幾乎都需要 Anthropic 帳號
+- LM Studio 直接接無需 proxy：v0.4.1+ 原生 /v1/messages；NCHC 國網 OpenAI-compatible 才需要 LiteLLM 轉換
+- 四條鐵律：先查原生相容性 / KV cache 設定 / local 設定放 project 層 / AUTH_TOKEN 不是 API_KEY
+
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html/llms.txt): 該專案的 llms.txt
+- 類型：工具實戰
+- 發佈日期：2026-05-02T06:47:23+08:00
+- 標籤：本地模型、隱私、Claude Code、LM Studio
 
 ## 2026 精準度聖經 — 全新題目逼近 99.9% 的最小配方
 

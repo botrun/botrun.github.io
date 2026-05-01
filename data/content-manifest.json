@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "claude-code-lm-studio-local-model",
+      "title": "Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相",
+      "subtitle": "2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html",
+      "icon": "cpu",
+      "badge": "工具實戰",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-02T06:47:23+08:00",
+      "tags": ["cpu:本地模型", "shield:隱私", "zap:Claude Code", "tool:LM Studio"],
+      "concepts": [
+        "Anthropic 靜悄悄支援 local model：2026年1月 Ollama v0.14 + LM Studio v0.4.1 主動靠攏 /v1/messages 格式，無官方公告",
+        "KV cache 關鍵地雷：CLAUDE_CODE_ATTRIBUTION_HEADER=0 必須放 settings.json（非 shell export），否則 prefill 慢 10 倍",
+        "完全實體隔離目前仍是 Feature Request：GitHub #39847/#41638 尚未實現，網路教學幾乎都需要 Anthropic 帳號",
+        "LM Studio 直接接無需 proxy：v0.4.1+ 原生 /v1/messages；NCHC 國網 OpenAI-compatible 才需要 LiteLLM 轉換",
+        "四條鐵律：先查原生相容性 / KV cache 設定 / local 設定放 project 層 / AUTH_TOKEN 不是 API_KEY"
+      ]
+    },
+    {
       "id": "precision-bible-2026",
       "title": "2026 精準度聖經 — 全新題目逼近 99.9% 的最小配方",
       "subtitle": "Few-Shot First, Fine-Tune Last。30 筆黃金種子 + regex 分流 + 2-shot 動態範例 + 一個抓漏 prompt = F1 ≥ 0.99；四天工程勝過兩個月收資料訓練。每步驟給業界通用英文術語 + 臺灣白話標題，高中生也能懂。",

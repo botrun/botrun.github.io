@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-01T12:59:34.021Z",
-  "total": 128,
+  "generatedAt": "2026-05-01T22:51:26.183Z",
+  "total": 129,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相",
+      "date": "2026-05-02T06:47:23+08:00",
+      "content": "2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。",
+      "tags": [
+        "工具實戰",
+        "本地模型",
+        "隱私",
+        "Claude Code",
+        "LM Studio"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html"
+    },
     {
       "title": "2026 精準度聖經 — 全新題目逼近 99.9% 的最小配方",
       "date": "2026-05-01T20:55:55+08:00",
