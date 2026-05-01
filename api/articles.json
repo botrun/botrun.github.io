@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-04-30T04:39:53.588Z",
-  "total": 125,
+  "generatedAt": "2026-05-01T04:10:30.577Z",
+  "total": 126,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "微調燒兩週，Prompting 兩例搞定 — Gemma 4 邊緣 PII 標註 RAFS 實戰",
+      "date": "2026-05-01T12:06:38+08:00",
+      "content": "Apple M4 Max 邊緣運算政府公文機敏標註：30 筆精修微調全崩（MatFormer / 4-bit 量化 / Emoji Token 三大踩坑），改用 26B 4-bit + k=2 Few-shot，F1=0.93、12 秒/頁；越強的模型越少範例，RAFS 動態範本庫零訓練成本。",
+      "tags": [
+        "邊緣 AI · 7 頁簡報",
+        "PII 標註",
+        "Gemma 4",
+        "Few-shot"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/gemma4-pii-rafs.html"
+    },
     {
       "title": "把這段話複製貼上，AI 就會幫你爬全網社群",
       "date": "2026-04-29T08:38:49+08:00",

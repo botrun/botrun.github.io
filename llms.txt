@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-04-29T10:07:27.807Z
+> 生成時間：2026-05-01T04:10:29.807Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 199 個項目，按發佈日期降序排列。
+共 200 個項目，按發佈日期降序排列。
+
+## 微調燒兩週，Prompting 兩例搞定 — Gemma 4 邊緣 PII 標註 RAFS 實戰
+
+> Apple M4 Max 邊緣運算政府公文機敏標註：30 筆精修微調全崩（MatFormer / 4-bit 量化 / Emoji Token 三大踩坑），改用 26B 4-bit + k=2 Few-shot，F1=0.93、12 秒/頁；越強的模型越少範例，RAFS 動態範本庫零訓練成本。
+
+**關鍵觀念：**
+- 三大微調踩坑：mlx-lm 不支援 MatFormer 多模態架構、4-bit 量化讓 PLE×ScaledLinear 反向傳播誤差爆炸、Emoji Token ID 250000+ 在 LoRA 沒含 lm_head 時學不會
+- k-shot × 模型實測：E2B 4-bit k=5 F1=0.67、E2B bf16 k=3 F1=0.83、26B 4-bit k=2 F1=0.93（最佳 CP）、31B 8-bit k=2 F1=0.96 但 10.7 tok/s 太慢
+- 反直覺洞見：模型越強需要越少範例，26B 給超過 2 個範例反而 Context Degradation 準確率下降
+- RAFS 四步上線：公文分類 → 從範本庫抽 k=2 高品質範例 → 26B 4-bit 推論（12-15 秒/頁）→ 人工只補 4-8% 漏標
+- 邊緣部署優勢：零訓練成本、法規變只改 Prompt 不改模型、M4 Max 60-80 tok/s 產線吞得下、機敏資料不出機房
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gemma4-pii-rafs.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gemma4-pii-rafs.html/llms.txt): 該專案的 llms.txt
+- 類型：邊緣 AI · 7 頁簡報
+- 發佈日期：2026-05-01T12:06:38+08:00
+- 標籤：PII 標註、Gemma 4、Few-shot
 
 ## 讓老同事的判斷力傳承給新人，讓部長看見事件的同時就看到三種解法
 
