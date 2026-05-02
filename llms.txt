@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T04:31:32.650Z
+> 生成時間：2026-05-02T04:46:24.088Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 206 個項目，按發佈日期降序排列。
+共 207 個項目，按發佈日期降序排列。
+
+## 龍蝦放出來了，回不去了 — Peter Steinberger TED 演講仔細版
+
+> OpenClaw 創辦人 Peter 在 TED 親口講龍蝦怎麼來的（17 分鐘 / 13 頁）。Marrakesh 9 秒語音救援經典橋段、被 AI 公司告商標被迫改名「先是名字、然後是龍蝦、再來是模型」、中國深圳「養龍蝦」現象、Chris Anderson 警告他「你像潘朵拉魔盒主角」。整段最被引用金句：Chatbots give up. Agents improvise.
+
+**關鍵觀念：**
+- 賣公司後三年憂鬱、2025 早期 holy shit moment：boilerplate / plumbing AI 全包、瓶頸不再是打字是思考、25 年經驗第一次有真正槓桿
+- Marrakesh 9 秒語音救援：agent 自己 inspect 檔案 → convert 格式 → 找 OpenAI key 翻譯，全程 9 秒，Peter 從沒寫過語音支援
+- 整場 TED 最被引用金句：Chatbots give up. Agents improvise. — 聊天機器人會放棄，代理人會即興演出
+- AI 公司商標訴訟三步剝奪：先是名字、然後是龍蝦、再來是模型，這就是「OpenClaw」這個名字的由來
+- 對照本案三件套：OpenClaw 是消費級、botrun-hermes 是機關級 IAP+Audit 版本、botrun-hippo 是單 Docker 一鍵安裝賣機關（等同養龍蝦但全地端 H200）
+
+- [線上版](https://storage.googleapis.com/botrun-slides/peter-steinberger-openclaw-ted.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/peter-steinberger-openclaw-ted.html/llms.txt): 該專案的 llms.txt
+- 類型：TED 精華 · 13 頁
+- 發佈日期：2026-05-02T12:40:00+08:00
+- 標籤：TED 演講、OpenClaw、agents-improvise、創辦人原話
 
 ## Hermes 把 Claude Code 升級成會自己派工的小組長
 

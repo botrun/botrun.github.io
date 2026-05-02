@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T04:31:31.614Z",
-  "total": 132,
+  "generatedAt": "2026-05-02T04:46:23.090Z",
+  "total": 133,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "龍蝦放出來了，回不去了 — Peter Steinberger TED 演講仔細版",
+      "date": "2026-05-02T12:40:00+08:00",
+      "content": "OpenClaw 創辦人 Peter 在 TED 親口講龍蝦怎麼來的（17 分鐘 / 13 頁）。Marrakesh 9 秒語音救援經典橋段、被 AI 公司告商標被迫改名「先是名字、然後是龍蝦、再來是模型」、中國深圳「養龍蝦」現象、Chris Anderson 警告他「你像潘朵拉魔盒主角」。整段最被引用金句：Chatbots give up. Agents improvise.",
+      "tags": [
+        "TED 精華 · 13 頁",
+        "TED 演講",
+        "OpenClaw",
+        "agents-improvise",
+        "創辦人原話"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/peter-steinberger-openclaw-ted.html"
+    },
     {
       "title": "Hermes 把 Claude Code 升級成會自己派工的小組長",
       "date": "2026-05-02T12:25:00+08:00",
