@@ -3,14 +3,14 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T04:27:46.408Z
+> 生成時間：2026-05-02T04:31:32.650Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 206 個項目，按發佈日期降序排列。
 
 ## Hermes 把 Claude Code 升級成會自己派工的小組長
 
-> David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 Claude Code 跳船、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。
+> David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 OpenClaw 跳船到 Hermes、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。
 
 **關鍵觀念：**
 - 核心發明：Hermes 內建 skill `delegate-coding-to-claude-code`，當 orchestrator 派 Claude Code 子代理人寫 code，自己負責管理回報推送部署
