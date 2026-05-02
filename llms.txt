@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T05:15:44.346Z
+> 生成時間：2026-05-02T23:17:05.597Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 209 個項目，按發佈日期降序排列。
+共 210 個項目，按發佈日期降序排列。
+
+## RunPod Flash：寫函式，不寫 Dockerfile — 5 頁決策版
+
+> 一個 @Endpoint decorator 把 GPU 部署從 90 分鐘壓到 13 分鐘。零 Dockerfile、冷啟動 ~1 秒、按秒計費。四種架構模式（Queue / Load-balanced / Custom Docker / Existing Endpoints），混合 CPU+GPU 管線自動成本優化。
+
+**關鍵觀念：**
+- RunPod Flash = @Endpoint decorator，寫完函式加一行就能部署到 GPU Serverless，省去整條 Dockerfile→build→push→YAML 90 分鐘流程
+- 冷啟動 ~1 秒 vs 傳統 30–60 秒：依賴預打包掛載到 artifact，不拉整個大映像
+- 混合 CPU+GPU 管線：前處理用便宜 CPU endpoint，推論用 GPU endpoint，Flash 自動路由，成本最優
+- GA 版四種架構模式：Queue-based（批次）/ Load-balanced（低延遲 API）/ Custom Docker（備援）/ Existing Endpoints（Python 客戶端）
+- 適用對象：AI 新創（快速迭代）/ 學生研究員（零 DevOps）/ 企業 AI 團隊（還時間給資料科學家）/ Agent 開發者（不可預測爆發流量）
+
+- [線上版](https://storage.googleapis.com/botrun-slides/runpod-flash-zero-docker.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/runpod-flash-zero-docker.html/llms.txt): 該專案的 llms.txt
+- 類型：決策版 · 5 頁
+- 發佈日期：2026-05-03T07:06:47+08:00
+- 標籤：RunPod Flash、零 Dockerfile、Serverless GPU、13 分鐘部署
 
 ## Modal vs RunPod × Gemma 4 31B — 一張表選對（5 頁）
 

@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T05:15:45.729Z",
-  "total": 135,
+  "generatedAt": "2026-05-02T23:17:06.666Z",
+  "total": 136,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "RunPod Flash：寫函式，不寫 Dockerfile — 5 頁決策版",
+      "date": "2026-05-03T07:06:47+08:00",
+      "content": "一個 @Endpoint decorator 把 GPU 部署從 90 分鐘壓到 13 分鐘。零 Dockerfile、冷啟動 ~1 秒、按秒計費。四種架構模式（Queue / Load-balanced / Custom Docker / Existing Endpoints），混合 CPU+GPU 管線自動成本優化。",
+      "tags": [
+        "決策版 · 5 頁",
+        "RunPod Flash",
+        "零 Dockerfile",
+        "Serverless GPU",
+        "13 分鐘部署"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/runpod-flash-zero-docker.html"
+    },
     {
       "title": "Modal vs RunPod × Gemma 4 31B — 一張表選對（5 頁）",
       "date": "2026-05-02T17:30:00+08:00",
