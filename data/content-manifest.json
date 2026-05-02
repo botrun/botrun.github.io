@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "gemma-chat-local-agent",
+      "title": "gemma-chat：飛機上也能 vibe code，AI 不需要雲的許可",
+      "subtitle": "本地 AI 程式設計代理，Google Gemma 4 驅動，完全在 Mac 上執行。無 API 金鑰、無雲端、無需 Wi-Fi。4 種模型熱切換（E2B 1.5GB → 31B 18GB）、Build Mode 即時預覽、Chat Mode 含工具使用、瀏覽器端 Whisper 語音輸入。763 Stars，MIT License。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma-chat-local-agent.html",
+      "icon": "cpu",
+      "badge": "Local AI · 6 頁",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-03T08:00:00+08:00",
+      "tags": ["cpu:Apple Silicon", "lock:完全離線", "zap:Gemma 4", "code:MLX-LM"],
+      "concepts": [
+        "gemma-chat = Electron + MLX-LM，Gemma 4 跑在本機，程式碼永遠不離開你的 Mac，隱私零洩漏",
+        "Build Mode：描述需求，AI 即時寫出 HTML/CSS/JS，iframe 每 ~450ms 刷新，看著頁面一行行長出來",
+        "XML action 格式（非 JSON）：小模型處理 XML 更可靠，Agent Loop 每輪最多 40 回合",
+        "4 種模型按需選配：E4B ~3GB 推薦入門，31B ~18GB 需 32GB RAM 旗艦級輸出",
+        "首次下載後完全離線：Python venv + MLX runtime 自動配置，之後開機即用"
+      ]
+    },
+    {
       "id": "runpod-flash-zero-docker",
       "title": "RunPod Flash：寫函式，不寫 Dockerfile — 5 頁決策版",
       "subtitle": "一個 @Endpoint decorator 把 GPU 部署從 90 分鐘壓到 13 分鐘。零 Dockerfile、冷啟動 ~1 秒、按秒計費。四種架構模式（Queue / Load-balanced / Custom Docker / Existing Endpoints），混合 CPU+GPU 管線自動成本優化。",

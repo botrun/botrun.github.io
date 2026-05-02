@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T23:17:06.666Z",
-  "total": 136,
+  "generatedAt": "2026-05-02T23:58:59.622Z",
+  "total": 137,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "gemma-chat：飛機上也能 vibe code，AI 不需要雲的許可",
+      "date": "2026-05-03T08:00:00+08:00",
+      "content": "本地 AI 程式設計代理，Google Gemma 4 驅動，完全在 Mac 上執行。無 API 金鑰、無雲端、無需 Wi-Fi。4 種模型熱切換（E2B 1.5GB → 31B 18GB）、Build Mode 即時預覽、Chat Mode 含工具使用、瀏覽器端 Whisper 語音輸入。763 Stars，MIT License。",
+      "tags": [
+        "Local AI · 6 頁",
+        "Apple Silicon",
+        "完全離線",
+        "Gemma 4",
+        "MLX-LM"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/gemma-chat-local-agent.html"
+    },
     {
       "title": "RunPod Flash：寫函式，不寫 Dockerfile — 5 頁決策版",
       "date": "2026-05-03T07:06:47+08:00",
