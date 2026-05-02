@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "ai-evolution-highschool-guide",
+      "title": "人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）",
+      "subtitle": "31B 小模型解題率 22.3% → 70.7%（2.88×）的真實故事。用補習班學弟、考卷打勾打叉、考試當天失常等高中生熟悉比喻講五招，每招附資深工程師細節（蒸餾、SOP Router、Binary Rubric、Best-of-N、L17 校準偏差）。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html",
+      "icon": "graduation-cap",
+      "badge": "方法學 · 8 頁",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-02T12:03:49+08:00",
+      "tags": ["graduation-cap:高中生秒懂", "brain:AI演化", "wrench:工程細節"],
+      "concepts": [
+        "雙層說明法：白話用補習班/學長學弟/考卷打勾比喻，括號內附資深工程師術語（蒸餾/Rubric/Best-of-N）",
+        "大帶小蒸餾：Sonnet 子代理生成 33 題完整 Thought-Action-Observation 軌跡作為 SFT 資料",
+        "SOP Router：外部 regex 對 user input 分流，動態組裝 system prompt，避免提示詞疊加報酬遞減",
+        "Weighted-Binary Rubric：1/0 評分 + error_hint + fix_hint 自動 triage 給下一代 SOP",
+        "L16 模型隨機性：Best-of-N=3 救活 6 題；L17 校準：LLM-as-judge 預測扣 -50pp 才接近 prod"
+      ]
+    },
+    {
       "id": "privacy-filter-taiwan-gov-experiment",
       "title": "Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試",
       "subtitle": "2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。",

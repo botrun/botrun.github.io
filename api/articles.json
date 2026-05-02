@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-01T23:13:07.165Z",
-  "total": 130,
+  "generatedAt": "2026-05-02T04:07:34.951Z",
+  "total": 131,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）",
+      "date": "2026-05-02T12:03:49+08:00",
+      "content": "31B 小模型解題率 22.3% → 70.7%（2.88×）的真實故事。用補習班學弟、考卷打勾打叉、考試當天失常等高中生熟悉比喻講五招，每招附資深工程師細節（蒸餾、SOP Router、Binary Rubric、Best-of-N、L17 校準偏差）。",
+      "tags": [
+        "方法學 · 8 頁",
+        "高中生秒懂",
+        "AI演化",
+        "工程細節"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html"
+    },
     {
       "title": "Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試",
       "date": "2026-05-02T07:09:09+08:00",

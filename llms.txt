@@ -3,10 +3,44 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-01T22:51:25.526Z
+> 生成時間：2026-05-02T04:07:33.960Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 203 個項目，按發佈日期降序排列。
+共 205 個項目，按發佈日期降序排列。
+
+## 人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）
+
+> 31B 小模型解題率 22.3% → 70.7%（2.88×）的真實故事。用補習班學弟、考卷打勾打叉、考試當天失常等高中生熟悉比喻講五招，每招附資深工程師細節（蒸餾、SOP Router、Binary Rubric、Best-of-N、L17 校準偏差）。
+
+**關鍵觀念：**
+- 雙層說明法：白話用補習班/學長學弟/考卷打勾比喻，括號內附資深工程師術語（蒸餾/Rubric/Best-of-N）
+- 大帶小蒸餾：Sonnet 子代理生成 33 題完整 Thought-Action-Observation 軌跡作為 SFT 資料
+- SOP Router：外部 regex 對 user input 分流，動態組裝 system prompt，避免提示詞疊加報酬遞減
+- Weighted-Binary Rubric：1/0 評分 + error_hint + fix_hint 自動 triage 給下一代 SOP
+- L16 模型隨機性：Best-of-N=3 救活 6 題；L17 校準：LLM-as-judge 預測扣 -50pp 才接近 prod
+
+- [線上版](https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html/llms.txt): 該專案的 llms.txt
+- 類型：方法學 · 8 頁
+- 發佈日期：2026-05-02T12:03:49+08:00
+- 標籤：高中生秒懂、AI演化、工程細節
+
+## Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試
+
+> 2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。
+
+**關鍵觀念：**
+- Privacy Filter 1.5B MoE 本地執行，推理僅啟用 50M 參數，Apache 2.0 可商用，單次 Forward Pass 標注全文
+- 電話/Email/身分證號命中率接近 100%；中文人名（冒號後緊接）漏標 ~25%；民國年日期漏標 ~60%；統一編號漏標 ~80%
+- 企業裁罰情境整體漏標率 39%，遠高於個人文件 17.5%，主因：多筆密集排列 Attention 分散 + 統一編號無訓練樣本
+- CPU float32 達 1,802 tok/s；MPS float16 只有 543 tok/s（慢 3.3×）；MLX 無社群 port，CPU 是最快選擇
+- 三層補強配方：Privacy Filter 英數 PII ＋ regex 補民國日期/統一編號 ＋ NER 補中文人名，漏標率可從 39% 降至 <5%
+
+- [線上版](https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html/llms.txt): 該專案的 llms.txt
+- 類型：資安實驗
+- 發佈日期：2026-05-02T07:09:09+08:00
+- 標籤：PII脫敏、本地模型、政府公文、OpenAI開源
 
 ## Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相
 
