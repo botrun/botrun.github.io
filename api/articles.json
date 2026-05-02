@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T04:51:39.278Z",
-  "total": 134,
+  "generatedAt": "2026-05-02T05:15:45.729Z",
+  "total": 135,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Modal vs RunPod × Gemma 4 31B — 一張表選對（5 頁）",
+      "date": "2026-05-02T17:30:00+08:00",
+      "content": "推論用 Modal RTX PRO 6000 + NVFP4，fine-tune 必須用 RunPod Pod。各取所長、不要混用。決策矩陣濃縮 10 條地雷（LM-156~165）：4hr/日自用 RunPod Pod $239、不想煩 Modal $365、Fine-tune QLoRA RunPod $16-24/次、RunPod Serverless 反而比 Modal 貴 32% 別選。含 bh runpod 模組路線圖（推論 + ft 子命令）。",
+      "tags": [
+        "決策版 · 5 頁",
+        "Modal vs RunPod",
+        "Gemma 4 31B",
+        "NVFP4",
+        "Fine-tune"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/modal-vs-runpod-decision.html"
+    },
     {
       "title": "Modal × NVFP4 × Gemma 4 31B — 一張卡跑 256K，省一半",
       "date": "2026-05-02T16:00:00+08:00",

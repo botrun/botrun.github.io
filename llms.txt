@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T04:51:38.413Z
+> 生成時間：2026-05-02T05:15:44.346Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 208 個項目，按發佈日期降序排列。
+共 209 個項目，按發佈日期降序排列。
+
+## Modal vs RunPod × Gemma 4 31B — 一張表選對（5 頁）
+
+> 推論用 Modal RTX PRO 6000 + NVFP4，fine-tune 必須用 RunPod Pod。各取所長、不要混用。決策矩陣濃縮 10 條地雷（LM-156~165）：4hr/日自用 RunPod Pod $239、不想煩 Modal $365、Fine-tune QLoRA RunPod $16-24/次、RunPod Serverless 反而比 Modal 貴 32% 別選。含 bh runpod 模組路線圖（推論 + ft 子命令）。
+
+**關鍵觀念：**
+- 推論主場 = Modal RTX PRO 6000 NVFP4：$3.03/hr 96GB Blackwell + 精度 -0.3% + 吞吐 ~2× FP8 + 256K context
+- Fine-tune 主場 = RunPod Pod：Modal 24hr 上限砍斷訓練、scale-to-zero 反模式，Multi-GPU FSDP 必須 RunPod 原生支援
+- 決策矩陣：偶爾用 NCHC（$30-100）、自律 RunPod Pod（$239）、不想煩 Modal（$365）、Fine-tune QLoRA RunPod（$16-24）
+- RunPod Serverless 別選：$3.99/hr 比 Modal 貴 32%，要 serverless 體驗就直接 Modal
+- RunPod Pod 忘記停 = $1,430/月（24/7 計費），必配 cron auto-stop 或 daemon idle 自殺
+- bh runpod 模組路線：up/down/chat/cost + ft start/logs/download，推論 + 訓練 lifecycle 一個 CLI 搞定
+
+- [線上版](https://storage.googleapis.com/botrun-slides/modal-vs-runpod-decision.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/modal-vs-runpod-decision.html/llms.txt): 該專案的 llms.txt
+- 類型：決策版 · 5 頁
+- 發佈日期：2026-05-02T17:30:00+08:00
+- 標籤：Modal vs RunPod、Gemma 4 31B、NVFP4、Fine-tune
 
 ## Modal × NVFP4 × Gemma 4 31B — 一張卡跑 256K，省一半
 
