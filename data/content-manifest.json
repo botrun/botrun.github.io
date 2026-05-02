@@ -1,9 +1,28 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-02T12:40:00+08:00"
+    "lastUpdated": "2026-05-02T16:00:00+08:00"
   },
   "items": [
+    {
+      "id": "modal-nvfp4-gemma-31b",
+      "title": "Modal × NVFP4 × Gemma 4 31B — 一張卡跑 256K，省一半",
+      "subtitle": "OpenRouter 的 Gemma 31B 是隨機抽獎，自架才穩。2026 正解 = Modal RTX PRO 6000 Blackwell（96GB, $3.03/hr）+ NVIDIA 校準版 nvidia/Gemma-4-31B-IT-NVFP4 + vLLM 0.7。精度損失 < 0.3%（NVIDIA 官方 6 個 benchmark）、吞吐 ~2× H100 FP8、~$0.4/1M tokens。50 行 Python 部署、scale-to-zero、256K context 直接跑。含 GPU 性價比表、micro-block scaling 原理、致命警告（不要自己量化 BF16→FP4）、完整成本對比。",
+      "href": "https://storage.googleapis.com/botrun-slides/modal-nvfp4-gemma-31b.html",
+      "icon": "cpu",
+      "badge": "技術方案 · 10 頁",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-05-02T16:00:00+08:00",
+      "tags": ["cpu:Modal Serverless", "zap:NVFP4 量化", "gpu:RTX PRO 6000", "dollar-sign:省一半成本"],
+      "concepts": [
+        "Modal RTX PRO 6000 Blackwell 96GB @ $3.03/hr 是 31B+256K 甜蜜點，比 H100 多 16GB、便宜 23%，原生 FP4 tensor core",
+        "NVFP4 vs BF16 精度損失 < 0.5%（NVIDIA 官方 model card 6 個 benchmark：GPQA -0.25%、MMLU Pro -0.31%、Terminal-Bench 0%）",
+        "Micro-block scaling 是 NVFP4 秘密武器：每 16 個 weight 配獨立 FP8 scale，outlier 不污染全局，誤差鎖在小區塊",
+        "致命警告：不要自己 BF16→FP4 動態量化（精度掉 2-5%），務必直接用 nvidia/Gemma-4-31B-IT-NVFP4 校準版",
+        "vLLM ≥ 0.7 + Blackwell 才有 native FP4 加速，H100/H200 跑 NVFP4 會 dequantize 到 FP8（吞吐沒加成、精度仍保留）",
+        "成本決策樹：能用 NCHC（$0.021/1M）就用 NCHC、配額不夠或要海外服務就 Modal NVFP4（$0.4/1M）、量超大才自架 H100"
+      ]
+    },
     {
       "id": "peter-steinberger-openclaw-ted",
       "title": "龍蝦放出來了，回不去了 — Peter Steinberger TED 演講仔細版",

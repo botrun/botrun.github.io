@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T04:46:24.088Z
+> 生成時間：2026-05-02T04:51:38.413Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 207 個項目，按發佈日期降序排列。
+共 208 個項目，按發佈日期降序排列。
+
+## Modal × NVFP4 × Gemma 4 31B — 一張卡跑 256K，省一半
+
+> OpenRouter 的 Gemma 31B 是隨機抽獎，自架才穩。2026 正解 = Modal RTX PRO 6000 Blackwell（96GB, $3.03/hr）+ NVIDIA 校準版 nvidia/Gemma-4-31B-IT-NVFP4 + vLLM 0.7。精度損失 < 0.3%（NVIDIA 官方 6 個 benchmark）、吞吐 ~2× H100 FP8、~$0.4/1M tokens。50 行 Python 部署、scale-to-zero、256K context 直接跑。含 GPU 性價比表、micro-block scaling 原理、致命警告（不要自己量化 BF16→FP4）、完整成本對比。
+
+**關鍵觀念：**
+- Modal RTX PRO 6000 Blackwell 96GB @ $3.03/hr 是 31B+256K 甜蜜點，比 H100 多 16GB、便宜 23%，原生 FP4 tensor core
+- NVFP4 vs BF16 精度損失 < 0.5%（NVIDIA 官方 model card 6 個 benchmark：GPQA -0.25%、MMLU Pro -0.31%、Terminal-Bench 0%）
+- Micro-block scaling 是 NVFP4 秘密武器：每 16 個 weight 配獨立 FP8 scale，outlier 不污染全局，誤差鎖在小區塊
+- 致命警告：不要自己 BF16→FP4 動態量化（精度掉 2-5%），務必直接用 nvidia/Gemma-4-31B-IT-NVFP4 校準版
+- vLLM ≥ 0.7 + Blackwell 才有 native FP4 加速，H100/H200 跑 NVFP4 會 dequantize 到 FP8（吞吐沒加成、精度仍保留）
+- 成本決策樹：能用 NCHC（$0.021/1M）就用 NCHC、配額不夠或要海外服務就 Modal NVFP4（$0.4/1M）、量超大才自架 H100
+
+- [線上版](https://storage.googleapis.com/botrun-slides/modal-nvfp4-gemma-31b.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/modal-nvfp4-gemma-31b.html/llms.txt): 該專案的 llms.txt
+- 類型：技術方案 · 10 頁
+- 發佈日期：2026-05-02T16:00:00+08:00
+- 標籤：Modal Serverless、NVFP4 量化、RTX PRO 6000、省一半成本
 
 ## 龍蝦放出來了，回不去了 — Peter Steinberger TED 演講仔細版
 
