@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-01T20:55:55+08:00"
+    "lastUpdated": "2026-05-02T12:25:00+08:00"
   },
   "items": [
+    {
+      "id": "hermes-claude-code-10x-david-ondrej",
+      "title": "Hermes 把 Claude Code 升級成會自己派工的小組長",
+      "subtitle": "David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 Claude Code 跳船、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-claude-code-10x-david-ondrej.html",
+      "icon": "play-circle",
+      "badge": "影片精華 · 13 頁",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-02T12:25:00+08:00",
+      "tags": ["play-circle:影片精華", "robot:Hermes Agent", "code:Claude Code", "shield:Token 地雷"],
+      "concepts": [
+        "核心發明：Hermes 內建 skill `delegate-coding-to-claude-code`，當 orchestrator 派 Claude Code 子代理人寫 code，自己負責管理回報推送部署",
+        "完整鏈路：Discord 語音 → VPS 上 Hermes → Claude Code subagent → git push → Vercel webhook → 30~40 秒公開上線",
+        "唯一安全地雷：GitHub PAT 絕不可貼到 chat（會經 OpenRouter→Anthropic API log），必用 `hermes config set GITHUB_TOKEN ...` 存進 .env",
+        "self-improving loop 具體展現：Hermes 學到使用者喜歡 cron 60 秒回報之後下次自動加上，不用再說",
+        "對照本案：horse=skill 系統、hermes=orchestrator、hippo=單 Docker 整包；同架構不同 trust boundary（消費級 Vercel vs 機關級 IAP+H200）"
+      ]
+    },
     {
       "id": "ai-evolution-highschool-guide",
       "title": "人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）",

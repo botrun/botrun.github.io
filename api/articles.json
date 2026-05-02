@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T04:07:34.951Z",
-  "total": 131,
+  "generatedAt": "2026-05-02T04:27:45.235Z",
+  "total": 132,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Hermes 把 Claude Code 升級成會自己派工的小組長",
+      "date": "2026-05-02T12:25:00+08:00",
+      "content": "David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 Claude Code 跳船、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。",
+      "tags": [
+        "影片精華 · 13 頁",
+        "影片精華",
+        "Hermes Agent",
+        "Claude Code",
+        "Token 地雷"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/hermes-claude-code-10x-david-ondrej.html"
+    },
     {
       "title": "人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）",
       "date": "2026-05-02T12:03:49+08:00",
