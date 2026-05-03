@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-02T23:58:58.839Z
+> 生成時間：2026-05-03T00:13:01.701Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 211 個項目，按發佈日期降序排列。
+共 212 個項目，按發佈日期降序排列。
+
+## 訓練前沿小型模型：六堂血淚心得
+
+> Liquid AI 前訓練主管 Maxime Labonne 的深度分享。63% 參數在浪費？28 兆 tokens 餵 3.5 億參數、死亡迴圈從 15% 砍到趨近於零、Short Conv 比 Attention 快 5 倍、Agentic 工具讓小模型超越記憶限制。Edge Model 是獨立物種，不是縮水大模型。
+
+**關鍵觀念：**
+- 嵌入層吃掉 Gemma 3 270M 的 63% 參數，LFM 2 壓到 10%，讓 90% 參數真正做推理
+- Short convolution 在實機（手機/車機）比 sliding window attention 快 5×，on-device profiling 比理論計算更有用
+- 350M 模型訓 28 兆 tokens 仍持續進步，Chinchilla 是計算最佳點不是性能天花板
+- 死亡迴圈：小模型+推理+複雜任務三合一套餐；DPO 多樣 rollout + RL 可驗證獎勵三步解法
+- Agentic 工具（網路搜尋、Python 執行）讓小模型超越記憶限制，是目前最被低估的組合
+
+- [線上版](https://storage.googleapis.com/botrun-slides/small-model-training-lessons.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/small-model-training-lessons.html/llms.txt): 該專案的 llms.txt
+- 類型：Edge LLM · 6 頁
+- 發佈日期：2026-05-03T08:10:00+08:00
+- 標籤：Liquid AI、LFM 2.5、Edge Model、前訓練心得
 
 ## gemma-chat：飛機上也能 vibe code，AI 不需要雲的許可
 

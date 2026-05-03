@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-02T23:58:59.622Z",
-  "total": 137,
+  "generatedAt": "2026-05-03T00:13:02.563Z",
+  "total": 138,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "訓練前沿小型模型：六堂血淚心得",
+      "date": "2026-05-03T08:10:00+08:00",
+      "content": "Liquid AI 前訓練主管 Maxime Labonne 的深度分享。63% 參數在浪費？28 兆 tokens 餵 3.5 億參數、死亡迴圈從 15% 砍到趨近於零、Short Conv 比 Attention 快 5 倍、Agentic 工具讓小模型超越記憶限制。Edge Model 是獨立物種，不是縮水大模型。",
+      "tags": [
+        "Edge LLM · 6 頁",
+        "Liquid AI",
+        "LFM 2.5",
+        "Edge Model",
+        "前訓練心得"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/small-model-training-lessons.html"
+    },
     {
       "title": "gemma-chat：飛機上也能 vibe code，AI 不需要雲的許可",
       "date": "2026-05-03T08:00:00+08:00",
