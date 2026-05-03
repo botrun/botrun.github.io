@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-03T01:23:54.250Z
+> 生成時間：2026-05-03T08:30:41.555Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 215 個項目，按發佈日期降序排列。
+共 216 個項目，按發佈日期降序排列。
+
+## 生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析
+
+> Yann LeCun 押注 JEPA 對抗生成式 AI 主流。為什麼 LLM 一定模糊？為什麼智慧不需要重建像素？從暹羅網路→Barlow Twins→DINO→JEPA，四代架構一條通往世界模型的路，5 頁矽谷流完全解析。
+
+**關鍵觀念：**
+- 生成式 AI 模糊的根本原因：預測像素需平均所有可能，越不確定越模糊，是架構缺陷非算力問題
+- 智慧蛋糕三層：自監督學習（底）+ 監督式學習（體）+ 強化學習（頂薄薄一層）
+- 四代自監督架構：暹羅網路表徵崩塌 → Barlow Twins 去相關 → DINO 語義嵌入 → JEPA 抽象預測
+- DINO 實績：ImageNet 88.6% 無標籤，輸出嵌入向量直接分割狗/椅子/草地，零人工標籤
+- JEPA 核心翻轉：在嵌入空間預測抽象表徵，不重建像素，天生不模糊，可規劃多步行動
+
+- [線上版](https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html/llms.txt): 該專案的 llms.txt
+- 類型：技術解析
+- 發佈日期：2026-05-03T10:30:00+08:00
+- 標籤：JEPA 世界模型、自監督學習、表徵進化史
 
 ## Vibe Coding in Prod｜22,000 行，一天寫完
 

@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "jepa-vs-generative-ai",
+      "title": "生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析",
+      "subtitle": "Yann LeCun 押注 JEPA 對抗生成式 AI 主流。為什麼 LLM 一定模糊？為什麼智慧不需要重建像素？從暹羅網路→Barlow Twins→DINO→JEPA，四代架構一條通往世界模型的路，5 頁矽谷流完全解析。",
+      "href": "https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html",
+      "icon": "cpu",
+      "badge": "技術解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-03T10:30:00+08:00",
+      "tags": ["brain:JEPA 世界模型", "zap:自監督學習", "layers:表徵進化史"],
+      "concepts": [
+        "生成式 AI 模糊的根本原因：預測像素需平均所有可能，越不確定越模糊，是架構缺陷非算力問題",
+        "智慧蛋糕三層：自監督學習（底）+ 監督式學習（體）+ 強化學習（頂薄薄一層）",
+        "四代自監督架構：暹羅網路表徵崩塌 → Barlow Twins 去相關 → DINO 語義嵌入 → JEPA 抽象預測",
+        "DINO 實績：ImageNet 88.6% 無標籤，輸出嵌入向量直接分割狗/椅子/草地，零人工標籤",
+        "JEPA 核心翻轉：在嵌入空間預測抽象表徵，不重建像素，天生不模糊，可規劃多步行動"
+      ]
+    },
+    {
       "id": "vibe-coding-in-prod",
       "title": "Vibe Coding in Prod｜22,000 行，一天寫完",
       "subtitle": "Anthropic 工程師在生產環境強化學習系統合併了一個主要由 Claude 撰寫的 22,000 行 PR，兩週工作量壓縮成一天。5 頁矽谷流簡報拆解正確的 Vibe Coding 方法論：你是 Claude 的 PM，不是用戶。",

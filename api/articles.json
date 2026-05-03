@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-03T01:23:58.945Z",
-  "total": 141,
+  "generatedAt": "2026-05-03T08:30:46.197Z",
+  "total": 142,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析",
+      "date": "2026-05-03T10:30:00+08:00",
+      "content": "Yann LeCun 押注 JEPA 對抗生成式 AI 主流。為什麼 LLM 一定模糊？為什麼智慧不需要重建像素？從暹羅網路→Barlow Twins→DINO→JEPA，四代架構一條通往世界模型的路，5 頁矽谷流完全解析。",
+      "tags": [
+        "技術解析",
+        "JEPA 世界模型",
+        "自監督學習",
+        "表徵進化史"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html"
+    },
     {
       "title": "Vibe Coding in Prod｜22,000 行，一天寫完",
       "date": "2026-05-03T09:20:54+08:00",
