@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-03T00:13:02.563Z",
-  "total": 138,
+  "generatedAt": "2026-05-03T00:29:51.160Z",
+  "total": 139,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "LPM 1.0：虛擬角色從「對嘴」到「真正表演」",
+      "date": "2026-05-03T08:30:00+08:00",
+      "content": "米哈游旗下 AI 公司 Anuttacon 研發。全球首個破解「表演三難困境」的視訊生成模型：17B 參數 Base LPM、交錯雙音軌架構、3,100 萬訓練片段（保留率 <10%）、因果骨幹 + 精煉器 DMD 蒸餾，單 GPU 0.35 秒/塊達 24fps 實時串流。Base LPM 人類偏好率 64.3% vs Kling-Avatar-2 24.4%，Online LPM 82.5% vs LiveAvatar 12.5%。",
+      "tags": [
+        "虛擬角色 · 6 頁",
+        "Anuttacon",
+        "LPM 1.0",
+        "17B DiT",
+        "表演三難困境"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/lpm-virtual-character-engine.html"
+    },
     {
       "title": "訓練前沿小型模型：六堂血淚心得",
       "date": "2026-05-03T08:10:00+08:00",

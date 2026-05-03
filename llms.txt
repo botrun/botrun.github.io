@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-03T00:13:01.701Z
+> 生成時間：2026-05-03T00:29:50.421Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 212 個項目，按發佈日期降序排列。
+共 213 個項目，按發佈日期降序排列。
+
+## LPM 1.0：虛擬角色從「對嘴」到「真正表演」
+
+> 米哈游旗下 AI 公司 Anuttacon 研發。全球首個破解「表演三難困境」的視訊生成模型：17B 參數 Base LPM、交錯雙音軌架構、3,100 萬訓練片段（保留率 <10%）、因果骨幹 + 精煉器 DMD 蒸餾，單 GPU 0.35 秒/塊達 24fps 實時串流。Base LPM 人類偏好率 64.3% vs Kling-Avatar-2 24.4%，Online LPM 82.5% vs LiveAvatar 12.5%。
+
+**關鍵觀念：**
+- 表演三難困境：高表現力 × 實時推理 × 長時身份穩定，LPM 1.0 首次系統性解決
+- 交錯式雙音頻注入：說話音頻走偶數層、傾聽音頻走奇數層，計算量 -50% 且梯度不衝突
+- 三類型多粒度參考圖：全局外觀 + 四方位身體 + 8 種表情，10 分鐘無身份漂移
+- 因果骨幹 DiT（2 步）+ 因果精煉器 DiT（1 步）DMD 蒸餾，0.35 秒/塊實時 24fps
+- LPM-Bench：全球首個交互式角色表演基準，1000 案例 × 4 評估維度 × 10% 長時測試
+
+- [線上版](https://storage.googleapis.com/botrun-slides/lpm-virtual-character-engine.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/lpm-virtual-character-engine.html/llms.txt): 該專案的 llms.txt
+- 類型：虛擬角色 · 6 頁
+- 發佈日期：2026-05-03T08:30:00+08:00
+- 標籤：Anuttacon、LPM 1.0、17B DiT、表演三難困境
 
 ## 訓練前沿小型模型：六堂血淚心得
 
