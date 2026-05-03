@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-03T08:30:46.197Z",
-  "total": 142,
+  "generatedAt": "2026-05-03T08:34:37.240Z",
+  "total": 143,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Agent Harness 十二大模組徹底剖析｜七大架構抉擇",
+      "date": "2026-05-03T16:30:00+08:00",
+      "content": "Anthropic、OpenAI、LangGraph 三巨頭路線分歧完整對比。同一模型只換框架，TerminalBench 2.0 排名從第 30 外躍升第 5。5 頁矽谷流解析十二大模組、七大架構抉擇、L1→L5 漸進路線。",
+      "tags": [
+        "架構剖析",
+        "十二大模組",
+        "七大架構抉擇",
+        "框架工程"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html"
+    },
     {
       "title": "生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析",
       "date": "2026-05-03T10:30:00+08:00",

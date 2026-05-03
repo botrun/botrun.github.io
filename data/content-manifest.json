@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-02T17:30:00+08:00"
+    "lastUpdated": "2026-05-03T16:30:00+08:00"
   },
   "items": [
+    {
+      "id": "agent-harness-12modules",
+      "title": "Agent Harness 十二大模組徹底剖析｜七大架構抉擇",
+      "subtitle": "Anthropic、OpenAI、LangGraph 三巨頭路線分歧完整對比。同一模型只換框架，TerminalBench 2.0 排名從第 30 外躍升第 5。5 頁矽谷流解析十二大模組、七大架構抉擇、L1→L5 漸進路線。",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html",
+      "icon": "cpu",
+      "badge": "架構剖析",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-03T16:30:00+08:00",
+      "tags": [
+        "layers:十二大模組",
+        "git-branch:七大架構抉擇",
+        "zap:框架工程"
+      ],
+      "concepts": [
+        "護城河從模型轉向環境：同一 LLM 只換 Harness，TerminalBench 2.0 排名從第 30 外躍升第 5",
+        "三代範式：提示詞工程(2022)→情境工程(2025)→框架工程(2026)，Harness = 作業系統",
+        "十二大模組：編排迴圈/工具/記憶/上下文/提示建構/輸出解析/狀態/錯誤/護欄/驗證/子代理/可觀測性",
+        "七大架構抉擇對比：Anthropic 薄框架MCP、OpenAI 零信任沙箱、LangGraph 狀態圖3.6×加速",
+        "L1→L5 漸進路線：今天 30 分鐘建 AGENTS.md 起步，逐步到可觀測性自我優化護城河"
+      ]
+    },
     {
       "id": "jepa-vs-generative-ai",
       "title": "生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析",
@@ -13,7 +35,11 @@
       "badge": "技術解析",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-03T10:30:00+08:00",
-      "tags": ["brain:JEPA 世界模型", "zap:自監督學習", "layers:表徵進化史"],
+      "tags": [
+        "brain:JEPA 世界模型",
+        "zap:自監督學習",
+        "layers:表徵進化史"
+      ],
       "concepts": [
         "生成式 AI 模糊的根本原因：預測像素需平均所有可能，越不確定越模糊，是架構缺陷非算力問題",
         "智慧蛋糕三層：自監督學習（底）+ 監督式學習（體）+ 強化學習（頂薄薄一層）",
@@ -31,7 +57,11 @@
       "badge": "方法論",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-03T09:20:54+08:00",
-      "tags": ["zap:AI 編程", "layers:葉節點策略", "check-circle:可驗證檢查點"],
+      "tags": [
+        "zap:AI 編程",
+        "layers:葉節點策略",
+        "check-circle:可驗證檢查點"
+      ],
       "concepts": [
         "核心翻轉：忘記程式碼但記住產品，開發者角色從「寫程式的人」切換成「Claude 的 PM」",
         "22,000 行 PR 一天合併：Anthropic 強化學習系統實際案例，14 倍時間壓縮",
@@ -49,7 +79,12 @@
       "badge": "方法論 · 5 頁",
       "badgeColor": "#e8634a",
       "publishDate": "2026-05-03T09:00:00+08:00",
-      "tags": ["target:高品味題庫", "bar-chart:排行榜", "seedling:孵化知己", "repeat:飛輪"],
+      "tags": [
+        "target:高品味題庫",
+        "bar-chart:排行榜",
+        "seedling:孵化知己",
+        "repeat:飛輪"
+      ],
       "concepts": [
         "高品味飛輪：三個齒輪互相強化，越轉越快停不下來",
         "001 高品味題庫：真實多跳推理 × 機敏到合成 × 人都會錯",
@@ -66,7 +101,12 @@
       "badge": "虛擬角色 · 6 頁",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-03T08:30:00+08:00",
-      "tags": ["cpu:Anuttacon", "zap:LPM 1.0", "video:17B DiT", "shield:表演三難困境"],
+      "tags": [
+        "cpu:Anuttacon",
+        "zap:LPM 1.0",
+        "video:17B DiT",
+        "shield:表演三難困境"
+      ],
       "concepts": [
         "表演三難困境：高表現力 × 實時推理 × 長時身份穩定，LPM 1.0 首次系統性解決",
         "交錯式雙音頻注入：說話音頻走偶數層、傾聽音頻走奇數層，計算量 -50% 且梯度不衝突",
@@ -84,7 +124,12 @@
       "badge": "Edge LLM · 6 頁",
       "badgeColor": "#e8634a",
       "publishDate": "2026-05-03T08:10:00+08:00",
-      "tags": ["cpu:Liquid AI", "zap:LFM 2.5", "code:Edge Model", "shield:前訓練心得"],
+      "tags": [
+        "cpu:Liquid AI",
+        "zap:LFM 2.5",
+        "code:Edge Model",
+        "shield:前訓練心得"
+      ],
       "concepts": [
         "嵌入層吃掉 Gemma 3 270M 的 63% 參數，LFM 2 壓到 10%，讓 90% 參數真正做推理",
         "Short convolution 在實機（手機/車機）比 sliding window attention 快 5×，on-device profiling 比理論計算更有用",
@@ -102,7 +147,12 @@
       "badge": "Local AI · 6 頁",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-03T08:00:00+08:00",
-      "tags": ["cpu:Apple Silicon", "lock:完全離線", "zap:Gemma 4", "code:MLX-LM"],
+      "tags": [
+        "cpu:Apple Silicon",
+        "lock:完全離線",
+        "zap:Gemma 4",
+        "code:MLX-LM"
+      ],
       "concepts": [
         "gemma-chat = Electron + MLX-LM，Gemma 4 跑在本機，程式碼永遠不離開你的 Mac，隱私零洩漏",
         "Build Mode：描述需求，AI 即時寫出 HTML/CSS/JS，iframe 每 ~450ms 刷新，看著頁面一行行長出來",
@@ -120,7 +170,12 @@
       "badge": "決策版 · 5 頁",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-03T07:06:47+08:00",
-      "tags": ["zap:RunPod Flash", "cpu:零 Dockerfile", "server:Serverless GPU", "clock:13 分鐘部署"],
+      "tags": [
+        "zap:RunPod Flash",
+        "cpu:零 Dockerfile",
+        "server:Serverless GPU",
+        "clock:13 分鐘部署"
+      ],
       "concepts": [
         "RunPod Flash = @Endpoint decorator，寫完函式加一行就能部署到 GPU Serverless，省去整條 Dockerfile→build→push→YAML 90 分鐘流程",
         "冷啟動 ~1 秒 vs 傳統 30–60 秒：依賴預打包掛載到 artifact，不拉整個大映像",
@@ -138,7 +193,12 @@
       "badge": "決策版 · 5 頁",
       "badgeColor": "#3b6fa0",
       "publishDate": "2026-05-02T17:30:00+08:00",
-      "tags": ["git-compare:Modal vs RunPod", "cpu:Gemma 4 31B", "zap:NVFP4", "wrench:Fine-tune"],
+      "tags": [
+        "git-compare:Modal vs RunPod",
+        "cpu:Gemma 4 31B",
+        "zap:NVFP4",
+        "wrench:Fine-tune"
+      ],
       "concepts": [
         "推論主場 = Modal RTX PRO 6000 NVFP4：$3.03/hr 96GB Blackwell + 精度 -0.3% + 吞吐 ~2× FP8 + 256K context",
         "Fine-tune 主場 = RunPod Pod：Modal 24hr 上限砍斷訓練、scale-to-zero 反模式，Multi-GPU FSDP 必須 RunPod 原生支援",
@@ -157,7 +217,12 @@
       "badge": "技術方案 · 10 頁",
       "badgeColor": "#3b6fa0",
       "publishDate": "2026-05-02T16:00:00+08:00",
-      "tags": ["cpu:Modal Serverless", "zap:NVFP4 量化", "gpu:RTX PRO 6000", "dollar-sign:省一半成本"],
+      "tags": [
+        "cpu:Modal Serverless",
+        "zap:NVFP4 量化",
+        "gpu:RTX PRO 6000",
+        "dollar-sign:省一半成本"
+      ],
       "concepts": [
         "Modal RTX PRO 6000 Blackwell 96GB @ $3.03/hr 是 31B+256K 甜蜜點，比 H100 多 16GB、便宜 23%，原生 FP4 tensor core",
         "NVFP4 vs BF16 精度損失 < 0.5%（NVIDIA 官方 model card 6 個 benchmark：GPQA -0.25%、MMLU Pro -0.31%、Terminal-Bench 0%）",
@@ -176,7 +241,12 @@
       "badge": "TED 精華 · 13 頁",
       "badgeColor": "#b5454a",
       "publishDate": "2026-05-02T12:40:00+08:00",
-      "tags": ["play-circle:TED 演講", "robot:OpenClaw", "lightbulb:agents-improvise", "heart:創辦人原話"],
+      "tags": [
+        "play-circle:TED 演講",
+        "robot:OpenClaw",
+        "lightbulb:agents-improvise",
+        "heart:創辦人原話"
+      ],
       "concepts": [
         "賣公司後三年憂鬱、2025 早期 holy shit moment：boilerplate / plumbing AI 全包、瓶頸不再是打字是思考、25 年經驗第一次有真正槓桿",
         "Marrakesh 9 秒語音救援：agent 自己 inspect 檔案 → convert 格式 → 找 OpenAI key 翻譯，全程 9 秒，Peter 從沒寫過語音支援",
@@ -194,7 +264,12 @@
       "badge": "影片精華 · 13 頁",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-02T12:25:00+08:00",
-      "tags": ["play-circle:影片精華", "robot:Hermes Agent", "code:Claude Code", "shield:Token 地雷"],
+      "tags": [
+        "play-circle:影片精華",
+        "robot:Hermes Agent",
+        "code:Claude Code",
+        "shield:Token 地雷"
+      ],
       "concepts": [
         "核心發明：Hermes 內建 skill `delegate-coding-to-claude-code`，當 orchestrator 派 Claude Code 子代理人寫 code，自己負責管理回報推送部署",
         "完整鏈路：Discord 語音 → VPS 上 Hermes → Claude Code subagent → git push → Vercel webhook → 30~40 秒公開上線",
@@ -212,7 +287,11 @@
       "badge": "方法學 · 8 頁",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-02T12:03:49+08:00",
-      "tags": ["graduation-cap:高中生秒懂", "brain:AI演化", "wrench:工程細節"],
+      "tags": [
+        "graduation-cap:高中生秒懂",
+        "brain:AI演化",
+        "wrench:工程細節"
+      ],
       "concepts": [
         "雙層說明法：白話用補習班/學長學弟/考卷打勾比喻，括號內附資深工程師術語（蒸餾/Rubric/Best-of-N）",
         "大帶小蒸餾：Sonnet 子代理生成 33 題完整 Thought-Action-Observation 軌跡作為 SFT 資料",
@@ -230,7 +309,12 @@
       "badge": "資安實驗",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-02T07:09:09+08:00",
-      "tags": ["shield:PII脫敏", "cpu:本地模型", "file-text:政府公文", "zap:OpenAI開源"],
+      "tags": [
+        "shield:PII脫敏",
+        "cpu:本地模型",
+        "file-text:政府公文",
+        "zap:OpenAI開源"
+      ],
       "concepts": [
         "Privacy Filter 1.5B MoE 本地執行，推理僅啟用 50M 參數，Apache 2.0 可商用，單次 Forward Pass 標注全文",
         "電話/Email/身分證號命中率接近 100%；中文人名（冒號後緊接）漏標 ~25%；民國年日期漏標 ~60%；統一編號漏標 ~80%",
@@ -248,7 +332,12 @@
       "badge": "工具實戰",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-02T06:47:23+08:00",
-      "tags": ["cpu:本地模型", "shield:隱私", "zap:Claude Code", "tool:LM Studio"],
+      "tags": [
+        "cpu:本地模型",
+        "shield:隱私",
+        "zap:Claude Code",
+        "tool:LM Studio"
+      ],
       "concepts": [
         "Anthropic 靜悄悄支援 local model：2026年1月 Ollama v0.14 + LM Studio v0.4.1 主動靠攏 /v1/messages 格式，無官方公告",
         "KV cache 關鍵地雷：CLAUDE_CODE_ATTRIBUTION_HEADER=0 必須放 settings.json（非 shell export），否則 prefill 慢 10 倍",
@@ -266,7 +355,11 @@
       "badge": "方法學 · 9 頁簡報",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-01T20:55:55+08:00",
-      "tags": ["target:精準度聖經", "zap:RAFS", "book:方法學"],
+      "tags": [
+        "target:精準度聖經",
+        "zap:RAFS",
+        "book:方法學"
+      ],
       "concepts": [
         "核心哲學 Few-Shot First, Fine-Tune Last：先用範例餵模型逼到最高分；準度還不夠才考慮訓練",
         "Day 1 打地基：Specification Anchoring（規格鐵律）+ Gold Seed Annotation（30 筆黃金種子）+ Holdout Split（留考試題）",
@@ -284,7 +377,11 @@
       "badge": "經驗紀錄 · 3 頁簡報",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-01T20:09:18+08:00",
-      "tags": ["alert-triangle:微調踩雷", "cpu:Gemma 4 26B", "zap:RAFS"],
+      "tags": [
+        "alert-triangle:微調踩雷",
+        "cpu:Gemma 4 26B",
+        "zap:RAFS"
+      ],
       "concepts": [
         "終極勝出 = 26B 4-bit + RAFS 動態 2-shot：F1 0.980 / Recall 0.99 / 漏標率 0.6% / 73% 樣本完美 1.00 / M4 Max 60-80 tok/s",
         "微調 13 道陰影：mlx-lm 不認多模態、PEFT 撞 ClippableLinear、ScaledLinear 4-bit 量化崩、Tied Embeddings 讓 lm_head 學不到 emoji、解凍 embed 過擬合災難",
@@ -302,7 +399,11 @@
       "badge": "邊緣 AI · 7 頁簡報",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-01T12:06:38+08:00",
-      "tags": ["shield:PII 標註", "cpu:Gemma 4", "zap:Few-shot"],
+      "tags": [
+        "shield:PII 標註",
+        "cpu:Gemma 4",
+        "zap:Few-shot"
+      ],
       "concepts": [
         "三大微調踩坑：mlx-lm 不支援 MatFormer 多模態架構、4-bit 量化讓 PLE×ScaledLinear 反向傳播誤差爆炸、Emoji Token ID 250000+ 在 LoRA 沒含 lm_head 時學不會",
         "k-shot × 模型實測：E2B 4-bit k=5 F1=0.67、E2B bf16 k=3 F1=0.83、26B 4-bit k=2 F1=0.93（最佳 CP）、31B 8-bit k=2 F1=0.96 但 10.7 tok/s 太慢",
@@ -321,7 +422,11 @@
       "badgeColor": "#2d6a5a",
       "protected": true,
       "publishDate": "2026-04-29T17:57:00+08:00",
-      "tags": ["compass:輿情監測", "filter:Binary Rubric", "layers:三色燈"],
+      "tags": [
+        "compass:輿情監測",
+        "filter:Binary Rubric",
+        "layers:三色燈"
+      ],
       "concepts": [
         "5 大痛點原文引證：花時間沒效果、人工再回社群、媒體報才知道、別人告訴才知道、解法資料沒備齊",
         "Binary Rubric 25 條總分 100 分：S 級 5×8 + A 級 10×4 + B 級 10×2，提煉自過去 6 個月部長有回應的 15 題真實事件",
@@ -339,7 +444,11 @@
       "badge": "Playwright CLI · 5 頁簡報",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-04-29T08:38:49+08:00",
-      "tags": ["zap:Playwright CLI", "cpu:輿情爬蟲", "layers:社群監測"],
+      "tags": [
+        "zap:Playwright CLI",
+        "cpu:輿情爬蟲",
+        "layers:社群監測"
+      ],
       "concepts": [
         "Copy-Paste Prompt：5 步驟（001~005）一鍵複製貼到 Claude Code/Cursor，AI 引導你完成全流程",
         "有頭模式登入：playwright-cli --headed --persistent，使用者親手輸入帳密+2FA，密碼不交給 AI",
@@ -357,7 +466,11 @@
       "badge": "Google Cloud AI · 8 頁簡報",
       "badgeColor": "#1a73e8",
       "publishDate": "2026-04-28T07:33:12+08:00",
-      "tags": ["cloud:Google Cloud", "cpu:多代理", "zap:Deep Research"],
+      "tags": [
+        "cloud:Google Cloud",
+        "cpu:多代理",
+        "zap:Deep Research"
+      ],
       "concepts": [
         "Deep Research Agent：全 Benchmark 榜首，跨模態連接定量與定性數據，已在製藥/金融領域落地",
         "CX Agent Studio：YouTube TV 客服 6 週從零到生產，視覺化多代理流程 + 自然語言業務邏輯",
@@ -374,7 +487,11 @@
       "badge": "AI 開發工作流 · 10 頁簡報",
       "badgeColor": "#0d9488",
       "publishDate": "2026-04-28T07:19:30+08:00",
-      "tags": ["cpu:AI 工程", "zap:TDD", "layers:架構設計"],
+      "tags": [
+        "cpu:AI 工程",
+        "zap:TDD",
+        "layers:架構設計"
+      ],
       "concepts": [
         "Smart Zone / Dumb Zone：LLM 約 100K tokens 後品質驟降，任務切小、隨時 Clear 是基本功",
         "Grill Me 技能：讓 AI 逼問你 40 個問題並給推薦答案，比你自己寫 PRD 更快達到共同理解",
@@ -393,7 +510,11 @@
       "badgeColor": "#e8634a",
       "protected": true,
       "publishDate": "2026-04-25T09:49:49+08:00",
-      "tags": ["shield:資安", "cpu:Docker", "zap:AI 地端"],
+      "tags": [
+        "shield:資安",
+        "cpu:Docker",
+        "zap:AI 地端"
+      ],
       "concepts": [
         "機敏容器 --network none：OS 層級強制斷網，即使程式碼寫錯也無法對外連線，不靠人的自律",
         "PII 閘門是程式碼不是規定：50 行 regex 腳本掃描 YAML，偵測到個資整條 pipeline 自動中止",
@@ -411,7 +532,13 @@
       "badge": "AI 工程 · 7 頁簡報",
       "badgeColor": "#0d9488",
       "publishDate": "2026-04-25T12:00:00+08:00",
-      "tags": ["AI", "Harness", "工程", "高中生", "矽谷流"]
+      "tags": [
+        "AI",
+        "Harness",
+        "工程",
+        "高中生",
+        "矽谷流"
+      ]
     },
     {
       "id": "hermes-agent-last-month",

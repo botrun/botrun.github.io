@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-03T08:30:41.555Z
+> 生成時間：2026-05-03T08:34:36.265Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 216 個項目，按發佈日期降序排列。
+共 217 個項目，按發佈日期降序排列。
+
+## Agent Harness 十二大模組徹底剖析｜七大架構抉擇
+
+> Anthropic、OpenAI、LangGraph 三巨頭路線分歧完整對比。同一模型只換框架，TerminalBench 2.0 排名從第 30 外躍升第 5。5 頁矽谷流解析十二大模組、七大架構抉擇、L1→L5 漸進路線。
+
+**關鍵觀念：**
+- 護城河從模型轉向環境：同一 LLM 只換 Harness，TerminalBench 2.0 排名從第 30 外躍升第 5
+- 三代範式：提示詞工程(2022)→情境工程(2025)→框架工程(2026)，Harness = 作業系統
+- 十二大模組：編排迴圈/工具/記憶/上下文/提示建構/輸出解析/狀態/錯誤/護欄/驗證/子代理/可觀測性
+- 七大架構抉擇對比：Anthropic 薄框架MCP、OpenAI 零信任沙箱、LangGraph 狀態圖3.6×加速
+- L1→L5 漸進路線：今天 30 分鐘建 AGENTS.md 起步，逐步到可觀測性自我優化護城河
+
+- [線上版](https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html/llms.txt): 該專案的 llms.txt
+- 類型：架構剖析
+- 發佈日期：2026-05-03T16:30:00+08:00
+- 標籤：十二大模組、七大架構抉擇、框架工程
 
 ## 生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析
 
