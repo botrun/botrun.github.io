@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-03T00:29:51.160Z",
-  "total": 139,
+  "generatedAt": "2026-05-03T00:34:57.358Z",
+  "total": 140,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "高品味飛輪 — 波特人方法論",
+      "date": "2026-05-03T09:00:00+08:00",
+      "content": "三個齒輪咬合越緊，AI 就跑越快。001 高品味題庫（真實多跳推理 × 機敏到合成 × 人都會錯）、002 駕馭工程排行榜（二元評測 × 可行排行榜 × opus改進建議）、003 孵化成長知己（西瓜專屬db × 駿馬自己的cli × 蛙神專屬wasm）。每頁附超級大白話解說，秒懂飛輪邏輯。",
+      "tags": [
+        "方法論 · 5 頁",
+        "高品味題庫",
+        "排行榜",
+        "孵化知己",
+        "飛輪"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/premium-flywheel.html"
+    },
     {
       "title": "LPM 1.0：虛擬角色從「對嘴」到「真正表演」",
       "date": "2026-05-03T08:30:00+08:00",
