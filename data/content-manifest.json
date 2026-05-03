@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-03T16:30:00+08:00"
+    "lastUpdated": "2026-05-04T01:06:43+08:00"
   },
   "items": [
+    {
+      "id": "pi-nchc-gemma-31b-handover",
+      "title": "把 AI 大腦綁進 SQLite｜pi nchc gemma-4-31b 卷證分析傳承指南",
+      "subtitle": "給 Roy/Seba/cc 的 Botrun 應用基座完整交接：零框架分析 + 程式碼即代理 = 政府級檢察卷宗 95 分自動精準解析。7 頁涵蓋五大資料表、四階段自動化、PDF→PNG 72dpi→Apple Vision OCR 繁中管線、四大人類駕馭指令、三大實戰心得。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-nchc-gemma-31b-handover.html",
+      "icon": "shield",
+      "badge": "傳承 · 7 頁",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-05-04T01:06:43+08:00",
+      "tags": [
+        "database:SQLite SSOT",
+        "cpu:NCHC 31B",
+        "shield:零框架"
+      ],
+      "concepts": [
+        "五大資料表收斂幻覺：doc_content/pdf_ocr_content/parent_questions/child_questions/qa_results 把 AI 大腦與 SQLite 記憶體強制脫鉤",
+        "四階段自動化：任務拆解→精準檢索→邏輯推演→自我稽核，每步都在 qa_results.reasoning 留下可稽核軌跡",
+        "PDF→PNG 72dpi→Apple Vision OCR：免費離線繁中辨識，64 頁從 5 分鐘壓到 20 秒，辨識率輾壓 Tesseract",
+        "四大人類駕馭指令：強制降維 + 先思後答 + 設立查核停損點 + 自我驗證計分，30% 架構 70% 控制",
+        "三大實戰心得：31B 又快又準/母子拆到最細不會漏/未來不夠用就去機敏 + 另開 .db + Opus 接手"
+      ]
+    },
     {
       "id": "agent-harness-12modules",
       "title": "Agent Harness 十二大模組徹底剖析｜七大架構抉擇",
