@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-03T00:34:57.358Z",
-  "total": 140,
+  "generatedAt": "2026-05-03T01:23:58.945Z",
+  "total": 141,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Vibe Coding in Prod｜22,000 行，一天寫完",
+      "date": "2026-05-03T09:20:54+08:00",
+      "content": "Anthropic 工程師在生產環境強化學習系統合併了一個主要由 Claude 撰寫的 22,000 行 PR，兩週工作量壓縮成一天。5 頁矽谷流簡報拆解正確的 Vibe Coding 方法論：你是 Claude 的 PM，不是用戶。",
+      "tags": [
+        "方法論",
+        "AI 編程",
+        "葉節點策略",
+        "可驗證檢查點"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/vibe-coding-in-prod.html"
+    },
     {
       "title": "高品味飛輪 — 波特人方法論",
       "date": "2026-05-03T09:00:00+08:00",
