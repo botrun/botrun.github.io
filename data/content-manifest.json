@@ -5,6 +5,45 @@
   },
   "items": [
     {
+      "id": "cs230-beyond-llm",
+      "title": "不會 Beyond LLM，你只是在幫 AI 打工",
+      "subtitle": "Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。",
+      "href": "https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html",
+      "icon": "cpu",
+      "badge": "Stanford CS230 · 9 頁",
+      "badgeColor": "#2563eb",
+      "publishDate": "2026-05-06T13:39:31+08:00",
+      "tags": [
+        "cpu:LLM 工程",
+        "shield:RAG",
+        "star:Agentic AI"
+      ],
+      "concepts": [
+        "Prompt Chaining 是效益最高的提示工程技術",
+        "Fine-tuning 是最後手段，先用 Prompting 和 RAG",
+        "RAG 用向量資料庫注入即時知識，大幅降低幻覺",
+        "Agentic AI 讓 LLM 自主規劃工具調用，完成多步任務",
+        "Multi-Agent 的核心優勢是平行處理，Orchestrator 整合結果"
+      ],
+      "llmUrl": "https://storage.googleapis.com/botrun-slides/cs230-beyond-llm-llms.txt"
+    },
+    {
+      "id": "ai-inference-physics-limits",
+      "title": "砸 100 倍的錢，AI 還是快不了",
+      "subtitle": "HBM 物理極限、房頂線模型、Batch Size 經濟學——Reiner Pope（MatX CEO / Google TPU 架構師）揭秘 AI 推理的底層物理枷鎖。20ms 發車極限、5400 人同班、上下文加價的真相。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits.html",
+      "icon": "zap",
+      "badge": "Reiner Pope · 10 頁",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-06T18:00:00+08:00",
+      "tags": [
+        "cpu:AI 推理",
+        "shield:內存帶寬",
+        "star:物理極限"
+      ],
+      "llmUrl": "https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits-llms.txt"
+    },
+    {
       "id": "tokens-make-you-rich",
       "title": "你燒的 Tokens 越多，越窮｜Mario Zechner 精華",
       "subtitle": "Pi 極簡主義創始人的反直覺洞見：2,000 個高訊號 tokens 勝過 20,000 個雜訊；Terminal Bench #1 靠 4 個工具 + 1,500 tokens 系統提示；速度沒有紀律就是技術債超速版。",
