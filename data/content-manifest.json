@@ -1,9 +1,36 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-06T12:00:00+08:00"
+    "lastUpdated": "2026-05-07T05:15:00+08:00"
   },
   "items": [
+    {
+      "id": "tokens-rich-game-mario-zechner-2026-05-07",
+      "title": "Tokens 印鈔機：六人小隊把百人團碾成廢鐵",
+      "subtitle": "pi 代理人作者 Mario Zechner 對談 David Ondrej 精華 15 頁簡報。能買得起 tokens 的人正在以肉眼可見的速度甩開所有人——agentic search 革命、Claude Code 偷砍 thinking trace、語言學家妻子 5x 產出、6 人小隊輾過 100 人團、開源權重追上前沿、訓練雲外那 0.01% 永遠進不了 tokens。給每個聽眾的 7 道作業。",
+      "href": "https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner.html",
+      "icon": "zap",
+      "badge": "Mario Zechner · 專訪精華",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-07T05:15:00+08:00",
+      "tags": [
+        "zap:Tokens 經濟",
+        "users:6 人 vs 100 人",
+        "star:富人遊戲"
+      ],
+      "concepts": [
+        "Anthropic 天才一招：把 agent 直接丟進終端機，agentic search 翻盤整個賽局",
+        "Claude Code 2025/3/26 偷砍閒置 thinking trace 等於對 session 做腦白質切除",
+        "模型退化感不是量化造成，是心理錯覺 + harness 每週變動",
+        "Ralph Loop 真假版差別只在客觀成功函數，沒指標的迴圈是 cargo cult",
+        "80-90% AI 紅利藏在內部小工具，不在公開新產品",
+        "語言學家妻子兩晚學會 Claude Code，學術產出 5xed",
+        "6 人小隊 + agent ≥ 100 人老大廠，老組織排斥工具是劣勢",
+        "Anthropic 70% 推論毛利撐不久，Kimi K 2.6 / DeepSeek 4 自架夠用",
+        "訓練雲外的 0.01% 頂尖人類創意永遠無法 tokenize"
+      ],
+      "llmUrl": "https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner-llms.txt"
+    },
     {
       "id": "zed-pi-hermes-acp-2026-05-06",
       "title": "Zed × botrun-pi × botrun-hermes ACP 雙駕馭設定教學",
