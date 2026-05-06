@@ -3,26 +3,54 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-03T08:34:36.265Z
+> 生成時間：2026-05-06T09:57:16.518Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 218 個項目，按發佈日期降序排列。
+共 223 個項目，按發佈日期降序排列。
 
+## Zed × botrun-pi × botrun-hermes ACP 雙駕馭設定教學
+
+> 一台 Mac 同時駕馭兩套 agentic harness。釐清 Zed 兩套互不重疊的 AI 系統 — language_models（pi 共用）vs agent_servers.hermes（自管 LLM client），給政府機關桌面端 botrun-pi + 波特槌組合完整 settings.json + ~/.hermes/config.yaml 範本，含 pi/hermes 模型列表與三大切換情境。
+
+**關鍵觀念：**
+- Zed 兩套 AI 系統並存：language_models 與 agent_servers 互不重疊
+- pi-acp 模型走 Zed language_models（反向呼叫），hermes 自帶 LLM client
+- 換 pi 模型改 settings.json，換 hermes 模型改 ~/.hermes/config.yaml
+- command 必用絕對路徑，Zed 啟動 PATH 不含 nvm/pipx
+- 雙駕馭精神：該量身定做用 pi、該成長用 hermes、不該微調絕不勉強
+
+- [線上版](https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06.html/llms.txt): 該專案的 llms.txt
+- 類型：Zed × ACP · 教學
+- 發佈日期：2026-05-06T17:56:35+08:00
+- 標籤：Zed、機敏資料、雙駕馭
 
 ## 不會 Beyond LLM，你只是在幫 AI 打工
 
-URL: https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html
-Tags: LLM 工程, RAG, Agentic AI
-Published: 2026-05-06T13:39:31+08:00
+> Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。
 
-Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。
+**關鍵觀念：**
+- Prompt Chaining 是效益最高的提示工程技術
+- Fine-tuning 是最後手段，先用 Prompting 和 RAG
+- RAG 用向量資料庫注入即時知識，大幅降低幻覺
+- Agentic AI 讓 LLM 自主規劃工具調用，完成多步任務
+- Multi-Agent 的核心優勢是平行處理，Orchestrator 整合結果
 
-核心概念：
-- Prompt Chaining 是效益最高的提示工程技術，可獨立除錯每個步驟
-- Fine-tuning 是最後手段，先窮盡 Prompting 和 RAG 再考慮
-- RAG 用向量資料庫注入即時知識，大幅降低幻覺率
-- Agentic AI 讓 LLM 自主規劃工具調用，完成多步任務（Andrew Ng 定義）
-- Multi-Agent 的核心優勢是平行處理，Orchestrator 整合 Sub-agent 結果
+- [線上版](https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html/llms.txt): 該專案的 llms.txt
+- 類型：Stanford CS230 · 9 頁
+- 發佈日期：2026-05-06T13:39:31+08:00
+- 標籤：LLM 工程、RAG、Agentic AI
+
+## 砸 100 倍的錢，AI 還是快不了
+
+> HBM 物理極限、房頂線模型、Batch Size 經濟學——Reiner Pope（MatX CEO / Google TPU 架構師）揭秘 AI 推理的底層物理枷鎖。20ms 發車極限、5400 人同班、上下文加價的真相。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits.html/llms.txt): 該專案的 llms.txt
+- 類型：Reiner Pope · 10 頁
+- 發佈日期：2026-05-06T18:00:00+08:00
+- 標籤：AI 推理、內存帶寬、物理極限
 
 ## 你燒的 Tokens 越多，越窮｜Mario Zechner 精華
 
@@ -35,9 +63,37 @@ Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG 
 - Token 不是正確 KPI：就像程式碼行數從來不是衡量生產力的好標準
 - 紀律即槓桿：人類必須真正讀懂 AI 生成的程式，摩擦感是理解的唯一機會
 
-URL: https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html
+- [線上版](https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html/llms.txt): 該專案的 llms.txt
+- 類型：Mario Zechner · 5 頁
+- 發佈日期：2026-05-06T12:00:00+08:00
+- 標籤：AI 代理人、Context Engineering、Token 紀律
 
----
+## 2025 你手寫程式，2026 AI 幫你 review AI
+
+> Pi Coding Agent (oh-my-pi) 完整解析：6 個專屬 Agent 分工、Hashline 錨點編輯讓 Grok Code 從 6.7% 升至 68.3% 成功率、GPT-5.5 vs Opus 4.7 實測比較，以及從手動 prompt 工程師轉型為 agent 艦長的三步驟指南。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/pi-agent-reviews-like-you.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/pi-agent-reviews-like-you.html/llms.txt): 該專案的 llms.txt
+- 類型：AI Agent · 5 頁
+- 發佈日期：2026-05-06T10:00:00+08:00
+
+## 把 AI 大腦綁進 SQLite｜pi nchc gemma-4-31b 卷證分析傳承指南
+
+> 給 Roy/Seba/cc 的 Botrun 應用基座完整交接：零框架分析 + 程式碼即代理 = 政府級檢察卷宗 95 分自動精準解析。7 頁涵蓋五大資料表、四階段自動化、PDF→PNG 72dpi→Apple Vision OCR 繁中管線、四大人類駕馭指令、三大實戰心得。
+
+**關鍵觀念：**
+- 五大資料表收斂幻覺：doc_content/pdf_ocr_content/parent_questions/child_questions/qa_results 把 AI 大腦與 SQLite 記憶體強制脫鉤
+- 四階段自動化：任務拆解→精準檢索→邏輯推演→自我稽核，每步都在 qa_results.reasoning 留下可稽核軌跡
+- PDF→PNG 72dpi→Apple Vision OCR：免費離線繁中辨識，64 頁從 5 分鐘壓到 20 秒，辨識率輾壓 Tesseract
+- 四大人類駕馭指令：強制降維 + 先思後答 + 設立查核停損點 + 自我驗證計分，30% 架構 70% 控制
+- 三大實戰心得：31B 又快又準/母子拆到最細不會漏/未來不夠用就去機敏 + 另開 .db + Opus 接手
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-nchc-gemma-31b-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-nchc-gemma-31b-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承 · 7 頁
+- 發佈日期：2026-05-04T01:06:43+08:00
+- 標籤：SQLite SSOT、NCHC 31B、零框架
 
 ## Agent Harness 十二大模組徹底剖析｜七大架構抉擇
 

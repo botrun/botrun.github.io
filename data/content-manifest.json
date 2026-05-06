@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "zed-pi-hermes-acp-2026-05-06",
+      "title": "Zed × botrun-pi × botrun-hermes ACP 雙駕馭設定教學",
+      "subtitle": "一台 Mac 同時駕馭兩套 agentic harness。釐清 Zed 兩套互不重疊的 AI 系統 — language_models（pi 共用）vs agent_servers.hermes（自管 LLM client），給政府機關桌面端 botrun-pi + 波特槌組合完整 settings.json + ~/.hermes/config.yaml 範本，含 pi/hermes 模型列表與三大切換情境。",
+      "href": "https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06.html",
+      "icon": "cpu",
+      "badge": "Zed × ACP · 教學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-06T17:56:35+08:00",
+      "tags": [
+        "cpu:Zed",
+        "shield:機敏資料",
+        "star:雙駕馭"
+      ],
+      "concepts": [
+        "Zed 兩套 AI 系統並存：language_models 與 agent_servers 互不重疊",
+        "pi-acp 模型走 Zed language_models（反向呼叫），hermes 自帶 LLM client",
+        "換 pi 模型改 settings.json，換 hermes 模型改 ~/.hermes/config.yaml",
+        "command 必用絕對路徑，Zed 啟動 PATH 不含 nvm/pipx",
+        "雙駕馭精神：該量身定做用 pi、該成長用 hermes、不該微調絕不勉強"
+      ],
+      "llmUrl": "https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06-llms.txt"
+    },
+    {
       "id": "cs230-beyond-llm",
       "title": "不會 Beyond LLM，你只是在幫 AI 打工",
       "subtitle": "Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。",
