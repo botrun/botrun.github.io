@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "gemma-26b-vs-31b-excel-task",
+      "title": "Gemma 26B vs 31B：Excel 分析任務生死之戰",
+      "subtitle": "同一份 Excel、同一套工具、兩個模型——26B 5+ 次失敗中止，31B 一路到底。根本差距不是聰明，是工作記憶長度。Python f-string 衝突、MJS typo、edit 工具失效、CORS 阻擋的完整失敗解剖，對比 31B 的 sqlite3 先驗、write 工具建檔、精準 edit 修補路徑。5 條可泛化結晶鐵律。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma-26b-vs-31b-excel-task.html",
+      "icon": "cpu",
+      "badge": "模型實戰對比",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-07T06:30:00+08:00",
+      "tags": [
+        "cpu:Gemma 4 26B vs 31B",
+        "zap:5+ 次失敗 vs 一次完成",
+        "star:工作記憶是關鍵"
+      ],
+      "concepts": [
+        "26B 失敗根因：工作記憶不足，多步驟任務前後不連貫，導致 typo、語法衝突、工具誤用疊加",
+        "31B 成功關鍵：先用 sqlite3 CLI 驗證狀態再行動，用 write 工具建檔避開 heredoc 地雷",
+        "Python f-string 與 JS ${} 語法衝突是最常見的 26B 地雷，用 placeholder.replace() 可完全避免",
+        "工具出錯三次沒進展就換策略：edit 失敗 → 改用 write 覆寫；-c 報錯 → 改存 .py 檔",
+        "5B 參數差距買的不是知識量，是多步驟任務的狀態連貫性"
+      ]
+    },
+    {
       "id": "tokens-rich-game-mario-zechner-2026-05-07",
       "title": "Tokens 印鈔機：六人小隊把百人團碾成廢鐵",
       "subtitle": "pi 代理人作者 Mario Zechner 對談 David Ondrej 精華 15 頁簡報。能買得起 tokens 的人正在以肉眼可見的速度甩開所有人——agentic search 革命、Claude Code 偷砍 thinking trace、語言學家妻子 5x 產出、6 人小隊輾過 100 人團、開源權重追上前沿、訓練雲外那 0.01% 永遠進不了 tokens。給每個聽眾的 7 道作業。",
