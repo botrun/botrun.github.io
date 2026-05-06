@@ -3,10 +3,65 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-06T09:57:16.518Z
+> 生成時間：2026-05-06T22:50:01.141Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 223 個項目，按發佈日期降序排列。
+共 226 個項目，按發佈日期降序排列。
+
+## 等 AI 回應是你最貴的浪費 — GNU Parallel × pi -p 批量提速實驗
+
+> 9 條評論情緒分析：循序 4.649s vs 平行 2.064s，速度 2.25 倍，答案分毫不差。Unix Pipe + GNU Parallel + pi -p 三步混合流，把 I/O-bound 的 AI 請求從排隊等號機變成 4 個分身同時跑。一行 Bash 指令，工業級 AI ETL pipeline 不用寫 Python 多執行緒。
+
+**關鍵觀念：**
+- AI API call 是 I/O-bound，90%+ 時間是 network wait，用 GNU Parallel 隱藏延遲可線性提速
+- 混合流方案 C（快→慢→快）：grep 過濾（循序）→ parallel -j 4 AI 分析（平行）→ sort/uniq 統計（循序）
+- 獨立測量：循序 4.649s vs 平行 2.064s，兩者結果 4正/5負完全一致，平行化不影響答案品質
+- 理論驗證：4.649÷2.064≈2.25 ≈ 9÷4=2.25，實測與隱藏延遲理論完全吻合
+- 入門三步：brew install parallel + npm i -g @badlogic/pi + 把 while read 換成 parallel -j 4
+
+- [線上版](https://storage.googleapis.com/botrun-slides/unix-parallel-pi-pipeline.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/unix-parallel-pi-pipeline.html/llms.txt): 該專案的 llms.txt
+- 類型：實驗報告
+- 發佈日期：2026-05-07T06:46:37+08:00
+- 標籤：GNU Parallel 真平行、pi -p AI 批量分析、2.25× 加速零損失
+
+## Gemma 26B vs 31B：Excel 分析任務生死之戰
+
+> 同一份 Excel、同一套工具、兩個模型——26B 5+ 次失敗中止，31B 一路到底。根本差距不是聰明，是工作記憶長度。Python f-string 衝突、MJS typo、edit 工具失效、CORS 阻擋的完整失敗解剖，對比 31B 的 sqlite3 先驗、write 工具建檔、精準 edit 修補路徑。5 條可泛化結晶鐵律。
+
+**關鍵觀念：**
+- 26B 失敗根因：工作記憶不足，多步驟任務前後不連貫，導致 typo、語法衝突、工具誤用疊加
+- 31B 成功關鍵：先用 sqlite3 CLI 驗證狀態再行動，用 write 工具建檔避開 heredoc 地雷
+- Python f-string 與 JS ${} 語法衝突是最常見的 26B 地雷，用 placeholder.replace() 可完全避免
+- 工具出錯三次沒進展就換策略：edit 失敗 → 改用 write 覆寫；-c 報錯 → 改存 .py 檔
+- 5B 參數差距買的不是知識量，是多步驟任務的狀態連貫性
+
+- [線上版](https://storage.googleapis.com/botrun-slides/gemma-26b-vs-31b-excel-task.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/gemma-26b-vs-31b-excel-task.html/llms.txt): 該專案的 llms.txt
+- 類型：模型實戰對比
+- 發佈日期：2026-05-07T06:30:00+08:00
+- 標籤：Gemma 4 26B vs 31B、5+ 次失敗 vs 一次完成、工作記憶是關鍵
+
+## Tokens 印鈔機：六人小隊把百人團碾成廢鐵
+
+> pi 代理人作者 Mario Zechner 對談 David Ondrej 精華 15 頁簡報。能買得起 tokens 的人正在以肉眼可見的速度甩開所有人——agentic search 革命、Claude Code 偷砍 thinking trace、語言學家妻子 5x 產出、6 人小隊輾過 100 人團、開源權重追上前沿、訓練雲外那 0.01% 永遠進不了 tokens。給每個聽眾的 7 道作業。
+
+**關鍵觀念：**
+- Anthropic 天才一招：把 agent 直接丟進終端機，agentic search 翻盤整個賽局
+- Claude Code 2025/3/26 偷砍閒置 thinking trace 等於對 session 做腦白質切除
+- 模型退化感不是量化造成，是心理錯覺 + harness 每週變動
+- Ralph Loop 真假版差別只在客觀成功函數，沒指標的迴圈是 cargo cult
+- 80-90% AI 紅利藏在內部小工具，不在公開新產品
+- 語言學家妻子兩晚學會 Claude Code，學術產出 5xed
+- 6 人小隊 + agent ≥ 100 人老大廠，老組織排斥工具是劣勢
+- Anthropic 70% 推論毛利撐不久，Kimi K 2.6 / DeepSeek 4 自架夠用
+- 訓練雲外的 0.01% 頂尖人類創意永遠無法 tokenize
+
+- [線上版](https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner.html/llms.txt): 該專案的 llms.txt
+- 類型：Mario Zechner · 專訪精華
+- 發佈日期：2026-05-07T05:15:00+08:00
+- 標籤：Tokens 經濟、6 人 vs 100 人、富人遊戲
 
 ## Zed × botrun-pi × botrun-hermes ACP 雙駕馭設定教學
 
