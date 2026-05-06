@@ -1,9 +1,41 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-04T01:06:43+08:00"
+    "lastUpdated": "2026-05-06T12:00:00+08:00"
   },
   "items": [
+    {
+      "id": "tokens-make-you-rich",
+      "title": "你燒的 Tokens 越多，越窮｜Mario Zechner 精華",
+      "subtitle": "Pi 極簡主義創始人的反直覺洞見：2,000 個高訊號 tokens 勝過 20,000 個雜訊；Terminal Bench #1 靠 4 個工具 + 1,500 tokens 系統提示；速度沒有紀律就是技術債超速版。",
+      "href": "https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html",
+      "icon": "zap",
+      "badge": "Mario Zechner · 5 頁",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-06T12:00:00+08:00",
+      "tags": [
+        "cpu:AI 代理人",
+        "shield:Context Engineering",
+        "star:Token 紀律"
+      ],
+      "concepts": [
+        "Token 精簡勝多：2,000 高訊號 tokens 優於 20,000 雜訊 tokens，signal-to-noise ratio 是關鍵",
+        "Pi 框架：4 工具 + 1,500 tokens 系統提示，Terminal Bench #1，極簡打敗功能過剩",
+        "10× 程式碼爆炸：單一代理人日產 10 倍人類寫碼量，百個代理人並行技術債超速",
+        "Token 不是正確 KPI：就像程式碼行數從來不是衡量生產力的好標準",
+        "紀律即槓桿：人類必須真正讀懂 AI 生成的程式，摩擦感是理解的唯一機會"
+      ]
+    },
+    {
+      "id": "pi-agent-reviews-like-you",
+      "title": "2025 你手寫程式，2026 AI 幫你 review AI",
+      "subtitle": "Pi Coding Agent (oh-my-pi) 完整解析：6 個專屬 Agent 分工、Hashline 錨點編輯讓 Grok Code 從 6.7% 升至 68.3% 成功率、GPT-5.5 vs Opus 4.7 實測比較，以及從手動 prompt 工程師轉型為 agent 艦長的三步驟指南。",
+      "href": "https://storage.googleapis.com/botrun-slides/pi-agent-reviews-like-you.html",
+      "icon": "cpu",
+      "badge": "AI Agent · 5 頁",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-06T10:00:00+08:00"
+    },
     {
       "id": "pi-nchc-gemma-31b-handover",
       "title": "把 AI 大腦綁進 SQLite｜pi nchc gemma-4-31b 卷證分析傳承指南",
