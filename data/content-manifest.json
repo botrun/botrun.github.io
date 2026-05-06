@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-07T05:15:00+08:00"
+    "lastUpdated": "2026-05-07T07:15:00+08:00"
   },
   "items": [
+    {
+      "id": "opus-gemma-distillation-flywheel",
+      "title": "Opus 蒸餾飛輪 — 6 步驟讓 Gemma 31B 越用越準",
+      "subtitle": "60× 成本差距、機敏資料不能出境——立委詢答/觀護人/檢察官三類任務，如何把 Opus 黃金範例蒸餾進 .db，讓 Gemma 31B 透過 2-shot FTS5 檢索接近 Opus 品質，並建立「人類採用率=reward signal」的飛輪自動養倉。",
+      "href": "https://storage.googleapis.com/botrun-slides/opus-gemma-distillation-flywheel.html",
+      "icon": "zap",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-07T07:10:00+08:00",
+      "tags": [
+        "brain:知識蒸餾 2-shot DB",
+        "cpu:Gemma 31B 本地端",
+        "star:60× 成本降幅"
+      ],
+      "concepts": [
+        "範例品質 > 模型大小：給 Gemma 看對的 2 個 Opus 黃金範例（In-Context Learning），品質立即提升，無需 fine-tune",
+        "6 步飛輪：001 情境分類 → 002 Opus 生成 5 shots → 003 Self-Refine → 004 存 .db+reasoning_chain → 005 Gemma FTS5 撈 2 shots → 006 人工採用回寫 DB",
+        "機敏資料零出境：Gemma 31B 全程地端，法律文書（立委詢答/觀護人/檢察官）不上雲",
+        "飛輪核心：Opus 建倉 × Gemma 用倉 × 人類採用率養倉，DB 從靜態知識長出動態實戰智慧",
+        "四週時程：W1 情境分類 DB → W2 Opus 蒸餾 5shots×3任務 → W3 Gemma 整合驗測 → W4 飛輪上線"
+      ]
+    },
     {
       "id": "unix-parallel-pi-pipeline",
       "title": "等 AI 回應是你最貴的浪費 — GNU Parallel × pi -p 批量提速實驗",

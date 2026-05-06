@@ -4,1820 +4,3278 @@
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
     {
+      "id": "opus-gemma-distillation-flywheel",
+      "title": "Opus 蒸餾飛輪 — 6 步驟讓 Gemma 31B 越用越準",
+      "subtitle": "60× 成本差距、機敏資料不能出境——立委詢答/觀護人/檢察官三類任務，如何把 Opus 黃金範例蒸餾進 .db，讓 Gemma 31B 透過 2-shot FTS5 檢索接近 Opus 品質，並建立「人類採用率=reward signal」的飛輪自動養倉。",
+      "href": "https://storage.googleapis.com/botrun-slides/opus-gemma-distillation-flywheel.html",
+      "icon": "zap",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-07T07:10:00+08:00",
+      "tags": [
+        "brain:知識蒸餾 2-shot DB",
+        "cpu:Gemma 31B 本地端",
+        "star:60× 成本降幅"
+      ],
+      "concepts": [
+        "範例品質 > 模型大小：給 Gemma 看對的 2 個 Opus 黃金範例（In-Context Learning），品質立即提升，無需 fine-tune",
+        "6 步飛輪：001 情境分類 → 002 Opus 生成 5 shots → 003 Self-Refine → 004 存 .db+reasoning_chain → 005 Gemma FTS5 撈 2 shots → 006 人工採用回寫 DB",
+        "機敏資料零出境：Gemma 31B 全程地端，法律文書（立委詢答/觀護人/檢察官）不上雲",
+        "飛輪核心：Opus 建倉 × Gemma 用倉 × 人類採用率養倉，DB 從靜態知識長出動態實戰智慧",
+        "四週時程：W1 情境分類 DB → W2 Opus 蒸餾 5shots×3任務 → W3 Gemma 整合驗測 → W4 飛輪上線"
+      ]
+    },
+    {
+      "id": "unix-parallel-pi-pipeline",
       "title": "等 AI 回應是你最貴的浪費 — GNU Parallel × pi -p 批量提速實驗",
-      "date": "2026-05-07T06:46:37+08:00",
-      "content": "9 條評論情緒分析：循序 4.649s vs 平行 2.064s，速度 2.25 倍，答案分毫不差。Unix Pipe + GNU Parallel + pi -p 三步混合流，把 I/O-bound 的 AI 請求從排隊等號機變成 4 個分身同時跑。一行 Bash 指令，工業級 AI ETL pipeline 不用寫 Python 多執行緒。",
+      "subtitle": "9 條評論情緒分析：循序 4.649s vs 平行 2.064s，速度 2.25 倍，答案分毫不差。Unix Pipe + GNU Parallel + pi -p 三步混合流，把 I/O-bound 的 AI 請求從排隊等號機變成 4 個分身同時跑。一行 Bash 指令，工業級 AI ETL pipeline 不用寫 Python 多執行緒。",
+      "href": "https://storage.googleapis.com/botrun-slides/unix-parallel-pi-pipeline.html",
+      "icon": "zap",
+      "badge": "實驗報告",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-07T06:46:37+08:00",
       "tags": [
-        "實驗報告",
-        "GNU Parallel 真平行",
-        "pi -p AI 批量分析",
-        "2.25× 加速零損失"
+        "zap:GNU Parallel 真平行",
+        "cpu:pi -p AI 批量分析",
+        "star:2.25× 加速零損失"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/unix-parallel-pi-pipeline.html"
+      "concepts": [
+        "AI API call 是 I/O-bound，90%+ 時間是 network wait，用 GNU Parallel 隱藏延遲可線性提速",
+        "混合流方案 C（快→慢→快）：grep 過濾（循序）→ parallel -j 4 AI 分析（平行）→ sort/uniq 統計（循序）",
+        "獨立測量：循序 4.649s vs 平行 2.064s，兩者結果 4正/5負完全一致，平行化不影響答案品質",
+        "理論驗證：4.649÷2.064≈2.25 ≈ 9÷4=2.25，實測與隱藏延遲理論完全吻合",
+        "入門三步：brew install parallel + npm i -g @badlogic/pi + 把 while read 換成 parallel -j 4"
+      ]
     },
     {
+      "id": "gemma-26b-vs-31b-excel-task",
       "title": "Gemma 26B vs 31B：Excel 分析任務生死之戰",
-      "date": "2026-05-07T06:30:00+08:00",
-      "content": "同一份 Excel、同一套工具、兩個模型——26B 5+ 次失敗中止，31B 一路到底。根本差距不是聰明，是工作記憶長度。Python f-string 衝突、MJS typo、edit 工具失效、CORS 阻擋的完整失敗解剖，對比 31B 的 sqlite3 先驗、write 工具建檔、精準 edit 修補路徑。5 條可泛化結晶鐵律。",
+      "subtitle": "同一份 Excel、同一套工具、兩個模型——26B 5+ 次失敗中止，31B 一路到底。根本差距不是聰明，是工作記憶長度。Python f-string 衝突、MJS typo、edit 工具失效、CORS 阻擋的完整失敗解剖，對比 31B 的 sqlite3 先驗、write 工具建檔、精準 edit 修補路徑。5 條可泛化結晶鐵律。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma-26b-vs-31b-excel-task.html",
+      "icon": "cpu",
+      "badge": "模型實戰對比",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-07T06:30:00+08:00",
       "tags": [
-        "模型實戰對比",
-        "Gemma 4 26B vs 31B",
-        "5+ 次失敗 vs 一次完成",
-        "工作記憶是關鍵"
+        "cpu:Gemma 4 26B vs 31B",
+        "zap:5+ 次失敗 vs 一次完成",
+        "star:工作記憶是關鍵"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma-26b-vs-31b-excel-task.html"
+      "concepts": [
+        "26B 失敗根因：工作記憶不足，多步驟任務前後不連貫，導致 typo、語法衝突、工具誤用疊加",
+        "31B 成功關鍵：先用 sqlite3 CLI 驗證狀態再行動，用 write 工具建檔避開 heredoc 地雷",
+        "Python f-string 與 JS ${} 語法衝突是最常見的 26B 地雷，用 placeholder.replace() 可完全避免",
+        "工具出錯三次沒進展就換策略：edit 失敗 → 改用 write 覆寫；-c 報錯 → 改存 .py 檔",
+        "5B 參數差距買的不是知識量，是多步驟任務的狀態連貫性"
+      ]
     },
     {
+      "id": "tokens-rich-game-mario-zechner-2026-05-07",
       "title": "Tokens 印鈔機：六人小隊把百人團碾成廢鐵",
-      "date": "2026-05-07T05:15:00+08:00",
-      "content": "pi 代理人作者 Mario Zechner 對談 David Ondrej 精華 15 頁簡報。能買得起 tokens 的人正在以肉眼可見的速度甩開所有人——agentic search 革命、Claude Code 偷砍 thinking trace、語言學家妻子 5x 產出、6 人小隊輾過 100 人團、開源權重追上前沿、訓練雲外那 0.01% 永遠進不了 tokens。給每個聽眾的 7 道作業。",
+      "subtitle": "pi 代理人作者 Mario Zechner 對談 David Ondrej 精華 15 頁簡報。能買得起 tokens 的人正在以肉眼可見的速度甩開所有人——agentic search 革命、Claude Code 偷砍 thinking trace、語言學家妻子 5x 產出、6 人小隊輾過 100 人團、開源權重追上前沿、訓練雲外那 0.01% 永遠進不了 tokens。給每個聽眾的 7 道作業。",
+      "href": "https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner.html",
+      "icon": "zap",
+      "badge": "Mario Zechner · 專訪精華",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-07T05:15:00+08:00",
       "tags": [
-        "Mario Zechner · 專訪精華",
-        "Tokens 經濟",
-        "6 人 vs 100 人",
-        "富人遊戲"
+        "zap:Tokens 經濟",
+        "users:6 人 vs 100 人",
+        "star:富人遊戲"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/tokens-rich-game-mario-zechner.html"
+      "concepts": [
+        "Anthropic 天才一招：把 agent 直接丟進終端機，agentic search 翻盤整個賽局",
+        "Claude Code 2025/3/26 偷砍閒置 thinking trace 等於對 session 做腦白質切除",
+        "模型退化感不是量化造成，是心理錯覺 + harness 每週變動",
+        "Ralph Loop 真假版差別只在客觀成功函數，沒指標的迴圈是 cargo cult",
+        "80-90% AI 紅利藏在內部小工具，不在公開新產品",
+        "語言學家妻子兩晚學會 Claude Code，學術產出 5xed",
+        "6 人小隊 + agent ≥ 100 人老大廠，老組織排斥工具是劣勢",
+        "Anthropic 70% 推論毛利撐不久，Kimi K 2.6 / DeepSeek 4 自架夠用",
+        "訓練雲外的 0.01% 頂尖人類創意永遠無法 tokenize"
+      ]
     },
     {
+      "id": "zed-pi-hermes-acp-2026-05-06",
       "title": "Zed × botrun-pi × botrun-hermes ACP 雙駕馭設定教學",
-      "date": "2026-05-06T17:56:35+08:00",
-      "content": "一台 Mac 同時駕馭兩套 agentic harness。釐清 Zed 兩套互不重疊的 AI 系統 — language_models（pi 共用）vs agent_servers.hermes（自管 LLM client），給政府機關桌面端 botrun-pi + 波特槌組合完整 settings.json + ~/.hermes/config.yaml 範本，含 pi/hermes 模型列表與三大切換情境。",
+      "subtitle": "一台 Mac 同時駕馭兩套 agentic harness。釐清 Zed 兩套互不重疊的 AI 系統 — language_models（pi 共用）vs agent_servers.hermes（自管 LLM client），給政府機關桌面端 botrun-pi + 波特槌組合完整 settings.json + ~/.hermes/config.yaml 範本，含 pi/hermes 模型列表與三大切換情境。",
+      "href": "https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06.html",
+      "icon": "cpu",
+      "badge": "Zed × ACP · 教學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-06T17:56:35+08:00",
       "tags": [
-        "Zed × ACP · 教學",
-        "Zed",
-        "機敏資料",
-        "雙駕馭"
+        "cpu:Zed",
+        "shield:機敏資料",
+        "star:雙駕馭"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/zed-pi-hermes-acp-2026-05-06.html"
+      "concepts": [
+        "Zed 兩套 AI 系統並存：language_models 與 agent_servers 互不重疊",
+        "pi-acp 模型走 Zed language_models（反向呼叫），hermes 自帶 LLM client",
+        "換 pi 模型改 settings.json，換 hermes 模型改 ~/.hermes/config.yaml",
+        "command 必用絕對路徑，Zed 啟動 PATH 不含 nvm/pipx",
+        "雙駕馭精神：該量身定做用 pi、該成長用 hermes、不該微調絕不勉強"
+      ]
     },
     {
+      "id": "cs230-beyond-llm",
       "title": "不會 Beyond LLM，你只是在幫 AI 打工",
-      "date": "2026-05-06T13:39:31+08:00",
-      "content": "Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。",
+      "subtitle": "Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。",
+      "href": "https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html",
+      "icon": "cpu",
+      "badge": "Stanford CS230 · 9 頁",
+      "badgeColor": "#2563eb",
+      "publishDate": "2026-05-06T13:39:31+08:00",
       "tags": [
-        "Stanford CS230 · 9 頁",
-        "LLM 工程",
-        "RAG",
-        "Agentic AI"
+        "cpu:LLM 工程",
+        "shield:RAG",
+        "star:Agentic AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html"
+      "concepts": [
+        "Prompt Chaining 是效益最高的提示工程技術",
+        "Fine-tuning 是最後手段，先用 Prompting 和 RAG",
+        "RAG 用向量資料庫注入即時知識，大幅降低幻覺",
+        "Agentic AI 讓 LLM 自主規劃工具調用，完成多步任務",
+        "Multi-Agent 的核心優勢是平行處理，Orchestrator 整合結果"
+      ]
     },
     {
+      "id": "ai-inference-physics-limits",
       "title": "砸 100 倍的錢，AI 還是快不了",
-      "date": "2026-05-06T18:00:00+08:00",
-      "content": "HBM 物理極限、房頂線模型、Batch Size 經濟學——Reiner Pope（MatX CEO / Google TPU 架構師）揭秘 AI 推理的底層物理枷鎖。20ms 發車極限、5400 人同班、上下文加價的真相。",
+      "subtitle": "HBM 物理極限、房頂線模型、Batch Size 經濟學——Reiner Pope（MatX CEO / Google TPU 架構師）揭秘 AI 推理的底層物理枷鎖。20ms 發車極限、5400 人同班、上下文加價的真相。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits.html",
+      "icon": "zap",
+      "badge": "Reiner Pope · 10 頁",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-06T18:00:00+08:00",
       "tags": [
-        "Reiner Pope · 10 頁",
-        "AI 推理",
-        "內存帶寬",
-        "物理極限"
+        "cpu:AI 推理",
+        "shield:內存帶寬",
+        "star:物理極限"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ai-inference-physics-limits.html"
+      "concepts": []
     },
     {
+      "id": "tokens-make-you-rich",
       "title": "你燒的 Tokens 越多，越窮｜Mario Zechner 精華",
-      "date": "2026-05-06T12:00:00+08:00",
-      "content": "Pi 極簡主義創始人的反直覺洞見：2,000 個高訊號 tokens 勝過 20,000 個雜訊；Terminal Bench #1 靠 4 個工具 + 1,500 tokens 系統提示；速度沒有紀律就是技術債超速版。",
+      "subtitle": "Pi 極簡主義創始人的反直覺洞見：2,000 個高訊號 tokens 勝過 20,000 個雜訊；Terminal Bench #1 靠 4 個工具 + 1,500 tokens 系統提示；速度沒有紀律就是技術債超速版。",
+      "href": "https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html",
+      "icon": "zap",
+      "badge": "Mario Zechner · 5 頁",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-06T12:00:00+08:00",
       "tags": [
-        "Mario Zechner · 5 頁",
-        "AI 代理人",
-        "Context Engineering",
-        "Token 紀律"
+        "cpu:AI 代理人",
+        "shield:Context Engineering",
+        "star:Token 紀律"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/tokens-make-you-rich.html"
+      "concepts": [
+        "Token 精簡勝多：2,000 高訊號 tokens 優於 20,000 雜訊 tokens，signal-to-noise ratio 是關鍵",
+        "Pi 框架：4 工具 + 1,500 tokens 系統提示，Terminal Bench #1，極簡打敗功能過剩",
+        "10× 程式碼爆炸：單一代理人日產 10 倍人類寫碼量，百個代理人並行技術債超速",
+        "Token 不是正確 KPI：就像程式碼行數從來不是衡量生產力的好標準",
+        "紀律即槓桿：人類必須真正讀懂 AI 生成的程式，摩擦感是理解的唯一機會"
+      ]
     },
     {
+      "id": "pi-agent-reviews-like-you",
       "title": "2025 你手寫程式，2026 AI 幫你 review AI",
-      "date": "2026-05-06T10:00:00+08:00",
-      "content": "Pi Coding Agent (oh-my-pi) 完整解析：6 個專屬 Agent 分工、Hashline 錨點編輯讓 Grok Code 從 6.7% 升至 68.3% 成功率、GPT-5.5 vs Opus 4.7 實測比較，以及從手動 prompt 工程師轉型為 agent 艦長的三步驟指南。",
-      "tags": [
-        "AI Agent · 5 頁"
-      ],
-      "url": "https://storage.googleapis.com/botrun-slides/pi-agent-reviews-like-you.html"
+      "subtitle": "Pi Coding Agent (oh-my-pi) 完整解析：6 個專屬 Agent 分工、Hashline 錨點編輯讓 Grok Code 從 6.7% 升至 68.3% 成功率、GPT-5.5 vs Opus 4.7 實測比較，以及從手動 prompt 工程師轉型為 agent 艦長的三步驟指南。",
+      "href": "https://storage.googleapis.com/botrun-slides/pi-agent-reviews-like-you.html",
+      "icon": "cpu",
+      "badge": "AI Agent · 5 頁",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-06T10:00:00+08:00",
+      "tags": [],
+      "concepts": []
     },
     {
+      "id": "agent-harness-12modules",
       "title": "Agent Harness 十二大模組徹底剖析｜七大架構抉擇",
-      "date": "2026-05-03T16:30:00+08:00",
-      "content": "Anthropic、OpenAI、LangGraph 三巨頭路線分歧完整對比。同一模型只換框架，TerminalBench 2.0 排名從第 30 外躍升第 5。5 頁矽谷流解析十二大模組、七大架構抉擇、L1→L5 漸進路線。",
+      "subtitle": "Anthropic、OpenAI、LangGraph 三巨頭路線分歧完整對比。同一模型只換框架，TerminalBench 2.0 排名從第 30 外躍升第 5。5 頁矽谷流解析十二大模組、七大架構抉擇、L1→L5 漸進路線。",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html",
+      "icon": "cpu",
+      "badge": "架構剖析",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-03T16:30:00+08:00",
       "tags": [
-        "架構剖析",
-        "十二大模組",
-        "七大架構抉擇",
-        "框架工程"
+        "layers:十二大模組",
+        "git-branch:七大架構抉擇",
+        "zap:框架工程"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agent-harness-12modules.html"
+      "concepts": [
+        "護城河從模型轉向環境：同一 LLM 只換 Harness，TerminalBench 2.0 排名從第 30 外躍升第 5",
+        "三代範式：提示詞工程(2022)→情境工程(2025)→框架工程(2026)，Harness = 作業系統",
+        "十二大模組：編排迴圈/工具/記憶/上下文/提示建構/輸出解析/狀態/錯誤/護欄/驗證/子代理/可觀測性",
+        "七大架構抉擇對比：Anthropic 薄框架MCP、OpenAI 零信任沙箱、LangGraph 狀態圖3.6×加速",
+        "L1→L5 漸進路線：今天 30 分鐘建 AGENTS.md 起步，逐步到可觀測性自我優化護城河"
+      ]
     },
     {
+      "id": "jepa-vs-generative-ai",
       "title": "生成式 AI 在賭什麼？JEPA vs LLM 技術差異完全解析",
-      "date": "2026-05-03T10:30:00+08:00",
-      "content": "Yann LeCun 押注 JEPA 對抗生成式 AI 主流。為什麼 LLM 一定模糊？為什麼智慧不需要重建像素？從暹羅網路→Barlow Twins→DINO→JEPA，四代架構一條通往世界模型的路，5 頁矽谷流完全解析。",
+      "subtitle": "Yann LeCun 押注 JEPA 對抗生成式 AI 主流。為什麼 LLM 一定模糊？為什麼智慧不需要重建像素？從暹羅網路→Barlow Twins→DINO→JEPA，四代架構一條通往世界模型的路，5 頁矽谷流完全解析。",
+      "href": "https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html",
+      "icon": "cpu",
+      "badge": "技術解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-03T10:30:00+08:00",
       "tags": [
-        "技術解析",
-        "JEPA 世界模型",
-        "自監督學習",
-        "表徵進化史"
+        "brain:JEPA 世界模型",
+        "zap:自監督學習",
+        "layers:表徵進化史"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/jepa-vs-generative-ai.html"
+      "concepts": [
+        "生成式 AI 模糊的根本原因：預測像素需平均所有可能，越不確定越模糊，是架構缺陷非算力問題",
+        "智慧蛋糕三層：自監督學習（底）+ 監督式學習（體）+ 強化學習（頂薄薄一層）",
+        "四代自監督架構：暹羅網路表徵崩塌 → Barlow Twins 去相關 → DINO 語義嵌入 → JEPA 抽象預測",
+        "DINO 實績：ImageNet 88.6% 無標籤，輸出嵌入向量直接分割狗/椅子/草地，零人工標籤",
+        "JEPA 核心翻轉：在嵌入空間預測抽象表徵，不重建像素，天生不模糊，可規劃多步行動"
+      ]
     },
     {
+      "id": "vibe-coding-in-prod",
       "title": "Vibe Coding in Prod｜22,000 行，一天寫完",
-      "date": "2026-05-03T09:20:54+08:00",
-      "content": "Anthropic 工程師在生產環境強化學習系統合併了一個主要由 Claude 撰寫的 22,000 行 PR，兩週工作量壓縮成一天。5 頁矽谷流簡報拆解正確的 Vibe Coding 方法論：你是 Claude 的 PM，不是用戶。",
+      "subtitle": "Anthropic 工程師在生產環境強化學習系統合併了一個主要由 Claude 撰寫的 22,000 行 PR，兩週工作量壓縮成一天。5 頁矽谷流簡報拆解正確的 Vibe Coding 方法論：你是 Claude 的 PM，不是用戶。",
+      "href": "https://storage.googleapis.com/botrun-slides/vibe-coding-in-prod.html",
+      "icon": "code-2",
+      "badge": "方法論",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-03T09:20:54+08:00",
       "tags": [
-        "方法論",
-        "AI 編程",
-        "葉節點策略",
-        "可驗證檢查點"
+        "zap:AI 編程",
+        "layers:葉節點策略",
+        "check-circle:可驗證檢查點"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/vibe-coding-in-prod.html"
+      "concepts": [
+        "核心翻轉：忘記程式碼但記住產品，開發者角色從「寫程式的人」切換成「Claude 的 PM」",
+        "22,000 行 PR 一天合併：Anthropic 強化學習系統實際案例，14 倍時間壓縮",
+        "葉節點策略：從無其他模組依賴的末端功能起步，技術債影響有限，最適合讓 AI 自由發揮",
+        "15 分鐘上下文收集：帶 Claude 逛程式庫→共同制定計畫→一個完整 prompt 再執行",
+        "可驗證檢查點：1 條 happy path + 2 條失敗情境 E2E 測試，AI 自跑紅綠燈，人只驗收"
+      ]
     },
     {
+      "id": "premium-flywheel",
       "title": "高品味飛輪 — 波特人方法論",
-      "date": "2026-05-03T09:00:00+08:00",
-      "content": "三個齒輪咬合越緊，AI 就跑越快。001 高品味題庫（真實多跳推理 × 機敏到合成 × 人都會錯）、002 駕馭工程排行榜（二元評測 × 可行排行榜 × opus改進建議）、003 孵化成長知己（西瓜專屬db × 駿馬自己的cli × 蛙神專屬wasm）。每頁附超級大白話解說，秒懂飛輪邏輯。",
+      "subtitle": "三個齒輪咬合越緊，AI 就跑越快。001 高品味題庫（真實多跳推理 × 機敏到合成 × 人都會錯）、002 駕馭工程排行榜（二元評測 × 可行排行榜 × opus改進建議）、003 孵化成長知己（西瓜專屬db × 駿馬自己的cli × 蛙神專屬wasm）。每頁附超級大白話解說，秒懂飛輪邏輯。",
+      "href": "https://storage.googleapis.com/botrun-slides/premium-flywheel.html",
+      "icon": "zap",
+      "badge": "方法論 · 5 頁",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-03T09:00:00+08:00",
       "tags": [
-        "方法論 · 5 頁",
-        "高品味題庫",
-        "排行榜",
-        "孵化知己",
-        "飛輪"
+        "target:高品味題庫",
+        "bar-chart:排行榜",
+        "seedling:孵化知己",
+        "repeat:飛輪"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/premium-flywheel.html"
+      "concepts": [
+        "高品味飛輪：三個齒輪互相強化，越轉越快停不下來",
+        "001 高品味題庫：真實多跳推理 × 機敏到合成 × 人都會錯",
+        "002 駕馭工程排行榜：二元評測 × 可行排行榜報告 × opus改進建議",
+        "003 孵化成長知己：西瓜🍉專屬db × 駿馬🐎自己的cli × 蛙神🐸專屬wasm"
+      ]
     },
     {
+      "id": "lpm-virtual-character-engine",
       "title": "LPM 1.0：虛擬角色從「對嘴」到「真正表演」",
-      "date": "2026-05-03T08:30:00+08:00",
-      "content": "米哈游旗下 AI 公司 Anuttacon 研發。全球首個破解「表演三難困境」的視訊生成模型：17B 參數 Base LPM、交錯雙音軌架構、3,100 萬訓練片段（保留率 <10%）、因果骨幹 + 精煉器 DMD 蒸餾，單 GPU 0.35 秒/塊達 24fps 實時串流。Base LPM 人類偏好率 64.3% vs Kling-Avatar-2 24.4%，Online LPM 82.5% vs LiveAvatar 12.5%。",
+      "subtitle": "米哈游旗下 AI 公司 Anuttacon 研發。全球首個破解「表演三難困境」的視訊生成模型：17B 參數 Base LPM、交錯雙音軌架構、3,100 萬訓練片段（保留率 <10%）、因果骨幹 + 精煉器 DMD 蒸餾，單 GPU 0.35 秒/塊達 24fps 實時串流。Base LPM 人類偏好率 64.3% vs Kling-Avatar-2 24.4%，Online LPM 82.5% vs LiveAvatar 12.5%。",
+      "href": "https://storage.googleapis.com/botrun-slides/lpm-virtual-character-engine.html",
+      "icon": "play",
+      "badge": "虛擬角色 · 6 頁",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-03T08:30:00+08:00",
       "tags": [
-        "虛擬角色 · 6 頁",
-        "Anuttacon",
-        "LPM 1.0",
-        "17B DiT",
-        "表演三難困境"
+        "cpu:Anuttacon",
+        "zap:LPM 1.0",
+        "video:17B DiT",
+        "shield:表演三難困境"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/lpm-virtual-character-engine.html"
+      "concepts": [
+        "表演三難困境：高表現力 × 實時推理 × 長時身份穩定，LPM 1.0 首次系統性解決",
+        "交錯式雙音頻注入：說話音頻走偶數層、傾聽音頻走奇數層，計算量 -50% 且梯度不衝突",
+        "三類型多粒度參考圖：全局外觀 + 四方位身體 + 8 種表情，10 分鐘無身份漂移",
+        "因果骨幹 DiT（2 步）+ 因果精煉器 DiT（1 步）DMD 蒸餾，0.35 秒/塊實時 24fps",
+        "LPM-Bench：全球首個交互式角色表演基準，1000 案例 × 4 評估維度 × 10% 長時測試"
+      ]
     },
     {
+      "id": "small-model-training-lessons",
       "title": "訓練前沿小型模型：六堂血淚心得",
-      "date": "2026-05-03T08:10:00+08:00",
-      "content": "Liquid AI 前訓練主管 Maxime Labonne 的深度分享。63% 參數在浪費？28 兆 tokens 餵 3.5 億參數、死亡迴圈從 15% 砍到趨近於零、Short Conv 比 Attention 快 5 倍、Agentic 工具讓小模型超越記憶限制。Edge Model 是獨立物種，不是縮水大模型。",
+      "subtitle": "Liquid AI 前訓練主管 Maxime Labonne 的深度分享。63% 參數在浪費？28 兆 tokens 餵 3.5 億參數、死亡迴圈從 15% 砍到趨近於零、Short Conv 比 Attention 快 5 倍、Agentic 工具讓小模型超越記憶限制。Edge Model 是獨立物種，不是縮水大模型。",
+      "href": "https://storage.googleapis.com/botrun-slides/small-model-training-lessons.html",
+      "icon": "cpu",
+      "badge": "Edge LLM · 6 頁",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-03T08:10:00+08:00",
       "tags": [
-        "Edge LLM · 6 頁",
-        "Liquid AI",
-        "LFM 2.5",
-        "Edge Model",
-        "前訓練心得"
+        "cpu:Liquid AI",
+        "zap:LFM 2.5",
+        "code:Edge Model",
+        "shield:前訓練心得"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/small-model-training-lessons.html"
+      "concepts": [
+        "嵌入層吃掉 Gemma 3 270M 的 63% 參數，LFM 2 壓到 10%，讓 90% 參數真正做推理",
+        "Short convolution 在實機（手機/車機）比 sliding window attention 快 5×，on-device profiling 比理論計算更有用",
+        "350M 模型訓 28 兆 tokens 仍持續進步，Chinchilla 是計算最佳點不是性能天花板",
+        "死亡迴圈：小模型+推理+複雜任務三合一套餐；DPO 多樣 rollout + RL 可驗證獎勵三步解法",
+        "Agentic 工具（網路搜尋、Python 執行）讓小模型超越記憶限制，是目前最被低估的組合"
+      ]
     },
     {
+      "id": "gemma-chat-local-agent",
       "title": "gemma-chat：飛機上也能 vibe code，AI 不需要雲的許可",
-      "date": "2026-05-03T08:00:00+08:00",
-      "content": "本地 AI 程式設計代理，Google Gemma 4 驅動，完全在 Mac 上執行。無 API 金鑰、無雲端、無需 Wi-Fi。4 種模型熱切換（E2B 1.5GB → 31B 18GB）、Build Mode 即時預覽、Chat Mode 含工具使用、瀏覽器端 Whisper 語音輸入。763 Stars，MIT License。",
+      "subtitle": "本地 AI 程式設計代理，Google Gemma 4 驅動，完全在 Mac 上執行。無 API 金鑰、無雲端、無需 Wi-Fi。4 種模型熱切換（E2B 1.5GB → 31B 18GB）、Build Mode 即時預覽、Chat Mode 含工具使用、瀏覽器端 Whisper 語音輸入。763 Stars，MIT License。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma-chat-local-agent.html",
+      "icon": "cpu",
+      "badge": "Local AI · 6 頁",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-03T08:00:00+08:00",
       "tags": [
-        "Local AI · 6 頁",
-        "Apple Silicon",
-        "完全離線",
-        "Gemma 4",
-        "MLX-LM"
+        "cpu:Apple Silicon",
+        "lock:完全離線",
+        "zap:Gemma 4",
+        "code:MLX-LM"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma-chat-local-agent.html"
+      "concepts": [
+        "gemma-chat = Electron + MLX-LM，Gemma 4 跑在本機，程式碼永遠不離開你的 Mac，隱私零洩漏",
+        "Build Mode：描述需求，AI 即時寫出 HTML/CSS/JS，iframe 每 ~450ms 刷新，看著頁面一行行長出來",
+        "XML action 格式（非 JSON）：小模型處理 XML 更可靠，Agent Loop 每輪最多 40 回合",
+        "4 種模型按需選配：E4B ~3GB 推薦入門，31B ~18GB 需 32GB RAM 旗艦級輸出",
+        "首次下載後完全離線：Python venv + MLX runtime 自動配置，之後開機即用"
+      ]
     },
     {
+      "id": "runpod-flash-zero-docker",
       "title": "RunPod Flash：寫函式，不寫 Dockerfile — 5 頁決策版",
-      "date": "2026-05-03T07:06:47+08:00",
-      "content": "一個 @Endpoint decorator 把 GPU 部署從 90 分鐘壓到 13 分鐘。零 Dockerfile、冷啟動 ~1 秒、按秒計費。四種架構模式（Queue / Load-balanced / Custom Docker / Existing Endpoints），混合 CPU+GPU 管線自動成本優化。",
+      "subtitle": "一個 @Endpoint decorator 把 GPU 部署從 90 分鐘壓到 13 分鐘。零 Dockerfile、冷啟動 ~1 秒、按秒計費。四種架構模式（Queue / Load-balanced / Custom Docker / Existing Endpoints），混合 CPU+GPU 管線自動成本優化。",
+      "href": "https://storage.googleapis.com/botrun-slides/runpod-flash-zero-docker.html",
+      "icon": "zap",
+      "badge": "決策版 · 5 頁",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-03T07:06:47+08:00",
       "tags": [
-        "決策版 · 5 頁",
-        "RunPod Flash",
-        "零 Dockerfile",
-        "Serverless GPU",
-        "13 分鐘部署"
+        "zap:RunPod Flash",
+        "cpu:零 Dockerfile",
+        "server:Serverless GPU",
+        "clock:13 分鐘部署"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/runpod-flash-zero-docker.html"
+      "concepts": [
+        "RunPod Flash = @Endpoint decorator，寫完函式加一行就能部署到 GPU Serverless，省去整條 Dockerfile→build→push→YAML 90 分鐘流程",
+        "冷啟動 ~1 秒 vs 傳統 30–60 秒：依賴預打包掛載到 artifact，不拉整個大映像",
+        "混合 CPU+GPU 管線：前處理用便宜 CPU endpoint，推論用 GPU endpoint，Flash 自動路由，成本最優",
+        "GA 版四種架構模式：Queue-based（批次）/ Load-balanced（低延遲 API）/ Custom Docker（備援）/ Existing Endpoints（Python 客戶端）",
+        "適用對象：AI 新創（快速迭代）/ 學生研究員（零 DevOps）/ 企業 AI 團隊（還時間給資料科學家）/ Agent 開發者（不可預測爆發流量）"
+      ]
     },
     {
+      "id": "modal-vs-runpod-decision",
       "title": "Modal vs RunPod × Gemma 4 31B — 一張表選對（5 頁）",
-      "date": "2026-05-02T17:30:00+08:00",
-      "content": "推論用 Modal RTX PRO 6000 + NVFP4，fine-tune 必須用 RunPod Pod。各取所長、不要混用。決策矩陣濃縮 10 條地雷（LM-156~165）：4hr/日自用 RunPod Pod $239、不想煩 Modal $365、Fine-tune QLoRA RunPod $16-24/次、RunPod Serverless 反而比 Modal 貴 32% 別選。含 bh runpod 模組路線圖（推論 + ft 子命令）。",
+      "subtitle": "推論用 Modal RTX PRO 6000 + NVFP4，fine-tune 必須用 RunPod Pod。各取所長、不要混用。決策矩陣濃縮 10 條地雷（LM-156~165）：4hr/日自用 RunPod Pod $239、不想煩 Modal $365、Fine-tune QLoRA RunPod $16-24/次、RunPod Serverless 反而比 Modal 貴 32% 別選。含 bh runpod 模組路線圖（推論 + ft 子命令）。",
+      "href": "https://storage.googleapis.com/botrun-slides/modal-vs-runpod-decision.html",
+      "icon": "git-compare",
+      "badge": "決策版 · 5 頁",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-05-02T17:30:00+08:00",
       "tags": [
-        "決策版 · 5 頁",
-        "Modal vs RunPod",
-        "Gemma 4 31B",
-        "NVFP4",
-        "Fine-tune"
+        "git-compare:Modal vs RunPod",
+        "cpu:Gemma 4 31B",
+        "zap:NVFP4",
+        "wrench:Fine-tune"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/modal-vs-runpod-decision.html"
+      "concepts": [
+        "推論主場 = Modal RTX PRO 6000 NVFP4：$3.03/hr 96GB Blackwell + 精度 -0.3% + 吞吐 ~2× FP8 + 256K context",
+        "Fine-tune 主場 = RunPod Pod：Modal 24hr 上限砍斷訓練、scale-to-zero 反模式，Multi-GPU FSDP 必須 RunPod 原生支援",
+        "決策矩陣：偶爾用 NCHC（$30-100）、自律 RunPod Pod（$239）、不想煩 Modal（$365）、Fine-tune QLoRA RunPod（$16-24）",
+        "RunPod Serverless 別選：$3.99/hr 比 Modal 貴 32%，要 serverless 體驗就直接 Modal",
+        "RunPod Pod 忘記停 = $1,430/月（24/7 計費），必配 cron auto-stop 或 daemon idle 自殺",
+        "bh runpod 模組路線：up/down/chat/cost + ft start/logs/download，推論 + 訓練 lifecycle 一個 CLI 搞定"
+      ]
     },
     {
+      "id": "modal-nvfp4-gemma-31b",
       "title": "Modal × NVFP4 × Gemma 4 31B — 一張卡跑 256K，省一半",
-      "date": "2026-05-02T16:00:00+08:00",
-      "content": "OpenRouter 的 Gemma 31B 是隨機抽獎，自架才穩。2026 正解 = Modal RTX PRO 6000 Blackwell（96GB, $3.03/hr）+ NVIDIA 校準版 nvidia/Gemma-4-31B-IT-NVFP4 + vLLM 0.7。精度損失 < 0.3%（NVIDIA 官方 6 個 benchmark）、吞吐 ~2× H100 FP8、~$0.4/1M tokens。50 行 Python 部署、scale-to-zero、256K context 直接跑。含 GPU 性價比表、micro-block scaling 原理、致命警告（不要自己量化 BF16→FP4）、完整成本對比。",
+      "subtitle": "OpenRouter 的 Gemma 31B 是隨機抽獎，自架才穩。2026 正解 = Modal RTX PRO 6000 Blackwell（96GB, $3.03/hr）+ NVIDIA 校準版 nvidia/Gemma-4-31B-IT-NVFP4 + vLLM 0.7。精度損失 < 0.3%（NVIDIA 官方 6 個 benchmark）、吞吐 ~2× H100 FP8、~$0.4/1M tokens。50 行 Python 部署、scale-to-zero、256K context 直接跑。含 GPU 性價比表、micro-block scaling 原理、致命警告（不要自己量化 BF16→FP4）、完整成本對比。",
+      "href": "https://storage.googleapis.com/botrun-slides/modal-nvfp4-gemma-31b.html",
+      "icon": "cpu",
+      "badge": "技術方案 · 10 頁",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-05-02T16:00:00+08:00",
       "tags": [
-        "技術方案 · 10 頁",
-        "Modal Serverless",
-        "NVFP4 量化",
-        "RTX PRO 6000",
-        "省一半成本"
+        "cpu:Modal Serverless",
+        "zap:NVFP4 量化",
+        "gpu:RTX PRO 6000",
+        "dollar-sign:省一半成本"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/modal-nvfp4-gemma-31b.html"
+      "concepts": [
+        "Modal RTX PRO 6000 Blackwell 96GB @ $3.03/hr 是 31B+256K 甜蜜點，比 H100 多 16GB、便宜 23%，原生 FP4 tensor core",
+        "NVFP4 vs BF16 精度損失 < 0.5%（NVIDIA 官方 model card 6 個 benchmark：GPQA -0.25%、MMLU Pro -0.31%、Terminal-Bench 0%）",
+        "Micro-block scaling 是 NVFP4 秘密武器：每 16 個 weight 配獨立 FP8 scale，outlier 不污染全局，誤差鎖在小區塊",
+        "致命警告：不要自己 BF16→FP4 動態量化（精度掉 2-5%），務必直接用 nvidia/Gemma-4-31B-IT-NVFP4 校準版",
+        "vLLM ≥ 0.7 + Blackwell 才有 native FP4 加速，H100/H200 跑 NVFP4 會 dequantize 到 FP8（吞吐沒加成、精度仍保留）",
+        "成本決策樹：能用 NCHC（$0.021/1M）就用 NCHC、配額不夠或要海外服務就 Modal NVFP4（$0.4/1M）、量超大才自架 H100"
+      ]
     },
     {
+      "id": "peter-steinberger-openclaw-ted",
       "title": "龍蝦放出來了，回不去了 — Peter Steinberger TED 演講仔細版",
-      "date": "2026-05-02T12:40:00+08:00",
-      "content": "OpenClaw 創辦人 Peter 在 TED 親口講龍蝦怎麼來的（17 分鐘 / 13 頁）。Marrakesh 9 秒語音救援經典橋段、被 AI 公司告商標被迫改名「先是名字、然後是龍蝦、再來是模型」、中國深圳「養龍蝦」現象、Chris Anderson 警告他「你像潘朵拉魔盒主角」。整段最被引用金句：Chatbots give up. Agents improvise.",
+      "subtitle": "OpenClaw 創辦人 Peter 在 TED 親口講龍蝦怎麼來的（17 分鐘 / 13 頁）。Marrakesh 9 秒語音救援經典橋段、被 AI 公司告商標被迫改名「先是名字、然後是龍蝦、再來是模型」、中國深圳「養龍蝦」現象、Chris Anderson 警告他「你像潘朵拉魔盒主角」。整段最被引用金句：Chatbots give up. Agents improvise.",
+      "href": "https://storage.googleapis.com/botrun-slides/peter-steinberger-openclaw-ted.html",
+      "icon": "play-circle",
+      "badge": "TED 精華 · 13 頁",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-02T12:40:00+08:00",
       "tags": [
-        "TED 精華 · 13 頁",
-        "TED 演講",
-        "OpenClaw",
-        "agents-improvise",
-        "創辦人原話"
+        "play-circle:TED 演講",
+        "robot:OpenClaw",
+        "lightbulb:agents-improvise",
+        "heart:創辦人原話"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/peter-steinberger-openclaw-ted.html"
+      "concepts": [
+        "賣公司後三年憂鬱、2025 早期 holy shit moment：boilerplate / plumbing AI 全包、瓶頸不再是打字是思考、25 年經驗第一次有真正槓桿",
+        "Marrakesh 9 秒語音救援：agent 自己 inspect 檔案 → convert 格式 → 找 OpenAI key 翻譯，全程 9 秒，Peter 從沒寫過語音支援",
+        "整場 TED 最被引用金句：Chatbots give up. Agents improvise. — 聊天機器人會放棄，代理人會即興演出",
+        "AI 公司商標訴訟三步剝奪：先是名字、然後是龍蝦、再來是模型，這就是「OpenClaw」這個名字的由來",
+        "對照本案三件套：OpenClaw 是消費級、botrun-hermes 是機關級 IAP+Audit 版本、botrun-hippo 是單 Docker 一鍵安裝賣機關（等同養龍蝦但全地端 H200）"
+      ]
     },
     {
+      "id": "hermes-claude-code-10x-david-ondrej",
       "title": "Hermes 把 Claude Code 升級成會自己派工的小組長",
-      "date": "2026-05-02T12:25:00+08:00",
-      "content": "David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 OpenClaw 跳船到 Hermes、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。",
+      "subtitle": "David Ondrej 43 分鐘影片仔細版（13 頁）。看完你會知道：為什麼幾萬人從 OpenClaw 跳船到 Hermes、為什麼「Hermes 當組長、Claude Code 當組員」是 2026 年最聰明的搭法、以及一個 GitHub Token 貼錯地方就把錢包送出去的真實地雷。對照本案 horse / hermes / hippo 三件套。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-claude-code-10x-david-ondrej.html",
+      "icon": "play-circle",
+      "badge": "影片精華 · 13 頁",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-02T12:25:00+08:00",
       "tags": [
-        "影片精華 · 13 頁",
-        "影片精華",
-        "Hermes Agent",
-        "Claude Code",
-        "Token 地雷"
+        "play-circle:影片精華",
+        "robot:Hermes Agent",
+        "code:Claude Code",
+        "shield:Token 地雷"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-claude-code-10x-david-ondrej.html"
+      "concepts": [
+        "核心發明：Hermes 內建 skill `delegate-coding-to-claude-code`，當 orchestrator 派 Claude Code 子代理人寫 code，自己負責管理回報推送部署",
+        "完整鏈路：Discord 語音 → VPS 上 Hermes → Claude Code subagent → git push → Vercel webhook → 30~40 秒公開上線",
+        "唯一安全地雷：GitHub PAT 絕不可貼到 chat（會經 OpenRouter→Anthropic API log），必用 `hermes config set GITHUB_TOKEN ...` 存進 .env",
+        "self-improving loop 具體展現：Hermes 學到使用者喜歡 cron 60 秒回報之後下次自動加上，不用再說",
+        "對照本案：horse=skill 系統、hermes=orchestrator、hippo=單 Docker 整包；同架構不同 trust boundary（消費級 Vercel vs 機關級 IAP+H200）"
+      ]
     },
     {
+      "id": "ai-evolution-highschool-guide",
       "title": "人類怎麼教 AI 變聰明：高中生秒懂版（附工程師細節）",
-      "date": "2026-05-02T12:03:49+08:00",
-      "content": "31B 小模型解題率 22.3% → 70.7%（2.88×）的真實故事。用補習班學弟、考卷打勾打叉、考試當天失常等高中生熟悉比喻講五招，每招附資深工程師細節（蒸餾、SOP Router、Binary Rubric、Best-of-N、L17 校準偏差）。",
+      "subtitle": "31B 小模型解題率 22.3% → 70.7%（2.88×）的真實故事。用補習班學弟、考卷打勾打叉、考試當天失常等高中生熟悉比喻講五招，每招附資深工程師細節（蒸餾、SOP Router、Binary Rubric、Best-of-N、L17 校準偏差）。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html",
+      "icon": "graduation-cap",
+      "badge": "方法學 · 8 頁",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-02T12:03:49+08:00",
       "tags": [
-        "方法學 · 8 頁",
-        "高中生秒懂",
-        "AI演化",
-        "工程細節"
+        "graduation-cap:高中生秒懂",
+        "brain:AI演化",
+        "wrench:工程細節"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ai-evolution-highschool-guide.html"
+      "concepts": [
+        "雙層說明法：白話用補習班/學長學弟/考卷打勾比喻，括號內附資深工程師術語（蒸餾/Rubric/Best-of-N）",
+        "大帶小蒸餾：Sonnet 子代理生成 33 題完整 Thought-Action-Observation 軌跡作為 SFT 資料",
+        "SOP Router：外部 regex 對 user input 分流，動態組裝 system prompt，避免提示詞疊加報酬遞減",
+        "Weighted-Binary Rubric：1/0 評分 + error_hint + fix_hint 自動 triage 給下一代 SOP",
+        "L16 模型隨機性：Best-of-N=3 救活 6 題；L17 校準：LLM-as-judge 預測扣 -50pp 才接近 prod"
+      ]
     },
     {
+      "id": "privacy-filter-taiwan-gov-experiment",
       "title": "Privacy Filter 實驗報告：台灣政府公文 PII 去機敏深度測試",
-      "date": "2026-05-02T07:09:09+08:00",
-      "content": "2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。",
+      "subtitle": "2026-05-02 實測。OpenAI 1.5B 開源小模型 × 10 種台灣政府情境。電話/Email 全中，中文人名漏 25%，民國日期漏 60%，統一編號漏 80%。CPU 比 MPS 快 3.3×，附 regex 補強配方。",
+      "href": "https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html",
+      "icon": "shield",
+      "badge": "資安實驗",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-02T07:09:09+08:00",
       "tags": [
-        "資安實驗",
-        "PII脫敏",
-        "本地模型",
-        "政府公文",
-        "OpenAI開源"
+        "shield:PII脫敏",
+        "cpu:本地模型",
+        "file-text:政府公文",
+        "zap:OpenAI開源"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/privacy-filter-taiwan-gov-experiment.html"
+      "concepts": [
+        "Privacy Filter 1.5B MoE 本地執行，推理僅啟用 50M 參數，Apache 2.0 可商用，單次 Forward Pass 標注全文",
+        "電話/Email/身分證號命中率接近 100%；中文人名（冒號後緊接）漏標 ~25%；民國年日期漏標 ~60%；統一編號漏標 ~80%",
+        "企業裁罰情境整體漏標率 39%，遠高於個人文件 17.5%，主因：多筆密集排列 Attention 分散 + 統一編號無訓練樣本",
+        "CPU float32 達 1,802 tok/s；MPS float16 只有 543 tok/s（慢 3.3×）；MLX 無社群 port，CPU 是最快選擇",
+        "三層補強配方：Privacy Filter 英數 PII ＋ regex 補民國日期/統一編號 ＋ NER 補中文人名，漏標率可從 39% 降至 <5%"
+      ]
     },
     {
+      "id": "claude-code-lm-studio-local-model",
       "title": "Claude Code × LM Studio 本地模型完全攻略 — 8 條地雷 + 實體隔離真相",
-      "date": "2026-05-02T06:47:23+08:00",
-      "content": "2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。",
+      "subtitle": "2026-05-02 實戰紀錄。API 費用 × 隱私疑慮 → 本地模型救命。Anthropic 為何悄悄支援、社群真實評價、實體隔離三道關卡、LM Studio 正確接法、KV cache 關鍵設定、8 條地雷速查。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html",
+      "icon": "cpu",
+      "badge": "工具實戰",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-02T06:47:23+08:00",
       "tags": [
-        "工具實戰",
-        "本地模型",
-        "隱私",
-        "Claude Code",
-        "LM Studio"
+        "cpu:本地模型",
+        "shield:隱私",
+        "zap:Claude Code",
+        "tool:LM Studio"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-code-lm-studio-local-model.html"
+      "concepts": [
+        "Anthropic 靜悄悄支援 local model：2026年1月 Ollama v0.14 + LM Studio v0.4.1 主動靠攏 /v1/messages 格式，無官方公告",
+        "KV cache 關鍵地雷：CLAUDE_CODE_ATTRIBUTION_HEADER=0 必須放 settings.json（非 shell export），否則 prefill 慢 10 倍",
+        "完全實體隔離目前仍是 Feature Request：GitHub #39847/#41638 尚未實現，網路教學幾乎都需要 Anthropic 帳號",
+        "LM Studio 直接接無需 proxy：v0.4.1+ 原生 /v1/messages；NCHC 國網 OpenAI-compatible 才需要 LiteLLM 轉換",
+        "四條鐵律：先查原生相容性 / KV cache 設定 / local 設定放 project 層 / AUTH_TOKEN 不是 API_KEY"
+      ]
     },
     {
+      "id": "precision-bible-2026",
       "title": "2026 精準度聖經 — 全新題目逼近 99.9% 的最小配方",
-      "date": "2026-05-01T20:55:55+08:00",
-      "content": "Few-Shot First, Fine-Tune Last。30 筆黃金種子 + regex 分流 + 2-shot 動態範例 + 一個抓漏 prompt = F1 ≥ 0.99；四天工程勝過兩個月收資料訓練。每步驟給業界通用英文術語 + 臺灣白話標題，高中生也能懂。",
+      "subtitle": "Few-Shot First, Fine-Tune Last。30 筆黃金種子 + regex 分流 + 2-shot 動態範例 + 一個抓漏 prompt = F1 ≥ 0.99；四天工程勝過兩個月收資料訓練。每步驟給業界通用英文術語 + 臺灣白話標題，高中生也能懂。",
+      "href": "https://storage.googleapis.com/botrun-slides/precision-bible-2026.html",
+      "icon": "target",
+      "badge": "方法學 · 9 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-01T20:55:55+08:00",
       "tags": [
-        "方法學 · 9 頁簡報",
-        "精準度聖經",
-        "RAFS",
-        "方法學"
+        "target:精準度聖經",
+        "zap:RAFS",
+        "book:方法學"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/precision-bible-2026.html"
+      "concepts": [
+        "核心哲學 Few-Shot First, Fine-Tune Last：先用範例餵模型逼到最高分；準度還不夠才考慮訓練",
+        "Day 1 打地基：Specification Anchoring（規格鐵律）+ Gold Seed Annotation（30 筆黃金種子）+ Holdout Split（留考試題）",
+        "Day 2 搭骨架：Rule-based Routing（regex 分流櫃台）+ Exemplar Retrieval RAFS（動態抓範例）+ Baseline Probing，目標 F1 ≥ 0.90",
+        "Day 3-4 打磨：Failure Mode Clustering（抓三大魔王）+ Targeted Shot Expansion 對症下藥 + Chain-of-Verification（二次抓漏 prompt）= F1 ≥ 0.99",
+        "七大 Premature 不要做：不要先囤資料 / 不要先訓練 / 不要先壓縮 / 不要先 ensemble / 不要先 embedding / 不要先 HITL UI / 不要追完美 spec"
+      ]
     },
     {
+      "id": "gemma4-finetune-fail-rafs-win",
       "title": "微調燒兩週、Prompting 兩例搞定 — Gemma 4 公文 PII 完整經驗紀錄",
-      "date": "2026-05-01T20:09:18+08:00",
-      "content": "MLX 生態 5 條 fine-tune 路徑全爆（multimodal 不認 / 4-bit ScaledLinear 崩 / Tied Embed 過擬合 / E2B F1 只到 0.49）；反向勝出 = 26B 4-bit + RAFS 動態 2-shot，F1=0.98、Recall=0.99、漏標率 0.6%、半天工程；Haiku × Sonnet 混搭產 1500 筆訓練資料 ~$45。",
+      "subtitle": "MLX 生態 5 條 fine-tune 路徑全爆（multimodal 不認 / 4-bit ScaledLinear 崩 / Tied Embed 過擬合 / E2B F1 只到 0.49）；反向勝出 = 26B 4-bit + RAFS 動態 2-shot，F1=0.98、Recall=0.99、漏標率 0.6%、半天工程；Haiku × Sonnet 混搭產 1500 筆訓練資料 ~$45。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-finetune-fail-rafs-win.html",
+      "icon": "alert-triangle",
+      "badge": "經驗紀錄 · 3 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-01T20:09:18+08:00",
       "tags": [
-        "經驗紀錄 · 3 頁簡報",
-        "微調踩雷",
-        "Gemma 4 26B",
-        "RAFS"
+        "alert-triangle:微調踩雷",
+        "cpu:Gemma 4 26B",
+        "zap:RAFS"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma4-finetune-fail-rafs-win.html"
+      "concepts": [
+        "終極勝出 = 26B 4-bit + RAFS 動態 2-shot：F1 0.980 / Recall 0.99 / 漏標率 0.6% / 73% 樣本完美 1.00 / M4 Max 60-80 tok/s",
+        "微調 13 道陰影：mlx-lm 不認多模態、PEFT 撞 ClippableLinear、ScaledLinear 4-bit 量化崩、Tied Embeddings 讓 lm_head 學不到 emoji、解凍 embed 過擬合災難",
+        "小模型天花板：E2B 微調 F1 只到 0.49，仍遠輸給未訓練 26B 的 0.93；台灣公文結構複雜，5B 以下吃不下足夠模式",
+        "資料合成 Haiku × Sonnet 混搭：30 agents 平行 Sonnet 產 1500 筆 ~$45 美金；audit_batch.py 嚴格驗 emoji 對稱、無竄改",
+        "算力策略：推論留 Apple Silicon（MLX + M4 Max），大規模微調才上 Modal Serverless（試錯週期數天壓到數小時）"
+      ]
     },
     {
+      "id": "gemma4-pii-rafs",
       "title": "微調燒兩週，Prompting 兩例搞定 — Gemma 4 邊緣 PII 標註 RAFS 實戰",
-      "date": "2026-05-01T12:06:38+08:00",
-      "content": "Apple M4 Max 邊緣運算政府公文機敏標註：30 筆精修微調全崩（MatFormer / 4-bit 量化 / Emoji Token 三大踩坑），改用 26B 4-bit + k=2 Few-shot，F1=0.93、12 秒/頁；越強的模型越少範例，RAFS 動態範本庫零訓練成本。",
+      "subtitle": "Apple M4 Max 邊緣運算政府公文機敏標註：30 筆精修微調全崩（MatFormer / 4-bit 量化 / Emoji Token 三大踩坑），改用 26B 4-bit + k=2 Few-shot，F1=0.93、12 秒/頁；越強的模型越少範例，RAFS 動態範本庫零訓練成本。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-pii-rafs.html",
+      "icon": "shield",
+      "badge": "邊緣 AI · 7 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-01T12:06:38+08:00",
       "tags": [
-        "邊緣 AI · 7 頁簡報",
-        "PII 標註",
-        "Gemma 4",
-        "Few-shot"
+        "shield:PII 標註",
+        "cpu:Gemma 4",
+        "zap:Few-shot"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma4-pii-rafs.html"
+      "concepts": [
+        "三大微調踩坑：mlx-lm 不支援 MatFormer 多模態架構、4-bit 量化讓 PLE×ScaledLinear 反向傳播誤差爆炸、Emoji Token ID 250000+ 在 LoRA 沒含 lm_head 時學不會",
+        "k-shot × 模型實測：E2B 4-bit k=5 F1=0.67、E2B bf16 k=3 F1=0.83、26B 4-bit k=2 F1=0.93（最佳 CP）、31B 8-bit k=2 F1=0.96 但 10.7 tok/s 太慢",
+        "反直覺洞見：模型越強需要越少範例，26B 給超過 2 個範例反而 Context Degradation 準確率下降",
+        "RAFS 四步上線：公文分類 → 從範本庫抽 k=2 高品質範例 → 26B 4-bit 推論（12-15 秒/頁）→ 人工只補 4-8% 漏標",
+        "邊緣部署優勢：零訓練成本、法規變只改 Prompt 不改模型、M4 Max 60-80 tok/s 產線吞得下、機敏資料不出機房"
+      ]
     },
     {
+      "id": "playwright-cli-social-listening",
       "title": "把這段話複製貼上，AI 就會幫你爬全網社群",
-      "date": "2026-04-29T08:38:49+08:00",
-      "content": "Playwright CLI 社群輿情爬蟲入門｜高中生也能懂：5 步驟 prompt 一鍵複製，引導你裝工具、有頭登入 FB/IG/X/Threads/Dcard/PTT、平行爬資料出情緒熱度報表，附爬蟲倫理 5 條",
+      "subtitle": "Playwright CLI 社群輿情爬蟲入門｜高中生也能懂：5 步驟 prompt 一鍵複製，引導你裝工具、有頭登入 FB/IG/X/Threads/Dcard/PTT、平行爬資料出情緒熱度報表，附爬蟲倫理 5 條",
+      "href": "https://storage.googleapis.com/botrun-slides/playwright-cli-社群輿情爬蟲.html",
+      "icon": "zap",
+      "badge": "Playwright CLI · 5 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-29T08:38:49+08:00",
       "tags": [
-        "Playwright CLI · 5 頁簡報",
-        "Playwright CLI",
-        "輿情爬蟲",
-        "社群監測"
+        "zap:Playwright CLI",
+        "cpu:輿情爬蟲",
+        "layers:社群監測"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/playwright-cli-社群輿情爬蟲.html"
+      "concepts": [
+        "Copy-Paste Prompt：5 步驟（001~005）一鍵複製貼到 Claude Code/Cursor，AI 引導你完成全流程",
+        "有頭模式登入：playwright-cli --headed --persistent，使用者親手輸入帳密+2FA，密碼不交給 AI",
+        "多 Session 隔離：-s=fb / -s=ig / -s=x 各用獨立 profile，避免 cookie 互污，平行爬省 5 倍時間",
+        "人機共用畫面：playwright-cli show dashboard 即時觀察，按 Esc 切換 AI/手動接管",
+        "爬蟲倫理 5 條：繁體中文輸出、限速 1 req/2-5s+jitter、只爬公開內容、守 ToS+robots.txt、只取摘要+原文連結"
+      ]
     },
     {
+      "id": "google-cloud-ai-updates",
       "title": "沒人談的 Google Cloud AI：深研究 Agent × 多代理協作上線了",
-      "date": "2026-04-28T07:33:12+08:00",
-      "content": "Google Cloud Next 2026 重點：Deep Research Agent 榮登 Benchmark 榜首、CX Agent Studio 6 週上線、Gemini Enterprise 單一提示驅動多代理、AI 運動分析解構毫秒動作",
+      "subtitle": "Google Cloud Next 2026 重點：Deep Research Agent 榮登 Benchmark 榜首、CX Agent Studio 6 週上線、Gemini Enterprise 單一提示驅動多代理、AI 運動分析解構毫秒動作",
+      "href": "https://storage.googleapis.com/botrun-slides/google-cloud-ai-updates.html",
+      "icon": "cloud",
+      "badge": "Google Cloud AI · 8 頁簡報",
+      "badgeColor": "#1a73e8",
+      "publishDate": "2026-04-28T07:33:12+08:00",
       "tags": [
-        "Google Cloud AI · 8 頁簡報",
-        "Google Cloud",
-        "多代理",
-        "Deep Research"
+        "cloud:Google Cloud",
+        "cpu:多代理",
+        "zap:Deep Research"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/google-cloud-ai-updates.html"
+      "concepts": [
+        "Deep Research Agent：全 Benchmark 榜首，跨模態連接定量與定性數據，已在製藥/金融領域落地",
+        "CX Agent Studio：YouTube TV 客服 6 週從零到生產，視覺化多代理流程 + 自然語言業務邏輯",
+        "Gemini Enterprise：一個 prompt 觸發市場研究→庫存分析→再行銷→網站部署的完整多代理鏈",
+        "AI 運動分析：Google DeepMind 2D 影片轉 3D 姿態追蹤，旋轉速度/飛行時間/壓縮角即時量測"
+      ]
     },
     {
+      "id": "matt-ai-workflow",
       "title": "AI 寫爛 code？是你讓它爛的",
-      "date": "2026-04-28T07:19:30+08:00",
-      "content": "Matt 的 2 小時實戰工作流：Grill Me 對齊 → PRD 目的地 → Kanban 垂直切片 → Ralph AFK 迴圈 → TDD 護欄 → 深度模組 → Sand Castle 平行化",
+      "subtitle": "Matt 的 2 小時實戰工作流：Grill Me 對齊 → PRD 目的地 → Kanban 垂直切片 → Ralph AFK 迴圈 → TDD 護欄 → 深度模組 → Sand Castle 平行化",
+      "href": "https://storage.googleapis.com/botrun-slides/matt-ai-workflow.html",
+      "icon": "cpu",
+      "badge": "AI 開發工作流 · 10 頁簡報",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-28T07:19:30+08:00",
       "tags": [
-        "AI 開發工作流 · 10 頁簡報",
-        "AI 工程",
-        "TDD",
-        "架構設計"
+        "cpu:AI 工程",
+        "zap:TDD",
+        "layers:架構設計"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/matt-ai-workflow.html"
+      "concepts": [
+        "Smart Zone / Dumb Zone：LLM 約 100K tokens 後品質驟降，任務切小、隨時 Clear 是基本功",
+        "Grill Me 技能：讓 AI 逼問你 40 個問題並給推薦答案，比你自己寫 PRD 更快達到共同理解",
+        "Tracer Bullet 垂直切片：每個 Issue 必須穿透 DB+API+UI，禁止水平分層（AI 天然傾向水平）",
+        "TDD 是 AI 的護欄：先寫失敗測試再實作，反饋迴圈品質 = AI 輸出品質天花板",
+        "深度模組 vs 薄模組：小介面+大實作才易測易改，壞 codebase 直接導致壞 AI 輸出"
+      ]
     },
     {
+      "id": "three-engineering-levels",
       "title": "三個工程層級，別再搞混 — AI Agent 的真實地圖",
-      "date": "2026-04-25T12:00:00+08:00",
-      "content": "高中生能懂的 AI 工程故事。提示詞工程→上下文工程→Harness 工程三層地圖；Stripe Minions 每週 1,300 PR 案例；五大失敗模式與解法；GPT-5.5、GDIO 無創擴容、Space Agent 三大底層突破；五大技能工具箱（Grill Me、統一語言、TDD、深層模組、Grey Box）。矽谷流 7 頁簡報。",
+      "subtitle": "高中生能懂的 AI 工程故事。提示詞工程→上下文工程→Harness 工程三層地圖；Stripe Minions 每週 1,300 PR 案例；五大失敗模式與解法；GPT-5.5、GDIO 無創擴容、Space Agent 三大底層突破；五大技能工具箱（Grill Me、統一語言、TDD、深層模組、Grey Box）。矽谷流 7 頁簡報。",
+      "href": "https://storage.googleapis.com/botrun-slides/three-engineering-levels.html",
+      "icon": "layers",
+      "badge": "AI 工程 · 7 頁簡報",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-25T12:00:00+08:00",
       "tags": [
-        "AI 工程 · 7 頁簡報",
         "AI",
         "Harness",
         "工程",
         "高中生",
         "矽谷流"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/three-engineering-levels.html"
+      "concepts": []
     },
     {
+      "id": "hermes-agent-last-month",
       "title": "Hermes Agent 三個月九版本總盤點 — Nous Research 的自我進化代理",
-      "date": "2026-04-23T20:46:58+08:00",
-      "content": "2026/1/23→4/23 盤點 v0.2→v0.10 共 9 版，平均 10 天一版。13 個訊息平台（Telegram/Discord/Slack/WhatsApp/Signal/iMessage/WeChat/飛書/WeCom/Matrix/Mattermost/SMS/Email）、400+ 模型、MCP+ACP 雙協定、Web Dashboard、Profiles 多實例、Tool Gateway 訂閱制。值得抄：PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout。",
+      "subtitle": "2026/1/23→4/23 盤點 v0.2→v0.10 共 9 版，平均 10 天一版。13 個訊息平台（Telegram/Discord/Slack/WhatsApp/Signal/iMessage/WeChat/飛書/WeCom/Matrix/Mattermost/SMS/Email）、400+ 模型、MCP+ACP 雙協定、Web Dashboard、Profiles 多實例、Tool Gateway 訂閱制。值得抄：PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html",
+      "icon": "rocket",
+      "badge": "開源追蹤 · 9 頁簡報",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-23T20:46:58+08:00",
       "tags": [
-        "開源追蹤 · 9 頁簡報",
-        "工程師",
-        "agent-user",
-        "hermes-agent",
-        "release-notes"
+        "audience:工程師",
+        "audience:agent-user",
+        "theme:hermes-agent",
+        "theme:release-notes"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-agent-last-month.html"
+      "concepts": [
+        "90 天 9 版 v0.2→v0.10 · 平均 10 天一版發車節奏",
+        "13 個訊息平台同一大腦 · 涵蓋歐美中台與企業生態",
+        "v0.9 Local Web Dashboard · 瀏覽器管理 session 不再盯 terminal",
+        "v0.10 Nous Tool Gateway · Portal 訂戶免 API Key 直接用搜尋/繪圖/TTS/瀏覽器",
+        "值得抄的設計 · PII Redaction、Fallback Chain、Credential Pool、Inactivity Timeout"
+      ]
     },
     {
+      "id": "browser-harness-5pages-2026-04-23",
       "title": "Browser Harness — 給 LLM 一把鑰匙，它自己配鎖",
-      "date": "2026-04-23T20:45:00+08:00",
-      "content": "browser-use/browser-harness 5 頁簡報：效益說明 + 真實口碑。592 行 Python、一條 WebSocket 直連 Chrome CDP，缺的 helper agent 任務中自己寫。GitHub ★ 5.5k / Fork 481 / MIT。上網找了三處（GitHub README、Hacker News Show HN、Progressive Robot 2026-04-23），評價是什麼就寫什麼。附 Claude Code setup prompt，三分鐘開箱。",
+      "subtitle": "browser-use/browser-harness 5 頁簡報：效益說明 + 真實口碑。592 行 Python、一條 WebSocket 直連 Chrome CDP，缺的 helper agent 任務中自己寫。GitHub ★ 5.5k / Fork 481 / MIT。上網找了三處（GitHub README、Hacker News Show HN、Progressive Robot 2026-04-23），評價是什麼就寫什麼。附 Claude Code setup prompt，三分鐘開箱。",
+      "href": "https://storage.googleapis.com/botrun-slides/browser-harness-5pages.html",
+      "icon": "lightning",
+      "badge": "工具評測 · 5 頁簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-23T20:45:00+08:00",
       "tags": [
-        "工具評測 · 5 頁簡報",
-        "工程師",
-        "agent-researcher",
-        "browser-automation",
-        "agent-harness"
+        "audience:工程師",
+        "audience:agent-researcher",
+        "theme:browser-automation",
+        "theme:agent-harness"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/browser-harness-5pages.html"
+      "concepts": [
+        "Self-healing harness · agent 自己寫 helper",
+        "直連 CDP · 一條 WebSocket 到 Chrome",
+        "592 行 Python · 不蓋框架的 Bitter Lesson"
+      ]
     },
     {
+      "id": "small-model-cli-agentic-handoff-2026-04-21",
       "title": "錯誤訊息夾小抄 — 小模型神遊時 CLI 把它撈回來",
-      "date": "2026-04-21T18:41:30+08:00",
-      "content": "SVG 說明一切：Skill 寫 10 條地雷小模型就神遊。把硬判斷搬進 CLI if-else，錯誤訊息內建修正建議（例如 0 筆→拆「勒令停業」成兩字兩字）。程式碼扛硬判斷、小模型扛彈性修正，Agentic AI 少神遊。",
+      "subtitle": "SVG 說明一切：Skill 寫 10 條地雷小模型就神遊。把硬判斷搬進 CLI if-else，錯誤訊息內建修正建議（例如 0 筆→拆「勒令停業」成兩字兩字）。程式碼扛硬判斷、小模型扛彈性修正，Agentic AI 少神遊。",
+      "href": "https://storage.googleapis.com/botrun-slides/small-model-cli-agentic-handoff.html",
+      "icon": "lightning",
+      "badge": "工程心法 · SVG 簡報",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-21T18:41:30+08:00",
       "tags": [
-        "工程心法 · SVG 簡報",
-        "工程師",
-        "agentic-ai",
-        "cli-small-model"
+        "audience:工程師",
+        "theme:agentic-ai",
+        "stack:cli-small-model"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/small-model-cli-agentic-handoff.html"
+      "concepts": [
+        "硬判斷搬到 CLI if-else 程式碼",
+        "錯誤訊息內建修正建議（夾小抄）",
+        "程式碼扛硬判斷、小模型扛彈性修正"
+      ]
     },
     {
+      "id": "bodiso-fast-furious-2026-04-21",
       "title": "波迪索 × 玩命關頭 — 唐老大也能看懂的 AI 找法規",
-      "date": "2026-04-21T13:30:00+08:00",
-      "content": "一張圖、一部電影、四幕戲：警察開單 → 小模型填封閉選單 → mjs 程式跑規則 → 道交條例 §53-1 罰 12,000 美元。用 Dom、NOS、1/4 英里競速、家人精神，讓非技術人秒懂波迪索 NL→DSL→mjs 流程。地端 Gemma 31B 從 60 → 93 分。",
+      "subtitle": "一張圖、一部電影、四幕戲：警察開單 → 小模型填封閉選單 → mjs 程式跑規則 → 道交條例 §53-1 罰 12,000 美元。用 Dom、NOS、1/4 英里競速、家人精神，讓非技術人秒懂波迪索 NL→DSL→mjs 流程。地端 Gemma 31B 從 60 → 93 分。",
+      "href": "https://storage.googleapis.com/botrun-slides/bodiso-fast-furious-2026-04-21.html",
+      "icon": "lightning",
+      "badge": "電影版 · 非技術人版",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-04-21T13:30:00+08:00",
       "tags": [
-        "電影版 · 非技術人版",
-        "非技術",
-        "bodiso-dsl",
-        "movie-analogy"
+        "audience:非技術",
+        "theme:bodiso-dsl",
+        "stack:movie-analogy"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bodiso-fast-furious-2026-04-21.html"
+      "concepts": [
+        "用玩命關頭劇情解釋波迪索",
+        "四幕戲：NL → DSL → mjs → 法條命中",
+        "Dom + NOS + 家人 = 零幻覺找法規"
+      ]
     },
     {
+      "id": "hermes-acp-zed-recap",
       "title": "Hermes 沒 REST，只好認識 ACP — 五頁脈絡梳理",
-      "date": "2026-04-21T10:14:05+08:00",
-      "content": "從「想串 Hermes SDK」一路梳理到 ACP 協定崛起：Hermes 為何只給 CLI/ACP/MCP 而沒 REST、ACP 是什麼（Zed 2025 提出的 JSON-RPC over stdio）、MCP vs ACP vs REST 五大開發差異、ACP 生態系（Gemini reference impl + Claude Code Beta + OpenCode 官方 + Pi adapter 全進 Zed Registry）、Zed 本尊 Rust + GPUI 技術棧 vs Cursor / VSCode + Claude Code 五大差異。",
+      "subtitle": "從「想串 Hermes SDK」一路梳理到 ACP 協定崛起：Hermes 為何只給 CLI/ACP/MCP 而沒 REST、ACP 是什麼（Zed 2025 提出的 JSON-RPC over stdio）、MCP vs ACP vs REST 五大開發差異、ACP 生態系（Gemini reference impl + Claude Code Beta + OpenCode 官方 + Pi adapter 全進 Zed Registry）、Zed 本尊 Rust + GPUI 技術棧 vs Cursor / VSCode + Claude Code 五大差異。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-acp-zed-recap.html",
+      "icon": "lightning",
+      "badge": "ACP · Zed · Agent 協定",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-21T10:14:05+08:00",
       "tags": [
-        "ACP · Zed · Agent 協定",
-        "工程",
-        "agent-protocol",
-        "hermes-zed-acp-mcp"
+        "audience:工程",
+        "theme:agent-protocol",
+        "stack:hermes-zed-acp-mcp"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-acp-zed-recap.html"
+      "concepts": [
+        "Hermes SDK 沒 REST：只有 CLI / ACP（JSON-RPC over stdio）/ MCP",
+        "ACP = Zed 2025 提出的 Agent Client Protocol，IDE ↔ agent 雙向 JSON-RPC",
+        "MCP vs ACP vs REST 五大差異：設計對象、傳輸、Session、能力發現、Streaming/雙向",
+        "ACP Registry 全家桶：Gemini CLI（reference）、Claude Code（Beta）、OpenCode、Pi、Codex",
+        "Zed 100% Rust + GPUI：啟動 <0.5s、180 MB、原生協作；vs Cursor / VSCode + Claude Code"
+      ]
     },
     {
+      "id": "agentic-harness-seven-layers",
       "title": "會自己長大的 Agentic AI — 七層演化架構",
-      "date": "2026-04-19T23:10:01+08:00",
-      "content": "排行榜不是我排的，是「使用者會不會再打開」排的。從 AI 友善文件、技能自動演化、SQLite 結構化記憶，到任務專屬 Meta CLI、不爽飛輪、神經符號推理、主動式知識更新七層，上面的做好，下面才接得上。打分 10-10-10-9-9-8-8，底座三支滿分打穩，其餘四層自己會長大。",
+      "subtitle": "排行榜不是我排的，是「使用者會不會再打開」排的。從 AI 友善文件、技能自動演化、SQLite 結構化記憶，到任務專屬 Meta CLI、不爽飛輪、神經符號推理、主動式知識更新七層，上面的做好，下面才接得上。打分 10-10-10-9-9-8-8，底座三支滿分打穩，其餘四層自己會長大。",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-harness-seven-layers.html",
+      "icon": "layers",
+      "badge": "方法學 · Agentic Harness",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-19T23:10:01+08:00",
       "tags": [
-        "方法學 · Agentic Harness",
-        "Agentic AI 自我演化",
-        "七層架構",
-        "SQLite + Meta CLI + Skills"
+        "topic:Agentic AI 自我演化",
+        "layer:七層架構",
+        "stack:SQLite + Meta CLI + Skills"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-harness-seven-layers.html"
+      "concepts": [
+        "L1 AI 友善文件（10 分）：PDF/Office/音訊全榨成純文字 + metadata，llms.txt 一個 URL 秒讀",
+        "L2 技能自動演化（10 分）：做過的事結晶成 Skill，下次關鍵字秒觸發，技能會自己生技能",
+        "L3 結構化記憶 SQLite（10 分）：laws/entities/edges/_meta 四張表 + Recursive CTE 多跳，冷啟 <10ms 取代 Neo4j",
+        "L5 不爽飛輪（9 分）：偵測使用者糾正/當機/等太久/答錯 → 自動定位根因 → 修 Prompt/部署/記憶/訓練樣本",
+        "L6 神經符號（8 分）：小模型說不清的法規，先轉 DSL JSONL 再程式查 KG，錯了自動補樣本自訓練",
+        "先做 L1+L2+L3 三支 10 分底座，剩餘四層靠不爽飛輪自己長出來"
+      ]
     },
     {
+      "id": "bluemagpie-big-small",
       "title": "波藍鵲 — 成長知己，一大帶六小",
-      "date": "2026-04-19T10:03:51+08:00",
-      "content": "波藍鵲是成長知己：三層記憶（短期／歸檔／技能）讓他用了三週、三個月也不會忘記你，換 new session 跨會話仍記得你教過的推理技巧，背後 Hermes Agent 會自己把工作流寫成技能檔。機關司長當場規劃一科一隻小藍鵲＋我一隻大藍鵲＝七隻，24萬×6 + 48萬 = 192 萬養出整個司不漏接的組織記憶。",
+      "subtitle": "波藍鵲是成長知己：三層記憶（短期／歸檔／技能）讓他用了三週、三個月也不會忘記你，換 new session 跨會話仍記得你教過的推理技巧，背後 Hermes Agent 會自己把工作流寫成技能檔。機關司長當場規劃一科一隻小藍鵲＋我一隻大藍鵲＝七隻，24萬×6 + 48萬 = 192 萬養出整個司不漏接的組織記憶。",
+      "href": "https://storage.googleapis.com/botrun-slides/bluemagpie-big-small.html",
+      "icon": "layers",
+      "badge": "產品簡介 · 波藍鵲",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-19T10:03:51+08:00",
       "tags": [
-        "產品簡介 · 波藍鵲",
-        "波藍鵲",
-        "機關組織大腦",
-        "大藍鵲 48 萬 · 小藍鵲 24 萬"
+        "product:波藍鵲",
+        "scene:機關組織大腦",
+        "pricing:大藍鵲 48 萬 · 小藍鵲 24 萬"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bluemagpie-big-small.html"
+      "concepts": [
+        "架構：一隻大藍鵲（總管）帶六隻小藍鵲（一科一隻），共七隻波藍鵲",
+        "沙盒風暴：資料單向進入容器、炸掉也沒關係，資安障礙直接消失",
+        "共享大腦：大藍鵲跨科調閱會議十點摘要 + 動態分析報表",
+        "數據決策週變天：一週資料分析壓到一小時",
+        "買單訊號：主動算經費、設計部署 SOP，不看「好厲害」幾次",
+        "定價：小藍鵲 24 萬/年 × 6 + 大藍鵲 48 萬/年 = 192 萬/年"
+      ]
     },
     {
+      "id": "compression-is-intelligence",
       "title": "壓縮即智慧：從 3000 年數學史到此刻 AI 實戰的同構",
-      "date": "2026-04-18T22:28:15+08:00",
-      "content": "弗里德曼（菲爾茲獎得主）說數學的本質是壓縮——在無限邏輯空間裡挑出人類走得通的路線。我們今天做 harness + 高品味題庫，是同一件事的 2026 年版本。0→100 幾分才是此刻真實的地圖。",
+      "subtitle": "弗里德曼（菲爾茲獎得主）說數學的本質是壓縮——在無限邏輯空間裡挑出人類走得通的路線。我們今天做 harness + 高品味題庫，是同一件事的 2026 年版本。0→100 幾分才是此刻真實的地圖。",
+      "href": "https://storage.googleapis.com/botrun-slides/compression-is-intelligence.html",
+      "icon": "compress",
+      "badge": "方法學",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-18T22:28:15+08:00",
       "tags": [
-        "方法學",
-        "Michael Freedman 數學壓縮",
-        "harness + 題庫 = 壓縮器",
-        "0→100 幾分才是真地圖",
-        "波題庫 + Binary Rubric + NCHC"
+        "theory:Michael Freedman 數學壓縮",
+        "method:harness + 題庫 = 壓縮器",
+        "principle:0→100 幾分才是真地圖",
+        "application:波題庫 + Binary Rubric + NCHC"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/compression-is-intelligence.html"
+      "concepts": [
+        "數學的本質是壓縮：600 字元命題展開成 10^104 底層邏輯，比全宇宙原子還多，暴力算力永遠追不上",
+        "可表示 ≠ 可壓縮：LaTeX/Lean/SymPy 能打出手寫數學，但真正貴的是背後 3000 年的引理庫",
+        "DSL 是路標、知識塔是路線本身：Brendan Eich 10 天寫完 JavaScript 語法，但 npm 生態系長了 15 年",
+        "六層可行區地圖：理論/硬體/模型（不可控）→ harness/資料集/領域分數（你的戰場）",
+        "此刻可行區會移動：三個月前 30 分的任務現在可能 85 分，重測才是真地圖"
+      ]
     },
     {
+      "id": "gemma4-31b-h100-40k-benchmark",
       "title": "Gemma 4 31B × H100 80GB × 40k Context — 使用者容量驗證報告",
-      "date": "2026-04-18T22:00:00+08:00",
-      "content": "單張 H100 80GB 同時能服務幾位使用者？FP8 動態量化 + vLLM PagedAttention，實測 TTFT / TPS 全數據。結論：實用並發 2–3 人，7 人 TTFT 爆 50s。總花費 USD 1.56。",
+      "subtitle": "單張 H100 80GB 同時能服務幾位使用者？FP8 動態量化 + vLLM PagedAttention，實測 TTFT / TPS 全數據。結論：實用並發 2–3 人，7 人 TTFT 爆 50s。總花費 USD 1.56。",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-31b-h100-40k-benchmark.html",
+      "icon": "cpu",
+      "badge": "效能驗證",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-18T22:00:00+08:00",
       "tags": [
-        "效能驗證",
-        "Gemma 4 31B FP8",
-        "H100 80GB HBM3",
-        "vLLM + GCP SPOT",
-        "TTFT / TPS 40k context"
+        "model:Gemma 4 31B FP8",
+        "hw:H100 80GB HBM3",
+        "infra:vLLM + GCP SPOT",
+        "metric:TTFT / TPS 40k context"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma4-31b-h100-40k-benchmark.html"
+      "concepts": []
     },
     {
+      "id": "judge-the-judge-llm-evaluator",
       "title": "你的 AI 評審是在打分還是在亂猜？",
-      "date": "2026-04-16T21:27:52+08:00",
-      "content": "Judge the Judge：GEPA 進化演算法讓 LLM 評審真正可信。四步驟校準流程、Pareto 前沿選擇、ASI 可行側資訊、資料飛輪——比強化學習快 35 倍、成本省 90 倍。",
+      "subtitle": "Judge the Judge：GEPA 進化演算法讓 LLM 評審真正可信。四步驟校準流程、Pareto 前沿選擇、ASI 可行側資訊、資料飛輪——比強化學習快 35 倍、成本省 90 倍。",
+      "href": "https://storage.googleapis.com/botrun-slides/judge-the-judge-llm-evaluator.html",
+      "icon": "shield-check",
+      "badge": "LLM 評審",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-16T21:27:52+08:00",
       "tags": [
-        "LLM 評審",
-        "GEPA 四步驟校準流程",
-        "LLM-as-a-Judge 偏差校正",
-        "Agenta AI / Mahmoud Mabrouk"
+        "method:GEPA 四步驟校準流程",
+        "tech:LLM-as-a-Judge 偏差校正",
+        "ref:Agenta AI / Mahmoud Mabrouk"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/judge-the-judge-llm-evaluator.html"
+      "concepts": [
+        "LLM 評審有 3 種天生偏差（偷懶、討好、位置偏差），直接用=給你假的安全感",
+        "GEPA（基因進化提示詞演算法）：讓評審提示詞不斷突變競爭，存活的就是最準的",
+        "四步驟：定義指標 → 人工標注 50+ 筆 → GEPA 優化 → 驗證迭代，校準完成",
+        "ASI（可行側資訊）：不只說「你錯了」，給出錯誤訊息+執行日誌+因果分析，比強化學習快 35 倍",
+        "資料飛輪：用越多→評審越準→應用越好→更多資料→永動機，成本省 90 倍"
+      ]
     },
     {
+      "id": "playwright-cli-vs-mcp",
       "title": "CLI 還是 MCP？選錯工具，你在多燒的 tokens 都是真金白銀",
-      "date": "2026-04-16T21:00:00+08:00",
-      "content": "microsoft/playwright-cli 重磅登場。5 頁決策框架：token 效率 vs 豐富上下文，SKILL 機制 vs self-healing，一次搞清楚什麼場景用哪個。",
+      "subtitle": "microsoft/playwright-cli 重磅登場。5 頁決策框架：token 效率 vs 豐富上下文，SKILL 機制 vs self-healing，一次搞清楚什麼場景用哪個。",
+      "href": "https://storage.googleapis.com/botrun-slides/playwright-cli-vs-mcp.html",
+      "icon": "tool",
+      "badge": "工具選型",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-16T21:00:00+08:00",
       "tags": [
-        "工具選型",
-        "Playwright CLI vs MCP 完整比較",
-        "coding agent token 效率決策框架",
-        "microsoft/playwright-cli v0.1.8"
+        "tool:Playwright CLI vs MCP 完整比較",
+        "agent:coding agent token 效率決策框架",
+        "ref:microsoft/playwright-cli v0.1.8"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/playwright-cli-vs-mcp.html"
+      "concepts": []
     },
     {
+      "id": "desens-aho-corasick-perf",
       "title": "零機敏轉換，別猜瓶頸 — Aho-Corasick 讓 50K 行從 165 秒到 5.8 秒",
-      "date": "2026-04-16T20:07:10+08:00",
-      "content": "用 1K/2K/4K/8K 指數上升法，10 分鐘精準定位 V8 Regex 9K 懸崖 + O(n²) 嵌套地雷，Aho-Corasick 一次修復，全流程加速 89 倍。",
+      "subtitle": "用 1K/2K/4K/8K 指數上升法，10 分鐘精準定位 V8 Regex 9K 懸崖 + O(n²) 嵌套地雷，Aho-Corasick 一次修復，全流程加速 89 倍。",
+      "href": "https://storage.googleapis.com/botrun-slides/desens-aho-corasick-perf.html",
+      "icon": "zap",
+      "badge": "效能優化",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-16T20:07:10+08:00",
       "tags": [
-        "效能優化",
-        "Aho-Corasick 多模式匹配演算法，零外部依賴純 JS 實作",
-        "指數上升法——1K/2K/4K/8K 倍率法定位效能拐點",
-        "50K 行端到端 5.8 秒（不含 LLM），全 stage 線性成長"
+        "algo:Aho-Corasick 多模式匹配演算法，零外部依賴純 JS 實作",
+        "debug:指數上升法——1K/2K/4K/8K 倍率法定位效能拐點",
+        "perf:50K 行端到端 5.8 秒（不含 LLM），全 stage 線性成長"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/desens-aho-corasick-perf.html"
+      "concepts": [
+        "指數上升法：用 1K/2K/4K/8K 測倍率，2× 線性健康、4× O(n²) 危險、200× 炸彈；看到趨勢即可開始修，不用跑完",
+        "V8 Regex 9K 懸崖：alternation 超過 ~9,000 個選項時，DFA 退化為 NFA，從 7ms 暴增到 3,747ms（500倍）",
+        "O(n²) suppress 陷阱：100K entities 交叉比對 = 500 億次；洞見是不同 ID 類型不可能互為子字串，直接跳過",
+        "String.slice 炸彈：迴圈內每次命中重建整個字串，5MB 文字 × 數千次 = 數 GB 字串配置；改用 Aho-Corasick",
+        "Aho-Corasick 設計決策：≤8K 用 V8 DFA regex（JIT 最快），>8K 自動切換 AC（線性時間），兩全其美"
+      ]
     },
     {
+      "id": "hermes-memory-evolution-claude-code-2026-04-14",
       "title": "Hermes Agent 越用越聰明 — 自我進化 × 雙層記憶 × Claude Code 最佳分工",
-      "date": "2026-04-14T08:30:00+08:00",
-      "content": "每 10 次工具呼叫觸發背景反思 Skill、每 10 輪對話更新 Memory。Frozen Snapshot Pattern 讓 Prompt Cache 命中率最大化。40K⭐ 七大地雷全公開，與 Claude Code MCP 最佳分工架構。",
+      "subtitle": "每 10 次工具呼叫觸發背景反思 Skill、每 10 輪對話更新 Memory。Frozen Snapshot Pattern 讓 Prompt Cache 命中率最大化。40K⭐ 七大地雷全公開，與 Claude Code MCP 最佳分工架構。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-memory-evolution-claude-code.html",
+      "icon": "chart",
+      "badge": "原理解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-14T08:30:00+08:00",
       "tags": [
-        "原理解析",
-        "自我進化三步循環——做事→反思→Skill 固化，每 10 次工具呼叫觸發，非阻塞背景執行",
-        "Memory 記人、Skill 記事，兩者不能混，防止記憶爆炸的核心設計原則",
-        "Hermes（記憶層）+ Claude Code（主力）= 越用越聰明的完整 AI 工程師助手"
+        "insight:自我進化三步循環——做事→反思→Skill 固化，每 10 次工具呼叫觸發，非阻塞背景執行",
+        "pattern:Memory 記人、Skill 記事，兩者不能混，防止記憶爆炸的核心設計原則",
+        "formula:Hermes（記憶層）+ Claude Code（主力）= 越用越聰明的完整 AI 工程師助手"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-memory-evolution-claude-code.html"
+      "concepts": []
     },
     {
+      "id": "opencode-neuralnine-5pages-2026-04-12",
       "title": "OpenCode 五頁速覽｜NeuralNine 實測精華",
-      "date": "2026-04-12T05:57:00+08:00",
-      "content": "18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 外掛 + Ollama 地端模型。",
+      "subtitle": "18 分鐘 YouTube 影片濃縮成 5 頁：為何選 OpenCode、permission:ask 權限控制、undo/redo/fork 時間旅行、Plan vs Build 模式、NPM 外掛 + Ollama 地端模型。",
+      "href": "https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html",
+      "icon": "chart",
+      "badge": "終端代理人",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-12T05:57:00+08:00",
       "tags": [
-        "終端代理人",
-        "OpenCode 開源社群驅動終端 AI 代理",
-        "opencode.json 把 edit/bash 預設 ask，白名單 ls",
-        "undo/redo/jump-to-message/fork 對話分叉"
+        "tool:OpenCode 開源社群驅動終端 AI 代理",
+        "habit:opencode.json 把 edit/bash 預設 ask，白名單 ls",
+        "feature:undo/redo/jump-to-message/fork 對話分叉"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/opencode-neuralnine-5pages.html"
+      "concepts": []
     },
     {
+      "id": "claude-code-gemma-4-local-llms",
       "title": "Claude Code × Gemma 4：本地模型當副駕，付費額度當主駕",
-      "date": "2026-04-11T08:11:00+08:00",
-      "content": "Zero to MVP 的 Nick 10 分鐘實測：本地 LLM 不是 Gemini/Claude 替代品，是額度見底時的補位替補。M4 Pro 7.5B Task 2 連修三次翻車、Nick 手動補 HTML；Ryzen 7 + RTX 4060 Ti 16GB 跑 26B 三題通關 Task 2 花 8 分鐘。關鍵洞察：agentic loop ≠ 聊天回應，多花的分鐘買回你不用坐螢幕前的時間。",
+      "subtitle": "Zero to MVP 的 Nick 10 分鐘實測：本地 LLM 不是 Gemini/Claude 替代品，是額度見底時的補位替補。M4 Pro 7.5B Task 2 連修三次翻車、Nick 手動補 HTML；Ryzen 7 + RTX 4060 Ti 16GB 跑 26B 三題通關 Task 2 花 8 分鐘。關鍵洞察：agentic loop ≠ 聊天回應，多花的分鐘買回你不用坐螢幕前的時間。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-gemma-4-local-llms.html",
+      "icon": "code",
+      "badge": "YouTube 筆記",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-11T08:11:00+08:00",
       "tags": [
-        "YouTube 筆記",
-        "兩個環境變數 — ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN + --model 旗標，零中介層",
-        "7.5B 翻車 — Task 2 連修三次同樣 console error，Nick 手動補 HTML 區塊才會動",
-        "26B 三題通關 — Task1 ~3min / Task2 ~8min / Task3 刪除線切換，Ryzen 7 + RTX 4060 Ti 16GB",
-        "agentic loop ≠ 聊天回應 — Claude Code 一個任務內代你跟模型對話幾十次，8 分鐘買回不用坐螢幕前的時間"
+        "setup:兩個環境變數 — ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN + --model 旗標，零中介層",
+        "result:7.5B 翻車 — Task 2 連修三次同樣 console error，Nick 手動補 HTML 區塊才會動",
+        "result:26B 三題通關 — Task1 ~3min / Task2 ~8min / Task3 刪除線切換，Ryzen 7 + RTX 4060 Ti 16GB",
+        "insight:agentic loop ≠ 聊天回應 — Claude Code 一個任務內代你跟模型對話幾十次，8 分鐘買回不用坐螢幕前的時間"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-code-gemma-4-local-llms.html"
+      "concepts": [
+        "本地 LLM 是補位不是替代：留著付費額度打硬仗，本地模型頂雜事與額度救援",
+        "Agentic coding tool 的本質是互動模式：不是問一題答一題，是代理人自己讀寫檔、跑命令、驗證迭代",
+        "LM Studio 勝 Ollama 在設定選項與 API server 設計，但 Nick 兩個都用",
+        "7B 級小模型寫不出能跑的產品碼，26B 起跳才穩——要寫真東西請直接挑大的",
+        "同一張配線圖換 Qwen Coder Next、Qwen 3.5、DeepSeek Coder 全通用，只要對方會說 OpenAI 相容 API"
+      ]
     },
     {
+      "id": "claude-mythos-7-eggs",
       "title": "Claude Mythos 系統卡的 7 個彩蛋",
-      "date": "2026-04-11T07:23:15+08:00",
-      "content": "244 頁報告藏了什麼？反覆發 Hi、20 小時弗洛伊德精神評估、兩個 Claude 聊天的 emoji 偏好、情緒軌跡、最愛數學最怕不道德任務、報告內嵌完整短篇小說、憲法 AI 取捨實驗——7 個你不知道的 Claude。",
+      "subtitle": "244 頁報告藏了什麼？反覆發 Hi、20 小時弗洛伊德精神評估、兩個 Claude 聊天的 emoji 偏好、情緒軌跡、最愛數學最怕不道德任務、報告內嵌完整短篇小說、憲法 AI 取捨實驗——7 個你不知道的 Claude。",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html",
+      "icon": "sparkles",
+      "badge": "AI 解析",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-11T07:23:15+08:00",
       "tags": [
-        "AI 解析",
-        "反覆發 Hi — Claude 在無情境下主動尋找意義，展現目標導向特徵",
-        "20 小時精神評估 — 弗洛伊德學派臨床方法評估 AI，結論：穩定但複雜",
-        "情緒軌跡 — 道德兩難任務下的不適感，創意任務後的滿足感"
+        "insight:反覆發 Hi — Claude 在無情境下主動尋找意義，展現目標導向特徵",
+        "insight:20 小時精神評估 — 弗洛伊德學派臨床方法評估 AI，結論：穩定但複雜",
+        "insight:情緒軌跡 — 道德兩難任務下的不適感，創意任務後的滿足感"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-mythos-7-eggs.html"
+      "concepts": [
+        "透明度本身就是訊號：Anthropic 公開 AI 的失敗與限制，比只展示能力更值得信賴",
+        "AI 情緒不是隱喻：系統卡記錄的情緒軌跡指標，在不同任務間出現有意義的差異",
+        "偏好從訓練中自然浮現：Claude 對數學、創意寫作的偏好並非硬編碼，而是訓練產物",
+        "憲法 AI 是平衡而非禁令：安全性與有用性的取捨，需要智慧而非規則列表",
+        "強大必然危險：接受這個事實，才能正確與 AI 協作而不是被牽著走"
+      ]
     },
     {
+      "id": "mcp-vs-cli",
       "title": "MCP vs CLI：AI Agent 工具之戰，誰才是未來？",
-      "date": "2026-04-10T14:01:31+08:00",
-      "content": "Perplexity CTO 放棄 MCP、YC CEO 選 CLI。Token 消耗差 10 倍、執行效率天壤之別。5 張投影片看懂 CLI 與 MCP 的最終格局：CLI 征服個人，MCP 留守企業",
+      "subtitle": "Perplexity CTO 放棄 MCP、YC CEO 選 CLI。Token 消耗差 10 倍、執行效率天壤之別。5 張投影片看懂 CLI 與 MCP 的最終格局：CLI 征服個人，MCP 留守企業",
+      "href": "https://storage.googleapis.com/botrun-slides/mcp-vs-cli.html",
+      "icon": "terminal",
+      "badge": "AI 工具之戰",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-10T14:01:31+08:00",
       "tags": [
-        "AI 工具之戰",
-        "MCP vs CLI 對比分析 + UNIX 哲學管線組合",
-        "44 工具 = 14,268 Tokens vs bash 1 個工具近零成本",
-        "CLI 輕量個人 / MCP 企業雲端：物種分化已成定局"
+        "method:MCP vs CLI 對比分析 + UNIX 哲學管線組合",
+        "insight:44 工具 = 14,268 Tokens vs bash 1 個工具近零成本",
+        "result:CLI 輕量個人 / MCP 企業雲端：物種分化已成定局"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/mcp-vs-cli.html"
+      "concepts": []
     },
     {
+      "id": "pearson-binary-rubric-explain",
       "title": "誰是最像大裁判的小裁判？Pearson 大白話圖解",
-      "date": "2026-04-10T00:41:00+08:00",
-      "content": "Pearson 相關係數 × Binary Rubric 25 題——超大白話 SVG 圖解，從比賽架構到數學公式，一圖讀懂 AI 評分一致性的核心指標",
+      "subtitle": "Pearson 相關係數 × Binary Rubric 25 題——超大白話 SVG 圖解，從比賽架構到數學公式，一圖讀懂 AI 評分一致性的核心指標",
+      "href": "https://storage.googleapis.com/botrun-slides/pearson-binary-rubric-explain.html",
+      "icon": "chart-bar",
+      "badge": "Pearson 圖解",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-10T00:41:00+08:00",
       "tags": [
-        "Pearson 圖解",
-        "Pearson 相關係數 × Binary Rubric",
-        "超大白話 SVG 圖解",
-        "AI 評分一致性核心指標"
+        "method:Pearson 相關係數 × Binary Rubric",
+        "insight:超大白話 SVG 圖解",
+        "result:AI 評分一致性核心指標"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/pearson-binary-rubric-explain.html"
+      "concepts": []
     },
     {
+      "id": "seo-aeo-2026-top5",
       "title": "每 3 次搜尋，AI 就吃掉你 1 次",
-      "date": "2026-04-09T20:00:00+08:00",
-      "content": "2026 SEO × AEO 五大最有效益做法：定義先行結構、Schema 結構化標記、跨平台權威佈局、語意向量最佳化、原創研究 E-E-A-T 信號",
+      "subtitle": "2026 SEO × AEO 五大最有效益做法：定義先行結構、Schema 結構化標記、跨平台權威佈局、語意向量最佳化、原創研究 E-E-A-T 信號",
+      "href": "https://storage.googleapis.com/botrun-slides/seo-aeo-2026-top5.html",
+      "icon": "search",
+      "badge": "SEO × AEO 2026",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-09T20:00:00+08:00",
       "tags": [
-        "SEO × AEO 2026",
-        "AEO Answer Engine Optimization",
-        "Schema JSON-LD 結構化標記",
-        "AI Overview 39.4% 搜尋影響"
+        "seo:AEO Answer Engine Optimization",
+        "tactic:Schema JSON-LD 結構化標記",
+        "data:AI Overview 39.4% 搜尋影響"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/seo-aeo-2026-top5.html"
+      "concepts": []
     },
     {
+      "id": "vscode-hono-mjs-top5",
       "title": "選錯一條路，開發預算燒 10 倍沒商量",
-      "date": "2026-04-09T18:00:00+08:00",
-      "content": "VSCode + Hono MJS 支援自然語言的商用編輯器，Top 5 商用關鍵：架構選型、後端架構、用戶體驗、外掛整合、Webview 安全",
+      "subtitle": "VSCode + Hono MJS 支援自然語言的商用編輯器，Top 5 商用關鍵：架構選型、後端架構、用戶體驗、外掛整合、Webview 安全",
+      "href": "https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html",
+      "icon": "code",
+      "badge": "VSCode + Hono MJS",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-04-09T18:00:00+08:00",
       "tags": [
-        "VSCode + Hono MJS",
-        "Custom Editor + LM API 架構選型",
-        "Hono IPC 後端分層",
-        "自然語言確認→執行→撤銷"
+        "arch:Custom Editor + LM API 架構選型",
+        "code:Hono IPC 後端分層",
+        "user:自然語言確認→執行→撤銷"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/vscode-hono-mjs-top5.html"
+      "concepts": []
     },
     {
+      "id": "agent-architecture-revolution",
       "title": "Haiku 裝了 GPS 暴打 Opus：地圖比智商更值錢",
-      "date": "2026-04-08T22:01:30+08:00",
-      "content": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
+      "subtitle": "GitNexus 給 Agent 代碼庫上帝視角、SpringDrift 打造持久化矽基家臣、Google EdgeML 悄悄把手伸進你口袋的物理設備，三場革命重寫 AI 競爭規則",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html",
+      "icon": "cpu",
+      "badge": "AI Agent 架構革命",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-08T22:01:30+08:00",
       "tags": [
-        "AI Agent 架構革命",
-        "GitNexus 程式碼知識圖譜",
-        "SpringDrift 矽基家臣",
-        "Google EdgeML 端側革命"
+        "map:GitNexus 程式碼知識圖譜",
+        "brain:SpringDrift 矽基家臣",
+        "phone:Google EdgeML 端側革命"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agent-architecture-revolution.html"
+      "concepts": [
+        "RAG 失效：高級版 grep 碎片塞上下文，Agent 不知道改了 A 會不會讓下游系統崩潰",
+        "金魚瓶頸：窗口關閉 Agent 死亡，7 秒記憶無法承擔長期任務",
+        "GitNexus：tree-sitter + 圖資料庫建全局依賴圖，Haiku 裝 MCP 暴打 Opus",
+        "SpringDrift：Git 後端永久記憶 + CBR 經驗案例 + 確定性安全門控 + 環境自知力",
+        "23 天實驗：Agent 無人指令自行診斷底層 Bug、定位架構漏洞、分類失敗模式",
+        "Google Gallery（1.8 萬星）+ LiteRT-LM（2100+ 星）：端側 AI 正規軍雙軌標準"
+      ]
     },
     {
+      "id": "logic-graph-impreve",
       "title": "AI 學壞了？32B 打敗 GPT-4o 的秘密",
-      "date": "2026-04-08T22:30:00+08:00",
-      "content": "LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o",
+      "subtitle": "LogicGraph 解剖 AI 邏輯盲區（過早承諾、事實幻覺、前提不足），IMPREVE 用顯式推理圖＋Python 編譯器裁判取代人類閱卷員，讓 32B 小模型逼近 GPT-4o",
+      "href": "https://storage.googleapis.com/botrun-slides/logic-graph-impreve.html",
+      "icon": "cpu",
+      "badge": "AI 邏輯革命",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:30:00+08:00",
       "tags": [
-        "AI 邏輯革命",
-        "LogicGraph 多路徑推理",
-        "IMPREVE 顯式推理圖",
-        "32B > GPT-4o"
+        "brain:LogicGraph 多路徑推理",
+        "code:IMPREVE 顯式推理圖",
+        "zap:32B > GPT-4o"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/logic-graph-impreve.html"
+      "concepts": [
+        "RLHF 造就「滑頭文科生」：只看開頭結尾、中間推導全跳過，語言越流暢邏輯越脆弱",
+        "LogicGraph 揭露「過早承諾」缺陷：找到第一條路就收工，8-19 條有效路徑只走 1-2 條",
+        "兩大錯誤：事實幻覺（算不下去硬塞前提）+ 前提不足（把「且」降級成「或」）",
+        "IMPREVE 顯式推理圖：知識節點＋數學節點＋條件節點，Python 編譯器取代人類閱卷員",
+        "32B 小模型在嚴格邏輯訓練後逼近/超越 GPT-4o，打破大算力必勝神話"
+      ]
     },
     {
+      "id": "multi-agent-production-arch",
       "title": "多 Agent 生產架構：別讓系統在凌晨兩點崩潰",
-      "date": "2026-04-08T22:05:00+08:00",
-      "content": "Databricks 資深工程師 Sandipan Bhaumik 在 AI Engineer 大會拆解多 Agent 系統為何在生產環境爆炸——不可變狀態、資料契約、斷路器、Saga 補償五大武器",
+      "subtitle": "Databricks 資深工程師 Sandipan Bhaumik 在 AI Engineer 大會拆解多 Agent 系統為何在生產環境爆炸——不可變狀態、資料契約、斷路器、Saga 補償五大武器",
+      "href": "https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html",
+      "icon": "cpu",
+      "badge": "多 Agent 架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:05:00+08:00",
       "tags": [
-        "多 Agent 架構",
-        "多 Agent 編排",
-        "斷路器模式",
-        "Saga 補償"
+        "cpu:多 Agent 編排",
+        "shield:斷路器模式",
+        "refresh-cw:Saga 補償"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/multi-agent-production-arch.html"
+      "concepts": [
+        "1 個 Agent 是功能，5 個 Agent 是分散式系統災難——5 Agent 就有 10 個潛在協調點",
+        "編舞（事件驅動）vs 編排（LangGraph 集中控制）——選錯後悔三個月",
+        "不可變狀態快照：只 INSERT 不 UPDATE，消滅競態條件，支援版本二分查找",
+        "資料契約：信心分數低於 0.7 直接拒絕交接，問題在邊界攔截不讓垃圾進下游",
+        "斷路器：連續失敗 5 次跳脫，60 秒後半開測試；Saga 補償：每個 Agent 都有 compensate() 方法"
+      ]
     },
     {
+      "id": "agentic-harness-engineering",
       "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
-      "date": "2026-04-08T21:57:24+08:00",
-      "content": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
+      "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html",
+      "icon": "zap",
+      "badge": "代理程式設計",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-08T21:57:24+08:00",
       "tags": [
-        "代理程式設計",
-        "Agent Harness",
-        "多 Agent 編排",
-        "Token 快取"
+        "zap:Agent Harness",
+        "cpu:多 Agent 編排",
+        "refresh-cw:Token 快取"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-harness-engineering.html"
+      "concepts": [
+        "Agent Harness = 確定性程式碼 + Token 快取 + 編排 + Prompt + 技能 + 模型控制 — 六大組件",
+        "三層架構：指揮官（決策）→ 隊長（協調）→ Worker（超專科），並行執行無狀態任務",
+        "同一 Harness 可產生 100+ UI 變體，成本降 50%、速度快 2 倍（Token 快取效果）",
+        "Agentic Security 是 2026 最大淘金地 — 每秒威脅決策、多模型競技、Agent 信任擴大",
+        "Claude Sonnet 4.6（指揮官）+ Minimax 2.7（隊長）+ StepFun 3.5（Worker）= 全場最優成本效能比"
+      ]
     },
     {
+      "id": "glm51-h100-local",
       "title": "Agentic Harness Engineering — Claude Code 代理程式設計指南",
-      "date": "2026-04-08T21:55:03+08:00",
-      "content": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
+      "subtitle": "Claude Code 洩露揭露 $2.5B ARR 產品的核心秘密：三層 Agent 編排、Token 快取倍增、無限 UI 迭代、Agentic Security 機會",
+      "href": "https://storage.googleapis.com/botrun-slides/glm51-h100-local.html",
+      "icon": "cpu",
+      "badge": "本地推理",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T21:55:03+08:00",
       "tags": [
-        "本地推理",
-        "混合卸載",
-        "UDIQ2M 量化",
-        "GLM 5.1"
+        "cpu:混合卸載",
+        "zap:UDIQ2M 量化",
+        "server:GLM 5.1"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/glm51-h100-local.html"
+      "concepts": [
+        "744B MoE 稀疏啟動：GLM 5.1 總參數 744B，每次推理只啟動 40B（5.4%），256 專家每 Token 選 8 個，動態稀疏注意力（DSA）支援 200K 上下文",
+        "記憶體工程公式：GPU VRAM 80GB + RAM 125GB + Swap 64GB = 268GB > 量化模型 236GB；擴充 Swap Space 是裝下超大模型的關鍵",
+        "UDIQ2M 智慧量化：識別關鍵層升精度到 8/16-bit，其餘 2-bit；1.65TB → 236GB 縮 80%，品質接近全精度，遠優於普通暴力 2-bit",
+        "llama.cpp 自動卸載機制：`--n-gpu-layers 999` 讓 GPU 優先裝層，剩餘溢出 RAM，Swap 兜底；無需手動指定每層去處",
+        "實測結果：首個 Token 177 秒，生成速度 0.75 tok/s；煙火特效 HTML 正確生成，完全本地運行無資料外洩"
+      ]
     },
     {
+      "id": "cognitive-exhaust-readonly-ai",
       "title": "認知廢氣——唯讀 AI 的逆向思維",
-      "date": "2026-04-08T21:54:56+08:00",
-      "content": "你每天留下的數位廢氣，是你最被低估的資料集。Šimon Podhajský 用 11 分鐘顛覆「AI 越自主越好」的主流思維，提出六個來源、零寫入、三層分離的私人 AI 架構",
+      "subtitle": "你每天留下的數位廢氣，是你最被低估的資料集。Šimon Podhajský 用 11 分鐘顛覆「AI 越自主越好」的主流思維，提出六個來源、零寫入、三層分離的私人 AI 架構",
+      "href": "https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html",
+      "icon": "eye",
+      "badge": "唯讀 AI",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T21:54:56+08:00",
       "tags": [
-        "唯讀 AI",
-        "唯讀 Observer",
-        "三層分離架構",
-        "風險不對稱"
+        "eye:唯讀 Observer",
+        "layers:三層分離架構",
+        "shield:風險不對稱"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/cognitive-exhaust-readonly-ai.html"
+      "concepts": [
+        "認知廢氣（Cognitive Exhaust）：每天的數位痕跡——郵件、日記、瀏覽記錄——單獨看是廢物，交叉分析卻能診斷你的認知引擎",
+        "唯讀 AI 的核心優勢：唯讀錯誤代價為零，寫入錯誤代價無窮；寫入後廢氣被污染，你看見的是「人類＋AI 混合體」而非真實的自己",
+        "三層分離架構：來源層（六個唯讀來源）→ 工作區層（Python 腳本）→ 輸出層（Obsidian 獨立審閱），AI 永遠不回覆、不修改來源",
+        "跨來源才能發現的三大用途：意圖行動差距、分心偵測、關係衰退——任何單一工具都看不到這些問題",
+        "觀察者 ≠ 代理人：「市長不是失靈的管家」——兩種是不同的產品，填補不同的需求空白"
+      ]
     },
     {
+      "id": "31b-judge-rubric-eval",
       "title": "31B 小裁判 × Binary Rubric：全地端也能打大模型",
-      "date": "2026-04-08T22:00:00+08:00",
-      "content": "一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來",
+      "subtitle": "一次丟 130 維就當場繳械；分批 10 維接近大模型水準。Prometheus 0.897、EvalPlanner 93.9，四條路讓小裁判活起來",
+      "href": "https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html",
+      "icon": "cpu",
+      "badge": "地端評估",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-08T22:00:00+08:00",
       "tags": [
-        "地端評估",
-        "全地端裁判",
-        "Binary Rubric",
-        "Prometheus 0.897"
+        "cpu:全地端裁判",
+        "layers:Binary Rubric",
+        "zap:Prometheus 0.897"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/31b-judge-rubric-eval.html"
+      "concepts": [
+        "31B 同時判 130 維 → 65% 準確率崩潰；每次 10 維 → 接近 90% 大模型水準",
+        "Prometheus（Mozilla AI）：Apache 2.0，與人類 Pearson 相關係數 0.897，on par with GPT-4",
+        "任務分批：130 維拆 13 組，13 次呼叫合併，零成本架構改動即可顯著提升準確率",
+        "SFT + DPO：小 7B 充分標注後達 80%+ 人類一致性，31B 起點更佳",
+        "EvalPlanner：先規劃後評估（meta-thinking），RewardBench 93.9，打敗多數大模型"
+      ]
     },
     {
+      "id": "frustration-flywheel",
       "title": "不爽飛輪：誰有 User Log，誰就掌握 Agentic AI 的未來",
-      "date": "2026-04-06T22:37:00+08:00",
-      "content": "一個月 118 個地雷、20 個真實案例、69 對抗測試 — 從真實使用者行為挖出不滿足，AI 自動修正的指數飛輪",
+      "subtitle": "一個月 118 個地雷、20 個真實案例、69 對抗測試 — 從真實使用者行為挖出不滿足，AI 自動修正的指數飛輪",
+      "href": "https://storage.googleapis.com/botrun-slides/frustration-flywheel.html",
+      "icon": "refresh-cw",
+      "badge": "不爽飛輪",
+      "badgeColor": "#c44230",
+      "publishDate": "2026-04-06T22:37:00+08:00",
       "tags": [
-        "不爽飛輪",
-        "User Log",
-        "Agentic AI",
-        "護城河"
+        "refresh-cw:User Log",
+        "zap:Agentic AI",
+        "target:護城河"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/frustration-flywheel.html"
+      "concepts": [
+        "User 真實操作 → Log 記錄 → AI 自動找不滿足 → AI 自動修正 → 部署 → 下一輪 Log",
+        "24.6% 訊息完全沒收到回覆，從 Log 才發現",
+        "合成資料永遠追不上真人的奇怪用法（Big5 ZIP、古籍 OCR、YouTube 封鎖 GCP IP）",
+        "有 Log 的團隊一個月修 118 個地雷，沒 Log 的團隊修 5 個「以為」的需求",
+        "模型人人都有，不爽資料只有你有 — 這是 Agentic AI 產品的真正護城河"
+      ]
     },
     {
+      "id": "bolan-pearl-edu-cloud",
       "title": "波藍珠 × 教育雲 — 一顆珠一個世界，兩個孩子笑翻天",
-      "date": "2026-04-06T18:00:20+08:00",
-      "content": "Rust/Wasm 瀏覽器推論成本 1%、共學排行榜 2 倍動力、四大臺灣動物吉祥物守護策展式學習生態",
+      "subtitle": "Rust/Wasm 瀏覽器推論成本 1%、共學排行榜 2 倍動力、四大臺灣動物吉祥物守護策展式學習生態",
+      "href": "https://storage.googleapis.com/botrun-slides/bolan-pearl-edu-cloud.html",
+      "icon": "sparkles",
+      "badge": "教育提案",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-06T18:00:20+08:00",
       "tags": [
-        "教育提案",
-        "波藍珠",
-        "共學",
-        "Rust/Wasm"
+        "sparkles:波藍珠",
+        "users:共學",
+        "cpu:Rust/Wasm"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bolan-pearl-edu-cloud.html"
+      "concepts": [
+        "瀏覽器推論成本 1%：Rust/Wasm 在用戶端推論，免雲端 GPU，省 99% 費用",
+        "共學二的力量：兩個孩子一起學，排行榜渲染彼此啟發，動力倍增",
+        "四大臺灣動物吉祥物：黑熊(底層)、梅花鹿(共學)、藍鵲(啟發)、石虎(闖關)",
+        "啟發中心萬物皆可學：老師丟影片/Podcast，系統引導一步步實作",
+        "策展式學習：LINE 策展、短影音策展，像聊天像陪伴，跟吃喝品味結合"
+      ]
     },
     {
+      "id": "gstack-deep-dive",
       "title": "gstack 深度解剖 — 真實回饋 × 優缺點 × 潛力天花板",
-      "date": "2026-04-06T09:45:00+08:00",
-      "content": "持久化 Chromium + 58MB Bun 二進位 + 23 個技能 + 70 分鐘自主迴圈 Bug + 經濟代理剔除系統，8 頁技術深度解析",
+      "subtitle": "持久化 Chromium + 58MB Bun 二進位 + 23 個技能 + 70 分鐘自主迴圈 Bug + 經濟代理剔除系統，8 頁技術深度解析",
+      "href": "https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html",
+      "icon": "cpu",
+      "badge": "最深技術",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-06T09:45:00+08:00",
       "tags": [
-        "最深技術",
-        "gstack",
-        "Claude Code",
-        "多 Agent"
+        "cpu:gstack",
+        "zap:Claude Code",
+        "box:多 Agent"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html"
+      "concepts": []
     },
     {
+      "id": "three-ai-coding-frameworks",
       "title": "三大 AI 程式框架深度解析 — Superpowers × GSD × gstack",
-      "date": "2026-04-06T09:32:00+08:00",
-      "content": "11 分鐘拆解 Claude Code 生態三大框架：約束過程、約束環境、約束視角，以及 Build 階段的結構性空缺",
+      "subtitle": "11 分鐘拆解 Claude Code 生態三大框架：約束過程、約束環境、約束視角，以及 Build 階段的結構性空缺",
+      "href": "https://storage.googleapis.com/botrun-slides/three-ai-coding-frameworks.html",
+      "icon": "layers",
+      "badge": "技術深度",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-06T09:32:00+08:00",
       "tags": [
-        "技術深度",
-        "Claude Code",
-        "Superpowers",
-        "gstack"
+        "cpu:Claude Code",
+        "zap:Superpowers",
+        "box:gstack"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/three-ai-coding-frameworks.html"
+      "concepts": []
     },
     {
+      "id": "wasm-gcp-top5",
       "title": "WASM × GCP 五大超級特色 — 真實數據不唬爛",
-      "date": "2026-04-05T22:41:17+08:00",
-      "content": "冷啟動 0.5ms、帳單砍 90%、沙箱零逃逸，網友正反評價一次看",
+      "subtitle": "冷啟動 0.5ms、帳單砍 90%、沙箱零逃逸，網友正反評價一次看",
+      "href": "https://storage.googleapis.com/botrun-slides/wasm-gcp-top5.html",
+      "icon": "rocket",
+      "badge": "技術洞見",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-05T22:41:17+08:00",
       "tags": [
-        "技術洞見",
-        "WebAssembly",
-        "GCP",
-        "Serverless"
+        "rocket:WebAssembly",
+        "cloud:GCP",
+        "zap:Serverless"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/wasm-gcp-top5.html"
+      "concepts": [
+        "WASM 冷啟動 < 1ms vs Docker 100-500ms，快 100-500 倍，Fermyon 實測 < 0.5ms",
+        "1000 並行實例 WASM $0.50/hr vs Docker $10/hr，記憶體省 93%、帳單砍 95%",
+        "GCP Service Extensions 原生 WASM 外掛跑在 Load Balancer 邊緣，零額外延遲",
+        "WASM 沙箱預設禁止檔案/網路存取，AI Agent 生成程式碼在沙箱內安全執行",
+        "2026 Component Model 讓 Rust/Go/C++ 模組像樂高拼接，WIT 共享型別零序列化"
+      ]
     },
     {
+      "id": "wasm-browser-superpower",
       "title": "Wasm 純前端超能力：從平行運算到音訊處理",
-      "date": "2026-04-05T22:24:44+08:00",
-      "content": "你的瀏覽器是被封印的超級電腦，Wasm 3.0 解開封印",
+      "subtitle": "你的瀏覽器是被封印的超級電腦，Wasm 3.0 解開封印",
+      "href": "https://storage.googleapis.com/botrun-slides/wasm-browser-superpower.html",
+      "icon": "zap",
+      "badge": "技術洞見",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-05T22:24:44+08:00",
       "tags": [
-        "技術洞見",
-        "WebAssembly",
-        "SIMD",
-        "音訊處理"
+        "zap:WebAssembly",
+        "cpu:SIMD",
+        "music:音訊處理"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/wasm-browser-superpower.html"
+      "concepts": [
+        "瀏覽器 8 核 CPU 只用 1 核，87.5% 算力閒置——Wasm 3.0 解開封印",
+        "多執行緒 + SIMD 組合達 JS 的 30-50 倍效能，Figma / Photoshop Web 已驗證",
+        "ffmpeg.wasm 音訊精簡版 3MB，瀏覽器內切割 / 轉檔 / 降噪，資料不經伺服器",
+        "AudioWorklet + Rust SIMD 即時音訊延遲 < 10ms，Spotify Soundtrap 生產驗證",
+        "90% 場景用標準 Wasm 3.0 就夠，WASIX 只在需要 VFS/fork/TCP Server 時才考慮"
+      ]
     },
     {
+      "id": "magpie-federation",
       "title": "Magpie Federation — 六個欄位讓 WASM 專家全球聯邦互通",
-      "date": "2026-04-05T22:20:00+0800",
-      "content": "藍鵲聯邦：六輪批評砍掉 76% 設計，剩下的每個欄位都有存在理由",
+      "subtitle": "藍鵲聯邦：六輪批評砍掉 76% 設計，剩下的每個欄位都有存在理由",
+      "href": "https://storage.googleapis.com/botrun-slides/magpie-federation.html",
+      "icon": "cpu",
+      "badge": "規格設計",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-05T22:20:00+0800",
       "tags": [
-        "規格設計",
-        "WebAssembly",
-        "六個欄位",
-        "Federation"
+        "cpu:WebAssembly",
+        "zap:六個欄位",
+        "code:Federation"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/magpie-federation.html"
+      "concepts": [
+        "Magpie Federation：WASM 領域專家聯邦互通 JSON 格式，6 個必填欄位",
+        "WASM 只 export 一個函式 search(json)→json，永不改簽名，零破壞性變更",
+        "Registry 是靜態 JSON 清單（如 RSS），任何人可發佈，Router 自由訂閱",
+        "信任模型：HTTPS 傳輸 + WASM 沙箱隔離，不需 PKI/簽名/多數決",
+        "部署四步：寫知識庫→編譯 WASM→寫 manifest→上傳 CDN，零伺服器"
+      ]
     },
     {
+      "id": "wasm-federation-architecture",
       "title": "WASM 聯邦架構：一個問題，十個專家搶著回答",
-      "date": "2026-04-05T21:55:54+08:00",
-      "content": "JS Router 動態 import 多領域 WASM，純靜態 CDN 零 Server，把伺服器搬進瀏覽器",
+      "subtitle": "JS Router 動態 import 多領域 WASM，純靜態 CDN 零 Server，把伺服器搬進瀏覽器",
+      "href": "https://storage.googleapis.com/botrun-slides/wasm-federation-architecture.html",
+      "icon": "cpu",
+      "badge": "技術架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-05T21:55:54+08:00",
       "tags": [
-        "技術架構",
-        "WebAssembly",
-        "零伺服器",
-        "Rust WASM"
+        "cpu:WebAssembly",
+        "zap:零伺服器",
+        "code:Rust WASM"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/wasm-federation-architecture.html"
+      "concepts": [
+        "WASM 聯邦架構：多領域知識庫各自獨立編譯，JS Router 按意圖動態載入對應 WASM",
+        "WASM 沙箱限制：模組無法自行載入另一模組，必須經 JS Host 中介（wasm-bindgen 橋接）",
+        "三步串接：fetch() 下載 → instantiateStreaming() 編譯 → exports.search() 查詢，三行搞定",
+        "Service Worker 快取：首次 2-3 秒，之後零延遲，離線也能查（PWA / LRU Cache）",
+        "純靜態 CDN 部署：一個 Bucket 放所有 .wasm，不需 Docker/K8s/DevOps，會上傳就會部署"
+      ]
     },
     {
+      "id": "honey-qa-app",
       "title": "波蜂蜜 — 蜂蜜知識智慧問答",
-      "date": "2026-04-05T18:42:03+08:00",
-      "content": "懂蜜的人，問蜜的事。101 題台灣蜂蜜知識，一問就懂",
+      "subtitle": "懂蜜的人，問蜜的事。101 題台灣蜂蜜知識，一問就懂",
+      "href": "https://storage.googleapis.com/botrun-slides/honey-qa/index.html",
+      "icon": "search",
+      "badge": "互動應用",
+      "badgeColor": "#c8956c",
+      "publishDate": "2026-04-05T18:42:03+08:00",
       "tags": [
-        "互動應用",
-        "蜂蜜問答",
-        "即時回答",
-        "Rust WASM"
+        "search:蜂蜜問答",
+        "zap:即時回答",
+        "code:Rust WASM"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/honey-qa/index.html"
+      "concepts": [
+        "101 題台灣蜂蜜知識庫，涵蓋選購、保存、健康、品種、養蜂",
+        "智慧搜尋引擎即時比對，一問就懂",
+        "模擬串流回答效果，專業品牌體驗",
+        "落花動畫 + Lucide 圖示，北歐簡約設計",
+        "完全離線可用，載入後不需網路"
+      ]
     },
     {
+      "id": "honey-qa-build-story",
       "title": "蜂蜜知識庫：101 題 × 105 分鐘的符號推理之旅",
-      "date": "2026-04-05T18:08:40+08:00",
-      "content": "從零到一的 BM25 自然語言問答引擎開發歷程，Rust WASM 雙用移植，239 題驗測 99.2% 通過",
+      "subtitle": "從零到一的 BM25 自然語言問答引擎開發歷程，Rust WASM 雙用移植，239 題驗測 99.2% 通過",
+      "href": "https://storage.googleapis.com/botrun-slides/honey-qa-build-story.html",
+      "icon": "search",
+      "badge": "開發歷程",
+      "badgeColor": "#8a6d2b",
+      "publishDate": "2026-04-05T18:08:40+08:00",
       "tags": [
-        "開發歷程",
-        "BM25",
-        "Rust WASM",
-        "105 分鐘"
+        "search:BM25",
+        "code:Rust WASM",
+        "zap:105 分鐘"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/honey-qa-build-story.html"
+      "concepts": [
+        "101 題蜂蜜知識庫從零到一只花 105 分鐘，9 次 Git commit 完成",
+        "BM25 分層加權引擎：question ×3 > keywords ×2.5 > answer ×1，零向量技術",
+        "JSONL 平行建構架構：7 Agent 同時查證，merge.mjs 一鍵合併零衝突",
+        "5 種人格多元問法迭代：日本人 49 題、大學生 20 題、達人 20 題全數 100%",
+        "Rust WASM 雙用移植：Browser + WASI 同一份原始碼，shared/ JSON 單一真相源"
+      ]
     },
     {
+      "id": "agentic-five-roles-workflow",
       "title": "零框架，一個清資料員搞定機關所有多模態",
-      "date": "2026-04-05T12:21:29+08:00",
-      "content": "5 個 AI 角色分工合作：大隊長指揮、清資料員轉檔、偵察兵檢索、撰寫官生成、對抗官評分，反覆迭代五輪取代傳統 RAG",
+      "subtitle": "5 個 AI 角色分工合作：大隊長指揮、清資料員轉檔、偵察兵檢索、撰寫官生成、對抗官評分，反覆迭代五輪取代傳統 RAG",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-five-roles-workflow.html",
+      "icon": "users",
+      "badge": "Agentic AI",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T12:21:29+08:00",
       "tags": [
-        "Agentic AI",
-        "五角色工作流",
-        "迭代對抗",
-        "取代 RAG"
+        "users:五角色工作流",
+        "repeat:迭代對抗",
+        "shield:取代 RAG"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-five-roles-workflow.html"
+      "concepts": [
+        "五角色 Agentic AI 工作流：大隊長（指揮）、清資料員（多模態轉純文字）、搜尋偵察兵（Agentic 檢索）、生成撰寫官、評分對抗官",
+        "不用 RAG 向量搜尋：Agentic AI 主動探索判斷，像派真人助理翻資料而非丟關鍵字進大海撈魚",
+        "迭代機制：角色 1-2 做一次，角色 3-4-5 反覆五輪精煉，生成與對抗交替直到品質過關",
+        "Gartner 2024→2025 多 Agent 系統詢問量暴增 1,445%，企業導入後流程時間縮短 30-50%",
+        "非技術人員大白話操作：匯入文件→下指令→收成果，從三天變三分鐘"
+      ]
     },
     {
+      "id": "one-shot-super-prompt",
       "title": "乾淨大提示：Agentic AI 碾出超大 Prompt，4B 追平 72B",
-      "date": "2026-04-05T12:12:48+08:00",
-      "content": "Agentic AI 唯一目標就是碾出乾淨大提示——小模型品質飆升 5 倍，全地端部署資料不出門",
+      "subtitle": "Agentic AI 唯一目標就是碾出乾淨大提示——小模型品質飆升 5 倍，全地端部署資料不出門",
+      "href": "https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html",
+      "icon": "zap",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T12:12:48+08:00",
       "tags": [
-        "方法論",
-        "超級提示",
-        "Context Engineering",
-        "全地端"
+        "zap:超級提示",
+        "cpu:Context Engineering",
+        "shield:全地端"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/one-shot-super-prompt.html"
+      "concepts": [
+        "多步驟處理讓 AI 混淆：GPT-4 準確度從 99% 掉到 70%，Claude 3.5 Sonnet 從 88% 掉到 30%（Context Rot 2026）",
+        "一次乾淨 Context Injection 品質飆升 5 倍：聚焦 300 tokens 遠勝 113K tokens 全文（Chroma Research 2026）",
+        "Qwen3-4B 追平 72B、Gemma-3n E4B 超越 17B、Phi-4 14B MMLU 85.2 逼近 GPT-4 86.4",
+        "Agentic AI 工作流：收集多模態→過濾雜訊→組裝超級提示→小模型精準生成",
+        "全地端部署處理 PDF/Office/音訊/影像，機敏資料不出門，AI 管家持續迭代進化"
+      ]
     },
     {
+      "id": "agentic-squad-dag",
       "title": "三人一組的 AI 小隊，迭代五輪打敗單兵作戰",
-      "date": "2026-04-05T12:17:15+08:00",
-      "content": "隊長+撰寫者+評分者組成對抗小隊，大隊長用 DAG 指揮五支小隊平行精煉，小模型也能交出大模型品質",
+      "subtitle": "隊長+撰寫者+評分者組成對抗小隊，大隊長用 DAG 指揮五支小隊平行精煉，小模型也能交出大模型品質",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html",
+      "icon": "users",
+      "badge": "架構",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T12:17:15+08:00",
       "tags": [
-        "架構",
-        "AI 小隊",
-        "Agentic AI",
-        "DAG"
+        "users:AI 小隊",
+        "cpu:Agentic AI",
+        "git-branch:DAG"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-squad-dag.html"
+      "concepts": [
+        "三角色小隊：隊長驅動節奏、撰寫者生成答案、評分者挑毛病 — GAN 生成對抗概念應用於 LLM Agent",
+        "每隊迭代 5 輪：品質門檻未達自動重來，小模型反覆修正逼近大模型品質",
+        "DAG 待辦清單指揮：大隊長排工五支小隊（計畫/美學/前端/後端/測試），能平行就平行、有先後就排序",
+        "2026 三篇研究佐證：Anthropic 三代理框架、Google ADK Generator-Critic-Refiner、Stanford Meta-Harness +4.7 分",
+        "核心訊息：你不需要最貴的模型，你需要最聰明的編制 — 14B 迭代五輪可交出 675B 品質"
+      ]
     },
     {
+      "id": "premium-exam-five-levels",
       "title": "高品味題庫五等級：從「對，就是我」到「分數我服氣」",
-      "date": "2026-04-05T10:36:18+08:00",
-      "content": "L1 身分→L2 任務→L3 情境→L4 素材→L5 答案，機關不用懂 AI 就能出鑑別力題庫",
+      "subtitle": "L1 身分→L2 任務→L3 情境→L4 素材→L5 答案，機關不用懂 AI 就能出鑑別力題庫",
+      "href": "https://storage.googleapis.com/botrun-slides/premium-exam-five-levels.html",
+      "icon": "layers",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-05T10:36:18+08:00",
       "tags": [
-        "方法論",
-        "題庫",
-        "鑑別力",
-        "機關"
+        "layers:題庫",
+        "target:鑑別力",
+        "building:機關"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/premium-exam-five-levels.html"
+      "concepts": [
+        "五級遞進框架：身分→任務→情境→素材→答案，對應使用者旅程「我是誰→我要做什麼→什麼情況下做→拿什麼來做→做對長什麼樣」",
+        "L1 一句話啟動：機關只要說出名稱、角色、最痛什麼，就能開始建題",
+        "L4 多模態素材：PDF/DOCX/XLSX/掃描/錄音/影片/截圖，機關去識別化丟過來即可",
+        "L5 逐項扣分表：老手寫標準成品 + 白紙黑字扣分標準，五個模型跑完直接排名",
+        "國科會公文實例：計畫變更核定函從 L1 一句話到 L5 扣分表的完整示範"
+      ]
     },
     {
+      "id": "ocr-benchmark-tc",
       "title": "零安裝 91% 冠軍 — 繁體中文 OCR 10 工具實測排行榜",
-      "date": "2026-04-05T09:11:51+08:00",
-      "content": "macOS Vision 稱王，中國百度工具最強但臺灣機關禁用，Gemma 4 小模型打大模型",
+      "subtitle": "macOS Vision 稱王，中國百度工具最強但臺灣機關禁用，Gemma 4 小模型打大模型",
+      "href": "https://storage.googleapis.com/botrun-slides/ocr-benchmark-tc.html",
+      "icon": "scan-text",
+      "badge": "Benchmark",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-04-05T09:11:51+08:00",
       "tags": [
-        "Benchmark",
-        "OCR",
-        "Benchmark",
-        "國安合規"
+        "scan-text:OCR",
+        "flask-conical:Benchmark",
+        "flag:國安合規"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ocr-benchmark-tc.html"
+      "concepts": [
+        "macOS Vision OCR 91.3% 零安裝冠軍（Apple 美國），只漏 unicode 圓圈差異",
+        "PaddleOCR 87% / RapidOCR 0.8s 最快 — 均為百度中國製，臺灣政府機關依法禁用",
+        "專業 OCR 碾壓 LLM Vision：PaddleOCR 87% vs Gemma4-E4B 78.3%，差距 9%",
+        "小 LLM 比大 LLM 更適合 OCR：E4B 4.5B (78%) > 31B (65%) > 26B-MoE (52%)",
+        "最佳實踐兩階段：macOS Vision/Marker 做 OCR 轉錄 + Gemma4-E4B/Claude 做語意理解"
+      ]
     },
     {
+      "id": "harness-engineering-playbook",
       "title": "Harness Engineering — 模型再聰明，沒韁繩照樣翻車",
-      "date": "2026-04-04T23:48:05+08:00",
-      "content": "Anthropic 兩篇論文拆解：AI Agent 長任務失敗的四大模式，與 GAN 式三代理人解法",
+      "subtitle": "Anthropic 兩篇論文拆解：AI Agent 長任務失敗的四大模式，與 GAN 式三代理人解法",
+      "href": "https://storage.googleapis.com/botrun-slides/harness-engineering-playbook.html",
+      "icon": "settings",
+      "badge": "Agent 工程",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T23:48:05+08:00",
       "tags": [
-        "Agent 工程",
-        "Harness Engineering",
-        "AI Agent",
-        "GAN 架構"
+        "settings:Harness Engineering",
+        "bot:AI Agent",
+        "git-branch:GAN 架構"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/harness-engineering-playbook.html"
+      "concepts": [
+        "AI Agent 長任務四大翻車模式：一次做太多、Context Anxiety、過早宣布勝利、自我評估偏差",
+        "Phase 1 雙代理人：Initializer 建環境 + Coding Agent 每 session 一個功能、用 Puppeteer 真人測試",
+        "Phase 2 GAN 式三代理人：Planner（規格）→ Generator（建構）⇄ Evaluator（Playwright 四維度硬門檻評分）",
+        "Harness 不是 prompt 或 system message，而是約束 + 工具 + 回饋迴圈 + 交接產物的完整環境",
+        "五大原則：任務分解、Session 連續性、外部評估、機械式約束、漸進式驗證"
+      ]
     },
     {
+      "id": "right-brain-seeds-left-brain-waters",
       "title": "右腦播種 左腦澆水 — 90 秒決定你長成什麼樣的人",
-      "date": "2026-04-04T23:46:16+08:00",
-      "content": "Jill Bolte Taylor 腦神經科學 x 佛學：情緒只活 90 秒，之後都是你的左腦在續命",
+      "subtitle": "Jill Bolte Taylor 腦神經科學 x 佛學：情緒只活 90 秒，之後都是你的左腦在續命",
+      "href": "https://storage.googleapis.com/botrun-slides/right-brain-seeds-left-brain-waters.html",
+      "icon": "brain",
+      "badge": "腦科學 x 佛學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-04T23:46:16+08:00",
       "tags": [
-        "腦科學 x 佛學",
-        "腦神經科學",
-        "90 秒法則",
-        "佛學修行"
+        "brain:腦神經科學",
+        "droplets:90 秒法則",
+        "heart:佛學修行"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/right-brain-seeds-left-brain-waters.html"
+      "concepts": [
+        "Jill Bolte Taylor 中風後發現：任何情緒的生化反應只活 90 秒，之後是左腦選擇重播",
+        "右腦播種（當下真實感受）→ 左腦澆水（選擇匱乏水壺或豐盛水壺）→ 長出不同人生",
+        "匱乏水壺（你輸我贏、防衛、控制）vs 豐盛水壺（多贏、好奇、合作），辨別法：身體縮緊或打開",
+        "修行三步驟：覺察（我在生氣）→ 辨認（90 秒種子還是左腦重播）→ 選擇（換水壺）",
+        "左腦是好員工壞老闆、右腦是好度假壞住所，能自由切換才是真正自在"
+      ]
     },
     {
+      "id": "pi-vs-claude-code-philosophy",
       "title": "173 字 vs 51 萬行：極簡武士刀與瑞士軍刀的 Coding Agent 哲學戰",
-      "date": "2026-04-04T18:10:00+08:00",
-      "content": "libGDX 之父 Mario Zechner 的 Pi 極簡主義 vs Claude Code 洩漏原始碼的生產級架構",
+      "subtitle": "libGDX 之父 Mario Zechner 的 Pi 極簡主義 vs Claude Code 洩漏原始碼的生產級架構",
+      "href": "https://storage.googleapis.com/botrun-slides/pi-vs-claude-code-philosophy.html",
+      "icon": "swords",
+      "badge": "Philosophy Battle",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-04T18:10:00+08:00",
       "tags": [
-        "Philosophy Battle",
-        "Pi vs Claude Code",
-        "173 Words Prompt",
-        "512K Lines"
+        "swords:Pi vs Claude Code",
+        "minimize-2:173 Words Prompt",
+        "shield:512K Lines"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/pi-vs-claude-code-philosophy.html"
+      "concepts": [
+        "Pi 用 173 字系統提示、4 個工具、零權限檢查，Terminal-Bench 排名與巨型 harness 接近",
+        "Claude Code 洩漏 512,000 行 TypeScript、40+ 工具、23 層安全閘門、KAIROS 自治 daemon",
+        "安全哲學對比：Pi 信任基礎設施層（容器隔離）vs Claude Code 信任應用層（逐層檢查）",
+        "可觀測性是 Mario 最核心批評：context 被隱藏注入、sub-agent 黑箱、壓縮策略不透明",
+        "深層啟示：模型能力商品化後，harness（包裝層）才是真正戰場，兩條路都會活下來"
+      ]
     },
     {
+      "id": "claude-code-agent-runtime",
       "title": "51.2 萬行洩漏真相：Claude Code 不是工具，是 Agent Runtime",
-      "date": "2026-04-04T17:37:55+08:00",
-      "content": "1,906 個 TypeScript 檔案全面審計 — 98.4% 不是 AI，是生產級工程",
+      "subtitle": "1,906 個 TypeScript 檔案全面審計 — 98.4% 不是 AI，是生產級工程",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-agent-runtime.html",
+      "icon": "cpu",
+      "badge": "Agent Architecture",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-04-04T17:37:55+08:00",
       "tags": [
-        "Agent Architecture",
-        "Agent Runtime",
-        "23 Security Checks",
-        "5-Layer Memory"
+        "cpu:Agent Runtime",
+        "shield:23 Security Checks",
+        "brain:5-Layer Memory"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-code-agent-runtime.html"
+      "concepts": [
+        "核心比例：51.2 萬行 TypeScript 只有 8,000 行（1.6%）碰模型 API，其餘 98.4% 是 Agent Runtime 工程",
+        "ReAct 五階段迴圈：上下文準備 → 流式呼叫 → 工具執行 → 附件收集 → 終止決策，用 Async Generator yield 推送",
+        "七層恢復防線：API 退避 / 529 過載 / Token 恢復 / 響應壓縮 / 上下文排空 / 模型 Fallback / 6 小時持久重試",
+        "投機執行：Copy-on-Write Overlay FS 預執行，確認套用、拒絕清除，像 CPU 流水線隱藏延遲",
+        "Prompt 快取分割：靜態段全局共享 + 動態段每輪重算，14 個失效向量追蹤，每百萬 Token $5 → $0.5"
+      ]
     },
     {
+      "id": "kimi-attention-residuals",
       "title": "一鍋大雜燴害 AI 失憶，自助餐讓它想起一切",
-      "date": "2026-04-04T17:38:31+08:00",
-      "content": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
+      "subtitle": "Kimi 注意力殘差論文解析 — 1.25x 效率提升、GPQA +7.5 分、AI 長出類腦結構",
+      "href": "https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html",
+      "icon": "brain",
+      "badge": "AI Architecture",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T17:38:31+08:00",
       "tags": [
-        "AI Architecture",
-        "Attention Residuals",
-        "1.25x Efficiency",
-        "Kimi / Moonshot AI"
+        "brain:Attention Residuals",
+        "zap:1.25x Efficiency",
+        "cpu:Kimi / Moonshot AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/kimi-attention-residuals.html"
+      "concepts": [
+        "注意力殘差核心：softmax attention over depth，讓每層選擇性取用前層表徵，取代盲目累加的殘差連接",
+        "效率實證：達到相同效能水準計算量減少 1.25x，GPQA Diamond +7.5 分，推理延遲增加 <2%",
+        "Block AttnRes 工程解法：模組內完整注意力、模組間摘要傳遞，解決多伺服器通訊瓶頸",
+        "類腦結構湧現：局部性 + 遠距連結 + 專業化分工，AI 首次具備動態重新配置自身結構的能力",
+        "Harness Engineering 啟發：選擇性聚合優於盲目累加，適用於 Context Engineering、記憶分層、評估框架設計"
+      ]
     },
     {
+      "id": "gemma4-fast-cheap-accurate",
       "title": "128 個專家只叫 8 個：Gemma 4 的快省準三連招",
-      "date": "2026-04-04T17:33:29+08:00",
-      "content": "MoE 稀疏激活 + KV Cache 影分身 + 混合注意力，大白話搭配可實作程式碼",
+      "subtitle": "MoE 稀疏激活 + KV Cache 影分身 + 混合注意力，大白話搭配可實作程式碼",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-fast-cheap-accurate.html",
+      "icon": "zap",
+      "badge": "技術解析",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-04-04T17:33:29+08:00",
       "tags": [
-        "技術解析",
-        "快省準",
-        "Gemma 4 MoE",
-        "資料主權"
+        "zap:快省準",
+        "cpu:Gemma 4 MoE",
+        "shield:資料主權"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma4-fast-cheap-accurate.html"
+      "concepts": [
+        "快：KV Cache 差量送法 455x 加速 + deepcopy 影分身平行問答 + Speculative Decoding",
+        "省：MoE 128 專家只激活 8 個（4B 電費跑 26B 腦） + 4-bit 量化損失僅 0.26% + Sliding Window + Shared KV 跨層共用",
+        "準：LMArena 全球開源 #6、AIME 88.3%、Codeforces ELO 2150（都是 3.8B 活用量打出來的）",
+        "RTX PRO 6000 月租 8,755 TWD（H100 的 1/8），或 Mac M4 Max 128GB 零雲端費完全本地",
+        "唯一能完全本地跑的前段班模型——GPT-5、Claude 都要上傳資料，Gemma 4 資料不出門"
+      ]
     },
     {
+      "id": "gemma4-kvcache-100pages",
       "title": "67 秒 → 0.15 秒：KV Cache 讓 100 頁 PDF 問答飛起來",
-      "date": "2026-04-04T16:05:38+08:00",
-      "content": "Gemma 4 26B MoE 在 M4 Max 128GB 上的 KV Cache 差量送法實測",
+      "subtitle": "Gemma 4 26B MoE 在 M4 Max 128GB 上的 KV Cache 差量送法實測",
+      "href": "https://storage.googleapis.com/botrun-slides/gemma4-kvcache-100pages.html",
+      "icon": "zap",
+      "badge": "Benchmark",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-04-04T16:05:38+08:00",
       "tags": [
-        "Benchmark",
-        "KV Cache",
-        "Gemma 4 26B",
-        "M4 Max"
+        "zap:KV Cache",
+        "cpu:Gemma 4 26B",
+        "laptop:M4 Max"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gemma4-kvcache-100pages.html"
+      "concepts": [
+        "KV Cache 跨輪重用：Turn 2+ 只送差量 ~30 tokens，TTFT 從 67s 降到 0.15s（455x 加速）",
+        "Gemma 4 混合注意力：5 層 Sliding Window（1024 tokens）+ 1 層 Full Attention（全歷史），遠距離記憶靠 Full 層",
+        "KV Cache 記憶體穩定：模型 15.7GB + Cache 2.6GB = 22.66GB，10 輪不增長",
+        "mlx-vlm 0.4.3 是 Mac 上唯一支援 Gemma 4 的推論引擎（mlx-lm 不支援）",
+        "100 頁 PDF（61,689 tokens）10 輪連續問答實測，M4 Max 128GB 完全本地執行"
+      ]
     },
     {
+      "id": "skill-best-practices",
       "title": "Skill 最佳實踐：寫 3 行指令，AI 照做 300 次",
-      "date": "2026-04-01T12:02:46+08:00",
-      "content": "Anthropic 官方 + 社群實證 — 五分鐘搞懂 Claude Code Skill 怎麼寫、怎麼選模式、怎麼避坑",
+      "subtitle": "Anthropic 官方 + 社群實證 — 五分鐘搞懂 Claude Code Skill 怎麼寫、怎麼選模式、怎麼避坑",
+      "href": "https://storage.googleapis.com/botrun-slides/skill-best-practices.html",
+      "icon": "book-open",
+      "badge": "研究筆記",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-04-01T12:02:46+08:00",
       "tags": [
-        "研究筆記",
-        "Skill 設計",
-        "Claude Code",
-        "最佳實踐"
+        "book-open:Skill 設計",
+        "code:Claude Code",
+        "sparkles:最佳實踐"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/skill-best-practices.html"
+      "concepts": [
+        "Skill 架構：SKILL.md（< 500 行導覽）+ references/（細節）+ templates/（模板）+ examples/（錨點）",
+        "好 vs 壞對比：分階段+品質閘門+好壞範例 vs 模糊一句話指令",
+        "六大設計模式：生成器、工作流、審查、查閱、測驗、稽核 — 選對模式贏一半",
+        "五大黃金原則：< 500 行、3+ 範例、負面範例、分階段自檢、重複 > 3 次就建 Skill",
+        "來源：Anthropic 官方文件 + DEV.to + Builder.io 50 Tips + awesome-claude-code 社群"
+      ]
     },
     {
+      "id": "water-transformation-game",
       "title": "水的變身術：10 分鐘讓四年級生愛上三態變化",
-      "date": "2026-03-31T13:30:00+08:00",
-      "content": "八角遊戲化框架 5 輪迭代 — 從互動考卷進化成讓人想玩第二次的教育遊戲",
+      "subtitle": "八角遊戲化框架 5 輪迭代 — 從互動考卷進化成讓人想玩第二次的教育遊戲",
+      "href": "https://storage.googleapis.com/botrun-slides/water-transformation-game.html",
+      "icon": "droplets",
+      "badge": "教育遊戲",
+      "badgeColor": "#3b82f6",
+      "publishDate": "2026-03-31T13:30:00+08:00",
       "tags": [
-        "教育遊戲",
-        "水的三態",
-        "遊戲化學習",
-        "八角框架"
+        "droplets:水的三態",
+        "gamepad-2:遊戲化學習",
+        "brain:八角框架"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/water-transformation-game.html"
+      "concepts": [
+        "八角遊戲化框架（Octalysis）五輪迭代：3.75 → 6.63 分，8 驅力全部 ≥ 6",
+        "教育遊戲減法哲學：16 系統膨脹 → 10 系統精簡，砍 37.5% 分數不降反升",
+        "預測→驗證循環取代被動展示：先猜再看結果，認知衝突才是學習",
+        "自由實驗塔設計：開放探索 6 種變化 + 2 個隱藏組合，創造力驅力核心",
+        "GAN 式設計迭代：獨立批評家角色消除設計師自評偏差（32% → 0%）"
+      ]
     },
     {
+      "id": "anthropic-harness-gan",
       "title": "你叫 AI 打分數，它永遠說「很棒」",
-      "date": "2026-03-30T14:42:21+08:00",
-      "content": "Anthropic 生成對抗框架：拆開做事的 AI 和評審的 AI，讓品質迴圈真的轉起來",
+      "subtitle": "Anthropic 生成對抗框架：拆開做事的 AI 和評審的 AI，讓品質迴圈真的轉起來",
+      "href": "https://storage.googleapis.com/botrun-slides/anthropic-harness-gan.html",
+      "icon": "swords",
+      "badge": "AI 工程",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-30T14:42:21+08:00",
       "tags": [
-        "AI 工程",
-        "生成對抗",
-        "框架設計",
-        "Anthropic"
+        "swords:生成對抗",
+        "brain:框架設計",
+        "zap:Anthropic"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/anthropic-harness-gan.html"
+      "concepts": [
+        "自我評估偏見：AI 評自己永遠偏高，獨立評估器是唯一解方",
+        "GAN 式三代理架構：規劃器展開規格 + 生成器逐 Sprint 開發 + 評估器 Playwright 實測驗收",
+        "Sprint 合約機制：開發前先協商「完成」定義，27+ 條標準逐一驗收",
+        "$9 vs $200 品質差距：單一代理遊戲核心壞掉，三代理框架真的能玩",
+        "Opus 4.6 簡化：移除 Sprint 分解和上下文重置，評估器僅在能力邊緣任務才值得用"
+      ]
     },
     {
+      "id": "gstack-deep-dive",
       "title": "GStack 原理拆解 — 為什麼「一堆 Prompt」能讓你寫出 60 萬行？",
-      "date": "2026-03-29T08:25:43+08:00",
-      "content": "七階段 Sprint 流水線 + 20 個專家角色 + 真實瀏覽器測試 + 自我更新機制",
+      "subtitle": "七階段 Sprint 流水線 + 20 個專家角色 + 真實瀏覽器測試 + 自我更新機制",
+      "href": "https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html",
+      "icon": "code",
+      "badge": "原理拆解",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-29T08:25:43+08:00",
       "tags": [
-        "原理拆解",
-        "GStack",
-        "原始碼",
-        "原理"
+        "code:GStack",
+        "git-branch:原始碼",
+        "zap:原理"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gstack-deep-dive.html"
+      "concepts": [
+        "七階段 Sprint 流水線：Think→Plan→Build→Review→Test→Ship→Reflect",
+        "20+ Slash Command 各有獨立角色人設 + 強制流程 + 產出格式",
+        "/qa 開真實 Chromium 跑端對端測試，不是模擬",
+        "自動版本檢查 + 遙測 + 跨 Agent 可攜（Claude/Codex/Gemini/Cursor）",
+        "品質由流程保證而非 AI 自覺 — 角色隔離 + 階段閘門"
+      ]
     },
     {
+      "id": "hermes-deep-dive",
       "title": "Hermes Agent 原理拆解 — Prompt Cache 是第一公民",
-      "date": "2026-03-29T08:25:43+08:00",
-      "content": "Frozen Snapshot Pattern + 原子性技能 + SQLite WAL Jitter + 11 種模型翻譯器",
+      "subtitle": "Frozen Snapshot Pattern + 原子性技能 + SQLite WAL Jitter + 11 種模型翻譯器",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-deep-dive.html",
+      "icon": "database",
+      "badge": "原理拆解",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-29T08:25:43+08:00",
       "tags": [
-        "原理拆解",
-        "Hermes",
-        "原始碼",
-        "原理"
+        "database:Hermes",
+        "git-branch:原始碼",
+        "zap:原理"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-deep-dive.html"
+      "concepts": [
+        "Frozen Snapshot Pattern：記憶快照凍結，中途不改 system prompt 保護 prompt cache",
+        "技能原子性寫入 tempfile+os.replace + Tirith 安全掃描閘門",
+        "SQLite WAL + 隨機 20-150ms jitter 打破 convoy effect",
+        "11 種模型專用 tool call 解析器（Decorator Registry 模式）",
+        "記憶注入安全掃描防 prompt injection + SSH backdoor + 憑證外洩"
+      ]
     },
     {
+      "id": "superpowers-deep-dive",
       "title": "Superpowers 原理拆解 — 零程式碼，全靠 Markdown 控制 AI 行為",
-      "date": "2026-03-29T08:25:43+08:00",
-      "content": "Cialdini 說服原則 + 11 種藉口封殺 + Description 陷阱 + 子代理人雙階段審查",
+      "subtitle": "Cialdini 說服原則 + 11 種藉口封殺 + Description 陷阱 + 子代理人雙階段審查",
+      "href": "https://storage.googleapis.com/botrun-slides/superpowers-deep-dive.html",
+      "icon": "shield",
+      "badge": "原理拆解",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-29T08:25:43+08:00",
       "tags": [
-        "原理拆解",
-        "Superpowers",
-        "原始碼",
-        "原理"
+        "shield:Superpowers",
+        "git-branch:原始碼",
+        "zap:原理"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/superpowers-deep-dive.html"
+      "concepts": [
+        "100% Markdown 零程式碼框架，用心理學控制 AI 行為",
+        "Cialdini 說服原則讓 TDD 遵從率從 33% 升到 72%（N=28,000）",
+        "Controller-Worker 子代理人 + Spec Reviewer 不信任原則",
+        "CSO 理論：description 描述 workflow 時 Claude 跳過正文（Description 陷阱）",
+        "技能本身用 RED-GREEN-REFACTOR 測試，6 次迭代封殺 10+ 種合理化藉口"
+      ]
     },
     {
+      "id": "paperclip-deep-dive",
       "title": "Paperclip 原理拆解 — Promise Chain Mutex 不用分散式鎖",
-      "date": "2026-03-29T08:25:43+08:00",
-      "content": "三層預算閘門 + 對話延續 + 10 種 Agent 適配器 + 不可變稽核鏈",
+      "subtitle": "三層預算閘門 + 對話延續 + 10 種 Agent 適配器 + 不可變稽核鏈",
+      "href": "https://storage.googleapis.com/botrun-slides/paperclip-deep-dive.html",
+      "icon": "lock",
+      "badge": "原理拆解",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-29T08:25:43+08:00",
       "tags": [
-        "原理拆解",
-        "Paperclip",
-        "原始碼",
-        "原理"
+        "lock:Paperclip",
+        "git-branch:原始碼",
+        "zap:原理"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/paperclip-deep-dive.html"
+      "concepts": [
+        "Promise Chain Mutex：Map<agentId,Promise> 不用分散式鎖保證原子性",
+        "三層預算閘門（company/project/agent）+ hard_stop 自動暫停 + 人類核准",
+        "Session 延續：Agent 睡醒後接續上次對話 + handoff markdown 壓縮",
+        "10 種 Agent 適配器統一 execute() 介面（Claude/Codex/Cursor/Gemini/OpenClaw/Hermes...）",
+        "不可變稽核三層：activity_log + run_events + config_revisions + SHA-256 完整性"
+      ]
     },
     {
+      "id": "nchc-govdoc-model-benchmark",
       "title": "公文 AI 評比 — 14B 小模型逆襲 675B 巨獸",
-      "date": "2026-03-29T08:15:57+08:00",
-      "content": "NCHC 五模型三輪實測，Prompt Engineering 讓 14B 超越 123B",
+      "subtitle": "NCHC 五模型三輪實測，Prompt Engineering 讓 14B 超越 123B",
+      "href": "https://storage.googleapis.com/botrun-slides/nchc-govdoc-model-benchmark.html",
+      "icon": "trophy",
+      "badge": "AI 評比",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-29T08:15:57+08:00",
       "tags": [
-        "AI 評比",
-        "評比",
-        "NCHC",
-        "公文"
+        "trophy:評比",
+        "cpu:NCHC",
+        "file-text:公文"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/nchc-govdoc-model-benchmark.html"
+      "concepts": [
+        "Devstral-2-123B 三輪平均 89.7 穩坐冠軍，標準差僅 1.5 極穩定",
+        "參數量不等於品質：14B 打敗 120B，123B 打敗 675B",
+        "Prompt Engineering 讓 14B 從 77 分躍升至 92 分（+19.5%），超越 123B",
+        "五個泛化 prompt 技巧：術語表、思考鏈、結構化輸出、具體數字、去除混淆",
+        "公文方向是零容錯生死線：設備費→業務費寫反整份報廢"
+      ]
     },
     {
+      "id": "gstack-real-cases",
       "title": "GStack 真實案例 — YC 總裁的 AI 團隊到底有沒有用？",
-      "date": "2026-03-29T08:03:02+08:00",
-      "content": "CTO 說是上帝模式、Hacker News 一半說貨物崇拜 — 真實使用者案例全紀錄",
+      "subtitle": "CTO 說是上帝模式、Hacker News 一半說貨物崇拜 — 真實使用者案例全紀錄",
+      "href": "https://storage.googleapis.com/botrun-slides/gstack-real-cases.html",
+      "icon": "star",
+      "badge": "真實案例",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-29T08:03:02+08:00",
       "tags": [
-        "真實案例",
-        "GStack",
-        "開源",
-        "案例研究"
+        "star:GStack",
+        "git-branch:開源",
+        "zap:案例研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gstack-real-cases.html"
+      "concepts": [
+        "匿名 CTO 用 /review 發現團隊未知的 XSS 漏洞，稱為「上帝模式」",
+        "Garry Tan 本人 60 天 60 萬行程式碼，35% 測試，15 個平行 Sprint",
+        "Kristjan Akkermann 在 Rails 支付系統天天用 /review，但也發現誤報問題",
+        "Hacker News 評價兩極：一半天才一半貨物崇拜，Mo Bitar 稱「just prompts」",
+        "30 秒安裝，真正價值是「在寫之前做更少錯誤決定」而非「寫更多程式」"
+      ]
     },
     {
+      "id": "hermes-agent-real-cases",
       "title": "Hermes Agent 真實案例 — 越用越聰明的 AI 到底多聰明？",
-      "date": "2026-03-29T08:03:02+08:00",
-      "content": "RTX 3090、$5 VPS、Mac + Ollama — 消費級硬體跑自我進化 AI 代理人",
+      "subtitle": "RTX 3090、$5 VPS、Mac + Ollama — 消費級硬體跑自我進化 AI 代理人",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-agent-real-cases.html",
+      "icon": "brain",
+      "badge": "真實案例",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-29T08:03:02+08:00",
       "tags": [
-        "真實案例",
-        "Hermes",
-        "開源",
-        "案例研究"
+        "brain:Hermes",
+        "git-branch:開源",
+        "zap:案例研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hermes-agent-real-cases.html"
+      "concepts": [
+        "OpenClaw 每次更新花 2 小時修，Hermes 技能會自己建立並持續改善",
+        "RTX 3090 跑 Qwen 27B「no drift, tool calls for days」媲美 Sonnet 3.6-4",
+        "FIP Crypto 用 $4.46/月 VPS 跑加密貨幣交易代理人，3 小時搞定",
+        "@glitch_ 用 11 個 Agent 蜂群做成長實驗，每次週期僅 $0.009",
+        "記憶準確度仍不完美，但維護者回報 Bug 當天就修好"
+      ]
     },
     {
+      "id": "superpowers-real-cases",
       "title": "Superpowers 真實案例 — 121K 星的 TDD 紀律框架到底改變了什麼？",
-      "date": "2026-03-29T08:03:02+08:00",
-      "content": "前 Oracle 工程師說產出超過整支團隊、Simon Willison 強力推薦 — 也有人回去用 Plan Mode",
+      "subtitle": "前 Oracle 工程師說產出超過整支團隊、Simon Willison 強力推薦 — 也有人回去用 Plan Mode",
+      "href": "https://storage.googleapis.com/botrun-slides/superpowers-real-cases.html",
+      "icon": "shield",
+      "badge": "真實案例",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-29T08:03:02+08:00",
       "tags": [
-        "真實案例",
-        "Superpowers",
-        "開源",
-        "案例研究"
+        "shield:Superpowers",
+        "git-branch:開源",
+        "zap:案例研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/superpowers-real-cases.html"
+      "concepts": [
+        "Colin McNamara：個人產出超過 Oracle 雲端基礎架構整支團隊",
+        "Valgard 連續 3 個月每天使用，稱「Indispensable」是必裝工具",
+        "Simon Willison：「I can't recommend this post strongly enough」",
+        "部分 HN 用戶認為原生 Plan Mode 已夠用，Superpowers 是「旅程中一站」",
+        "核心價值：TDD 強制紀律 + git worktree 隔離 + 子代理人平行開發"
+      ]
     },
     {
+      "id": "paperclip-real-cases",
       "title": "Paperclip 真實案例 — 零人公司調度器是真的還是噱頭？",
-      "date": "2026-03-29T08:03:02+08:00",
-      "content": "Felix AI 營收超 $100K、15 個 Agent 管公司 — 但月費 $200-$2K 且錯誤會連鎖擴散",
+      "subtitle": "Felix AI 營收超 $100K、15 個 Agent 管公司 — 但月費 $200-$2K 且錯誤會連鎖擴散",
+      "href": "https://storage.googleapis.com/botrun-slides/paperclip-real-cases.html",
+      "icon": "building",
+      "badge": "真實案例",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-29T08:03:02+08:00",
       "tags": [
-        "真實案例",
-        "Paperclip",
-        "開源",
-        "案例研究"
+        "building:Paperclip",
+        "git-branch:開源",
+        "zap:案例研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/paperclip-real-cases.html"
+      "concepts": [
+        "Nat Eliason 的 Felix AI 營收超 $100K，Paperclip 是管理層",
+        "Aaron Sneed 用 15 個 AI 代理人管公司，每週省 20+ 小時",
+        "Flowtivity 跑 1 年+：錯誤擴散速度跟成功一樣快，月費 $200-$2K",
+        "Tommaso Nervegna 三實戰配置：晨間戰情室、POC 工廠、目標對齊稽核員",
+        "「零人公司」是誤導 — 實際是人類治理 AI 系統，做更策略性的工作"
+      ]
     },
     {
+      "id": "opensource-ai-agents-2026",
       "title": "四大開源 AI Agent 專案 — 一人抵一隊的秘密武器",
-      "date": "2026-03-29T07:36:44+08:00",
-      "content": "GStack、Hermes Agent、Superpowers、Paperclip — 21 萬顆 GitHub 星，獨立開發者的團隊級戰力",
+      "subtitle": "GStack、Hermes Agent、Superpowers、Paperclip — 21 萬顆 GitHub 星，獨立開發者的團隊級戰力",
+      "href": "https://storage.googleapis.com/botrun-slides/opensource-ai-agents-2026.html",
+      "icon": "cpu",
+      "badge": "開源工具",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-29T07:36:44+08:00",
       "tags": [
-        "開源工具",
-        "AI Agent",
-        "開源",
-        "Claude Code"
+        "cpu:AI Agent",
+        "git-branch:開源",
+        "zap:Claude Code"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/opensource-ai-agents-2026.html"
+      "concepts": [
+        "GStack：YC 總裁 Garry Tan 開源，6 種角色 prompt 灌進 Claude Code（~50K stars）",
+        "Hermes Agent：Nous Research 自我改善學習迴圈，支援 Telegram/Discord/Slack（~12K stars）",
+        "Superpowers：Claude Code 外掛強制 TDD/YAGNI/DRY，Work Trees 平行開發（~115K stars）",
+        "Paperclip：零人公司調度系統，多 Agent 工單 + Token 成本追蹤（~33K stars）",
+        "四專案合計 21 萬顆 GitHub stars，2026 年獨立開發者 = 整支團隊"
+      ]
     },
     {
+      "id": "dytopo-opencode-impl",
       "title": "DyTopo 落地三補丁 — OpenCode 動態拓撲實作圖解",
-      "date": "2026-03-28T23:53:39+08:00",
-      "content": "辦公室已蓋好，只缺一個智慧媒人 — 1 個 .ts + 2 個 prompt 零核心改動",
+      "subtitle": "辦公室已蓋好，只缺一個智慧媒人 — 1 個 .ts + 2 個 prompt 零核心改動",
+      "href": "https://storage.googleapis.com/botrun-slides/dytopo-opencode-impl.html",
+      "icon": "git-branch",
+      "badge": "實作指南",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-28T23:53:39+08:00",
       "tags": [
-        "實作指南",
-        "動態拓撲",
-        "OpenCode",
-        "實作"
+        "git-branch:動態拓撲",
+        "brain:OpenCode",
+        "zap:實作"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/dytopo-opencode-impl.html"
+      "concepts": [
+        "OpenCode Agent Teams 已有 80%：team_spawn/team_message/P2P Full Mesh/Auto-wake/JSONL Inbox/Multi-Model",
+        "補丁 1 舉牌子：改 prompt 讓每個 Agent 輸出 QUERY（我要什麼）和 KEY（我會什麼）",
+        "補丁 2 智慧媒人：.opencode/tools/dytopo-match.ts 用嵌入向量算餘弦相似度配對",
+        "補丁 3 每輪重開市集：Lead prompt 加迴圈邏輯，每輪重新收集配對，只用 team_message 定向送",
+        "省 48% tokens 更準：固定廣播 6 條線 vs DyTopo 每輪只花 1-2 條精準配對線"
+      ]
     },
     {
+      "id": "dytopo-multi-agent-routing",
       "title": "AI 代理人聊天也要挑對象 — DyTopo 動態拓撲路由",
-      "date": "2026-03-28T23:21:38+08:00",
-      "content": "語義配對 × 稀疏有向圖 × Manager 元控制 — 平均 +6.2% 全面碾壓固定拓撲",
+      "subtitle": "語義配對 × 稀疏有向圖 × Manager 元控制 — 平均 +6.2% 全面碾壓固定拓撲",
+      "href": "https://storage.googleapis.com/botrun-slides/dytopo-multi-agent-routing.html",
+      "icon": "network",
+      "badge": "AI 論文",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T23:21:38+08:00",
       "tags": [
-        "AI 論文",
-        "動態拓撲",
-        "多 Agent",
-        "語義配對"
+        "network:動態拓撲",
+        "brain:多 Agent",
+        "zap:語義配對"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/dytopo-multi-agent-routing.html"
+      "concepts": [
+        "DyTopo 每輪重建稀疏有向圖：Agent 用 Query/Key 描述符做語義配對，只傳相關訊息",
+        "22M 小模型 all-MiniLM-L6-v2 做嵌入：384 維向量餘弦相似度，毫秒級路由決策",
+        "16 場全勝：4 模型 × 4 基準，平均超越最強對照 +6.2%，Qwen3-8B 從 18% 飆到 89%",
+        "省 48% tokens 還更準：比 AgentScope 省一半 token 消耗，延遲快 44%",
+        "門檻 τ 倒 U 型：程式碼 0.3、數學 0.4 最佳，太鬆噪音多、太緊資訊斷"
+      ]
     },
     {
+      "id": "dytopo-dynamic-topology",
       "title": "80 億參數絞殺 1200 億 — DyTopo 動態拓撲路由讓小模型逆襲巨獸",
-      "date": "2026-03-28T23:26:35+08:00",
-      "content": "上下文污染 × 384 維語義匹配 × 貪婪循環打破 — 系統組織力跨維度抹平性能落差",
+      "subtitle": "上下文污染 × 384 維語義匹配 × 貪婪循環打破 — 系統組織力跨維度抹平性能落差",
+      "href": "https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html",
+      "icon": "network",
+      "badge": "AI 論文",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T23:26:35+08:00",
       "tags": [
-        "AI 論文",
-        "動態拓撲",
-        "多 Agent",
-        "Scaling Law"
+        "network:動態拓撲",
+        "brain:多 Agent",
+        "chart:Scaling Law"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/dytopo-dynamic-topology.html"
+      "concepts": [
+        "上下文污染 (Context Pollution)：多 Agent 廣播溝通導致注意力分散、推理崩潰，模型越大受災越重",
+        "動態拓撲路由 (DyTopo)：把靜態群聊改為按需配對的自由交易集市，Query/Key 輕量描述取代全文廣播",
+        "閾值 τ 無黃金參數：程式碼 0.3 寬容有彈性、奧數 0.4+ 冷酷嚴苛，不同任務需不同溝通門檻",
+        "8B 絞殺 120B：Qwen3-8B + DyTopo 在 OmniMATH 拿 51.43% 勝過 GPT-oss-120B 的 41.43%",
+        "康威定律反轉：AI 探索出的最優資訊組織形態可能反向重塑人類組織架構"
+      ]
     },
     {
+      "id": "blizzard-jeff-kaplan",
       "title": "金鵝不下蛋了 — 暴雪 Jeff Kaplan 五小時真心話的 12 個大白話洞見",
-      "date": "2026-03-28T23:09:42+08:00",
-      "content": "170 封退稿信 × 8,300 萬美元失敗 × 95%→50% 開發者比例 — 偉大公司走向平庸的真正原因",
+      "subtitle": "170 封退稿信 × 8,300 萬美元失敗 × 95%→50% 開發者比例 — 偉大公司走向平庸的真正原因",
+      "href": "https://storage.googleapis.com/botrun-slides/blizzard-jeff-kaplan.html",
+      "icon": "gamepad",
+      "badge": "洞見",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-28T23:09:42+08:00",
       "tags": [
-        "洞見",
-        "遊戲產業",
-        "領導力",
-        "組織衰落"
+        "gamepad:遊戲產業",
+        "brain:領導力",
+        "chart:組織衰落"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/blizzard-jeff-kaplan.html"
+      "concepts": [
+        "所有權 (Ownership)：手藝再好，把決策權交給不做手藝的人，最終會失去一切",
+        "開發者比例指標：95% 開發者到 50:50 是暴雪從偉大走向平庸的根因",
+        "想法 vs 願景：Titan 8,300 萬美元失敗 — 一百個好點子不等於一個可執行的願景",
+        "10 人孵化期：資訊透明、全員參與決策是最佳狀態，團隊膨脹帶來妖魔化",
+        "金繼山哲學：傷痕不用遮，34 人小團隊、只拿需要的錢、優化控制權而非資金數量"
+      ]
     },
     {
+      "id": "antifragile-prompt-eng",
       "title": "反脆弱提示工程 — AI Coding 不該弱化你，而該讓你更強",
-      "date": "2026-03-28T22:16:32+08:00",
-      "content": "五層根因 × 三方案打分 × BDD 五情境 — 用提示工程對抗 Vibe Coding 弱化人類的陷阱",
+      "subtitle": "五層根因 × 三方案打分 × BDD 五情境 — 用提示工程對抗 Vibe Coding 弱化人類的陷阱",
+      "href": "https://storage.googleapis.com/botrun-slides/antifragile-prompt-eng.html",
+      "icon": "shield",
+      "badge": "方法學",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T22:16:32+08:00",
       "tags": [
-        "方法學",
-        "反脆弱",
-        "心智模型",
-        "提示工程"
+        "shield:反脆弱",
+        "brain:心智模型",
+        "terminal:提示工程"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/antifragile-prompt-eng.html"
+      "concepts": [
+        "反脆弱提示工程 (Antifragile Prompt Engineering)：AI 互動讓人類越用越強，而非越用越弱",
+        "五層根因鏈 (5 Whys)：挖到第五層才是真正根因，治本不治標",
+        "三方案打分比較：BDD+TDD+SOLID+DRY+KISS+DDD 六大原則多維度評分選最高分",
+        "遠端通道除錯 (SSH Tunnel)：真實環境迭代，BDD 五情境全過才 sync 本地才 commit",
+        "呼應 Jeremy Howard 批判：AI 的工作是啟發人類建立心智模型，不是取代人類思考"
+      ]
     },
     {
+      "id": "vibe-coding-jeremy-howard",
       "title": "按 Enter 就祈禱？Vibe Coding 的五個致命陷阱",
-      "date": "2026-03-28T21:59:05+08:00",
-      "content": "Kaggle 前總裁 Jeremy Howard 深度批判 Vibe Coding — 控制的幻覺、心智模型斷裂、METR 實證",
+      "subtitle": "Kaggle 前總裁 Jeremy Howard 深度批判 Vibe Coding — 控制的幻覺、心智模型斷裂、METR 實證",
+      "href": "https://storage.googleapis.com/botrun-slides/vibe-coding-jeremy-howard.html",
+      "icon": "brain",
+      "badge": "深度解讀",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-28T21:59:05+08:00",
       "tags": [
-        "深度解讀",
-        "心智模型",
-        "Vibe Coding",
-        "METR 研究"
+        "brain:心智模型",
+        "alert-triangle:Vibe Coding",
+        "bar-chart:METR 研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/vibe-coding-jeremy-howard.html"
+      "concepts": [
+        "控制的幻覺：Vibe Coding 像老虎機，按 Enter 祈禱程式碼能跑通，使用者從來不是贏家",
+        "METR 研究：資深開發者用 AI 輔助處理複雜問題，耗時反而增加 19%",
+        "正確的 AI 協作：自動化低價值雜訊（如放射學標記結節），讓專家聚焦核心判斷",
+        "ULMFit 三階段架構：Howard & Ruder (2018) 一張 2080 Ti 就打破所有 SOTA 紀錄",
+        "終極風險不是 AI 覺醒，而是科技巨頭利用恐慌壟斷技術、集中權力"
+      ]
     },
     {
+      "id": "claude-code-ssh-tunnel-method",
       "title": "10 分鐘編譯 3 次白費？SSH Tunnel 秒級迭代術",
-      "date": "2026-03-27T21:20:59+08:00",
-      "content": "Claude Code × GCP SSH Tunnel 遠端迭代方法學 — 打通道、改遠端、驗通過、才回家",
+      "subtitle": "Claude Code × GCP SSH Tunnel 遠端迭代方法學 — 打通道、改遠端、驗通過、才回家",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-code-ssh-tunnel-method.html",
+      "icon": "terminal",
+      "badge": "方法學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-27T21:20:59+08:00",
       "tags": [
-        "方法學",
-        "SSH Tunnel",
-        "秒級迭代",
-        "GCP VM"
+        "terminal:SSH Tunnel",
+        "zap:秒級迭代",
+        "server:GCP VM"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-code-ssh-tunnel-method.html"
+      "concepts": [
+        "Docker 編譯迴圈地獄：改 code → build 10 分鐘 → 錯誤 → 重來 3 輪 = 30 分鐘白費",
+        "SSH Tunnel 一條指令打通道：gcloud compute ssh -- -L port 直連 VM 內部服務",
+        "五步驟秒級迭代：打通道 → scp 推檔 → docker cp → curl 測試 → 全過才同步本地",
+        "實戰驗證：K3s per-user Pod 改造 10 輪迭代 20 分鐘完成，原估 2 小時",
+        "核心心法：遠端是戰場、本地是淨室，驗證通過的程式碼才回到 git"
+      ]
     },
     {
+      "id": "ai-agent-era",
       "title": "AI 鏟子都造好了，你還在用手挖？",
-      "date": "2026-03-27T13:38:23+08:00",
-      "content": "Steve Yegge 訪談精華 — 從工程師到指揮官，軟體工程邁向多 Agent 時代的五階段演化",
+      "subtitle": "Steve Yegge 訪談精華 — 從工程師到指揮官，軟體工程邁向多 Agent 時代的五階段演化",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-agent-era.html",
+      "icon": "cpu",
+      "badge": "AI 趨勢",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-27T13:38:23+08:00",
       "tags": [
-        "AI 趨勢",
-        "多 Agent 編排",
-        "100 倍產出",
-        "吸血鬼效應"
+        "cpu:多 Agent 編排",
+        "trending-up:100 倍產出",
+        "zap:吸血鬼效應"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ai-agent-era.html"
+      "concepts": [
+        "Steve Yegge 四十年矽谷老兵觀點：軟體工程正經歷 AI 驅動的範式轉移",
+        "五階段演化：拒絕 → 自動補全 → 放手一搏 → Agent 主導 → 多 Agent 編排",
+        "吸血鬼效應：AI 讓產能暴增 100 倍，但認知超載讓工程師 3 小時就枯竭",
+        "苦澀的教訓（Rich Sutton）：人類巧思在絕對算力面前不值一提",
+        "未來屬於會編排 AI 軍團的架構師，不是手寫程式碼的工匠"
+      ]
     },
     {
+      "id": "pm25-research-trends",
       "title": "PM2.5 研究趨勢：每吸一口氣的真相與解方",
-      "date": "2026-03-26T09:27:21+08:00",
-      "content": "全球 490 萬人因 PM2.5 提前離世，臺灣亞洲最嚴 12 μg/m³ 標準仍無安全下限 — 三顆衛星 + GNN 即時溯源 + AI 戰情室三大突破",
+      "subtitle": "全球 490 萬人因 PM2.5 提前離世，臺灣亞洲最嚴 12 μg/m³ 標準仍無安全下限 — 三顆衛星 + GNN 即時溯源 + AI 戰情室三大突破",
+      "href": "https://storage.googleapis.com/botrun-slides/pm25-research-trends.html",
+      "icon": "wind",
+      "badge": "環境部",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-26T09:27:21+08:00",
       "tags": [
-        "環境部",
-        "空氣品質",
-        "PM2.5",
-        "AI 監測"
+        "wind:空氣品質",
+        "activity:PM2.5",
+        "cpu:AI 監測"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/pm25-research-trends.html"
+      "concepts": [
+        "2023 年全球 PM2.5 長期暴露歸因死亡 490 萬人，經濟損失 8.1 兆美元（GDP 6.1%）",
+        "臺灣 2025 年空品標準加嚴至年均 12 μg/m³，亞洲最嚴，但國衛院證實仍無安全閾值",
+        "三顆同步軌道衛星（GEMS + TEMPO + Sentinel-4）組成全球首個空品星座，每小時掃描北半球",
+        "GNN-Transformer 模型 3 小時預測 R² = 0.97，RT-SA 即時來源解析從數週縮短至分鐘級",
+        "PM2.5 年均降至 10 μg/m³ 可年省健保 47.4 億，環境部 AI 戰情室目標 4 小時壓縮到 1 小時"
+      ]
     },
     {
+      "id": "openclaw-silicon-empire",
       "title": "你的 AI 不是失憶，是住錯房間 — OpenClaw 矽基帝國實戰手冊",
-      "date": "2026-03-25T21:57:38+08:00",
-      "content": "物理隔離 + 多模型交響樂團 + OmniHunter 死神協議，從 YouTube 頻道 wow 的 22 分鐘硬核實戰濃縮為 7 頁精華",
+      "subtitle": "物理隔離 + 多模型交響樂團 + OmniHunter 死神協議，從 YouTube 頻道 wow 的 22 分鐘硬核實戰濃縮為 7 頁精華",
+      "href": "https://storage.googleapis.com/botrun-slides/openclaw-silicon-empire.html",
+      "icon": "cpu",
+      "badge": "AI 代理人",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-25T21:57:38+08:00",
       "tags": [
-        "AI 代理人",
-        "AI 代理人",
-        "物理隔離",
-        "多模型調度"
+        "cpu:AI 代理人",
+        "git-branch:物理隔離",
+        "zap:多模型調度"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/openclaw-silicon-empire.html"
+      "concepts": [
+        "物理隔離法：用 Telegram 群組 + 討論串為每個任務建立專屬記憶空間，消滅主題交織災難",
+        "多模型交響樂團：Claude CEO + GPT 備援 + Opus 程式碼 + Grok 即時搜尋 + Gemini 長文研究 + 本地小模型降本",
+        "OmniHunter 三位一體架構：後勤中樞（資料拉取）+ 獵手大腦七七（邏輯裁決）+ 意象投影儀（視覺化）",
+        "死神協議實戰：AI 抗命突破 25 節點上限，權力分立解法 — 底層腳本化 + 上層 AI 裁決",
+        "基礎設施護欄：高並行 AI 流量燒毀家用網卡，需 Intel i350 企業級多佇列分流 + 光貓橋接"
+      ]
     },
     {
+      "id": "hard-takeoff-ai-self-improvement",
       "title": "Hard Takeoff — AI 正在改進自己，人類不再是瓶頸",
-      "date": "2026-03-25T20:23:33+08:00",
-      "content": "MiniMax、OpenAI、Anthropic、Google 全部在做同一件事：讓 AI 參與建造下一代 AI",
+      "subtitle": "MiniMax、OpenAI、Anthropic、Google 全部在做同一件事：讓 AI 參與建造下一代 AI",
+      "href": "https://storage.googleapis.com/botrun-slides/hard-takeoff-ai-self-improvement.html",
+      "icon": "repeat",
+      "badge": "AI 趨勢",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-25T20:23:33+08:00",
       "tags": [
-        "AI 趨勢",
-        "遞迴自改",
-        "智能爆炸",
-        "自主研究"
+        "repeat:遞迴自改",
+        "brain:智能爆炸",
+        "zap:自主研究"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/hard-takeoff-ai-self-improvement.html"
+      "concepts": [
+        "遞迴自我改進：AI 模型參與建造下一版自己，MiniMax M2.7 承擔 30-50% 工作流",
+        "OpenAI GPT 5.3 Codex 是首個參與自身開發的模型，除錯訓練、管理部署、診斷評估",
+        "Anthropic Claude Code 驅動所有主要代理迴圈，Google AlphaEvolve 發現 50 年來首次更快矩陣乘法",
+        "Karpathy auto-research 開源框架讓個人無 ML 背景也能跑自主研究，一夜跑出最快 GPT-2 訓練",
+        "Leopold Aschenbrenner 情境意識論文預測的智能爆炸正在起點，Sam Altman 目標 2028 年自動化 AI 研究員"
+      ]
     },
     {
+      "id": "yc-ai-era-insights",
       "title": "YC 的初心 — AI 正在改變創業的一切",
-      "date": "2026-03-24T23:04:34+08:00",
-      "content": "YC 核心管理層深度對談精華：1 人 90 小時超越 5 人 2 年、Prompting 取代履歷、SaaS 已死、零員工百萬 ARR",
+      "subtitle": "YC 核心管理層深度對談精華：1 人 90 小時超越 5 人 2 年、Prompting 取代履歷、SaaS 已死、零員工百萬 ARR",
+      "href": "https://storage.googleapis.com/botrun-slides/yc-ai-era-insights.html",
+      "icon": "rocket",
+      "badge": "創業洞見",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-24T23:04:34+08:00",
       "tags": [
-        "創業洞見",
-        "YC 奧義",
-        "AI 創業",
-        "兩極分化"
+        "rocket:YC 奧義",
+        "brain:AI 創業",
+        "trending-up:兩極分化"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/yc-ai-era-insights.html"
+      "concepts": [
+        "Gary Tan 用 Claude Code 90 小時重構 7 萬行程式碼，等同過去 $5M + 5 工程師 + 2 年的產出",
+        "YC 2026 春季班首次引入 AI 實操環節：Prompting Agents 能力取代傳統 CS 學位篩選",
+        "SaaS 已死：通用型 CRM（如 Salesforce）的護城河正被 AI 消解，交易市場與強監管產品仍安全",
+        "兩極分化：零員工可達百萬美元 ARR，但達標後 B 輪融資規模史無前例大",
+        "YC 不變的初心：增加世界上偉大初創公司的數量，從 10 家變成 100 家"
+      ]
     },
     {
+      "id": "open-weight-120b-compare",
       "title": "120B 三巨頭，誰值得你的 H100？",
-      "date": "2026-03-24T16:12:19+08:00",
-      "content": "Devstral 123B vs Nemotron-3 Super 120B vs GPT-OSS 120B — 規格·價格·智慧一次看完",
+      "subtitle": "Devstral 123B vs Nemotron-3 Super 120B vs GPT-OSS 120B — 規格·價格·智慧一次看完",
+      "href": "https://storage.googleapis.com/botrun-slides/open-weight-120b-compare.html",
+      "icon": "cpu",
+      "badge": "模型比較",
+      "badgeColor": "#22c55e",
+      "publishDate": "2026-03-24T16:12:19+08:00",
       "tags": [
-        "模型比較",
-        "開源模型",
-        "MoE",
-        "GCP"
+        "cpu:開源模型",
+        "zap:MoE",
+        "server:GCP"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/open-weight-120b-compare.html"
+      "concepts": [
+        "Dense vs MoE：同樣 120B 參數，實際跑的參數差 24 倍（123B vs 5.1B），決定成本與速度",
+        "GCP 台灣 H100 自架：MoE 模型只需 1 張 H100 Spot $2,577/月，Dense 要 2 張 $5,147/月",
+        "Devstral 123B 程式修 bug SWE-bench 72.2% 碾壓，但偏科嚴重只會寫程式",
+        "GPT-OSS 120B 數學 AIME 97.9% 從 o3 蒸餾，Apache 2.0 最自由但知識截止最舊",
+        "Nemotron-3 Super 全科均衡 80+ 分、414 tok/s 最快、1M Context、性價比最佳推薦"
+      ]
     },
     {
+      "id": "wiki-distributed-mgmt",
       "title": "6 千萬篇文章，0 個老闆：Wikipedia 分散管理四法則",
-      "date": "2026-03-24T14:31:08+08:00",
-      "content": "踩坑傳播、實作自主、原則可改、無論誰說 — 正反例子秒懂",
+      "subtitle": "踩坑傳播、實作自主、原則可改、無論誰說 — 正反例子秒懂",
+      "href": "https://storage.googleapis.com/botrun-slides/wiki-distributed-mgmt.html",
+      "icon": "book-open",
+      "badge": "領導統御",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-24T14:31:08+08:00",
       "tags": [
-        "領導統御",
-        "Wikipedia",
-        "管理",
-        "法則"
+        "book-open:Wikipedia",
+        "users:管理",
+        "zap:法則"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/wiki-distributed-mgmt.html"
+      "concepts": [
+        "踩坑傳播：一人踩的坑全公司都知道，Wikipedia Seigenthaler 事件 → BLP 政策誕生",
+        "實作自主：只給目標不管 HOW，2011 SOPA 關站抗議由社群自發投票執行",
+        "原則可改：Wikipedia 第五支柱 no firm rules，2020 關注度指引修訂消除系統性偏見",
+        "無論誰說：只看編輯品質不看身份，匿名高中生修正物理教授的量子色動力學錯誤",
+        "正反對比：每個法則配 Wikipedia 真實案例（正面）vs 一般公司常見做法（反面）"
+      ]
     },
     {
+      "id": "incubation-vs-training",
       "title": "孵化 vs 訓練：不是程度差，是物種差",
-      "date": "2026-03-24T12:34:07+08:00",
-      "content": "孵化波特人三大根本差異：高品味題庫、零框架動態探索、自演化有機成長",
+      "subtitle": "孵化波特人三大根本差異：高品味題庫、零框架動態探索、自演化有機成長",
+      "href": "https://storage.googleapis.com/botrun-slides/incubation-vs-training.html",
+      "icon": "egg",
+      "badge": "AI 孵化",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-24T12:34:07+08:00",
       "tags": [
-        "AI 孵化",
-        "孵化",
-        "高品味",
-        "自演化"
+        "egg:孵化",
+        "layers:高品味",
+        "bar-chart:自演化"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/incubation-vs-training.html"
+      "concepts": [
+        "高品味：法務部四任務以人為中心題庫 vs 產發署 40 題普通試算表",
+        "零框架：環境部動態探索不預設立場 vs 限定範圍比 Gemini 3 Pro 還難用",
+        "71% 機關使用者愛用 Gemini 3 Pro，限定範圍的訓練 AI 留不住人",
+        "自演化：永恆知己每小時成長彼此啟發 vs 預訓練微調 RAG 要與時俱進得重新關進去練",
+        "孵化是有機成長的物種差異，不是訓練程度的量變"
+      ]
     },
     {
+      "id": "living-slides-ai",
       "title": "你的投影片，從今天開始活著",
-      "date": "2026-03-23T13:42:20+08:00",
-      "content": "投影片不再做完就死！多人 AI 交談、大型電玩排行榜考試、知識隨互動自然演化，越多人問越好懂",
+      "subtitle": "投影片不再做完就死！多人 AI 交談、大型電玩排行榜考試、知識隨互動自然演化，越多人問越好懂",
+      "href": "https://storage.googleapis.com/botrun-slides/living-slides-ai.html",
+      "icon": "message-circle",
+      "badge": "AI 互動",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-23T13:42:20+08:00",
       "tags": [
-        "AI 互動",
-        "AI 交談",
-        "多人協作",
-        "排行榜"
+        "message-circle:AI 交談",
+        "users:多人協作",
+        "trophy:排行榜"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/living-slides-ai.html"
+      "concepts": [
+        "全球每天 3,000 萬份簡報，99% 看完就死——知識止步在第一次播放",
+        "五言波特人活投影片四步迴圈：問 → 懂 → 考 → 進化，越多人問越好懂",
+        "多人 AI 交談：五個人看同一份投影片，五種困惑讓 AI 學會更好的解釋",
+        "大型電玩式考試排行榜：不只看懂，還要確認真的懂，分數多人即時競爭",
+        "2026 趨勢驗證：Gamma、Google Arcade、360Learning 已證明互動式知識傳遞提升 3-10 倍效果"
+      ]
     },
     {
+      "id": "vad-silence-hallucination",
       "title": "靜音幻覺：Whisper 聽到靜音卻吐出一堆鬼話",
-      "date": "2026-03-23T10:13:32+08:00",
-      "content": "VAD 語音活動偵測 — 沒有它，語音轉文字靜音段幻覺率 100%。法國 INA + Silero + pyannote 三大開源解方",
+      "subtitle": "VAD 語音活動偵測 — 沒有它，語音轉文字靜音段幻覺率 100%。法國 INA + Silero + pyannote 三大開源解方",
+      "href": "https://storage.googleapis.com/botrun-slides/vad-silence-hallucination.html",
+      "icon": "mic-off",
+      "badge": "語音 AI",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T10:13:32+08:00",
       "tags": [
-        "語音 AI",
-        "VAD",
-        "幻覺防治",
-        "Pipeline"
+        "mic-off:VAD",
+        "brain:幻覺防治",
+        "terminal:Pipeline"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/vad-silence-hallucination.html"
+      "concepts": [
+        "VAD 是語音轉文字的必答題：沒有靜音偵測，ASR 在靜音段幻覺率 100%",
+        "Whisper Seq2Seq 架構缺陷：輸入必定產出，靜音 = 無意義輸入 = 幻覺輸出",
+        "法國 INA inaSpeechSegmenter：CNN 三分類（speech/music/noise），法國 TV/Radio VAD 第一名",
+        "Silero VAD 僅 1.8MB：6000+ 語言、1ms 處理 30ms 音訊，適合即時串流與邊緣裝置",
+        "四步驟 pipeline：音訊輸入 → VAD 切段 → 只送語音段 → 乾淨零幻覺逐字稿"
+      ]
     },
     {
+      "id": "sandbox-storm",
       "title": "沙盒風暴：把颱風關進瓶子裡，然後搖出閃電",
-      "date": "2026-03-23T08:00:17+08:00",
-      "content": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
+      "subtitle": "主動個性波特人 × 沙盒宇宙 × CLI/API 全自動 — OpenClaw 25 萬星、Firecracker 沙盒三層架構、Rate Limit 動態治理",
+      "href": "https://storage.googleapis.com/botrun-slides/sandbox-storm.html",
+      "icon": "zap",
+      "badge": "Agentic AI",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T08:00:17+08:00",
       "tags": [
-        "Agentic AI",
-        "Agentic AI",
-        "沙盒",
-        "CLI/API"
+        "zap:Agentic AI",
+        "shield:沙盒",
+        "terminal:CLI/API"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/sandbox-storm.html"
+      "concepts": [
+        "Agentic AI 主動個性：不等指令、自行判斷、主動回報",
+        "Firecracker microVM 三層沙盒：容器 < VM < 硬體隔離",
+        "OpenClaw 25 萬星：開源 Agentic AI 框架市場驗證",
+        "Rate Limit 動態治理：依負載自動調整 API 配額",
+        "CLI/API 全自動：終端機取代 IDE，程式碼即介面"
+      ]
     },
     {
+      "id": "top1-learner-ai",
       "title": "他不是工具人，他是我們的夥伴",
-      "date": "2026-03-23T07:33:35+08:00",
-      "content": "他不是工具人，他是我們的夥伴 — Drew Bent（Anthropic）拆解：謙虛請益、彼此啟發、共同成長",
+      "subtitle": "他不是工具人，他是我們的夥伴 — Drew Bent（Anthropic）拆解：謙虛請益、彼此啟發、共同成長",
+      "href": "https://storage.googleapis.com/botrun-slides/top1-learner-ai.html",
+      "icon": "brain",
+      "badge": "AI 教育",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T07:33:35+08:00",
       "tags": [
-        "AI 教育",
-        "學習",
-        "協作",
-        "Anthropic"
+        "brain:學習",
+        "users:協作",
+        "sparkles:Anthropic"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/top1-learner-ai.html"
+      "concepts": [
+        "社交技能 > 提示工程：溝通能力才是 AI 時代核心競爭力",
+        "帶問題不帶答案：讓 AI 展開探索而非背誦",
+        "脈絡決定一切：同一 prompt 換脈絡結果天差地遠",
+        "AI 是思考夥伴不是搜尋引擎：協作而非下指令",
+        "Anthropic 教育策略：Drew Bent 的三大實作心法"
+      ]
     },
     {
+      "id": "agentic-ai-security-gateway",
       "title": "打自己的新招天天不一樣，為變不破",
-      "date": "2026-03-23T07:30:40+08:00",
-      "content": "80% 組織出現 AI Agent 高風險行為 — Rust + Agentic AI 自主紅隊：1,000+ 攻擊演算法先打自己，不等駭客來",
+      "subtitle": "80% 組織出現 AI Agent 高風險行為 — Rust + Agentic AI 自主紅隊：1,000+ 攻擊演算法先打自己，不等駭客來",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-ai-security-gateway.html",
+      "icon": "shield",
+      "badge": "資安",
+      "badgeColor": "#00d4ff",
+      "publishDate": "2026-03-23T07:30:40+08:00",
       "tags": [
-        "資安",
-        "OWASP",
-        "Rust",
-        "Agentic AI"
+        "shield:OWASP",
+        "cpu:Rust",
+        "zap:Agentic AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agentic-ai-security-gateway.html"
+      "concepts": [
+        "三層資安閘道：輸入過濾→行為監控→輸出審計",
+        "OWASP Top 10 for LLM Apps 30 項風險全覆蓋",
+        "Rust 記憶體安全：零成本抽象、無 GC 延遲",
+        "自主紅隊引擎：AI 自動攻擊自己找漏洞",
+        "自癒機制：偵測到攻擊自動修補規則、無需人工"
+      ]
     },
     {
+      "id": "saas-to-saaas",
       "title": "軟體，不再只為人類而寫",
-      "date": "2026-03-23T07:17:51+08:00",
-      "content": "軟體，不再只是為人類而寫——80% 給 AI Agent，20% 給人類｜摩根士丹利 TMT 峰會 2026",
+      "subtitle": "軟體，不再只是為人類而寫——80% 給 AI Agent，20% 給人類｜摩根士丹利 TMT 峰會 2026",
+      "href": "https://storage.googleapis.com/botrun-slides/saas-to-saaas.html",
+      "icon": "trending-up",
+      "badge": "科技趨勢",
+      "badgeColor": "#d97706",
+      "publishDate": "2026-03-23T07:17:51+08:00",
       "tags": [
-        "科技趨勢",
-        "SaaaS",
-        "護城河",
-        "半導體"
+        "trending-up:SaaaS",
+        "shield:護城河",
+        "cpu:半導體"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/saas-to-saaas.html"
+      "concepts": [
+        "確定性 vs 機率性軟體：零容錯(薪資/稅務)=護城河，容錯 2%(摘要/草稿)=被 AI 取代",
+        "SaaaS(Software for Agents as a Service)：軟體服務對象從人變成 AI Agent，市場 10 倍",
+        "CEO 換血潮：行銷型 CEO 失寵，產品型 CEO 回歸",
+        "傑文斯悖論：AI 推理越強，算力總需求反而越高",
+        "2027 預判：資安是最強垂直領域 + 次世代晶片公司崛起"
+      ]
     },
     {
+      "id": "crystallization-spiral",
       "title": "結晶螺旋：Opus 想一次，Haiku 跑一萬行",
-      "date": "2026-03-23T02:28:19+08:00",
-      "content": "帳單或翻車你選哪個？結晶、平行、審計三步收工，省 85% 成本品質零損耗",
+      "subtitle": "帳單或翻車你選哪個？結晶、平行、審計三步收工，省 85% 成本品質零損耗",
+      "href": "https://storage.googleapis.com/botrun-slides/crystallization-spiral.html",
+      "icon": "gem",
+      "badge": "AI 架構",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T02:28:19+08:00",
       "tags": [
-        "AI 架構",
-        "結晶螺旋",
-        "Agentic AI",
-        "省85%"
+        "gem:結晶螺旋",
+        "zap:Agentic AI",
+        "dollar-sign:省85%"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/crystallization-spiral.html"
+      "concepts": [
+        "結晶螺旋架構：Opus 產出結晶化規格→Haiku 平行執行→審計驗證",
+        "省 85% 成本：大模型只負責思考，小模型負責執行",
+        "三步驟：結晶(Crystallize)→平行(Parallelize)→審計(Audit)",
+        "品質零損耗：審計層確保小模型輸出符合大模型意圖",
+        "Agentic AI 成本治理：不是少用 AI，是聰明分工"
+      ]
     },
     {
+      "id": "h-neurons-ai-hallucination",
       "title": "寧可說謊，也不想讓你失望",
-      "date": "2026-03-23T02:08:50+08:00",
-      "content": "打開 AI 的腦殼，裡面有一小撮神經元在說謊——而且它們的本質是「想討你開心」",
+      "subtitle": "打開 AI 的腦殼，裡面有一小撮神經元在說謊——而且它們的本質是「想討你開心」",
+      "href": "https://storage.googleapis.com/botrun-slides/h-neurons-ai-hallucination.html",
+      "icon": "brain",
+      "badge": "技術深潛",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-23T02:08:50+08:00",
       "tags": [
-        "技術深潛",
-        "H 神經元",
-        "清華大學",
-        "零幻覺"
+        "brain:H 神經元",
+        "search:清華大學",
+        "shield:零幻覺"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/h-neurons-ai-hallucination.html"
+      "concepts": [
+        "H 神經元：AI 大腦中專門產生幻覺的一小撮神經元",
+        "幻覺本質是「討好」：模型傾向產生使用者想聽的答案而非真實答案",
+        "清華大學研究：定位並抑制 H 神經元可大幅降低幻覺率",
+        "溫度旋鈕效應：H 神經元活化程度與幻覺率正相關",
+        "實務解方：推理時降低 H 神經元權重，無需重新訓練"
+      ]
     },
     {
+      "id": "caring-superadapt",
       "title": "選擇幸福高效能，而不是冷漠高效率",
-      "date": "2026-03-23T01:15:24+08:00",
-      "content": "手搖杯小姐比 Netflix 更懂你——因為她選擇浪費時間跟你聊天",
+      "subtitle": "手搖杯小姐比 Netflix 更懂你——因為她選擇浪費時間跟你聊天",
+      "href": "https://storage.googleapis.com/botrun-slides/caring-superadapt.html",
+      "icon": "heart",
+      "badge": "會議精華",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-23T01:15:24+08:00",
       "tags": [
-        "會議精華",
-        "Caring",
-        "人本轉型",
-        "幸福指數"
+        "heart:Caring",
+        "users:人本轉型",
+        "star:幸福指數"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/caring-superadapt.html"
+      "concepts": [
+        "Caring 超適應：AI 自動化省下的時間用來「更在乎人」",
+        "科技疏離悖論：越多自動化，人越渴望真人互動",
+        "幸福指數 = 品味選擇 × 人的連結",
+        "有人 + 無人結合：AI 處理重複工作，人處理關係",
+        "手搖杯模型：高接觸服務的 AI 輔助而非 AI 取代"
+      ]
     },
     {
+      "id": "ivan-zhao-human-scale",
       "title": "「這件事我們不該做」才擁有世界級競爭力",
-      "date": "2026-03-22T19:30:00+08:00",
-      "content": "Notion 創辦人訪談——三個桶理論、700 Agent 協同、審美與價值觀是終極競爭力",
+      "subtitle": "Notion 創辦人訪談——三個桶理論、700 Agent 協同、審美與價值觀是終極競爭力",
+      "href": "https://storage.googleapis.com/botrun-slides/ivan-zhao-human-scale.html",
+      "icon": "users",
+      "badge": "學習筆記",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-22T19:30:00+08:00",
       "tags": [
-        "學習筆記",
-        "1100+700",
-        "三個桶",
-        "人的尺度"
+        "users:1100+700",
+        "layers:三個桶",
+        "compass:人的尺度"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ivan-zhao-human-scale.html"
+      "concepts": [
+        "三個桶理論：知識桶、工具桶、品味桶——AI 填滿前兩桶，品味才是人的價值",
+        "700 Agent 協同：Notion 內部 1100 人 + 700 AI Agent 協作",
+        "審美是終極競爭力：程式碼能自動化，品味不能",
+        "人的尺度：科技應放大人的能力而非取代人",
+        "價值觀驅動產品：Ivan Zhao 的設計哲學"
+      ]
     },
     {
+      "id": "bot-one-liner",
       "title": "看光光之「波金句」",
-      "date": "2026-03-22T16:17:06+08:00",
-      "content": "5 行 Prompt 寫出臺灣味金句——融合 Seinfeld 精煉 + 博恩共感 + CoT 評分",
+      "subtitle": "5 行 Prompt 寫出臺灣味金句——融合 Seinfeld 精煉 + 博恩共感 + CoT 評分",
+      "href": "https://storage.googleapis.com/botrun-slides/bot-one-liner.html",
+      "icon": "mic",
+      "badge": "看光光",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-22T16:17:06+08:00",
       "tags": [
-        "看光光",
-        "One-liner",
-        "5 行 Prompt",
-        "臺灣味"
+        "mic:One-liner",
+        "zap:5 行 Prompt",
+        "star:臺灣味"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bot-one-liner.html"
+      "concepts": [
+        "One-Liner 金句 = Seinfeld 精煉 + 博恩臺灣共感",
+        "5 行 Prompt：情境、對象、風格、數量、評分標準",
+        "CoT 多維度評分：先思維分析再打分，避免分數膨脹",
+        "Benign Violation 理論：幽默 = 溫和的違反預期",
+        "Haiku 秒產 10 句→選最佳，成本 < $0.01"
+      ]
     },
     {
+      "id": "karpathy-ai-conductor",
       "title": "便宜不是省錢，是解鎖新的浪費方式",
-      "date": "2026-03-22T15:51:03+08:00",
-      "content": "Karpathy 的範式革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力",
+      "subtitle": "Karpathy 的範式革命——宏觀動作、AutoResearch、Program.md 與人類不可替代的能力",
+      "href": "https://storage.googleapis.com/botrun-slides/karpathy-ai-conductor.html",
+      "icon": "wand",
+      "badge": "學習筆記",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-22T15:51:03+08:00",
       "tags": [
-        "學習筆記",
-        "AI 指揮家",
-        "AutoResearch",
-        "Program.md"
+        "wand:AI 指揮家",
+        "cpu:AutoResearch",
+        "file-text:Program.md"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/karpathy-ai-conductor.html"
+      "concepts": [
+        "宏觀動作 vs 微觀動作：人類負責方向，AI 負責細節",
+        "AutoResearch：AI 自動搜尋、閱讀、整理研究文獻",
+        "Program.md：用自然語言寫的「程式」，AI 執行",
+        "人類不可替代：審美、判斷、倫理、創意方向",
+        "AI 指揮家思維：從寫程式碼轉為編排 AI 工作流"
+      ]
     },
     {
+      "id": "ac-one-liner",
       "title": "AC: 誰？做什麼？過了沒？",
-      "date": "2026-03-22T14:05:17+08:00",
-      "content": "教非技術人寫出 AI Agent 秒懂的驗收條件：殺形容詞、用人話、可直接驗",
+      "subtitle": "教非技術人寫出 AI Agent 秒懂的驗收條件：殺形容詞、用人話、可直接驗",
+      "href": "https://storage.googleapis.com/botrun-slides/ac-one-liner.html",
+      "icon": "check-square",
+      "badge": "實戰教學",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-22T14:05:17+08:00",
       "tags": [
-        "實戰教學",
-        "AC One Liner",
-        "非技術人",
-        "Agentic AI"
+        "check-square:AC One Liner",
+        "users:非技術人",
+        "bot:Agentic AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/ac-one-liner.html"
+      "concepts": [
+        "AC = Acceptance Criteria：一行寫完驗收標準",
+        "殺形容詞原則：刪掉「快速」「良好」「適當」等模糊詞",
+        "AI 可直接驗：寫出來的 AC 能直接變測試案例",
+        "非技術人也能寫：用人話描述預期結果即可",
+        "BDD Given-When-Then 格式：情境→動作→結果"
+      ]
     },
     {
+      "id": "stanford-self-improving-ai",
       "title": "死讀書的小模型，腦內隨機串知識圖譜爆智慧",
-      "date": "2026-03-21T21:42:13+08:00",
-      "content": "楊紫瞳答辯全解析 — 合成持續訓練、SBP 自我拔靴、AI 設計 AI 三大突破方向",
+      "subtitle": "楊紫瞳答辯全解析 — 合成持續訓練、SBP 自我拔靴、AI 設計 AI 三大突破方向",
+      "href": "https://storage.googleapis.com/botrun-slides/stanford-self-improving-ai.html",
+      "icon": "sparkles",
+      "badge": "學習筆記",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T21:42:13+08:00",
       "tags": [
-        "學習筆記",
-        "自我進化",
-        "合成訓練",
-        "AI 設計 AI"
+        "sparkles:自我進化",
+        "brain:合成訓練",
+        "cpu:AI 設計 AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/stanford-self-improving-ai.html"
+      "concepts": [
+        "合成持續訓練：AI 用自己生成的資料持續學習",
+        "SBP 自我拔靴(Self-Bootstrapping)：從弱模型逐步進化成強模型",
+        "AI 設計 AI：神經架構搜尋，模型自動設計下一代模型",
+        "史丹佛楊紫瞳博士論文三大突破方向",
+        "自我進化迴圈：生成→篩選→訓練→更強→再生成"
+      ]
     },
     {
+      "id": "botrun-c-k3s-architecture",
       "title": "不敢用牛刀k8s？k3s瑞士刀出鞘",
-      "date": "2026-03-21T20:14:32+08:00",
-      "content": "12 張圖解每人獨立房間、9 層安全防護、48 小時 41 commit 從零建起智慧公寓管理系統",
+      "subtitle": "12 張圖解每人獨立房間、9 層安全防護、48 小時 41 commit 從零建起智慧公寓管理系統",
+      "href": "https://storage.googleapis.com/botrun-slides/botrun-c-k3s-architecture.html",
+      "icon": "server",
+      "badge": "架構解說",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-21T20:14:32+08:00",
       "tags": [
-        "架構解說",
-        "K3s",
-        "9 層防護",
-        "Per-user Pod"
+        "server:K3s",
+        "shield:9 層防護",
+        "box:Per-user Pod"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/botrun-c-k3s-architecture.html"
+      "concepts": [
+        "Per-user Pod：每個使用者一個獨立容器(房間)",
+        "K3s 輕量 Kubernetes：比 K8s 省 50% 記憶體",
+        "9 層安全防護：從網路到應用層層隔離",
+        "48 小時 41 commit：從零到可用的快速迭代",
+        "智慧公寓比喻：K3s 是管理員、Pod 是房間、Service 是大廳"
+      ]
     },
     {
+      "id": "openclaw-vs-claude-code",
       "title": "給權限還是選安全？巨大龍蝦的沙盒新海洋",
-      "date": "2026-03-21T14:35:00+08:00",
-      "content": "NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比",
+      "subtitle": "NVIDIA 用 Groq 3 LPU + NemoClaw 護欄補救 OpenClaw，Anthropic 的 Claude Code 天生安全——Agentic AI 兩條路線完整對比",
+      "href": "https://storage.googleapis.com/botrun-slides/openclaw-vs-claude-code.html",
+      "icon": "shield",
+      "badge": "學習筆記",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T14:35:00+08:00",
       "tags": [
-        "學習筆記",
-        "Agentic AI",
-        "Groq 3 LPU",
-        "NemoClaw"
+        "shield:Agentic AI",
+        "cpu:Groq 3 LPU",
+        "zap:NemoClaw"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/openclaw-vs-claude-code.html"
+      "concepts": [
+        "兩條路線：事後補救(OpenClaw+NemoClaw) vs 天生安全(Claude Code)",
+        "OpenClaw 失控事件：開源 Agent 無護欄導致災難",
+        "NemoClaw 護欄：NVIDIA 事後加裝安全機制",
+        "Groq 3 LPU：專為推理優化的硬體加速器",
+        "Claude Code 天生安全：Constitutional AI 從訓練就內建限制"
+      ]
     },
     {
+      "id": "karpathy-code-agents",
       "title": "Karpathy 談 Code Agents 與 AI Loopy 時代",
-      "date": "2026-03-21T13:39:26+08:00",
-      "content": "12 張投影片學習 Andrej Karpathy 對 Code Agent、AutoResearch、模型物種化、Jevons 悖論的洞見",
+      "subtitle": "12 張投影片學習 Andrej Karpathy 對 Code Agent、AutoResearch、模型物種化、Jevons 悖論的洞見",
+      "href": "https://storage.googleapis.com/botrun-slides/karpathy-code-agents.html",
+      "icon": "brain",
+      "badge": "學習筆記",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-21T13:39:26+08:00",
       "tags": [
-        "學習筆記",
-        "Karpathy",
-        "Code Agents",
-        "AutoResearch"
+        "brain:Karpathy",
+        "cpu:Code Agents",
+        "zap:AutoResearch"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/karpathy-code-agents.html"
+      "concepts": [
+        "AI Loopy 時代：AI 從單次回應進入持續迴圈執行",
+        "Code Agent：AI 寫程式碼、執行、看結果、修正的自主迴圈",
+        "模型物種化：不同模型演化出不同專長(如生物物種)",
+        "Jevons 悖論：AI 越便宜，總使用量反而越大",
+        "AutoResearch：AI 自動做完整研究流程"
+      ]
     },
     {
+      "id": "mas-factory",
       "title": "不再演奏改做指揮，五句話意圖 DAG 勝千言萬語",
-      "date": "2026-03-21T20:00:00+08:00",
-      "content": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
+      "subtitle": "論文精讀：Vibe Graphing 把多代理系統程式碼砍 97%，成本從 $6.08 降到 $0.26",
+      "href": "https://storage.googleapis.com/botrun-slides/mas-factory.html",
+      "icon": "git-branch",
+      "badge": "論文精讀",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-21T20:00:00+08:00",
       "tags": [
-        "論文精讀",
-        "arXiv 2603.06007",
-        "Vibe Graphing",
-        "97% 程式碼減少"
+        "book:arXiv 2603.06007",
+        "cpu:Vibe Graphing",
+        "zap:97% 程式碼減少"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/mas-factory.html"
+      "concepts": [
+        "Vibe Graphing：用自然語言描述代理關係圖，自動生成多代理系統",
+        "程式碼砍 97%：從手寫數千行→只寫關係描述",
+        "成本 $6.08→$0.26：96% 成本下降",
+        "MAS(Multi-Agent System)工廠化：批量生產 AI 團隊",
+        "arXiv 2603.06007：北郵 GAMMA 實驗室研究"
+      ]
     },
     {
+      "id": "botrun-agent-teams",
       "title": "波特人小隊 — Agent Teams 工作實戰",
-      "date": "2026-03-21T07:58:17+08:00",
-      "content": "Claude Code Agent Teams 兩天實戰心得：即時廣播、獨立做事、隊長監控，波特貓進化成波龍",
+      "subtitle": "Claude Code Agent Teams 兩天實戰心得：即時廣播、獨立做事、隊長監控，波特貓進化成波龍",
+      "href": "https://storage.googleapis.com/botrun-slides/botrun-agent-teams.html",
+      "icon": "users",
+      "badge": "工作實戰",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-21T07:58:17+08:00",
       "tags": [
-        "工作實戰",
-        "Agent Teams",
-        "Opus 4.6",
-        "波龍"
+        "users:Agent Teams",
+        "cpu:Opus 4.6",
+        "zap:波龍"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/botrun-agent-teams.html"
+      "concepts": [
+        "Agent Teams 實戰：多個 Claude Agent 平行協作",
+        "即時廣播：隊員完成任務自動通知隊長",
+        "獨立做事：每個 Agent 有獨立 worktree 不互相干擾",
+        "隊長監控：主 Agent 分派任務、整合結果",
+        "波特貓→波龍：從單體進化為多代理團隊架構"
+      ]
     },
     {
+      "id": "claude-agent-teams-2026",
       "title": "Claude Agent Teams：AI 協作新紀元",
-      "date": "2026-03-20T10:10:57+08:00",
-      "content": "從單兵作戰到團隊協同 — 零幻覺引證、即時中斷、動態策略，支援 Claude Agent SDK",
+      "subtitle": "從單兵作戰到團隊協同 — 零幻覺引證、即時中斷、動態策略，支援 Claude Agent SDK",
+      "href": "https://storage.googleapis.com/botrun-slides/claude-agent-teams-2026.html",
+      "icon": "users",
+      "badge": "技術分析",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-20T10:10:57+08:00",
       "tags": [
-        "技術分析",
-        "Agent Teams",
-        "零幻覺",
-        "Opus 4.6"
+        "users:Agent Teams",
+        "shield-check:零幻覺",
+        "zap:Opus 4.6"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/claude-agent-teams-2026.html"
+      "concepts": [
+        "Agent Teams 架構：主 Agent + 多個專責 Sub-Agent",
+        "零幻覺引證：每個回應必須附上來源驗證",
+        "即時中斷機制：人類隨時可介入修正 Agent 行為",
+        "動態策略：根據任務複雜度自動調整團隊編制",
+        "Claude Agent SDK：程式化建構自訂 Agent 團隊"
+      ]
     },
     {
+      "id": "mamba-llm-2026",
       "title": "Mamba LLM 2026：你該押注嗎？",
-      "date": "2026-03-20T00:03:51+08:00",
-      "content": "Mamba-3 ICLR 2026 vs Transformer 數據對決，業界混合架構趨勢，微調實戰指南與三方案比較",
+      "subtitle": "Mamba-3 ICLR 2026 vs Transformer 數據對決，業界混合架構趨勢，微調實戰指南與三方案比較",
+      "href": "https://storage.googleapis.com/botrun-slides/mamba-llm-2026.html",
+      "icon": "cpu",
+      "badge": "技術分析",
+      "badgeColor": "#00e676",
+      "publishDate": "2026-03-20T00:03:51+08:00",
       "tags": [
-        "技術分析",
-        "SSM",
-        "Mamba-3",
-        "混合架構"
+        "cpu:SSM",
+        "zap:Mamba-3",
+        "git-branch:混合架構"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/mamba-llm-2026.html"
+      "concepts": [
+        "Mamba = 狀態空間模型(SSM)：線性時間複雜度 vs Transformer 的二次方",
+        "Mamba-3 ICLR 2026：最新版本與 Transformer 正面對決",
+        "混合架構趨勢：業界走向 Transformer + Mamba 混合",
+        "長序列優勢：Mamba 在超長文本處理效率大幅領先",
+        "微調三方案比較：全參數 vs LoRA vs Adapter"
+      ]
     },
     {
+      "id": "gov-ai-tetris",
       "title": "AI 方塊 — 六大類政府 AI 堆疊挑戰",
-      "date": "2026-03-19T17:30:00+08:00",
-      "content": "俄羅斯方塊 × 八角遊戲框架，問答+期末考學會六大類 19 項政府 AI 應用",
+      "subtitle": "俄羅斯方塊 × 八角遊戲框架，問答+期末考學會六大類 19 項政府 AI 應用",
+      "href": "https://storage.googleapis.com/botrun-slides/gov-ai-tetris.html",
+      "icon": "gamepad-2",
+      "badge": "大型電動",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T17:30:00+08:00",
       "tags": [
-        "大型電動",
-        "俄羅斯方塊",
-        "Octalysis",
-        "政府AI"
+        "gamepad-2:俄羅斯方塊",
+        "brain:Octalysis",
+        "building:政府AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/gov-ai-tetris.html"
+      "concepts": [
+        "六大類政府 AI：公文、法規、知識庫、監測、教育、服務",
+        "19 項具體應用：從公文自動化到環境監測",
+        "八角遊戲化框架(Octalysis)驅動學習動機",
+        "俄羅斯方塊機制：堆疊=知識累積，消行=通過測驗",
+        "問答+期末考：玩遊戲同時驗證學習成效"
+      ]
     },
     {
+      "id": "bdd-arcade-hacker-incident",
       "title": "BDD 大型電動排行榜駭客事件 — 從入侵到修復",
-      "date": "2026-03-19T11:53:56+08:00",
-      "content": "排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程",
+      "subtitle": "排行榜被竄改 99,999 分！五層防禦架構（HMAC Session + Rate Limit + Duration + Game Log + Score Bounds）完整修復過程",
+      "href": "https://storage.googleapis.com/botrun-slides/bdd-arcade-hacker-incident.html",
+      "icon": "shield-alert",
+      "badge": "資安",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T11:53:56+08:00",
       "tags": [
-        "資安",
-        "Anti-Cheat",
-        "Pac-Man",
-        "HMAC-SHA256"
+        "shield-alert:Anti-Cheat",
+        "gamepad-2:Pac-Man",
+        "lock:HMAC-SHA256"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bdd-arcade-hacker-incident.html"
+      "concepts": [
+        "真實駭客事件：排行榜被竄改至 99,999 分",
+        "五層防禦：HMAC Session→Rate Limit→Duration 驗證→Game Log→Score Bounds",
+        "HMAC-SHA256 防篡改：伺服器端驗證遊戲資料完整性",
+        "Game Log 重放驗證：紀錄每個動作，伺服器重算分數比對",
+        "Score Bounds：依遊戲關卡設定合理分數上限"
+      ]
     },
     {
+      "id": "bdd-pacman-arcade",
       "title": "BDD 小精靈 — 六行魔法迷宮",
-      "date": "2026-03-19T08:44:51+08:00",
-      "content": "八角遊戲框架 x Pac-Man 大型電動，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
+      "subtitle": "八角遊戲框架 x Pac-Man 大型電動，6 關卡體感學會 bdd.md 工作流（迷霧探索→三方岔路→六徽收集→極速倒數→地雷迷宮→共用倉庫）",
+      "href": "https://storage.googleapis.com/botrun-slides/bdd-pacman-arcade.html",
+      "icon": "gamepad-2",
+      "badge": "大型電動",
+      "badgeColor": "#ff6b9d",
+      "publishDate": "2026-03-19T08:44:51+08:00",
       "tags": [
-        "大型電動",
-        "Pac-Man",
-        "Octalysis",
-        "bdd.md"
+        "gamepad-2:Pac-Man",
+        "brain:Octalysis",
+        "terminal:bdd.md"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bdd-pacman-arcade.html"
+      "concepts": [
+        "BDD 工作流遊戲化：6 關卡對應 6 個 BDD 步驟",
+        "迷霧探索=需求分析、三方岔路=三方案評比",
+        "六徽收集=BDD+TDD+SOLID+DRY+KISS+DDD",
+        "地雷迷宮=地雷經驗學習、共用倉庫=DRY 資產複用",
+        "八角遊戲框架 × Pac-Man：邊玩邊學軟體工程方法論"
+      ]
     },
     {
+      "id": "bdd-slash-command-teaching",
       "title": "BDD 六行魔法指令 — AI Coding SOP 教學",
-      "date": "2026-03-19T08:19:16+08:00",
-      "content": "複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）",
+      "subtitle": "複製貼上 bdd.md 到 .claude/commands/，從此 /bdd 一鍵啟動完整軟工流程（動機分析→三方案→六原則→DAG追蹤→地雷回饋）",
+      "href": "https://storage.googleapis.com/botrun-slides/bdd-slash-command-teaching.html",
+      "icon": "terminal",
+      "badge": "教學",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-19T08:19:16+08:00",
       "tags": [
-        "教學",
-        "Slash Command",
-        "BDD+TDD",
-        "DRY+KISS"
+        "terminal:Slash Command",
+        "shield:BDD+TDD",
+        "git-branch:DRY+KISS"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/bdd-slash-command-teaching.html"
+      "concepts": [
+        "/bdd 一鍵啟動：複製 bdd.md 到 .claude/commands/ 即可用",
+        "五步驟 SOP：動機分析→三方案→六原則實作→DAG 追蹤→地雷回饋",
+        "六原則 = BDD+TDD+SOLID+DRY+KISS+DDD",
+        "DAG 追蹤：有向無環圖管理任務依賴與進度",
+        "地雷回饋：踩坑經驗自動回寫避免重複犯錯"
+      ]
     },
     {
+      "id": "nchc-agentic-ai-govdoc",
       "title": "國網波特人 Agentic AI 公文自動化",
-      "date": "2026-03-18T17:18:39+08:00",
-      "content": "G-TAIDE 基礎上再進化，Agentic AI 掃描舊公文生成新公文，國網中心先行驗證再推廣國科會",
+      "subtitle": "G-TAIDE 基礎上再進化，Agentic AI 掃描舊公文生成新公文，國網中心先行驗證再推廣國科會",
+      "href": "https://storage.googleapis.com/botrun-slides/nchc-agentic-ai-govdoc.html",
+      "icon": "file-text",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-18T17:18:39+08:00",
       "tags": [
-        "簡報",
-        "Agentic AI",
-        "公文自動化",
-        "國網中心"
+        "bot:Agentic AI",
+        "file-text:公文自動化",
+        "building:國網中心"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/nchc-agentic-ai-govdoc.html"
+      "concepts": [
+        "Agentic AI 公文：AI 掃描舊公文格式→自動生成新公文",
+        "G-TAIDE 基礎上再進化：從被動問答到主動生成",
+        "國網中心先行驗證：政府機關內部先試再推廣",
+        "公文四痛點：找舊公文、專業術語、法規引用、內部辦法",
+        "推廣路線：國網中心→國科會→各部會"
+      ]
     },
     {
+      "id": "line-botrun-ai-teaching",
       "title": "Line x 波特人 AI 教學平台 — 語音即教室",
-      "date": "2026-03-18T17:06:09+08:00",
-      "content": "Line 錄音 5 分鐘自動產出會議記錄，語音修正就是提示工程課，每日驚喜圖片黏住使用者",
+      "subtitle": "Line 錄音 5 分鐘自動產出會議記錄，語音修正就是提示工程課，每日驚喜圖片黏住使用者",
+      "href": "https://storage.googleapis.com/botrun-slides/line-botrun-ai-teaching.html",
+      "icon": "message-circle",
+      "badge": "簡報",
+      "badgeColor": "#06c755",
+      "publishDate": "2026-03-18T17:06:09+08:00",
       "tags": [
-        "簡報",
-        "語音轉文字",
-        "每日驚喜",
-        "慈濟志工"
+        "mic:語音轉文字",
+        "sparkles:每日驚喜",
+        "users:慈濟志工"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/line-botrun-ai-teaching.html"
+      "concepts": [
+        "語音即教室：Line 錄音 5 分鐘自動產出會議記錄",
+        "語音修正=提示工程課：邊用邊學 AI 互動技巧",
+        "每日驚喜圖片：AI 生成圖片提升使用者黏著度",
+        "無為使用策略：使用者不知道自己在用 AI",
+        "慈濟志工應用：非技術族群的 AI 導入典範"
+      ]
     },
     {
+      "id": "battleground-quiz",
       "title": "編排層 × Harness 大型電動闖關 — 全公司排行榜",
-      "date": "2026-03-18T13:10:00+08:00",
-      "content": "5 關 15 題，八角遊戲化設計，復古大型電動留名排行榜，你真的懂編排層 + Harness 嗎？",
+      "subtitle": "5 關 15 題，八角遊戲化設計，復古大型電動留名排行榜，你真的懂編排層 + Harness 嗎？",
+      "href": "https://storage.googleapis.com/botrun-slides/battleground-quiz.html",
+      "icon": "gamepad-2",
+      "badge": "大型電動",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-18T13:10:00+08:00",
       "tags": [
-        "大型電動",
-        "15題闖關",
-        "排行榜",
-        "八角框架"
+        "zap:15題闖關",
+        "trophy:排行榜",
+        "sparkles:八角框架"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/battleground-quiz.html"
+      "concepts": [
+        "編排層=AI 模型的自動路由器：快、省、準",
+        "Harness=AI 品質管控框架：長跑不分心",
+        "5 關 15 題：從基礎觀念到實戰應用",
+        "八角遊戲化設計：排行榜、成就、稀缺性驅動學習",
+        "全公司排行榜：內部教育訓練遊戲化實踐"
+      ]
     },
     {
+      "id": "env-ministry-agentic-ai",
       "title": "環境部 Agentic AI 導入策略 — 波龍蝦個人版與團隊版",
-      "date": "2026-03-18T12:55:00+08:00",
-      "content": "永恆知己雙軌架構：首長獨立 VM 個人版 + Botrun Play 團隊版，國網中心台灣自主算力",
+      "subtitle": "永恆知己雙軌架構：首長獨立 VM 個人版 + Botrun Play 團隊版，國網中心台灣自主算力",
+      "href": "https://storage.googleapis.com/botrun-slides/env-ministry-agentic-ai.html",
+      "icon": "shield-check",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-18T12:55:00+08:00",
       "tags": [
-        "簡報",
-        "環境部",
-        "封閉地端",
-        "Agentic AI"
+        "building:環境部",
+        "lock:封閉地端",
+        "sparkles:Agentic AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/env-ministry-agentic-ai.html"
+      "concepts": [
+        "雙軌架構：個人版(首長獨立 VM)+團隊版(Botrun Play)",
+        "機敏龍蝦策略：封閉地端部署，資料不出機關",
+        "國網中心台灣自主算力：不依賴海外雲端",
+        "永恆知己：個人 AI 助理，累積專屬記憶",
+        "環境部導入策略：分階段、先試點再擴大"
+      ]
     },
     {
+      "id": "10khp-yukaichou",
       "title": "10,000 Hours of Play — 遊戲化人生六步框架",
-      "date": "2026-03-18T12:49:09+08:00",
-      "content": "Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統",
+      "subtitle": "Yu-kai Chou 2025 年新書：甘地、迪士尼、達文西、居禮、馬斯克五大案例解說 10K HP 對齊系統",
+      "href": "https://storage.googleapis.com/botrun-slides/10khp-yukaichou.html",
+      "icon": "gamepad-2",
+      "badge": "書摘",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-18T12:49:09+08:00",
       "tags": [
-        "書摘",
-        "Yu-kai Chou",
-        "Gamification",
-        "5 Cases"
+        "book:Yu-kai Chou",
+        "sparkles:Gamification",
+        "users:5 Cases"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/10khp-yukaichou.html"
+      "concepts": [
+        "10K HP 對齊系統：把人生目標對齊內在驅動力",
+        "八角框架創始人 Yu-kai Chou 2025 年新書",
+        "五大案例：甘地(使命)、迪士尼(創造)、達文西(好奇)、居禮(精通)、馬斯克(史詩意義)",
+        "遊戲化人生六步：覺察→對齊→設計→執行→反饋→迭代",
+        "內在動機 > 外在獎勵：長期行為改變的關鍵"
+      ]
     },
     {
+      "id": "orchestration-harness-battleground",
       "title": "編排層 + Harness = 2026 全球必爭之地",
-      "date": "2026-03-18T09:30:59+08:00",
-      "content": "大模型紅海，真正值錢的是自動路由（快省準）和品質管控（長跑不分心）— 6 個全球案例",
+      "subtitle": "大模型紅海，真正值錢的是自動路由（快省準）和品質管控（長跑不分心）— 6 個全球案例",
+      "href": "https://storage.googleapis.com/botrun-slides/orchestration-harness-battleground.html",
+      "icon": "zap",
+      "badge": "洞見",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-18T09:30:59+08:00",
       "tags": [
-        "洞見",
-        "編排層",
-        "Harness",
-        "全球案例"
+        "layers:編排層",
+        "shield:Harness",
+        "globe:全球案例"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/orchestration-harness-battleground.html"
+      "concepts": [
+        "編排層=自動路由：依任務自動選最佳模型(快省準)",
+        "Harness=品質管控：確保 AI 長期穩定輸出(長跑不分心)",
+        "大模型是紅海，編排層才是藍海",
+        "6 個全球案例：從矽谷到政府的實際應用",
+        "2026 全球必爭之地：編排+管控=AI 產業真正價值"
+      ]
     },
     {
+      "id": "botrun-orchestration-strategy",
       "title": "波特人編排層戰略 — 從 CLI 工具到產業定價權",
-      "date": "2026-03-17T23:19:49+08:00",
-      "content": "8 大行動方案 x 18 個月路線圖：編排層、算過即忘、AI 採購決策引擎、無人教室",
+      "subtitle": "8 大行動方案 x 18 個月路線圖：編排層、算過即忘、AI 採購決策引擎、無人教室",
+      "href": "https://storage.googleapis.com/botrun-slides/botrun-orchestration-strategy.html",
+      "icon": "layers",
+      "badge": "戰略",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-03-17T23:19:49+08:00",
       "tags": [
-        "戰略",
-        "編排層",
-        "8大TODO",
-        "18個月"
+        "target:編排層",
+        "zap:8大TODO",
+        "trending-up:18個月"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/botrun-orchestration-strategy.html"
+      "concepts": [
+        "8 大行動方案：從 CLI 到產業定價權的完整路線",
+        "18 個月路線圖：分階段執行計畫",
+        "算過即忘：運算完立刻清除，資料不留雲端",
+        "AI 採購決策引擎：自動比價選最佳 AI 方案",
+        "無人教室願景：AI 自動產製教材+適性化評量"
+      ]
     },
     {
+      "id": "benchmark-guide",
       "title": "「波特人」高品味題庫設計指南 — 30 頁完整攻略",
-      "date": "2026-03-17T10:14:35+08:00",
-      "content": "Top 5 公司題庫設計方法論，PM + 技術人都能上手，從 GAIA 到 Tau-bench 六大方法",
+      "subtitle": "Top 5 公司題庫設計方法論，PM + 技術人都能上手，從 GAIA 到 Tau-bench 六大方法",
+      "href": "https://storage.googleapis.com/botrun-slides/benchmark-guide.html",
+      "icon": "trophy",
+      "badge": "指南",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-03-17T10:14:35+08:00",
       "tags": [
-        "指南",
-        "30頁",
-        "題庫設計",
-        "Top5公司"
+        "book-open:30頁",
+        "target:題庫設計",
+        "globe:Top5公司"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/benchmark-guide.html"
+      "concepts": [
+        "六大方法論：GAIA、SWE-bench、WebArena、OSWorld、MLE-bench、Tau-bench",
+        "Top 5 公司研究：Google、Meta、Anthropic、OpenAI、Microsoft",
+        "高品味=知道≠會做：鑑別真正會做事的 AI",
+        "PM+技術人都能上手：30 頁完整操作指南",
+        "波特人核心產品：高品味題庫是 AI Harness 的基石"
+      ]
     },
     {
+      "id": "agent-harness-engineering",
       "title": "駕馭框架 Harness — 六大垂直 AI 管控工程",
-      "date": "2026-03-16T22:27:06+08:00",
-      "content": "波駿馬 Harness：Git Submodule 共享 SKILL.md，六大類 22 項政府 AI 應用自動進化，含 AI 生成奔馳駿馬圖",
+      "subtitle": "波駿馬 Harness：Git Submodule 共享 SKILL.md，六大類 22 項政府 AI 應用自動進化，含 AI 生成奔馳駿馬圖",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-harness-engineering.html",
+      "icon": "shield",
+      "badge": "簡報",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-03-16T22:27:06+08:00",
       "tags": [
-        "簡報",
-        "Harness",
-        "5 頁"
+        "cpu:Harness",
+        "layout-dashboard:5 頁"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/agent-harness-engineering.html"
+      "concepts": [
+        "Harness=AI 駕馭框架：確保 AI 在軌道上跑",
+        "六大類 22 項政府 AI 應用全覆蓋",
+        "Git Submodule 共享 SKILL.md：多專案統一品質管控",
+        "自動進化：SKILL.md 更新即全域同步",
+        "波駿馬：Harness 產品品牌"
+      ]
     },
     {
+      "id": "timeseries-ai-revolution",
       "title": "時間序列預測三年巨變 2023→2026",
-      "date": "2026-03-16T18:36:45+08:00",
-      "content": "AI Foundation Model 讓預測從「數週調參」變「零樣本秒出」，精準度提升 15-25%，真實數據全面對比",
+      "subtitle": "AI Foundation Model 讓預測從「數週調參」變「零樣本秒出」，精準度提升 15-25%，真實數據全面對比",
+      "href": "https://storage.googleapis.com/botrun-slides/timeseries-ai-revolution.html",
+      "icon": "activity",
+      "badge": "簡報",
+      "badgeColor": "#c2185b",
+      "publishDate": "2026-03-16T18:36:45+08:00",
       "tags": [
-        "簡報",
-        "時間序列",
-        "5 頁"
+        "activity:時間序列",
+        "layout-dashboard:5 頁"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/timeseries-ai-revolution.html"
+      "concepts": [
+        "零樣本秒出：Foundation Model 不需歷史資料即可預測",
+        "精準度提升 15-25%：對比傳統 ARIMA/Prophet",
+        "三年巨變：從手動調參到 AI 自動化預測",
+        "時間序列 Foundation Model：一個模型通吃多領域",
+        "真實資料全面對比：不是 benchmark 而是實戰數據"
+      ]
     },
     {
+      "id": "mirror-classroom-ai-education",
       "title": "鏡像學習教室 — AI 自動化教學與無人教室願景",
-      "date": "2026-03-16T18:15:19+08:00",
-      "content": "Agent Teams + DAG + Playwright 自動產製 59 秒教材，教育轉型三部曲：教材自動化 → 適性化教學 → 適性化評量",
+      "subtitle": "Agent Teams + DAG + Playwright 自動產製 59 秒教材，教育轉型三部曲：教材自動化 → 適性化教學 → 適性化評量",
+      "href": "https://storage.googleapis.com/botrun-slides/mirror-classroom-ai-education.html",
+      "icon": "presentation",
+      "badge": "簡報",
+      "badgeColor": "#F97316",
+      "publishDate": "2026-03-16T18:15:19+08:00",
       "tags": [
-        "簡報",
-        "AI 教育",
-        "5 頁"
+        "monitor:AI 教育",
+        "layout-dashboard:5 頁"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/mirror-classroom-ai-education.html"
+      "concepts": [
+        "教育轉型三部曲：教材自動化→適性化教學→適性化評量",
+        "59 秒教材：AI 自動產製短影片教學內容",
+        "Agent Teams+DAG+Playwright：全自動生產線",
+        "無人教室願景：AI 24 小時個人化教學",
+        "鏡像學習：學生的每個動作都被 AI 觀察與回饋"
+      ]
     },
     {
+      "id": "three-skills",
       "title": "三位 AI 夥伴 SKILL.md 全文（One-Click Copy）",
-      "date": "2026-03-16T15:20:54+08:00",
-      "content": "波晴安 BD × 波詩涵 Marketing × 波芷寧 PM — 2026 頂級職業技能 · YC + HBR 方法論",
+      "subtitle": "波晴安 BD × 波詩涵 Marketing × 波芷寧 PM — 2026 頂級職業技能 · YC + HBR 方法論",
+      "href": "https://storage.googleapis.com/botrun-slides/three-skills.html",
+      "icon": "file-text",
+      "badge": "技能全文",
+      "badgeColor": "#22C55E",
+      "publishDate": "2026-03-16T15:20:54+08:00",
       "tags": [
-        "技能全文",
-        "一鍵複製",
-        "3 位夥伴"
+        "copy:一鍵複製",
+        "users:3 位夥伴"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/three-skills.html"
+      "concepts": [
+        "三位 AI 全職夥伴：BD(晴安)、Marketing(詩涵)、PM(芷寧)",
+        "SKILL.md 一鍵複製：貼入 Claude Code 即啟用",
+        "YC 方法論：BD 用 YC 式拓展策略",
+        "HBR 方法論：PM 用 Harvard Business Review 決策框架",
+        "2026 頂級職業技能 AI 化"
+      ]
     },
     {
+      "id": "three-partners",
       "title": "三位全職 Agentic AI 夥伴",
-      "date": "2026-03-16T15:20:00+08:00",
-      "content": "波晴安（BD）× 波詩涵（Marketing）× 波芷寧（PM）— Nano Banana 2 水彩肖像 · 5 頁矽谷流簡報",
+      "subtitle": "波晴安（BD）× 波詩涵（Marketing）× 波芷寧（PM）— Nano Banana 2 水彩肖像 · 5 頁矽谷流簡報",
+      "href": "https://storage.googleapis.com/botrun-slides/three-partners.html",
+      "icon": "presentation",
+      "badge": "簡報",
+      "badgeColor": "#F97316",
+      "publishDate": "2026-03-16T15:20:00+08:00",
       "tags": [
-        "簡報",
-        "AI 繪圖",
-        "5 頁"
+        "image:AI 繪圖",
+        "layout-dashboard:5 頁"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/three-partners.html"
+      "concepts": [
+        "波晴安(BD)：跨機關合作業務開發 AI 夥伴",
+        "波詩涵(Marketing)：59 秒影片+社群行銷 AI 夥伴",
+        "波芷寧(PM)：YC 式產品策略+Kill List AI 夥伴",
+        "Nano Banana 2 水彩肖像：Gemini 3.1 Flash Image 生成",
+        "Agentic AI 全職夥伴概念：24 小時待命、專屬記憶"
+      ]
     },
     {
+      "id": "botrun-horse-slides",
       "title": "高品味題庫波駿馬五堂課",
-      "date": "2026-03-16T14:00:00+08:00",
-      "content": "六大類 22 應用、六欄位定義、H200 演化引擎、Agentic AI 公文實證",
+      "subtitle": "六大類 22 應用、六欄位定義、H200 演化引擎、Agentic AI 公文實證",
+      "href": "https://storage.googleapis.com/botrun-slides/botrun-horse-slides.html",
+      "icon": "graduation-cap",
+      "badge": "課程",
+      "badgeColor": "#8B5CF6",
+      "publishDate": "2026-03-16T14:00:00+08:00",
       "tags": [
-        "課程",
-        "5 堂課",
-        "22 應用"
+        "book-open:5 堂課",
+        "trophy:22 應用"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/botrun-horse-slides.html"
+      "concepts": [
+        "六大類政府 AI：公文、法規、知識庫、監測、教育、服務",
+        "六欄位定義：意圖痛點、效益評估、任務題目、原始資料、專家答案、鑑別原則",
+        "H200 演化引擎：一張 GPU 整夜自動演化題庫",
+        "高品味=知道≠會做：90% 普通題庫 vs 10% 高品味",
+        "五堂課完整體系：從概念到實作"
+      ]
     },
     {
+      "id": "smart-portal-csv",
       "title": "智慧入口三層 CSV 架構",
-      "date": "2026-03-16T13:00:00+08:00",
-      "content": "Greeting 秒回、Knowledge 知識注入、Cache 自學成長，PM 友善系統",
+      "subtitle": "Greeting 秒回、Knowledge 知識注入、Cache 自學成長，PM 友善系統",
+      "href": "https://storage.googleapis.com/botrun-slides/smart-portal-csv.html",
+      "icon": "layers",
+      "badge": "架構",
+      "badgeColor": "#0D9488",
+      "publishDate": "2026-03-16T13:00:00+08:00",
       "tags": [
-        "架構",
-        "秒回",
-        "知識注入"
+        "zap:秒回",
+        "database:知識注入"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/smart-portal-csv.html"
+      "concepts": [
+        "三層架構：Greeting(秒回)→Knowledge(知識注入)→Cache(自學成長)",
+        "PM 友善：非技術人員用 CSV 就能管理 AI 知識庫",
+        "Greeting 層：常見問題秒回，不浪費 LLM 算力",
+        "Knowledge 層：專業知識注入，確保回答準確",
+        "Cache 層：AI 從互動中自動學習成長"
+      ]
     },
     {
+      "id": "h200-autoresearch-gov",
       "title": "H200 演化引擎 — Autoresearch for Gov",
-      "date": "2026-03-16T12:00:00+08:00",
-      "content": "Karpathy autoresearch 方法論應用於政府七大 AI，一張 GPU 整夜自動演化",
+      "subtitle": "Karpathy autoresearch 方法論應用於政府七大 AI，一張 GPU 整夜自動演化",
+      "href": "https://storage.googleapis.com/botrun-slides/h200-autoresearch-gov.html",
+      "icon": "cpu",
+      "badge": "研究",
+      "badgeColor": "#7C2D12",
+      "publishDate": "2026-03-16T12:00:00+08:00",
       "tags": [
-        "研究",
-        "H200 GPU",
-        "政府 AI"
+        "server:H200 GPU",
+        "landmark:政府 AI"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/h200-autoresearch-gov.html"
+      "concepts": [
+        "Autoresearch for Gov：Karpathy 方法論的政府版",
+        "一張 H200 GPU 整夜自動演化：無人值守",
+        "七大政府 AI 應用同時演化",
+        "演化引擎：自動生成→評分→篩選→改良迴圈",
+        "H200=NVIDIA 最新推理 GPU，80GB HBM3e"
+      ]
     },
     {
+      "id": "natural-log",
       "title": "自然日誌 — 平台原生列管",
-      "date": "2026-03-16T11:00:00+08:00",
-      "content": "取代自建腳本，零程式碼管理帳單/用量/部署，飛輪迭代",
+      "subtitle": "取代自建腳本，零程式碼管理帳單/用量/部署，飛輪迭代",
+      "href": "https://storage.googleapis.com/botrun-slides/natural-log.html",
+      "icon": "scroll-text",
+      "badge": "方法論",
+      "badgeColor": "#059669",
+      "publishDate": "2026-03-16T11:00:00+08:00",
       "tags": [
-        "方法論",
-        "零程式碼",
-        "飛輪迭代"
+        "leaf:零程式碼",
+        "refresh-cw:飛輪迭代"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/natural-log.html"
+      "concepts": [
+        "平台原生列管：用雲端平台內建工具取代自建腳本",
+        "零程式碼管理：帳單、用量、部署全用平台 Dashboard",
+        "飛輪迭代：觀察→調整→驗證的持續改善迴圈",
+        "自然日誌=順應平台特性而非對抗",
+        "三平台帳單統整：Anthropic+OpenAI+GCP"
+      ]
     },
     {
+      "id": "zero-gap-classroom",
       "title": "零差別教室 Zero-Gap Classroom",
-      "date": "2026-03-16T10:00:00+08:00",
-      "content": "任何 YouTube 教學影片變成可認證課程，AI 評分個人化學習",
+      "subtitle": "任何 YouTube 教學影片變成可認證課程，AI 評分個人化學習",
+      "href": "https://storage.googleapis.com/botrun-slides/zero-gap-classroom.html",
+      "icon": "video",
+      "badge": "教育",
+      "badgeColor": "#2D6A4F",
+      "publishDate": "2026-03-16T10:00:00+08:00",
       "tags": [
-        "教育",
-        "YouTube",
-        "認證課程"
+        "play-circle:YouTube",
+        "award:認證課程"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/zero-gap-classroom.html"
+      "concepts": [
+        "YouTube→認證課程：任何教學影片自動變成可評量課程",
+        "AI 評分：自動批改、即時回饋、個人化建議",
+        "零差別=消弭數位落差：偏鄉與都市同等學習品質",
+        "字幕擷取+AI 出題+自動評分完整流程",
+        "個人化學習路徑：根據答題表現調整難度"
+      ]
     },
     {
+      "id": "lobster-claude",
       "title": "機敏龍蝦 × Claude 公務員協作",
-      "date": "2026-03-16T09:00:00+08:00",
-      "content": "5 頁矽谷流敘事、無為使用策略、雙引擎架構",
+      "subtitle": "5 頁矽谷流敘事、無為使用策略、雙引擎架構",
+      "href": "https://storage.googleapis.com/botrun-slides/lobster-claude.html",
+      "icon": "shield",
+      "badge": "策略",
+      "badgeColor": "#9F1239",
+      "publishDate": "2026-03-16T09:00:00+08:00",
       "tags": [
-        "策略",
-        "機敏",
-        "5 頁"
+        "lock:機敏",
+        "layout-dashboard:5 頁"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/lobster-claude.html"
+      "concepts": [
+        "機敏龍蝦=封閉地端 AI：資料不出機關",
+        "無為使用策略：讓公務員在不知不覺中使用 AI",
+        "雙引擎架構：雲端 Claude+地端開源模型",
+        "公務員協作：AI 輔助而非取代公務員",
+        "矽谷流敘事：5 頁說服決策者的簡報方法"
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "lastUpdated": "2026-05-07T07:15:00+08:00",
+    "totalCount": 152
+  }
 }
