@@ -8,6 +8,22 @@
 
 共 218 個項目，按發佈日期降序排列。
 
+
+## 不會 Beyond LLM，你只是在幫 AI 打工
+
+URL: https://storage.googleapis.com/botrun-slides/cs230-beyond-llm.html
+Tags: LLM 工程, RAG, Agentic AI
+Published: 2026-05-06T13:39:31+08:00
+
+Stanford CS230 深度學習講座精華。從 Prompting → Fine-tuning → RAG → Agentic AI → Evals → Multi-Agent，企業 AI 工程師必備的 7 層技術棧完整解析。含 Covfefe 案例、Prompt Chaining、向量資料庫 RAG、Andrew Ng Agentic 定義、Eval 框架、Multi-Agent 平行架構。
+
+核心概念：
+- Prompt Chaining 是效益最高的提示工程技術，可獨立除錯每個步驟
+- Fine-tuning 是最後手段，先窮盡 Prompting 和 RAG 再考慮
+- RAG 用向量資料庫注入即時知識，大幅降低幻覺率
+- Agentic AI 讓 LLM 自主規劃工具調用，完成多步任務（Andrew Ng 定義）
+- Multi-Agent 的核心優勢是平行處理，Orchestrator 整合 Sub-agent 結果
+
 ## 你燒的 Tokens 越多，越窮｜Mario Zechner 精華
 
 > Pi 極簡主義創始人的反直覺洞見：2,000 個高訊號 tokens 勝過 20,000 個雜訊；Terminal Bench #1 靠 4 個工具 + 1,500 tokens 系統提示；速度沒有紀律就是技術債超速版。
