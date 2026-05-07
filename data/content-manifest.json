@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-07T07:15:00+08:00"
+    "lastUpdated": "2026-05-08T06:36:13+08:00"
   },
   "items": [
+    {
+      "id": "bun-baozi-1sec-compile",
+      "title": "包子真好吃：Bun 一秒編譯，回不去了",
+      "subtitle": "原本在 Node、Deno 之間徘徊一陣子，這週改吃包子 Bun，一秒編譯、跟 Go 一樣快、.ts 天生支援強型別。bowen 親口開箱：「這包子～好吃，回不去了」。",
+      "href": "https://storage.googleapis.com/botrun-slides/bun-baozi-1sec-compile.html",
+      "icon": "zap",
+      "badge": "工具開箱",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-08T06:36:13+08:00",
+      "tags": [
+        "brain:Bun runtime 三合一",
+        "cpu:.ts 一秒編譯",
+        "star:跟 Go 一樣快"
+      ],
+      "concepts": [
+        "Bun = JavaScript runtime + bundler + package manager 三合一，底層 Zig 寫的速度跟 Go 同級",
+        ".ts 天生支援：不用 tsc、不用 ts-node、不用 nodemon，一個 `bun` 指令搞定，編譯近 50ms",
+        "watch 模式體感：「你, 剛剛, 已編輯」剛按 Cmd+S 就重編完，思緒不被工具鏈打斷",
+        "對比 Node + tsc：3 秒等待 vs Bun < 1 秒；強型別黨從此告別冷啟動",
+        "安裝一行：`curl -fsSL https://bun.sh/install | bash`，三秒換包子，回不去了"
+      ],
+      "llmstxt": "https://storage.googleapis.com/botrun-slides/bun-baozi-1sec-compile-llms.txt"
+    },
     {
       "id": "pi-extensions-flower-game",
       "title": "Pi Extensions 探索：用 TypeScript 養一朵 Emoji 小花",
