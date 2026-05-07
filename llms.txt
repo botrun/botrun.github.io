@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-06T22:50:01.141Z
+> 生成時間：2026-05-07T11:59:00.000Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 226 個項目，按發佈日期降序排列。
+共 227 個項目，按發佈日期降序排列。
+
+## Pi Extensions 探索：用 TypeScript 養一朵 Emoji 小花
+
+> 從問一句「pi extensions 有哪些」，到在終端機裡養出一朵會成長的小花。自定義工具、事件攔截、UI Widget、狀態持久化——全程 TypeScript，/reload 秒生效。
+
+**關鍵觀念：**
+- Pi extensions 是 TypeScript 模組，可訂閱生命週期事件、註冊自定義工具、添加指令以及修改 UI
+- 放置位置：~/.pi/agent/extensions/*.ts（全域）或 .pi/extensions/*.ts（專案本地）
+- 自定義工具（registerTool）：讓 LLM 直接呼叫你的函式，整合外部 API 或業務邏輯
+- 狀態持久化：pi.appendEntry() 跨 session 保存，重啟 pi 不會遺忘
+- 實作 Emoji 小花養成遊戲（flower-game.ts）：五個成長階段 🌰→🌿→🌸→🌺→🎊
+- 互動指令：/flower 查看、/water 澆水、/feed 施肥、/sun 曬太陽
+- 官方範例庫含 snake.ts、tic-tac-toe.ts、git-checkpoint.ts 等
+
+**網址：** https://storage.googleapis.com/botrun-slides/pi-extensions-flower-game.html
+**AI友善純文字：** https://storage.googleapis.com/botrun-slides/pi-extensions-flower-game-llms.txt
+
+---
 
 ## 等 AI 回應是你最貴的浪費 — GNU Parallel × pi -p 批量提速實驗
 

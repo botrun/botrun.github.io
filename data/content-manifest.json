@@ -5,6 +5,22 @@
   },
   "items": [
     {
+      "id": "pi-extensions-flower-game",
+      "title": "Pi Extensions 探索：用 TypeScript 養一朵 Emoji 小花",
+      "subtitle": "從問一句「pi extensions 有哪些」，到在終端機裡養出一朵會成長的小花。自定義工具、事件攔截、UI Widget、狀態持久化——全程 TypeScript，/reload 秒生效。",
+      "href": "https://storage.googleapis.com/botrun-slides/pi-extensions-flower-game.html",
+      "icon": "flower",
+      "badge": "探索紀錄",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-07T11:59:00+08:00",
+      "tags": [
+        "brain:pi extensions TypeScript",
+        "cpu:Emoji 小花養成遊戲",
+        "star:終端機遊戲 /reload 秒生效"
+      ],
+      "llmstxt": "https://storage.googleapis.com/botrun-slides/pi-extensions-flower-game-llms.txt"
+    },
+    {
       "id": "opus-gemma-distillation-flywheel",
       "title": "Opus 蒸餾飛輪 — 6 步驟讓 Gemma 31B 越用越準",
       "subtitle": "60× 成本差距、機敏資料不能出境——立委詢答/觀護人/檢察官三類任務，如何把 Opus 黃金範例蒸餾進 .db，讓 Gemma 31B 透過 2-shot FTS5 檢索接近 Opus 品質，並建立「人類採用率=reward signal」的飛輪自動養倉。",
