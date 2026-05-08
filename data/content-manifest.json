@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-09T03:40:00+08:00"
+    "lastUpdated": "2026-05-09T04:03:37+08:00"
   },
   "items": [
+    {
+      "id": "ai-passion-skillmd",
+      "title": "AI 熱情賦能：用 SKILL.md 把注意力變資產",
+      "subtitle": "9 頁矽谷流敘事。Gemma 4 31B 超越 675B 的效率革命、三大瓶頸崩潰、SKILL.md 2 分鐘知識結構化、AI 熱情賦能 10 大思維脈絡。北歐設計風格。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-passion-skillmd.html",
+      "icon": "sparkles",
+      "badge": "商業哲學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-09T04:03:37+08:00",
+      "tags": [
+        "brain:Gemma 4 31B 效率革命",
+        "cpu:SKILL.md 知識結構化",
+        "star:AI 熱情賦能 10 大脈絡"
+      ],
+      "concepts": [
+        "三大瓶頸全崩潰：模型、算力、電力皆不再是門檻（31B 300W 本地跑 120 TPS）",
+        "Gemma 4 31B 超越 Mistral Large 675B，參數縮 20 倍，3 個月問世差距",
+        "SKILL.md 魔法：YouTube/PDF → 結構化指令 < 2 分鐘，指令遵循能力 >> 記憶容量",
+        "AI 熱情賦能價值螺旋：啟發熱情→技能化→低門檻→共創→價值→成就感→更多熱情",
+        "最貴的不再是 H100，而是將知識結構化為 AI 技能的那套方法論"
+      ]
+    },
     {
       "id": "skill-md-howto",
       "title": "孵化 SKILL.md 的方法學",
