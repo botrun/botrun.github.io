@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-08T06:36:13+08:00"
+    "lastUpdated": "2026-05-08T12:13:19+08:00"
   },
   "items": [
+    {
+      "id": "incubate-botrun-pi-teaching",
+      "title": "教學傳承 — botrun-pi 波特人孵化方法論",
+      "subtitle": "把「五機關 × 25 公文 × 25 題 binary rubric × GAN 五代迭代」抽象成可複製 SOP。同事拿這份 prompt 就能孵化任何領域的波特人 — 公文、法規、判例、津貼問答、標書都通用。含一鍵複製整段 prompt 按鈕。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/incubate-botrun-pi-teaching.html",
+      "icon": "graduation-cap",
+      "badge": "教學傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-08T12:13:19+08:00",
+      "protected": true,
+      "tags": [
+        "brain:botrun-pi 孵化 SOP",
+        "cpu:GAN 五代 + binary rubric",
+        "star:一鍵複製 prompt 傳承同事"
+      ],
+      "concepts": [
+        "起手三問模板：終極目標 / 範圍與文類 / rubric + GAN 規則 — 對齊前禁止動工",
+        "五條鐵律：先上網找真實資料、db 不進 git 但 SQL migration 進、Mission 寫進 docs、/teams+/bdd+/next5 三件套、地雷回灌 CLAUDE.md",
+        "閉環六步驟：自然語言 → mapping 範本 → 31B 寫初稿 → rubric 逐題評分（過程文字化）→ 缺點改寫 → 出爐最終稿",
+        "GAN 五代迭代規則：Generator = pi -p (Gemma 31B)、Discriminator = Opus 4.7、每代用 top 3 失分回頭改 prompt",
+        "領域代換清單：公文 / 法規 / 津貼 / 判例 / 標書都套用同一份方法論"
+      ]
+    },
     {
       "id": "bun-baozi-1sec-compile",
       "title": "包子真好吃：Bun 一秒編譯，回不去了",
