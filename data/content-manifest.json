@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-08T12:13:19+08:00"
+    "lastUpdated": "2026-05-09T03:40:00+08:00"
   },
   "items": [
+    {
+      "id": "skill-md-howto",
+      "title": "孵化 SKILL.md 的方法學",
+      "subtitle": "把任何資料源（PDF、YouTube、Excel、會議錄音）變成可問答技能。原文照抄兩個真實 prompt session：96 頁 PDF 一書一技能、30 分鐘 YouTube 一片一技能；含 references/ 切片設計、SKILL.md 七要素模板、rg 三段檢索 SOP（含 rg -C）、觸發詞多元設計、引證鐵律、五大反模式、可直接複製貼到 Claude Code 的孵化通用 prompt。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/skill-md-howto.html",
+      "icon": "book-open",
+      "badge": "方法學",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-09T03:40:00+08:00",
+      "protected": true,
+      "tags": [
+        "brain:SKILL.md 孵化方法學",
+        "cpu:rg -C 三段檢索 SOP",
+        "star:可複製 prompt 通用模板"
+      ],
+      "concepts": [
+        "技能解剖：references/ 存切片純文字（檔名 = 引證錨點 pNNN.txt 或 [mm:ss]）+ SKILL.md 極簡（≤200 行）",
+        "PDF 案例：pdftotext -layout 每頁一檔，rg 命中後 p042.txt → 引證 p.42 零思考",
+        "YouTube 案例：yt-dlp + 自寫 parse_vtt.py 切分鐘（dedup 滾動字幕），五檔分工 metadata/transcript-en/transcript-zh-tw/outline/insights",
+        "SKILL.md 七要素：frontmatter 多元觸發詞、來源元資料、章節地圖、檔案分工表、rg 三段 SOP、3 個 few-shot、引證鐵律與反模式",
+        "觸發詞四維度：中文主題詞 + 英文同義詞（連字符/空格/純詞變體）+ 識別符 + 時間事件錨"
+      ]
+    },
     {
       "id": "incubate-botrun-pi-teaching",
       "title": "教學傳承 — botrun-pi 波特人孵化方法論",
