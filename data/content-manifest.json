@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-09T13:05:01+08:00"
+    "lastUpdated": "2026-05-09T20:57:38+08:00"
   },
   "items": [
+    {
+      "id": "botrun-bro",
+      "title": "波部落 Botrun-Bro：把你每天點 100 次的滑鼠，變成可以打包帶走的小幫手",
+      "subtitle": "5 頁矽谷流非技術簡報。Claude in Chrome 的機關自架版——國網中心 31B 便宜 60 倍、資料零出境；錄製→孵化→打包三件事，一份 SKILL.md 五種出口。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-bro.html",
+      "protected": true,
+      "icon": "mouse-pointer-2",
+      "badge": "產品策略",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-09T20:57:38+08:00",
+      "tags": [
+        "mouse-pointer-2:錄製滑鼠動作",
+        "egg:31B 自動孵化技能",
+        "package:五格式打包"
+      ],
+      "concepts": [
+        "痛點：員工每天點 100 次滑鼠做同一件事，離職那天全部消失；想用 Claude 自動化但機關資料不能上雲",
+        "洞見：Claude in Chrome 的機關自架版——國網中心 Gemma 4 31B 便宜 60 倍、資料零出境、學術背書",
+        "三件事 TODO：① 錄製（裝外掛按錄製做平常的事）② 孵化（31B 自動寫 SKILL.md + HITL 修補）③ 打包（一份 SKILL.md 五種出口：CLI/外掛/REST/MCP/Plugin Zip）",
+        "底牌：bh CLI + pi.botrun 3MB binary 模板 + 永恆知己 SKILL.md 規格 + NCHC 62 模型 + 結晶螺旋方法論",
+        "六週時間軸：W1 錄製 → W2-3 孵化 → W4-5 打包 → W6 機關全員擴散；員工/機關/資安三贏"
+      ]
+    },
     {
       "id": "tw-eval-strategy",
       "title": "設標準的人才是贏家：台灣 AI 評測三步棋",
