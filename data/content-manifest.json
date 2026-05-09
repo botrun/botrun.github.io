@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-09T04:03:37+08:00"
+    "lastUpdated": "2026-05-09T13:05:01+08:00"
   },
   "items": [
+    {
+      "id": "taiwan-ai-harness",
+      "title": "臺灣AI主權駕馭框架Harness：不要世界第一，而是自給自足多交朋友",
+      "subtitle": "5 頁矽谷流簡報。Harness 三環架構（知識結晶×國網自主×雲端彈性）、本週真實數字（62 模型、62 倍省錢、225 ms Rust binary）、臺灣 AI 主權三行動。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/taiwan-ai-harness.html",
+      "protected": true,
+      "icon": "shield",
+      "badge": "AI 主權",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-09T13:05:01+08:00",
+      "tags": [
+        "shield:臺灣 AI 主權",
+        "cpu:Harness 三環架構",
+        "star:本週真實數字"
+      ],
+      "concepts": [
+        "Harness 三環：知識結晶（SKILL.md/pi.db）× 國網自主（NCHC 62 模型）× 雲端彈性（AWS/OpenAI/Anthropic 互備）",
+        "主權不是最強，是有能力選擇退場：Hermes 31B vs 旗艦模型 62 倍成本差、效果相當",
+        "pi-botrun Rust 自包 binary：pi.db 燒進去，225 ms 冷啟，3 MB 單一檔案，零依賴",
+        "GAN 蒸餾 5 輪：品質 Δ 從 12 提升到 32.5（+170%），地雷 205 條換來知識護城河",
+        "三行動：結晶領域知識 / 雙軌供應商備援 / 地雷整理成 db——不必第一，只要不被掐脖子"
+      ]
+    },
     {
       "id": "ai-passion-skillmd",
       "title": "AI 熱情賦能：用 SKILL.md 把注意力變資產",
