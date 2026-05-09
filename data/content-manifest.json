@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "tw-eval-strategy",
+      "title": "設標準的人才是贏家：台灣 AI 評測三步棋",
+      "subtitle": "5 頁矽谷流非技術簡報。出考卷→上排行榜→收訂閱三步走；iKala TMMLU+ 差異化路線；六個月從廠商變標準制定者。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/tw-eval-strategy.html",
+      "protected": true,
+      "icon": "trophy",
+      "badge": "商業策略",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-09T20:51:43+08:00",
+      "tags": [
+        "trophy:標準制定者策略",
+        "bar-chart:台灣 AI 排行榜",
+        "dollar-sign:評測訂閱收入"
+      ],
+      "concepts": [
+        "出考卷的人才是贏家：iKala TMMLU+ 案例——66 科 22K 題讓所有廠商都要來對標",
+        "三步棋：出政府驗收報告（3 個月）→ 上動態排行榜（6 個月）→ 評測訂閱服務",
+        "差異化：TMMLU+ 只測知識問答，我們做 Agentic 任務 × 政府公文情境——iKala 沒有的領域",
+        "底牌：高品味題庫 + NCHC 國網關係 + AIEC 工研院 + 波海豚 ai-battle 雛形",
+        "多贏：廠商有入場券、政府有客觀採購依據、我們成為台灣 AI 標準制定者"
+      ]
+    },
+    {
       "id": "taiwan-ai-harness",
       "title": "臺灣AI主權駕馭框架Harness：不要世界第一，而是自給自足多交朋友",
       "subtitle": "5 頁矽谷流簡報。Harness 三環架構（知識結晶×國網自主×雲端彈性）、本週真實數字（62 模型、62 倍省錢、225 ms Rust binary）、臺灣 AI 主權三行動。",

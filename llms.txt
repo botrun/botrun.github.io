@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-09T05:09:37.354Z
+> 生成時間：2026-05-09T12:55:51.025Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 233 個項目，按發佈日期降序排列。
+共 234 個項目，按發佈日期降序排列。
+
+## 設標準的人才是贏家：台灣 AI 評測三步棋
+
+> 5 頁矽谷流非技術簡報。出考卷→上排行榜→收訂閱三步走；iKala TMMLU+ 差異化路線；六個月從廠商變標準制定者。
+
+**關鍵觀念：**
+- 出考卷的人才是贏家：iKala TMMLU+ 案例——66 科 22K 題讓所有廠商都要來對標
+- 三步棋：出政府驗收報告（3 個月）→ 上動態排行榜（6 個月）→ 評測訂閱服務
+- 差異化：TMMLU+ 只測知識問答，我們做 Agentic 任務 × 政府公文情境——iKala 沒有的領域
+- 底牌：高品味題庫 + NCHC 國網關係 + AIEC 工研院 + 波海豚 ai-battle 雛形
+- 多贏：廠商有入場券、政府有客觀採購依據、我們成為台灣 AI 標準制定者
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/tw-eval-strategy.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/tw-eval-strategy.html/llms.txt): 該專案的 llms.txt
+- 類型：商業策略
+- 發佈日期：2026-05-09T20:51:43+08:00
+- 標籤：標準制定者策略、台灣 AI 排行榜、評測訂閱收入
 
 ## 臺灣AI主權駕馭框架Harness：不要世界第一，而是自給自足多交朋友
 
