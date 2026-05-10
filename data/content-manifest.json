@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "warp-business-model-botrun-3layers",
+      "title": "抄 Warp 7300 萬美金商業模式 — 波特人三層分權架構",
+      "subtitle": "5 頁矽谷流。剖析 Warp 終端機紅杉+Sam Altman 注資 7300 萬美金的三招護城河（Block 結構化、AGPLv3 雙許可、Oz 算力稅），逐字搬到全球機敏高品味題庫市場：Client 地端 pi.botrun / Server 機關 SKILL.md / Cloud 公開評測榜。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/warp-business-model-botrun-3layers.html",
+      "protected": true,
+      "icon": "layers",
+      "badge": "商業模式",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-10T23:19:19+08:00",
+      "tags": [
+        "trending-up:紅杉 7300 萬美金",
+        "shield:三層分權架構",
+        "globe:全球機敏題庫飛輪"
+      ],
+      "concepts": [
+        "Warp 三招護城河：物理重塑（Block schema-cast）、AGPLv3 雙許可證腳鐐、Oz 雲端 ADE 收 AI 算力稅——逐字搬到題庫業變成六欄位結構化、CC BY-NC 雙刃、Hermes 31B + IAP 訂閱",
+        "Client 地端：pi.botrun Rust binary 3MB / 冷啟 225ms、Hermes 31B 推論、Apple Vision OCR——機敏資料絕不出門（對應 Warp ZDR 零留存）",
+        "Server 機關：SKILL.md 孵化器把任何資料源變技能、botrun-pi CLI 內網大腦、Binary Rubric v4 PASS/FAIL 自動評（對應 Warp MCP 內網閘道）",
+        "Cloud 公開：IAP Cloud Run 39 篇 PROTECTED_FILES、CC BY-NC 雙刃授權、公開評測排行榜搶 TMMLU+ 之外的 Agentic + 政府場景（對應 Warp Oz ADE）",
+        "三週實證：pi-kb GAN 蒸餾 +170%、IAP 39 篇、Hermes 31B 便宜 60 倍、新增地雷 LM-156~205+E01~E08 共 30 條；飛輪：機敏地端孵化 → 蒸餾 SKILL.md → 機關內網 → 公開設標準收算力稅"
+      ]
+    },
+    {
       "id": "story-001-gov-doc-100-percent",
       "title": "290 份政府公文 100% 達標：把 Opus 品味蒸餾給 Gemma 31B",
       "subtitle": "7 頁矽谷流敘事。GAN 雙軌孵化（Opus 評審 × Gemma 寫稿）、18 輪迭代、過 95% 真假失分二分類、290 篇 100% 全綠熱力圖。同任務成本差 ~480×。",
