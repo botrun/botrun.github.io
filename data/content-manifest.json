@@ -6,25 +6,25 @@
   "items": [
     {
       "id": "warp-business-model-botrun-3layers",
-      "title": "抄 Warp 7300 萬美金商業模式 — 波特人三層分權架構",
-      "subtitle": "5 頁矽谷流。剖析 Warp 終端機紅杉+Sam Altman 注資 7300 萬美金的三招護城河（Block 結構化、AGPLv3 雙許可、Oz 算力稅），逐字搬到全球機敏高品味題庫市場：Client 地端 pi.botrun / Server 機關 SKILL.md / Cloud 公開評測榜。",
+      "title": "機敏資料不出電腦，AI 還能越用越懂你 — 波特人四層商業模式",
+      "subtitle": "5 頁矽谷流（高中生都能懂）。把 AI 學長裝進你電腦，網路拔掉都能用。免費門票（影印工讀生＋住你家的 AI 學長）+ 付費三檔（替你出模擬考／寫家傳食譜／永遠跟班學長）。紅杉砸 7300 萬美金背書 Warp 也是同一招——只是我們的資料不出門。",
       "href": "https://botrun-protected-257949799705.asia-east1.run.app/warp-business-model-botrun-3layers.html",
       "protected": true,
-      "icon": "layers",
+      "icon": "shield-check",
       "badge": "商業模式",
       "badgeColor": "#b5454a",
-      "publishDate": "2026-05-10T23:19:19+08:00",
+      "publishDate": "2026-05-10T23:46:00+08:00",
       "tags": [
-        "trending-up:紅杉 7300 萬美金",
-        "shield:三層分權架構",
-        "globe:全球機敏題庫飛輪"
+        "shield-check:資料不出家門",
+        "graduation-cap:補習班商業模式",
+        "users:律師醫師會計師都能用"
       ],
       "concepts": [
-        "Warp 三招護城河：物理重塑（Block schema-cast）、AGPLv3 雙許可證腳鐐、Oz 雲端 ADE 收 AI 算力稅——逐字搬到題庫業變成六欄位結構化、CC BY-NC 雙刃、Hermes 31B + IAP 訂閱",
-        "Client 地端：pi.botrun Rust binary 3MB / 冷啟 225ms、Hermes 31B 推論、Apple Vision OCR——機敏資料絕不出門（對應 Warp ZDR 零留存）",
-        "Server 機關：SKILL.md 孵化器把任何資料源變技能、botrun-pi CLI 內網大腦、Binary Rubric v4 PASS/FAIL 自動評（對應 Warp MCP 內網閘道）",
-        "Cloud 公開：IAP Cloud Run 39 篇 PROTECTED_FILES、CC BY-NC 雙刃授權、公開評測排行榜搶 TMMLU+ 之外的 Agentic + 政府場景（對應 Warp Oz ADE）",
-        "三週實證：pi-kb GAN 蒸餾 +170%、IAP 39 篇、Hermes 31B 便宜 60 倍、新增地雷 LM-156~205+E01~E08 共 30 條；飛輪：機敏地端孵化 → 蒸餾 SKILL.md → 機關內網 → 公開設標準收算力稅"
+        "第三條路：AI 學長住你電腦裡，網路線拔掉都能用——機敏資料連家門都沒出（對應 Warp ZDR 零資料留存）",
+        "商業模式抄補習班：進門免費（教室＋白板＋免費 AI 學長），月費教你訣竅。紅杉砸 7300 萬美金投資 Warp 學的也是這招",
+        "四層架構：L1 影印工讀生（PDF/Word/Excel 變純文字）+ L2 住你家的 AI 學長（Ollama/LM Studio + Gemma 4）→ 兩層免費；001 出模擬考 + 002 家傳食譜 + 003 永遠跟班學長 → 三層付費",
+        "三種人三條路：律師訂 001 把案件做成模擬考、醫師訂 003 讓 AI 越看越會學開藥、會計師訂 002 把老師傅訣竅寫成家傳食譜——共同心聲「我願意付月費因為資料沒出門」",
+        "鐵律：考卷答案永遠在你家、雲端只看考卷格式或上鎖箱子。雲端被搶劫賊也只拿到打不開的鎖頭。你不是在買 AI，是在買 AI 變成你的人"
       ]
     },
     {
