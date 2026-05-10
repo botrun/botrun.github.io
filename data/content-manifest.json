@@ -1,9 +1,78 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-09T20:57:38+08:00"
+    "lastUpdated": "2026-05-10T21:00:00+08:00"
   },
   "items": [
+    {
+      "id": "story-001-gov-doc-100-percent",
+      "title": "290 份政府公文 100% 達標：把 Opus 品味蒸餾給 Gemma 31B",
+      "subtitle": "7 頁矽谷流敘事。GAN 雙軌孵化（Opus 評審 × Gemma 寫稿）、18 輪迭代、過 95% 真假失分二分類、290 篇 100% 全綠熱力圖。同任務成本差 ~480×。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/story-001-gov-doc-100-percent.html",
+      "protected": true,
+      "icon": "trophy",
+      "badge": "Case Study",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-10T21:00:00+08:00",
+      "tags": [
+        "trophy:290 篇 100% 全綠",
+        "git-branch:GAN 雙軌孵化",
+        "dollar-sign:成本差 ~480×"
+      ],
+      "concepts": [
+        "5 種文類 × 58 個一/二級機關 = 290 份公文，從 90.0% 推到 290/290 = 100% 全綠（22 分鐘、71 次 API 呼叫結案）",
+        "GAN 架構：Opus 4.7 當品味評審 × Gemma 31B 當寫稿勞工 × SKILL.md 當品味的物理載體（5KB 規則檔）",
+        "卡 95.9% 三輪沒進步的真正秘密：12 筆失分裡 7 筆是測試 grep 寫太窄（假失分），不是模型寫錯",
+        "真失分 5 筆共同 pattern：陌生機關 email 域名被編造（國安局寫成 nsa.gov.tw、客委會寫成 cac.gov.tw）",
+        "Take-away：便宜模型不行常常是品味沒蒸餾出來；過 95% 提升不在規則裡在測試裡；token 層問題不要靠 prompt"
+      ]
+    },
+    {
+      "id": "story-003-skill-incubation-five-principles",
+      "title": "五點蒸餾 best practice：把 Opus 品味裝進 Gemma 31B",
+      "subtitle": "8 頁矽谷流方法論。三層孵化架構（SKILL.md / references / scripts）；五原則：強制正例、知識邊界兜底、雙軌漸進揭露、deterministic 安全網、真假失分二分類；元法則 4 輪穩態。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/story-003-skill-incubation-five-principles.html",
+      "protected": true,
+      "icon": "layers",
+      "badge": "方法論",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-10T20:55:00+08:00",
+      "tags": [
+        "layers:三層孵化架構",
+        "list-checks:五點 best practice",
+        "shield-check:4 輪穩態收斂"
+      ],
+      "concepts": [
+        "孵化技能 = 把貴模型的品味蒸餾成 5KB SKILL.md 給便宜模型照著做；分三層 L1 規則 / L2 知識 / L3 後處理",
+        "原則 1：強制正例 > 禁止負例（priming effect 反效果）；給對的 pattern + 2-shot 比給禁止 list 直接",
+        "原則 2：強制規則必配「知識邊界 placeholder 兜底」；不給留白許可，模型只剩編造這條路",
+        "原則 3：漸進揭露對 31B 必雙軌——31B 假裝讀了 references/ 還是亂寫，必加 inline 速查表 + 負例域名",
+        "原則 4-5：deterministic 後處理是 prompt 規則的最後安全網；真失分 vs 假失分必區分；4 輪穩態才算品味落地"
+      ]
+    },
+    {
+      "id": "story-007-nl-batch-pi-one-sentence",
+      "title": "nl-batch-pi v2.7.9：一句話跑 N 個任務，連程式都不用寫",
+      "subtitle": "7 頁矽谷流工程敘事。SQLite 三態狀態機 + atomic claim + quality gate；小模型只給 --items 和 --cmd 兩參數；「不漏」是物理閉包不是 LLM 承諾。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/story-007-nl-batch-pi-one-sentence.html",
+      "protected": true,
+      "icon": "terminal",
+      "badge": "Meta-Skill",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-10T20:50:00+08:00",
+      "tags": [
+        "terminal:一句話批次",
+        "git-merge:三態狀態機",
+        "shield:Quality Gate"
+      ],
+      "concepts": [
+        "痛點：叫 AI agent 寫 for-loop 跑 58 機關，會漏 1-2 個、沒 retry、沒 atomic、模型最後說 done 但實際 3 個檔案是空的",
+        "設計思想：小模型只給 --items（真名單）和 --cmd（一行 shell），引擎做所有事（SQLite 鎖、併發、retry、狀態機）",
+        "三態狀態機（todo/doing/done）+ supervisor while loop，數學上不可能漏；對比 LLM for-loop 沒「完成度檢查」",
+        "SQLite WAL + UPDATE...RETURNING 一條 SQL 原子拿任務，5 city × 3 concurrency 實測 0 行 BUSY 噪音",
+        "Quality Gate：把寫檔放 shell pipeline，&& 短路；side-effect 證明完成，不讓 LLM 自己宣稱完成（LM-202）"
+      ]
+    },
     {
       "id": "botrun-bro",
       "title": "波部落 Botrun-Bro：把你每天點 100 次的滑鼠，變成可以打包帶走的小幫手",
