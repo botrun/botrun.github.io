@@ -1,9 +1,33 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-11T12:00:00+08:00"
+    "lastUpdated": "2026-05-11T13:30:00+08:00"
   },
   "items": [
+    {
+      "id": "hermes-a16z-high-school",
+      "title": "你的 AI 是失憶補習生嗎？— Hermes 對得起 a16z 五大痛點嗎（高中生版）",
+      "subtitle": "7 頁矽谷流敘事（高中生都能懂）。把 a16z 5 月萬字長文翻譯成補習班比喻：LLM＝下課就忘的補習生、上下文＝隨身筆記本、RAG＝參考書區、系統提示詞＝手心小抄。逐題對答案 Hermes Agent 解掉幾個：2 個解掉（學長傳承＋審計地端）／2 個半套（重複任務 OK、創造性與新法規要離線微調補）／1 個救不了（老師傅手感）。給政府的三句白話結論：馬上能上的、要排程做的、要認命的。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/hermes-a16z-high-school.html",
+      "protected": true,
+      "icon": "academic-cap",
+      "badge": "政府應用",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-11T13:30:00+08:00",
+      "tags": [
+        "academic-cap:高中生都能懂",
+        "shield-check:政府機敏 IAP",
+        "brain:持續學習評估"
+      ],
+      "concepts": [
+        "補習班比喻：LLM＝高一新生開學前讀完全網路書、開學後不准更新腦袋；隨身筆記本＝上下文、補習班參考書區＝RAG、手心小抄＝系統提示詞",
+        "五大痛點（補習班版）：①永遠忘 ②查≠會 ③舊知識壓不掉 ④老師傅手感 ⑤越獄＋投毒——這五件事就是政府想用 AI 又不敢用的根本原因",
+        "Hermes Agent ＝補習班的「共享錯題本＋讀書筆記」雲端系統（Nous Research 2026-02 開源，95.6K stars，4 層記憶 + 自寫技能卡 + Ollama 地端 + Tinker-Atropos RL）",
+        "記分卡：①學長傳承＝解掉、⑤審計地端＝解掉加分（IAP 對比 OpenAI 黑盒最大政府賣點）、②查≠會＝半套（重複任務 OK／創造性不行）、③舊壓不掉＝半套（短期 OK／要季度微調補）、④老師傅手感＝目前完全救不了",
+        "給政府三句白話結論：①馬上能上的＝Hermes+波藍鵲跨承辦人傳承＋可審計；②要排程做的＝季度離線蒸餾用 Tinker-Atropos；③要認命的＝隱性手感／反向題／Base64 越獄是 LLM 範式天花板，要靠人工覆核＋雙向索引＋DLP 補",
+        "對應 a16z 文章定位：Hermes 把「上下文＋模組」兩層做到頂，但「權重更新」那一層沒碰；想要 AI 真的越用越懂得讓日常 Hermes＋季度離線微調兩條腿同時走"
+      ]
+    },
     {
       "id": "continual-learning-a16z",
       "title": "大模型還是失憶患者 — a16z 萬字長文拆解持續學習",
