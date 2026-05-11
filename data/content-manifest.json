@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "library-meta-skill",
+      "title": "Library Meta Skill：用一個技能統治所有私有 Agent 技能",
+      "subtitle": "8 頁矽谷流敘事。Indie Dev Dan 影片精華：10+ repo 工程師的技能同步地獄解方。Library YAML 只存 GitHub 指針不存本體，/library add/use/push/sync 四字訣跨裝置/跨團隊同版本。整個 Application 零行程式碼，純 SKILL.md + library.yaml，純 Agent 應用。適合多 repo 工程師、多裝置 Agent 操作者、私有專屬技能開發者。",
+      "href": "https://storage.googleapis.com/botrun-slides/library-meta-skill.html",
+      "icon": "library",
+      "badge": "Agent 工程",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-11T20:17:50+08:00",
+      "tags": [
+        "agent:Agent 技能管理",
+        "git:GitHub 私有分發",
+        "sync:跨裝置同步"
+      ],
+      "concepts": [
+        "Library Meta Skill：一個 YAML 統治所有私有 skills/agents/prompts，只存 GitHub 指針不存本體",
+        "/library add/use/push/sync 四個指令完成 Build→Catalog→Distribute→Use 全流程",
+        "零行程式碼：整個 Application 只有 SKILL.md + library.yaml，純 Agent 應用新典範",
+        "適用：10+ repo 工程師 / 多裝置 Agent / 跨團隊私有技能協作；不適用：1-2 repo 用戶",
+        "類比 package.json：library.yaml 對 Agent 技能的作用就像 npm 套件依賴管理"
+      ]
+    },
+    {
       "id": "agentic-file-api-min",
       "title": "六個 API 搞定 agentic AI 多檔對話 — S3 + OpenAI 兼容最小介面",
       "subtitle": "8 頁矽谷流敘事。給政府舊公文系統、檢察官系統的 SI 廠商：別發明新 API、吻合既有世界標準。三輪砍掉 3 個 endpoint（v1 自創 9 → v2 對齊 S3+OpenAI 6 → v3 上網查 2026 標準確認）。最終只剩 5 個 S3 兼容（PUT/GET/DELETE bucket+key）+ 1 個 OpenAI Chat Completions（含 file_search 引 bucket）。對方廠商用 boto3 + openai SDK 1 天上手、零自家 SDK。MCP 是未來標準但對 SI 廠商過早（沒 SDK 經驗、SSE 過 firewall 難、採購規格寫不進）— 留為新世代 agent 選配，後端共用 MinIO 雙軌零分叉。下一步：寫成 OpenAPI 3.1 yaml 進採購規格書。",

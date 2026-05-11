@@ -4,6 +4,28 @@
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
     {
+      "id": "library-meta-skill",
+      "title": "Library Meta Skill：用一個技能統治所有私有 Agent 技能",
+      "subtitle": "8 頁矽谷流敘事。Indie Dev Dan 影片精華：10+ repo 工程師的技能同步地獄解方。Library YAML 只存 GitHub 指針不存本體，/library add/use/push/sync 四字訣跨裝置/跨團隊同版本。整個 Application 零行程式碼，純 SKILL.md + library.yaml，純 Agent 應用新典範。",
+      "href": "https://storage.googleapis.com/botrun-slides/library-meta-skill.html",
+      "icon": "library",
+      "badge": "Agent 工程",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-11T20:17:50+08:00",
+      "tags": [
+        "agent:Agent 技能管理",
+        "git:GitHub 私有分發",
+        "sync:跨裝置同步"
+      ],
+      "concepts": [
+        "Library Meta Skill：一個 YAML 統治所有私有 skills/agents/prompts，只存 GitHub 指針不存本體",
+        "/library add/use/push/sync 四個指令完成 Build→Catalog→Distribute→Use 全流程",
+        "零行程式碼：整個 Application 只有 SKILL.md + library.yaml，純 Agent 應用新典範",
+        "適用：10+ repo 工程師 / 多裝置 Agent / 跨團隊私有技能協作；不適用：1-2 repo 用戶",
+        "類比 package.json：library.yaml 對 Agent 技能的作用就像 npm 套件依賴管理"
+      ]
+    },
+    {
       "title": "大模型還是失憶患者 — a16z 萬字長文拆解持續學習",
       "date": "2026-05-11T12:00:00+08:00",
       "content": "8 頁矽谷流引證簡報。引 YouTube 影片 + a16z 2026-04-22 原文：今天 LLM 都是《記憶拼圖》主角李奧納多·薛比，刺青＝系統提示詞、便利貼＝聊天上下文、拍立得＝RAG。文件櫃謬誤：檢索 ≠ 學習，核心是有損壓縮。拆三類光譜（上下文／模組／權重）＋ 五大研究路線（正則化／TTT／元學習／蒸餾／自我改進）＋ 四種失效模式。",
