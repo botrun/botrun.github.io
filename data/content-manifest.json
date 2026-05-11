@@ -7,7 +7,7 @@
     {
       "id": "gitlab-ce-agent-swarm",
       "title": "機關想養 Agent 蜂群？GitLab CE 一站到底取代 GitHub",
-      "subtitle": "8 頁簡報。air-gapped 機房如何用全 FOSS 完整重現 GitHub Agent 蜂群作業系統。14 個 Agent 需求對應 GitLab CE 元件、GitHub vs CE 15 項功能對照、單體 vs 多元件組合的採購優勢、NT$ 130 萬起跑的三層採購規模。",
+      "subtitle": "8 頁簡報。air-gapped 機房如何用全 FOSS 完整重現 GitHub Agent 蜂群作業系統。14 個 Agent 需求對應 GitLab CE 元件、GitHub vs CE 15 項功能對照、單體 vs 多元件組合的採購優勢、三層部署規模從試點到機敏龍蝦級。",
       "href": "https://storage.googleapis.com/botrun-slides/gitlab-ce-agent-swarm.html",
       "icon": "shield",
       "badge": "機關蜂群",
