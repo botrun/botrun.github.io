@@ -5,6 +5,35 @@
   },
   "items": [
     {
+      "id": "agent-swarm-architecture",
+      "title": "你養的 AI 為什麼一直死？Anthropic 蜂群架構終極解答",
+      "subtitle": "8 頁高中生都能懂版。寵物 vs 牛馬比喻解耦概念，四層架構（Agent=履歷、Session=打卡記錄、記憶樹、Session Store雲端人事系統），指揮官不幹活最多 20 隻蜜蜂，大模型指揮小模型執行 Token 效率最佳化，動態蜂群算力革命。",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-swarm-architecture.html",
+      "icon": "network",
+      "badge": "蜂群架構",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-11T22:00:00+08:00",
+      "tags": ["cpu:Agent 蜂群", "zap:四層解耦", "cloud:高中生版"]
+    },
+    {
+      "id": "managed-agents-architecture",
+      "title": "Anthropic Managed Agents 四層解耦架構 — 多 Agent 協作的版本答案",
+      "subtitle": "7 頁詳細引證簡報。引証 YouTube 影片逐字稿（352 條時間戳）：Agent 當寵物 vs 牛馬、Anthropic SDK Beta 目錄逆向 coordinator 字段、四層解耦（Agent→Session→記憶樹→Session Store）、Session Store PR 合入 2026-04-19、Docker 任務圖多模型組合、Palantir AIP vs OpenClaw vs Hermes 全球視角。",
+      "href": "https://storage.googleapis.com/botrun-slides/managed-agents-architecture.html",
+      "icon": "network",
+      "badge": "多 Agent 架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-11T20:20:46+08:00",
+      "tags": ["cpu:Agent 架構", "zap:四層解耦", "cloud:Managed Agents"],
+      "concepts": [
+        "四層解耦：Agent（靜態模板）→ Session（動態執行）→ 記憶樹（fork/rollback）→ Session Store（雲端無狀態，PR 2026-04-19）",
+        "Anthropic SDK Beta 目錄逆向：coordinator 字段，最多 20 個 Agent，每個獨立 prompt+工具+MCP",
+        "宠物 vs 牛馬：模型+記憶+環境解耦，沙盒崩了直接重拉，一個配置不再全盤崩潰",
+        "作者一週複刻：Docker Worker + 任務圖 + Claude Code/Codex/pi 多模型組合，最佳 Token Efficiency",
+        "全球格局：Palantir AIP / Anthropic Managed Agents / OpenAI Frontier 已是企業基礎設施，不是個人工具"
+      ]
+    },
+    {
       "id": "library-meta-skill",
       "title": "Library Meta Skill：用一個技能統治所有私有 Agent 技能",
       "subtitle": "8 頁矽谷流敘事。Indie Dev Dan 影片精華：10+ repo 工程師的技能同步地獄解方。Library YAML 只存 GitHub 指針不存本體，/library add/use/push/sync 四字訣跨裝置/跨團隊同版本。整個 Application 零行程式碼，純 SKILL.md + library.yaml，純 Agent 應用。適合多 repo 工程師、多裝置 Agent 操作者、私有專屬技能開發者。",
