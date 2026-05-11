@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "gitlab-ce-agent-swarm-poc",
+      "title": "本地 Mac 實證：pi Agent 用 GitLab CE 跑完整蜂群 SDLC",
+      "subtitle": "8 頁實證簡報。銜接 GitLab CE 取代 GitHub 理論架構，在 Mac Docker 本機跑通需求→實作→驗證→Release 完整流程。6 個 Issues、3 個檔案、v1.0.0 Release，60 分鐘 SDLC。痕跡四件套（程式碼/驗證腳本/結果檔/Issue Comments）、GAN 式生成評審分離設計、5 個實證發現。",
+      "href": "https://storage.googleapis.com/botrun-slides/gitlab-ce-agent-swarm-poc.html",
+      "icon": "play",
+      "badge": "Mac 實證",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-11T23:00:00+08:00",
+      "tags": ["cpu:本地實證", "zap:完整 SDLC", "cloud:pi Agent"]
+    },
+    {
       "id": "gitlab-ce-agent-swarm",
       "title": "機關想養 Agent 蜂群？GitLab CE 一站到底取代 GitHub",
       "subtitle": "8 頁簡報。air-gapped 機房如何用全 FOSS 完整重現 GitHub Agent 蜂群作業系統。14 個 Agent 需求對應 GitLab CE 元件、GitHub vs CE 15 項功能對照、單體 vs 多元件組合的採購優勢、三層部署規模從試點到機敏龍蝦級。",
