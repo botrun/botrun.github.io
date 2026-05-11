@@ -8,6 +8,7 @@
 
 ## 發佈內容
 
+- [Anthropic Managed Agents 四層解耦架構 — 多 Agent 協作的版本答案](https://storage.googleapis.com/botrun-slides/managed-agents-architecture.html): 7 頁詳細引證簡報。引証 YouTube 逐字稿（352 條時間戳）：Agent 當寵物 vs 牛馬、四層解耦（Agent→Session→記憶樹→Session Store PR 2026-04-19）、coordinator 最多 20 Agent、Docker 任務圖多模型組合、全球視角對比。
 - [Library Meta Skill：用一個技能統治所有私有 Agent 技能](https://storage.googleapis.com/botrun-slides/library-meta-skill.html): 8 頁矽谷流敘事。Indie Dev Dan 影片精華：10+ repo 工程師的技能同步地獄解方。Library YAML 只存 GitHub 指針不存本體，/library add/use/push/sync 四字訣跨裝置/跨團隊同版本。整個 Application 零行程式碼，純 SKILL.md + library.yaml，純 Agent 應用新典範。
 - [六個 API 搞定 agentic AI 多檔對話 — S3 + OpenAI 兼容最小介面](https://botrun-protected-257949799705.asia-east1.run.app/agentic-file-api-min.html): 8 頁矽谷流敘事。給政府舊公文系統、檢察官系統的 SI 廠商：別發明新 API、吻合既有世界標準。三輪砍掉 3 個 endpoint（v1 自創 9 → v2 對齊 S3+OpenAI 6 → v3 上網查 2026 標準確認）。最終只剩 5 個 S3 兼容（PUT/GET/DELETE bucket+key）+ 1 個 OpenAI Chat Completions（含 file_search 引 bucket）。對方廠商用 boto3 + openai SDK 1 天上手、零自家 SDK。MCP 是未來標準但對 SI 廠商過早（沒 SDK 經驗、SSE 過 firewall 難、採購規格寫不進）— 留為新世代 agent 選配，後端共用 MinIO 雙軌零分叉。下一步：寫成 OpenAPI 3.1 yaml 進採購規格書。
 - [你的 AI 是失憶補習生嗎？— Hermes 對得起 a16z 五大痛點嗎（高中生版）](https://botrun-protected-257949799705.asia-east1.run.app/hermes-a16z-high-school.html): 7 頁矽谷流敘事（高中生都能懂）。把 a16z 5 月萬字長文翻譯成補習班比喻：LLM＝下課就忘的補習生、上下文＝隨身筆記本、RAG＝參考書區、系統提示詞＝手心小抄。逐題對答案 Hermes Agent 解掉幾個：2 個解掉（學長傳承＋審計地端）／2 個半套（重複任務 OK、創造性與新法規要離線微調補）／1 個救不了（老師傅手感）。給政府的三句白話結論：馬上能上的、要排程做的、要認命的。
