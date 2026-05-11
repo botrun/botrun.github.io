@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "agentic-file-api-min",
+      "title": "六個 API 搞定 agentic AI 多檔對話 — S3 + OpenAI 兼容最小介面",
+      "subtitle": "8 頁矽谷流敘事。給政府舊公文系統、檢察官系統的 SI 廠商：別發明新 API、吻合既有世界標準。三輪砍掉 3 個 endpoint（v1 自創 9 → v2 對齊 S3+OpenAI 6 → v3 上網查 2026 標準確認）。最終只剩 5 個 S3 兼容（PUT/GET/DELETE bucket+key）+ 1 個 OpenAI Chat Completions（含 file_search 引 bucket）。對方廠商用 boto3 + openai SDK 1 天上手、零自家 SDK。MCP 是未來標準但對 SI 廠商過早（沒 SDK 經驗、SSE 過 firewall 難、採購規格寫不進）— 留為新世代 agent 選配，後端共用 MinIO 雙軌零分叉。下一步：寫成 OpenAPI 3.1 yaml 進採購規格書。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/agentic-file-api-min.html",
+      "protected": true,
+      "icon": "api",
+      "badge": "API 規劃",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-11T12:13:32+08:00",
+      "tags": [
+        "api:S3+OpenAI 兼容",
+        "shield-check:政府機敏 IAP",
+        "minimum:最小 6 endpoint"
+      ],
+      "concepts": [
+        "對象決定協議：傳統 SI 廠商（公文／檢察官系統）= S3+OpenAI 兼容；新世代 agent（Claude/Cursor）= MCP 選配；舊系統批次 = SFTP 入庫，三條對外介面共用同一個 MinIO 後端 SSOT",
+        "六個 endpoint 全表：001 PUT /{bucket} 建專案、002 PUT /{bucket}/{key} 上傳、003 GET /{bucket}?list-type=2 列檔、004 GET /{bucket}/{key} 下載、005 DELETE /{bucket}/{key} 刪檔、006 POST /v1/chat/completions 含 file_search.bucket 引 RAG scope",
+        "認證內建在 header：S3 用 AWS SigV4、Chat 用 Bearer Token，零個獨立 /v1/auth/token endpoint，廠商用 boto3 + openai SDK 即用",
+        "為何不主推 MCP：傳統廠商熟 Java/.NET RESTful 沒 MCP SDK 經驗、沒 MCP host（不是 Claude Desktop 環境）、SSE 過 firewall 議題複雜、政府採購範本沒「MCP API」這個詞、新協議要重走資安審",
+        "演化三步：v1 自創 9 endpoint（廠商：哪家規格？）→ v2 砍到 6 對齊 S3+OpenAI（廠商：OK 我用 boto3）→ v3 上網查 2026 業界標準確認 MCP 是 agent 標準但對 SI 過早 → v2 答案被驗證",
+        "下一步寫成 .agents/skills/gov-doc-project-api/references/openapi.yaml — 採購文件、廠商說明會、資安審查可直接引用；後端 MinIO + FastAPI shim 5 行 OpenAI-compat + 自動 embedding hook"
+      ]
+    },
+    {
       "id": "hermes-a16z-high-school",
       "title": "你的 AI 是失憶補習生嗎？— Hermes 對得起 a16z 五大痛點嗎（高中生版）",
       "subtitle": "7 頁矽谷流敘事（高中生都能懂）。把 a16z 5 月萬字長文翻譯成補習班比喻：LLM＝下課就忘的補習生、上下文＝隨身筆記本、RAG＝參考書區、系統提示詞＝手心小抄。逐題對答案 Hermes Agent 解掉幾個：2 個解掉（學長傳承＋審計地端）／2 個半套（重複任務 OK、創造性與新法規要離線微調補）／1 個救不了（老師傅手感）。給政府的三句白話結論：馬上能上的、要排程做的、要認命的。",
