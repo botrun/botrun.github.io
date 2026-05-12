@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "hermes-2month-update",
+      "title": "60 天 6700 Commits — Hermes Agent 兩個月五大突破",
+      "subtitle": "5 頁簡報。Computer Use 電腦操控正式登場、Windows 原生大躍進、Gateway 新增 LINE/Teams/Telegram/Feishu、Skills/Plugins 自我演化、TUI 終端介面大改。feat 1025、fix 3618，每天 110 個版本更新的極速進化全記錄。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-2month-update.html",
+      "icon": "zap",
+      "badge": "Hermes 進化",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-12T09:10:07+08:00",
+      "tags": ["cpu:Hermes", "zap:6700 commits", "cloud:Computer Use"]
+    },
+    {
       "id": "gitlab-ce-agent-swarm-poc",
       "title": "本地 Mac 實證：pi Agent 用 GitLab CE 跑完整蜂群 SDLC",
       "subtitle": "8 頁實證簡報。銜接 GitLab CE 取代 GitHub 理論架構，在 Mac Docker 本機跑通需求→實作→驗證→Release 完整流程。6 個 Issues、3 個檔案、v1.0.0 Release，60 分鐘 SDLC。痕跡四件套（程式碼/驗證腳本/結果檔/Issue Comments）、GAN 式生成評審分離設計、5 個實證發現。",

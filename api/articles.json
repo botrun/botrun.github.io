@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-05-11T04:23:36.993Z",
-  "total": 156,
+  "generatedAt": "2026-05-12T09:10:07+08:00",
+  "total": 157,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "id": "hermes-2month-update",
+      "title": "60 天 6700 Commits — Hermes Agent 兩個月五大突破",
+      "subtitle": "5 頁簡報。Computer Use 電腦操控正式登場、Windows 原生大躍進、Gateway 新增 LINE/Teams/Telegram/Feishu、Skills/Plugins 自我演化、TUI 終端介面大改。feat 1025、fix 3618，每天 110 個版本更新的極速進化全記錄。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-2month-update.html",
+      "icon": "zap",
+      "badge": "Hermes 進化",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-12T09:10:07+08:00",
+      "tags": ["cpu:Hermes", "zap:6700 commits", "cloud:Computer Use"],
+      "concepts": [
+        "Hermes Agent 兩個月極速進化",
+        "Computer Use 電腦操控",
+        "Windows 原生支援",
+        "Gateway 訊息平台擴展",
+        "Skills Plugins 自我演化"
+      ]
+    },
     {
       "id": "library-meta-skill",
       "title": "Library Meta Skill：用一個技能統治所有私有 Agent 技能",

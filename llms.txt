@@ -8,6 +8,7 @@
 
 ## 發佈內容
 
+- [60 天 6700 Commits — Hermes Agent 兩個月五大突破](https://storage.googleapis.com/botrun-slides/hermes-2month-update.html): 5 頁簡報。Computer Use 電腦操控正式登場、Windows 原生大躍進（21 feat）、Gateway 新增 LINE/Teams/Telegram/Feishu（455 feat）、Skills/Plugins 自我演化、TUI 終端介面大改（433 feat）。feat 1025、fix 3618，每天 110 個版本更新的兩個月極速進化全記錄。
 - [Anthropic Managed Agents 四層解耦架構 — 多 Agent 協作的版本答案](https://storage.googleapis.com/botrun-slides/managed-agents-architecture.html): 7 頁詳細引證簡報。引証 YouTube 逐字稿（352 條時間戳）：Agent 當寵物 vs 牛馬、四層解耦（Agent→Session→記憶樹→Session Store PR 2026-04-19）、coordinator 最多 20 Agent、Docker 任務圖多模型組合、全球視角對比。
 - [Library Meta Skill：用一個技能統治所有私有 Agent 技能](https://storage.googleapis.com/botrun-slides/library-meta-skill.html): 8 頁矽谷流敘事。Indie Dev Dan 影片精華：10+ repo 工程師的技能同步地獄解方。Library YAML 只存 GitHub 指針不存本體，/library add/use/push/sync 四字訣跨裝置/跨團隊同版本。整個 Application 零行程式碼，純 SKILL.md + library.yaml，純 Agent 應用新典範。
 - [六個 API 搞定 agentic AI 多檔對話 — S3 + OpenAI 兼容最小介面](https://botrun-protected-257949799705.asia-east1.run.app/agentic-file-api-min.html): 8 頁矽谷流敘事。給政府舊公文系統、檢察官系統的 SI 廠商：別發明新 API、吻合既有世界標準。三輪砍掉 3 個 endpoint（v1 自創 9 → v2 對齊 S3+OpenAI 6 → v3 上網查 2026 標準確認）。最終只剩 5 個 S3 兼容（PUT/GET/DELETE bucket+key）+ 1 個 OpenAI Chat Completions（含 file_search 引 bucket）。對方廠商用 boto3 + openai SDK 1 天上手、零自家 SDK。MCP 是未來標準但對 SI 廠商過早（沒 SDK 經驗、SSE 過 firewall 難、採購規格寫不進）— 留為新世代 agent 選配，後端共用 MinIO 雙軌零分叉。下一步：寫成 OpenAPI 3.1 yaml 進採購規格書。
