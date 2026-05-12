@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-11T13:30:00+08:00"
+    "lastUpdated": "2026-05-12T14:00:00+08:00"
   },
   "items": [
+    {
+      "id": "hermes-swarm-task-queue",
+      "title": "Issue 即 Prompt，Branch 即鎖 — Hermes 24h 蜂群任務架構全紀錄",
+      "subtitle": "7 頁架構簡報。GitHub Issues 當任務佇列、branch-as-lock 原子性防競態、GAN 對抗 25 binary rubric 品質驗收、speed_score/quality_score 雙軸評分、30 分鐘死線機制、方法學紀錄義務（每階段 gh issue comment）。dispatcher cron job 每分鐘 poll，branch 存在即跳過——架構保證 AI 做到了，不只是 AI 說做到了。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-swarm-task-queue.html",
+      "icon": "cpu",
+      "badge": "蜂群架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-12T14:00:00+08:00",
+      "tags": ["cpu:Hermes Agent", "zap:25 rubric", "cloud:GitHub Issues"]
+    },
     {
       "id": "hermes-2month-update",
       "title": "60 天 6700 Commits — Hermes Agent 兩個月五大突破",
