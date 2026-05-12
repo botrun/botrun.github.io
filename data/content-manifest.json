@@ -5,6 +5,17 @@
   },
   "items": [
     {
+      "id": "agentic-ai-two-factions-2026-05",
+      "title": "Agentic AI 兩派分裂：2026 年 5 月給一般人的深度報告",
+      "subtitle": "10 分鐘長文 + 4 張 SVG 圖。雲端派 vs 終端派一刀劃開：Hermes Agent（Nous，$65M 募資、687 Skills、20 平台）vs pi-mono（Earendil 收購、Ronacher 背書、4 個動作、200 字提示）。oh-my-pi 在 Terminal-Bench 把 Grok Code Fast 從 6.7% 拉到 68.3%——同模型、換工具、十倍跳。三大訊號（Karpathy、黃仁勳、Pichai）+ 三個 YouTube 反直覺陷阱。給朋友聽就一句：「agent 已經分兩派，看誰能讓另一派回不去。」",
+      "href": "https://storage.googleapis.com/botrun-slides/agentic-ai-two-factions-2026-05.html",
+      "icon": "git-branch",
+      "badge": "深度報告",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-12T16:30:00+08:00",
+      "tags": ["cpu:Hermes vs pi-mono", "cloud:雲端 vs 終端", "zap:10x 工具差距"]
+    },
+    {
       "id": "hermes-swarm-task-queue",
       "title": "Issue 即 Prompt，Branch 即鎖 — Hermes 24h 蜂群任務架構全紀錄",
       "subtitle": "7 頁架構簡報。GitHub Issues 當任務佇列、branch-as-lock 原子性防競態、GAN 對抗 25 binary rubric 品質驗收、speed_score/quality_score 雙軸評分、30 分鐘死線機制、方法學紀錄義務（每階段 gh issue comment）。dispatcher cron job 每分鐘 poll，branch 存在即跳過——架構保證 AI 做到了，不只是 AI 說做到了。",
