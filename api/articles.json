@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-05-12T09:10:07+08:00",
-  "total": 157,
+  "generatedAt": "2026-05-12T22:50:00+08:00",
+  "total": 158,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "id": "space-agent-self-evolve-browser",
+      "title": "瀏覽器裡長出自己的 UI：Space Agent 把 Agent 搬到前端 JS 的五個技術突破",
+      "subtitle": "David Ondrej 訪談 Agent Zero 創辦人 Jan，深度剖析 Space Agent — 第一個能在前端 JavaScript Runtime 改寫自己 UI 的代理人。25 天用 Codex + agents.md 從零到產品。五張 SVG 拆解：三層架構合一、Token 經濟學（97/280/19 tokens）、瞬態空間、Widget 函數持久化、DOM 壓縮成編號＋文字。三條可直接抄的設計準則。",
+      "href": "https://storage.googleapis.com/botrun-slides/space-agent-self-evolve-browser.html",
+      "icon": "globe",
+      "badge": "影片解構",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-05-12T22:50:00+08:00",
+      "tags": ["cpu:Space Agent + Agent Zero", "zap:agents.md 階層", "cloud:瀏覽器 JS Runtime"],
+      "concepts": [
+        "前端 JS Runtime 代理人",
+        "Token 經濟學純文字 + 特殊標記",
+        "瞬態空間 prompt caching 逆用",
+        "Widget 函數持久化與 Git 時光旅行",
+        "agents.md 階層化開發"
+      ]
+    },
     {
       "id": "hermes-2month-update",
       "title": "60 天 6700 Commits — Hermes Agent 兩個月五大突破",
