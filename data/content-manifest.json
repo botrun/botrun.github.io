@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-12T17:30:00+08:00"
+    "lastUpdated": "2026-05-12T22:32:00+08:00"
   },
   "items": [
+    {
+      "id": "tanstack-supply-chain-impact-2026-05-11",
+      "title": "「先別 npm install」：TanStack 連環雷的影響範圍與三步攻擊鏈拆解",
+      "subtitle": "2026-05-11 起爆、20 分鐘內被偵測攔下、但蠕蟲還在跨生態系傳播。三張 SVG 拆解：四同心圓影響範圍（TanStack→Mistral→更多 npm→PyPI）、三步攻擊鏈（pull_request_target 信任破口→Actions cache poisoning→OIDC token 記憶體竊取）、五層縱深防護（環境隔離／secrets 不落地／minimum release age／禁 lifecycle script／CI 信任邊界）。連回 axios 事件升級版，給機關客戶機敏資料路線的補丁建議。",
+      "href": "https://storage.googleapis.com/botrun-slides/tanstack-supply-chain-impact-2026-05-11.html",
+      "icon": "shield-alert",
+      "badge": "供應鏈攻擊",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-12T22:32:00+08:00",
+      "tags": ["cpu:TanStack + Mistral + PyPI", "zap:pull_request_target", "cloud:OIDC token 竊取"]
+    },
     {
       "id": "uncensored-ai-david-andre-deep-analysis",
       "title": "無審查 AI 模型：「你不微調它，它就微調你」",
