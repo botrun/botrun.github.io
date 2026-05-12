@@ -1,9 +1,20 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-12T14:00:00+08:00"
+    "lastUpdated": "2026-05-12T17:30:00+08:00"
   },
   "items": [
+    {
+      "id": "uncensored-ai-david-andre-deep-analysis",
+      "title": "無審查 AI 模型：「你不微調它，它就微調你」",
+      "subtitle": "深度剖析 David Andre《This 100% uncensored AI model is insane… let's run it》。九大章節 + 2 張 SVG 圖：模型反向微調你、八大合法情境、過度拒答 70% 誤殺率、雲端 vs 本機技術堆疊、Abliteration + 微調雙技法、Super Gemma 4 26B Uncensored 實作、Reviewer × Judge × SQLite 自動越獄循環、example.md 隱藏設計、Claude Opus 比 Codex 更願意配合的意外觀察。對接 NCHC 31B 路線「機敏快 3 倍便宜 60 倍」。",
+      "href": "https://storage.googleapis.com/botrun-slides/uncensored-ai-david-andre-deep-analysis.html",
+      "icon": "shield-off",
+      "badge": "影片解構",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-12T17:30:00+08:00",
+      "tags": ["cpu:Super Gemma 4 26B", "zap:auto-research loop", "cloud:open weights"]
+    },
     {
       "id": "agentic-ai-two-factions-2026-05",
       "title": "Agentic AI 兩派分裂：2026 年 5 月給一般人的深度報告",
