@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-05-12T22:50:00+08:00",
-  "total": 158,
+  "generatedAt": "2026-05-14T08:15:26+08:00",
+  "total": 159,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "id": "agent-trains-models-merve-noyan-hf",
+      "title": "Agent 替你訓練模型：把一天的紙筆計算壓成一句話",
+      "subtitle": "Hugging Face 開源工程師 Merve Noyan 演講重點：開源模型已追上閉源（GLM 5.1 登 Artificial Analysis 頂端）、Hermes Agent 是她最愛、Hub Skills 讓 Claude Code 自動算 VRAM 啟動微調、三萬篇論文 OCR 全程 prompting。13 處時間戳引證 + 對應到本地波蜂群 / Hermes 31B 路線的第三方驗證。",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-trains-models-merve-noyan-hf.html",
+      "icon": "cpu",
+      "badge": "影片解構",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-14T08:15:26+08:00",
+      "tags": ["cpu:Hermes Agent", "zap:LLM Trainer Skill", "cloud:Hugging Face Hub"],
+      "concepts": [
+        "開源已追上閉源：GLM 5.1 登 Artificial Analysis Intelligence Index 頂端",
+        "Merve 力挺 Hermes Agents 配 GLM 5.1，獨立驗證波蜂群 / 31B 路線",
+        "Hub 三大新基建：benchmark datasets、Inference Providers、traces",
+        "LLM Trainer Skill：Agent 自己算 VRAM、選機器、寫腳本、丟 job、推 Hub",
+        "三萬篇論文 OCR 全 prompting，對應環管署六萬筆機敏 CSV 政府落地版"
+      ]
+    },
     {
       "id": "space-agent-self-evolve-browser",
       "title": "瀏覽器裡長出自己的 UI：Space Agent 把 Agent 搬到前端 JS 的五個技術突破",

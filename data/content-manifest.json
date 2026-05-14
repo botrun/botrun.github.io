@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-12T22:32:00+08:00"
+    "lastUpdated": "2026-05-14T08:15:26+08:00"
   },
   "items": [
+    {
+      "id": "agent-trains-models-merve-noyan-hf",
+      "title": "Agent 替你訓練模型：把一天的紙筆計算壓成一句話",
+      "subtitle": "Hugging Face 開源工程師 Merve Noyan 演講重點：開源模型已追上閉源（GLM 5.1 登 Artificial Analysis 頂端）、Hermes Agent 是她最愛、Hub Skills 讓 Claude Code 自動算 VRAM 啟動微調、三萬篇論文 OCR 全程 prompting。13 處時間戳引證 + 對應到本地波蜂群 / Hermes 31B 路線的第三方驗證。",
+      "href": "https://storage.googleapis.com/botrun-slides/agent-trains-models-merve-noyan-hf.html",
+      "icon": "cpu",
+      "badge": "影片解構",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-14T08:15:26+08:00",
+      "tags": ["cpu:Hermes Agent", "zap:LLM Trainer Skill", "cloud:Hugging Face Hub"],
+      "concepts": [
+        "開源已追上閉源：GLM 5.1 登 Artificial Analysis Intelligence Index 頂端，Claude 效能退化事件反證『可審計權重』的剛性需求",
+        "Merve 力挺 Hermes Agents（『這座山我要死守』）配 GLM 5.1，獨立驗證波蜂群 / botrun-pi 的 31B 路線方向",
+        "Hub 三大新基建：benchmark datasets（用 SWE-bench / AIME 直接排序）、Inference Providers（多供應商比價）、traces（你的 Codex/Pi session 就是訓練資料）",
+        "LLM Trainer Skill：跟 Claude Code 說『把 Qwen2-VL 在 LLaVA-Instruct-Mix 上微調』，agent 自己算 VRAM、選機器、寫腳本、丟 job、推 Hub",
+        "三萬篇論文 OCR 案例：用 Chandra OCR + HF jobs + buckets，全程 prompting 取代『一整天的紙筆計算』，是機關場景（環管署六萬筆機敏 CSV）的方法論同源"
+      ]
+    },
     {
       "id": "tanstack-supply-chain-impact-2026-05-11",
       "title": "「先別 npm install」：TanStack 連環雷的影響範圍與三步攻擊鏈拆解",

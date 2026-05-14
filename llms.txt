@@ -8,6 +8,7 @@
 
 ## 發佈內容
 
+- [Agent 替你訓練模型 — Merve Noyan @ Hugging Face 演講重點](https://storage.googleapis.com/botrun-slides/agent-trains-models-merve-noyan-hf.html): 影片解構（YouTube OV56RddyFuU，13 處時間戳引證）。HF 開源工程師 Merve Noyan 演講重點：開源模型已追上閉源（GLM 5.1 登 Artificial Analysis 頂端）、Hermes Agent 是她最愛（『這座山我要死守』）、Hub Skills 讓 Claude Code 自動算 VRAM 啟動微調（Qwen2-VL on LLaVA-Instruct-Mix 現場 demo）、三萬篇論文 OCR 全程 prompting（Chandra OCR + HF jobs + buckets）。對接本地波蜂群 / Hermes 31B 路線的獨立第三方驗證。
 - [瀏覽器裡長出自己的 UI — Space Agent 把 Agent 搬到前端 JS 的五個技術突破](https://storage.googleapis.com/botrun-slides/space-agent-self-evolve-browser.html): David Ondrej 訪談 Agent Zero 創辦人 Jan，47 分鐘影片深度剖析。Space Agent 是第一個能在前端 JS Runtime 改寫自己 UI 的代理人，25 天用 Codex + agents.md 從零到產品。五張 SVG：三層架構合一、Token 經濟學（97/280/19 tokens 三個關鍵數字）、瞬態空間（把會變的東西放快取斷點之後）、Widget 函數持久化（存函數不存 DOM + Git 時光旅行）、DOM 壓縮成編號＋文字。三條可直接抄的設計準則 + 與波蜂群／Factory Missions 的差異定位。
 - [60 天 6700 Commits — Hermes Agent 兩個月五大突破](https://storage.googleapis.com/botrun-slides/hermes-2month-update.html): 5 頁簡報。Computer Use 電腦操控正式登場、Windows 原生大躍進（21 feat）、Gateway 新增 LINE/Teams/Telegram/Feishu（455 feat）、Skills/Plugins 自我演化、TUI 終端介面大改（433 feat）。feat 1025、fix 3618，每天 110 個版本更新的兩個月極速進化全記錄。
 - [Anthropic Managed Agents 四層解耦架構 — 多 Agent 協作的版本答案](https://storage.googleapis.com/botrun-slides/managed-agents-architecture.html): 7 頁詳細引證簡報。引証 YouTube 逐字稿（352 條時間戳）：Agent 當寵物 vs 牛馬、四層解耦（Agent→Session→記憶樹→Session Store PR 2026-04-19）、coordinator 最多 20 Agent、Docker 任務圖多模型組合、全球視角對比。
