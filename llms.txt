@@ -3,10 +3,44 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-16T00:47:43.481Z
+> 生成時間：2026-05-16T00:49:43.525Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 256 個項目，按發佈日期降序排列。
+共 258 個項目，按發佈日期降序排列。
+
+## 駕馭最前沿 AI 的，恰恰是最老派的軟體工程鐵律
+
+> AI 工程師 Matt Pocock「完整演示 AI 程式設計工作流」演講深度解構。為什麼真正讓你駕馭最強 AI 的，是程式碼大全、重構這種最老派的鐵律？聰明區 vs 愚蠢區的 10 萬 token 紅線、把 AI 當《記憶碎片》失憶超級實習生每任務後清空、靈魂拷問的前置痛苦、白班拆任務夜班 AFK 的 RALF 閉環、便宜小模型搬磚 Opus 監工、橫向開發是死路改用夜光蛋垂直切片、深模組黑盒省 token、推拉法則把品味化作程式碼紅線。16 處 YouTube 時間戳引證。
+
+**關鍵觀念：**
+- 聰明區 vs 愚蠢區：上下文約 10 萬 token 後推理崩壞，每完成小任務就殘忍清空上下文，把 AI 當《記憶碎片》失憶超級實習生；連自我審查也要強制另開新對話
+- 拒絕上下文壓縮：壓縮摘要會丟失大量隱式約束，只讓 AI 相信當下跑得通的真實程式碼，嚴防『文件腐爛』，完美需求文件閱後即焚
+- 前置痛苦：開乾淨上下文後讓 AI 化身嚴苛技術面試官連珠炮拷問你，達成共識且明確劃出『絕對不做』邊界，痛在規劃遠勝後期幾萬行找 bug
+- 白班/夜班 + 多代理協同：人類白班拆解看板任務，AI 夜班 AFK 在 RALF 閉環自轉；廉價小模型搬磚、頂級 Opus 當品控官監工
+- 夜光蛋垂直切片 + 深模組：禁橫向開發，最小任務也要打通前端→服務→資料庫整條閉環配 TDD；用 Ousterhout 深模組黑盒省 token，推拉法則把人類品味化作程式碼紅線
+
+- [線上版](https://storage.googleapis.com/botrun-slides/ai-coding-workflow-old-school-rules.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/ai-coding-workflow-old-school-rules.html/llms.txt): 該專案的 llms.txt
+- 類型：影片解構
+- 發佈日期：2026-05-16T08:49:00+08:00
+- 標籤：AI 工作流、上下文管理、深模組
+
+## 讓兩個 AI 握手：Hermes 接上 Claude Code OS
+
+> Jack Roberts 影片解構（31 分）。痛點：手機端 AI 助理（Telegram/Hermes）與電腦端 AI 工程師（Claude Code/Codex）『沒有握手』——散步時想到的點子，到電腦前要重講一次、然後永遠遺失。解法不是再裝工具，而是建一座『Claude OS 橋接』讓兩邊雙向共享記憶、夜間自我反思（回看對話給改善建議：你 87% 工作丟給 Opus、多數是 Haiku 領域）。三步上線：裝 Hermes、養 Pantheon 人格群、接 Obsidian 記憶；安全鐵律最小權限（只擬稿不寄出、secrets 走 env）。15 處 YouTube 時間戳引證，對應本地波蜂群 × Hermes 31B 路線第三方印證。
+
+**關鍵觀念：**
+- 痛點是『沒有握手』：助理端與工程師端各有記憶卻不交換，切換工具上下文歸零，靈感重講一次就遺失
+- 解法是雙向記憶橋（Claude OS bridge），不是再多裝工具：Hermes 聽到的 Claude Code 知道，反之亦然
+- Pantheon 人格群：給 AI 配角色＋模型＋system prompt，folder-based 自動同步、可鏡像私有 GitHub 回滾；例行任務委派便宜模型
+- 夜間自我反思迴圈：cron 每晚回看跨模型對話 → 早上 2–3 條可執行建議（含 Opus→Haiku 降階）+ morning brief
+- 安全鐵律最小權限：MCP 連接器逐項勾選 scope（只擬稿不寄出），secrets 走 env var 不落 chat log/GitHub；對應本地波蜂群 × Hermes 31B 越用越聰明路線
+
+- [線上版](https://storage.googleapis.com/botrun-slides/hermes-claude-os-bridge-jack-roberts.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/hermes-claude-os-bridge-jack-roberts.html/llms.txt): 該專案的 llms.txt
+- 類型：影片解構
+- 發佈日期：2026-05-16T08:49:05+08:00
+- 標籤：雙向記憶橋、夜間自我反思、最小權限
 
 ## 叫它修一個 bug，它改了一千行：Karpathy 的 AI 寫程式四律
 

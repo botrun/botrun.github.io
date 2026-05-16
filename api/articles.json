@@ -1,8 +1,32 @@
 {
-  "generatedAt": "2026-05-16T00:47:43.485Z",
-  "total": 169,
+  "generatedAt": "2026-05-16T00:49:43.530Z",
+  "total": 171,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "駕馭最前沿 AI 的，恰恰是最老派的軟體工程鐵律",
+      "date": "2026-05-16T08:49:00+08:00",
+      "content": "AI 工程師 Matt Pocock「完整演示 AI 程式設計工作流」演講深度解構。為什麼真正讓你駕馭最強 AI 的，是程式碼大全、重構這種最老派的鐵律？聰明區 vs 愚蠢區的 10 萬 token 紅線、把 AI 當《記憶碎片》失憶超級實習生每任務後清空、靈魂拷問的前置痛苦、白班拆任務夜班 AFK 的 RALF 閉環、便宜小模型搬磚 Opus 監工、橫向開發是死路改用夜光蛋垂直切片、深模組黑盒省 token、推拉法則把品味化作程式碼紅線。16 處 YouTube 時間戳引證。",
+      "tags": [
+        "影片解構",
+        "AI 工作流",
+        "上下文管理",
+        "深模組"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/ai-coding-workflow-old-school-rules.html"
+    },
+    {
+      "title": "讓兩個 AI 握手：Hermes 接上 Claude Code OS",
+      "date": "2026-05-16T08:49:05+08:00",
+      "content": "Jack Roberts 影片解構（31 分）。痛點：手機端 AI 助理（Telegram/Hermes）與電腦端 AI 工程師（Claude Code/Codex）『沒有握手』——散步時想到的點子，到電腦前要重講一次、然後永遠遺失。解法不是再裝工具，而是建一座『Claude OS 橋接』讓兩邊雙向共享記憶、夜間自我反思（回看對話給改善建議：你 87% 工作丟給 Opus、多數是 Haiku 領域）。三步上線：裝 Hermes、養 Pantheon 人格群、接 Obsidian 記憶；安全鐵律最小權限（只擬稿不寄出、secrets 走 env）。15 處 YouTube 時間戳引證，對應本地波蜂群 × Hermes 31B 路線第三方印證。",
+      "tags": [
+        "影片解構",
+        "雙向記憶橋",
+        "夜間自我反思",
+        "最小權限"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/hermes-claude-os-bridge-jack-roberts.html"
+    },
     {
       "title": "叫它修一個 bug，它改了一千行：Karpathy 的 AI 寫程式四律",
       "date": "2026-05-16T08:43:23+08:00",
