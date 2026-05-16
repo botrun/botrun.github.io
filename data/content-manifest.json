@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "microsoft-mdash-multi-agent-security",
+      "title": "微軟 M-DASH：沒有最強模型，照樣贏最強模型",
+      "subtitle": "微軟用『別人家的公開模型』組成 100+ 代理人五階段流水線，在 CyberGym 資安標竿拿下 88.45% 榜首，打敗 Anthropic Mythos（83.1）與 OpenAI GPT-5.5（81.8）。挖出 16 個真實 Windows 漏洞、4 個 critical。核心洞見：護城河不是模型，是模型外的系統。22 處時間戳引證對應本地波蜂群 / 系統編排路線。",
+      "href": "https://storage.googleapis.com/botrun-slides/microsoft-mdash-multi-agent-security.html",
+      "icon": "shield-check",
+      "badge": "影片解構",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-16T08:43:10+08:00",
+      "tags": [
+        "shield-check:多代理人資安",
+        "layers:系統編排 > 單一模型",
+        "bug:16 真實 CVE"
+      ],
+      "concepts": [
+        "沒有最強模型也能贏：微軟無前沿模型，用 generally available 公開模型組系統，CyberGym 88.45% 勝 Mythos 83.1 / GPT-5.5 81.8",
+        "M-DASH 五階段流水線（準備→掃描→驗證→去重→證明）100+ 專業 agent；不同階段用不同模型，模型『意見不合』本身就是訊號",
+        "兩條通往超級 AI 的路：練最強單一模型 vs 把現有模型組成系統——後者仍踩在前者肩上（前沿停滯則天花板停）",
+        "實證：16 真實 Windows CVE（4 critical）、歷史 bug 召回 96–100%、私有注入 21/21 全抓零誤報、團隊出自 DARPA $29.5M 得主 Team Atlanta",
+        "核心洞見：護城河不是模型而是模型外的系統（流水線/agent/驗證/外掛），換模型只要 swap config——對應本地波蜂群『工作流結晶、模型可換、工程資產複利』路線"
+      ]
+    },
+    {
       "id": "agent-trains-models-merve-noyan-hf",
       "title": "Agent 替你訓練模型：把一天的紙筆計算壓成一句話",
       "subtitle": "Hugging Face 開源工程師 Merve Noyan 演講重點：開源模型已追上閉源（GLM 5.1 登 Artificial Analysis 頂端）、Hermes Agent 是她最愛、Hub Skills 讓 Claude Code 自動算 VRAM 啟動微調、三萬篇論文 OCR 全程 prompting。13 處時間戳引證 + 對應到本地波蜂群 / Hermes 31B 路線的第三方驗證。",
@@ -14,7 +36,11 @@
       "badge": "影片解構",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-14T08:15:26+08:00",
-      "tags": ["cpu:Hermes Agent", "zap:LLM Trainer Skill", "cloud:Hugging Face Hub"],
+      "tags": [
+        "cpu:Hermes Agent",
+        "zap:LLM Trainer Skill",
+        "cloud:Hugging Face Hub"
+      ],
       "concepts": [
         "開源已追上閉源：GLM 5.1 登 Artificial Analysis Intelligence Index 頂端，Claude 效能退化事件反證『可審計權重』的剛性需求",
         "Merve 力挺 Hermes Agents（『這座山我要死守』）配 GLM 5.1，獨立驗證波蜂群 / botrun-pi 的 31B 路線方向",
@@ -32,7 +58,11 @@
       "badge": "供應鏈攻擊",
       "badgeColor": "#b5454a",
       "publishDate": "2026-05-12T22:32:00+08:00",
-      "tags": ["cpu:TanStack + Mistral + PyPI", "zap:pull_request_target", "cloud:OIDC token 竊取"]
+      "tags": [
+        "cpu:TanStack + Mistral + PyPI",
+        "zap:pull_request_target",
+        "cloud:OIDC token 竊取"
+      ]
     },
     {
       "id": "uncensored-ai-david-andre-deep-analysis",
@@ -43,7 +73,11 @@
       "badge": "影片解構",
       "badgeColor": "#b5454a",
       "publishDate": "2026-05-12T17:30:00+08:00",
-      "tags": ["cpu:Super Gemma 4 26B", "zap:auto-research loop", "cloud:open weights"]
+      "tags": [
+        "cpu:Super Gemma 4 26B",
+        "zap:auto-research loop",
+        "cloud:open weights"
+      ]
     },
     {
       "id": "agentic-ai-two-factions-2026-05",
@@ -54,7 +88,11 @@
       "badge": "深度報告",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-12T16:30:00+08:00",
-      "tags": ["cpu:Hermes vs pi-mono", "cloud:雲端 vs 終端", "zap:10x 工具差距"]
+      "tags": [
+        "cpu:Hermes vs pi-mono",
+        "cloud:雲端 vs 終端",
+        "zap:10x 工具差距"
+      ]
     },
     {
       "id": "hermes-swarm-task-queue",
@@ -65,7 +103,11 @@
       "badge": "蜂群架構",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-12T14:00:00+08:00",
-      "tags": ["cpu:Hermes Agent", "zap:25 rubric", "cloud:GitHub Issues"]
+      "tags": [
+        "cpu:Hermes Agent",
+        "zap:25 rubric",
+        "cloud:GitHub Issues"
+      ]
     },
     {
       "id": "hermes-2month-update",
@@ -76,7 +118,11 @@
       "badge": "Hermes 進化",
       "badgeColor": "#e8634a",
       "publishDate": "2026-05-12T09:10:07+08:00",
-      "tags": ["cpu:Hermes", "zap:6700 commits", "cloud:Computer Use"]
+      "tags": [
+        "cpu:Hermes",
+        "zap:6700 commits",
+        "cloud:Computer Use"
+      ]
     },
     {
       "id": "gitlab-ce-agent-swarm-poc",
@@ -87,7 +133,11 @@
       "badge": "Mac 實證",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-11T23:00:00+08:00",
-      "tags": ["cpu:本地實證", "zap:完整 SDLC", "cloud:pi Agent"]
+      "tags": [
+        "cpu:本地實證",
+        "zap:完整 SDLC",
+        "cloud:pi Agent"
+      ]
     },
     {
       "id": "gitlab-ce-agent-swarm",
@@ -98,7 +148,11 @@
       "badge": "機關蜂群",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-11T22:30:00+08:00",
-      "tags": ["cpu:GitLab CE", "zap:air-gapped", "cloud:FOSS 替代"]
+      "tags": [
+        "cpu:GitLab CE",
+        "zap:air-gapped",
+        "cloud:FOSS 替代"
+      ]
     },
     {
       "id": "agent-swarm-architecture",
@@ -109,7 +163,11 @@
       "badge": "蜂群架構",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-11T22:00:00+08:00",
-      "tags": ["cpu:Agent 蜂群", "zap:四層解耦", "cloud:高中生版"]
+      "tags": [
+        "cpu:Agent 蜂群",
+        "zap:四層解耦",
+        "cloud:高中生版"
+      ]
     },
     {
       "id": "managed-agents-architecture",
@@ -120,7 +178,11 @@
       "badge": "多 Agent 架構",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-11T20:20:46+08:00",
-      "tags": ["cpu:Agent 架構", "zap:四層解耦", "cloud:Managed Agents"],
+      "tags": [
+        "cpu:Agent 架構",
+        "zap:四層解耦",
+        "cloud:Managed Agents"
+      ],
       "concepts": [
         "四層解耦：Agent（靜態模板）→ Session（動態執行）→ 記憶樹（fork/rollback）→ Session Store（雲端無狀態，PR 2026-04-19）",
         "Anthropic SDK Beta 目錄逆向：coordinator 字段，最多 20 個 Agent，每個獨立 prompt+工具+MCP",
