@@ -1,9 +1,27 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-14T08:15:26+08:00"
+    "lastUpdated": "2026-05-16T08:43:23+08:00"
   },
   "items": [
+    {
+      "id": "karpathy-ai-coding-4-rules",
+      "title": "叫它修一個 bug，它改了一千行：Karpathy 的 AI 寫程式四律",
+      "subtitle": "拆解 GitHub 單月暴衝近 12 萬星、卻只有一個不到 100 行純文字檔的提示詞專案。把 Andrej Karpathy 三句吐槽提煉成四條可執行規則：① 動手前先想（不假設、不藏困惑）② 拒絕過度工程 ③ 精準修改只動相關行 ④ 驗收標準驅動。核心洞見：別把 AI 當聽話工讀生，要當成能力強但缺判斷力的夥伴 —— 告訴它做什麼與標準，不是怎麼做。14 處 YouTube 時間戳引證。",
+      "href": "https://storage.googleapis.com/botrun-slides/karpathy-ai-coding-4-rules.html",
+      "icon": "file-code",
+      "badge": "影片解構",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-16T08:43:23+08:00",
+      "tags": ["file-code:提示詞工程", "git-branch:乾淨 diff", "bot:自主迭代 Agent"],
+      "concepts": [
+        "規則一 動手前先想：有歧義列選項讓你選、不確定就停下問，絕不自己猜一個就開工，從根杜絕方向性錯誤",
+        "規則二 拒絕過度工程：不為只用一次的功能做抽象，200 行能寫成 50 行就重寫，檢驗標準是資深工程師會不會覺得過度設計",
+        "規則三 精準修改：只動跟需求直接相關的行，不順手優化相鄰程式、不重構沒壞的部分、遵循現有風格、無關死碼只提醒不刪",
+        "規則四 驗收標準驅動：把指令從『怎麼做』改成『達成什麼』，給清晰驗收標準後 AI 自我迭代到達標，從被動執行者變自主 Agent",
+        "核心洞見：別把 AI 當聽話初級工程師，要當成能力強但缺判斷力的夥伴；一個 <100 行檔案、零程式邏輯、零依賴，登頂 GitHub Trending"
+      ]
+    },
     {
       "id": "reality-transurfing",
       "title": "《現實穿梭》Reality Transurfing — 未來不需要被創造，只需要被選擇",
