@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-18T13:20:03.160Z
+> 生成時間：2026-05-18T13:22:55.526Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 261 個項目，按發佈日期降序排列。
+共 262 個項目，按發佈日期降序排列。
+
+## 孵跑分離：一次孵化，全球都能跑
+
+> 延續 Karpathy Loop — 孵(演化迴圈) 與 跑(純執行) 分離，技能包跨模型/雲/網路/OS/執行器
+
+**關鍵觀念：**
+- 孵跑分離：貴又慢的「孵」(Karpathy Loop 演化) 只做一次，便宜又快的「跑」(純執行) 全球無限次
+- 孵化端三選一：Claude Code(Opus 品味)、pi(地端 31B)、Hermes 波特人(自動 24h)
+- 執行端處處可跑：國網 NCHC / GCP 臺灣 / AWS / Mac / Windows / 內網 / 公網
+- 能跨的原因：交付物是純文字 SKILL.md，模型無關、環境無關、系統無關
+- 機敏資料：技能包帶進內網由地端模型執行，資料全程不出門；換執行器不用重孵
+
+- [線上版](https://storage.googleapis.com/botrun-slides/incubate-run-separation.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/incubate-run-separation.html/llms.txt): 該專案的 llms.txt
+- 類型：方法學
+- 發佈日期：2026-05-18T21:20:23+08:00
+- 標籤：跨環境、技能包、孵跑分離
 
 ## Karpathy Loop：讓 AI 整夜自己做 700 個實驗
 

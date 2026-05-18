@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "incubate-run-separation",
+      "title": "孵跑分離：一次孵化，全球都能跑",
+      "subtitle": "延續 Karpathy Loop — 孵(演化迴圈) 與 跑(純執行) 分離，技能包跨模型/雲/網路/OS/執行器",
+      "href": "https://storage.googleapis.com/botrun-slides/incubate-run-separation.html",
+      "icon": "globe",
+      "badge": "方法學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-18T21:20:23+08:00",
+      "tags": [
+        "globe:跨環境",
+        "box:技能包",
+        "repeat:孵跑分離"
+      ],
+      "concepts": [
+        "孵跑分離：貴又慢的「孵」(Karpathy Loop 演化) 只做一次，便宜又快的「跑」(純執行) 全球無限次",
+        "孵化端三選一：Claude Code(Opus 品味)、pi(地端 31B)、Hermes 波特人(自動 24h)",
+        "執行端處處可跑：國網 NCHC / GCP 臺灣 / AWS / Mac / Windows / 內網 / 公網",
+        "能跨的原因：交付物是純文字 SKILL.md，模型無關、環境無關、系統無關",
+        "機敏資料：技能包帶進內網由地端模型執行，資料全程不出門；換執行器不用重孵"
+      ]
+    },
+    {
       "id": "karpathy-loop",
       "title": "Karpathy Loop：讓 AI 整夜自己做 700 個實驗",
       "subtitle": "選手／評審／教練三角色 — 可量測迴圈讓 AI 自我迭代，含領域知識泛化與防作弊紅線",
