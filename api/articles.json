@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-16T01:06:05.543Z",
-  "total": 171,
+  "generatedAt": "2026-05-18T13:20:03.389Z",
+  "total": 172,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Karpathy Loop：讓 AI 整夜自己做 700 個實驗",
+      "date": "2026-05-18T21:16:22+08:00",
+      "content": "選手／評審／教練三角色 — 可量測迴圈讓 AI 自我迭代，含領域知識泛化與防作弊紅線",
+      "tags": [
+        "方法學",
+        "autoresearch",
+        "演化標的",
+        "防作弊"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/karpathy-loop.html"
+    },
     {
       "title": "駕馭最前沿 AI 的，恰恰是最老派的軟體工程鐵律",
       "date": "2026-05-16T08:49:00+08:00",

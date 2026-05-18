@@ -5,6 +5,28 @@
   },
   "items": [
     {
+      "id": "karpathy-loop",
+      "title": "Karpathy Loop：讓 AI 整夜自己做 700 個實驗",
+      "subtitle": "選手／評審／教練三角色 — 可量測迴圈讓 AI 自我迭代，含領域知識泛化與防作弊紅線",
+      "href": "https://storage.googleapis.com/botrun-slides/karpathy-loop.html",
+      "icon": "repeat",
+      "badge": "方法學",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-18T21:16:22+08:00",
+      "tags": [
+        "repeat:autoresearch",
+        "target:演化標的",
+        "shield:防作弊"
+      ],
+      "concepts": [
+        "Karpathy autoresearch loop：改一行→跑5分鐘→算分→進步留/退步 git reset→NEVER STOP",
+        "三角色＝選手(可改 train.py)、評審(唯讀 prepare.py/val_bpb)、教練(唯讀 program.md)",
+        "三層信任邊界防 reward hacking：評分標準對選手唯讀，否則 AI 改標準作弊",
+        "泛化到領域知識：演化標的換成 SKILL.md、評審=binary rubric 執行者",
+        "LLM 版三條紅線：題目隨機抽防背題、B 組對照濾雜訊、Δ 收斂換軸（pi-kb 蒸餾 Δ+12→+32.5）"
+      ]
+    },
+    {
       "id": "taiwan-arms-self-rescue",
       "title": "花七千億買軍火，全球只有美國敢賣，那台灣怎麼自救？",
       "subtitle": "國防自主七題整合分析。上網查證：大武器整案全球實質只有美國敢賣（台灣關係法＋FMS＋承受得起對中翻臉的國力）；日本 2026/4/21 解禁殺傷武器卻僅限 17 個已簽協定國、台灣無邦交賣不到；歐洲整機不賣但德國 2025/8 已核准海鯤潛艦主機＋潛望鏡（零件技轉低調可）。7,800 億特別預算砍掉行政院 1.25 兆版 4,700 億、國內委製 2,500 億全刪——藍白制度監督論 vs 質疑方親中疑慮論，兩套敘事對撞無定論；美智庫光譜（GTI 中立／Hudson 認知戰／Atlantic Council「這次更糟」／FDD・CNAS 傷自主最深／Heritage 施壓）沒人說陰謀都說「北京樂見」。民轉軍已是國策：軍用商規 48,750 架、無人機外銷×21、雷虎 Blue UAS 台灣唯一。民間自救五件事＝衝外銷＋去中零件拿盟國認證＋押 ICT／AI 晶片＋企業資本投兩用新創＋BCP 韌性。",
