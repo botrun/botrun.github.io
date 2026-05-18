@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-18T13:22:55.755Z",
+  "generatedAt": "2026-05-18T13:34:42.301Z",
   "total": 173,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
     {
       "title": "孵跑分離：一次孵化，全球都能跑",
       "date": "2026-05-18T21:20:23+08:00",
-      "content": "延續 Karpathy Loop — 孵(演化迴圈) 與 跑(純執行) 分離，技能包跨模型/雲/網路/OS/執行器",
+      "content": "延續 Karpathy Loop — 孵跑分離 + 技能包蒸餾(不改權重的 context distillation)，跨模型/雲/網路/OS",
       "tags": [
         "方法學",
         "跨環境",
