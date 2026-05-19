@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "wasm-skill-vault",
+      "title": "把看家本領鎖進一顆檔案",
+      "subtitle": "高中生看得懂版 — Bun + Rust-WASM 把技能與資料封進一顆 WASM 保險箱，跨 OS／瀏覽器都能跑，能鎖的鎖好、鎖不住的講白",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/wasm-skill-vault.html",
+      "protected": true,
+      "icon": "box",
+      "badge": "技術科普",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-19T10:29:40+08:00",
+      "tags": [
+        "box:WASM保險箱",
+        "globe:跨平台",
+        "split:孵化跑分離"
+      ],
+      "concepts": [
+        "一句話：把資料和邏輯鎖進一顆 WASM 保險箱，跨 Win/Mac/Linux/瀏覽器都能跑，Claude Code/pi/Hermes Agent 都能呼叫",
+        "比喻：WASM＝密封鐵盒（預設碰不到硬碟/網路/檔案＝天生安全），WASI＝盒上開一道指定的縫",
+        "可把 SQLite .db＋一萬條法規編進 WASM；FTS5 內建 BM25 排序免費附贈，純字串進出不呼叫大模型",
+        "最重要真相：鎖得住資料與編譯邏輯，鎖不住給 AI 讀的提示文字——AI 要讀就得攤開給跑它的人看，結構性無解",
+        "正確鎖法：加密後塞、只在 WASM 記憶體內解、絕不落地；誠實紅線＝強力嚇阻非百分百加密"
+      ]
+    },
+    {
       "id": "forge-run-decoupling-cross-platform",
       "title": "孵化在哪都行，跑也在哪都行",
       "subtitle": "孵化跑分離的跨平台 AI 技能引擎 — 跨 OS／雲地／Harness／大模型，孵化與執行兩套軟體獨立演化",
