@@ -1,9 +1,33 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-16T17:22:55+08:00"
+    "lastUpdated": "2026-05-20T06:46:27+08:00"
   },
   "items": [
+    {
+      "id": "stop-vibe-coding-agentic-engineering",
+      "title": "別 Vibe Coding，改 Agentic Engineering",
+      "subtitle": "資深工程師 Micky × David Ondrej Podcast 蒸餾 — 三個月 95% 程式碼 AI 寫成的工作流：Cursor + GPT-5.5 X-High + Opus 4.7 Max 雙模型，opensource 把套件原始碼當文件、Code Structure Skill 每個 feature 重構成 service layer、Greptile + Grep Loop 把 PR 信心分數修到 5/5 才停手；上下文壓在 70% 以下、計畫只給自己看、Svelte/Convex 一切都是程式碼，再加上 Agent 時代資安四鐵律（暗號／2FA Authenticator／密碼管理／14 天套件門檻）",
+      "href": "https://storage.googleapis.com/botrun-slides/stop-vibe-coding-agentic-engineering.html",
+      "icon": "cpu",
+      "badge": "工程方法",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-20T06:46:27+08:00",
+      "tags": [
+        "cpu:Agentic Engineering",
+        "tools:Cursor + Greptile",
+        "stack:Svelte + Convex"
+      ],
+      "concepts": [
+        "Vibe Coding vs Agentic Engineering：前者把思考外包給 Agent，後者你掌舵讓 Agent 做苦工",
+        "Harness > Model：Cursor 的 harness 實測勝過 Claude Code / Codex，搭配 GPT-5.5 X-High（後端）+ Opus 4.7 Max（UI）",
+        "三件套：opensource（套件原始碼當文件）+ Code Structure Skill（重構成 service layer）+ Grep Loop（信心分數迴圈到 5/5）",
+        "上下文工程：227K 其實只夠用一半，超過 70% 就開新 session，/compact 不可信",
+        "技術棧：Svelte 語法接近 HTML+TS、Convex 一切都是程式碼，Agent 不用截圖儀表板",
+        "資安四鐵律：家族暗號防語音 deepfake、2FA Authenticator 不走簡訊、密碼管理金鑰拆兩半、不裝 < 14 天的套件",
+        "Ship Fast + Delusion：舊金山式半成品上線拿融資，留在自己電腦的版本永遠不算完成"
+      ]
+    },
     {
       "id": "crime-probe-skill-incubator",
       "title": "六萬筆混在一起，先查哪一筆？",

@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-18T13:34:42.301Z",
-  "total": 173,
+  "generatedAt": "2026-05-19T22:48:19.678Z",
+  "total": 174,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "別 Vibe Coding，改 Agentic Engineering",
+      "date": "2026-05-20T06:46:27+08:00",
+      "content": "資深工程師 Micky × David Ondrej Podcast 蒸餾 — 三個月 95% 程式碼 AI 寫成的工作流：Cursor + GPT-5.5 X-High + Opus 4.7 Max 雙模型，opensource 把套件原始碼當文件、Code Structure Skill 每個 feature 重構成 service layer、Greptile + Grep Loop 把 PR 信心分數修到 5/5 才停手；上下文壓在 70% 以下、計畫只給自己看、Svelte/Convex 一切都是程式碼，再加上 Agent 時代資安四鐵律（暗號／2FA Authenticator／密碼管理／14 天套件門檻）",
+      "tags": [
+        "工程方法",
+        "Agentic Engineering",
+        "Cursor + Greptile",
+        "Svelte + Convex"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/stop-vibe-coding-agentic-engineering.html"
+    },
     {
       "title": "孵跑分離：一次孵化，全球都能跑",
       "date": "2026-05-18T21:20:23+08:00",

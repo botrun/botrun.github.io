@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-19T16:00:13.376Z
+> 生成時間：2026-05-19T22:48:19.421Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 266 個項目，按發佈日期降序排列。
+共 267 個項目，按發佈日期降序排列。
+
+## 別 Vibe Coding，改 Agentic Engineering
+
+> 資深工程師 Micky × David Ondrej Podcast 蒸餾 — 三個月 95% 程式碼 AI 寫成的工作流：Cursor + GPT-5.5 X-High + Opus 4.7 Max 雙模型，opensource 把套件原始碼當文件、Code Structure Skill 每個 feature 重構成 service layer、Greptile + Grep Loop 把 PR 信心分數修到 5/5 才停手；上下文壓在 70% 以下、計畫只給自己看、Svelte/Convex 一切都是程式碼，再加上 Agent 時代資安四鐵律（暗號／2FA Authenticator／密碼管理／14 天套件門檻）
+
+**關鍵觀念：**
+- Vibe Coding vs Agentic Engineering：前者把思考外包給 Agent，後者你掌舵讓 Agent 做苦工
+- Harness > Model：Cursor 的 harness 實測勝過 Claude Code / Codex，搭配 GPT-5.5 X-High（後端）+ Opus 4.7 Max（UI）
+- 三件套：opensource（套件原始碼當文件）+ Code Structure Skill（重構成 service layer）+ Grep Loop（信心分數迴圈到 5/5）
+- 上下文工程：227K 其實只夠用一半，超過 70% 就開新 session，/compact 不可信
+- 技術棧：Svelte 語法接近 HTML+TS、Convex 一切都是程式碼，Agent 不用截圖儀表板
+- 資安四鐵律：家族暗號防語音 deepfake、2FA Authenticator 不走簡訊、密碼管理金鑰拆兩半、不裝 < 14 天的套件
+- Ship Fast + Delusion：舊金山式半成品上線拿融資，留在自己電腦的版本永遠不算完成
+
+- [線上版](https://storage.googleapis.com/botrun-slides/stop-vibe-coding-agentic-engineering.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/stop-vibe-coding-agentic-engineering.html/llms.txt): 該專案的 llms.txt
+- 類型：工程方法
+- 發佈日期：2026-05-20T06:46:27+08:00
+- 標籤：Agentic Engineering、Cursor + Greptile、Svelte + Convex
 
 ## 六萬筆混在一起，先查哪一筆？
 
