@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-18T13:34:42.069Z
+> 生成時間：2026-05-19T02:19:21.460Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 262 個項目，按發佈日期降序排列。
+共 263 個項目，按發佈日期降序排列。
+
+## 孵化在哪都行，跑也在哪都行
+
+> 孵化跑分離的跨平台 AI 技能引擎 — 跨 OS／雲地／Harness／大模型，孵化與執行兩套軟體獨立演化
+
+**關鍵觀念：**
+- 一句話定位：孵化跑分離的跨平台 AI 技能引擎，孵化軟體與執行軟體徹底解耦
+- 孵化 Forge：提示工程＋參考資料可控，機敏／公開／搜尋／本地硬碟檢索任選，高品味題庫驅動自動孵化
+- 跑 Run：下載技能即執行，可編譯成 Binary 帶著走，地點與孵化端完全分離
+- 四維全跨：OS(Win/Mac/Linux)、運算位置(Remote GCP/AWS↔Local Mac/NVIDIA)、Harness(Pi Mono/Hermes Agent/Claude Code)、大模型(Gemini/Opus/Gemma 31B)
+- 商業：AWS 業配合作(感謝提供 tokens 與 VM)、波藍鵲機關共享大腦封閉地端採購、每週拍 5 支片收 5 需求餵題庫自動孵化
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/forge-run-decoupling-cross-platform.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/forge-run-decoupling-cross-platform.html/llms.txt): 該專案的 llms.txt
+- 類型：產品策略
+- 發佈日期：2026-05-19T10:17:00+08:00
+- 標籤：孵化跑分離、跨平台、技能包
 
 ## 孵跑分離：一次孵化，全球都能跑
 

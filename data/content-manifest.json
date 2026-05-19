@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "forge-run-decoupling-cross-platform",
+      "title": "孵化在哪都行，跑也在哪都行",
+      "subtitle": "孵化跑分離的跨平台 AI 技能引擎 — 跨 OS／雲地／Harness／大模型，孵化與執行兩套軟體獨立演化",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/forge-run-decoupling-cross-platform.html",
+      "protected": true,
+      "icon": "split",
+      "badge": "產品策略",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-19T10:17:00+08:00",
+      "tags": [
+        "split:孵化跑分離",
+        "globe:跨平台",
+        "box:技能包"
+      ],
+      "concepts": [
+        "一句話定位：孵化跑分離的跨平台 AI 技能引擎，孵化軟體與執行軟體徹底解耦",
+        "孵化 Forge：提示工程＋參考資料可控，機敏／公開／搜尋／本地硬碟檢索任選，高品味題庫驅動自動孵化",
+        "跑 Run：下載技能即執行，可編譯成 Binary 帶著走，地點與孵化端完全分離",
+        "四維全跨：OS(Win/Mac/Linux)、運算位置(Remote GCP/AWS↔Local Mac/NVIDIA)、Harness(Pi Mono/Hermes Agent/Claude Code)、大模型(Gemini/Opus/Gemma 31B)",
+        "商業：AWS 業配合作(感謝提供 tokens 與 VM)、波藍鵲機關共享大腦封閉地端採購、每週拍 5 支片收 5 需求餵題庫自動孵化"
+      ]
+    },
+    {
       "id": "incubate-run-separation",
       "title": "孵跑分離：一次孵化，全球都能跑",
       "subtitle": "延續 Karpathy Loop — 孵跑分離 + 技能包蒸餾(不改權重的 context distillation)，跨模型/雲/網路/OS",
