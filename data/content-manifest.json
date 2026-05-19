@@ -5,6 +5,48 @@
   },
   "items": [
     {
+      "id": "crime-probe-skill-incubator",
+      "title": "六萬筆混在一起，先查哪一筆？",
+      "subtitle": "與一位資深學者延續的策略討論 — 機關丟 6 萬筆混合資料＋多模態檔要查犯罪脈絡，AI 沒辦過案串不出時序關聯，解法是拆成意圖／結構化／多模態／分析手法四台技能孵化器，接 GitHub issues 與 Binary Rubric 驗證",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/crime-probe-skill-incubator.html",
+      "protected": true,
+      "icon": "search",
+      "badge": "產品策略",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-19T23:54:30+08:00",
+      "tags": [
+        "search:犯罪偵查",
+        "split:技能孵化器",
+        "box:機敏資料"
+      ],
+      "concepts": [
+        "情境：機關把 6 萬筆資料＋需求＋聲音/影像/PDF掃描一股腦丟進來，要比脈絡、時序、關聯去偵查犯罪",
+        "核心難題：AI 沒跟檢察官/調查局/警察辦過案，串不出犯罪調查的時序＋關聯多跳推理，尤其台灣文化方法學，連 Claude Code 都做不到全自動",
+        "解法：拆成四台技能孵化器——①意圖 ②結構化資料(SQL/Pandas) ③多模態(掃描影音轉AI友善) ④分析手法(謀殺≠竊盜≠跨國金流，試錯找對方法+關聯圖)",
+        "流程：孵化器Ready→分析要生幾個技能→變GitHub issues/sub-issues→拿真實/合成案例apply→跑一遍留技能+高品味題庫→Binary Rubric 二元驗證有效性",
+        "結論：不是某現成產品能完成，整件事就是一連串技能孵化器的孵化過程；一句話做不到的才有商業價值"
+      ]
+    },
+    {
+      "id": "skill-incubator-strategy-reversal",
+      "title": "技能孵化器戰略反轉",
+      "subtitle": "80% 技能孵化器 / 20% 應用 — 一行提示能做的事 14 個月後不值錢，多步驟受控管線（機敏資料＋六宮格產製＋人波蜂群）才是護城河",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/skill-incubator-strategy-reversal.html",
+      "protected": true,
+      "icon": "git-branch",
+      "badge": "策略",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-19T23:54:03+08:00",
+      "tags": ["git-branch:戰略", "layers:孵化器"],
+      "concepts": [
+        "核心論點：現在一句自然語言就能做好的事沒有商業價值，14 個月後 Hermes 內建就會做掉",
+        "市場現實：機關客戶已自行會用 Claude Code，運算中心已用 RAG＋agentic 寫公文，90% 應用型產品賣不出去",
+        "護城河三層疊加：機敏資料＋多步驟受控產製管線（六宮格）＋人波協作蜂群，皆非一行提示可解",
+        "價值差異：兩小時手工雕琢縮短為描述 5 分鐘＋等 15 分鐘成品，管線內部 prompt／參數隱藏才鎖得住價值",
+        "行動：比例反轉 80% 可驗證可成長技能孵化器＋每日拍片上架／20% 標案平台維運，90% 標案需求轉為孵化器完成"
+      ]
+    },
+    {
       "id": "wasm-skill-vault",
       "title": "把看家本領鎖進一顆檔案",
       "subtitle": "高中生看得懂版 — Bun + Rust-WASM 把技能與資料封進一顆 WASM 保險箱，跨 OS／瀏覽器都能跑，能鎖的鎖好、鎖不住的講白",
