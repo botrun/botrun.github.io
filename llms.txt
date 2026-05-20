@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-20T12:11:44.652Z
+> 生成時間：2026-05-20T12:13:06.480Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 271 個項目，按發佈日期降序排列。
+共 272 個項目，按發佈日期降序排列。
+
+## Claude Code 翻不翻車，看 Harness — 大專案最佳實踐
+
+> Claude Code 小專案神、大專案翻車，不是模型不夠強，是缺一套 Harness。5 頁簡報拆解 Anthropic 官方「大型程式庫最佳實踐」：CLAUDE.md / Hooks / Skills / 外掛 / MCP / LSP / 子代理人 / Code Map 八大零件分工 — 把 AI 從工讀生升級成老師傅；關鍵零件 Code Map 走結構化檢索（AST + LSP）而非硬讀百萬行，命中率高一個量級；附四週實施路線圖（先沉澱 CLAUDE.md → 再加 Hooks/MCP → 後 LSP/Code Map → 最後 Skills/子代理人結晶成團隊外掛），痛點驅動逐步加裝不必一次全上。
+
+**關鍵觀念：**
+- Harness ≠ 換更強模型：同樣 Claude，裸跑 vs 有 Harness 像兩個不同等級工程師，差別在「給工具、給規矩、給記憶」
+- 八大零件分工：CLAUDE.md（員工手冊）、Hooks（事件鉤子）、Skills（流程結晶）、外掛 / Plugins（整合包）、MCP（外接資料工具）、LSP（語意分析）、子代理人（隔離上下文）、Code Map（結構地圖）
+- Code Map 是大專案命門：用 AST / LSP 抽出檔案→模組→函式依賴圖，三秒定位「該改哪個函式」，告別硬讀百萬行燒 token
+- 為什麼不用向量搜尋：程式碼語意 ≠ 自然語言，向量找到「看起來像」但「邏輯無關」的片段，結構化檢索命中率高一個量級
+- 四週實施路線圖：先寫 CLAUDE.md 沉澱規約 → 加 Hooks + MCP 自動化 → 上 LSP + Code Map 精準檢索 → 最後 Skills + 子代理人結晶成可重用團隊外掛
+
+- [線上版](https://storage.googleapis.com/botrun-slides/claude-code-harness-bestpractice.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/claude-code-harness-bestpractice.html/llms.txt): 該專案的 llms.txt
+- 類型：工程化工作流
+- 發佈日期：2026-05-20T20:07:22+08:00
+- 標籤：Harness、Claude Code、Code Map
 
 ## 合約式提示設計 — Planner / Builder / Evaluator 三套 Prompt 拆給你看
 
