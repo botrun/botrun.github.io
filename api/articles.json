@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-20T08:44:17.887Z",
-  "total": 176,
+  "generatedAt": "2026-05-20T11:42:03.163Z",
+  "total": 177,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "長跑代理人 Harness — 從 1 小時到 12 小時",
+      "date": "2026-05-20T19:36:06+08:00",
+      "content": "Anthropic Applied AI 團隊 Ash + Andrew 在 AI Engineer 大會首場演講蒸餾：Claude 一年內可跑時長從 20 分鐘拉到 12 小時，差別不在模型，在外面那層 Harness。三代心法逐層拆解 — Ralph Loop（寧可穩穩失敗）、GAN 式 Generator/Evaluator（Builder 永遠不會自評，要找另一隻嚴格批評者）、Planner/Builder/Critic 三角色 + Contract 協商（27 條驗收條件甜蜜點）；附 Retro Forge 對比實例（同提示同模型，單跑掛掉 vs harness $200/6 小時自帶 AI 關卡助手）與 Opus 4.6 後可拋棄的舊腳手架清單，全簡報 10+ 個 YouTube 時間戳超連結。",
+      "tags": [
+        "代理人架構",
+        "Long-Running Agents",
+        "Anthropic Applied AI",
+        "GAN Harness"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/long-running-agent-harness.html"
+    },
     {
       "title": "Hermes Agent 0.14.0：一個訂閱跑遍所有 AI 工具",
       "date": "2026-05-20T16:40:39+08:00",
