@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-20T11:42:03.163Z",
-  "total": 177,
+  "generatedAt": "2026-05-20T12:11:44.891Z",
+  "total": 178,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "合約式提示設計 — Planner / Builder / Evaluator 三套 Prompt 拆給你看",
+      "date": "2026-05-20T20:04:33+08:00",
+      "content": "把 Anthropic 那場演講最關鍵的「Planner→Builder↔Evaluator + Contract」機制拆成 9 頁 prompt 教學：Planner 必須粗到不能再粗（200 features cascade 教訓）、Builder 提案禁寫 code 只能列 5-10 條 binary 驗收、Evaluator 人格要「機車」反向矯正 LLM 慷慨偏誤、協商 4-6 輪收斂出 27 條 Contract 甜蜜點、Contract 存 JSON 不存 markdown；每段都附可複製貼上的 system prompt 範本與 Retro Forge 真實案例，最後一頁 Cheatsheet 抄回去就有合約式 harness 雛形。",
+      "tags": [
+        "Prompt 範本",
+        "Contract Prompt",
+        "Anthropic Applied AI",
+        "Planner-Builder-Evaluator"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/contract-prompt-design.html"
+    },
     {
       "title": "長跑代理人 Harness — 從 1 小時到 12 小時",
       "date": "2026-05-20T19:36:06+08:00",
