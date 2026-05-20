@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "gemma-e2b-8bit-skills-milestone",
+      "title": "2GB 高中生贏教授 — Gemma e2b 8-bit × Skills 里程碑",
+      "subtitle": "把 gemma-4-e2b-it-mlx@8bit（約 2GB 權重）配上兩本「Skills 筆記本」（個資法、政府採購法），在 Mac 本機 LM Studio MLX backend 跑出 123 tokens/秒、互動延遲 < 1 秒，答題達 31B 教授 baseline 水準。九頁細緻 SVG 解說從高中生白話比喻、實測配置、Skill Router 架構圖、4 個關鍵數字、7 維度過去 vs 現在對比、4GB 純瀏覽器部署可行性推估、4 條誠實限制、3 條 ROI/風險明確的下一步，到「孵化 skill 比堆參數更高 ROI」的核心洞見全包。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gemma-e2b-8bit-skills-milestone.html",
+      "protected": true,
+      "icon": "cpu",
+      "badge": "端裝置 AI 里程碑",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-21T00:05:00+08:00",
+      "tags": [
+        "cpu:端裝置",
+        "model:Gemma e2b",
+        "method:Skills"
+      ],
+      "concepts": [
+        "小模型 + 好 skills ≈ 大模型 baseline：2B 模型 + 兩本結構化筆記，在個資法 / 政府採購法上達 31B 水準，驗證『結晶 skill 比堆參數更高 ROI』",
+        "Mac 本機 123 tps：LM Studio MLX backend on Apple Silicon，互動延遲 < 1 秒首字，全題答完 < 10 秒，完全離線、零成本、零 quota",
+        "四個關鍵數字：123 tokens/秒、權重 2GB、context 131,072 tokens、推論成本 $0；對比 31B@NCHC ≈ 20 tps、14B 本機 GPU ≈ 40 tps",
+        "純瀏覽器部署推估：2GB 模型 + 8 個 skills 各 ≈ 250MB ≈ 4GB，WebGPU + transformers.js 可載入；首訪付一次下載，IndexedDB 緩存後完全離線",
+        "誠實閘門 4 條限制：123 tps 僅 Mac 實測（Windows/Linux NVIDIA 未驗）、純前端 PoC 未實作（4GB 載入屬推估）、僅驗 2 skills（8 個 context 排擠未測）、8-bit vs FP16 邊緣案例未細測",
+        "下一步 3 條 ROI/風險：transformers.js+Chrome PoC（ROI 高/風險中）、擴 8 skills 測 context 排擠（ROI 中/風險低）、31B+skills vs e2b+skills 在 33 題 frozen rubric A/B（ROI 高/風險低）"
+      ]
+    },
+    {
       "id": "pi-wasm-handover",
       "title": "個資法波特人 / fs.wasm — 設計傳承交接（v0.5.0）",
       "subtitle": "把三本個資法塞進 111KB 的 wasm，讓 CLI、瀏覽器、Chrome 擴充共用同一顆大腦。給接手 pi-wasm 專案夥伴的完整設計回溯：① Part 1 高中生白話一頁版（隨身硬碟比喻 + SVG）；② Part 2 五點原始動機（Open / 可審計 / 可離線 三軸）；③ Part 3 v0.1→v0.5.0 演進時間軸；④ Part 4 三層架構 DDD-lite（fs.wasm 核心 → wasmtime/Browser/Chrome MV3 三跑道 → 規則式 NLU → XML prompt）含完整 SVG 拆解；⑤ Part 5 七大關鍵設計決策（不用 wasi-vfs、規則式 NLU 而非 embeddings、不自動送出、Quill 用 ClipboardEvent、版本 SSOT、FS_WASM_KEY 三段優先序、parity.mjs 11 case 硬保險）；⑥ Part 6 五條走過的彎路；⑦ Part 7 性能體積（111KB · gzip 35KB · &lt;10ms query）；⑧ Part 8 短中長三段路線圖 + 接手第一週 Day 1-4。",
