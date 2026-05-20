@@ -3,10 +3,28 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-20T12:13:06.480Z
+> 生成時間：2026-05-20T15:17:30.378Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 272 個項目，按發佈日期降序排列。
+共 273 個項目，按發佈日期降序排列。
+
+## 從 46% 到 90% — 端裝置微型 LLM 微調代理人
+
+> Google AI Edge 技術主管 Cormac Brick 在 AI Engineer 2026 大會 21 分鐘演講完整解析。270M 參數的 Function Gemma 在 Pixel 7 上跑 2,000 tokens/秒 prefill、140 tokens/秒 decode；用 Gemini Flash 合成資料微調後，app intent 命中率從 46% 衝到 8/10 功能超過 90%。完整覆蓋三大主軸：① System GenAI（Android AI Core / Apple Intelligence）vs App GenAI（LiteRT-LM 自帶模型）的決策二分法；② Gemma 4 端裝置 Skills 框架（prompt 化 skill + load_skill tool + show_js 渲染 JS UI），餐廳輪盤 / Maps 實機 demo，Google AI Edge Gallery Android/iOS 雙平台開源；③ Tiny LLM（&lt;1B 參數）甜蜜點 — 100-500M 參數搭合成資料微調已可量產，附 Function Gemma 微調四步流程、Eloquent 轉錄 App 雙模型串接（ASR + 語音潤飾）、Apple FastVLM 500M VLM 跑 Qualcomm NPU。
+
+**關鍵觀念：**
+- System GenAI vs App GenAI 二分法：能用系統內建（AI Core / Apple Intelligence）就用，省事且效能好；要客製化或做利基才走 App GenAI + tiny LLM；這是上手 on-device AI 的第一個決策點
+- Skills on Device 運作原理：skill 描述放 prompt（永遠可見）、skill 完整定義按需 load_skill 載入（節省 context）、JS 渲染由 App 提供原生 UI 嵌入點（show_js tool）；4B 模型預設啟用 8 個 skill，序列切換很穩
+- Function Gemma 性能基準：270M 參數基於 Gemma 3、Pixel 7 上 prefill 2,000 tokens/秒 decode 140 tokens/秒；開箱 46% → 合成資料微調後 8/10 功能 ≥ 90%（+44 個百分點）
+- Tiny LLM 微調四步：① 列 function 清單 ② Gemini Flash 合成資料集 ③ Function Gemma Fine-tuning Lab（HF Space）跑微調 ④ 導出 .litertlm 打包進 App
+- Eloquent 雙模型串接：ASR Engine（Gemma 3 base，幾百 M 參數，含個人字典）+ Polishing Engine（Gemma 3 base，移除 um/ah 並潤飾）= 完全離線生產級轉錄；證明 tiny LLM 微調後真能在 production 跑
+- Cormac 誠實揭露三限制：① 單回答多技能還不穩（sometimes works）② iOS Swift API 與 Gallery 程式碼還沒開源（數週內）③ Eloquent 只在 iOS、歐洲尚未上線
+
+- [線上版](https://storage.googleapis.com/botrun-slides/tiny-llm-on-device-agents.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/tiny-llm-on-device-agents.html/llms.txt): 該專案的 llms.txt
+- 類型：端裝置 AI
+- 發佈日期：2026-05-20T23:10:00+08:00
+- 標籤：端裝置、AI Edge、Gemma 4
 
 ## Claude Code 翻不翻車，看 Harness — 大專案最佳實踐
 

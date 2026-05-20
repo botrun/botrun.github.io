@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-20T12:13:06.715Z",
-  "total": 179,
+  "generatedAt": "2026-05-20T15:17:30.625Z",
+  "total": 180,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "從 46% 到 90% — 端裝置微型 LLM 微調代理人",
+      "date": "2026-05-20T23:10:00+08:00",
+      "content": "Google AI Edge 技術主管 Cormac Brick 在 AI Engineer 2026 大會 21 分鐘演講完整解析。270M 參數的 Function Gemma 在 Pixel 7 上跑 2,000 tokens/秒 prefill、140 tokens/秒 decode；用 Gemini Flash 合成資料微調後，app intent 命中率從 46% 衝到 8/10 功能超過 90%。完整覆蓋三大主軸：① System GenAI（Android AI Core / Apple Intelligence）vs App GenAI（LiteRT-LM 自帶模型）的決策二分法；② Gemma 4 端裝置 Skills 框架（prompt 化 skill + load_skill tool + show_js 渲染 JS UI），餐廳輪盤 / Maps 實機 demo，Google AI Edge Gallery Android/iOS 雙平台開源；③ Tiny LLM（&lt;1B 參數）甜蜜點 — 100-500M 參數搭合成資料微調已可量產，附 Function Gemma 微調四步流程、Eloquent 轉錄 App 雙模型串接（ASR + 語音潤飾）、Apple FastVLM 500M VLM 跑 Qualcomm NPU。",
+      "tags": [
+        "端裝置 AI",
+        "端裝置",
+        "AI Edge",
+        "Gemma 4"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/tiny-llm-on-device-agents.html"
+    },
     {
       "title": "Claude Code 翻不翻車，看 Harness — 大專案最佳實踐",
       "date": "2026-05-20T20:07:22+08:00",
