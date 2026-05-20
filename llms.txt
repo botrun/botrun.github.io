@@ -3,10 +3,29 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-19T22:48:19.421Z
+> 生成時間：2026-05-20T01:12:10.721Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 267 個項目，按發佈日期降序排列。
+共 268 個項目，按發佈日期降序排列。
+
+## 別再給 AI 套學步車 — 上下文提示淘汰 Agent 編排框架
+
+> 墨爾本大學 Simon Dennis 教授 arXiv 論文蒸餾：1,200 場雙盲對決、Claude Sonnet + GPT-4o 交叉裁判，In-Context（整張流程圖一次塞進上下文）對 LangGraph / CrewAI 等框架編排取得 15:0 全勝；揭穿框架三大原罪（推理碎片化、引入新失敗模式、扼殺自然才華），17.3 vs 10 次 API 呼叫、5 美分 token vs 17% 失敗率的經濟學反直覺，並劃出框架仍不可替代的三種情境（外部狀態 / 小模型 / 發散探索），最後扣回 Rich Sutton《苦澀的教訓》：基於大規模算力的通用學習方法終將擊敗人類自作聰明的精巧設計。
+
+**關鍵觀念：**
+- 框架編排 vs In-Context：控制狂老闆每路口介入 vs 放權大掌櫃一次塞整張地圖，全局注意力決定勝負
+- 1,200 場雙盲對決 15:0 全勝：Claude Sonnet 推理 + GPT-4o 交叉裁判，14/55 節點場景統計顯著碾壓
+- 三大原罪：推理碎片化（喪失對話整體弧光）、引入新失敗模式（路由失敗 / 決策歧義 / 模板衝突）、扼殺自然才華（降維成機械客服）
+- 經濟學反直覺：框架每節點多打一通電話給 LLM，55 節點理賠 17.3 vs 10 次 API、為省 5 美分 token 換 17% 業務失敗率
+- 框架仍不可替代的三種情境：外部狀態 / 多模態工具、小參數本地模型（金魚記憶）、沒明確 SOP 的發散探索任務
+- Rich Sutton《苦澀的教訓》：人類硬編碼的精巧設計終將被大規模算力的通用學習擊敗，前沿模型已長大，外部腳手架成為枷鎖
+- 來源：YouTube S1B5Ih-KDb8 逐字稿 + 墨爾本大學 Simon Dennis 教授團隊 arXiv 論文「上下文提示淘汰了程序性任務的智能體編排」
+
+- [線上版](https://storage.googleapis.com/botrun-slides/incontext-vs-agent-orchestration.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/incontext-vs-agent-orchestration.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 工程範式
+- 發佈日期：2026-05-20T09:07:31+08:00
+- 標籤：In-Context Prompting、墨爾本大學 Dennis 團隊、LangGraph / CrewAI
 
 ## 別 Vibe Coding，改 Agentic Engineering
 

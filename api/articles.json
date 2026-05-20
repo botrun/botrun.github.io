@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-19T22:48:19.678Z",
-  "total": 174,
+  "generatedAt": "2026-05-20T01:12:10.968Z",
+  "total": 175,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "別再給 AI 套學步車 — 上下文提示淘汰 Agent 編排框架",
+      "date": "2026-05-20T09:07:31+08:00",
+      "content": "墨爾本大學 Simon Dennis 教授 arXiv 論文蒸餾：1,200 場雙盲對決、Claude Sonnet + GPT-4o 交叉裁判，In-Context（整張流程圖一次塞進上下文）對 LangGraph / CrewAI 等框架編排取得 15:0 全勝；揭穿框架三大原罪（推理碎片化、引入新失敗模式、扼殺自然才華），17.3 vs 10 次 API 呼叫、5 美分 token vs 17% 失敗率的經濟學反直覺，並劃出框架仍不可替代的三種情境（外部狀態 / 小模型 / 發散探索），最後扣回 Rich Sutton《苦澀的教訓》：基於大規模算力的通用學習方法終將擊敗人類自作聰明的精巧設計。",
+      "tags": [
+        "AI 工程範式",
+        "In-Context Prompting",
+        "墨爾本大學 Dennis 團隊",
+        "LangGraph / CrewAI"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/incontext-vs-agent-orchestration.html"
+    },
     {
       "title": "別 Vibe Coding，改 Agentic Engineering",
       "date": "2026-05-20T06:46:27+08:00",
