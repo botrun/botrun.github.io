@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T01:12:10.968Z",
+  "generatedAt": "2026-05-20T01:18:25.266Z",
   "total": 175,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
