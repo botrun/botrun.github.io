@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-05-20T01:18:25.266Z",
-  "total": 175,
+  "generatedAt": "2026-05-20T08:44:17.887Z",
+  "total": 176,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Hermes Agent 0.14.0：一個訂閱跑遍所有 AI 工具",
+      "date": "2026-05-20T16:40:39+08:00",
+      "content": "Nous Research 把 24/7 自我演化代理人推到 v0.14.0 Foundation Release：本地代理（hermes proxy）把 Claude / Codex / Supergrok 訂閱在 localhost 開出 OpenAI 相容端點，不必為每個工具申請 API Key；原生 Windows Beta（告別 WSL）、冷啟動快 19 秒、瀏覽器自動化飆 180×（持久 Chrome DevTools 連線）、跨會話 1 小時 Prompt Cache、原生影片生成、/handoff 整包搬到深推理模型；附 hermes proxy / setup / update / dashboard --tui 四行進場指令，逐句引証 YouTube 影片時間戳。",
+      "tags": [
+        "代理人新版",
+        "Hermes Agent",
+        "Nous Research",
+        "v0.14.0 Foundation"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/hermes-014-foundation.html"
+    },
     {
       "title": "別再給 AI 套學步車 — 上下文提示淘汰 Agent 編排框架",
       "date": "2026-05-20T09:07:31+08:00",

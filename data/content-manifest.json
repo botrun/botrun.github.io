@@ -1,9 +1,32 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-20T09:07:31+08:00"
+    "lastUpdated": "2026-05-20T16:40:39+08:00"
   },
   "items": [
+    {
+      "id": "hermes-014-foundation",
+      "title": "Hermes Agent 0.14.0：一個訂閱跑遍所有 AI 工具",
+      "subtitle": "Nous Research 把 24/7 自我演化代理人推到 v0.14.0 Foundation Release：本地代理（hermes proxy）把 Claude / Codex / Supergrok 訂閱在 localhost 開出 OpenAI 相容端點，不必為每個工具申請 API Key；原生 Windows Beta（告別 WSL）、冷啟動快 19 秒、瀏覽器自動化飆 180×（持久 Chrome DevTools 連線）、跨會話 1 小時 Prompt Cache、原生影片生成、/handoff 整包搬到深推理模型；附 hermes proxy / setup / update / dashboard --tui 四行進場指令，逐句引証 YouTube 影片時間戳。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-014-foundation.html",
+      "icon": "bot",
+      "badge": "代理人新版",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-05-20T16:40:39+08:00",
+      "tags": [
+        "bot:Hermes Agent",
+        "company:Nous Research",
+        "release:v0.14.0 Foundation"
+      ],
+      "concepts": [
+        "Local Proxy：一個訂閱（Claude / Codex / Supergrok）在 localhost 開 OpenAI 相容端點，Cursor / Cline / N8N 全部直接接，告別每個 App 一張 API Key",
+        "原生 Windows Beta：terminal / PTY / NPM / 檔案路徑全修正，正式 PyPI 套件 pip install 即用，不再卡 WSL",
+        "性能改寫：冷啟動快 19 秒（延後載入＋平行啟動檢查），瀏覽器自動化飆到 180×（持久 Chrome DevTools 取代每步重開 session），跨會話 1 小時 Prompt Cache 直接打進記憶回顧任務",
+        "/handoff 會話交棒：訊息 / 工具呼叫 / 記憶 / 工作流狀態整包搬到另一個模型，快模型起手深推理收尾，長代理人不必重啟",
+        "原生影片生成 + Dashboard TUI + Supergrok 60 秒整合（Grok 4.3 / TTS / Imagine / X 即時搜尋）+ DeepSeek v4 Flash 限時免費接入",
+        "來源：YouTube uZIijUyMT20，Nous Research MIT 授權，三行指令進場 hermes setup / proxy / dashboard --tui"
+      ]
+    },
     {
       "id": "incontext-vs-agent-orchestration",
       "title": "別再給 AI 套學步車 — 上下文提示淘汰 Agent 編排框架",
