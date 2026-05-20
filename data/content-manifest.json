@@ -1,9 +1,33 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-20T23:10:00+08:00"
+    "lastUpdated": "2026-05-20T23:55:00+08:00"
   },
   "items": [
+    {
+      "id": "pi-wasm-handover",
+      "title": "個資法波特人 / fs.wasm — 設計傳承交接（v0.5.0）",
+      "subtitle": "把三本個資法塞進 111KB 的 wasm，讓 CLI、瀏覽器、Chrome 擴充共用同一顆大腦。給接手 pi-wasm 專案夥伴的完整設計回溯：① Part 1 高中生白話一頁版（隨身硬碟比喻 + SVG）；② Part 2 五點原始動機（Open / 可審計 / 可離線 三軸）；③ Part 3 v0.1→v0.5.0 演進時間軸；④ Part 4 三層架構 DDD-lite（fs.wasm 核心 → wasmtime/Browser/Chrome MV3 三跑道 → 規則式 NLU → XML prompt）含完整 SVG 拆解；⑤ Part 5 七大關鍵設計決策（不用 wasi-vfs、規則式 NLU 而非 embeddings、不自動送出、Quill 用 ClipboardEvent、版本 SSOT、FS_WASM_KEY 三段優先序、parity.mjs 11 case 硬保險）；⑥ Part 6 五條走過的彎路；⑦ Part 7 性能體積（111KB · gzip 35KB · &lt;10ms query）；⑧ Part 8 短中長三段路線圖 + 接手第一週 Day 1-4。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-wasm-handover.html",
+      "icon": "shield",
+      "badge": "傳承文件",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-20T23:55:00+08:00",
+      "protected": true,
+      "tags": [
+        "wasm:fs.wasm",
+        "chrome-ext:MV3",
+        "rule:NLU"
+      ],
+      "concepts": [
+        "一份 wasm 跨三端：wasmtime CLI、瀏覽器、Chrome 擴充共用同一個 fs.wasm，sh/parity.mjs 11 case 逐 byte 比對 stdout 當硬保險",
+        "build.rs 編譯期 AES-256-GCM 加密＋include_bytes! bake：放棄 wasi-vfs（150MB 工具鏈依賴），改用純 cargo 零額外依賴，僅多 ~20KB AES 庫",
+        "規則式 NLU 勝過 embeddings：24 intent / 399 trigger，純文字 grep 可審計；法務部審計友善度 &gt; 對換句話說的容忍度",
+        "Chrome MV3 架構：popup hold wasm runtime（每次重 init），service worker 純路由不 hold state；Quill 必用 simulated ClipboardEvent，execCommand 只吃第一行",
+        "XML structured prompt 勝過 markdown：Anthropic 官方建議 Claude 對 XML 標籤辨識度高，retrieved_context / citations 結構化降低 LLM 漏引證",
+        "不自動送出 LLM（不模擬 Enter）：符合 Claude/Gemini ToS、留 user-initiated review 空間，是法務/合規情境的好答案"
+      ]
+    },
     {
       "id": "tiny-llm-on-device-agents",
       "title": "從 46% 到 90% — 端裝置微型 LLM 微調代理人",
