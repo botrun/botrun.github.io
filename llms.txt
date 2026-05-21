@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-20T16:03:04.381Z
+> 生成時間：2026-05-21T06:08:15.402Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 275 個項目，按發佈日期降序排列。
+共 276 個項目，按發佈日期降序排列。
+
+## 一間公司，一台點唱機 — 技能包 wasm 怎麼流動
+
+> 用「一間公司一台點唱機」的比喻，把技能包 wasm 的組織架構 001→005 講給夥伴群聽：隔離界線畫在「組織」而非「個人」，同組織共用一台 runner 服務、一個網址、一個 Service Account，技能包 wasm 自由流動；不同組織整套重新部署達成物理隔離。意圖路由用一份 routing.jsonl 點歌單同時餵兩種模式（Rust 自動調度 / agentic AI 列清單自選），改檔即生效零重新編譯。六頁雙層說明（高中生白話 + 資深工程師細節），含架構 SVG、JSONL 範例、前後四格對比、誠實限制與 3 步施工順序。
+
+**關鍵觀念：**
+- 隔離界線 = 組織不是個人：之前把信任邊界畫在每個人身上，導致一台服務要塞 100 把個人金鑰的矛盾；改畫在組織後，同組織共享天經地義，005 金鑰死結消失
+- 一公司一台點唱機：同組織共用一個 Cloud Run service、一個網址、一個 Service Account，技能包 wasm 自由流動共享；不同組織整套重新部署（新服務 / 新網址 / 新帳號）達成物理隔離
+- runner 是笨水管：一顆通用 Rust wasm runner 編譯一次永不改，不懂任何技能內容，只負責調度組織內的技能包 wasm
+- JSONL 點歌單一份兩用：routing.jsonl 一行一個意圖，同時餵 Rust 自動調度（POST /ask）與 agentic AI 自選（GET /skills → POST /skills/{name}/run），改檔即生效零重新編譯
+- 誠實限制與施工順序：1000 組織 = 1000 服務需部署腳本自動管理；wasm 串 wasm 暫不做（KISS）；3 步開工 — 改 runner 笨水管、定義技能包契約、編譯器 + 部署腳本
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/wasm-skill-pack-org.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/wasm-skill-pack-org.html/llms.txt): 該專案的 llms.txt
+- 類型：架構白話說明
+- 發佈日期：2026-05-21T14:07:39+08:00
+- 標籤：wasm 技能包、意圖路由、組織隔離
 
 ## 2GB 高中生贏教授 — Gemma e2b 8-bit × Skills 里程碑
 

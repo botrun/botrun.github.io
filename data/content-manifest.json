@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "wasm-skill-pack-org",
+      "title": "一間公司，一台點唱機 — 技能包 wasm 怎麼流動",
+      "subtitle": "用「一間公司一台點唱機」的比喻，把技能包 wasm 的組織架構 001→005 講給夥伴群聽：隔離界線畫在「組織」而非「個人」，同組織共用一台 runner 服務、一個網址、一個 Service Account，技能包 wasm 自由流動；不同組織整套重新部署達成物理隔離。意圖路由用一份 routing.jsonl 點歌單同時餵兩種模式（Rust 自動調度 / agentic AI 列清單自選），改檔即生效零重新編譯。六頁雙層說明（高中生白話 + 資深工程師細節），含架構 SVG、JSONL 範例、前後四格對比、誠實限制與 3 步施工順序。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/wasm-skill-pack-org.html",
+      "protected": true,
+      "icon": "boxes",
+      "badge": "架構白話說明",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-21T14:07:39+08:00",
+      "tags": [
+        "boxes:wasm 技能包",
+        "git-branch:意圖路由",
+        "shield:組織隔離"
+      ],
+      "concepts": [
+        "隔離界線 = 組織不是個人：之前把信任邊界畫在每個人身上，導致一台服務要塞 100 把個人金鑰的矛盾；改畫在組織後，同組織共享天經地義，005 金鑰死結消失",
+        "一公司一台點唱機：同組織共用一個 Cloud Run service、一個網址、一個 Service Account，技能包 wasm 自由流動共享；不同組織整套重新部署（新服務 / 新網址 / 新帳號）達成物理隔離",
+        "runner 是笨水管：一顆通用 Rust wasm runner 編譯一次永不改，不懂任何技能內容，只負責調度組織內的技能包 wasm",
+        "JSONL 點歌單一份兩用：routing.jsonl 一行一個意圖，同時餵 Rust 自動調度（POST /ask）與 agentic AI 自選（GET /skills → POST /skills/{name}/run），改檔即生效零重新編譯",
+        "誠實限制與施工順序：1000 組織 = 1000 服務需部署腳本自動管理；wasm 串 wasm 暫不做（KISS）；3 步開工 — 改 runner 笨水管、定義技能包契約、編譯器 + 部署腳本"
+      ]
+    },
+    {
       "id": "gemma-e2b-8bit-skills-milestone",
       "title": "2GB 高中生贏教授 — Gemma e2b 8-bit × Skills 里程碑",
       "subtitle": "把 gemma-4-e2b-it-mlx@8bit（約 2GB 權重）配上兩本「Skills 筆記本」（個資法、政府採購法），在 Mac 本機 LM Studio MLX backend 跑出 123 tokens/秒、互動延遲 < 1 秒，答題達 31B 教授 baseline 水準。九頁細緻 SVG 解說從高中生白話比喻、實測配置、Skill Router 架構圖、4 個關鍵數字、7 維度過去 vs 現在對比、4GB 純瀏覽器部署可行性推估、4 條誠實限制、3 條 ROI/風險明確的下一步，到「孵化 skill 比堆參數更高 ROI」的核心洞見全包。",
