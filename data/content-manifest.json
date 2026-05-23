@@ -1,9 +1,53 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-20T23:55:00+08:00"
+    "lastUpdated": "2026-05-23T11:30:00+08:00"
   },
   "items": [
+    {
+      "id": "weights-bin-tool-use-demo",
+      "title": "本機 4GB AI 學會用工具 ─ Bun + Chrome Nano Tool Use 實測",
+      "subtitle": "Chrome 148 stable 沒有原生 function calling，本機 Mac M 用 Bun 起 :7788 server + 一頁 index.html 偵測 window.LanguageModel 全套 API（Summarizer/Translator/LanguageDetector available，Writer/Rewriter 仍 OT），首次 prompt 7.6 秒證實本機推論。再用 responseConstraint（JSON Schema 強制 {tool, args}）+ JS dispatch 迴圈土砲 tool use，定義 5 個工具：get_weather（真打 Open-Meteo API）、add、get_time、search_notes、final_answer。修兩個 bug（cityMap 中文城市對應、規則強制算術走 add 工具不可心算）後，「台北幾度 + 3578+2964」3 步迴圈 3010 ms 跑通。Nano 3.25B 能力推估 GPT-3.5 早期版 / Llama 3.2 3B 級，MMLU ~50-55%。三個 ROI 場景：離線 fallback、隱私敏感預處理、預先過濾省雲端 API 費。",
+      "href": "https://storage.googleapis.com/botrun-slides/weights-bin-tool-use-demo.html",
+      "icon": "wrench",
+      "badge": "本機 AI 工程實測",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-23T11:30:00+08:00",
+      "tags": [
+        "wrench:tool use",
+        "cpu:本機推論",
+        "code:Bun 實作"
+      ],
+      "concepts": [
+        "Chrome 148 stable 無原生 tools: 參數：用 responseConstraint 強制 {tool, args} JSON Schema + 5 步 JS 迴圈派工 + s.prompt() 把工具結果餵回同 session，等價於 OpenAI function calling 的土砲版",
+        "本機推論鐵證：首次 prompt 7659 ms（雲端 Gemini Flash 同句 1-2s），availability() = downloading 仍能跑（雲端 API 不會有此狀態），離線測試最終確認",
+        "小模型必加兩條規則才不會偷懶：(1)『任何算術一律呼叫 add 工具，不可心算』、(2)『工具失敗可重試 1 次或換工具不要假裝有結果』，否則 3.25B 會自己心算 6542 跳過 tool call",
+        "Gemini Nano-2 能力對標：3.25B INT4 ≈ GPT-3.5-turbo 早期版 / Llama 3.2 3B，MMLU 推估 50-55%（vs Sonnet 4.6 88%），強項摘要分類短答、弱項多步推理寫程式數學",
+        "三個立即可用 ROI：botrun 系列無 NCHC_GENAI_API_KEY 時 fallback、健保個資先本機脫敏分類再決定送雲、使用者輸入用 Nano 過濾『需不需要動用 Sonnet』可省 90% API 費"
+      ]
+    },
+    {
+      "id": "chrome-gemini-nano-research",
+      "title": "Chrome 偷裝 4GB AI ─ Gemini Nano 完整研究",
+      "subtitle": "Chrome 148 stable（2026-05-05 釋出，Win / Mac 同步）內建 Gemini Nano-2 本機模型：weights.bin 1.5–4.27 GB（INT4 4-bit 量化）、3.25B 參數、6,144 tokens 上下文視窗、TFLite + MediaPipe 推論堆疊。Built-in AI APIs 中 Prompt API（Extensions Chrome 138 stable 2025-06-24 / Web Chrome 148 stable 2026-05-05）、Summarizer / Translator / LanguageDetector 皆 stable，Writer / Rewriter 仍 OT。最關鍵的 tool use / function calling 無原生支援，只能用 responseConstraint 拼 JSON Schema 土砲，WebMCP 在 Chrome 149 OT 才是真正解答。Multimodal 僅輸入（圖+音），輸出僅文字。聰明程度官方未公布 benchmark，社群實測弱於 Gemma 3 4B、Llama 3.2 3B，差雲端 Flash 約一個量級，繁中遠不及 NCHC 31B。Win 10/11 + 22GB + 4GB VRAM；Mac 必須 Apple Silicon + macOS 13+，Intel Mac 全程不支援。",
+      "href": "https://storage.googleapis.com/botrun-slides/chrome-gemini-nano-research.html",
+      "icon": "chrome",
+      "badge": "瀏覽器內建 AI 解密",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-23T11:29:00+08:00",
+      "tags": [
+        "chrome:Chrome 148",
+        "cpu:本機推論",
+        "calendar:版本對照表"
+      ],
+      "concepts": [
+        "weights.bin = Gemini Nano-2，1.5–4.27 GB 依硬體分級下發，INT4 量化 3.25B 參數，6K context，TFLite + MediaPipe 跑 GPU 優先 CPU 備援",
+        "版本對照表：Extensions Prompt API Chrome 138 stable（2025-06-24）/ Web Prompt API Chrome 148 stable（2026-05-05）/ WebMCP tool use Chrome 149 OT 預計 2026-06，Win Mac 同日釋出",
+        "Tool use 真相：Chrome 148 stable 無原生 function calling，僅能用 responseConstraint 餵 JSON Schema 拼湊，模型指令遵循差必填欄位常掉；WebMCP 才是 Google 對 tool use 的真正答案但 Mozilla/Apple/W3C/Microsoft 公開反對",
+        "硬體門檻：22GB 空間 + 4GB VRAM（或 16GB RAM + 4 核 CPU 備援）；Intel Mac 全程不支援，必須 Apple Silicon + macOS 13 Ventura；Android / iOS 完全用不到",
+        "能 / 不能清單：能做英文摘要改寫離線翻譯隱私 NLP 輕量 RAG；做不到原生 function calling 長文 >6K 多步推理高品質繁中手機端，定位『瀏覽器內免費英文小幫手不是 agentic AI 解答』"
+      ]
+    },
     {
       "id": "wasm-skill-pack-org",
       "title": "一間公司，一台點唱機 — 技能包 wasm 怎麼流動",
