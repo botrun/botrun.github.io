@@ -5,6 +5,27 @@
   },
   "items": [
     {
+      "id": "botrun-three-products-flywheel",
+      "title": "波特人三產品線飛輪 — 台灣務實版三年 5.22 億",
+      "subtitle": "組織版 400 萬/年/機關 + 專業版 USD 600/月/人 + 認證 80 萬/標 = 三年合計 5.22 億 / 淨賺 4.3 億。台灣 2026 政府 AI 預算 311 億查證後 TAM 配置：組織版拿 260 機關的 11.5%、專業版拿 5-10 萬 PM 的 1%、認證拿 100 標案/年的 50% 市佔。20 人台灣全職配置 5 BD + 8 RD + 4 PM + 2 評測師 + 1 財務。飛輪結構 SVG：組織版累積戰功 → 認證變政府採購標配 → 廠商衝來辦專業版孵技能 → 漏斗篩出大客戶升級組織版。內部商品化 SSOT v5 IAP 保護。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-three-products-flywheel.html",
+      "protected": true,
+      "icon": "trending-up",
+      "badge": "內部商品化 SSOT",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-05-23T15:00:00+08:00",
+      "tags": [
+        "trending-up:三產品線",
+        "target:三年 5.22 億",
+        "users:20 人團隊"
+      ],
+      "concepts": [
+        "三產品線：組織版 400 萬/年/機關（TAM 260 機關 Y3 拿 11.5%）+ 專業版 USD 600/月/人（TAM 5-10 萬 PM 拿 1%）+ 認證 80 萬/標（TAM 100 標 Y3 拿 50%）",
+        "飛輪結構：組織版累積戰功 → 認證變政府採購標配 → 廠商衝來辦專業版孵技能 → 養出更多組織版客戶（a16z Bowling Pin 策略）",
+        "三年營收：Y1 4,460 萬 / Y2 1.33 億 / Y3 3.44 億 / 合計 5.22 億，扣 20 人人事 9,000 萬 = 淨利 4.3 億"
+      ]
+    },
+    {
       "id": "local-llm-wasm-pdf-pipeline",
       "title": "本機 LLM × WASM × PDF 全前端 Pipeline ─ 7 條地雷實錄",
       "subtitle": "Chrome 148 本機 4GB Gemini Nano + browser_wasi_shim 虛擬 FS + Rust wasm32-wasip1 + pdf.js + Bun static server 完整實測蒸餾。零雲端零後端業務邏輯，14 頁中文 PDF 30 秒串流摘出 695 字。7 條地雷 LM-221~227（browser_wasi_shim 巢狀目錄要 Directory、Chrome 148 promptStreaming chunk 是增量 delta 非累積、pdf.js CJK CMap 三件套必設、getTextContent join 空格、串流 LLM 顯示 pre-wrap + 自寫 markdown renderer、Cargo.toml [[bin]] 對齊、WASI fds 順序鎖死）。4 條架構發現 F-01~F-04（Bun static + ESM CDN 零 build、LLM × WASM 雙工人模式 + WASI fs 接力、CJK PDF 三件套、本機 LLM 真正甜蜜點是 fallback / 隱私前處理 / 預過濾省 90% API 費）。內部技術蒸餾 IAP 保護。",
