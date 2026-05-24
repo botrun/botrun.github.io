@@ -1,9 +1,31 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-23T13:00:00+08:00"
+    "lastUpdated": "2026-05-24T14:31:26+08:00"
   },
   "items": [
+    {
+      "id": "ai-data-curation-top20-2026",
+      "title": "2026 頂流 AI 資料處理 Top 20 — 國二也能懂",
+      "subtitle": "OpenAI / Anthropic / Google / Meta / DeepSeek 怎麼挑訓練資料？2026 三大質變：合成資料變主菜（Phi-4 40%、Nemotron-CC 1.9 兆字、DeepSeek Agentic Synthesis）、學霸來打分（Llama-3-70B 對 46 萬篇打 0-5 分蒸成小評審）、配比靠迴歸（RegMix 10% 算力勝人類專家）。Top 20 維度全部用學生＋參考書比喻講到國二也懂：教育價值評分（FineWeb-Edu 1.3 兆字）、整體品質分類器（DCLM +6.6 pp）、分類器投票整合（Nemotron-CC 6.3 兆字）、QuRating 配對、Ask-LLM、DSIR、MinHash/SemDedup 去重、DoReMi/RegMix 配比、n-gram 去汙染、合成改寫、教科書合成（Phi-4 14B 翻 70B）、推理軌跡 Long CoT（Magistral 純 RL AIME +50）、Tool-use 軌跡（Opus 4.7 SWE-bench 87.6%）、Annealing、長文 1M、預訓安全過濾、Constitutional AI（憲法 23K 字）、RLVR 可驗證。給 bowen 公文／法務蒸餾的三招借鏡：公文教育分類器 + RegMix 找配比 + RLVR 法條可驗證。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-data-curation-top20-2026.html",
+      "icon": "database",
+      "badge": "AI 資料煉金術",
+      "badgeColor": "#b5454a",
+      "publishDate": "2026-05-24T14:31:26+08:00",
+      "tags": [
+        "database:資料挑選",
+        "users:頂流 AI 廠商",
+        "lightbulb:國二也能懂"
+      ],
+      "concepts": [
+        "2026 三大質變：合成資料從補丁變主菜（Phi-4 40%、Nemotron-CC 1.9 兆字合成）、學霸打分蒸小評審（FineWeb-Edu 範本全產業抄）、配比靠迴歸（RegMix 10% 算力勝人類）",
+        "Top 20 維度涵蓋 7 大類：打分（6 招）、去重（2 招）、配比（2 招）、去汙染（1 招）、合成（4 招）、時間軸（2 招）、安全品味（3 招）",
+        "代表公司亮點：Phi-4 40% 合成翻 70B、Magistral 純 RL AIME +50、Claude 憲法 2.7K→23K 字、Opus 4.7 SWE 87.6%、Nemotron-CC 6.3 兆字開源",
+        "bowen 公文借鏡三招：(1) 抄 FineWeb-Edu 做公文教育分類器 (2) RegMix 找蒸餾配比 (3) RLVR 法條可驗證做 reward",
+        "2026 贏家公式：（學霸打分 + 多評審投票）×（AI 自寫教材）×（小模型試配比）×（考前換精華）×（只訓可驗證題目）"
+      ]
+    },
     {
       "id": "botrun-three-products-flywheel",
       "title": "波特人三產品線飛輪 — 台灣務實版三年 5.22 億",
