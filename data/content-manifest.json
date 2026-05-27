@@ -5,6 +5,14 @@
   },
   "items": [
     {
+      "id": "alphago-from-scratch-dwarkesh",
+      "title": "AlphaGo 從零打造——一顆棋子如何改變 AI 歷史",
+      "description": "30 張投影片，Dwarkesh Podcast × Eric Jang，用國中生能懂的方式解說 MCTS、自我對弈、值網路、RL 困境，從圍棋規則一路讀懂 AlphaGo",
+      "href": "https://storage.googleapis.com/botrun-slides/alphago-from-scratch-dwarkesh.html",
+      "publishDate": "2026-05-27",
+      "tags": ["AI", "AlphaGo", "MCTS", "強化學習", "深度學習", "Dwarkesh", "教育", "國中生"]
+    },
+    {
       "id": "chatgpt-vs-alphago-agi-explainer",
       "title": "ChatGPT 學不會 AlphaGo 的直覺？國中生看懂 AGI 終極密碼",
       "description": "30 張投影片，用比喻帶你看懂 GPT、強化學習、Transformer、直覺、AGI 的核心原理",
