@@ -5,6 +5,21 @@
   },
   "items": [
     {
+      "id": "chatgpt-vs-alphago-agi-explainer",
+      "title": "ChatGPT 學不會 AlphaGo 的直覺？國中生看懂 AGI 終極密碼",
+      "description": "30 張投影片，用比喻帶你看懂 GPT、強化學習、Transformer、直覺、AGI 的核心原理",
+      "href": "https://storage.googleapis.com/botrun-slides/chatgpt-vs-alphago-agi-explainer.html",
+      "publishDate": "2026-05-27",
+      "tags": [
+        "AI",
+        "教育",
+        "ChatGPT",
+        "AlphaGo",
+        "AGI",
+        "國中生"
+      ]
+    },
+    {
       "id": "ai-data-curation-top20-2026",
       "title": "2026 頂流 AI 資料處理 Top 20 — 國二也能懂",
       "subtitle": "OpenAI / Anthropic / Google / Meta / DeepSeek 怎麼挑訓練資料？2026 三大質變：合成資料變主菜（Phi-4 40%、Nemotron-CC 1.9 兆字、DeepSeek Agentic Synthesis）、學霸來打分（Llama-3-70B 對 46 萬篇打 0-5 分蒸成小評審）、配比靠迴歸（RegMix 10% 算力勝人類專家）。Top 20 維度全部用學生＋參考書比喻講到國二也懂：教育價值評分（FineWeb-Edu 1.3 兆字）、整體品質分類器（DCLM +6.6 pp）、分類器投票整合（Nemotron-CC 6.3 兆字）、QuRating 配對、Ask-LLM、DSIR、MinHash/SemDedup 去重、DoReMi/RegMix 配比、n-gram 去汙染、合成改寫、教科書合成（Phi-4 14B 翻 70B）、推理軌跡 Long CoT（Magistral 純 RL AIME +50）、Tool-use 軌跡（Opus 4.7 SWE-bench 87.6%）、Annealing、長文 1M、預訓安全過濾、Constitutional AI（憲法 23K 字）、RLVR 可驗證。給 bowen 公文／法務蒸餾的三招借鏡：公文教育分類器 + RegMix 找配比 + RLVR 法條可驗證。",
@@ -381,7 +396,10 @@
       "badge": "策略",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-19T23:54:03+08:00",
-      "tags": ["git-branch:戰略", "layers:孵化器"],
+      "tags": [
+        "git-branch:戰略",
+        "layers:孵化器"
+      ],
       "concepts": [
         "核心論點：現在一句自然語言就能做好的事沒有商業價值，14 個月後 Hermes 內建就會做掉",
         "市場現實：機關客戶已自行會用 Claude Code，運算中心已用 RAG＋agentic 寫公文，90% 應用型產品賣不出去",

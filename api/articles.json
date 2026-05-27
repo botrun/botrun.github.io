@@ -1,8 +1,22 @@
 {
-  "generatedAt": "2026-05-24T06:32:59.629Z",
-  "total": 183,
+  "generatedAt": "2026-05-27T00:49:41.797Z",
+  "total": 184,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "ChatGPT 學不會 AlphaGo 的直覺？國中生看懂 AGI 終極密碼",
+      "date": "2026-05-27",
+      "content": "",
+      "tags": [
+        "AI",
+        "教育",
+        "ChatGPT",
+        "AlphaGo",
+        "AGI",
+        "國中生"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/chatgpt-vs-alphago-agi-explainer.html"
+    },
     {
       "title": "2026 頂流 AI 資料處理 Top 20 — 國二也能懂",
       "date": "2026-05-24T14:31:26+08:00",
