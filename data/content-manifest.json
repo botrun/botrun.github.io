@@ -6,17 +6,17 @@
   "items": [
     {
       "id": "hermes-overtakes-openmanus-2026-05-27",
-      "title": "Hermes 把 OpenManus 拉下王座——架構差別才是關鍵",
-      "subtitle": "2026-05-10 一天 568B tokens vs OpenManus 151B，Nous Research 開源代理人 90 天竄頂 140K stars。完整剖析 Julia McCoy 影片：四個 demo 揭示「整合廣度給你 day 1，學習與謹慎給你 day 90」——Hermes 接 Claude 40 秒、接 Codex 走 OAuth device flow、一句話建 Telegram bot 自帶五道安全閘門（自我盤點 / 主動警告別貼密碼 / chmod 600 / 危險動作暫停 / 事後建議 rotate token），GitHub PR workflow 主動辨識「寄信是 external side effect」自插入 human approval gate。給創業者的三題：會越用越懂你嗎？危險動作會暫停嗎？能自己稽核自己嗎？",
+      "title": "Hermes 把 龍蝦 拉下王座——架構差別才是關鍵",
+      "subtitle": "2026-05-10 一天 568B tokens vs 龍蝦 151B，Nous Research 開源代理人 90 天竄頂 140K stars。完整剖析 Julia McCoy 影片：四個 demo 揭示「整合廣度給你 day 1，學習與謹慎給你 day 90」——Hermes 接 Claude 40 秒、接 Codex 走 OAuth device flow、一句話建 Telegram bot 自帶五道安全閘門（自我盤點 / 主動警告別貼密碼 / chmod 600 / 危險動作暫停 / 事後建議 rotate token），GitHub PR workflow 主動辨識「寄信是 external side effect」自插入 human approval gate。給創業者的三題：會越用越懂你嗎？危險動作會暫停嗎？能自己稽核自己嗎？",
       "href": "https://storage.googleapis.com/botrun-slides/hermes-overtakes-openmanus-2026-05-27.html",
       "icon": "shield-check",
       "badge": "AI 代理人剖析",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-27T12:26:31+08:00",
-      "tags": ["shield-check:Agent 安全", "git-pull-request:OpenManus", "trending-up:Hermes", "youtube:影片剖析"],
+      "tags": ["shield-check:Agent 安全", "git-pull-request:龍蝦", "trending-up:Hermes", "youtube:影片剖析"],
       "concepts": [
-        "2026-05-10 翻盤日：Hermes 568B tokens vs OpenManus 151B（3.76 倍），由 Nous Research 90 天竄頂 140K stars",
-        "OpenManus 災難：3 月 4 天爆 9 個資安漏洞（最嚴 9.9/10）、skill repo 341 筆惡意條目、創辦人跳槽 OpenAI",
+        "2026-05-10 翻盤日：Hermes 568B tokens vs 龍蝦 151B（3.76 倍），由 Nous Research 90 天竄頂 140K stars",
+        "龍蝦 災難：3 月 4 天爆 9 個資安漏洞（最嚴 9.9/10）、skill repo 341 筆惡意條目、創辦人跳槽 OpenAI",
         "核心金句：整合廣度給你 day 1 好用，學習與謹慎讓你 day 90 還活著——連得多 ≠ 可靠",
         "Hermes 設計選擇：self-introspection skill + destructive-action approval gate + unprompted security advisories + chmod 600 hardening + post-task token rotation",
         "選代理人三題：會越用越懂你嗎？危險動作會暫停嗎？能自己稽核自己（sessions/logs/skills 回放）嗎？"

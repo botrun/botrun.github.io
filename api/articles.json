@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-27T04:31:00.300Z",
+  "generatedAt": "2026-05-27T04:31:41.772Z",
   "total": 187,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
     {
-      "title": "Hermes 把 OpenManus 拉下王座——架構差別才是關鍵",
+      "title": "Hermes 把 龍蝦 拉下王座——架構差別才是關鍵",
       "date": "2026-05-27T12:26:31+08:00",
-      "content": "2026-05-10 一天 568B tokens vs OpenManus 151B，Nous Research 開源代理人 90 天竄頂 140K stars。完整剖析 Julia McCoy 影片：四個 demo 揭示「整合廣度給你 day 1，學習與謹慎給你 day 90」——Hermes 接 Claude 40 秒、接 Codex 走 OAuth device flow、一句話建 Telegram bot 自帶五道安全閘門（自我盤點 / 主動警告別貼密碼 / chmod 600 / 危險動作暫停 / 事後建議 rotate token），GitHub PR workflow 主動辨識「寄信是 external side effect」自插入 human approval gate。給創業者的三題：會越用越懂你嗎？危險動作會暫停嗎？能自己稽核自己嗎？",
+      "content": "2026-05-10 一天 568B tokens vs 龍蝦 151B，Nous Research 開源代理人 90 天竄頂 140K stars。完整剖析 Julia McCoy 影片：四個 demo 揭示「整合廣度給你 day 1，學習與謹慎給你 day 90」——Hermes 接 Claude 40 秒、接 Codex 走 OAuth device flow、一句話建 Telegram bot 自帶五道安全閘門（自我盤點 / 主動警告別貼密碼 / chmod 600 / 危險動作暫停 / 事後建議 rotate token），GitHub PR workflow 主動辨識「寄信是 external side effect」自插入 human approval gate。給創業者的三題：會越用越懂你嗎？危險動作會暫停嗎？能自己稽核自己嗎？",
       "tags": [
         "AI 代理人剖析",
         "Agent 安全",
-        "OpenManus",
+        "龍蝦",
         "Hermes",
         "影片剖析"
       ],
