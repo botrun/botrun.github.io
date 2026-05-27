@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-27T00:54:08.576Z
+> 生成時間：2026-05-27T02:38:17.840Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 283 個項目，按發佈日期降序排列。
+共 284 個項目，按發佈日期降序排列。
+
+## 10 大神經網路架構（國中生版）— 2025-2026 真實旗艦應用
+
+> Transformer 全班互看一眼、MoE 補習班只叫數學老師、Diffusion 從雪花擦出影片、ViT 把照片切成 196 塊拼圖、GNN 把分子當朋友圈、Gaussian Splatting 幾百萬顆棉花球拼房間、World Model 開車前先腦中演一遍、Liquid 19 顆神經元能開車耗電 1/100、Flow Matching 畫一條最短路徑機器人秒動（π0 折衣服）、Hybrid SSM-Transformer 記憶 ×3 速度（Jamba/Zamba2）。每架構附 2025-2026 真實旗艦：GPT-5.2、Mistral Large 3 675B NVFP4、Sora 2、Meta DINOv3、AlphaFold 3 → Isomorphic 2026 人體試驗、Apple SHARP、Tesla FSD V14、Liquid LFM2.5、Physical Intelligence π0、AI21 Jamba 1.5。
+
+**關鍵觀念：**
+- 10 大架構各配生活比喻 + 2025-2026 真實旗艦（不是教科書老例子）
+- Transformer = 全班互看（GPT-5.2/Claude Opus 4.7）、MoE = 只叫數學老師（Mistral Large 3 675B/41B active）
+- DiT = 從雪花擦出貓（Sora 2 / Veo 3.1）、ViT/DINOv3 = 照片拼圖（醫療病理新基底）
+- Flow Matching 取代 ResNet 為機器人新主流（π0 50Hz 連續控制折衣服）、Hybrid SSM 取代純 Mamba 才落地（Jamba/Zamba2）
+- 雙層說明：高中生比喻 + 資深工程師細節（self-attention/MoE routing/EGNN/ODE/Rectified Flow）
+
+- [線上版](https://storage.googleapis.com/botrun-slides/10-neural-network-architectures-2026.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/10-neural-network-architectures-2026.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 架構掃盲
+- 發佈日期：2026-05-27T10:34:00+08:00
+- 標籤：神經網路、架構、國中生、2025-2026
 
 ## AlphaGo 從零打造——一顆棋子如何改變 AI 歷史
 
