@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-28T02:42:54.431Z",
-  "total": 188,
+  "generatedAt": "2026-05-28T11:58:13.338Z",
+  "total": 189,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "Hermes /goal 原始碼解剖：Ralph loop 怎麼讓 AI 不做完不准走",
+      "date": "2026-05-28T19:58:00+08:00",
+      "content": "Hermes Agent 的 /goal 指令，能把 AI 從「問一句答一句」變成「咬住一個目標連續做到完」。本篇直接讀上游 NousResearch/hermes-agent 的真原始碼 hermes_cli/goals.py（762 行，MIT）拆解它的 Ralph loop：核心其實只有三個齒輪——GoalState 把目標寫進 SessionDB.state_meta（跨 session 用 /resume 撿得回來）、judge_goal() 叫一個小模型回一行 JSON 判定「做完沒」、evaluate_after_turn() 沒做完就把一句普通的 user 訊息塞回輸入佇列當下一輪。最聰明的是它完全不動 system prompt、不換 toolset，所以 prompt cache 不破。三道防鬼打牆剎車：裁判判 DONE、20 回合上限、裁判連 3 次吐不出合法 JSON 就暫停。也誠實標限制：成敗全押裁判小模型、預設只跑 20 輪、裁判只看最後一則回覆 4000 字、botrun 三個 hermes repo 都只是部署包裝沒這段核心。",
+      "tags": [
+        "原始碼解剖",
+        "Ralph loop",
+        "hermes-agent",
+        "裁判模型",
+        "自動接力"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/hermes-goal-ralph-loop.html"
+    },
     {
       "title": "高品味題庫飛燕八步：從訪談到 A/B 跑分",
       "date": "2026-05-28T10:39:28+08:00",

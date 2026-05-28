@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "hermes-goal-ralph-loop",
+      "title": "Hermes /goal 原始碼解剖：Ralph loop 怎麼讓 AI 不做完不准走",
+      "subtitle": "Hermes Agent 的 /goal 指令，能把 AI 從「問一句答一句」變成「咬住一個目標連續做到完」。本篇直接讀上游 NousResearch/hermes-agent 的真原始碼 hermes_cli/goals.py（762 行，MIT）拆解它的 Ralph loop：核心其實只有三個齒輪——GoalState 把目標寫進 SessionDB.state_meta（跨 session 用 /resume 撿得回來）、judge_goal() 叫一個小模型回一行 JSON 判定「做完沒」、evaluate_after_turn() 沒做完就把一句普通的 user 訊息塞回輸入佇列當下一輪。最聰明的是它完全不動 system prompt、不換 toolset，所以 prompt cache 不破。三道防鬼打牆剎車：裁判判 DONE、20 回合上限、裁判連 3 次吐不出合法 JSON 就暫停。也誠實標限制：成敗全押裁判小模型、預設只跑 20 輪、裁判只看最後一則回覆 4000 字、botrun 三個 hermes repo 都只是部署包裝沒這段核心。",
+      "href": "https://storage.googleapis.com/botrun-slides/hermes-goal-ralph-loop.html",
+      "icon": "target",
+      "badge": "原始碼解剖",
+      "badgeColor": "#5b4b8a",
+      "publishDate": "2026-05-28T19:58:00+08:00",
+      "tags": [
+        "target:Ralph loop",
+        "git-branch:hermes-agent",
+        "scale:裁判模型",
+        "repeat:自動接力"
+      ],
+      "concepts": [
+        "核心機制：/goal 設定後，每輪結束 judge_goal() 用小模型判 done/continue，沒完成就把 continuation prompt 當 user 訊息塞回 session（goals.py:620）",
+        "零破壞設計：continuation 是普通 user role 訊息，不動 system prompt、不換 toolset，prompt cache 完全不破（檔頭 invariant）",
+        "狀態持久化：GoalState 寫進 SessionDB.state_meta，key=goal:<session_id>，/resume 舊 session 自動撿回目標",
+        "三道剎車防鬼打牆：裁判判 DONE（含卡住也算）、turns_used≥20 暫停、裁判連 3 次非 JSON 暫停；judge 額度 4096 tokens 防 reasoning 模型截斷",
+        "誠實限制：成敗全押裁判小模型、預設只 20 輪、裁判只看最後一則回覆 4000 字、botrun 三個 hermes repo 只是部署包裝核心在上游 MIT 原始碼"
+      ]
+    },
+    {
       "id": "all-five-skill-self-verify",
       "title": "all-five 技能：AI 自己驗到 5 題全對",
       "subtitle": "一份機敏稽查 Excel、5 個環保違規統計問題（GPS／AIOT／其他），關鍵不是讓 AI 用猜的，而是讓它用 sqlite3 + python -c 直查 db/data.db，再拿 answers.jsonl 標準答案核對自己——5 題全對才算技能成功。第一次只過 3/5（總數算成 6，標準答案是 7），追下去發現根因不是 SQL 寫錯，而是 db/data.db 本身缺料（少了序號 589）。於是回頭把 questions.jsonl 指向的原始 Excel 整份重灌成 1143 筆，並修正兩個陷阱（多重專案碼用 LIKE、本地日期格式 115年MM月DD日），最終 5/5 全過。技能已搬移本案可重用。",
