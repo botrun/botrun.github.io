@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-05-28T02:39:49.825Z",
+  "generatedAt": "2026-05-28T02:42:54.431Z",
   "total": 188,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
     {
-      "title": "高品味題庫八部曲：從訪談到 A/B 跑分",
+      "title": "高品味題庫飛燕八步：從訪談到 A/B 跑分",
       "date": "2026-05-28T10:39:28+08:00",
       "content": "一張 SVG 看懂整條題庫評測產線——1～5 題庫工程（情境蒐集／高品題目／附件備齊／專家標答／二元評測，做一次重用很久）、6～7 技能蒸餾（基準 Skill A vs 對照 Skill B，迭代主戰場）、8 跑分看報（4 格 A/B 矩陣，純 S3 零部署無限迴圈）。三句記住時間：第一次從零做約 2 小時；改技能重跑 20~30 分；只看報告再迭代 10 分。傳承教學一張圖搞定。",
       "tags": [
         "傳承 SOP",
-        "八部曲",
+        "飛燕八步",
         "A/B 對照",
         "題庫工程",
         "迭代回圈"
       ],
-      "url": "https://storage.googleapis.com/botrun-slides/高品味題庫八部曲-2026-05-28.html"
+      "url": "https://storage.googleapis.com/botrun-slides/高品味題庫飛燕八步-2026-05-28.html"
     },
     {
       "title": "Hermes 把 龍蝦 拉下王座——架構差別才是關鍵",

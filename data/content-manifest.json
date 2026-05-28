@@ -5,15 +5,15 @@
   },
   "items": [
     {
-      "id": "高品味題庫八部曲-2026-05-28",
-      "title": "高品味題庫八部曲：從訪談到 A/B 跑分",
+      "id": "高品味題庫飛燕八步-2026-05-28",
+      "title": "高品味題庫飛燕八步：從訪談到 A/B 跑分",
       "subtitle": "一張 SVG 看懂整條題庫評測產線——1～5 題庫工程（情境蒐集／高品題目／附件備齊／專家標答／二元評測，做一次重用很久）、6～7 技能蒸餾（基準 Skill A vs 對照 Skill B，迭代主戰場）、8 跑分看報（4 格 A/B 矩陣，純 S3 零部署無限迴圈）。三句記住時間：第一次從零做約 2 小時；改技能重跑 20~30 分；只看報告再迭代 10 分。傳承教學一張圖搞定。",
-      "href": "https://storage.googleapis.com/botrun-slides/高品味題庫八部曲-2026-05-28.html",
+      "href": "https://storage.googleapis.com/botrun-slides/高品味題庫飛燕八步-2026-05-28.html",
       "icon": "list-checks",
       "badge": "傳承 SOP",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-28T10:39:28+08:00",
-      "tags": ["list-checks:八部曲", "git-branch:A/B 對照", "target:題庫工程", "repeat:迭代回圈"],
+      "tags": ["list-checks:飛燕八步", "git-branch:A/B 對照", "target:題庫工程", "repeat:迭代回圈"],
       "concepts": [
         "1~5 題庫工程：情境蒐集 → 高品題目 → 附件備齊 → 專家標答 → 二元評測（一次做好可重用很久）",
         "6~7 技能蒸餾：Skill A baseline vs Skill B contrast（每次改進的主戰場）",
