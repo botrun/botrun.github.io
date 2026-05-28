@@ -5,6 +5,25 @@
   },
   "items": [
     {
+      "id": "all-five-skill-self-verify",
+      "title": "all-five 技能：AI 自己驗到 5 題全對",
+      "subtitle": "一份機敏稽查 Excel、5 個環保違規統計問題（GPS／AIOT／其他），關鍵不是讓 AI 用猜的，而是讓它用 sqlite3 + python -c 直查 db/data.db，再拿 answers.jsonl 標準答案核對自己——5 題全對才算技能成功。第一次只過 3/5（總數算成 6，標準答案是 7），追下去發現根因不是 SQL 寫錯，而是 db/data.db 本身缺料（少了序號 589）。於是回頭把 questions.jsonl 指向的原始 Excel 整份重灌成 1143 筆，並修正兩個陷阱（多重專案碼用 LIKE、本地日期格式 115年MM月DD日），最終 5/5 全過。技能已搬移本案可重用。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/all-five-skill-self-verify.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "Agentic 技能孵化",
+      "badgeColor": "#7c3aed",
+      "publishDate": "2026-05-28T19:14:57+08:00",
+      "tags": ["shield-check:機敏資料", "database:sqlite3", "check-check:自我驗證", "repeat:可重用技能"],
+      "concepts": [
+        "核心方法：answers.jsonl 標準答案當裁判，SQL 撈出的結果自動比對，5 題全對技能才算成功（零人工判分）",
+        "技術骨架：questions.jsonl 讀題 → sqlite3 + python -c 直查 db/data.db → 專案碼/日期/關鍵字分類 → 核對 answers.jsonl",
+        "關鍵轉折：第一次只過 3/5，根因不是 SQL 邏輯錯，而是資料庫缺料（少序號 589），總數 6 ≠ 標準 7",
+        "解法：用 pandas.read_excel 把原始 Excel 整份重灌 db（1143 筆 to_sql replace），補齊資料來源",
+        "兩個 SQL 陷阱：序號 589 帶多重專案碼要用 LIKE，日期是本地格式 115年MM月DD日不能標準比較"
+      ]
+    },
+    {
       "id": "高品味題庫飛燕八步-2026-05-28",
       "title": "高品味題庫飛燕八步：從訪談到 A/B 跑分",
       "subtitle": "一張 SVG 看懂整條題庫評測產線——1～5 題庫工程（情境蒐集／高品題目／附件備齊／專家標答／二元評測，做一次重用很久）、6～7 技能蒸餾（基準 Skill A vs 對照 Skill B，迭代主戰場）、8 跑分看報（4 格 A/B 矩陣，純 S3 零部署無限迴圈）。三句記住時間：第一次從零做約 2 小時；改技能重跑 20~30 分；只看報告再迭代 10 分。傳承教學一張圖搞定。",

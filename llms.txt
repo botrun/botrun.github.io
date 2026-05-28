@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-05-28T02:42:54.206Z
+> 生成時間：2026-05-28T11:17:15.127Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 286 個項目，按發佈日期降序排列。
+共 287 個項目，按發佈日期降序排列。
+
+## all-five 技能：AI 自己驗到 5 題全對
+
+> 一份機敏稽查 Excel、5 個環保違規統計問題（GPS／AIOT／其他），關鍵不是讓 AI 用猜的，而是讓它用 sqlite3 + python -c 直查 db/data.db，再拿 answers.jsonl 標準答案核對自己——5 題全對才算技能成功。第一次只過 3/5（總數算成 6，標準答案是 7），追下去發現根因不是 SQL 寫錯，而是 db/data.db 本身缺料（少了序號 589）。於是回頭把 questions.jsonl 指向的原始 Excel 整份重灌成 1143 筆，並修正兩個陷阱（多重專案碼用 LIKE、本地日期格式 115年MM月DD日），最終 5/5 全過。技能已搬移本案可重用。
+
+**關鍵觀念：**
+- 核心方法：answers.jsonl 標準答案當裁判，SQL 撈出的結果自動比對，5 題全對技能才算成功（零人工判分）
+- 技術骨架：questions.jsonl 讀題 → sqlite3 + python -c 直查 db/data.db → 專案碼/日期/關鍵字分類 → 核對 answers.jsonl
+- 關鍵轉折：第一次只過 3/5，根因不是 SQL 邏輯錯，而是資料庫缺料（少序號 589），總數 6 ≠ 標準 7
+- 解法：用 pandas.read_excel 把原始 Excel 整份重灌 db（1143 筆 to_sql replace），補齊資料來源
+- 兩個 SQL 陷阱：序號 589 帶多重專案碼要用 LIKE，日期是本地格式 115年MM月DD日不能標準比較
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/all-five-skill-self-verify.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/all-five-skill-self-verify.html/llms.txt): 該專案的 llms.txt
+- 類型：Agentic 技能孵化
+- 發佈日期：2026-05-28T19:14:57+08:00
+- 標籤：機敏資料、sqlite3、自我驗證、可重用技能
 
 ## 高品味題庫飛燕八步：從訪談到 A/B 跑分
 
