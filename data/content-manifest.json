@@ -5,6 +5,25 @@
   },
   "items": [
     {
+      "id": "機敏不出門-雙孵化器架構",
+      "title": "機敏不出門：誰當主持人，機敏就留在誰那邊",
+      "subtitle": "想用 Claude 強大的規劃力，又怕機敏資料被外國 AI 碰到？這份一頁 SVG 把「方案 B：雙孵化器架構」講到讓多數人秒懂。核心一句話：誰當「主持人」（主迴圈），誰手上就握有整段對話紀錄——而 Claude Code 的 context window 全程會送到 Anthropic 雲端，所以信任邊界不是靠事後遮罩，是物理的。做法是讓 Hermes／Gemma 4 31B 在 NCHC 機房內當主持人，真機敏資料（名冊／案號／個資）只在機房流動、連門都不用出；機房內先把真資料去識別成合成資料（PERSON_A／案件_001），只有「合成資料 + 題目」這一道刻意交出的內容穿過機房牆給雲端 Opus 4.8，Opus 只當外包顧問畫設計圖（SKILL.md／prompt／程式骨架），碰不到任何一筆真資料，設計圖再送回機房套用。三個關鍵：①主持人在機房（對話留在哪機敏就留在哪）②雲端只看假資料 ③白名單而非黑名單（只有主動交出的才出門，比事後遮罩 PII 更難破、對機關更好辯護）。並對比相反的 A 案（Opus 當主體靠 redaction gateway），點出 A 案規劃最聰明但合規難辯護。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/機敏不出門-雙孵化器架構.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "機敏資料治理",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-05-30T15:14:02+08:00",
+      "tags": ["shield-check:機敏不出門", "git-branch:雙孵化器", "scale:Hermes 主體", "repeat:白名單防禦"],
+      "concepts": [
+        "核心觀念：誰當主持人（主迴圈）誰就握有整段對話，Claude Code context 全程送雲端，信任邊界是物理的不是事後遮罩",
+        "方案 B 架構：Hermes/Gemma 4 31B 在 NCHC 機房當主持人，真機敏資料只在機房流動從不出門",
+        "去識別關卡：機房內把真資料抽換成合成資料（PERSON_A／案件_001），只有合成資料+題目穿過機房牆",
+        "雲端角色：Opus 4.8 只當外包顧問看合成資料、畫設計圖（SKILL.md/prompt/骨架），碰不到任何真資料",
+        "白名單 vs 黑名單：只有主動交出的才出門，比 A 案（Opus 主體 + redaction gateway 事後遮罩 PII）更難破、對政府 RFP 更好辯護"
+      ]
+    },
+    {
       "id": "hermes-goal-ralph-loop",
       "title": "Hermes /goal 原始碼解剖：Ralph loop 怎麼讓 AI 不做完不准走",
       "subtitle": "Hermes Agent 的 /goal 指令，能把 AI 從「問一句答一句」變成「咬住一個目標連續做到完」。本篇直接讀上游 NousResearch/hermes-agent 的真原始碼 hermes_cli/goals.py（762 行，MIT）拆解它的 Ralph loop：核心其實只有三個齒輪——GoalState 把目標寫進 SessionDB.state_meta（跨 session 用 /resume 撿得回來）、judge_goal() 叫一個小模型回一行 JSON 判定「做完沒」、evaluate_after_turn() 沒做完就把一句普通的 user 訊息塞回輸入佇列當下一輪。最聰明的是它完全不動 system prompt、不換 toolset，所以 prompt cache 不破。三道防鬼打牆剎車：裁判判 DONE、20 回合上限、裁判連 3 次吐不出合法 JSON 就暫停。也誠實標限制：成敗全押裁判小模型、預設只跑 20 輪、裁判只看最後一則回覆 4000 字、botrun 三個 hermes repo 都只是部署包裝沒這段核心。",
