@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "gcp-workflows-vs-cloudrun-cost",
+      "title": "等 LLM 的那一分鐘，誰在燒你的錢？",
+      "subtitle": "pi AI agent 一個任務 15 分鐘、九成在等 LLM 回話。Cloud Run 像計程車——車停著等客人，跳錶照跳；Cloud Workflows 像按動作付費的工讀生——打一通電話叫 LLM 算一個動作收一次錢，等多久都不計時。這份 7 頁簡報把「為什麼按步 vs 按秒」講到高中生秒懂：差別不在誰的機器便宜，而在等待時佔住了什麼——Cloud Run 等待時整個容器被你獨佔、無法回收，只能按秒收；Workflows 等待只是資料庫裡一筆貼了 callback 的狀態，幾百萬個共用底層，所以等待敢收 $0。並拆穿最常見的省錢陷阱：若 Cloud Run 同步呼叫 Workflows、貼著耳朵等 60 秒回報（掛著電話等），租金照付、白搬；正解是觸發即返回（0.2 秒收線縮到 0）+ 前端 Firestore 即時監聽收結果，那 60 秒完全不碰 Cloud Run。三方案：A Workflows 直打 LLM（即時、省 90% 等待費）、B Callback+Batch（無人值守批次、等待零計費 + token 五折）、C Cloud Tasks 自架狀態機（控制最大）。每天 1000 次 60 秒任務：同步掛著等 ~$690/月、即返回+輪詢 ~$12、即返回+Firestore ~$4，最高省 170 倍。誠實邊界：無逐字串流、單次呼叫上限 30 分、單變數 256-512KB、重 CPU 計算別放。",
+      "href": "https://storage.googleapis.com/botrun-slides/gcp-workflows-vs-cloudrun-cost.html",
+      "icon": "piggy-bank",
+      "badge": "GCP 省錢架構",
+      "badgeColor": "#0d9488",
+      "publishDate": "2026-06-06T07:35:41+08:00",
+      "tags": ["piggy-bank:等待免費", "timer:按步vs按秒", "split:Workflows管等Run管算", "trending-down:省170倍"],
+      "concepts": [
+        "核心洞見：不是換更便宜的機器，是換掉計費的尺——Cloud Run 按秒（容器獨佔不可回收）、Workflows 按步（等待只是一筆狀態，敢收 $0）",
+        "省錢陷阱：Cloud Run 同步呼叫 Workflows 並掛著等 60 秒回報＝租金照付白搬；正解是觸發即返回 0.2 秒收線 + 前端 Firestore onSnapshot 收結果",
+        "三方案：A Workflows 直打 LLM（即時省 90% 等待費，最推薦）、B Callback+Batch（等待零計費 + token 五折，最省但非即時）、C Cloud Tasks 自架狀態機（控制最大工最多）",
+        "成本實證：每天 1000 次 60 秒任務，同步掛著等 ~$690/月 vs 即返回+Firestore ~$4/月，省約 170 倍；低流量常落在免費額度趨近 $0",
+        "誠實邊界：Workflows 很會等不會算——無逐字串流（違 Hermes 串流鐵律的情境留 Cloud Run）、單次呼叫上限 30 分、單變數 256-512KB、重 CPU 計算與大迴圈別放"
+      ]
+    },
+    {
       "id": "機敏不出門-雙孵化器架構",
       "title": "機敏不出門：誰當主持人，機敏就留在誰那邊",
       "subtitle": "想用 Claude 強大的規劃力，又怕機敏資料被外國 AI 碰到？這份一頁 SVG 把「方案 B：雙孵化器架構」講到讓多數人秒懂。核心一句話：誰當「主持人」（主迴圈），誰手上就握有整段對話紀錄——而 Claude Code 的 context window 全程會送到 Anthropic 雲端，所以信任邊界不是靠事後遮罩，是物理的。做法是讓 Hermes／Gemma 4 31B 在 NCHC 機房內當主持人，真機敏資料（名冊／案號／個資）只在機房流動、連門都不用出；機房內先把真資料去識別成合成資料（PERSON_A／案件_001），只有「合成資料 + 題目」這一道刻意交出的內容穿過機房牆給雲端 Opus 4.8，Opus 只當外包顧問畫設計圖（SKILL.md／prompt／程式骨架），碰不到任何一筆真資料，設計圖再送回機房套用。三個關鍵：①主持人在機房（對話留在哪機敏就留在哪）②雲端只看假資料 ③白名單而非黑名單（只有主動交出的才出門，比事後遮罩 PII 更難破、對機關更好辯護）。並對比相反的 A 案（Opus 當主體靠 redaction gateway），點出 A 案規劃最聰明但合規難辯護。",

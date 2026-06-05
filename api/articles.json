@@ -1,8 +1,21 @@
 {
-  "generatedAt": "2026-05-28T11:58:13.338Z",
-  "total": 189,
+  "generatedAt": "2026-06-05T23:40:26.797Z",
+  "total": 190,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "等 LLM 的那一分鐘，誰在燒你的錢？",
+      "date": "2026-06-06T07:35:41+08:00",
+      "content": "pi AI agent 一個任務 15 分鐘、九成在等 LLM 回話。Cloud Run 像計程車——車停著等客人，跳錶照跳；Cloud Workflows 像按動作付費的工讀生——打一通電話叫 LLM 算一個動作收一次錢，等多久都不計時。這份 7 頁簡報把「為什麼按步 vs 按秒」講到高中生秒懂：差別不在誰的機器便宜，而在等待時佔住了什麼——Cloud Run 等待時整個容器被你獨佔、無法回收，只能按秒收；Workflows 等待只是資料庫裡一筆貼了 callback 的狀態，幾百萬個共用底層，所以等待敢收 $0。並拆穿最常見的省錢陷阱：若 Cloud Run 同步呼叫 Workflows、貼著耳朵等 60 秒回報（掛著電話等），租金照付、白搬；正解是觸發即返回（0.2 秒收線縮到 0）+ 前端 Firestore 即時監聽收結果，那 60 秒完全不碰 Cloud Run。三方案：A Workflows 直打 LLM（即時、省 90% 等待費）、B Callback+Batch（無人值守批次、等待零計費 + token 五折）、C Cloud Tasks 自架狀態機（控制最大）。每天 1000 次 60 秒任務：同步掛著等 ~$690/月、即返回+輪詢 ~$12、即返回+Firestore ~$4，最高省 170 倍。誠實邊界：無逐字串流、單次呼叫上限 30 分、單變數 256-512KB、重 CPU 計算別放。",
+      "tags": [
+        "GCP 省錢架構",
+        "等待免費",
+        "按步vs按秒",
+        "Workflows管等Run管算",
+        "省170倍"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/gcp-workflows-vs-cloudrun-cost.html"
+    },
     {
       "title": "Hermes /goal 原始碼解剖：Ralph loop 怎麼讓 AI 不做完不准走",
       "date": "2026-05-28T19:58:00+08:00",
