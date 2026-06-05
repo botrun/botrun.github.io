@@ -3,7 +3,7 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-05T23:40:26.547Z
+> 生成時間：2026-06-05T23:43:53.548Z
 > 來源：content-manifest.json（唯一真相源）
 
 共 290 個項目，按發佈日期降序排列。
@@ -17,6 +17,7 @@
 - 省錢陷阱：Cloud Run 同步呼叫 Workflows 並掛著等 60 秒回報＝租金照付白搬；正解是觸發即返回 0.2 秒收線 + 前端 Firestore onSnapshot 收結果
 - 三方案：A Workflows 直打 LLM（即時省 90% 等待費，最推薦）、B Callback+Batch（等待零計費 + token 五折，最省但非即時）、C Cloud Tasks 自架狀態機（控制最大工最多）
 - 成本實證：每天 1000 次 60 秒任務，同步掛著等 ~$690/月 vs 即返回+Firestore ~$4/月，省約 170 倍；低流量常落在免費額度趨近 $0
+- 真正零 Cloud Run 乾淨解（路 B）：瀏覽器用 Firebase SDK 寫 Firestore（信箱）→ Eventarc 原生橋接觸發 Workflows（郵差，不需 Cloud Function 黏合）→ 打 LLM（金鑰在 Secret Manager）→ 寫回 Firestore → 瀏覽器 onSnapshot 即時收；安全由 Firestore 規則控管比開 IAM 給使用者乾淨，A 適內部工具、B 適正式對外 App
 - 誠實邊界：Workflows 很會等不會算——無逐字串流（違 Hermes 串流鐵律的情境留 Cloud Run）、單次呼叫上限 30 分、單變數 256-512KB、重 CPU 計算與大迴圈別放
 
 - [線上版](https://storage.googleapis.com/botrun-slides/gcp-workflows-vs-cloudrun-cost.html): HTML 簡報原始頁面
