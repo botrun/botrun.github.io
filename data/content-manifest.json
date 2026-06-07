@@ -5,6 +5,25 @@
   },
   "items": [
     {
+      "id": "bo-bento-business-model",
+      "title": "波便當：資料寄來，進化好的 AI 帶回家離線跑",
+      "subtitle": "從 GEPA 反思式進化的來龍去脈，一路講到「波便當」商業模式，淺顯到高中生與夥伴都懂。核心一句話：你把去識別的機敏資料寄來→雲端自動跑 GEPA（AI 看考卷寫檢討、一版比一版聰明、不靠 RL 硬調，比 GRPO 省 35 倍 rollout）→我把進化好的 SKILL.md ＋ pi agent 執行引擎（3MB 單檔、冷啟 0.2 秒）＋ 地端 Gemma 31B 封成一個 Bun + pi agent 的 Docker 便當寄回去→你回自己機房，斷網也能跑，全程資料不出門。GEPA 由 UC Berkeley 的 Lakshya Agrawal 等 17 人發明、通訊作者是 DSPy 之父 Omar Khattab、含 Databricks 創辦人 Matei Zaharia / Ion Stoica，獲 ICLR 2026 Oral，已被 Google adk optimize、Microsoft、Databricks、Comet、MLflow 收進產品（Databricks 實測開源模型＋GEPA 省 90 倍打贏 Claude Opus 4.1）。競品 4 格：雲端優化派（Braintrust/Comet/Google）會自動進化但成品綁雲收不回；地端框架派（Docker Agent/Hermes）資料不出門但只給空殼不會進化；波便當縫合兩者——進化在雲端、成品帶回家離線跑、繁中政府機敏情境、工研院第三方認證。商業模式不賣月費，賣單次製作費＋認證費＋再進化費。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/bo-bento-business-model.html",
+      "icon": "package",
+      "badge": "商業模式",
+      "badgeColor": "#e8634a",
+      "protected": true,
+      "publishDate": "2026-06-07T09:52:27+08:00",
+      "tags": ["package:進化好的AI便當帶回家", "lock:資料不出門離線跑", "git-branch:GEPA自動進化", "award:工研院第三方認證"],
+      "concepts": [
+        "波便當三步驟：①上傳去識別機敏資料 →②雲端自動 GEPA 進化（AI 看考卷寫檢討、一版比一版聰明）→③下載 Bun + pi agent Docker 回機房離線跑，全程資料不出門",
+        "GEPA＝Genetic-Pareto 反思式進化：以自然語言 reflection 解讀失敗 trace 提 prompt 變異、Pareto 前緣維護多候選，比 GRPO 式 RL 省 35× rollout 且分數高 6～20%；不靠強化學習硬調",
+        "GEPA 出身：UC Berkeley Lakshya Agrawal 等 17 人、通訊作者 DSPy 之父 Omar Khattab、含 Databricks 創辦人 Matei Zaharia / Ion Stoica，ICLR 2026 Oral；Google/Microsoft/Databricks/Comet/MLflow 已採用",
+        "競品 4 格護城河：雲端派成品綁雲（收不回）、地端派只給空殼（不進化）、波便當縫合兩者並主打繁中政府機敏情境＋工研院認證——巨頭做得到但商業模式上不願意做",
+        "商業模式：不賣月費（客戶帶走成品），改收單次製作費＋工研院第三方認證費＋再進化費；對準政府最在意的資料主權與可信第三方背書"
+      ]
+    },
+    {
       "id": "high-taste-eval-gepa-9-steps",
       "title": "高品味題庫 × GEPA 進化九步驟口訣",
       "subtitle": "把九字評測口訣接上 GEPA（Genetic-Pareto 反思式 prompt 進化）的四個齒輪：可見題＝GEPA trainset（拿來練）、保留題＝GEPA valset（只拿來考）、可驗證＝gemma 31b 跑多版 SKILL.md 打分當 metric（Pareto 比較）、可進化＝考差看哪類考點弱做 reflection 反思、增添可見題進化。完整九步：001 考什麼（先規劃考點並編號）、002 多模態、003 純文字（或轉 sqlite）、004 種子題（5–20 題人類專家驗證）、005 去機敏（gemma 31b＋md5 雜湊）、006 可見題（opus 擴充 100 題;GEPA trainset）、007 保留題（opus 建 100 題同考點換殼、泛化不擬合、只打分不訓練;GEPA valset）、008 可驗證（多版 SKILL.md 打分供 GEPA 當 metric、Pareto 比較）、009 可進化（GEPA reflection 反思、增添可見題進化）。核心：保留題永遠只考不練，才量得出真泛化；GEPA 不靠 RL 硬調，靠『看考卷寫檢討』在 Pareto 前緣上一版比一版強。",
