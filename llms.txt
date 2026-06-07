@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-07T01:21:54.928Z
+> 生成時間：2026-06-07T01:36:31.414Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 292 個項目，按發佈日期降序排列。
+共 293 個項目，按發佈日期降序排列。
+
+## 高品味題庫 × GEPA 進化九步驟口訣
+
+> 把九字評測口訣接上 GEPA（Genetic-Pareto 反思式 prompt 進化）的四個齒輪：可見題＝GEPA trainset（拿來練）、保留題＝GEPA valset（只拿來考）、可驗證＝gemma 31b 跑多版 SKILL.md 打分當 metric（Pareto 比較）、可進化＝考差看哪類考點弱做 reflection 反思、增添可見題進化。完整九步：001 考什麼（先規劃考點並編號）、002 多模態、003 純文字（或轉 sqlite）、004 種子題（5–20 題人類專家驗證）、005 去機敏（gemma 31b＋md5 雜湊）、006 可見題（opus 擴充 100 題;GEPA trainset）、007 保留題（opus 建 100 題同考點換殼、泛化不擬合、只打分不訓練;GEPA valset）、008 可驗證（多版 SKILL.md 打分供 GEPA 當 metric、Pareto 比較）、009 可進化（GEPA reflection 反思、增添可見題進化）。核心：保留題永遠只考不練，才量得出真泛化；GEPA 不靠 RL 硬調，靠『看考卷寫檢討』在 Pareto 前緣上一版比一版強。
+
+**關鍵觀念：**
+- GEPA＝Genetic-Pareto：以自然語言 reflection 解讀失敗 trace 提出 prompt 變異，用 Pareto 前緣維護多個非支配候選，少量 rollout 即超越 GRPO 式 RL
+- 口訣對應 GEPA 四齒輪：006 可見題＝trainset（練）、007 保留題＝valset（考）、008 打分＝metric（Pareto 比版本）、009 反思＝reflection（看弱考點補可見題）
+- 008 可驗證：gemma 31b 跑多版 SKILL.md 打分供 GEPA 當 metric、Pareto 比較，挑出最值得再演化的版本
+- 009 可進化：考差看「哪類考點弱」統計做 reflection 反思，增添「可見題」進化——SKILL.md 一版比一版強
+- 鐵律：保留題（valset）永遠只考不練、一眼不看答案，才量得出真泛化而非把答案背進去
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/high-taste-eval-gepa-9-steps.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/high-taste-eval-gepa-9-steps.html/llms.txt): 該專案的 llms.txt
+- 類型：AI 評測方法論
+- 發佈日期：2026-06-07T09:36:04+08:00
+- 標籤：GEPA反思進化、保留題=valset只考不練、可見題=trainset、Pareto前緣再演化
 
 ## 高品味題庫評測九步驟口訣
 

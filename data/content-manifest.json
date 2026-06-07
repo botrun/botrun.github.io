@@ -5,6 +5,25 @@
   },
   "items": [
     {
+      "id": "high-taste-eval-gepa-9-steps",
+      "title": "高品味題庫 × GEPA 進化九步驟口訣",
+      "subtitle": "把九字評測口訣接上 GEPA（Genetic-Pareto 反思式 prompt 進化）的四個齒輪：可見題＝GEPA trainset（拿來練）、保留題＝GEPA valset（只拿來考）、可驗證＝gemma 31b 跑多版 SKILL.md 打分當 metric（Pareto 比較）、可進化＝考差看哪類考點弱做 reflection 反思、增添可見題進化。完整九步：001 考什麼（先規劃考點並編號）、002 多模態、003 純文字（或轉 sqlite）、004 種子題（5–20 題人類專家驗證）、005 去機敏（gemma 31b＋md5 雜湊）、006 可見題（opus 擴充 100 題;GEPA trainset）、007 保留題（opus 建 100 題同考點換殼、泛化不擬合、只打分不訓練;GEPA valset）、008 可驗證（多版 SKILL.md 打分供 GEPA 當 metric、Pareto 比較）、009 可進化（GEPA reflection 反思、增添可見題進化）。核心：保留題永遠只考不練，才量得出真泛化；GEPA 不靠 RL 硬調，靠『看考卷寫檢討』在 Pareto 前緣上一版比一版強。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/high-taste-eval-gepa-9-steps.html",
+      "icon": "git-branch",
+      "badge": "AI 評測方法論",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-06-07T09:36:04+08:00",
+      "tags": ["git-branch:GEPA反思進化", "lock:保留題=valset只考不練", "scale:可見題=trainset", "repeat:Pareto前緣再演化"],
+      "concepts": [
+        "GEPA＝Genetic-Pareto：以自然語言 reflection 解讀失敗 trace 提出 prompt 變異，用 Pareto 前緣維護多個非支配候選，少量 rollout 即超越 GRPO 式 RL",
+        "口訣對應 GEPA 四齒輪：006 可見題＝trainset（練）、007 保留題＝valset（考）、008 打分＝metric（Pareto 比版本）、009 反思＝reflection（看弱考點補可見題）",
+        "008 可驗證：gemma 31b 跑多版 SKILL.md 打分供 GEPA 當 metric、Pareto 比較，挑出最值得再演化的版本",
+        "009 可進化：考差看「哪類考點弱」統計做 reflection 反思，增添「可見題」進化——SKILL.md 一版比一版強",
+        "鐵律：保留題（valset）永遠只考不練、一眼不看答案，才量得出真泛化而非把答案背進去"
+      ]
+    },
+    {
       "id": "high-taste-eval-9-steps",
       "title": "高品味題庫評測九步驟口訣",
       "subtitle": "一套從「規劃考點」到「baseline 打分再回頭補練」的完整口訣，九個關鍵字串起出題、去識別、擴題、防擬合與自我進化：考什麼（出題前先規劃考點並編號）、多模態（取得原始檔案）、純文字（AI 友善轉純文字或 sqlite）、種子題（5–20 題基於機敏資料、人類專家驗證）、去機敏（gemma 31b 辨識機敏欄位、md5 雜湊替換代號）、可見題（opus 擴充到 100 題提問＋標準答案）、保留題（opus 一對一同考點換殼建 100 題，泛化不擬合、只打分不訓練）、可驗證（gemma 31b 跑 baseline 技能打分）、可進化（考差時看哪類考點弱、不看保留題答案、增添可見題去練）。核心觀念：可見題拿來練、保留題只拿來考，量得出真泛化；考差就回頭補對的可見題，題庫會長大。",
