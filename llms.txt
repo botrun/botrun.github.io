@@ -3,10 +3,61 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-07T01:36:31.414Z
+> 生成時間：2026-06-10T07:30:55.169Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 293 個項目，按發佈日期降序排列。
+共 296 個項目，按發佈日期降序排列。
+
+## TryAI 第三年：去機敏．高品味．驗技能
+
+> 單張投影片講完三大亮點一條龍：01 去機敏——不出機關內網去機敏、人類核對簽名負責、再擴充為合成資料安全放大素材；02 高品味——領域專家使用者親自錄音真實任務情境痛點，萃取多步驟複雜任務題庫，會做事才拿得到分；03 驗技能——技能自動孵化自動進化，每輪題庫實測分數驗證，並由第三方工研院 AI 測試實驗室把關，可量測、可重現、可稽核。
+
+**關鍵觀念：**
+- 不出機關內網去機敏
+- 合成資料擴充
+- 領域專家錄音真實任務題庫
+- 可驗證進化技能
+- 工研院 AI 測試實驗室第三方把關
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-第三年三亮點.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/tryai-第三年三亮點.html/llms.txt): 該專案的 llms.txt
+- 類型：TryAI 第三年
+- 發佈日期：2026-06-10
+- 標籤：TryAI、數位發展部、去機敏、高品味題庫、驗技能、合成資料、工研院
+
+## 法務部：機敏資料連網路都不碰，USB 帶進來、去機敏、人簽名，才開始孵化
+
+> 卡米爾算力中心沒有對外 IP、全程內網，所以去機敏整段都離線、不經過 internet——用 USB 當實體載體把資料帶進帶出。只要觀護人 100 筆 ＋ 檢察官 100 筆種子資料就夠做高品味題庫，不必囤積幾萬筆，風險面更小。去機敏完成後由真人逐筆檢驗品質並親自簽名負責，確認無洩漏才放行；之後一律只用去機敏資料來孵化可驗證技能，原始機敏永不參與後續。一張 SVG 流程圖講完：USB 帶入 → 內網去機敏 → 人類簽名 → 只用去機敏資料孵化 → USB 帶出成品回法務部。
+
+**關鍵觀念：**
+- 卡米爾算力中心無對外 IP、全程內網，去機敏整段離線不碰 internet，機敏資料連門都不出
+- USB 當實體載體：資料進、成品出都靠人工搬運，沒有任何封包流向外部，物理隔離
+- 高品味題庫重質不重量：觀護人 100 ＋ 檢察官 100 共 200 筆種子就夠，不必幾萬筆
+- 去機敏後真人逐筆檢驗品質並簽名負責，確認無洩漏才放行
+- 之後一律只用去機敏資料孵化可驗證技能，原始機敏永不參與後續
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/法務部-離線去機敏-USB孵化.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/法務部-離線去機敏-USB孵化.html/llms.txt): 該專案的 llms.txt
+- 類型：離線去機敏
+- 發佈日期：2026-06-10T11:30:00+08:00
+- 標籤：無對外IP純內網、USB實體載體、觀護人100+檢察官100、人類簽名負責
+
+## 波便當：資料寄來，進化好的 AI 帶回家離線跑
+
+> 從 GEPA 反思式進化的來龍去脈，一路講到「波便當」商業模式，淺顯到高中生與夥伴都懂。核心一句話：你把去識別的機敏資料寄來→雲端自動跑 GEPA（AI 看考卷寫檢討、一版比一版聰明、不靠 RL 硬調，比 GRPO 省 35 倍 rollout）→我把進化好的 SKILL.md ＋ pi agent 執行引擎（3MB 單檔、冷啟 0.2 秒）＋ 地端 Gemma 31B 封成一個 Bun + pi agent 的 Docker 便當寄回去→你回自己機房，斷網也能跑，全程資料不出門。GEPA 由 UC Berkeley 的 Lakshya Agrawal 等 17 人發明、通訊作者是 DSPy 之父 Omar Khattab、含 Databricks 創辦人 Matei Zaharia / Ion Stoica，獲 ICLR 2026 Oral，已被 Google adk optimize、Microsoft、Databricks、Comet、MLflow 收進產品（Databricks 實測開源模型＋GEPA 省 90 倍打贏 Claude Opus 4.1）。競品 4 格：雲端優化派（Braintrust/Comet/Google）會自動進化但成品綁雲收不回；地端框架派（Docker Agent/Hermes）資料不出門但只給空殼不會進化；波便當縫合兩者——進化在雲端、成品帶回家離線跑、繁中政府機敏情境、工研院第三方認證。商業模式不賣月費，賣單次製作費＋認證費＋再進化費。
+
+**關鍵觀念：**
+- 波便當三步驟：①上傳去識別機敏資料 →②雲端自動 GEPA 進化（AI 看考卷寫檢討、一版比一版聰明）→③下載 Bun + pi agent Docker 回機房離線跑，全程資料不出門
+- GEPA＝Genetic-Pareto 反思式進化：以自然語言 reflection 解讀失敗 trace 提 prompt 變異、Pareto 前緣維護多候選，比 GRPO 式 RL 省 35× rollout 且分數高 6～20%；不靠強化學習硬調
+- GEPA 出身：UC Berkeley Lakshya Agrawal 等 17 人、通訊作者 DSPy 之父 Omar Khattab、含 Databricks 創辦人 Matei Zaharia / Ion Stoica，ICLR 2026 Oral；Google/Microsoft/Databricks/Comet/MLflow 已採用
+- 競品 4 格護城河：雲端派成品綁雲（收不回）、地端派只給空殼（不進化）、波便當縫合兩者並主打繁中政府機敏情境＋工研院認證——巨頭做得到但商業模式上不願意做
+- 商業模式：不賣月費（客戶帶走成品），改收單次製作費＋工研院第三方認證費＋再進化費；對準政府最在意的資料主權與可信第三方背書
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/bo-bento-business-model.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/bo-bento-business-model.html/llms.txt): 該專案的 llms.txt
+- 類型：商業模式
+- 發佈日期：2026-06-07T09:52:27+08:00
+- 標籤：進化好的AI便當帶回家、資料不出門離線跑、GEPA自動進化、工研院第三方認證
 
 ## 高品味題庫 × GEPA 進化九步驟口訣
 

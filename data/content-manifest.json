@@ -1,9 +1,36 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-05-28T10:39:28+08:00"
+    "lastUpdated": "2026-06-10T15:27:00+08:00"
   },
   "items": [
+    {
+      "id": "tryai-第三年三亮點",
+      "title": "TryAI 第三年：去機敏．高品味．驗技能",
+      "subtitle": "單張投影片講完三大亮點一條龍：01 去機敏——不出機關內網去機敏、人類核對簽名負責、再擴充為合成資料安全放大素材；02 高品味——領域專家使用者親自錄音真實任務情境痛點，萃取多步驟複雜任務題庫，會做事才拿得到分；03 驗技能——技能自動孵化自動進化，每輪題庫實測分數驗證，並由第三方工研院 AI 測試實驗室把關，可量測、可重現、可稽核。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/tryai-第三年三亮點.html",
+      "icon": "shield",
+      "badge": "TryAI 第三年",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-10",
+      "tags": [
+        "TryAI",
+        "數位發展部",
+        "去機敏",
+        "高品味題庫",
+        "驗技能",
+        "合成資料",
+        "工研院"
+      ],
+      "concepts": [
+        "不出機關內網去機敏",
+        "合成資料擴充",
+        "領域專家錄音真實任務題庫",
+        "可驗證進化技能",
+        "工研院 AI 測試實驗室第三方把關"
+      ]
+    },
     {
       "id": "法務部-離線去機敏-USB孵化",
       "title": "法務部：機敏資料連網路都不碰，USB 帶進來、去機敏、人簽名，才開始孵化",
@@ -14,7 +41,12 @@
       "badgeColor": "#0d9488",
       "protected": true,
       "publishDate": "2026-06-10T11:30:00+08:00",
-      "tags": ["lock:無對外IP純內網", "package:USB實體載體", "scale:觀護人100+檢察官100", "award:人類簽名負責"],
+      "tags": [
+        "lock:無對外IP純內網",
+        "package:USB實體載體",
+        "scale:觀護人100+檢察官100",
+        "award:人類簽名負責"
+      ],
       "concepts": [
         "卡米爾算力中心無對外 IP、全程內網，去機敏整段離線不碰 internet，機敏資料連門都不出",
         "USB 當實體載體：資料進、成品出都靠人工搬運，沒有任何封包流向外部，物理隔離",
@@ -33,7 +65,12 @@
       "badgeColor": "#e8634a",
       "protected": true,
       "publishDate": "2026-06-07T09:52:27+08:00",
-      "tags": ["package:進化好的AI便當帶回家", "lock:資料不出門離線跑", "git-branch:GEPA自動進化", "award:工研院第三方認證"],
+      "tags": [
+        "package:進化好的AI便當帶回家",
+        "lock:資料不出門離線跑",
+        "git-branch:GEPA自動進化",
+        "award:工研院第三方認證"
+      ],
       "concepts": [
         "波便當三步驟：①上傳去識別機敏資料 →②雲端自動 GEPA 進化（AI 看考卷寫檢討、一版比一版聰明）→③下載 Bun + pi agent Docker 回機房離線跑，全程資料不出門",
         "GEPA＝Genetic-Pareto 反思式進化：以自然語言 reflection 解讀失敗 trace 提 prompt 變異、Pareto 前緣維護多候選，比 GRPO 式 RL 省 35× rollout 且分數高 6～20%；不靠強化學習硬調",
@@ -52,7 +89,12 @@
       "badgeColor": "#3b6fa0",
       "protected": true,
       "publishDate": "2026-06-07T09:36:04+08:00",
-      "tags": ["git-branch:GEPA反思進化", "lock:保留題=valset只考不練", "scale:可見題=trainset", "repeat:Pareto前緣再演化"],
+      "tags": [
+        "git-branch:GEPA反思進化",
+        "lock:保留題=valset只考不練",
+        "scale:可見題=trainset",
+        "repeat:Pareto前緣再演化"
+      ],
       "concepts": [
         "GEPA＝Genetic-Pareto：以自然語言 reflection 解讀失敗 trace 提出 prompt 變異，用 Pareto 前緣維護多個非支配候選，少量 rollout 即超越 GRPO 式 RL",
         "口訣對應 GEPA 四齒輪：006 可見題＝trainset（練）、007 保留題＝valset（考）、008 打分＝metric（Pareto 比版本）、009 反思＝reflection（看弱考點補可見題）",
@@ -71,7 +113,12 @@
       "badgeColor": "#0d9488",
       "protected": true,
       "publishDate": "2026-06-07T09:21:09+08:00",
-      "tags": ["list-checks:九步驟口訣", "lock:保留題只考不練", "shuffle:同考點換殼防擬合", "repeat:考差回頭補練"],
+      "tags": [
+        "list-checks:九步驟口訣",
+        "lock:保留題只考不練",
+        "shuffle:同考點換殼防擬合",
+        "repeat:考差回頭補練"
+      ],
       "concepts": [
         "九步驟口訣：考什麼→多模態→純文字→種子題→去機敏→可見題→保留題→可驗證→可進化，一條從規劃考點到自我進化的評測流水線",
         "種子題 5–20 題基於機敏資料、人類專家驗證；去機敏由 gemma 31b 辨識機敏欄位、代號替換用 md5 雜湊",
@@ -89,7 +136,12 @@
       "badge": "AI 評測方法論",
       "badgeColor": "#e8634a",
       "publishDate": "2026-06-07T08:55:39+08:00",
-      "tags": ["clipboard-check:出考卷驗收", "lock:抽屜題不准偷看", "shuffle:換皮擾動測試", "repeat:全部重跑防drift"],
+      "tags": [
+        "clipboard-check:出考卷驗收",
+        "lock:抽屜題不准偷看",
+        "shuffle:換皮擾動測試",
+        "repeat:全部重跑防drift"
+      ],
       "concepts": [
         "核心翻轉：別問「切幾趴」，要問「想驗出多小的進步」——驗有沒有垮 20 題夠（只看得出 8% 以上大改動），驗有沒有變好一點要 ≥100 題（30 題都太小）",
         "三疊題庫：練習疊（可見、盡情改秘笈）、抽屜疊（鎖起來、改完只考一次）、魔王疊（故意挑最刁鑽壓測）",
@@ -107,7 +159,12 @@
       "badge": "GCP 省錢架構",
       "badgeColor": "#0d9488",
       "publishDate": "2026-06-06T07:35:41+08:00",
-      "tags": ["piggy-bank:等待免費", "timer:按步vs按秒", "split:Workflows管等Run管算", "trending-down:省170倍"],
+      "tags": [
+        "piggy-bank:等待免費",
+        "timer:按步vs按秒",
+        "split:Workflows管等Run管算",
+        "trending-down:省170倍"
+      ],
       "concepts": [
         "核心洞見：不是換更便宜的機器，是換掉計費的尺——Cloud Run 按秒（容器獨佔不可回收）、Workflows 按步（等待只是一筆狀態，敢收 $0）",
         "省錢陷阱：Cloud Run 同步呼叫 Workflows 並掛著等 60 秒回報＝租金照付白搬；正解是觸發即返回 0.2 秒收線 + 前端 Firestore onSnapshot 收結果",
@@ -127,7 +184,12 @@
       "badge": "機敏資料治理",
       "badgeColor": "#0d9488",
       "publishDate": "2026-05-30T15:14:02+08:00",
-      "tags": ["shield-check:機敏不出門", "git-branch:雙孵化器", "scale:Hermes 主體", "repeat:白名單防禦"],
+      "tags": [
+        "shield-check:機敏不出門",
+        "git-branch:雙孵化器",
+        "scale:Hermes 主體",
+        "repeat:白名單防禦"
+      ],
       "concepts": [
         "核心觀念：誰當主持人（主迴圈）誰就握有整段對話，Claude Code context 全程送雲端，信任邊界是物理的不是事後遮罩",
         "方案 B 架構：Hermes/Gemma 4 31B 在 NCHC 機房當主持人，真機敏資料只在機房流動從不出門",
@@ -169,7 +231,12 @@
       "badge": "Agentic 技能孵化",
       "badgeColor": "#7c3aed",
       "publishDate": "2026-05-28T19:14:57+08:00",
-      "tags": ["shield-check:機敏資料", "database:sqlite3", "check-check:自我驗證", "repeat:可重用技能"],
+      "tags": [
+        "shield-check:機敏資料",
+        "database:sqlite3",
+        "check-check:自我驗證",
+        "repeat:可重用技能"
+      ],
       "concepts": [
         "核心方法：answers.jsonl 標準答案當裁判，SQL 撈出的結果自動比對，5 題全對技能才算成功（零人工判分）",
         "技術骨架：questions.jsonl 讀題 → sqlite3 + python -c 直查 db/data.db → 專案碼/日期/關鍵字分類 → 核對 answers.jsonl",
@@ -187,7 +254,12 @@
       "badge": "傳承 SOP",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-28T10:39:28+08:00",
-      "tags": ["list-checks:飛燕八步", "git-branch:A/B 對照", "target:題庫工程", "repeat:迭代回圈"],
+      "tags": [
+        "list-checks:飛燕八步",
+        "git-branch:A/B 對照",
+        "target:題庫工程",
+        "repeat:迭代回圈"
+      ],
       "concepts": [
         "1~5 題庫工程：情境蒐集 → 高品題目 → 附件備齊 → 專家標答 → 二元評測（一次做好可重用很久）",
         "6~7 技能蒸餾：Skill A baseline vs Skill B contrast（每次改進的主戰場）",
@@ -205,7 +277,12 @@
       "badge": "AI 代理人剖析",
       "badgeColor": "#2d6a5a",
       "publishDate": "2026-05-27T12:26:31+08:00",
-      "tags": ["shield-check:Agent 安全", "git-pull-request:龍蝦", "trending-up:Hermes", "youtube:影片剖析"],
+      "tags": [
+        "shield-check:Agent 安全",
+        "git-pull-request:龍蝦",
+        "trending-up:Hermes",
+        "youtube:影片剖析"
+      ],
       "concepts": [
         "2026-05-10 翻盤日：Hermes 568B tokens vs 龍蝦 151B（3.76 倍），由 Nous Research 90 天竄頂 140K stars",
         "龍蝦 災難：3 月 4 天爆 9 個資安漏洞（最嚴 9.9/10）、skill repo 341 筆惡意條目、創辦人跳槽 OpenAI",
@@ -223,7 +300,12 @@
       "badge": "AI 架構掃盲",
       "badgeColor": "#3b6fa0",
       "publishDate": "2026-05-27T10:34:00+08:00",
-      "tags": ["cpu:神經網路", "brain:架構", "graduation-cap:國中生", "sparkles:2025-2026"],
+      "tags": [
+        "cpu:神經網路",
+        "brain:架構",
+        "graduation-cap:國中生",
+        "sparkles:2025-2026"
+      ],
       "concepts": [
         "10 大架構各配生活比喻 + 2025-2026 真實旗艦（不是教科書老例子）",
         "Transformer = 全班互看（GPT-5.2/Claude Opus 4.7）、MoE = 只叫數學老師（Mistral Large 3 675B/41B active）",
@@ -238,7 +320,16 @@
       "description": "30 張投影片，Dwarkesh Podcast × Eric Jang，用國中生能懂的方式解說 MCTS、自我對弈、值網路、RL 困境，從圍棋規則一路讀懂 AlphaGo",
       "href": "https://storage.googleapis.com/botrun-slides/alphago-from-scratch-dwarkesh.html",
       "publishDate": "2026-05-27",
-      "tags": ["AI", "AlphaGo", "MCTS", "強化學習", "深度學習", "Dwarkesh", "教育", "國中生"]
+      "tags": [
+        "AI",
+        "AlphaGo",
+        "MCTS",
+        "強化學習",
+        "深度學習",
+        "Dwarkesh",
+        "教育",
+        "國中生"
+      ]
     },
     {
       "id": "chatgpt-vs-alphago-agi-explainer",
