@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-11T13:43:03.997Z
+> 生成時間：2026-06-11T22:42:30.207Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 298 個項目，按發佈日期降序排列。
+共 299 個項目，按發佈日期降序排列。
+
+## 五句 Prompt 讓 AI 出題、驗證、再演化 — 採購法 GEPA 實戰提示詞集
+
+> 一段真實 Claude Code 對話，人類只打 5 句話：出高品味多跳題庫 → 上網逐條驗證法條（抓出 AI 自己 2 處錯）→ 函釋補驗翻盤 → 跨 AI 交叉覆核 → /bdd 設計 GEPA × SQLite _meta × pi -p 31B 演化系統。每句原話可一鍵複製，附任意領域填空模板。
+
+**關鍵觀念：**
+- 五句人類原話 = 完整 pipeline：出題 → 上網驗證 → 函釋補驗 → 跨 AI 覆核 → GEPA 系統演化
+- 「上網驗算」指令實際抓出 AI 初稿 2 處法條錯誤（第 56 條核准程序、第 103 條停權級距）
+- 補驗套路：把 AI 自己的誠實標註原句貼回去＋「==>驗證補」，本案押標金答案因此翻盤
+- 跨 AI 交叉覆核用 [[ ]] 包住外部內容，第一個 AI 採納對的微調、反駁漏掉的實質錯誤
+- /bdd 長 prompt 塞七個硬規格：.db、_meta、pi -p 31B、GEPA、skill 化、no overfitting、HTML/SVG 報告
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gepa-procurement-prompts.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gepa-procurement-prompts.html/llms.txt): 該專案的 llms.txt
+- 類型：提示工程
+- 發佈日期：2026-06-12T06:40:09+08:00
+- 標籤：提示工程、採購法、GEPA、pi -p、題庫
 
 ## AI 終端機代理工具排行榜 2026 — 星數王 vs 下載王完全不同人
 

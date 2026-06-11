@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "gepa-procurement-prompts",
+      "title": "五句 Prompt 讓 AI 出題、驗證、再演化 — 採購法 GEPA 實戰提示詞集",
+      "subtitle": "一段真實 Claude Code 對話，人類只打 5 句話：出高品味多跳題庫 → 上網逐條驗證法條（抓出 AI 自己 2 處錯）→ 函釋補驗翻盤 → 跨 AI 交叉覆核 → /bdd 設計 GEPA × SQLite _meta × pi -p 31B 演化系統。每句原話可一鍵複製，附任意領域填空模板。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gepa-procurement-prompts.html",
+      "icon": "clipboard-copy",
+      "badge": "提示工程",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-12T06:40:09+08:00",
+      "tags": [
+        "提示工程",
+        "採購法",
+        "GEPA",
+        "pi -p",
+        "題庫"
+      ],
+      "concepts": [
+        "五句人類原話 = 完整 pipeline：出題 → 上網驗證 → 函釋補驗 → 跨 AI 覆核 → GEPA 系統演化",
+        "「上網驗算」指令實際抓出 AI 初稿 2 處法條錯誤（第 56 條核准程序、第 103 條停權級距）",
+        "補驗套路：把 AI 自己的誠實標註原句貼回去＋「==>驗證補」，本案押標金答案因此翻盤",
+        "跨 AI 交叉覆核用 [[ ]] 包住外部內容，第一個 AI 採納對的微調、反駁漏掉的實質錯誤",
+        "/bdd 長 prompt 塞七個硬規格：.db、_meta、pi -p 31B、GEPA、skill 化、no overfitting、HTML/SVG 報告"
+      ]
+    },
+    {
       "id": "ai-agent-cli-ranking-2026",
       "title": "AI 終端機代理工具排行榜 2026 — 星數王 vs 下載王完全不同人",
       "subtitle": "2026-06-11 即時實查 GitHub API + npm API：OpenClaw 37.8 萬星是 GitHub 史上第一，但週下載冠軍是 Codex CLI 1,345 萬次。8 工具（Claude Code / Codex / Hermes / OpenClaw / OpenCode / Copilot CLI / Droid / Pi）雙榜對比 + 四象限定位 + 情境推薦排行。",
