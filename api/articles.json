@@ -1,8 +1,22 @@
 {
-  "generatedAt": "2026-06-07T00:56:53.712Z",
-  "total": 191,
+  "generatedAt": "2026-06-11T13:43:04.246Z",
+  "total": 192,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "AI 終端機代理工具排行榜 2026 — 星數王 vs 下載王完全不同人",
+      "date": "2026-06-11T21:38:27+08:00",
+      "content": "2026-06-11 即時實查 GitHub API + npm API：OpenClaw 37.8 萬星是 GitHub 史上第一，但週下載冠軍是 Codex CLI 1,345 萬次。8 工具（Claude Code / Codex / Hermes / OpenClaw / OpenCode / Copilot CLI / Droid / Pi）雙榜對比 + 四象限定位 + 情境推薦排行。",
+      "tags": [
+        "排行榜",
+        "AI 代理",
+        "Claude Code",
+        "Codex",
+        "OpenClaw",
+        "排行榜"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/ai-agent-cli-ranking-2026.html"
+    },
     {
       "title": "考卷會不會被偷看？幫 AI 秘笈出考卷的 7 步驟",
       "date": "2026-06-07T08:55:39+08:00",

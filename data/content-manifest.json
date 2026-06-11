@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "ai-agent-cli-ranking-2026",
+      "title": "AI 終端機代理工具排行榜 2026 — 星數王 vs 下載王完全不同人",
+      "subtitle": "2026-06-11 即時實查 GitHub API + npm API：OpenClaw 37.8 萬星是 GitHub 史上第一，但週下載冠軍是 Codex CLI 1,345 萬次。8 工具（Claude Code / Codex / Hermes / OpenClaw / OpenCode / Copilot CLI / Droid / Pi）雙榜對比 + 四象限定位 + 情境推薦排行。",
+      "href": "https://storage.googleapis.com/botrun-slides/ai-agent-cli-ranking-2026.html",
+      "icon": "trophy",
+      "badge": "排行榜",
+      "badgeColor": "#e8634a",
+      "publishDate": "2026-06-11T21:38:27+08:00",
+      "tags": [
+        "AI 代理",
+        "Claude Code",
+        "Codex",
+        "OpenClaw",
+        "排行榜"
+      ],
+      "concepts": [
+        "星數高不等於用量大：OpenClaw 37.8 萬星史上第一，但 npm 週下載冠軍是 Codex CLI 1,345 萬",
+        "雙榜實查：GitHub stargazers_count + npm 週下載 API 即時抓取，非估算",
+        "四象限定位：雙料優等生（Claude Code/Codex）、人氣王自架（OpenClaw/Hermes）、開源實力派（OpenCode/Pi）、低調實用派（Copilot CLI）",
+        "情境推薦：個人 coding 選 Claude Code/Codex；不綁訂閱選 OpenCode/Pi；個人 AI 管家選 Hermes/OpenClaw（須沙盒）；企業評估 Droid",
+        "誠實標註：npm 下載含 CI 安裝、自架工具無 npm 數據、Droid 日活為廠商自述無第三方驗證"
+      ]
+    },
+    {
       "id": "ttft-stress-gemma4",
       "title": "波特塔壓力測試圖解 — 100 個人同時用 AI 會發生什麼事？",
       "subtitle": "用白話圖解說明波特塔（botrun-tower）對 Gemma 4 地端模型做 TTFT 壓力測試的結果：當 100 個人同時送出請求，31B 大模型與 26B 小模型在首字延遲（TTFT）上的差異、排隊效應如何發生、以及怎麼配置才不會讓使用者等到天荒地老。",
