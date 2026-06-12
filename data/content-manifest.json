@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "human-prompt-playbook",
+      "title": "人類只要下這 5 種話 — 規劃書 × GAN 批評 × 求真 × 開工演化的提示工程傳承",
+      "subtitle": "一段真實 Claude Code 工作流（合成資料＋去機敏管線）：人類 0 行程式碼，只下 5 種句型——/bdd 先規劃不動工、獨立 subagent GAN 批評三輪、上網查真實頁數真實量、/team 平行分工模型分級、GEPA 五輪演化＋編號題庫當驗證標準。全部句型可一鍵複製，附任意領域泛化填空模板。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/human-prompt-playbook.html",
+      "icon": "message-square-quote",
+      "badge": "提示工程",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-13T07:34:04+08:00",
+      "tags": [
+        "提示工程",
+        "GAN 批評",
+        "GEPA",
+        "subagents",
+        "題庫驗證"
+      ],
+      "concepts": [
+        "5 種句型 = 完整專案流程：先規劃 → GAN 找碴三輪 → 求真實 → /team 平行開工 → GEPA 五輪演化",
+        "「先列規劃我看看不要動工」把規劃與實作切開，人類在最便宜的階段把關",
+        "批評者必須是獨立 subagent：AI 自評會放水（實測高估 2-3 成），三輪對抗抓出架構級漏洞",
+        "「真實的頁數、真實的量」逼 AI 上網查證（起訴書 2–4 頁、大案 168 頁、月在管 290 件）",
+        "題庫即驗證標準：001 002 003 編號題庫（參考資料＋題目＋標準答案），每輪演化考同一份卷"
+      ]
+    },
+    {
       "id": "gepa-procurement-prompts",
       "title": "五句 Prompt 讓 AI 出題、驗證、再演化 — 採購法 GEPA 實戰提示詞集",
       "subtitle": "一段真實 Claude Code 對話，人類只打 5 句話：出高品味多跳題庫 → 上網逐條驗證法條（抓出 AI 自己 2 處錯）→ 函釋補驗翻盤 → 跨 AI 交叉覆核 → /bdd 設計 GEPA × SQLite _meta × pi -p 31B 演化系統。每句原話可一鍵複製，附任意領域填空模板。",
