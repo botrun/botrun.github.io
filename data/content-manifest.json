@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "diffusion-vs-ar-ab-gemma4",
+      "title": "擴散 vs 自迴歸：不是誰比較快，是看幾個人、看答案多長",
+      "subtitle": "同一張 RTX PRO 6000 Blackwell 96GB、同樣 NVFP4、同樣顯存預算、同樣 50K 繁中上下文，唯一變數是解碼方式「擴散整塊去噪」vs「逐字接龍」。情境 A 一個人用、情境 B 30 人同時用，結論完全不同；含 1000 tps 解謎、prefix cache 冷熱實證、OOM 實證，破解「誰比較快」的迷思。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/diffusion-vs-ar-ab-gemma4.html",
+      "icon": "zap",
+      "badge": "A/B 實測",
+      "badgeColor": "#c25e4c",
+      "protected": true,
+      "publishDate": "2026-06-14T11:49:07+08:00",
+      "tags": [
+        "Diffusion vs AR",
+        "DiffusionGemma",
+        "RTX PRO 6000",
+        "NVFP4",
+        "prefix cache"
+      ],
+      "concepts": [
+        "同卡同量化同顯存同 50K 上下文，唯一變數是解碼方式（擴散去噪 vs 逐字接龍）",
+        "情境 A 一個人用 vs 情境 B 30 人同時用，快慢結論完全翻盤",
+        "1000 tps 解謎：宣稱數字怎麼來、實際情境跑多少",
+        "prefix cache 冷熱實證 + 顯存 OOM 實證",
+        "快不快不是單一答案，取決於看幾個人、看答案多長"
+      ]
+    },
+    {
       "id": "diffusiongemma-mac-benchmark",
       "title": "Mac 上跑 DiffusionGemma：行銷說快 4 倍，實測卻慢 3.3 倍",
       "subtitle": "Google 6 月釋出的 diffusion 語言模型號稱比傳統接龍式（AR）生成快 4×。在 Apple Silicon Mac 上用同尺寸 26B-A4B / 4bit / MLX、同一個繁體中文短篇故事題做乾淨對照（皆暖機、aggregate TPS），結論整個翻盤：AR 反而快 3.3×、首字延遲 AR 快 48×。根因是 diffusion 吃純算力（Mac 弱項），AR 吃記憶體頻寬（Mac 強項）；diffusion 的 4× 只在 H100 / RTX PRO 6000（Blackwell + NVFP4）兌現。另實測去噪步數砍到 16 步會讓故事鬼打牆「雨雨雨…」爛尾，並修正冷啟動測量瑕疵（15→36 tok/s）。",
