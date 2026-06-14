@@ -3,10 +3,76 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-13T06:06:10.681Z
+> 生成時間：2026-06-14T13:40:09.884Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 302 個項目，按發佈日期降序排列。
+共 306 個項目，按發佈日期降序排列。
+
+## WOOP × ACT 全球推廣法：把「可驗證進化技能孵化器」賣到世界
+
+> 光想願景反而賣不動——心理學實驗證明純正向幻想會降低動力。用兩套有隨機對照實驗背書的工具：WOOP（Oettingen 心理對比，負責往前衝）＋ ACT（Hayes 接納與承諾治療，負責接得住），合併成五步法（W 願望→O 結果→O 障礙→P 計畫→⑤ 降低重要性），逐步示範如何把波特人產品「可驗證進化技能孵化器」推向全球。關鍵：把障礙分外在/內在，外在用 if-then 計畫、內在用 ACT 接納，補上 WOOP 對情緒無能為力的盲點。
+
+**關鍵觀念：**
+- 純正向幻想會降低動力（Oettingen 實證），推廣不能只靠願景熱血
+- WOOP 擅長往前衝、ACT 擅長接得住，第三步『障礙』正是兩者互補的接合點
+- 五步法清晰編號：W 願望（價值把關）→ O 結果（視覺化）→ O 障礙（分內外）→ P 計畫（兩種 if-then）→ ⑤ 降低重要性
+- 外在障礙用 WOOP 執行意圖；內在障礙（怕被拒、想完美）用 ACT 命名解離＋接納＋承諾行動
+- 近中遠三程落地：標竿原型→可複製導入腳本→多國進化飛輪，失敗即資產
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/woop-act-incubator-global.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/woop-act-incubator-global.html/llms.txt): 該專案的 llms.txt
+- 類型：推廣方法
+- 發佈日期：2026-06-14T21:33:54+08:00
+- 標籤：WOOP、ACT、Oettingen、Steven Hayes、全球推廣
+
+## 擴散 vs 自迴歸：不是誰比較快，是看幾個人、看答案多長
+
+> 同一張 RTX PRO 6000 Blackwell 96GB、同樣 NVFP4、同樣顯存預算、同樣 50K 繁中上下文，唯一變數是解碼方式「擴散整塊去噪」vs「逐字接龍」。情境 A 一個人用、情境 B 30 人同時用，結論完全不同；含 1000 tps 解謎、prefix cache 冷熱實證、OOM 實證，破解「誰比較快」的迷思。
+
+**關鍵觀念：**
+- 同卡同量化同顯存同 50K 上下文，唯一變數是解碼方式（擴散去噪 vs 逐字接龍）
+- 情境 A 一個人用 vs 情境 B 30 人同時用，快慢結論完全翻盤
+- 1000 tps 解謎：宣稱數字怎麼來、實際情境跑多少
+- prefix cache 冷熱實證 + 顯存 OOM 實證
+- 快不快不是單一答案，取決於看幾個人、看答案多長
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/diffusion-vs-ar-ab-gemma4.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/diffusion-vs-ar-ab-gemma4.html/llms.txt): 該專案的 llms.txt
+- 類型：A/B 實測
+- 發佈日期：2026-06-14T11:49:07+08:00
+- 標籤：Diffusion vs AR、DiffusionGemma、RTX PRO 6000、NVFP4、prefix cache
+
+## Mac 上跑 DiffusionGemma：行銷說快 4 倍，實測卻慢 3.3 倍
+
+> Google 6 月釋出的 diffusion 語言模型號稱比傳統接龍式（AR）生成快 4×。在 Apple Silicon Mac 上用同尺寸 26B-A4B / 4bit / MLX、同一個繁體中文短篇故事題做乾淨對照（皆暖機、aggregate TPS），結論整個翻盤：AR 反而快 3.3×、首字延遲 AR 快 48×。根因是 diffusion 吃純算力（Mac 弱項），AR 吃記憶體頻寬（Mac 強項）；diffusion 的 4× 只在 H100 / RTX PRO 6000（Blackwell + NVFP4）兌現。另實測去噪步數砍到 16 步會讓故事鬼打牆「雨雨雨…」爛尾，並修正冷啟動測量瑕疵（15→36 tok/s）。
+
+**關鍵觀念：**
+- 官方 H100 說 diffusion 快 4×，Mac 實測 AR 反而快 3.3×、TTFT 快 48×
+- 同模型架構換硬體結論翻盤：AR 吃記憶體頻寬（Mac 強）、Diffusion 吃算力（Mac 弱）
+- 乾淨對照：26B-A4B/4bit/MLX、同 prompt、皆暖機、用 aggregate TPS
+- 去噪步數砍到 16 步快 1.75× 但故事鬼打牆爛尾，48 步才完整
+- 冷啟動懲罰：沒暖機 tok/s 低估一半（15→36），落在 M3 Ultra 區間
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/diffusiongemma-mac-benchmark.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/diffusiongemma-mac-benchmark.html/llms.txt): 該專案的 llms.txt
+- 類型：Mac 實測
+- 發佈日期：2026-06-14T10:46:22+08:00
+- 標籤：DiffusionGemma、Apple Silicon、MLX、AR vs Diffusion、本機 LLM
+
+## Chrome 內建模型 vs gemma-4-26b：繁中司法文件去機敏實測比分
+
+> 把瀏覽器內建的 Chrome Nano 本機模型與 gemma-4-26b 放在同一個繁體中文司法文件去機敏任務上實測比分，評估各自在識別與遮蔽機敏個資的準確度與可用性。
+
+**關鍵觀念：**
+- Chrome 內建本機模型 vs gemma-4-26b 同任務對比
+- 繁體中文司法文件去機敏的準確度比分
+- 本機模型在機敏個資識別遮蔽的可用性評估
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/chrome-nano-vs-26b-pii.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/chrome-nano-vs-26b-pii.html/llms.txt): 該專案的 llms.txt
+- 類型：去機敏實測
+- 發佈日期：2026-06-14T08:33:00+08:00
+- 標籤：Chrome Nano、gemma-4-26b、去機敏、司法文件、本機 LLM
 
 ## 100GB 萬象進化大腦 db — 一個檔案裝下你的全部技能、程式碼與題庫
 

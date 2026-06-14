@@ -5,6 +5,31 @@
   },
   "items": [
     {
+      "id": "woop-act-incubator-global",
+      "title": "WOOP × ACT 全球推廣法：把「可驗證進化技能孵化器」賣到世界",
+      "subtitle": "光想願景反而賣不動——心理學實驗證明純正向幻想會降低動力。用兩套有隨機對照實驗背書的工具：WOOP（Oettingen 心理對比，負責往前衝）＋ ACT（Hayes 接納與承諾治療，負責接得住），合併成五步法（W 願望→O 結果→O 障礙→P 計畫→⑤ 降低重要性），逐步示範如何把波特人產品「可驗證進化技能孵化器」推向全球。關鍵：把障礙分外在/內在，外在用 if-then 計畫、內在用 ACT 接納，補上 WOOP 對情緒無能為力的盲點。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/woop-act-incubator-global.html",
+      "icon": "compass",
+      "badge": "推廣方法",
+      "badgeColor": "#0d9488",
+      "protected": true,
+      "publishDate": "2026-06-14T21:33:54+08:00",
+      "tags": [
+        "WOOP",
+        "ACT",
+        "Oettingen",
+        "Steven Hayes",
+        "全球推廣"
+      ],
+      "concepts": [
+        "純正向幻想會降低動力（Oettingen 實證），推廣不能只靠願景熱血",
+        "WOOP 擅長往前衝、ACT 擅長接得住，第三步『障礙』正是兩者互補的接合點",
+        "五步法清晰編號：W 願望（價值把關）→ O 結果（視覺化）→ O 障礙（分內外）→ P 計畫（兩種 if-then）→ ⑤ 降低重要性",
+        "外在障礙用 WOOP 執行意圖；內在障礙（怕被拒、想完美）用 ACT 命名解離＋接納＋承諾行動",
+        "近中遠三程落地：標竿原型→可複製導入腳本→多國進化飛輪，失敗即資產"
+      ]
+    },
+    {
       "id": "diffusion-vs-ar-ab-gemma4",
       "title": "擴散 vs 自迴歸：不是誰比較快，是看幾個人、看答案多長",
       "subtitle": "同一張 RTX PRO 6000 Blackwell 96GB、同樣 NVFP4、同樣顯存預算、同樣 50K 繁中上下文，唯一變數是解碼方式「擴散整塊去噪」vs「逐字接龍」。情境 A 一個人用、情境 B 30 人同時用，結論完全不同；含 1000 tps 解謎、prefix cache 冷熱實證、OOM 實證，破解「誰比較快」的迷思。",
