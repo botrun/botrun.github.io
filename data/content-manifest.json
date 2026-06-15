@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "wasm-pii-single-wasm-design",
+      "title": "botrun-pii 單一 wasm 怎麼設計的：原理・原則・背後原因・最終情況",
+      "subtitle": "把整個去機敏（PII）引擎收斂成一顆 .wasm 的設計筆記——為什麼選單一 wasm、遵循哪些原則、背後的取捨原因，以及最終跑出來的結果（v1.3.6）。全前端、零後端業務邏輯，機敏資料不出瀏覽器。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/wasm-pii-single-wasm-design.html",
+      "icon": "shield",
+      "badge": "設計原理",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-15T10:31:43+08:00",
+      "tags": [
+        "WASM",
+        "PII 去機敏",
+        "單一檔案",
+        "全前端",
+        "觀護人檢察官"
+      ],
+      "concepts": [
+        "為什麼把去機敏引擎收斂成單一 .wasm：可移植、好稽核、邊界清楚",
+        "設計原則與背後取捨原因，從原理到最終實測情況一次交代",
+        "全前端、零後端業務邏輯，機敏資料留在瀏覽器不外傳"
+      ]
+    },
+    {
       "id": "woop-act-incubator-global",
       "title": "WOOP × ACT 全球推廣法：把「可驗證進化技能孵化器」賣到世界",
       "subtitle": "光想願景反而賣不動——心理學實驗證明純正向幻想會降低動力。用兩套有隨機對照實驗背書的工具：WOOP（Oettingen 心理對比，負責往前衝）＋ ACT（Hayes 接納與承諾治療，負責接得住），合併成五步法（W 願望→O 結果→O 障礙→P 計畫→⑤ 降低重要性），逐步示範如何把波特人產品「可驗證進化技能孵化器」推向全球。關鍵：把障礙分外在/內在，外在用 if-then 計畫、內在用 ACT 接納，補上 WOOP 對情緒無能為力的盲點。",
