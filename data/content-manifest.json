@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "ocr-marker-png-parallel-landmines",
+      "title": "掃描卷宗 OCR：地雷與實測數字全紀錄",
+      "subtitle": "2848 頁 458 MB 掃描卷宗在單卡 RTX PRO 6000 上跑地端 OCR（marker + surya）的完整踩雷與驗證：別把高解析度原圖直接餵給 OCR（降 DPI 12× 加速、字數不掉）、單 GPU 影印機不是越多越快（4 worker 剛好、8 worker 反而塞車 0 頁/分），加上遠端跑長工的 8 個維運坑。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ocr-marker-png-parallel-landmines.html",
+      "icon": "cpu",
+      "badge": "地端 OCR 實戰",
+      "badgeColor": "#35688f",
+      "protected": true,
+      "publishDate": "2026-06-16T16:39:31+08:00",
+      "tags": [
+        "OCR",
+        "marker / surya",
+        "地端 GPU",
+        "並行調校",
+        "遠端維運"
+      ],
+      "concepts": [
+        "解析度才是速度旋鈕：降 DPI 12× 加速、字數幾乎不掉",
+        "單 GPU 算力飽和：4 worker 最佳、8 worker 反而塞車交不出頁",
+        "遠端跑長工的 8 個坑：ssh 斷線、screen、PATH、tar over ssh"
+      ]
+    },
+    {
       "id": "wasm-pii-single-wasm-design",
       "title": "botrun-pii 單一 wasm 怎麼設計的：原理・原則・背後原因・最終情況",
       "subtitle": "把整個去機敏（PII）引擎收斂成一顆 .wasm 的設計筆記——為什麼選單一 wasm、遵循哪些原則、背後的取捨原因，以及最終跑出來的結果（v1.3.6）。全前端、零後端業務邏輯，機敏資料不出瀏覽器。",
