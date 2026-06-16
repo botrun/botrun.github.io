@@ -3,10 +3,57 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-14T13:40:09.884Z
+> 生成時間：2026-06-16T09:05:33.061Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 306 個項目，按發佈日期降序排列。
+共 309 個項目，按發佈日期降序排列。
+
+## 三條 AI 工作流，一套去機敏孵化心法
+
+> 卷證目錄標籤、觀護人訪視紀要、地端掃描 OCR 看似三件事，底層都是同一條路：先去機敏 → 生成合成資料（5 題＋保留集）→ 用 Opus 孵化技能（SKILL.md）→ 讓 Gemma 4 31B 便宜地跑。純 31B 直接孵化卷證目錄只有 45 分，先去機敏再讓 Opus 當老師才上 90 分；Marker OCR 在 RTX Pro 6000 96GB 上 PNG 90 DPI、4 worker 平均 3 秒/頁。
+
+**關鍵觀念：**
+- 三條工作流共用底層 SOP：去機敏 → 合成資料 → Opus 孵化技能 → 31B 執行
+- 工作流 A 訪視紀要：001 去機敏 002 合成資料 5 題＋保留集 003 孵化＋Opus 評分 90 分以上
+- 工作流 B 卷證目錄：001 OCR（Apple Vision）002 雙去機敏 003 刪原檔 004 Opus 孵化
+- 工作流 C 地端 OCR：Marker OCR PNG 90 DPI、4 worker、平均 3 秒/頁（單 worker 約 12 秒）
+- 關鍵洞見：純 31B 直接孵化卷證目錄只 45 分，先去機敏讓 Opus 當老師才上 90 分
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ocr-fewshot-prosecutor-skill-sop.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ocr-fewshot-prosecutor-skill-sop.html/llms.txt): 該專案的 llms.txt
+- 類型：技能孵化 SOP
+- 發佈日期：2026-06-16T17:05:02+08:00
+- 標籤：去機敏、Few-shot、Opus 孵化、Gemma 4 31B、地端 OCR
+
+## 掃描卷宗 OCR：地雷與實測數字全紀錄
+
+> 2848 頁 458 MB 掃描卷宗在單卡 RTX PRO 6000 上跑地端 OCR（marker + surya）的完整踩雷與驗證：別把高解析度原圖直接餵給 OCR（降 DPI 12× 加速、字數不掉）、單 GPU 影印機不是越多越快（4 worker 剛好、8 worker 反而塞車 0 頁/分），加上遠端跑長工的 8 個維運坑。
+
+**關鍵觀念：**
+- 解析度才是速度旋鈕：降 DPI 12× 加速、字數幾乎不掉
+- 單 GPU 算力飽和：4 worker 最佳、8 worker 反而塞車交不出頁
+- 遠端跑長工的 8 個坑：ssh 斷線、screen、PATH、tar over ssh
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ocr-marker-png-parallel-landmines.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ocr-marker-png-parallel-landmines.html/llms.txt): 該專案的 llms.txt
+- 類型：地端 OCR 實戰
+- 發佈日期：2026-06-16T16:39:31+08:00
+- 標籤：OCR、marker / surya、地端 GPU、並行調校、遠端維運
+
+## botrun-pii 單一 wasm 怎麼設計的：原理・原則・背後原因・最終情況
+
+> 把整個去機敏（PII）引擎收斂成一顆 .wasm 的設計筆記——為什麼選單一 wasm、遵循哪些原則、背後的取捨原因，以及最終跑出來的結果（v1.3.6）。全前端、零後端業務邏輯，機敏資料不出瀏覽器。
+
+**關鍵觀念：**
+- 為什麼把去機敏引擎收斂成單一 .wasm：可移植、好稽核、邊界清楚
+- 設計原則與背後取捨原因，從原理到最終實測情況一次交代
+- 全前端、零後端業務邏輯，機敏資料留在瀏覽器不外傳
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/wasm-pii-single-wasm-design.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/wasm-pii-single-wasm-design.html/llms.txt): 該專案的 llms.txt
+- 類型：設計原理
+- 發佈日期：2026-06-15T10:31:43+08:00
+- 標籤：WASM、PII 去機敏、單一檔案、全前端、觀護人檢察官
 
 ## WOOP × ACT 全球推廣法：把「可驗證進化技能孵化器」賣到世界
 
