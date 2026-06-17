@@ -3,10 +3,27 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-16T09:05:33.061Z
+> 生成時間：2026-06-17T00:52:03.101Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 309 個項目，按發佈日期降序排列。
+共 310 個項目，按發佈日期降序排列。
+
+## 治好 AI 健忘症：StraTA 戰略軌跡抽象，7B 小模型暴漲 15 倍
+
+> AI Agent 最痛的健忘症 —— 每秒都在努力決定下一步，卻記不住最初要幹嘛。StraTA 用「先畫地圖再出發」的哲學，把任務解耦成生成戰略的軍師＋死咬方向的士兵，再用分層 GRPO、最遠點採樣、自我審查三招打穿強化學習的信用分配難題。結果：Qwen 2.5 7B 開源小模型在 WebShop 成功率從 5.3% 暴漲到 84.2%，SciWorld 推理 63.5 分超越閉源 Claude 的 57.4 分。
+
+**關鍵觀念：**
+- 痛點：反應式決策（自回歸只看局部 context），走一步忘一步，短視探索＋無意義折返跑
+- 洞見：先畫地圖再出發，解耦成生成全局戰略的軍師＋死咬方向執行的士兵
+- 創新①分層 GRPO：4 戰略×8 執行=32 軌跡，戰略層與執行層分開信用分配
+- 創新②最遠點採樣：生 32 候選戰略，挑歐氏距離最遠的 4 個，杜絕廢話文學
+- 創新③自我審查：AI 當無情審計員揪出廢話步驟；實證 7B 成功率 5.3%→84.2%、勝 Claude
+
+- [線上版](https://storage.googleapis.com/botrun-slides/strata-agent-strategic-rl.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/strata-agent-strategic-rl.html/llms.txt): 該專案的 llms.txt
+- 類型：論文拆解
+- 發佈日期：2026-06-17T08:51:37+08:00
+- 標籤：AI Agent、強化學習、GRPO、戰略規劃、長程任務
 
 ## 三條 AI 工作流，一套去機敏孵化心法
 

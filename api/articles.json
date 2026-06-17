@@ -1,8 +1,22 @@
 {
-  "generatedAt": "2026-06-11T13:43:04.246Z",
-  "total": 192,
+  "generatedAt": "2026-06-17T00:52:03.476Z",
+  "total": 193,
   "usage": "GET this JSON, then slice: articles.slice(0, N) for latest N articles",
   "articles": [
+    {
+      "title": "治好 AI 健忘症：StraTA 戰略軌跡抽象，7B 小模型暴漲 15 倍",
+      "date": "2026-06-17T08:51:37+08:00",
+      "content": "AI Agent 最痛的健忘症 —— 每秒都在努力決定下一步，卻記不住最初要幹嘛。StraTA 用「先畫地圖再出發」的哲學，把任務解耦成生成戰略的軍師＋死咬方向的士兵，再用分層 GRPO、最遠點採樣、自我審查三招打穿強化學習的信用分配難題。結果：Qwen 2.5 7B 開源小模型在 WebShop 成功率從 5.3% 暴漲到 84.2%，SciWorld 推理 63.5 分超越閉源 Claude 的 57.4 分。",
+      "tags": [
+        "論文拆解",
+        "AI Agent",
+        "強化學習",
+        "GRPO",
+        "戰略規劃",
+        "長程任務"
+      ],
+      "url": "https://storage.googleapis.com/botrun-slides/strata-agent-strategic-rl.html"
+    },
     {
       "title": "AI 終端機代理工具排行榜 2026 — 星數王 vs 下載王完全不同人",
       "date": "2026-06-11T21:38:27+08:00",

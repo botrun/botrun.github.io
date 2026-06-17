@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "strata-agent-strategic-rl",
+      "title": "治好 AI 健忘症：StraTA 戰略軌跡抽象，7B 小模型暴漲 15 倍",
+      "subtitle": "AI Agent 最痛的健忘症 —— 每秒都在努力決定下一步，卻記不住最初要幹嘛。StraTA 用「先畫地圖再出發」的哲學，把任務解耦成生成戰略的軍師＋死咬方向的士兵，再用分層 GRPO、最遠點採樣、自我審查三招打穿強化學習的信用分配難題。結果：Qwen 2.5 7B 開源小模型在 WebShop 成功率從 5.3% 暴漲到 84.2%，SciWorld 推理 63.5 分超越閉源 Claude 的 57.4 分。",
+      "href": "https://storage.googleapis.com/botrun-slides/strata-agent-strategic-rl.html",
+      "icon": "map",
+      "badge": "論文拆解",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-06-17T08:51:37+08:00",
+      "tags": [
+        "AI Agent",
+        "強化學習",
+        "GRPO",
+        "戰略規劃",
+        "長程任務"
+      ],
+      "concepts": [
+        "痛點：反應式決策（自回歸只看局部 context），走一步忘一步，短視探索＋無意義折返跑",
+        "洞見：先畫地圖再出發，解耦成生成全局戰略的軍師＋死咬方向執行的士兵",
+        "創新①分層 GRPO：4 戰略×8 執行=32 軌跡，戰略層與執行層分開信用分配",
+        "創新②最遠點採樣：生 32 候選戰略，挑歐氏距離最遠的 4 個，杜絕廢話文學",
+        "創新③自我審查：AI 當無情審計員揪出廢話步驟；實證 7B 成功率 5.3%→84.2%、勝 Claude"
+      ]
+    },
+    {
       "id": "ocr-fewshot-prosecutor-skill-sop",
       "title": "三條 AI 工作流，一套去機敏孵化心法",
       "subtitle": "卷證目錄標籤、觀護人訪視紀要、地端掃描 OCR 看似三件事，底層都是同一條路：先去機敏 → 生成合成資料（5 題＋保留集）→ 用 Opus 孵化技能（SKILL.md）→ 讓 Gemma 4 31B 便宜地跑。純 31B 直接孵化卷證目錄只有 45 分，先去機敏再讓 Opus 當老師才上 90 分；Marker OCR 在 RTX Pro 6000 96GB 上 PNG 90 DPI、4 worker 平均 3 秒/頁。",
