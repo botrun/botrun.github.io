@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "botrun-db-spec-v4-evolution-brain",
+      "title": ".botrun DB 標準 v4.0.0：一顆會進化的技能大腦",
+      "subtitle": "圖紙輸給出貨單——真正交付的觀護人語音大腦 guardian-voice-brain.db 證明 v3.x「GitHub 倉庫」抽象是錯的，規格向成品學習 bump 到 v4.0.0：meta 自述／可執行 skills／多來源 answers／A-B scores／內建 lessons 七表。含 ER 全圖與進化評分流程 SVG。北歐淺色、老花友善，內容已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-spec-v4-evolution-brain.html",
+      "icon": "database",
+      "badge": "DB 標準",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-19T00:09:00+08:00",
+      "tags": [
+        "SQLite",
+        ".botrun",
+        "可驗證進化",
+        "規格 v4.0.0",
+        "可重現評測"
+      ]
+    },
+    {
       "id": "guardian-voice-brain-db-guide",
       "title": "交付 DB 導覽：guardian-voice-brain 一顆 SQLite＝技能庫＋可重現評測基準",
       "subtitle": "把「語音轉文字 → 去機敏 → 順稿」實驗成果裝進一顆 SQLite「腦」：別人系統匯入即可跑技能，並用黃金答案重評自家模型。內附每張表的欄位定義與非機敏範例，不必開 DB 就讀懂結構。北歐淺色、老花友善。",
