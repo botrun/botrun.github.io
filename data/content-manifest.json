@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "guardian-voice-brain-db-guide",
+      "title": "交付 DB 導覽：guardian-voice-brain 一顆 SQLite＝技能庫＋可重現評測基準",
+      "subtitle": "把「語音轉文字 → 去機敏 → 順稿」實驗成果裝進一顆 SQLite「腦」：別人系統匯入即可跑技能，並用黃金答案重評自家模型。內附每張表的欄位定義與非機敏範例，不必開 DB 就讀懂結構。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/guardian-voice-brain-db-guide.html",
+      "icon": "database",
+      "badge": "交付導覽",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-18T23:45:00+08:00",
+      "tags": [
+        "SQLite",
+        "技能庫",
+        "可重現評測",
+        "觀護人",
+        "語音轉文字"
+      ],
+      "concepts": [
+        "一顆 SQLite 檔＝技能庫＋可重現評測基準，匯入即可跑技能",
+        "用黃金答案重評自家模型，評測可重現",
+        "_meta 自我介紹表＋每張表欄位定義與非機敏範例，不開 DB 即可讀懂"
+      ]
+    },
+    {
       "id": "guardian-breeze-asr-handover",
       "title": "觀護人訪視語音轉文字：Breeze-ASR × 合成資料傳承手冊",
       "subtitle": "把觀護人訪視錄音變成可上手的紀要工作流——首選 NCHC whisper-Breeze-ASR-25 高品質轉錄，大檔分段、機敏資料以合成資料去識別化，再串接會議記錄技能產出訪視紀要。北歐淺色、老花友善、可直接照做的傳承手冊。",
