@@ -5,6 +5,30 @@
   },
   "items": [
     {
+      "id": "botrun-db-kiss-standard",
+      "title": ".botrun／.🤖：一個檔案就是一個 AI 大腦（KISS 5 表標準）",
+      "subtitle": "把說明書、技能、檔案樹、高品味題庫全裝進同一個 SQLite 檔，只有 5 張表、純文字、零外鍵——拷貝這一個檔就把整套能力帶走。技能欄位照抄 pi.dev SKILL.md（name/description/instructions），檔案用 path 的斜線當資料夾樹，題目與答案靠同一個 id 對照、用 train/holdout 分訓練集與保留集防背答案。北歐簡約、老花友善、高中生能懂。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-kiss-standard.html",
+      "icon": "database",
+      "badge": "DB 標準",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "tags": [
+        "botrun DB",
+        "SQLite",
+        "KISS",
+        "pi.dev SKILL.md",
+        "高品味題庫"
+      ],
+      "concepts": [
+        "一顆 .botrun（=.🤖）＝標準 SQLite，5 表零 FK 純文字，拷貝即傳承整套能力",
+        "readme(content)＝門面 README.md；skills(name/description/instructions)＝pi.dev SKILL.md 正文欄位官方叫 instructions",
+        "files(path,content)：path 的斜線就是資料夾樹，不另開 folder 表",
+        "questions＋answers 共用同一個 id 對照；split＝train(可調)/holdout(孵化期禁看只驗收一次)防背答案",
+        "5 優 5 缺：好搬好傳承/小檔快35%/省20%空間，但高並行多檔互通弱（已用 jsonl 雙軌補 diff）"
+      ]
+    },
+    {
       "id": "strata-agent-strategic-rl",
       "title": "治好 AI 健忘症：StraTA 戰略軌跡抽象，7B 小模型暴漲 15 倍",
       "subtitle": "AI Agent 最痛的健忘症 —— 每秒都在努力決定下一步，卻記不住最初要幹嘛。StraTA 用「先畫地圖再出發」的哲學，把任務解耦成生成戰略的軍師＋死咬方向的士兵，再用分層 GRPO、最遠點採樣、自我審查三招打穿強化學習的信用分配難題。結果：Qwen 2.5 7B 開源小模型在 WebShop 成功率從 5.3% 暴漲到 84.2%，SciWorld 推理 63.5 分超越閉源 Claude 的 57.4 分。",
