@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "guardian-breeze-asr-handover",
+      "title": "觀護人訪視語音轉文字：Breeze-ASR × 合成資料傳承手冊",
+      "subtitle": "把觀護人訪視錄音變成可上手的紀要工作流——首選 NCHC whisper-Breeze-ASR-25 高品質轉錄，大檔分段、機敏資料以合成資料去識別化，再串接會議記錄技能產出訪視紀要。北歐淺色、老花友善、可直接照做的傳承手冊。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/guardian-breeze-asr-handover.html",
+      "icon": "mic",
+      "badge": "傳承手冊",
+      "badgeColor": "#b5651d",
+      "protected": true,
+      "publishDate": "2026-06-18T19:30:00+08:00",
+      "tags": [
+        "Breeze-ASR",
+        "語音轉文字",
+        "合成資料",
+        "觀護人",
+        "訪視紀要"
+      ],
+      "concepts": [
+        "NCHC whisper-Breeze-ASR-25 首選轉錄，大檔分段（6–10 分鐘/段）",
+        "機敏訪視內容以合成資料去識別化（PERSON_A/CASE_A）",
+        "轉錄後自動串接會議記錄技能產出訪視紀要"
+      ]
+    },
+    {
       "id": "botrun-db-kiss-standard",
       "title": ".botrun／.🤖：一個檔案就是一個 AI 大腦（KISS 5 表標準）",
       "subtitle": "把說明書、技能、檔案樹、高品味題庫全裝進同一個 SQLite 檔，只有 5 張表、純文字、零外鍵——拷貝這一個檔就把整套能力帶走。技能欄位照抄 pi.dev SKILL.md（name/description/instructions），檔案用 path 的斜線當資料夾樹，題目與答案靠同一個 id 對照、用 train/holdout 分訓練集與保留集防背答案。北歐簡約、老花友善、高中生能懂。",
