@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "pi-mapreduce-dag-handover",
+      "title": "PI × bun 平行 DAG 傳承筆記：2658 頁卷宗目錄標籤實戰",
+      "subtitle": "用 PI × bun 的平行 DAG 五節點管線，把 2658 頁去機敏卷宗自動打上目錄標籤；成績從 18 分推到 50 分。完整收錄按順序的人類 prompt、三招心法、bun 腳本 DAG 結構、為何非得平行，並誠實列出尚未做好的與下一步 v3。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-mapreduce-dag-handover.html",
+      "icon": "edit",
+      "badge": "傳承筆記",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-19T18:51:00+08:00",
+      "tags": [
+        "PI",
+        "bun",
+        "平行 DAG",
+        "去機敏 OCR",
+        "卷宗目錄標籤"
+      ],
+      "concepts": [
+        "PI × bun 五節點平行 DAG 管線：2658 頁卷宗自動目錄標籤",
+        "成績 18 分 → 50 分，附完整人類 prompt 與三招心法傳承",
+        "誠實標註尚未做好的部分與下一步 v3，不違背工程紀律"
+      ]
+    },
+    {
       "id": "botrun-pii-web-design-intent",
       "title": "botrun-pii-web：世界第一個「可成長」去機敏 AI 引擎的設計意圖與全球競爭力",
       "subtitle": "跨平台 curl 一行裝、瀏覽器進入、只做去機敏一件事；全自動與半自動交談兼具，漏網一鍵標記、永久記憶、下次不再漏。對標 Private AI／Tonic／John Snow 三家共同缺口——「廠商訓練、客戶不能即時長知識」與重貴限醫療的 HITL——base⊕live 成長引擎加算力熱切換，是市場上沒人合在一顆的組合。北歐淺色、老花友善，內容已去機敏。",
