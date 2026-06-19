@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "guardian-human-prompt-playbook",
+      "title": "人類提示工程全紀錄：觀護人語音轉文字的 36 條 prompt 靈魂",
+      "subtitle": "問題怎麼問，決定 AI 怎麼做。完整收錄 guardian 觀護語音轉文字專案 001–036 條人類 prompt，原汁原味依時序編號，分三階段：合成語音 × Breeze 轉文字（001–010）、去機敏 × 順稿迭代（011–025）、交付 DB 一個檔（026–036）。全部去識別、非機密，供內部傳承。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/guardian-human-prompt-playbook.html",
+      "icon": "edit",
+      "badge": "提示工程",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-06-19T08:30:00+08:00",
+      "tags": [
+        "提示工程",
+        "Prompt",
+        "語音轉文字",
+        "觀護人",
+        "傳承"
+      ],
+      "concepts": [
+        "36 條人類 prompt 依時序原汁原味編號，呈現問題如何決定 AI 產出",
+        "三階段流程：合成語音轉文字 → 去機敏順稿 → 交付一個 DB 檔",
+        "全部去識別、非機密，可作為內部傳承教材"
+      ]
+    },
+    {
       "id": "botrun-db-spec-v4-evolution-brain",
       "title": ".botrun DB 標準 v4.0.0：一顆會進化的技能大腦",
       "subtitle": "圖紙輸給出貨單——真正交付的觀護人語音大腦 guardian-voice-brain.db 證明 v3.x「GitHub 倉庫」抽象是錯的，規格向成品學習 bump 到 v4.0.0：meta 自述／可執行 skills／多來源 answers／A-B scores／內建 lessons 七表。含 ER 全圖與進化評分流程 SVG。北歐淺色、老花友善，內容已去機敏。",
