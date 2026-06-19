@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "botrun-pii-web-design-intent",
+      "title": "botrun-pii-web：世界第一個「可成長」去機敏 AI 引擎的設計意圖與全球競爭力",
+      "subtitle": "跨平台 curl 一行裝、瀏覽器進入、只做去機敏一件事；全自動與半自動交談兼具，漏網一鍵標記、永久記憶、下次不再漏。對標 Private AI／Tonic／John Snow 三家共同缺口——「廠商訓練、客戶不能即時長知識」與重貴限醫療的 HITL——base⊕live 成長引擎加算力熱切換，是市場上沒人合在一顆的組合。北歐淺色、老花友善，內容已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-pii-web-design-intent.html",
+      "icon": "shield",
+      "badge": "設計意圖",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-19T12:57:00+08:00",
+      "tags": [
+        "PII 去機敏",
+        "可成長 AI",
+        "全球競爭力",
+        "base⊕live",
+        "跨平台"
+      ],
+      "concepts": [
+        "世界第一個「可成長」去機敏引擎：漏網一鍵標記 → 永久記憶 → 下次同型自動不漏",
+        "對標 Private AI／Tonic／John Snow 三家共同缺口，定位差異化賣點",
+        "跨平台 curl 一行裝、算力熱切換、單一去機敏任務的輕量交談工作台"
+      ]
+    },
+    {
       "id": "guardian-human-prompt-playbook",
       "title": "人類提示工程全紀錄：觀護人語音轉文字的 36 條 prompt 靈魂",
       "subtitle": "問題怎麼問，決定 AI 怎麼做。完整收錄 guardian 觀護語音轉文字專案 001–036 條人類 prompt，原汁原味依時序編號，分三階段：合成語音 × Breeze 轉文字（001–010）、去機敏 × 順稿迭代（011–025）、交付 DB 一個檔（026–036）。全部去識別、非機密，供內部傳承。北歐淺色、老花友善。",
