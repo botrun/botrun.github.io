@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "pdf-toc-14-round-handover",
+      "title": "從 36 分到 86 分：多卷黏合 PDF 卷宗目錄自動生成的 14 輪迭代傳承",
+      "subtitle": "112 偵 5844 殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B + GAN 對抗式自適應迭代，3 小時內 14 版把目錄自動生成分數從 36 推到 86。完整逐字保留 18 條人類指令、每一版設計／分數／時間／教訓，揭露多卷黏合頁碼偏移量（offset）演算法如何破題。全程零黃金洩漏、零個案寫死、零洩題，泛化禁 overfit。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-toc-14-round-handover.html",
+      "icon": "edit",
+      "badge": "傳承筆記",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-19T21:22:00+08:00",
+      "tags": [
+        "PDF 目錄",
+        "Gemma-4-31B",
+        "GAN 迭代",
+        "去機敏 OCR",
+        "頁碼偏移量"
+      ],
+      "concepts": [
+        "多卷黏合 PDF 的全域頁碼偏移量（offset）是低分主因，找出偏移演算法是破題關鍵",
+        "GAN 對抗式自適應迭代：14 版 3 小時把目錄自動生成從 36 分推到 86 分",
+        "鐵律泛化禁 overfit、零黃金洩漏／零寫死／零洩題，逐字保留 18 條人類指令傳承"
+      ]
+    },
+    {
       "id": "pi-mapreduce-dag-handover",
       "title": "PI × bun 平行 DAG 傳承筆記：2658 頁卷宗目錄標籤實戰",
       "subtitle": "用 PI × bun 的平行 DAG 五節點管線，把 2658 頁去機敏卷宗自動打上目錄標籤；成績從 18 分推到 50 分。完整收錄按順序的人類 prompt、三招心法、bun 腳本 DAG 結構、為何非得平行，並誠實列出尚未做好的與下一步 v3。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
