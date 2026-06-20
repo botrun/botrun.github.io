@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "signal-hermes-e2e-local-31b",
+      "title": "用 Signal 指揮只屬於你的 AI：Hermes ＋ 本機 31B 端對端加密協作",
+      "subtitle": "從「Signal 接得上 Hermes 嗎」一路問到「三人祕密群組 + 台北手機跨內網連花蓮 Mac 主機」。一份把信任邊界講清楚的指南：Signal 守好傳輸（E2E + Sealed Sender，公司真的看不到內容），本機 Mac M4 守好明文（31B 地端推論，明文不出門）；揭露雲端 bot 的四個風險點 R1～R4、AI 端才是真正破口、三人群組「單一大腦」七步做法、跨內網 Proxy 相容、以及 ollama-signal-bot／uoltz／signallama 等已驗證口碑。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/signal-hermes-e2e-local-31b.html",
+      "icon": "shield",
+      "badge": "資安架構",
+      "badgeColor": "#2f6f4f",
+      "protected": true,
+      "publishDate": "2026-06-20T10:45:00+08:00",
+      "tags": [
+        "Signal E2E",
+        "Hermes Agent",
+        "本機 31B",
+        "signal-cli",
+        "端對端加密"
+      ],
+      "concepts": [
+        "E2E 只保證兩端之間；AI bot 本身是收件端點，訊息到主機必須解密成明文——信任從 Signal 公司轉移到誰運營這台 AI 主機",
+        "最佳形態＝Mac M4 自架 bot + 本機 31B：兩端都你掌控，明文不出門、對外全加密，把唯一破口收進自己手裡",
+        "三人祕密群組用『單一群組大腦』：只一台 Mac 當 AI 主機，@觸發避免搶答；跨內網經 Signal 中繼即通，只需放行對外 443/Proxy"
+      ]
+    },
+    {
       "id": "pdf-toc-14-round-handover",
       "title": "從 36 分到 86 分：多卷黏合 PDF 卷宗目錄自動生成的 14 輪迭代傳承",
       "subtitle": "112 偵 5844 殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B + GAN 對抗式自適應迭代，3 小時內 14 版把目錄自動生成分數從 36 推到 86。完整逐字保留 18 條人類指令、每一版設計／分數／時間／教訓，揭露多卷黏合頁碼偏移量（offset）演算法如何破題。全程零黃金洩漏、零個案寫死、零洩題，泛化禁 overfit。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
