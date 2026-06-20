@@ -5,6 +5,29 @@
   },
   "items": [
     {
+      "id": "pdf-page-number-recovery-handover",
+      "title": "把丟掉的頁碼從掃描檔裡找回來：多卷黏合 PDF 頁碼還原的完整傳承",
+      "subtitle": "112 偵 5844 殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B。逐字保留 18 條人類提示（每條附白話翻譯），揭露整場關鍵一招——改用 27 項二元評測（yes/no 加權到 100）讓分數不再忽高忽低；以及如何從 gold 反推「多份卷證按順序黏成 2000 多頁」的偏移演算法，泛化把頁碼精準補回，產線只吃 OCR＋檔名頁碼、不塞本案專屬數字。含最終 How-To。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-page-number-recovery-handover.html",
+      "icon": "edit",
+      "badge": "傳承筆記",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-20T12:30:00+08:00",
+      "tags": [
+        "PDF 頁碼還原",
+        "Gemma-4-31B",
+        "二元評測",
+        "多卷黏合 offset",
+        "去機敏 OCR"
+      ],
+      "concepts": [
+        "整場關鍵一招：把「憑感覺給分」改成 27 項二元評測（yes/no、各有權重、加總 100），分數才穩、能指引進步",
+        "多份卷證按順序黏成 2000 多頁是可拆解的——從 gold 反推偏移演算法的「長相」，泛化還原頁碼而非寫死本案數字",
+        "球員不能兼裁判：畫目錄的是 31B，評分改用獨立的 Opus subagent；技能放專案本地、機敏絕不進版控"
+      ]
+    },
+    {
       "id": "signal-hermes-e2e-local-31b",
       "title": "用 Signal 指揮只屬於你的 AI：Hermes ＋ 本機 31B 端對端加密協作",
       "subtitle": "從「Signal 接得上 Hermes 嗎」一路問到「三人祕密群組 + 台北手機跨內網連花蓮 Mac 主機」。一份把信任邊界講清楚的指南：Signal 守好傳輸（E2E + Sealed Sender，公司真的看不到內容），本機 Mac M4 守好明文（31B 地端推論，明文不出門）；揭露雲端 bot 的四個風險點 R1～R4、AI 端才是真正破口、三人群組「單一大腦」七步做法、跨內網 Proxy 相容、以及 ollama-signal-bot／uoltz／signallama 等已驗證口碑。北歐淺色、老花友善。",
