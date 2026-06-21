@@ -35,9 +35,14 @@ function renderCard(item) {
   const isExternal = item.href.startsWith('http');
   const target = isExternal ? ' target="_blank" rel="noopener"' : '';
   const tags = (item.tags || []).map(t => {
-    const [icon, label] = t.split(':');
-    return `<span>${svg(icon)}${label}</span>`;
-  }).join('');
+    const idx = t.indexOf(':');
+    // 支援兩種格式：「icon:label」帶圖示，或純文字標籤（無冒號就只顯示文字）
+    const hasIcon = idx > -1;
+    const icon = hasIcon ? t.slice(0, idx) : '';
+    const label = hasIcon ? t.slice(idx + 1) : t;
+    if (!label) return '';
+    return `<span>${hasIcon ? svg(icon) : ''}${label}</span>`;
+  }).filter(Boolean).join('');
 
   return `
     <a class="card" href="${item.href}"${target} style="position:relative;">

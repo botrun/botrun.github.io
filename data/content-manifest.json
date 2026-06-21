@@ -5,6 +5,181 @@
   },
   "items": [
     {
+      "id": "hermes-gateway-team-onboarding",
+      "title": "傳承：Hermes Gateway 團隊協作 — 20 真人夥伴如何各自開通(Signal/LINE/Google Chat/Gmail)",
+      "subtitle": "從『我以為是單一員工』到搞懂 gateway 多 profile 授權的完整理解傳承。含人類原始 prompt 全文(001-007)、v1→v7 演進歷程、四件套(How-to/設定碼/prompt/資料樣態)、突破關鍵(把『可見性』與『授權』兩層切開:可見性可鎖整個 @cameo.tw workspace,但 allowlist 不支援網域萬用要逐一列 email/門號/LINE ID=安全設計)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG 架構圖。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/hermes-gateway-team-onboarding.html",
+      "icon": "edit",
+      "badge": "團隊傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-21T17:30:00+08:00",
+      "tags": [
+        "Hermes Gateway",
+        "團隊協作",
+        "Signal",
+        "LINE",
+        "Google Chat",
+        "Gmail",
+        "IAP",
+        "allowlist"
+      ],
+      "concepts": [
+        "gateway 多 profile 隔離",
+        "DM pairing 配對碼",
+        "allowlist 逐一授權",
+        "可見性 vs 授權兩層",
+        "MIT 開源 22 平台"
+      ]
+    },
+    {
+      "id": "hermes-docker-8models",
+      "title": "傳承：乾淨 Alpine Docker 跑通 Hermes CLI 8 模型多後端",
+      "subtitle": "一個乾淨 node:22-alpine 容器裝 Hermes CLI v0.17，打通四個 provider 八個模型(Anthropic Opus 4.8 / NCHC 國網 Gemma4 31B+26B / Mac host 原生 Ollama 31B+26B+12B MLX / botrun-tower vLLM 31B+26B)全部以 hermes 本體實測對話成功(8/8)。含人類原始 prompt 全文(001-013)、v1→v9 演進歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(改用 node:22-alpine 繞開 musl/glibc Node exit127、容器經 host.docker.internal+python 轉發器跳板 Tailscale、hermes 單一 active provider 靠 config set 切換)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/hermes-docker-8models.html",
+      "icon": "edit",
+      "badge": "全棧傳承",
+      "badgeColor": "#3a6b5f",
+      "protected": true,
+      "publishDate": "2026-06-21T16:05:00+08:00",
+      "tags": [
+        "Hermes CLI",
+        "Alpine Docker",
+        "Ollama MLX",
+        "NCHC 國網",
+        "botrun-tower",
+        "Anthropic Opus 4.8",
+        "Gemma4"
+      ],
+      "concepts": [
+        "alpine 跑官方 Node 必 exit127(glibc vs musl)，改基底 node:22-alpine 讓 installer 偵測到夠新 node 即跳過下載",
+        "容器看不到 Tailscale，tower 需 Mac host 跑 python TCP 轉發器當跳板，連 host 一律 host.docker.internal",
+        "hermes v0.17 是單一 active provider，本機端點一律 provider=custom，切換靠 config set base_url/default"
+      ]
+    },
+    {
+      "id": "heritage-alpine-pi-stack",
+      "title": "傳承：乾淨 Alpine Docker 跑通 pi.dev 全棧 8 模型",
+      "subtitle": "一個乾淨 Alpine 容器裝 pi.dev，打通四個 provider 八個模型(Anthropic Opus 4.8 / NCHC 國網 Gemma4 31B+26B / Mac host 原生 Ollama 31B+26B+12B MLX / botrun-tower vLLM 31B+26B)全部實測真生成。含人類原始 prompt 全文、v1→v8 演進歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(本地模型改連 host 繞開 musl+MLX 死結、envsubst 注入金鑰解 pi 不內插 $VAR、node:22-alpine 對齊 pi0.79+Opus4.8)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/heritage-alpine-pi-stack.html",
+      "icon": "edit",
+      "badge": "全棧傳承",
+      "badgeColor": "#5b6e5a",
+      "protected": true,
+      "publishDate": "2026-06-21T16:30:00+08:00",
+      "tags": [
+        "pi.dev",
+        "Alpine Docker",
+        "Ollama MLX",
+        "NCHC 國網",
+        "botrun-tower",
+        "Anthropic Opus 4.8",
+        "Gemma4"
+      ],
+      "concepts": [
+        "本地模型不在容器內跑、改連 Mac host 原生 ollama，一次繞開 musl/glibc/MLX 三重死結",
+        "pi 不會內插 models.json 的 $VAR，改用 envsubst 啟動時注入金鑰(仍不落檔)解掉 NCHC 401",
+        "Opus 4.8 需 pi>=0.79 + Node>=22.19，基底改 node:22-alpine 才認得 adaptive thinking"
+      ]
+    },
+    {
+      "id": "youtube-heat-pi-vs-hermes",
+      "title": "YouTube 熱度比較：Pi agent vs Hermes agent（近兩週）",
+      "subtitle": "用 Claude in Chrome 快速驗證：以 YouTube『依上傳日期排序』抓兩關鍵字首頁前 ~20 筆，篩出近兩週影片並加總公開觀看數。結論：Hermes ≈ 58.4 萬 vs Pi ≈ 18.9 萬，約 3.1×；Hermes 有兩支破 10 萬爆款(19萬/12萬)，Pi 最高僅 4 萬且高峰多落在 3-4 週前。含人類原始 prompt 全文、v1→v4 歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(sp 排序參數+純文字抽取)、PII 紅線與限制聲明、內嵌 SVG 圖解。丹麥簡約風、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/youtube-heat-pi-vs-hermes.html",
+      "icon": "edit",
+      "badge": "快驗傳承",
+      "badgeColor": "#d98a3d",
+      "protected": true,
+      "publishDate": "2026-06-21T15:30:00+08:00",
+      "tags": [
+        "YouTube 熱度",
+        "Pi agent",
+        "Hermes agent",
+        "Claude in Chrome",
+        "快速驗證",
+        "資料新聞"
+      ],
+      "concepts": [
+        "YouTube 搜尋加 sp=CAISBAgEEAE%3D『依上傳日期排序』是框出時間窗口的關鍵變因",
+        "get_page_text 純文字抽取比逐張截圖快又省 token，達成『快驗』",
+        "快驗求方向正確+透明限制(抽樣/相對時間誤差/累積非新增量)，非小數點精度"
+      ]
+    },
+    {
+      "id": "ollama-vs-lmstudio-ttft-context",
+      "title": "ollama vs LM Studio：同量化 Gemma 4 速度對決，與「空 context 為何影響 TPS」實測",
+      "subtitle": "M4 Max 128GB 上以相同 4bit、no thinking、prompt「說個故事」對比 ollama 與 LM Studio(MLX) 跑 Gemma 4 26B/31B 的 TTFT 與 TPS。結論：ollama 反應快(低 TTFT)、LM Studio 吐字略快(高 TPS)，26B MoE(僅4B active)是兩邊甜蜜點。深掘使用者疑問『空空的 context 為何拖慢速度』：揭露 KV cache 預先配置佔記憶體頻寬、256K→8K 大躍進但 8K→4K 進入平台期、真正大變因其實是載入 parallel 路數。含 v1→v5 歷程、MoE 與 context 曲線 SVG、兩引擎量測程式碼、完整數據附錄。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ollama-vs-lmstudio-ttft-context.html",
+      "icon": "edit",
+      "badge": "實測傳承",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-06-21T13:01:09+08:00",
+      "tags": [
+        "ollama vs LM Studio",
+        "Gemma 4",
+        "TTFT/TPS",
+        "KV cache",
+        "context window",
+        "MoE vs Dense",
+        "M4 Max"
+      ],
+      "concepts": [
+        "KV cache 按 num_ctx 預先配滿，巨大 context 即使空著也佔記憶體頻寬→拖慢 token generation(Mac 為頻寬瓶頸)",
+        "縮 context 有天花板：256K→8K 大幅變快，但 8K→4K 持平(平台期)；使用者『空的不該影響』直覺在小範圍正確",
+        "真正大幅改變單流速度的是載入設定(parallel 路數)，非 context 大小：LM Studio 4K parallel=4 反而變慢"
+      ]
+    },
+    {
+      "id": "gemma4-mlx-ttft-tps-bench",
+      "title": "Gemma 4 MLX 三模型實測：TTFT 與 TPS（M4 Max 128GB）",
+      "subtitle": "在 Apple M4 Max 128GB 上以 ollama 0.30.7 + MLX，no thinking、prompt「說個故事」實測 12b/26b/31b-mlx 三顆 Gemma 4 的首字延遲(TTFT)與生成速度(TPS)。反直覺發現：26B(MoE,4B active) 100 tok/s 反而最快，是 12B dense(52) 兩倍、31B dense(16) 六倍。含冷啟vs熱機歷程、MoE 為何更快的 SVG 圖解、量測腳本與 API 計時欄位解說、16GB/128GB 選型建議。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gemma4-mlx-ttft-tps-bench.html",
+      "icon": "edit",
+      "badge": "實測傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-21T10:10:34+08:00",
+      "tags": [
+        "Gemma 4",
+        "MLX",
+        "ollama",
+        "TTFT/TPS",
+        "MoE vs Dense",
+        "M4 Max"
+      ],
+      "concepts": [
+        "速度由架構決定：26B-A4B 是 MoE，每個 token 只啟動 4B 參數，比 12B dense 全動還快",
+        "TTFT 冷啟(載入)1~9秒、熱機(keep_alive)僅 59~134ms；公平比較必須排除冷啟",
+        "選型：日常用 26b-mlx(快又準)、最高品質用 31b-mlx、輕量/16GB 用 12b-mlx 並縮短 context"
+      ]
+    },
+    {
+      "id": "bowen-pipeline-evolution",
+      "title": "把一顆 SQLite 教會地端小模型穩定做事：波聞管線 v2→v8 進化傳承",
+      "subtitle": "一顆 .🤖（標準 SQLite）裝進指令卡＋工具＋網頁範本，用七次迭代教會地端 Gemma 4 26B 把今日新聞做成人本排行網頁。置頂逐字保留 13 條人類提示，記錄每輪做法→結果→演進理由；揭露突破關鍵＝『消除摩擦 > 堆疊能力』（先拆評測與 GAN，再讓 blob 第一次全倒、工具自己找得到 db、分數用 printf 直寫 csv）。含最終四件套(How-to/程式碼/prompt/資料樣態)與誠實未達標。最終由 pi＋本機 LM Studio(localhost:1234, gemma-4-26b-a4b) 全地端跑通。內嵌 SVG、北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/bowen-pipeline-evolution.html",
+      "icon": "edit",
+      "badge": "傳承筆記",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-21T09:25:35+08:00",
+      "tags": [
+        "SQLite 單檔大腦",
+        "地端小模型",
+        "Gemma 4 26B",
+        "效率/去摩擦",
+        "blob 一次全倒",
+        "pi + LM Studio"
+      ],
+      "concepts": [
+        "突破關鍵是『消除摩擦 > 堆疊能力』：先做減法(拆評測/GAN)，再讓工具第一次就全部可用、找得到 db、不爆 token",
+        "小模型只產『最小新資訊』並直接寫檔；固定範本與組裝交給程式(s2_apply/s4_build)，避免重複吐字與重打 HTML",
+        "最終全地端：pi 驅動 + 本機 LM Studio(localhost:1234, google/gemma-4-26b-a4b)，機敏不外洩"
+      ]
+    },
+    {
       "id": "pdf-page-number-recovery-handover",
       "title": "把丟掉的頁碼從掃描檔裡找回來：多卷黏合 PDF 頁碼還原的完整傳承",
       "subtitle": "某殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B。逐字保留 18 條人類提示（每條附白話翻譯），揭露整場關鍵一招——改用 27 項二元評測（yes/no 加權到 100）讓分數不再忽高忽低；以及如何從 gold 反推「多份卷證按順序黏成 2000 多頁」的偏移演算法，泛化把頁碼精準補回，產線只吃 OCR＋檔名頁碼、不塞本案專屬數字。含最終 How-To。內容已去機敏，供內部傳承。北歐淺色、老花友善。",
