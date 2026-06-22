@@ -5,6 +5,201 @@
   },
   "items": [
     {
+      "id": "gemini-transparent-image-gen-heritage",
+      "title": "Gemini 透通生圖 · 傳承文件（nano banana / br- / ADC 免 key）",
+      "subtitle": "Gemini 透明背景生圖完整傳承：ADC 免金鑰、nano banana 模型、br- 前綴流程。北歐淺色、老花友善，已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gemini-transparent-image-gen-heritage.html",
+      "icon": "image",
+      "badge": "生圖",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-06-22T23:00:00+08:00",
+      "tags": [
+        "Gemini",
+        "生圖",
+        "nano banana",
+        "ADC"
+      ]
+    },
+    {
+      "id": "gemini-fileapi-stt-upload-heritage",
+      "title": "Gemini File API 相容語音上傳（→ GCS，全程 ADC）",
+      "subtitle": "Gemini File API 相容的語音上傳流程：直送 GCS、全程 ADC 免金鑰。傳承文件，北歐淺色、老花友善，已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gemini-fileapi-stt-upload-heritage.html",
+      "icon": "mic",
+      "badge": "語音",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-22T22:43:00+08:00",
+      "tags": [
+        "Gemini",
+        "File API",
+        "STT",
+        "GCS"
+      ]
+    },
+    {
+      "id": "vm-final-n1-custom-1-2048-verified",
+      "title": "VM 最終規格 n1-custom-1-2048（1 vCPU / 2 GB）實機壓測通過",
+      "subtitle": "VM 規格 n1-custom-1-2048 實機壓測：8 條指令參考、13 個單元測試全過、端到端壓測 60/60 100%。北歐淺色、老花友善，已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/vm-final-n1-custom-1-2048-verified.html",
+      "icon": "server",
+      "badge": "壓測",
+      "badgeColor": "#8a6d2b",
+      "protected": true,
+      "publishDate": "2026-06-22T18:40:00+08:00",
+      "tags": [
+        "VM",
+        "壓測",
+        "GCP",
+        "n1-custom"
+      ]
+    },
+    {
+      "id": "todo_list",
+      "title": "資安應變 Checklist | Incident Response",
+      "subtitle": "資安事件應變待辦清單。丹麥簡約風、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/todo_list.html",
+      "icon": "edit",
+      "badge": "資安應變",
+      "badgeColor": "#b5454a",
+      "protected": true,
+      "publishDate": "2026-06-22T09:35:00+08:00",
+      "tags": [
+        "資安",
+        "應變",
+        "Checklist",
+        "Incident Response"
+      ]
+    },
+    {
+      "id": "ai-clerk-pricing-one-third",
+      "title": "AI 承辦怎麼定價？用「1/3 法則」三輪 GAN 練出來的商業模式",
+      "subtitle": "賣的不是軟體，是一位越用越懂你、換誰都帶不走的地端 AI 承辦——按它做完且通過第三方認證的公文件數付錢，只收人工成本的三分之一。對齊 YC 2026『軟體護城河已崩、賣替代人力不賣工具、outcome-based 定價、捕捉 20–50% 價值留客戶 ≥2× ROI』。三輪 GAN：v1 直覺雙層→v2 從小到大四階斜坡→v3 賣替代人力＋1/3 定價。三層數字：個人 ~30 萬／團隊 ~130 萬／機關 ~530 萬＋認證 80 萬/標，per-件 ~NT$330；先 1/4 搶進場、續約 1/3 收割。含人類原始 prompt(01-09)、演進歷程、四件套(How-to／pricing.py 試算／對外一句話／去機敏計費 JSON)、突破說明(換『賣的東西』＋換『定價的尺』)。丹麥簡約、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/ai-clerk-pricing-one-third.html",
+      "icon": "edit",
+      "badge": "定價",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-22T08:10:00+08:00",
+      "tags": [
+        "商業模式",
+        "YC 2026",
+        "outcome-based 定價",
+        "AI 承辦",
+        "GAN"
+      ]
+    },
+    {
+      "id": "botrun-ssot-dump-jsonl-blob",
+      "title": "讓 .botrun 乾淨 dump 成 JSONL ＋ 純文字 blob",
+      "subtitle": "把鎖在 SQLite 箱子裡的真相攤成 GitHub 逐行可 diff 的純文字 SSOT：dump／build／verify 三命令，純文字＝真相、.botrun＝可重建產物，往返逐位元組等價守門 14/14 PASS。含流程 SVG、五點動機、三方案打分、演進歷程與四件套。北歐淺色、老花友善，已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-ssot-dump-jsonl-blob.html",
+      "icon": "database",
+      "badge": "SSOT",
+      "badgeColor": "#3f6f5b",
+      "protected": true,
+      "publishDate": "2026-06-22T07:00:00+08:00",
+      "tags": [
+        "SQLite",
+        ".botrun",
+        "SSOT",
+        "JSONL",
+        "往返驗證"
+      ]
+    },
+    {
+      "id": "botrun-spec-v42-deflate-vs-zstd",
+      "title": "為什麼 .botrun v4.2.0 禁 deflate、改用 zstd — 一個反直覺的壓縮真相",
+      "subtitle": "先各自壓一次再整包壓，反而更大、還搜不到字。用真實數字講給高中生聽：① deflate+zstd=87,876 vs 不壓+zstd=60,392(小31%,因 zstd 看得到跨檔重複而 deflate 把它打散) ② deflate 過的內容無法 LIKE(壓縮泥),不壓縮版同查詢命中 6 檔。結論升格成 v4.2.0 規格：sqlar.data 恆未壓縮(可 content LIKE)、要壓縮整檔 zstd 副檔名 .botrun.zstd/.🤖.zstd、禁雙重壓縮。含人類原始 prompt(001-007)、發現歷程、四件套、突破(壓縮分層:該留明文留明文、該壓一次壓到底)。丹麥簡約、老花友善、內嵌 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v42-deflate-vs-zstd.html",
+      "icon": "edit",
+      "badge": "規格決策",
+      "badgeColor": "#3E6B5C",
+      "protected": true,
+      "publishDate": "2026-06-21T22:30:00+08:00",
+      "tags": [
+        "botrun",
+        "spec v4.2.0",
+        "zstd",
+        "deflate",
+        "壓縮",
+        "LIKE",
+        "sqlar",
+        ".botrun.zstd",
+        "IAP"
+      ],
+      "concepts": [
+        "雙重壓縮反效果",
+        "deflate 殺死 LIKE 內容搜尋",
+        "raw+zstd 跨檔去冗餘",
+        "sqlar.data 恆未壓縮",
+        "整檔 zstd 分發",
+        "壓縮分層原則"
+      ]
+    },
+    {
+      "id": "botrun-spec-v41-explainer",
+      "title": "徹底讀懂 .botrun / 🤖 v4.1.0 規格 — 用真實資料，高中生也看得懂",
+      "subtitle": "一個 .botrun 就是裝在 SQLite 裡的大腦。本頁用真實資料講透 v4.0.0→v4.1.0 四大升級：①檔案層改官方 sqlar(自動壓縮+記住權限,救回 .sh 執行位,真實 22723→7857 省66%) ③lessons 加 severity 致命/嚴重/注意 ④answers/scores 加 created_at+UNIQUE ⑤把規矩寫進 schema 的 CHECK 門禁(score 999 直接拒寫)+role 取代猜字尾。含人類原始 prompt 全文(001-004)、升級歷程、四件套、突破關鍵(採官方標準+資料庫當守門員)、archive 未編入地雷與 writefile bootstrap 解法。丹麥簡約、老花友善、內嵌 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v41-explainer.html",
+      "icon": "edit",
+      "badge": "規格教學",
+      "badgeColor": "#9C5B34",
+      "protected": true,
+      "publishDate": "2026-06-21T19:10:00+08:00",
+      "tags": [
+        "botrun",
+        "sqlar",
+        "SQLite",
+        "spec v4.1.0",
+        "CHECK 契約",
+        "severity",
+        "role",
+        "壓縮",
+        "權限位",
+        "IAP"
+      ],
+      "concepts": [
+        "官方 sqlar 取代手刻 files",
+        "schema CHECK 取代註解慣例",
+        "lessons severity 分級",
+        "answers.role 取代字尾猜",
+        "created_at+UNIQUE 稽核",
+        "archive 未編入→writefile bootstrap"
+      ]
+    },
+    {
+      "id": "single-db-install-brain-heritage",
+      "title": "傳承：一顆 260 KB SQLite 裝下兩專案全部血淚 — pi agent × hermes agent 安裝大腦(.botrun v4.0.0)",
+      "subtitle": "把 single-db-install-pi-ollama 與 hermes 兩專案的全部檔案/Dockerfile/docs/地雷封裝成連 Haiku 都能查的單一 SQLite。含人類原始 prompt 全文(001-021)、v1→v8 演進歷程、四件套(How-to/程式碼/真執行考題/資料樣態)、突破關鍵(把『能查到≠能跑通』『有輸出≠真生成』兩個等號打破:從知識問答轉真執行驗收+修正驗證器只認真模型輸出)、PII 去機敏(零明文金鑰)。丹麥簡約風、老花友善、內嵌 SVG。pi 8/8 · hermes 8/8 真執行通過。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/single-db-install-brain-heritage.html",
+      "icon": "edit",
+      "badge": "單檔大腦",
+      "badgeColor": "#3E6B5C",
+      "protected": true,
+      "publishDate": "2026-06-21T18:30:00+08:00",
+      "tags": [
+        "botrun",
+        "SQLite",
+        "pi agent",
+        "hermes",
+        "Haiku",
+        "LIKE 禁 FTS5",
+        "docker alpine",
+        "真執行驗收",
+        "IAP"
+      ],
+      "concepts": [
+        "7 表 .botrun v4.0.0",
+        "blob 內嵌全工作樹+SHA256",
+        "LIKE 繁體友善禁 FTS5",
+        "真執行考題 golden=通過條件",
+        "驗證器只認真生成避假通過",
+        "8 model 多來源真生成"
+      ]
+    },
+    {
       "id": "hermes-gateway-team-onboarding",
       "title": "傳承：Hermes Gateway 團隊協作 — 20 真人夥伴如何各自開通(Signal/LINE/Google Chat/Gmail)",
       "subtitle": "從『我以為是單一員工』到搞懂 gateway 多 profile 授權的完整理解傳承。含人類原始 prompt 全文(001-007)、v1→v7 演進歷程、四件套(How-to/設定碼/prompt/資料樣態)、突破關鍵(把『可見性』與『授權』兩層切開:可見性可鎖整個 @cameo.tw workspace,但 allowlist 不支援網域萬用要逐一列 email/門號/LINE ID=安全設計)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG 架構圖。",
