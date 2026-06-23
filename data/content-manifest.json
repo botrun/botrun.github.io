@@ -5,6 +5,77 @@
   },
   "items": [
     {
+      "id": "g-taide-truth-bo-gong-zi",
+      "title": "G 泰德的真相，與「波公子」公文代理人傳承",
+      "subtitle": "國家級公文模型 G 泰德（GPT-OSS 20B fine-tune，中研院研發、國網中心發包、七機關合作）用了不好用；國網中心委託我們做波公子（Pi Mono ＋ Gemma 31B），二元評測把公文從 76 → 94 分。含五單位四態度全景、技術堆疊、機敏評測傳承鏈、突破關鍵變因與四件套。北歐淺色、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/g-taide-truth-bo-gong-zi.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-23T16:36:00+08:00",
+      "tags": [
+        "G 泰德",
+        "波公子",
+        "公文代理人",
+        "二元評測",
+        "機敏評測"
+      ]
+    },
+    {
+      "id": "non-prosecution-iteration-legacy",
+      "title": "不起訴處分書生成 · 自適應迭代傳承（v1→v11）",
+      "subtitle": "用小模型(pi -p 31B)把去機敏移送書變成可列印不起訴處分書：11 輪迭代總分 62.8→94.2。含 2026 上網啟發、三階段機械架構、6 維評分、四件套與 SVG 圖解。方法論定理：硬約束機械保證、正面內容 prompt 注入。北歐淺色、老花友善、全去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-iteration-legacy.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-23T16:30:00+08:00",
+      "tags": [
+        "自適應迭代",
+        "小模型",
+        "prompt 工程",
+        "法律文書",
+        "去機敏"
+      ]
+    },
+    {
+      "id": "nchc-vllm-setup-guide",
+      "title": "地端 vLLM 架設指南 · 給國網中心參考",
+      "subtitle": "單卡 RTX PRO 6000 Blackwell 96GB 上架設 Gemma 4（31B/26B/Diffusion/ASR）：Content length 與 KV cache、GMU 顯存預算、NVFP4 量化、MTP、工具呼叫、SSOT＋systemd。北歐淺色、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/nchc-vllm-setup-guide.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-23T16:00:00+08:00",
+      "tags": [
+        "vLLM",
+        "Gemma 4",
+        "NCHC",
+        "GPU",
+        "地端部署"
+      ]
+    },
+    {
+      "id": "pi-dev-extensions-skills",
+      "title": "pi.dev 最好用的 Extensions 與 Skills · 研究傳承",
+      "subtitle": "Pi Coding Agent 生態系盤點：pi-goal/pi-subagents/pi-lsp/pi-caffeinate 四套必裝，含研究歷程與安裝指令。北歐淺色、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-extensions-skills.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-23T12:00:00+08:00",
+      "tags": [
+        "pi.dev",
+        "extensions",
+        "skills",
+        "Pi Agent"
+      ]
+    },
+    {
       "id": "gemini-transparent-image-gen-heritage",
       "title": "Gemini 透通生圖 · 傳承文件（nano banana / br- / ADC 免 key）",
       "subtitle": "Gemini 透明背景生圖完整傳承：ADC 免金鑰、nano banana 模型、br- 前綴流程。北歐淺色、老花友善，已去機敏。",
