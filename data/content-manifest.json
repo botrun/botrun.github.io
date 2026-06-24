@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "aiec-sensitive-eval-business-model",
+      "title": "主權 AI 的命脈：機敏評測商業模式與國家標準傳承",
+      "subtitle": "工研院×AIEC 機敏評測策略會議傳承：法務部→巨鷗→CAMEO 轉包鏈與送測費剝半分潤、四大護城河（繁中去機密／國網 1.6 折／A/B test 2.0／機關經驗）、評測工具 v1.0→v2.0（從只評分到 A/B 技能進化）、把「臺灣機敏評測標準」推成國家標準寫進政府標案。含金流圖、送測 SOP、護城河、國家標準四張 SVG 與四件套。北歐淺色、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/aiec-sensitive-eval-business-model.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T11:08:38+08:00",
+      "tags": [
+        "機敏評測",
+        "工研院",
+        "AIEC",
+        "商業模式",
+        "高品味題庫"
+      ]
+    },
+    {
       "id": "g-taide-truth-bo-gong-zi",
       "title": "G 泰德的真相，與「波公子」公文代理人傳承",
       "subtitle": "國家級公文模型 G 泰德（GPT-OSS 20B fine-tune，中研院研發、國網中心發包、七機關合作）用了不好用；國網中心委託我們做波公子（Pi Mono ＋ Gemma 31B），二元評測把公文從 76 → 94 分。含五單位四態度全景、技術堆疊、機敏評測傳承鏈、突破關鍵變因與四件套。北歐淺色、老花友善、已去機敏。",
@@ -37,6 +55,24 @@
         "小模型",
         "prompt 工程",
         "法律文書",
+        "去機敏"
+      ]
+    },
+    {
+      "id": "non-prosecution-synthetic-data",
+      "title": "不起訴處分書 · 二十份合成訓練資料傳承",
+      "subtitle": "為訓練不起訴書撰寫，用平行 subagent 生成詐欺/殺人致死/酒駕毒駕共 20 份合成案件（每案三檔：移送書→檢察官筆記→不起訴處分書）。雙人 Opus 品管＋3 個查證 subagent 逐一上網核對法條款次與判例字號：揪出幻覺判例(88台上5848/92台上128實為強盜案)、自相矛盾濃度(1,258>標準500)、毒駕款次誤用、醫療法項次。核心心法：機械層＋語意層＋法源層三重把關、判例字號泛化優先寧缺勿假。北歐淺色、老花友善、全去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-synthetic-data.html",
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-23T17:00:00+08:00",
+      "tags": [
+        "合成資料",
+        "平行代理人",
+        "法規查證",
+        "判例幻覺",
         "去機敏"
       ]
     },
