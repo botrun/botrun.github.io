@@ -6,6 +6,16 @@
       "label": "📋 標案參考專區",
       "intro": "政府標案技術提升 — 服務建議書請依下列傳承文章撰寫，確保技術論述對齊 2026 業界方法學、話術一致、可回溯佐證。",
       "items": [
+    {
+      "id": "four-harness-token-accounting",
+      "title": "四大 Harness Token／計費統一記錄 · 收費站碼表 · 傳承",
+      "subtitle": "四個 Harness（PI.DEV／Hermes／OpenCode／Claude Code）的 Token 與花費以前各記各的——Hermes 幾乎沒數字、Langfuse 在 EMA 單機不共用也不進 BigQuery、更看不出同一個 Gemma 走的是 Vertex 還是國網。治本＝在四家共同節流點 botrun-gate（自寫的 Rust proxy，類 LiteLLM）裝一台碼表：每筆過站無條件寫一行 append-only JSONL（只記量、標真實後端 backend_site=vertex／nchc、harness 歸因、5 分鐘一檔）；第二段由 loader 對照唯一價目表 pricing.json（Anthropic／Gemini 全系列＋國網 NCHC 三 tier×1.6折 $0.021/$0.082/$0.33）snapshot 當下單價與成本，登進本案專用 botrun-play-dev.token_ledger BigQuery，機進一句 bq query 就撈報表。量價解耦、分兩段（先落地再串接）、旗標預設關可安全併主幹、出事秒回滾。cbh-play-dev 真機 claude-in-chrome 驗測通過（Pi→gate→國網 Gemma 秒回）＋『真 gate→真國網端點→JSONL→BigQuery』端到端實測。含七張 SVG 前後比較卡、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": ["傳承", "Token 計費", "botrun-gate", "BigQuery", "國網 NCHC 1.6折", "JSONL", "OTel GenAI"]
+    },
         "agentic-pattern-33",
         "google-harness-90",
         "eval-evolution-playbook"
