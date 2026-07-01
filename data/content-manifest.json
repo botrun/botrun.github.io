@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "pi-skill-pdf-outline-v55",
+      "title": "pi 技能 pdf-outline-v55 設計與運作 · 傳承",
+      "subtitle": "把兩千多頁多卷黏合的刑案卷宗逐頁 OCR，重建成階層「證據清單」目錄。因案件機敏、產線只能用自架 gemma-4-31b（一個字都不能送 Anthropic），連編排器都要留在自架機房，故封裝為 pi.dev 技能而非 Claude Code 技能。含：輸入(opus-evolve/input/0001~2658.md 去識別化逐頁 OCR)→輸出(目錄標籤.md 232 行 壹起訴書/貳偵訴銜接/參證據清單五分類)的具體實例；8 階段資料流 SVG（只有 pi_dag/vision 三站呼叫 31b，其餘確定性程式 code owns order）；鎖模型三道防線＋指定 folder 限縮(--no-skills --skill)；散落 6 份腳本收斂成單一 pipeline.ts；離線 sha256 byte-identical 證明分數等同已評分 v54(A84/B83，與 v55 A85/B84 在評審噪聲內)；v54→v55 手工 +1 依禁-overfitting 鐵律不 baked。全程去識別化(_BR_ 代號、非真名)。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "publishDate": "2026-07-01T23:51:01+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev 技能",
+        "gemma-4-31b",
+        "機敏零外流",
+        "SKILL.md",
+        "code owns order",
+        "sha256 保真驗證"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-skill-pdf-outline-v55.html"
+    },
+    {
       "id": "pdf-to-ai-friendly-toolkit",
       "title": "PDF 變 AI 友善資料：六選一決策地圖 × 一台 Mac 全能組合 · 傳承",
       "subtitle": "同樣是 PDF，處理方式天差地遠——先問『這是原生文字、掃描文字，還是圖片卷證？』再對號入座選工具。六選一決策：①純文字用 pdftotext（瞬間、100% 忠實）②可複製但有表格用 Docling／Marker（--use_llm，表格最準）③掃描文字有 Mac 用 Apple Vision OCR（≈90 分、約 2 秒/頁最快）④掃描文字沒 Mac 用 Marker OCR（務必先拆頁轉 90dpi PNG、≈85 分、約 16 秒/頁、GCP／波特塔可跑）⑤表格超多的掃描件用 Marker 保留表格原貌成 AI 友善 md ⑥卷證照片／含機關 Logo 用 Gemma 多模態（MLX）做成 CLI 互動、自由下 Prompt。驚人結論：記憶體 ≥32GB 一台 Mac（Apple Silicon＋MLX）就能把 Gemma 多模態、Marker OCR、Apple Vision OCR、Whisper Large v3 全裝上——聲音／照片／掃描／去識別全部一台搞定、機敏資料不出門。三吃彩蛋：法務部／智財局／工程會通用。含決策樹與能力圖兩張 SVG、北歐淺色風，已 Playwright 視覺驗證。去個資、零中國大陸用語。",
