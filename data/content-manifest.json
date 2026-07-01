@@ -14,6 +14,26 @@
   },
   "items": [
     {
+      "id": "issue44-reading-space-max",
+      "title": "放大螢幕字卻變少？對話閱讀空間最大化 · 傳承",
+      "subtitle": "波特玩（Botrun Play）對話介面：教育訓練用瀏覽器 ⌘＋放大時，header／footer 佔太多、中間可閱讀區被擠小、左右留白過多、底部漸層把最後幾行遮住、輸入框浮動又佔兩列。治本＝輸入框由 position:absolute 浮動改『停靠 docked』（捲動區精準收邊、不遮字）、移除底部遮字 mask、composer 改單列（迴紋針｜自動長高輸入框｜送出）、--width-chat-lg 加寬 min(92%,920px) 減留白（內容 577→920px、單邊留白 237→66px、填充 55%→87%）。含五動機／三方案打分／BDD 四件套＋7 張 before/after SVG 卡。地雷：真正寬度來源在 layout.module.scss .mainSessionCollapsed 蓋過 :root；CSS zoom 對 vh 有假象。cbh-play-dev 原地 build 部署＋Opus 獨立 GAN 對抗評審 94.9/100 通過；PR agent-platform#162（停 PR、僅授權者可 merge）。PII 去機敏、零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/issue44-reading-space-max.html",
+      "tags": [
+        "傳承",
+        "閱讀空間最大化",
+        "docked 輸入框",
+        "放大 RWD",
+        "GAN 評審",
+        "agent-platform",
+        "cbh-play-dev",
+        "PR #162"
+      ]
+    },
+    {
       "id": "session-share-heritage",
       "title": "一鍵把對話變成唯讀連結 · Session 分享（issue #65）· 傳承",
       "subtitle": "以前別人開你的對話網址會被擋在門外（unauthorized）；現在按一下「分享」，就得到一張看不懂是誰的亂碼連結，貼給別人就能看（唯讀），不想給了一鍵撕掉、連結立刻 404。預設團隊內、公開要「有意識地」撥開關；URL 用不可猜 token、落地檔名用 sha256 hash，公開 API 回傳實測掃描零個資（email/路徑/projectId/sessionId 全 0）。架構＝token→快照 registry 與來源對話脫鉤（OWASP indirect object reference）。cbh-play-dev 用 claude-in-chrome＋curl 前後端驗測全綠；pnpm lint/build＋1048 單元測試綠；PR botrun/botrun-agent-platform#160。",
