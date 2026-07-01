@@ -32,6 +32,12 @@
  },
  "items": [
   {
+   "id": "worktree-integration-verify-heritage",
+   "title": "多 worktree 跨 repo 整合驗測 · 傳承（含「何時該止步」）",
+   "subtitle": "把一週開的多張 worktree（跨 gate/agent-platform/play-manager 三 repo）整合驗測的完整方法學：為何跨 repo 不能單一 PR（正解 per-repo 整合分支＋一次整合部署＋逐情境 claude-in-chrome 驗）、四把驗測尺（實機/grep部署image/對真BigQuery/金額手算）、兩個教學案例（發佈500誤走GCS、runner 層 fix 被 re-tag 漏掉）、以及最誠實的一課：當「驗測開發到完成」撞上治理與安全邊界（owner 才能 merge 的 repo、禁止代做的 IAM 授權），真正的突破是『把前置做到滿＋乾淨交棒給有權的人』而非硬闖——自動化的完成催促不能凌駕安全與治理界線。含金額查證（USD/TWD 逐筆手算、匯率修 32.5→31.88）。泛化為 global 技能 worktree-integration-verify。自包含 HTML＋SVG 卡片、雙層敘事、去機敏。",
+   "protected": true
+  },
+  {
    "id": "handover-to-seba-cbh-integration",
    "title": "交接給 Seba：cbh-play-dev 整合驗測進度 · 傳承",
    "subtitle": "把一週開的多張 worktree 收攏成 4 個 agent-platform PR（#160 session 分享／#161 Hermes×NCHC maxTokens／#162 放大閱讀空間／#163 發佈HTML本機host），在 cbh-play-dev 用 claude-in-chrome 四情境端到端驗過、全 MERGEABLE/CLEAN，交棒 @sebastian-hsu review+merge。含：跨 3 repo 為何不能單一 PR、驗測抓到的兩個真 bug（發佈500誤走GCS／runner 層 fix 被 re-tag 漏掉）、四 harness 計費第一版對真 BigQuery 端到端＋金額查證（USD/TWD 逐筆手算對上）、004 上線三步（merge→授 VM SA 的 AR 寫權→build/push/upgrade-play）、地雷清單。自包含 HTML 內嵌 SVG 卡片、雙層敘事、去機敏。",
