@@ -6,16 +6,24 @@
       "label": "📋 標案參考專區",
       "intro": "政府標案技術提升 — 服務建議書請依下列傳承文章撰寫，確保技術論述對齊 2026 業界方法學、話術一致、可回溯佐證。",
       "items": [
-    {
-      "id": "four-harness-token-accounting",
-      "title": "四大 Harness Token／計費統一記錄 · 收費站碼表 · 傳承",
-      "subtitle": "四個 Harness（PI.DEV／Hermes／OpenCode／Claude Code）的 Token 與花費以前各記各的——Hermes 幾乎沒數字、Langfuse 在 EMA 單機不共用也不進 BigQuery、更看不出同一個 Gemma 走的是 Vertex 還是國網。治本＝在四家共同節流點 botrun-gate（自寫的 Rust proxy，類 LiteLLM）裝一台碼表：每筆過站無條件寫一行 append-only JSONL（只記量、標真實後端 backend_site=vertex／nchc、harness 歸因、5 分鐘一檔）；第二段由 loader 對照唯一價目表 pricing.json（Anthropic／Gemini 全系列＋國網 NCHC 三 tier×1.6折 $0.021/$0.082/$0.33）snapshot 當下單價與成本，登進本案專用 botrun-play-dev.token_ledger BigQuery，機進一句 bq query 就撈報表。量價解耦、分兩段（先落地再串接）、旗標預設關可安全併主幹、出事秒回滾。cbh-play-dev 真機 claude-in-chrome 驗測通過（Pi→gate→國網 Gemma 秒回）＋『真 gate→真國網端點→JSONL→BigQuery』端到端實測。含七張 SVG 前後比較卡、成果四件套、去個資示範。零中國大陸用語。",
-      "protected": true,
-      "icon": "shield-check",
-      "badge": "傳承",
-      "badgeColor": "#4a7c59",
-      "tags": ["傳承", "Token 計費", "botrun-gate", "BigQuery", "國網 NCHC 1.6折", "JSONL", "OTel GenAI"]
-    },
+        {
+          "id": "four-harness-token-accounting",
+          "title": "四大 Harness Token／計費統一記錄 · 收費站碼表 · 傳承",
+          "subtitle": "四個 Harness（PI.DEV／Hermes／OpenCode／Claude Code）的 Token 與花費以前各記各的——Hermes 幾乎沒數字、Langfuse 在 EMA 單機不共用也不進 BigQuery、更看不出同一個 Gemma 走的是 Vertex 還是國網。治本＝在四家共同節流點 botrun-gate（自寫的 Rust proxy，類 LiteLLM）裝一台碼表：每筆過站無條件寫一行 append-only JSONL（只記量、標真實後端 backend_site=vertex／nchc、harness 歸因、5 分鐘一檔）；第二段由 loader 對照唯一價目表 pricing.json（Anthropic／Gemini 全系列＋國網 NCHC 三 tier×1.6折 $0.021/$0.082/$0.33）snapshot 當下單價與成本，登進本案專用 botrun-play-dev.token_ledger BigQuery，機進一句 bq query 就撈報表。量價解耦、分兩段（先落地再串接）、旗標預設關可安全併主幹、出事秒回滾。cbh-play-dev 真機 claude-in-chrome 驗測通過（Pi→gate→國網 Gemma 秒回）＋『真 gate→真國網端點→JSONL→BigQuery』端到端實測。含七張 SVG 前後比較卡、成果四件套、去個資示範。零中國大陸用語。",
+          "protected": true,
+          "icon": "shield-check",
+          "badge": "傳承",
+          "badgeColor": "#4a7c59",
+          "tags": [
+            "傳承",
+            "Token 計費",
+            "botrun-gate",
+            "BigQuery",
+            "國網 NCHC 1.6折",
+            "JSONL",
+            "OTel GenAI"
+          ]
+        },
         "agentic-pattern-33",
         "google-harness-90",
         "eval-evolution-playbook"
@@ -23,6 +31,27 @@
     }
   },
   "items": [
+    {
+      "id": "pdf-to-ai-friendly-toolkit",
+      "title": "PDF 變 AI 友善資料：六選一決策地圖 × 一台 Mac 全能組合 · 傳承",
+      "subtitle": "同樣是 PDF，處理方式天差地遠——先問『這是原生文字、掃描文字，還是圖片卷證？』再對號入座選工具。六選一決策：①純文字用 pdftotext（瞬間、100% 忠實）②可複製但有表格用 Docling／Marker（--use_llm，表格最準）③掃描文字有 Mac 用 Apple Vision OCR（≈90 分、約 2 秒/頁最快）④掃描文字沒 Mac 用 Marker OCR（務必先拆頁轉 90dpi PNG、≈85 分、約 16 秒/頁、GCP／波特塔可跑）⑤表格超多的掃描件用 Marker 保留表格原貌成 AI 友善 md ⑥卷證照片／含機關 Logo 用 Gemma 多模態（MLX）做成 CLI 互動、自由下 Prompt。驚人結論：記憶體 ≥32GB 一台 Mac（Apple Silicon＋MLX）就能把 Gemma 多模態、Marker OCR、Apple Vision OCR、Whisper Large v3 全裝上——聲音／照片／掃描／去識別全部一台搞定、機敏資料不出門。三吃彩蛋：法務部／智財局／工程會通用。含決策樹與能力圖兩張 SVG、北歐淺色風，已 Playwright 視覺驗證。去個資、零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-to-ai-friendly-toolkit.html",
+      "tags": [
+        "傳承",
+        "文件數位化",
+        "PDF 轉純文字",
+        "Marker OCR",
+        "Apple Vision OCR",
+        "Gemma 多模態 MLX",
+        "一台 Mac 全包",
+        "六選一決策"
+      ],
+      "publishDate": "2026-07-01T21:03:21+08:00"
+    },
     {
       "id": "issue44-reading-space-max",
       "title": "放大螢幕字卻變少？對話閱讀空間最大化 · 傳承",
