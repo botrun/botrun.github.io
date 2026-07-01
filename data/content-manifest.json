@@ -32,6 +32,32 @@
  },
  "items": [
   {
+   "id": "token-accounting-money-audit-heritage",
+   "title": "四大 harness token 計費 · 傳承（含金額對帳紀律）",
+   "subtitle": "四台 AI 機器人（PI.DEV／Hermes／OpenCode／Claude Code）的 token 花費怎麼記成一本共同的帳：以 botrun-gate 當單一節流點只記量落 JSONL、第二段 loader 套單一定價表(pricing.json)算成本進 BigQuery token_ledger（MERGE 冪等、v_usage_daily 出帳）。重點在『錢一定要算對』的對帳四招：①上網查牌價(Opus $5/$25、Gemini 3.5-flash $1.5/$9 per 1M)②單位 per 1,000,000 tokens ③匯率查證(USD→TWD 32.5→31.88，舊值偏高2%) ④對真 BigQuery＋獨立手算逐筆核。抓到『偏高』兩根因：demo 用不真實的 1M token＋匯率灌水→換真實請求量後 Opus 單筆從假的 $7.5 變合理的 $0.105/NT$3.35。含縫檢查(gate 不吐 cache/team_id 為 v2 gap)、未知價 cost NULL 不混假0。自包含 HTML＋SVG、雙層敘事、去機敏。",
+   "protected": true
+  },
+  {
+   "id": "pi-skill-honest-76-no-overfit",
+   "title": "誠實的 76 勝過背答案的 84 · pi 技能傳承",
+   "subtitle": "一段「以為做到 84、徹查發現是 overfit（背答案）、依禁-overfitting 鐵律誠實剔除後泛化只剩 76」的正直紀錄。徹查發現舊 84 靠 build_v42-45 一批寫死本案代號→角色/頁碼的手工補丁（gold-fit），全部剔除；改走合法泛化路徑：gen_supination 由移送書當事人欄/受詢人職稱欄/§233 通用親屬法則動態重建供述人物（65→73，人物維 5→9），佔位名 denylist（→76）。三重獨立證據（build_v42-45 補丁掃描、獨立 Opus 評審 76、gen_med 實驗撞 de-id 機構碼碎裂）證實剩 8 分是資料限制不可 gold-free 達成。含 7 支腳本白盒拆解（extract_pi_dag/gen_supination/splice/build_clean/bundle_han/polish_v54/gen_med）＋資料流圖＋三道驗測。全程 live 自架 gemma-4-31b、0-hardcode/0-gold/0-PII。",
+   "protected": true,
+   "icon": "shield-check",
+   "badge": "傳承",
+   "badgeColor": "#4a7c59",
+   "publishDate": "2026-07-02T06:44:25+08:00",
+   "tags": [
+    "傳承",
+    "禁 overfitting",
+    "誠實優先",
+    "pi.dev 技能",
+    "gemma-4-31b",
+    "§233 泛化",
+    "code owns order"
+   ],
+   "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-skill-honest-76-no-overfit.html"
+  },
+  {
    "id": "worktree-integration-verify-heritage",
    "title": "多 worktree 跨 repo 整合驗測 · 傳承（含「何時該止步」）",
    "subtitle": "把一週開的多張 worktree（跨 gate/agent-platform/play-manager 三 repo）整合驗測的完整方法學：為何跨 repo 不能單一 PR（正解 per-repo 整合分支＋一次整合部署＋逐情境 claude-in-chrome 驗）、四把驗測尺（實機/grep部署image/對真BigQuery/金額手算）、兩個教學案例（發佈500誤走GCS、runner 層 fix 被 re-tag 漏掉）、以及最誠實的一課：當「驗測開發到完成」撞上治理與安全邊界（owner 才能 merge 的 repo、禁止代做的 IAM 授權），真正的突破是『把前置做到滿＋乾淨交棒給有權的人』而非硬闖——自動化的完成催促不能凌駕安全與治理界線。含金額查證（USD/TWD 逐筆手算、匯率修 32.5→31.88）。泛化為 global 技能 worktree-integration-verify。自包含 HTML＋SVG 卡片、雙層敘事、去機敏。",
