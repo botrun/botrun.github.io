@@ -8664,6 +8664,12 @@
         "自動化演化"
       ],
       "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-GEPA自動化演化工作流-傳承.html"
+    },
+    {
+      "id": "publish-html-local-host-login-gated",
+      "title": "發佈 HTML 改『本機主機 host＋登入才可看』 · 修 #148 · 傳承",
+      "subtitle": "EMA 平臺『發佈 HTML』一律『上傳失敗，請重試』的最後一哩根因＝publish-html-file 依賴 GCS(STATIC_GCS_*)、EMA 各機構分帳無 GCS env → 建構子 throw → UPLOAD_FAILED。治本（阿傑＋博安）＝不用 GCS、改 host 在本機主機、預設登入才可看：lib/local-publish 發佈即快照(與來源脫鉤)＋serve 路由 app/p/[id] 先 auth() gate＋回應加 CSP sandbox（刻意無 allow-same-origin）把發佈頁關進 opaque origin，實測 document.cookie／localStorage 皆 SecurityError → 中和同源 session riding；selectPublishBackend() 無 GCS 自動走 local(feature flag)。以多張 SVG 前後比較卡承載論點，引證 MDN(CSP sandbox=opaque origin 無法存取 cookie/localStorage)、web.dev(獨立網域 或 CSP sandbox header 隔離使用者內容)、Checkmarx n8n CVE-2026-27578(沙箱非萬靈丹→雙保險：沙箱＋登入 gate)。26 單元/整合測試綠＋claude-in-chrome 六情境驗過(獨立 worktree 與 cbh-play-dev)。PII 去機敏、零中國大陸用語。",
+      "protected": true
     }
   ]
 }
