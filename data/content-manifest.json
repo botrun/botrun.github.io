@@ -1,9 +1,1133 @@
 {
   "metadata": {
     "description": "所有內容的元資料配置，按發佈日期排序用",
-    "lastUpdated": "2026-06-10T15:27:00+08:00"
+    "lastUpdated": "2026-06-29T14:00:00+08:00",
+    "tenderZone": {
+      "label": "📋 標案參考專區",
+      "intro": "政府標案技術提升 — 服務建議書請依下列傳承文章撰寫，確保技術論述對齊 2026 業界方法學、話術一致、可回溯佐證。",
+      "items": [
+        "agentic-pattern-33",
+        "google-harness-90",
+        "eval-evolution-playbook"
+      ]
+    }
   },
   "items": [
+    {
+      "id": "trunk-based-feature-flags",
+      "title": "持續改 main 不用怕 · 主幹＋功能旗標說服團隊 · 傳承",
+      "subtitle": "老方法（GitFlow／長命分支）之所以『不敢改 main』＝每次改都是 big-bang 大爆炸；2026 業界對快節奏／多 AI agent 團隊第一推薦是 trunk-based development ＋ feature flags：每條功能小步（壽命<1天）直接併 main、未完成用旗標藏（併入≠曝光）、部署≠發布、翻旗標秒回滾。敢持續改 main 靠四支柱：CI 綠燈門檻＋小批量＋旗標藏未完成＋秒回滾。以 7 張 SVG 前後比較卡承載論點，引證 DORA（精英團隊活躍分支<3、壽命<1天）、Martin Fowler（big-bang 合併不確定性）、feature-flag 廠商實測（衝突 4-6hr→一天上線 4 次）、2026 AI-assisted development 研究（小批量為 AI 風險關鍵對策）。整合分支（release train）降為特例。PII 去機敏、零中國大陸用語。",
+      "protected": true
+    },
+    {
+      "id": "team-template-decouple",
+      "title": "團隊模板「刪來源專案就消失」治本 · 傳承",
+      "subtitle": "廠商從某專案『發布』團隊模板給 User（觀護人）產出輔導紀要/訪視報告；bug＝刪掉當初發布的來源專案，已發布模板也跟著物理消失、不可逆。根因：模板發布旗標與內容寄生來源專案目錄、clone 即時 copy 來源、rmdir 物理級聯刪除。治本（方案 A）：發布即凍結內容快照成 team 層級獨立 registry（data/teams/{id}/.templates/），list/clone 改讀 registry、不再碰來源專案；補 team 層級 unpublish 端點移孤兒模板；冪等遷移既有資料。含五動機/三方案打分/四件套＋SVG 圖解。Claude in Chrome 實機驗證（刪來源後 sourceAvailable:false 仍在列表、可 clone）、PR #158 併 main。PII 去機敏、零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#7c6cf0",
+      "publishDate": "2026-07-01T00:06:22+08:00",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/team-template-decouple.html",
+      "tags": [
+        "傳承",
+        "團隊模板",
+        "registry",
+        "內容快照",
+        "Claude in Chrome",
+        "agent-platform",
+        "cbh-play-dev",
+        "PR #158"
+      ]
+    },
+    {
+      "id": "no-read-guardrail",
+      "title": "沒讀檔卻產出？No-Read Guardrail 防呆 · 傳承",
+      "subtitle": "中型模型（NCHC Gemma 31B）在 OpenCode harness 下『沒讀檔卻照樣作答』、使用者卻看不出來。治本＝runner 層三段式防呆：① 作答前把『可用檔案＋指名檔存在性』注入 system ② 過程記讀檔帳本 ③ 收尾比對『指名+存在 vs 真讀到』沒讀就示警。model-agnostic、可本機單元測試、零 plugin 載入風險。含五點動機、2026 harness 研究、四件套＋SVG 圖解；claude-in-chrome 實測通過（模型明說『找不到 player.md』不杜撰），PR #157 併 main。PII 去機敏、零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#2f6f6a",
+      "publishDate": "2026-06-30T23:39:00+08:00",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/no-read-guardrail.html",
+      "tags": [
+        "傳承",
+        "guardrail",
+        "OpenCode",
+        "NCHC Gemma 31B",
+        "harness",
+        "Claude in Chrome",
+        "cbh-play-dev"
+      ]
+    },
+    {
+      "id": "2026-skill-online-editor",
+      "title": "技能線上編輯 × 多技能/覆蓋上傳 · 傳承",
+      "subtitle": "把 botrun-agent-platform 的技能做成網頁可編輯(SKILL.md＋scripts/references/assets 周邊檔)、改完即生效；一個 zip 可含多技能、同名能覆蓋更新並清舊檔。以 Claude in Chrome 點擊＋同源 API fetch 在 cbh-play-dev 端對端驗測通過，依新規則自動 commit/push/PR/merge 進 main。含 v0→v7 試錯、四件套、突破關鍵。PII 去機敏、零中國大陸用語。",
+      "protected": true,
+      "icon": "edit",
+      "badge": "傳承",
+      "badgeColor": "#3a5a40",
+      "publishDate": "2026-06-30T23:37:26+08:00",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/2026-skill-online-editor.html",
+      "tags": [
+        "傳承",
+        "技能編輯",
+        "SKILL.md",
+        "多技能上傳",
+        "覆蓋更新",
+        "Claude in Chrome",
+        "cbh-play-dev",
+        "自動交付"
+      ]
+    },
+    {
+      "id": "worktree-team-promotion",
+      "title": "git worktree 推廣教學：平行多頁籤開發鐵律",
+      "subtitle": "worktree 是 Git 本身的機制（非 GitHub / Claude Code）。高中生書桌比喻：.git 是共用書庫、worktree 是多張書桌、branch 是書籤。平行多頁籤 Claude Code 開發必用 worktree 物理隔離，禁止多 agent 在同一資料夾來回 git checkout（會互蓋）。worktree 的 branch 可以正常 push / 開 PR / merge，GitHub 感知不到差別。含推廣給夥伴的核心鐵律、一鍵建立 worktree 的 alias、常見 QA、SVG 圖解。",
+      "protected": true,
+      "icon": "git-branch",
+      "badge": "推廣",
+      "badgeColor": "#2c5f8a",
+      "publishDate": "2026-07-01T00:00:00+08:00",
+      "tags": [
+        "worktree",
+        "git",
+        "parallel-agents",
+        "claude-code",
+        "team-promotion"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/worktree-team-promotion.html"
+    },
+    {
+      "id": "worktree-parallel-delivery",
+      "title": "多平行 agent 用 git worktree 交付",
+      "subtitle": "多個 session/agent 共用同一台機器的 repo 時，怎麼安全平行交付到 main？完整方法學：一人一個 git worktree（隔離）＋ 動 main 前先 git fetch/rebase origin/main（同步），驗證過才自動 commit→push→PR→merge。含圖書館／書桌／書籤的高中生比喻、branch↔worktree 觀念釐清、把規則寫進全域＋兩個 local CLAUDE.md，以及落地時當場撞到 merge 競態（Base branch was modified）如何用 fetch+rebase+重試解掉。四件套＋SVG 圖解，全程去個資。",
+      "protected": true,
+      "icon": "git-branch",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T23:35:32+08:00",
+      "tags": [
+        "worktree",
+        "git",
+        "parallel-agents",
+        "ci-cd",
+        "cbh-play-dev"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/worktree-parallel-delivery.html"
+    },
+    {
+      "id": "publishdate-tz-fix",
+      "title": "首頁時間治本 · publishDate 時區 bug",
+      "subtitle": "純日期 2026-06-30 被瀏覽器當 UTC 午夜→台灣顯示成早上 08:00、最新發布沉底。記錄怎麼從根因修好（app.mjs 鎖 Asia/Taipei ＋ 發布時 Phase 0 自動以 git 首次新增戳精確 +08:00），且永不復發。含 v1→v6 試錯（mtime／末次提交皆被汙染→首次新增才乾淨）、四件套、Claude in Chrome 驗證。零中國大陸用語。",
+      "protected": true,
+      "icon": "calendar",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T23:35:24+08:00",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/publishdate-tz-fix.html",
+      "tags": [
+        "傳承",
+        "時區",
+        "publishDate",
+        "iap發布",
+        "app.mjs",
+        "治本"
+      ]
+    },
+    {
+      "id": "multi-engine-skill-injection-heritage",
+      "title": "傳承：四引擎「斜線 /技能」治本 —— pi·claude·opencode·hermes 一處改全亮",
+      "subtitle": "把 /skill:<名稱> 的技能展開從『只接在 pi 一台 runner』上移到 botrun-agent-platform 容器管理器的唯一入口 runInContainer（引擎分支之前），pi（常駐 socket）與 claude/opencode/hermes（一次性 -e PROMPT）共用展開後 prompt＝SSOT、零 runner 改動。關鍵變因：讀檔用 app 路徑、但 <skill location> 必須寫 runner 容器路徑 /workspace。驗證突破＝從『叫模型輸出格式 token』（弱模型會忽略）改成『問只有技能裡才有的祕密代號』；Claude in Chrome 實測 opencode/hermes/pi 三引擎皆答出祕密代號、autocomplete 四引擎齊備（claude 無 provider 未實跑、同路徑涵蓋）。pi 一度空回應＝重部署清空 token 對照表撞殘留容器的 race，清容器即解。含人類原始 prompt 全文、v1→v8 歷程、四件套與突破。內嵌 SVG、丹麥簡約風、老花眼友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/multi-engine-skill-injection-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-30T23:30:00+08:00",
+      "tags": [
+        "傳承",
+        "斜線指令",
+        "技能",
+        "SSOT",
+        "TDD",
+        "claude-in-chrome"
+      ]
+    },
+    {
+      "id": "gripe-flywheel-skill",
+      "title": "不爽飛輪技能 · gripe-flywheel",
+      "subtitle": "每天跑一次：掃 cbh-play-dev 的 docker logs → 自動整理成 GitHub Issue（P0–P3、台灣時間戳、只整併 open 相似項、指紋去重不洗版）。把「使用者要自己當報案員」這段人工拆掉。決定性收集（collect-logs.sh＋脫敏）與 AI 判斷分層；真實成果 Issue #16／#17，Claude in Chrome 驗證通過。零中國大陸用語。",
+      "protected": true,
+      "icon": "rotate-cw",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T22:34:48+08:00",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gripe-flywheel-skill.html",
+      "tags": [
+        "傳承",
+        "不爽飛輪",
+        "gripe-flywheel",
+        "GitHub Issue",
+        "botrun-play-manager",
+        "Skills"
+      ]
+    },
+    {
+      "id": "filename-extension-guard",
+      "title": "檔名副檔名護欄傳承",
+      "subtitle": "中小型大模型潤稿時常把後綴黏在副檔名後面（逐字稿.txtcleanup），副檔名壞掉、純文字檔打不開。記錄跨四引擎（PI／Hermes／opencode／Claude）的通用治本：四引擎事件匯流成同一套 host 端串流，於唯一匯流點 background-reader 偵測壞副檔名→改名為「主檔名-後綴.副檔名」（保語意、不撞原檔、打得開）。含三方案多維度評比（否決每引擎打地鼠與容器 watcher）、白名單防誤傷 .mdx／.jsonl、冪等、單檔 O(1)、撞名插序號等副作用防護，及 Claude in Chrome 實測。誠實標記「主動通知模型」因容器 resume 的限制與後續路徑。全程去機敏。",
+      "protected": true,
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T22:23:09+08:00",
+      "tags": [
+        "cbh-play-dev",
+        "guardrail",
+        "filename",
+        "multi-harness",
+        "IAP"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/filename-extension-guard.html"
+    },
+    {
+      "id": "cbh-local-build-dev-loop",
+      "title": "cbh-play-dev 原地 build 快迭代傳承",
+      "subtitle": "把「另一台主機打包→push registry→測試機 pull」的慢鏈，改成在測試機 cbh-play-dev 原地編譯 Dockerfile + 純 up 上線。實測 build 482s、上線 up 僅 2 秒（local image 不 pull）、省 push+pull ~2.7GB 跨網路傳輸。記錄關鍵突破：認知測試機非打包機（tar+scp 繞認證）、host-node-free build（繞過 docker-build-push.sh 的 host node 依賴）、runner 5 顆同 tag 防 spawn 403、disk 治本（build cache 是加速資產要保留、只清舊成品、不夠就擴硬碟）、分支規範（feature→合併專用 branch→PR）。全程去機敏。",
+      "protected": true,
+      "icon": "rocket",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T15:29:52+08:00",
+      "tags": [
+        "cbh-play-dev",
+        "docker",
+        "dev-loop",
+        "build-cache",
+        "IAP"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/cbh-local-build-dev-loop.html"
+    },
+    {
+      "id": "gateway-key-issuance-heritage",
+      "title": "波特塔 Gateway 發 API key 傳承",
+      "subtitle": "從一句「有沒有發 key 流程？」到實測通車：波特塔（地端 GPU+vLLM）原本無 key 靠 Tailscale 邊界管控，團隊已建公網認證 Gateway（GCP+Caddy 自動 TLS+LiteLLM 虛擬 key）。記錄發 key 每步、兩道權限地雷（帳號無 compute 權限、master key 在維運者家目錄需 sudo 絕對路徑繞過 gw.sh 的 ~ 假設），與認證/記帳/撤銷四連驗。全程去機敏：真實 sk- key、master key、維運者真名一律 REDACTED。",
+      "protected": true,
+      "icon": "key",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "publishDate": "2026-06-30T14:43:14+08:00",
+      "tags": [
+        "botrun-tower",
+        "gateway",
+        "LiteLLM",
+        "API key",
+        "IAP",
+        "去機敏"
+      ],
+      "href": "gateway-key-issuance-heritage.html"
+    },
+    {
+      "id": "deid-indirect-identifier-v2",
+      "title": "去識別化 V2：把防線從「直接識別」推進到「重識別」",
+      "subtitle": "七類準識別資訊（姓+角色簡稱/超商門市/具名分局/社團+職稱/街道/學校/網路暱稱）全泛化 backstop、零個案硬編。泛化原理＝個資法施行細則§3「對照組合連結」＋角色字當觸發器只遮鄰接專名。四技術地雷（中文數字正規化打斷 regex、fancy-regex 相鄰匹配漏抓、驗證須走完整管線、停用詞整字比對）。驗證六閘門：七類 grep 歸零＋完整性子序列 41/41＋38 單元測試＋held-out 泛化＋native↔wasm 位元等價 v1.9.0。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T12:00:00+08:00",
+      "tags": [
+        "去識別化",
+        "間接識別",
+        "泛化",
+        "botrun-pii",
+        "法務部"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/deid-indirect-identifier-v2.html"
+    },
+    {
+      "id": "legal-qa-three-jsonl",
+      "title": "高品味法律題庫：輸入題目／黃金答案／引證表 三個 jsonl 對齊",
+      "subtitle": "用去機敏後的真實不起訴書，反推合成『輸入＋黃金輸出＋零幻覺引證表』；三個 jsonl 用同一組 ID 對齊、一檔多題（像 Excel 三分頁）、採國際頂尖法律訓練資料集格式。引證表強制上網查全國法規資料庫→記法條法號／原文／網址→複驗，擋條號幻覺。題型：公然侮辱／人頭詐欺／加重誹謗。含完整題庫 prompt（001~009）可整段複製。Opus 4.8 max effort。內嵌 4 張白話 SVG。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2f6f6a",
+      "publishDate": "2026-06-30T11:36:51+08:00",
+      "tags": [
+        "高品味題庫",
+        "引證表",
+        "合成資料",
+        "jsonl",
+        "法務部",
+        "傳承",
+        "htmlsvg"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/legal-qa-three-jsonl.html"
+    },
+    {
+      "id": "data-intake-governance",
+      "title": "來料資料治理：分批進料怎麼管才不會亂",
+      "subtitle": "政府標案訓練資料一批批、不同來源日期陸續進來，沒治理就在雲端硬碟變亂帳。靠『編號＋日期戳＋來源＋份數』建可追溯台帳、缺料用具體數字對窗口報告、機敏筆錄靠暗號對應回原案；對外第三方追蹤表 vs 內部題庫台帳分工。純方法論 SOP（全面去識別化），附資料盤點 prompt 範本可複製。內嵌 5 張白話 SVG。",
+      "protected": true,
+      "icon": "list",
+      "badge": "傳承",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-06-30T11:36:50+08:00",
+      "tags": [
+        "資料治理",
+        "台帳",
+        "批次管理",
+        "法務部",
+        "傳承",
+        "htmlsvg"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/data-intake-governance.html"
+    },
+    {
+      "id": "pii-batch-deid-prosecutor",
+      "title": "整個資料夾批次去個資，並證明它「完整」",
+      "subtitle": "41 份不起訴書（PDF＋Big5 文字檔混雜）用 botrun-pii v1.8.0 native 單檔平行去機敏、鏡像相對路徑；含 3 個 macOS bash 地雷、Big5 隱形殺手、子序列完整性證明 41/41（去碼後輸出 ⊆ 來源＝正文一字未改只刪 PII）。置頂逐字保留人類原始 prompt。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T11:00:00+08:00",
+      "tags": [
+        "去機敏",
+        "批次處理",
+        "Big5編碼",
+        "完整性證明",
+        "傳承"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pii-batch-deid-prosecutor.html"
+    },
+    {
+      "id": "taiwan-ai-10x-prophecy-top10",
+      "title": "2026 十倍加速大預言：價值全移到「會寫驗收規格的人」",
+      "subtitle": "AI 執行一年加速約 10 倍、趨近免費，唯一不貶值的是『會寫驗收規格的人』。最上方 10 張 before/after 預言卡（矽谷 Duarte《Resonate》今天↔明天說故事法）一眼看懂；Top 10 依價值/生產力影響排序，每條附 2026 一手數字佐證＋來源網址＋發生機率（METR 任務時長 88.6 天翻倍≈10×/年、Altman 成本 10×/12月、台灣 AI 新十大建設 311 億、AI 基本法 2025-12-23 三讀、評測市場 CAGR 27.5%、RLVR AIME 15.6%→71%、Spec Kit 111k stars、SWE-bench 一年 62%→95%）。內附驗收 prompt／二元 rubric 範本、產生預言的後設 prompt 與 27 列完整引證表。延續《驗收驅動開發 2026》姊妹篇。丹麥簡約風、內嵌 14 張 SVG。",
+      "protected": true,
+      "icon": "zap",
+      "badge": "傳承",
+      "badgeColor": "#2f6f6a",
+      "publishDate": "2026-06-29T17:03:46+08:00",
+      "tags": [
+        "傳承",
+        "預言",
+        "驗收驅動開發",
+        "高品味題庫",
+        "可驗證進化技能",
+        "台灣政府AI",
+        "htmlsvg"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/taiwan-ai-10x-prophecy-top10.html"
+    },
+    {
+      "id": "timeless-bowen-issues-priority-board",
+      "title": "timeless-bowen Issues 優先權看板",
+      "subtitle": "P0→P1→P2→P3 四欄即時看板，自動抓 GitHub open issues 並按優先順序排列，點卡片直接跳 GitHub。",
+      "icon": "list",
+      "badge": "工具",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-06-29T14:00:00+08:00",
+      "tags": [
+        "工具",
+        "issues",
+        "看板",
+        "優先權"
+      ],
+      "href": "https://storage.googleapis.com/botrun-slides/timeless-bowen-issues-priority-board.html"
+    },
+    {
+      "id": "pi-resident-134-141-hardening",
+      "title": "傳承：pi.dev 常駐架構資安/可靠性修補（#134/#141）",
+      "subtitle": "Seba code review 在 pi 常駐 runner 挑出 5 缺口：H1 對講機零鑑權致跨租戶冒名驅動＋偷金鑰、H2 turn 卡死永久 hang＋假 exitCode、H4 供應鏈未 pin、B1 錯誤路徑不收尾、B3 無差別自動確認對話框。修法：per-container token 鑑權（首行比對不符即 socket.destroy）、wall-clock 看門狗（逾時 docker kill＋非0）＋以 bridge done 終局訊息真值化 exitCode、Dockerfile pin（node digest／pi@0.80.2／pi-goal@sha）、surfaceError 一併歸位 agentActive 收尾；B3 判定 won't-fix（pi headless 風格、擴充 build 時 pin 死）。含人類原始 prompt 001–008 逐字、v1→v9 驗證歷程、四件套、突破關鍵變因、內嵌 SVG。驗證：verify-bridge 4/4、vitest 32/32、VM image build、H1-c 真 docker 重現，並部署上 cbh-play-dev。去機敏、丹麥簡約風。",
+      "protected": true,
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#2f6f6a",
+      "publishDate": "2026-06-29T18:00:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "資安",
+        "常駐架構",
+        "token",
+        "看門狗",
+        "htmlsvg"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-134-141-hardening.html"
+    },
+    {
+      "id": "watermelon-21-products-priority",
+      "title": "波西瓜 21 產品線優先序傳承（五梯隊作戰序列）",
+      "subtitle": "把無序的 21 個產品名稱，依「離可驗證進化飛輪（護城河）的距離」一把尺，重排成五梯隊：護城河核心→進化引擎→輸入眼耳→工作流→交付變現。含原始 prompt、重排歷程 v1→v4、成果四件套與 SVG 飛輪圖。",
+      "protected": true,
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/watermelon-21-products-priority.html",
+      "icon": "layers",
+      "badge": "傳承",
+      "badgeColor": "#2f6f6a",
+      "publishDate": "2026-06-29T16:00:00+08:00",
+      "tags": [
+        "傳承",
+        "波西瓜",
+        "產品線",
+        "優先序",
+        "護城河",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "pidev-web-slash-goal-heritage",
+      "title": "傳承：pi.dev 網頁聊天支援斜線 /goal（多輪做到完畢）",
+      "subtitle": "讓網頁聊天的 /goal 跟終端 goal 擴充一樣：打 / 看得到、選得到、送了有回饋、多輪任務逐輪做到 update_goal 完成才停、連續 /goal 不卡。沿路挖出四個獨立真根因（指令不發 agent_end 致 done 弄丟、notify 格式被 app 丟棄、autocomplete 只查技能、取代目標的 ctx.ui.select 對話框在 rpc 無人回應永遠 await），治本於 bridge idle-detection 串流多輪迴圈 + 自動回應對話框 + 前端 per-engine slashCommands。最大教訓：別把「會自我重排的迴圈」當 bug 一刀關掉（曾因此讓 /goal 只跑一輪）——先用探測工具分清卡死真因。含人類原始 prompt 001–006 逐字、v0.82.10→.16 演進、四件套、Claude in Chrome 驗測證據。內嵌 SVG、丹麥簡約風、去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pidev-web-slash-goal-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-29T17:30:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "/goal",
+        "擴充",
+        "bridge",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "subagent-unknown-agent-rootfix",
+      "title": "治本 subagent「猜錯 agent」恢復稅 — pi-subagents 就地 patch",
+      "subtitle": "弱模型呼叫 subagent 工具時憑印象猜了不存在的 coder，繞三輪（coder→失敗→list→worker）才成功。根因不是能力不穩，而是缺護欄：agent 欄位無 enum、tool description 沒列名單、Unknown agent 錯誤又沒附名單。治本兩處：① 三處 Unknown agent 接 live 名單（猜錯也能 1 輪自癒）② description 列出 8 個 builtin（第一槍就挑 worker）。pi 直接載原始 .ts，故安裝後就地 patch、不必 fork。途中揪出兩個雷：定位器跳過 node_modules（pi-subagents 正住在那）、Dockerfile 結尾 || true 吞掉 patch 失敗（偽裝成功）→ patch 改自成獨立 RUN。含人類原始 prompt 001–007 逐字、v1→v2 演進、四件套、三個帶得走的地雷。內嵌 SVG、丹麥簡約風、去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/subagent-unknown-agent-rootfix.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f7d77",
+      "protected": true,
+      "publishDate": "2026-06-29T19:30:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "subagent",
+        "pi-subagents",
+        "治本",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "pidev-nchc-coldstart-rootcause-bdd",
+      "title": "傳承：pi.dev + NCHC Gemma 首個 hi >20s 根因與 BDD 冷啟動驗測",
+      "subtitle": "使用者觀察到 pi.dev + NCHC gemma-4-31B「第一個 say hi」經常 >20s（尤其切換專案、開新對話、新專案）。逐層隔離量測證明 NCHC 模型極快（TTFT 0.08–1.3s、含併發與大 prompt），>20s 全在容器-預熱層，由五個不同根因疊加：①預熱沒預設開 ②併發冷啟動搶 4-CPU ③冷切換時 turn1 與預熱「雙重 spawn」競爭（實測 16s）④預熱 warmup 拖慢可認領 ⑤背景補池的 disk I/O 干擾進行中對話（warm 容器某輪突暴增 17s）。逐一重現逐一修 v0.82.4→.9，Claude in Chrome 實測（並驗證回應內容非錯誤，揭穿 socket-proxy 403 偽快陷阱）：開新對話 hi→hi ×5 全過、turn1 avg 2.99s/turn2 avg 0.65s，後續輪 17s 突波消除。含人類原始 prompt 001–005 逐字、五根因演進、四件套、2026 冷啟動驗測方法學。內嵌 SVG、丹麥簡約風、去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pidev-nchc-coldstart-rootcause-bdd.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-29T15:00:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "NCHC",
+        "冷啟動",
+        "效能",
+        "BDD",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "release-notes-3day-pidev-2026-06-28",
+      "title": "Release Notes 三天匯總：pi.dev 常駐架構與 cbh 測試租戶",
+      "subtitle": "2026-06-26～06-28 兩專案匯總：botrun-agent-platform v0.82.4 把 pi.dev 接成第 4 個 harness，從每輪冷啟演進到「常駐 rpc bridge（TCP）＋維持式預熱池」，turn1 <2s／turn2+ ~0.8s，runner image 6.93GB→792MB（-88.6%），20 人並發壓測 0 crash／0 洩漏；botrun-play-manager 同步建起 cbh-play-dev 測試租戶，並把 Secret Manager／IAM 雙帳號部署地雷寫成傳承文件。含人類原始 prompt（001–003 逐字）、v1→v8 演進時間軸 SVG、四件套（How-to／程式碼／prompt／去機敏資料樣態）與「為什麼突破」。丹麥簡約風、老花眼友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/release-notes-3day-pidev-2026-06-28.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-28T20:00:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "release-notes"
+      ]
+    },
+    {
+      "id": "pi-prewarm-default-on",
+      "title": "傳承：pi.dev 預熱／常駐池改為「預設全開」",
+      "subtitle": "把控制 pi.dev 常駐預熱的 PI_RESIDENT 從「要設環境變數才開（opt-in，=== '1'）」翻成「沒設環境變數也預設全開（opt-out，!== '0'）」，三個 gate 一致改：runResidentTurn 入口、prewarmResident 維持池、/api/claude-agent/prewarm。部署 agent-platform v0.82.4 到 cbh-play-dev 後真機驗證：沒設任何 PI_RESIDENT，卻自動冒出暖機容器 pi-agent-prewarm-…:v0.82.4、app 日誌「🔥 prewarmed（池 1/1）」。含人類原始 prompt（001–003 逐字）、白話比喻（客人上門才生火 → 爐子隨時保溫）、機制 SVG、v1→v4 歷程、四件套（含 diff），與「為什麼突破」——程式碼預設值贏過環境設定、驗證要看真機而非 UI。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-prewarm-default-on.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-28T18:10:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "預熱",
+        "常駐架構",
+        "opt-out",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "pi-runner-deploy-debug",
+      "title": "傳承：把 agent-platform 部署到 cbh-play-dev，並治本兩個 pi.dev 對話錯誤",
+      "subtitle": "一次真實的「部署上線 → 對話報錯 → 逐層 debug → 兩個根因治本 → 眼見為憑」全紀錄。pi 對話踩到兩個獨立錯誤：① 開對話即 403（runner image 沒設、退回裸名 pi-agent-runner:latest 去 Docker Hub）；② 回應到一半 exit 1（spawn 時硬塞 DEBUG=* 讓 Babel 噴爆 AST debug log、超長 JSON 被截斷撐壞協定）。含人類原始 prompt 全文（001–007 逐字、附 403 錯誤原文）、部署管線 SVG（三身分 cbh／bohachu／cameoinfotech_tw + Secret Manager SSOT）、兩個 bug 根因流程圖、v1→v6 歷程、四件套，與「為什麼突破」——看真實容器日誌、分清 VM .env 是衍生物而 Secret Manager 才是真相、根因常是一行設定/殘留。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-runner-deploy-debug.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#b04a3a",
+      "protected": true,
+      "publishDate": "2026-06-28T17:30:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "部署",
+        "debug",
+        "Secret Manager",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "slash-skill-autocomplete-heritage",
+      "title": "傳承：在聊天框打「/」就跳技能選單 —— pi.dev 版的斜線 autocomplete",
+      "subtitle": "把 botrun-agent-platform（pi.dev 本案版本）的聊天輸入框，外科手術式增添 pi.dev 官方的斜線技能啟動：打 / 跳技能選單、英文或國字即時篩選、↑↓/Enter 選取、選後帶入 canonical /skill:<name>。關鍵＝重用既有 useSkills + /api/skills（SSOT）與已含國字的 NAME_PATTERN，0 新第三方依賴；SOLID 四層分解（純邏輯／編排／展示／整合）讓 TDD 可行（22 單元 + 11 元件 = 33 綠）。上網查 pi.dev 官方做法回答「/skill: 還是 /任意技能」＝兩者都收、輸出統一 /skill:<name>。驗證踩坑（完整 app 因冷 pnpm store + 缺 @json-render/core 每頁 500）→ 轉用 vite 把真實 hook + 元件搬進 Chrome，claude-in-chrome 三技能過關（GIF）。含人類原始 prompt 全文（00 逐字）、v1→v8 歷程、四件套、突破與部署卡點（image build 成功、push 卡 IAM Artifact Registry writer 權限）。內嵌 SVG、丹麥簡約風、老花眼友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/slash-skill-autocomplete-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-28T18:30:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "斜線指令",
+        "autocomplete",
+        "SOLID",
+        "TDD",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "new-chat-flash-fix-heritage",
+      "title": "傳承：新對話「閃一下」的根因與修復",
+      "subtitle": "送出第一則訊息「閃一下」的根因＝進入 sessions/[id] 新 route segment 時 Next.js 立刻顯示 loading.tsx instant-state 骨架（全螢幕 bg-gray-50）蓋住中間對話區。第一版假設（無用 await fetch＋session 層 loading.tsx）被 MCP Playwright 實測推翻（仍閃 645ms）；命中版＝移除專案／對話路由鏈上「所有」loading.tsx（個人版＋team 版 ×［projectId］／sessions 兩層共 4 個）→ React 改「留住舊畫面→原子交換」（與 session→session 同一個 segment 一致）。關鍵心法：驗收不能用『DOM 同節點』（template.tsx 害每次導航都 remount，會誤判），要量『中間 #main-content 是否曾消失／空白／出現骨架』。MCP Playwright 真瀏覽器＋30ms 高頻取樣（70 樣本）：gap 645ms→0ms、消失／空白／骨架皆 0。含人類原始 prompt 全文、v1→v2 歷程、四件套、突破說明。內嵌 SVG、丹麥簡約風、老花眼友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/new-chat-flash-fix-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-28T16:00:00+08:00",
+      "tags": [
+        "傳承",
+        "Next.js",
+        "flash",
+        "loading.tsx",
+        "MCP Playwright",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "nchc-gemma-4-pi-dev",
+      "title": "傳承：把 NCHC Gemma 4（31B／26B）接進 pi.dev",
+      "subtitle": "一次「先可行性分析、合理才執行到底」的完整實作：用 Claude in Chrome 端到端驗證 pi.dev docker agent 能用國網（NCHC）的 gemma-4-31B-it 與 gemma-4-26B-A4B-it 做檔案增刪改查＋寫並執行 Node.js。關鍵突破＝分清「鑰匙與模型」（重用既有 botrun-gate br- provider、零金鑰輸入、只加兩筆模型目錄）＋找對 SSOT 攔截點（NCHC 不送 max_tokens 的規定，在 gate 邊界用 prep_nchc_body 剝除、涵蓋所有 engine）。含人類原始 prompt 全文（001–007 逐字）、v1→v4 歷程、四件套（How-to／gate 程式碼／驗證 prompt／E2E 去機敏資料樣態，含 26B 自我除錯 const→let 得 5050）。TDD：agent-platform pi+nchc 3 測試、gate 2 測試。內嵌 SVG、丹麥簡約風、老花眼友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/nchc-gemma-4-pi-dev.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6e6a",
+      "protected": true,
+      "publishDate": "2026-06-28T13:45:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "NCHC",
+        "gemma4",
+        "E2E",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "pi-resident-heritage",
+      "title": "傳承：pi.dev 常駐架構 —— 從 6.93GB 肥映像到 20 人壓測全過",
+      "subtitle": "把 botrun-agent-platform 的 pi 引擎，從「每則訊息開全新容器」改造成「常駐 + 維持式預熱池」。含人類原始 prompt 全文（001–011 逐字）、v1→v8 完整歷程、最終成果四件套（How-to／程式碼／prompt／去機敏資料樣態），與「為什麼最後突破」——常駐解耦隔離與冷啟動、unix socket 改 TCP、暖機只在背景。實測：映像 -90%、turn2+ <2s、20 人並行 0 crash 0 洩漏、/goal 與 subagent 擴充各 100% 有效。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3f7a4f",
+      "protected": true,
+      "publishDate": "2026-06-28T10:00:00+08:00",
+      "tags": [
+        "傳承",
+        "pi.dev",
+        "常駐架構",
+        "多人隔離",
+        "壓測",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "opus48-max-vs-fable5",
+      "title": "Opus 4.8 把思考踩到底＝Fable 5 嗎？一場上網查證的完整傳承",
+      "subtitle": "一句話結論：不等於。同一顆 Opus 4.8 開到 Max 思考，仍是 Opus 等級；Fable 5 是高一階 Mythos 級（2026-06-09 發布）、benchmark 全面領先（SWE-Verified 95.0 vs 88.6、SWE-Pro 80.0 vs 69.2、FrontierCode 29.3 vs 13.4 約2倍），價格 2×（實際 3–5×）。核心比喻：思考強度＝油門、模型等級＝引擎，踩油門換不了引擎。唯一相等例外＝護欄把資安／生化／蒸餾請求回退 Opus 4.8。附四件套（決策How-to／effort旋鈕+A/B腳本／研究prompt／結論+證據+信心度資料樣態）＋v1→v4查證歷程＋三張內嵌SVG（油門引擎比喻、benchmark長條、護欄fallback流程）。北歐淺色老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/opus48-max-vs-fable5.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-28T12:52:15+08:00",
+      "tags": [
+        "Fable 5",
+        "Opus 4.8",
+        "Mythos",
+        "extended thinking",
+        "effort",
+        "模型選型",
+        "benchmark",
+        "上網查證",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "pi-node-vs-bun",
+      "title": "pi.dev 的 Docker 為何用 Node 不用 bun（傳承）",
+      "subtitle": "三輪追查：①讀本地 5 個 Dockerfile 全是 node:22 ②查 pi 官方 = TypeScript+npm 發行 ③官方鐵證 Discussion #1453「No bun support for pi install npm」根因 bun 缺 npm root -g。結論：Node 是官方主 runtime，bun 會讓 pi install npm: 裝 extension(/goal、pi-subagents)斷掉。含四件套(How-to/Dockerfile/判斷 prompt/Node vs Bun 對照表)＋內嵌 SVG 斷點圖＋高中生白話。北歐簡約老花友善。",
+      "href": "https://botrun-protected-2ragcuvt3q-de.a.run.app/pi-node-vs-bun.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#6B8CA3",
+      "protected": true,
+      "publishDate": "2026-06-28T12:00:00+08:00",
+      "tags": [
+        "pi.dev",
+        "docker",
+        "node",
+        "bun",
+        "agent",
+        "傳承"
+      ]
+    },
+    {
+      "id": "eval-evolution-playbook",
+      "title": "評測＋進化 Playbook：GEPA × Hybrid Norm × 五大地雷（傳承）",
+      "subtitle": "一場對話的完整結晶：從「模型只佔10%」→Terminal-Bench四件套出題→領域適配→釐清GEPA(進化層)與Terminal-Bench(評測層)不二選一→2026最適配Hybrid Norm(RLVR可驗證獎勵+RaR rubric)。再熔入五條錯→對實戰鐵律：①選手先用Opus4.8弄高分(非pi -p)②裁判用多維Opus subagent手動打分(非二元)③教練用GEPA讀trace反省(非自己亂演化)④拆解親手寫Bun TS parallel DAG(借Claude Code dynamic workflow精神、節點寫死)⑤吞吐map-reduce 5路並行claude -p haiku(非一次塞兩千頁)。附完整四件套(How-to/Bun DAG程式碼/KISS自走prompt/去機敏資料樣態)＋每句prompt高中生白話解說＋突破說明(把5個決策從讓模型決定收回成鐵律寫死)。v1→v6演進史，多張內嵌SVG，北歐淺色老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/eval-evolution-playbook.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-27T14:00:00+08:00",
+      "tags": [
+        "GEPA",
+        "Hybrid Norm",
+        "RLVR",
+        "Terminal-Bench",
+        "dynamic workflow",
+        "Bun DAG",
+        "map-reduce",
+        "next5",
+        "高品味題庫",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "terminal-bench-5-cases",
+      "title": "頂尖評測怎麼準備：Terminal-Bench 五個經典範例（繁中解說）",
+      "subtitle": "承接「模型只佔10%」——Terminal-Bench 2.0 光靠規則與工作流就從30名外躍進前5，功夫全在「題目怎麼出」。本文拆解任務四件套（Dockerfile/task.yaml/test_outputs.py/oracle solution.sh）與黃金準則「測試通過⟺容器結束於可接受狀態」，再用5個翻成繁中的經典範例教你頂尖評測的設計準則：①架Git伺服器（用結果驗收、容許多解）②fastText雙重約束（目標+成本堵死作弊）③CWE修漏洞（負向/回歸測試）④從源碼編譯CompCert（容器化可重現+oracle真跑通）⑤async並行上限（測客觀行為非讀碼）。附準備資料檢查清單，5張內嵌SVG，北歐淺色老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/terminal-bench-5-cases.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-27T12:30:00+08:00",
+      "tags": [
+        "Terminal-Bench",
+        "評測方法學",
+        "高品味題庫",
+        "oracle solution",
+        "負向測試",
+        "可重現",
+        "htmlsvg",
+        "SVG"
+      ]
+    },
+    {
+      "id": "google-harness-90",
+      "title": "模型只佔 10%：Google 的 Harness 90% 法則",
+      "subtitle": "Google 50 頁 AI 軟體工程白皮書的核心——你選哪個 AI 模型只決定 10% 的結果，剩下 90% 是你圍著模型蓋的 Harness（指令／工具／情境／護欄／編排／可觀測性）。逐字置頂原始 prompt，7 張內嵌 SVG 圖解：10/90 圓環、SDLC 瓶頸移到頭尾、Vibe Coding→結構化→Agentic Engineering 三層光譜、Harness 六大組件、靜態 vs 動態情境、工廠模型流水線、通用代理＋技能、指揮家 vs 編排者、代幣經濟學交叉曲線。關鍵數據 LangChain +13.7pp、Terminal Bench 2.0 從 30+ 名躍進前 5。落地：pi + Opus 就能直接賣法律 AI。北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/google-harness-90.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-27T11:00:00+08:00",
+      "tags": [
+        "Agentic Engineering",
+        "Harness",
+        "Vibe Coding",
+        "Google 白皮書",
+        "SDLC",
+        "靜態動態情境",
+        "htmlsvg",
+        "SVG"
+      ]
+    },
+    {
+      "id": "pi-harness-verification-report",
+      "title": "pi.dev harness · 完整驗測傳承報告（PR #115）",
+      "subtitle": "把 reviewer 的 8 個問題從「程式碼修好」一路驗到「真實網站上、兩個模型都能用」。涵蓋 Seba PR#115 八項 review 修復（本機 vitest 92/92、image verify-runtime PASS=4）＋ Claude in Chrome 在 cbh-play-dev 修復版的雙模型實機 e2e：Gemini 3.5 Flash 與 Claude Sonnet 4.5 跑多輪 CRUD+bash、#8 連續對話、#2 /goal+skills、#4 session 跨輪記憶、把技能放進 pi.dev 建出 SKILL_OK.txt 全綠；以及實機抓到並修掉的 3 個 bug（session id 跨輪一致、Claude 模型 id、部署 SSH 使用者）。內嵌 SVG 狀態矩陣／時間軸，北歐淺色、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-harness-verification-report.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-26T20:30:00+08:00",
+      "tags": [
+        "pi.dev",
+        "harness",
+        "Claude in Chrome",
+        "e2e 驗測",
+        "Skill",
+        "botrun-gate",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "agentic-pattern-33",
+      "title": "代理模式 · 33 心法",
+      "subtitle": "把 IndyDevDan（英文 25 支）＋ GaryTalksStuff（中文 35 支）整年 60 支影片，濃縮成 33 張 SVG 圖卡（編號 001–033）。仿 Design Patterns 體例，給資深工程師深入淺出學完 2026 代理式工程全主題：Harness、多代理人、Skills/MCP、Context 與任務定義、安全與損害控制、模型版圖（Opus 4.7/4.8、Mythos、Fable 5）、商業落地與投資。已上網查證更新至 2026-06 最新數據。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/agentic-pattern-33.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-26T20:00:00+08:00",
+      "tags": [
+        "代理式工程",
+        "Agentic Patterns",
+        "Claude Code",
+        "Harness",
+        "多代理人",
+        "Skill",
+        "MCP",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "gov-insider-threat-top3",
+      "title": "戶政內鬼 × 全球 Top3 防治方法學",
+      "subtitle": "從台灣 2300 萬筆戶役政個資外洩、桃園戶政課員 11 分鐘濫查鄰居 10 筆個資判決出發，談「怎麼查內鬼、往後怎麼杜絕、又能兼顧承辦人正常辦事」的 2026 全球三大方法學：零信任最小權限（NSA 2026）、UEBA 行為分析（NITTF）、目的綁定＋雙人覆核（GDPR 問責制）。含 A/B 對照、誠實標未達標、CP 值排序 3 建議，內嵌 2 張 SVG，北歐淺色、老花友善，全文已上網查證。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gov-insider-threat-top3.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#b5454a",
+      "protected": true,
+      "publishDate": "2026-06-26T16:00:00+08:00",
+      "tags": [
+        "資安",
+        "內部威脅",
+        "零信任",
+        "UEBA",
+        "個資保護",
+        "戶政",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "feiyan-plan",
+      "title": "承緯鬆計畫 — GitHub Issues 自動接力研發",
+      "subtitle": "把內部研發拆成一張張 GitHub Issue，變成無主任務池：任何 AI 代理人或夥伴都能自己接手、在分支動手、自驗、發 PR，巢（產品）在一次次小步啣泥中自己長大。含三個子計畫（承緯鬆 · 美波/波特玩/波露露，主責 mi/pure/jan，皆需能自主更新前後端並部署）、人類原始 prompt 全文、自動接力迴圈 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/feiyan-plan.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-26T14:00:00+08:00",
+      "tags": [
+        "飛燕計畫",
+        "GitHub Issues",
+        "自主研發",
+        "AI 代理人",
+        "承緯鬆",
+        "htmlsvg"
+      ]
+    },
+    {
+      "id": "2026-agentic-engineering",
+      "title": "7 Agentic Patterns · 代理人七心法",
+      "subtitle": "把 Gary Talks Stuff × IndyDevDan 兩頻道 2026 全年 52 支影片（已排除投資主題）揉成一條由淺入深的學習路徑。先用三方案多維評分選定結構，再採《Everyday Business Storytelling》矽谷敘事法則，七幕「心法→溝通→動手→模組→協作→工程→變局」串成單頁長文。含 7 張仿《Design Patterns》中英命名型樣卡（全寬結構 SVG、Lucide 圖示）、56 段逐字稿原文引證，初學者友善、零中國大陸用語。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/2026-agentic-engineering.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-26T12:00:00+08:00",
+      "tags": [
+        "傳承",
+        "Agentic Engineering",
+        "Claude Code",
+        "多代理",
+        "Skills",
+        "htmlsvg",
+        "字幕長文"
+      ]
+    },
+    {
+      "id": "pdf-outline-heritage",
+      "title": "傳承：兩千多頁卷宗 OCR → 證據清單目錄（v1→v22）",
+      "subtitle": "把多本黏合、共 2658 頁的卷宗 OCR 自動還原成法院可用的階層目錄。含人類原始 prompt 全文（001–018 逐字）、v1→v22 完整歷程、最終成果四件套（How-to／程式碼／prompt／去機敏資料樣態），與「為什麼最後突破」——用雙面掃描物理常數 slope-2 取代魔數、被告偵測通用化。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，所有範例皆去機敏（代號化）。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3a6ea5",
+      "protected": true,
+      "publishDate": "2026-06-25T17:00:00+08:00",
+      "tags": [
+        "傳承",
+        "OCR",
+        "二元評測",
+        "MapReduce",
+        "htmlsvg",
+        "禁overfitting"
+      ]
+    },
+    {
+      "id": "pdf-outline-haiku-heritage",
+      "title": "傳承：opus 與 haiku 低分到高分原理（haiku 反超 opus）",
+      "subtitle": "同一份卷宗目錄任務：opus 大模型如何從「亂標一通」走到 96 分；haiku 小模型接同一套劇本卻仍「笨笨的」只剩 52 分，最後又如何翻到 100 分、在同一把 27 題二元尺上反超 opus。詳解兩條曲線卡關原因不同、認知負荷轉移（確定性預分類器＋移送書當事人欄人物權威表＋merge 護欄，haiku 只填窄殘差）、以及為何最後突破。內嵌 4 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#C97B4F",
+      "protected": true,
+      "publishDate": "2026-06-27T03:30:00+08:00",
+      "tags": [
+        "傳承",
+        "haiku",
+        "小模型超越大模型",
+        "認知負荷轉移",
+        "禁overfitting"
+      ]
+    },
+    {
+      "id": "pdf-outline-haiku-dag-heritage",
+      "title": "傳承：人工多維度尺 × 平行 DAG，haiku 66→91（v17→v25）",
+      "subtitle": "接續上一章：使用者要求改用人工手動多維度尺（非二元）參考黃金答案打分，並以 GEPA 反思演化把 haiku 從 66 推到 >90。詳解二元尺 vs 人工尺背離、產生器與裁判分離（資料限制感知校準）、頁碼與文字一起進化（節點照抄 g= ＋ duplex 換算）、以及自建嚴謹 bun TS 平行 DAG（map-reduce、claude -p haiku 乾淨上下文、併發 5、3.5 分鐘）落地 Claude Code dynamic workflow 精神，最後以 Pareto 互補合併兩線收斂於 ≈91–92。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-dag-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3a6ea5",
+      "protected": true,
+      "publishDate": "2026-06-27T08:00:00+08:00",
+      "tags": [
+        "傳承",
+        "haiku",
+        "人工多維度尺",
+        "GEPA",
+        "平行DAG",
+        "claude -p",
+        "dynamic workflow",
+        "map-reduce",
+        "禁overfitting"
+      ]
+    },
+    {
+      "id": "pi31b-vision-generalize-v55",
+      "title": "傳承：pi 31B × 影像層視覺 × 泛化（v26→v55，定版 ~85）",
+      "subtitle": "接續上一章：把生產級 31B（pi -p）接進管線、用多模態視覺破文字 OCR 天花板，全程零 hardcode、零 PII。詳解 pi 無內建子代理人故以 bun TS 多次呼叫 pi -p 換系統提示做專責分工、智慧路由（文字密度<40才送視覺）的可重用視覺前處理層、移除 overfitting 後泛化版反而更高、最重要方法論「徹查 OCR 再判資料限制」（§233 死者父繼母關係其實寫在偵訊頁 OCR、委任人身分由視覺讀委任狀皆合法還原；反例觀護 3 群父節點/病歷機構碼徹查後確認真不可還原），以及加權數學證明 >88 與「禁 overfitting＋禁 PII」雙鐵律互斥（上限 ~87），使用者最終裁決接受 v55 ~85 誠實定版。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi31b-vision-generalize-v55.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3a6ea5",
+      "protected": true,
+      "publishDate": "2026-06-27T14:00:00+08:00",
+      "tags": [
+        "傳承",
+        "pi 31B",
+        "多模態視覺",
+        "影像層OCR",
+        "泛化",
+        "禁overfitting",
+        "禁PII",
+        "dynamic workflow",
+        "資料限制"
+      ]
+    },
+    {
+      "id": "vllm-direct-vs-pi-p",
+      "title": "傳承：直連 vLLM vs pi -p — 本案推論管道抉擇（更快/更省/更準/更好）",
+      "subtitle": "同一顆自架 gemma-4-31b，比較「直連 OpenAI 相容 HTTP」與「透過 pi -p 代理人」在本案大量平行抽取情境的優劣。實證查證：vLLM 連續批次在高併發 2–4× 吞吐、CLI 子行程 spawn ~400ms/次（多步比常駐慢 ~5.6×）、pi（pi.dev/earendil-works）有 print/json/rpc/sdk 四模式。結論：更快更省＝直連勝（高併發批次＋免逐次 spawn）、更準＝文字平手但視覺直連勝（image_url 可控）、更好＝混合架構（pi 管治理換供應商/AGENTS.md/SSOT、直連或 pi-RPC 常駐管重負載批次）；關鍵突破是把「推論」與「治理」分層。內嵌 SVG（三種架構對照）、丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例去機敏（端點/角色代號化）。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/vllm-direct-vs-pi-p.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3a6ea5",
+      "protected": true,
+      "publishDate": "2026-06-27T15:00:00+08:00",
+      "tags": [
+        "傳承",
+        "vLLM",
+        "pi -p",
+        "pi.dev",
+        "連續批次",
+        "推論管道",
+        "混合架構",
+        "效能"
+      ]
+    },
+    {
+      "id": "epa-teaching-prompt",
+      "title": "教學傳承：戰情室資料湖 prompt 從頭到尾",
+      "subtitle": "把一整段真實對話拆成可複製的 prompt 工作法：從 ./data/ 兩個檔，逼出以人為中心痛點→三標案定位→矽谷流敘事→三個 2026 真實事件情境 HTML。含原始 prompt 全文、v1→v8 歷程、四件套、突破關鍵變因。內嵌流程圖 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-teaching-prompt.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "教學",
+        "prompt",
+        "JTBD",
+        "htmlsvg",
+        "工作法"
+      ]
+    },
+    {
+      "id": "epa-warroom-s3-xuejia",
+      "title": "戰情室情境3：學甲爐渣案 × 記者貴賓語音展演",
+      "subtitle": "用 2026 真實事件學甲 21 億爐渣案＋環境部 AI 司，演練記者來訪時以語音對話展演「衛星＋車流＋檢舉資料融合揪出爐渣案」的偵蒐時間軸，隨問隨溯源。套矽谷流敘事四要素，內嵌偵蒐時間軸 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s3-xuejia.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "戰情室",
+        "學甲爐渣",
+        "AI偵蒐",
+        "語音展演"
+      ]
+    },
+    {
+      "id": "epa-warroom-s2-fengshan",
+      "title": "戰情室情境2：鳳山溪偷排死魚 × 會議室緊急應變",
+      "subtitle": "用 2026 真實事件鳳山溪颱風前偷排死魚 2 公里，演練部長召集會議室大屏一次調閱河段疊圖、3 廠比對、裁罰試算、當場分工。套矽谷流敘事四要素＋四段分析，內嵌擬真大屏 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s2-fengshan.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "戰情室",
+        "鳳山溪",
+        "水污染",
+        "應變"
+      ]
+    },
+    {
+      "id": "epa-warroom-s1-gangshan",
+      "title": "戰情室情境1：岡山爆炸 × 部長手機 Line 問答",
+      "subtitle": "用 2026 真實事件岡山工廠爆炸，演練部長不在戰情室時以手機 Line 60 秒取得半徑列管設施清單＋即時風向擴散＋可溯源回應立委媒體。套矽谷流敘事四要素＋痛點/現況/替代方案/情境演變，內嵌擬真手機畫面 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s1-gangshan.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "戰情室",
+        "岡山爆炸",
+        "Agentic AI",
+        "應變"
+      ]
+    },
+    {
+      "id": "epa-warroom-top10-jtbd",
+      "title": "環境部戰情室：Top 10 痛點（矽谷流 JTBD）",
+      "subtitle": "標案二戰情室／視覺儀表板：以六種角色（署長、值勤指揮官、戰情幕僚、大屏工程師、跨機關協調官、稽查員）為中心，用矽谷流 JTBD 句型寫 Top 10 痛點，技術以 Agentic 主動告警為主。內嵌三層架構 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-top10-jtbd.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "戰情室",
+        "JTBD",
+        "Agentic AI",
+        "儀表板"
+      ]
+    },
+    {
+      "id": "epa-lake-highlights-v2",
+      "title": "環境部資料湖 v2：Top 10 痛點改矽谷流 JTBD",
+      "subtitle": "v2 版把 Top 10 痛點改寫為《INSPIRED 矽谷最夯》＋ JTBD 句型（當…想要…這樣就能…卡在…造成…），愛上問題而非解決方案；保留十大亮點與三案配合 SVG。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights-v2.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "資料湖",
+        "JTBD",
+        "矽谷流",
+        "Cagan"
+      ]
+    },
+    {
+      "id": "epa-lake-highlights",
+      "title": "環境部資料湖：十大實施亮點（Agentic × SKILL.md）",
+      "subtitle": "以人為中心拆解環境部三標案最底層「資料湖」：去向量 RAG、改以 Agentic AI 即時代打來源＋SKILL.md 技能卡（SSOT），貫徹 BDD/SOLID/DRY/KISS/SSOT。Top 10 痛點＋十大亮點（舊痛/新解/效益/地雷），內嵌 SVG、丹麥簡約、老花友善。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-25T18:00:00+08:00",
+      "tags": [
+        "環境部",
+        "資料湖",
+        "Agentic AI",
+        "SKILL.md",
+        "痛點分析"
+      ]
+    },
+    {
+      "id": "鴻海公文AI模型評測方案-二元評測三路徑傳承",
+      "title": "鴻海公文 AI 模型評測方案：二元評測 × 三路徑",
+      "subtitle": "一場 4 分鐘會議敲定如何公正地幫第三方公文 AI 系統做品質評測：否決受測方自評，主推「端點二元評測」與「SKILL.md A/B Test」兩條路徑，皆以鴻海提供的 20 份去識別公文樣態（或 5 題黃金答案）為基準奠基。內嵌全景 SVG、置頂逐字稿全文、四件套（How-to／程式碼／prompt／資料樣態），丹麥簡約風、老花友善、去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/鴻海公文AI模型評測方案-二元評測三路徑傳承.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T16:30:00+08:00",
+      "tags": [
+        "鴻海",
+        "公文 AI",
+        "模型評測",
+        "二元評測",
+        "工研院 AI 測試實驗室"
+      ]
+    },
+    {
+      "id": "gemini-moenv-onprem-si",
+      "title": "環境部 Gemini 全地端落地 — 是否承接 SI 可行性評估",
+      "subtitle": "用約 15 億／攤 10 年把 Gemini 搬進台灣機房，四個付錢角色拆解（Google／SI 架設／PMO 顧問／波特玩軟體原廠），CAMEO 年抽 10%＝1500 萬，綁工研院百家策評測當亮點，團隊表決傾向接 SI。內嵌 SVG、丹麥簡約風、老花友善、自包含單檔。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/gemini-moenv-onprem-si.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T16:00:00+08:00",
+      "tags": [
+        "環境部",
+        "Gemini 地端",
+        "SI 可行性",
+        "百家策評測",
+        "主權 AI"
+      ]
+    },
+    {
+      "id": "cameo-team-method-interview",
+      "title": "CAMEO 團隊工作方法與招募面試對談",
+      "subtitle": "從一場 RD/PM 面試看 CAMEO 的核心方法論——高品味題庫、二元評測、可驗證進化技能，與「解決問題而非賣產品」的定位；現場 vs coding 工時配比、雙人組合編組、一個月做完轉維護。內嵌 SVG、丹麥簡約風、老花友善、自包含單檔。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/cameo-team-method-interview.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T16:05:00+08:00",
+      "tags": [
+        "團隊方法論",
+        "高品味題庫",
+        "二元評測",
+        "可驗證進化技能",
+        "招募"
+      ]
+    },
+    {
+      "id": "動態題庫-國家主權AI評測優勢傳承",
+      "title": "動態題庫：國家主權 AI 的評測護城河",
+      "subtitle": "承接百家測計畫，從國家主權 AI 效益剖析「每次都換題」的優勢。固定題庫會被送測廠商抄題、微調刷榜（Benchmark Contamination），動態題庫每次隨機抽生 5–20 題＋地端去機敏，一條龍七步全自動：gemma-31b 去機敏 → Opus 出題／黃金答案／二元 rubric → 訓練集＋保留集打分 → A/B 雙盲 → 評測報告＋技能進化建議書。內嵌三張 SVG，丹麥簡約風、老花友善、自包含單檔。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/動態題庫-國家主權AI評測優勢傳承.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T13:25:00+08:00",
+      "tags": [
+        "國家主權 AI",
+        "動態題庫",
+        "防作弊",
+        "二元評測",
+        "技能進化"
+      ]
+    },
+    {
+      "id": "百家測計畫-AI評測商業模式傳承-2026-06-24",
+      "title": "百家測計畫 — AI 評測商業模式傳承",
+      "subtitle": "把「AI 一定要送測」入法與標案（像資安抽 10% 預算），再用一套會自動去機敏、自動出題、跑多模型驗測的工具，解決「機關根本不會出題」的最大卡點。四方角色、雙金流分潤、逆推出題法、動態二元評測、規模化領域題庫。丹麥簡約風、老花友善、自包含單檔。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/百家測計畫-AI評測商業模式傳承-2026-06-24.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T13:10:00+08:00",
+      "tags": [
+        "AI 基本法",
+        "百家測計畫",
+        "雙金流分潤",
+        "自動化評測",
+        "傳承"
+      ]
+    },
+    {
+      "id": "pi-dev-vs-hermes-review",
+      "title": "pi.dev × Hermes Agent：2026 年 5–6 月最新評價比較",
+      "subtitle": "彙整 2026/05–06 多篇實測評論與 GitHub 即時資料，比較極簡編碼 harness（pi.dev）與自我成長個人代理（Hermes Agent）。內嵌六維記分卡與定位地圖 SVG，含同名 Pi 釐清地雷。丹麥簡約風、老花友善、自包含單檔。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-vs-hermes-review.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T12:50:00+08:00",
+      "tags": [
+        "pi.dev",
+        "Hermes Agent",
+        "AI 代理",
+        "評測比較",
+        "傳承"
+      ]
+    },
+    {
+      "id": "encrypted-workspace-gocryptfs",
+      "title": "主機端機敏資料加密工作區：gocryptfs 傳承",
+      "subtitle": "用 gocryptfs（檔案級加密）而非全碟加密守護主機端機敏資料：三類加密層級對比、掛載/卸載生命週期與紅色暴露窗口、macOS/Linux/Windows 三平台支援矩陣。關鍵突破＝選對加密『類別』而非追求最強。內嵌 3 張 SVG，丹麥簡約風、老花友善、已去機敏。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/encrypted-workspace-gocryptfs.html",
+      "icon": "lock",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "protected": true,
+      "publishDate": "2026-06-24T12:40:53+08:00",
+      "tags": [
+        "gocryptfs",
+        "加密工作區",
+        "機敏資料",
+        "macFUSE",
+        "傳承"
+      ]
+    },
     {
       "id": "aiec-sensitive-eval-business-model",
       "title": "主權 AI 的命脈：機敏評測商業模式與國家標準傳承",
@@ -1032,7 +2156,7 @@
       "badge": "壓力測試",
       "badgeColor": "#c25e4c",
       "protected": true,
-      "publishDate": "2026-06-10",
+      "publishDate": "2026-06-10T16:49:46+08:00",
       "tags": [
         "波特塔",
         "TTFT",
@@ -1055,7 +2179,7 @@
       "badge": "TryAI 第三年",
       "badgeColor": "#2d6a5a",
       "protected": true,
-      "publishDate": "2026-06-10",
+      "publishDate": "2026-06-10T15:31:35+08:00",
       "tags": [
         "TryAI",
         "數位發展部",
@@ -7404,6 +8528,115 @@
         "公務員協作：AI 輔助而非取代公務員",
         "矽谷流敘事：5 頁說服決策者的簡報方法"
       ]
+    },
+    {
+      "id": "pi-dev-harness-gemini-gateway",
+      "title": "pi.dev harness × Gemini gateway 除錯傳承",
+      "subtitle": "把 pi.dev 接成第 4 個 harness,並一路揪出並修好 botrun-gate 三個 Gemini 工具呼叫 bug(schema 收斂、陣列 content 萃取、工具結果包成物件),讓 Claude 與 Gemini 3.5 Flash 都能 file CRUD + 寫程式碼用 bash 執行。含原始 prompt 逐字稿、v1→v6 演進、四件套、SVG 圖解。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-harness-gemini-gateway.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#2f6f5e",
+      "protected": true,
+      "publishDate": "2026-06-26T12:00:00+08:00",
+      "tags": [
+        "pi.dev",
+        "harness",
+        "gateway",
+        "gemini",
+        "傳承"
+      ]
+    },
+    {
+      "id": "法律AI-去識別化治本方法論-傳承",
+      "title": "法律 AI 去識別化（去精靈）治本方法論",
+      "subtitle": "程式碼規則＋語意判斷雙軌去識別化；繁中成功率 95%+（OpenAI 繁中僅 ~70%、30% 洩漏＝不可用）；新遺漏案例進來就修規則＝治本，下次同類永不再犯。去識別化是讓資料能用 Opus 處理的最基本門檻，領域 know-how 才是深水區。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T15:00:00+08:00",
+      "tags": [
+        "去識別化",
+        "去精靈",
+        "合成資料",
+        "法務部",
+        "治本"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-去識別化治本方法論-傳承.html"
+    },
+    {
+      "id": "法律AI-高品味題庫三件套-傳承",
+      "title": "法律 AI 高品味題庫三件套 × In-context Learning 生成不起訴書",
+      "subtitle": "input/output/法規引證三個 JSONL 靠 ID 串接；訓練集（train）給模型看、保留集（holdout）藏起來考舉一反三；三件套黏進 BARON.md 系統提示比拖檔可靠；訓練集少而精（前 9 筆品質最好）勝過多而雜；XML 標籤單頁 In-context Learning 範例。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T15:00:00+08:00",
+      "tags": [
+        "高品味題庫",
+        "JSONL",
+        "In-context-Learning",
+        "不起訴書",
+        "保留集"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-高品味題庫三件套-傳承.html"
+    },
+    {
+      "id": "法律AI-雙軌評分法-傳承",
+      "title": "Hybrid Norm 雙軌評分法 × Opus 多維度評分實戰",
+      "subtitle": "黃金答案評分（品質軸）＋二人評測（是/否護欄）兩者缺一不可＝Hybrid Norm；AI 自評會膨脹（86→人工校準 50），須嚴格參照標準答案；三個 baseline 50/60/86；受測模型在『理由陳述』與『關鍵事實/判例引用』漏失最嚴重；人眼仍是最後準繩。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T15:00:00+08:00",
+      "tags": [
+        "評分",
+        "Hybrid-Norm",
+        "二人評測",
+        "黃金答案",
+        "Opus"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-雙軌評分法-傳承.html"
+    },
+    {
+      "id": "法律AI-地端硬體選型-傳承",
+      "title": "地端去識別化硬體選型 — Mac × LM Studio 跑 Gemma 4 QAT",
+      "subtitle": "Gemma 4 26B 實際只跑 4B（MoE），32GB 記憶體門檻可達；QAT 4-bit 智慧壓縮保住法律常用知識；Mac 約 15 萬 vs Windows+5090 約 20 萬；M1 也有 ~30-40 tok/s；Load vs Max Effort 兩段式：交談用 Load、批次合成用 Max。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T15:00:00+08:00",
+      "tags": [
+        "地端",
+        "LM-Studio",
+        "Gemma-QAT",
+        "硬體選型",
+        "Max-Effort"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-地端硬體選型-傳承.html"
+    },
+    {
+      "id": "法律AI-GEPA自動化演化工作流-傳承",
+      "title": "GEPA 提示工程自動化演化工作流 — 選手×教練×裁判 × GAN 五輪迭代",
+      "subtitle": "提示工程從「人工撰寫」轉向「自動化演化」：Close Call 駕馭 pi -p 把生成+評分全自動化；GEPA 當教練、GAN 對抗式改寫會進步的選手.md；裁判用乾淨平行 Opus 4.8 sub-agent 多維度 0-100 並寫成裁判.md。一次 5 題跑 5 輪（約 40-50 分）避免 overfit、滾動加題 5+5+10 驗泛化、模型自報 90 分不要信須肉眼對；收斂後選手.md 改名 skill.md 依法律類別分目錄交付。",
+      "protected": true,
+      "icon": "book",
+      "badge": "傳承",
+      "badgeColor": "#2d6a5a",
+      "publishDate": "2026-06-30T16:00:00+08:00",
+      "tags": [
+        "GEPA",
+        "提示工程",
+        "GAN",
+        "sub-agent",
+        "skill.md",
+        "自動化演化"
+      ],
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/法律AI-GEPA自動化演化工作流-傳承.html"
     }
   ]
 }

@@ -12,14 +12,15 @@
   <header>
     <h1>五言<span>波特人</span></h1>
     <p class="tagline">簡單的 AI，真實的價值</p>
-    <div class="stats-bar" id="stats-bar">
-      <div class="stat-item"><span class="stat-num" id="stat-views">-</span><span class="stat-label">7 天瀏覽量</span></div>
-      <div class="stat-item"><span class="stat-num" id="stat-users">-</span><span class="stat-label">7 天訪客</span></div>
-      <div class="stat-item"><span class="stat-num" id="stat-posts">-</span><span class="stat-label">發表篇數</span></div>
-    </div>
+    <!-- stats-bar 已永久隱藏（瀏覽量/訪客/發表篇數） -->
     <p class="update-info"><span id="update-time"></span> · <span id="item-count"></span>, <a href="mailto:service@cameo.tw">service@cameo.tw</a></p>
   </header>
   <main>
+    <section id="tender-zone" class="tender-zone" style="display:none;">
+      <p class="section-label tender-label">📋 標案參考專區</p>
+      <p class="tender-intro" id="tender-intro"></p>
+      <div class="card-list" id="tender-list"></div>
+    </section>
     <section id="protected-section" class="protected-section" style="display:none;">
       <p class="section-label protected-label">🔒 機密文章</p>
       <div class="card-list" id="protected-list"></div>

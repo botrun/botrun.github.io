@@ -23,12 +23,26 @@ function svg(name) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
 }
 
+// publishDate 正規化為「絕對時刻」：純日期 YYYY-MM-DD 視為台灣當地午夜(+08:00)，
+// 否則照字串自帶時區解析。治本：避免被 JS 引擎把純日期當 UTC 午夜，
+// 在 +8 瀏覽器顯示成早上 08:00、且排序時被當成更早 → 最新項目沉到下面。
+function parsePublishDate(dateStr) {
+  const s = String(dateStr || '').trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return new Date(s + 'T00:00:00+08:00');
+  return new Date(s);
+}
+
+// 一律以 Asia/Taipei 呈現，數字才與「UTC+8」標籤一致（不受瀏覽者所在時區影響）。
 function formatDate(dateStr) {
-  try {
-    const d = new Date(dateStr);
-    const pad = n => String(n).padStart(2, '0');
-    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())} UTC+8`;
-  } catch { return dateStr; }
+  const d = parsePublishDate(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Taipei', hour12: false,
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit',
+  }).formatToParts(d).reduce((o, p) => (o[p.type] = p.value, o), {});
+  const hh = parts.hour === '24' ? '00' : parts.hour; // 部分引擎午夜回傳 24
+  return `${parts.year}-${parts.month}-${parts.day} ${hh}:${parts.minute} UTC+8`;
 }
 
 function renderCard(item) {
@@ -84,6 +98,11 @@ function initKonamiCode() {
 }
 
 function revealProtectedCards() {
+  // 一併亮出標案參考專區（與機密文章同層保護）
+  const tzSection = document.getElementById('tender-zone');
+  if (tzSection && document.getElementById('tender-list')?.children.length > 0) {
+    tzSection.style.display = '';
+  }
   const section = document.getElementById('protected-section');
   if (!section) return;
   const cards = section.querySelectorAll('.card');
@@ -130,10 +149,18 @@ async function init() {
   try {
     const res = await fetch(MANIFEST_URL);
     const manifest = await res.json();
-    const items = manifest.items || [];
+    let items = manifest.items || [];
 
     // 按日期排序（最新在前）
-    items.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+    items.sort((a, b) => parsePublishDate(b.publishDate) - parsePublishDate(a.publishDate));
+
+    // 治本（LM：manifest 單筆缺 href 不可整頁空白）：在來源就濾掉壞資料，
+    // 讓 renderCard 永遠拿得到字串 href；單筆異常只少一張卡，絕不讓首頁卡「載入中...」。
+    const badItems = items.filter(i => typeof i.href !== 'string' || !i.href);
+    if (badItems.length > 0) {
+      console.warn('[manifest] 略過缺 href 的項目（請補 href）：', badItems.map(i => i.id || i.title));
+      items = items.filter(i => typeof i.href === 'string' && i.href);
+    }
 
     // 分離機密文章與公開文章
     const protectedItems = items.filter(i => i.protected === true);
@@ -149,21 +176,26 @@ async function init() {
       protectedList.innerHTML = protectedItems.map(renderCard).join('');
     }
 
+    // 標案參考專區（資料驅動，SSOT = manifest.metadata.tenderZone）
+    // DRY：以 id 查既有 item，複用 renderCard()，不重寫卡片
+    const tz = manifest.metadata?.tenderZone;
+    if (tz && Array.isArray(tz.items) && tz.items.length > 0) {
+      const byId = new Map(items.map(i => [i.id, i]));
+      const tzItems = tz.items.map(id => byId.get(id)).filter(Boolean);
+      if (tzItems.length > 0) {
+        const introEl = document.getElementById('tender-intro');
+        if (introEl && tz.intro) introEl.textContent = tz.intro;
+        const labelEl = document.querySelector('#tender-zone .tender-label');
+        if (labelEl && tz.label) labelEl.textContent = tz.label;
+        document.getElementById('tender-list').innerHTML = tzItems.map(renderCard).join('');
+      }
+    }
+
     // 公開項目計數（不含 protected）
     const publicCount = publicItems.length;
     document.getElementById('item-count').textContent = `${publicCount} 項`;
 
-    // Stats bar: 發表篇數從 manifest 即時算（公開 + protected 全部計入）
-    document.getElementById('stat-posts').textContent = items.length;
-
-    // Stats bar: GA4 數字從 stats.json 讀取
-    try {
-      const statsRes = await fetch(STATS_URL);
-      const stats = await statsRes.json();
-      const fmtNum = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'K' : String(n);
-      if (stats.pageviews7d != null) document.getElementById('stat-views').textContent = fmtNum(stats.pageviews7d);
-      if (stats.activeUsers7d != null) document.getElementById('stat-users').textContent = fmtNum(stats.activeUsers7d);
-    } catch { /* stats.json 不存在時靜默失敗 */ }
+    // Stats bar 已永久隱藏（瀏覽量/訪客/發表篇數），不再渲染
 
     // 更新時間
     const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
@@ -178,6 +210,11 @@ async function init() {
       if (section) {
         section.style.display = '';
         section.querySelector('.protected-label').textContent = '🔓 機密文章（IAP 保護中）';
+      }
+      // 標案參考專區置頂亮出（連結 protected 文章，僅 IAP 域名顯示，守 LM-129）
+      const tzSection = document.getElementById('tender-zone');
+      if (tzSection && document.getElementById('tender-list').children.length > 0) {
+        tzSection.style.display = '';
       }
       document.getElementById('item-count').textContent = `${items.length} 項`;
     } else {

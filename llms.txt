@@ -3,10 +3,857 @@
 > 波特人（Botrun）是台灣 AI 新創，專注 Agentic AI 政府應用。
 > 核心產品：高品味題庫、波駿馬 AI Harness、編排層戰略。
 > 首頁：https://botrun.github.io
-> 生成時間：2026-06-17T00:52:03.101Z
+> 生成時間：2026-06-29T08:31:30.757Z
 > 來源：content-manifest.json（唯一真相源）
 
-共 310 個項目，按發佈日期降序排列。
+共 385 個項目，按發佈日期降序排列。
+
+## timeless-bowen Issues 優先權看板
+
+> P0→P1→P2→P3 四欄即時看板，自動抓 GitHub open issues 並按優先順序排列，點卡片直接跳 GitHub。
+
+- [線上版](https://storage.googleapis.com/botrun-slides/timeless-bowen-issues-priority-board.html): HTML 簡報原始頁面
+- [AI 純文字版](https://storage.googleapis.com/botrun-slides/timeless-bowen-issues-priority-board.html/llms.txt): 該專案的 llms.txt
+- 類型：工具
+- 發佈日期：2026-06-29T14:00:00+08:00
+- 標籤：工具、issues、看板、優先權
+
+## 傳承：pi.dev 常駐架構資安/可靠性修補（#134/#141）
+
+> Seba code review 在 pi 常駐 runner 挑出 5 缺口：H1 對講機零鑑權致跨租戶冒名驅動＋偷金鑰、H2 turn 卡死永久 hang＋假 exitCode、H4 供應鏈未 pin、B1 錯誤路徑不收尾、B3 無差別自動確認對話框。修法：per-container token 鑑權（首行比對不符即 socket.destroy）、wall-clock 看門狗（逾時 docker kill＋非0）＋以 bridge done 終局訊息真值化 exitCode、Dockerfile pin（node digest／pi@0.80.2／pi-goal@sha）、surfaceError 一併歸位 agentActive 收尾；B3 判定 won't-fix（pi headless 風格、擴充 build 時 pin 死）。含人類原始 prompt 001–008 逐字、v1→v9 驗證歷程、四件套、突破關鍵變因、內嵌 SVG。驗證：verify-bridge 4/4、vitest 32/32、VM image build、H1-c 真 docker 重現，並部署上 cbh-play-dev。去機敏、丹麥簡約風。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-134-141-hardening.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-134-141-hardening.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-29T18:00:00+08:00
+- 標籤：傳承、pi.dev、資安、常駐架構、token、看門狗、htmlsvg
+
+## 波西瓜 21 產品線優先序傳承（五梯隊作戰序列）
+
+> 把無序的 21 個產品名稱，依「離可驗證進化飛輪（護城河）的距離」一把尺，重排成五梯隊：護城河核心→進化引擎→輸入眼耳→工作流→交付變現。含原始 prompt、重排歷程 v1→v4、成果四件套與 SVG 飛輪圖。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/watermelon-21-products-priority.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/watermelon-21-products-priority.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-29T16:00:00+08:00
+- 標籤：傳承、波西瓜、產品線、優先序、護城河、htmlsvg
+
+## 傳承：pi.dev 網頁聊天支援斜線 /goal（多輪做到完畢）
+
+> 讓網頁聊天的 /goal 跟終端 goal 擴充一樣：打 / 看得到、選得到、送了有回饋、多輪任務逐輪做到 update_goal 完成才停、連續 /goal 不卡。沿路挖出四個獨立真根因（指令不發 agent_end 致 done 弄丟、notify 格式被 app 丟棄、autocomplete 只查技能、取代目標的 ctx.ui.select 對話框在 rpc 無人回應永遠 await），治本於 bridge idle-detection 串流多輪迴圈 + 自動回應對話框 + 前端 per-engine slashCommands。最大教訓：別把「會自我重排的迴圈」當 bug 一刀關掉（曾因此讓 /goal 只跑一輪）——先用探測工具分清卡死真因。含人類原始 prompt 001–006 逐字、v0.82.10→.16 演進、四件套、Claude in Chrome 驗測證據。內嵌 SVG、丹麥簡約風、去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pidev-web-slash-goal-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pidev-web-slash-goal-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-29T17:30:00+08:00
+- 標籤：傳承、pi.dev、/goal、擴充、bridge、htmlsvg
+
+## 治本 subagent「猜錯 agent」恢復稅 — pi-subagents 就地 patch
+
+> 弱模型呼叫 subagent 工具時憑印象猜了不存在的 coder，繞三輪（coder→失敗→list→worker）才成功。根因不是能力不穩，而是缺護欄：agent 欄位無 enum、tool description 沒列名單、Unknown agent 錯誤又沒附名單。治本兩處：① 三處 Unknown agent 接 live 名單（猜錯也能 1 輪自癒）② description 列出 8 個 builtin（第一槍就挑 worker）。pi 直接載原始 .ts，故安裝後就地 patch、不必 fork。途中揪出兩個雷：定位器跳過 node_modules（pi-subagents 正住在那）、Dockerfile 結尾 || true 吞掉 patch 失敗（偽裝成功）→ patch 改自成獨立 RUN。含人類原始 prompt 001–007 逐字、v1→v2 演進、四件套、三個帶得走的地雷。內嵌 SVG、丹麥簡約風、去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/subagent-unknown-agent-rootfix.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/subagent-unknown-agent-rootfix.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-29T19:30:00+08:00
+- 標籤：傳承、pi.dev、subagent、pi-subagents、治本、htmlsvg
+
+## 傳承：pi.dev + NCHC Gemma 首個 hi >20s 根因與 BDD 冷啟動驗測
+
+> 使用者觀察到 pi.dev + NCHC gemma-4-31B「第一個 say hi」經常 >20s（尤其切換專案、開新對話、新專案）。逐層隔離量測證明 NCHC 模型極快（TTFT 0.08–1.3s、含併發與大 prompt），>20s 全在容器-預熱層，由五個不同根因疊加：①預熱沒預設開 ②併發冷啟動搶 4-CPU ③冷切換時 turn1 與預熱「雙重 spawn」競爭（實測 16s）④預熱 warmup 拖慢可認領 ⑤背景補池的 disk I/O 干擾進行中對話（warm 容器某輪突暴增 17s）。逐一重現逐一修 v0.82.4→.9，Claude in Chrome 實測（並驗證回應內容非錯誤，揭穿 socket-proxy 403 偽快陷阱）：開新對話 hi→hi ×5 全過、turn1 avg 2.99s/turn2 avg 0.65s，後續輪 17s 突波消除。含人類原始 prompt 001–005 逐字、五根因演進、四件套、2026 冷啟動驗測方法學。內嵌 SVG、丹麥簡約風、去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pidev-nchc-coldstart-rootcause-bdd.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pidev-nchc-coldstart-rootcause-bdd.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-29T15:00:00+08:00
+- 標籤：傳承、pi.dev、NCHC、冷啟動、效能、BDD、htmlsvg
+
+## Release Notes 三天匯總：pi.dev 常駐架構與 cbh 測試租戶
+
+> 2026-06-26～06-28 兩專案匯總：botrun-agent-platform v0.82.4 把 pi.dev 接成第 4 個 harness，從每輪冷啟演進到「常駐 rpc bridge（TCP）＋維持式預熱池」，turn1 <2s／turn2+ ~0.8s，runner image 6.93GB→792MB（-88.6%），20 人並發壓測 0 crash／0 洩漏；botrun-play-manager 同步建起 cbh-play-dev 測試租戶，並把 Secret Manager／IAM 雙帳號部署地雷寫成傳承文件。含人類原始 prompt（001–003 逐字）、v1→v8 演進時間軸 SVG、四件套（How-to／程式碼／prompt／去機敏資料樣態）與「為什麼突破」。丹麥簡約風、老花眼友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/release-notes-3day-pidev-2026-06-28.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/release-notes-3day-pidev-2026-06-28.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T20:00:00+08:00
+- 標籤：傳承、pi.dev、release-notes
+
+## 傳承：pi.dev 預熱／常駐池改為「預設全開」
+
+> 把控制 pi.dev 常駐預熱的 PI_RESIDENT 從「要設環境變數才開（opt-in，=== '1'）」翻成「沒設環境變數也預設全開（opt-out，!== '0'）」，三個 gate 一致改：runResidentTurn 入口、prewarmResident 維持池、/api/claude-agent/prewarm。部署 agent-platform v0.82.4 到 cbh-play-dev 後真機驗證：沒設任何 PI_RESIDENT，卻自動冒出暖機容器 pi-agent-prewarm-…:v0.82.4、app 日誌「🔥 prewarmed（池 1/1）」。含人類原始 prompt（001–003 逐字）、白話比喻（客人上門才生火 → 爐子隨時保溫）、機制 SVG、v1→v4 歷程、四件套（含 diff），與「為什麼突破」——程式碼預設值贏過環境設定、驗證要看真機而非 UI。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-prewarm-default-on.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-prewarm-default-on.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T18:10:00+08:00
+- 標籤：傳承、pi.dev、預熱、常駐架構、opt-out、htmlsvg
+
+## 傳承：把 agent-platform 部署到 cbh-play-dev，並治本兩個 pi.dev 對話錯誤
+
+> 一次真實的「部署上線 → 對話報錯 → 逐層 debug → 兩個根因治本 → 眼見為憑」全紀錄。pi 對話踩到兩個獨立錯誤：① 開對話即 403（runner image 沒設、退回裸名 pi-agent-runner:latest 去 Docker Hub）；② 回應到一半 exit 1（spawn 時硬塞 DEBUG=* 讓 Babel 噴爆 AST debug log、超長 JSON 被截斷撐壞協定）。含人類原始 prompt 全文（001–007 逐字、附 403 錯誤原文）、部署管線 SVG（三身分 cbh／bohachu／cameoinfotech_tw + Secret Manager SSOT）、兩個 bug 根因流程圖、v1→v6 歷程、四件套，與「為什麼突破」——看真實容器日誌、分清 VM .env 是衍生物而 Secret Manager 才是真相、根因常是一行設定/殘留。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-runner-deploy-debug.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-runner-deploy-debug.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T17:30:00+08:00
+- 標籤：傳承、pi.dev、部署、debug、Secret Manager、htmlsvg
+
+## 傳承：在聊天框打「/」就跳技能選單 —— pi.dev 版的斜線 autocomplete
+
+> 把 botrun-agent-platform（pi.dev 本案版本）的聊天輸入框，外科手術式增添 pi.dev 官方的斜線技能啟動：打 / 跳技能選單、英文或國字即時篩選、↑↓/Enter 選取、選後帶入 canonical /skill:<name>。關鍵＝重用既有 useSkills + /api/skills（SSOT）與已含國字的 NAME_PATTERN，0 新第三方依賴；SOLID 四層分解（純邏輯／編排／展示／整合）讓 TDD 可行（22 單元 + 11 元件 = 33 綠）。上網查 pi.dev 官方做法回答「/skill: 還是 /任意技能」＝兩者都收、輸出統一 /skill:<name>。驗證踩坑（完整 app 因冷 pnpm store + 缺 @json-render/core 每頁 500）→ 轉用 vite 把真實 hook + 元件搬進 Chrome，claude-in-chrome 三技能過關（GIF）。含人類原始 prompt 全文（00 逐字）、v1→v8 歷程、四件套、突破與部署卡點（image build 成功、push 卡 IAM Artifact Registry writer 權限）。內嵌 SVG、丹麥簡約風、老花眼友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/slash-skill-autocomplete-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/slash-skill-autocomplete-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T18:30:00+08:00
+- 標籤：傳承、pi.dev、斜線指令、autocomplete、SOLID、TDD、htmlsvg
+
+## 傳承：新對話「閃一下」的根因與修復
+
+> 送出第一則訊息「閃一下」的根因＝進入 sessions/[id] 新 route segment 時 Next.js 立刻顯示 loading.tsx instant-state 骨架（全螢幕 bg-gray-50）蓋住中間對話區。第一版假設（無用 await fetch＋session 層 loading.tsx）被 MCP Playwright 實測推翻（仍閃 645ms）；命中版＝移除專案／對話路由鏈上「所有」loading.tsx（個人版＋team 版 ×［projectId］／sessions 兩層共 4 個）→ React 改「留住舊畫面→原子交換」（與 session→session 同一個 segment 一致）。關鍵心法：驗收不能用『DOM 同節點』（template.tsx 害每次導航都 remount，會誤判），要量『中間 #main-content 是否曾消失／空白／出現骨架』。MCP Playwright 真瀏覽器＋30ms 高頻取樣（70 樣本）：gap 645ms→0ms、消失／空白／骨架皆 0。含人類原始 prompt 全文、v1→v2 歷程、四件套、突破說明。內嵌 SVG、丹麥簡約風、老花眼友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/new-chat-flash-fix-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/new-chat-flash-fix-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T16:00:00+08:00
+- 標籤：傳承、Next.js、flash、loading.tsx、MCP Playwright、htmlsvg
+
+## 傳承：把 NCHC Gemma 4（31B／26B）接進 pi.dev
+
+> 一次「先可行性分析、合理才執行到底」的完整實作：用 Claude in Chrome 端到端驗證 pi.dev docker agent 能用國網（NCHC）的 gemma-4-31B-it 與 gemma-4-26B-A4B-it 做檔案增刪改查＋寫並執行 Node.js。關鍵突破＝分清「鑰匙與模型」（重用既有 botrun-gate br- provider、零金鑰輸入、只加兩筆模型目錄）＋找對 SSOT 攔截點（NCHC 不送 max_tokens 的規定，在 gate 邊界用 prep_nchc_body 剝除、涵蓋所有 engine）。含人類原始 prompt 全文（001–007 逐字）、v1→v4 歷程、四件套（How-to／gate 程式碼／驗證 prompt／E2E 去機敏資料樣態，含 26B 自我除錯 const→let 得 5050）。TDD：agent-platform pi+nchc 3 測試、gate 2 測試。內嵌 SVG、丹麥簡約風、老花眼友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-gemma-4-pi-dev.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-gemma-4-pi-dev.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T13:45:00+08:00
+- 標籤：傳承、pi.dev、NCHC、gemma4、E2E、htmlsvg
+
+## 傳承：pi.dev 常駐架構 —— 從 6.93GB 肥映像到 20 人壓測全過
+
+> 把 botrun-agent-platform 的 pi 引擎，從「每則訊息開全新容器」改造成「常駐 + 維持式預熱池」。含人類原始 prompt 全文（001–011 逐字）、v1→v8 完整歷程、最終成果四件套（How-to／程式碼／prompt／去機敏資料樣態），與「為什麼最後突破」——常駐解耦隔離與冷啟動、unix socket 改 TCP、暖機只在背景。實測：映像 -90%、turn2+ <2s、20 人並行 0 crash 0 洩漏、/goal 與 subagent 擴充各 100% 有效。內嵌 SVG，丹麥簡約風、老花眼友善，範例皆去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-resident-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T10:00:00+08:00
+- 標籤：傳承、pi.dev、常駐架構、多人隔離、壓測、htmlsvg
+
+## Opus 4.8 把思考踩到底＝Fable 5 嗎？一場上網查證的完整傳承
+
+> 一句話結論：不等於。同一顆 Opus 4.8 開到 Max 思考，仍是 Opus 等級；Fable 5 是高一階 Mythos 級（2026-06-09 發布）、benchmark 全面領先（SWE-Verified 95.0 vs 88.6、SWE-Pro 80.0 vs 69.2、FrontierCode 29.3 vs 13.4 約2倍），價格 2×（實際 3–5×）。核心比喻：思考強度＝油門、模型等級＝引擎，踩油門換不了引擎。唯一相等例外＝護欄把資安／生化／蒸餾請求回退 Opus 4.8。附四件套（決策How-to／effort旋鈕+A/B腳本／研究prompt／結論+證據+信心度資料樣態）＋v1→v4查證歷程＋三張內嵌SVG（油門引擎比喻、benchmark長條、護欄fallback流程）。北歐淺色老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/opus48-max-vs-fable5.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/opus48-max-vs-fable5.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28T12:52:15+08:00
+- 標籤：Fable 5、Opus 4.8、Mythos、extended thinking、effort、模型選型、benchmark、上網查證、htmlsvg
+
+## pi.dev 的 Docker 為何用 Node 不用 bun（傳承）
+
+> 三輪追查：①讀本地 5 個 Dockerfile 全是 node:22 ②查 pi 官方 = TypeScript+npm 發行 ③官方鐵證 Discussion #1453「No bun support for pi install npm」根因 bun 缺 npm root -g。結論：Node 是官方主 runtime，bun 會讓 pi install npm: 裝 extension(/goal、pi-subagents)斷掉。含四件套(How-to/Dockerfile/判斷 prompt/Node vs Bun 對照表)＋內嵌 SVG 斷點圖＋高中生白話。北歐簡約老花友善。
+
+- [線上版](https://botrun-protected-2ragcuvt3q-de.a.run.app/pi-node-vs-bun.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-2ragcuvt3q-de.a.run.app/pi-node-vs-bun.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-28
+- 標籤：pi.dev、docker、node、bun、agent、傳承
+
+## 評測＋進化 Playbook：GEPA × Hybrid Norm × 五大地雷（傳承）
+
+> 一場對話的完整結晶：從「模型只佔10%」→Terminal-Bench四件套出題→領域適配→釐清GEPA(進化層)與Terminal-Bench(評測層)不二選一→2026最適配Hybrid Norm(RLVR可驗證獎勵+RaR rubric)。再熔入五條錯→對實戰鐵律：①選手先用Opus4.8弄高分(非pi -p)②裁判用多維Opus subagent手動打分(非二元)③教練用GEPA讀trace反省(非自己亂演化)④拆解親手寫Bun TS parallel DAG(借Claude Code dynamic workflow精神、節點寫死)⑤吞吐map-reduce 5路並行claude -p haiku(非一次塞兩千頁)。附完整四件套(How-to/Bun DAG程式碼/KISS自走prompt/去機敏資料樣態)＋每句prompt高中生白話解說＋突破說明(把5個決策從讓模型決定收回成鐵律寫死)。v1→v6演進史，多張內嵌SVG，北歐淺色老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/eval-evolution-playbook.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/eval-evolution-playbook.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T14:00:00+08:00
+- 標籤：GEPA、Hybrid Norm、RLVR、Terminal-Bench、dynamic workflow、Bun DAG、map-reduce、next5、高品味題庫、htmlsvg
+
+## 頂尖評測怎麼準備：Terminal-Bench 五個經典範例（繁中解說）
+
+> 承接「模型只佔10%」——Terminal-Bench 2.0 光靠規則與工作流就從30名外躍進前5，功夫全在「題目怎麼出」。本文拆解任務四件套（Dockerfile/task.yaml/test_outputs.py/oracle solution.sh）與黃金準則「測試通過⟺容器結束於可接受狀態」，再用5個翻成繁中的經典範例教你頂尖評測的設計準則：①架Git伺服器（用結果驗收、容許多解）②fastText雙重約束（目標+成本堵死作弊）③CWE修漏洞（負向/回歸測試）④從源碼編譯CompCert（容器化可重現+oracle真跑通）⑤async並行上限（測客觀行為非讀碼）。附準備資料檢查清單，5張內嵌SVG，北歐淺色老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/terminal-bench-5-cases.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/terminal-bench-5-cases.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T12:30:00+08:00
+- 標籤：Terminal-Bench、評測方法學、高品味題庫、oracle solution、負向測試、可重現、htmlsvg、SVG
+
+## 模型只佔 10%：Google 的 Harness 90% 法則
+
+> Google 50 頁 AI 軟體工程白皮書的核心——你選哪個 AI 模型只決定 10% 的結果，剩下 90% 是你圍著模型蓋的 Harness（指令／工具／情境／護欄／編排／可觀測性）。逐字置頂原始 prompt，7 張內嵌 SVG 圖解：10/90 圓環、SDLC 瓶頸移到頭尾、Vibe Coding→結構化→Agentic Engineering 三層光譜、Harness 六大組件、靜態 vs 動態情境、工廠模型流水線、通用代理＋技能、指揮家 vs 編排者、代幣經濟學交叉曲線。關鍵數據 LangChain +13.7pp、Terminal Bench 2.0 從 30+ 名躍進前 5。落地：pi + Opus 就能直接賣法律 AI。北歐淺色、老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/google-harness-90.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/google-harness-90.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T11:00:00+08:00
+- 標籤：Agentic Engineering、Harness、Vibe Coding、Google 白皮書、SDLC、靜態動態情境、htmlsvg、SVG
+
+## pi.dev harness · 完整驗測傳承報告（PR #115）
+
+> 把 reviewer 的 8 個問題從「程式碼修好」一路驗到「真實網站上、兩個模型都能用」。涵蓋 Seba PR#115 八項 review 修復（本機 vitest 92/92、image verify-runtime PASS=4）＋ Claude in Chrome 在 cbh-play-dev 修復版的雙模型實機 e2e：Gemini 3.5 Flash 與 Claude Sonnet 4.5 跑多輪 CRUD+bash、#8 連續對話、#2 /goal+skills、#4 session 跨輪記憶、把技能放進 pi.dev 建出 SKILL_OK.txt 全綠；以及實機抓到並修掉的 3 個 bug（session id 跨輪一致、Claude 模型 id、部署 SSH 使用者）。內嵌 SVG 狀態矩陣／時間軸，北歐淺色、老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-harness-verification-report.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-harness-verification-report.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26T20:30:00+08:00
+- 標籤：pi.dev、harness、Claude in Chrome、e2e 驗測、Skill、botrun-gate、htmlsvg
+
+## 代理模式 · 33 心法
+
+> 把 IndyDevDan（英文 25 支）＋ GaryTalksStuff（中文 35 支）整年 60 支影片，濃縮成 33 張 SVG 圖卡（編號 001–033）。仿 Design Patterns 體例，給資深工程師深入淺出學完 2026 代理式工程全主題：Harness、多代理人、Skills/MCP、Context 與任務定義、安全與損害控制、模型版圖（Opus 4.7/4.8、Mythos、Fable 5）、商業落地與投資。已上網查證更新至 2026-06 最新數據。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-pattern-33.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/agentic-pattern-33.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26T20:00:00+08:00
+- 標籤：代理式工程、Agentic Patterns、Claude Code、Harness、多代理人、Skill、MCP、htmlsvg
+
+## 戶政內鬼 × 全球 Top3 防治方法學
+
+> 從台灣 2300 萬筆戶役政個資外洩、桃園戶政課員 11 分鐘濫查鄰居 10 筆個資判決出發，談「怎麼查內鬼、往後怎麼杜絕、又能兼顧承辦人正常辦事」的 2026 全球三大方法學：零信任最小權限（NSA 2026）、UEBA 行為分析（NITTF）、目的綁定＋雙人覆核（GDPR 問責制）。含 A/B 對照、誠實標未達標、CP 值排序 3 建議，內嵌 2 張 SVG，北歐淺色、老花友善，全文已上網查證。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gov-insider-threat-top3.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gov-insider-threat-top3.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26T16:00:00+08:00
+- 標籤：資安、內部威脅、零信任、UEBA、個資保護、戶政、htmlsvg
+
+## 承緯鬆計畫 — GitHub Issues 自動接力研發
+
+> 把內部研發拆成一張張 GitHub Issue，變成無主任務池：任何 AI 代理人或夥伴都能自己接手、在分支動手、自驗、發 PR，巢（產品）在一次次小步啣泥中自己長大。含三個子計畫（承緯鬆 · 美波/波特玩/波露露，主責 mi/pure/jan，皆需能自主更新前後端並部署）、人類原始 prompt 全文、自動接力迴圈 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/feiyan-plan.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/feiyan-plan.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26T14:00:00+08:00
+- 標籤：飛燕計畫、GitHub Issues、自主研發、AI 代理人、承緯鬆、htmlsvg
+
+## 7 Agentic Patterns · 代理人七心法
+
+> 把 Gary Talks Stuff × IndyDevDan 兩頻道 2026 全年 52 支影片（已排除投資主題）揉成一條由淺入深的學習路徑。先用三方案多維評分選定結構，再採《Everyday Business Storytelling》矽谷敘事法則，七幕「心法→溝通→動手→模組→協作→工程→變局」串成單頁長文。含 7 張仿《Design Patterns》中英命名型樣卡（全寬結構 SVG、Lucide 圖示）、56 段逐字稿原文引證，初學者友善、零中國大陸用語。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/2026-agentic-engineering.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/2026-agentic-engineering.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26T12:00:00+08:00
+- 標籤：傳承、Agentic Engineering、Claude Code、多代理、Skills、htmlsvg、字幕長文
+
+## 傳承：兩千多頁卷宗 OCR → 證據清單目錄（v1→v22）
+
+> 把多本黏合、共 2658 頁的卷宗 OCR 自動還原成法院可用的階層目錄。含人類原始 prompt 全文（001–018 逐字）、v1→v22 完整歷程、最終成果四件套（How-to／程式碼／prompt／去機敏資料樣態），與「為什麼最後突破」——用雙面掃描物理常數 slope-2 取代魔數、被告偵測通用化。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，所有範例皆去機敏（代號化）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T17:00:00+08:00
+- 標籤：傳承、OCR、二元評測、MapReduce、htmlsvg、禁overfitting
+
+## 傳承：opus 與 haiku 低分到高分原理（haiku 反超 opus）
+
+> 同一份卷宗目錄任務：opus 大模型如何從「亂標一通」走到 96 分；haiku 小模型接同一套劇本卻仍「笨笨的」只剩 52 分，最後又如何翻到 100 分、在同一把 27 題二元尺上反超 opus。詳解兩條曲線卡關原因不同、認知負荷轉移（確定性預分類器＋移送書當事人欄人物權威表＋merge 護欄，haiku 只填窄殘差）、以及為何最後突破。內嵌 4 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T03:30:00+08:00
+- 標籤：傳承、haiku、小模型超越大模型、認知負荷轉移、禁overfitting
+
+## 傳承：人工多維度尺 × 平行 DAG，haiku 66→91（v17→v25）
+
+> 接續上一章：使用者要求改用人工手動多維度尺（非二元）參考黃金答案打分，並以 GEPA 反思演化把 haiku 從 66 推到 >90。詳解二元尺 vs 人工尺背離、產生器與裁判分離（資料限制感知校準）、頁碼與文字一起進化（節點照抄 g= ＋ duplex 換算）、以及自建嚴謹 bun TS 平行 DAG（map-reduce、claude -p haiku 乾淨上下文、併發 5、3.5 分鐘）落地 Claude Code dynamic workflow 精神，最後以 Pareto 互補合併兩線收斂於 ≈91–92。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-dag-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-outline-haiku-dag-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T08:00:00+08:00
+- 標籤：傳承、haiku、人工多維度尺、GEPA、平行DAG、claude -p、dynamic workflow、map-reduce、禁overfitting
+
+## 傳承：pi 31B × 影像層視覺 × 泛化（v26→v55，定版 ~85）
+
+> 接續上一章：把生產級 31B（pi -p）接進管線、用多模態視覺破文字 OCR 天花板，全程零 hardcode、零 PII。詳解 pi 無內建子代理人故以 bun TS 多次呼叫 pi -p 換系統提示做專責分工、智慧路由（文字密度<40才送視覺）的可重用視覺前處理層、移除 overfitting 後泛化版反而更高、最重要方法論「徹查 OCR 再判資料限制」（§233 死者父繼母關係其實寫在偵訊頁 OCR、委任人身分由視覺讀委任狀皆合法還原；反例觀護 3 群父節點/病歷機構碼徹查後確認真不可還原），以及加權數學證明 >88 與「禁 overfitting＋禁 PII」雙鐵律互斥（上限 ~87），使用者最終裁決接受 v55 ~85 誠實定版。內嵌 3 張 SVG，丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例皆去機敏（代號化）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi31b-vision-generalize-v55.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi31b-vision-generalize-v55.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T14:00:00+08:00
+- 標籤：傳承、pi 31B、多模態視覺、影像層OCR、泛化、禁overfitting、禁PII、dynamic workflow、資料限制
+
+## 傳承：直連 vLLM vs pi -p — 本案推論管道抉擇（更快/更省/更準/更好）
+
+> 同一顆自架 gemma-4-31b，比較「直連 OpenAI 相容 HTTP」與「透過 pi -p 代理人」在本案大量平行抽取情境的優劣。實證查證：vLLM 連續批次在高併發 2–4× 吞吐、CLI 子行程 spawn ~400ms/次（多步比常駐慢 ~5.6×）、pi（pi.dev/earendil-works）有 print/json/rpc/sdk 四模式。結論：更快更省＝直連勝（高併發批次＋免逐次 spawn）、更準＝文字平手但視覺直連勝（image_url 可控）、更好＝混合架構（pi 管治理換供應商/AGENTS.md/SSOT、直連或 pi-RPC 常駐管重負載批次）；關鍵突破是把「推論」與「治理」分層。內嵌 SVG（三種架構對照）、丹麥簡約風、老花眼友善，含人類原始 prompt 全文與成果四件套，所有範例去機敏（端點/角色代號化）。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/vllm-direct-vs-pi-p.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/vllm-direct-vs-pi-p.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-27T15:00:00+08:00
+- 標籤：傳承、vLLM、pi -p、pi.dev、連續批次、推論管道、混合架構、效能
+
+## 教學傳承：戰情室資料湖 prompt 從頭到尾
+
+> 把一整段真實對話拆成可複製的 prompt 工作法：從 ./data/ 兩個檔，逼出以人為中心痛點→三標案定位→矽谷流敘事→三個 2026 真實事件情境 HTML。含原始 prompt 全文、v1→v8 歷程、四件套、突破關鍵變因。內嵌流程圖 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-teaching-prompt.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-teaching-prompt.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：教學、prompt、JTBD、htmlsvg、工作法
+
+## 戰情室情境3：學甲爐渣案 × 記者貴賓語音展演
+
+> 用 2026 真實事件學甲 21 億爐渣案＋環境部 AI 司，演練記者來訪時以語音對話展演「衛星＋車流＋檢舉資料融合揪出爐渣案」的偵蒐時間軸，隨問隨溯源。套矽谷流敘事四要素，內嵌偵蒐時間軸 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s3-xuejia.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s3-xuejia.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、戰情室、學甲爐渣、AI偵蒐、語音展演
+
+## 戰情室情境2：鳳山溪偷排死魚 × 會議室緊急應變
+
+> 用 2026 真實事件鳳山溪颱風前偷排死魚 2 公里，演練部長召集會議室大屏一次調閱河段疊圖、3 廠比對、裁罰試算、當場分工。套矽谷流敘事四要素＋四段分析，內嵌擬真大屏 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s2-fengshan.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s2-fengshan.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、戰情室、鳳山溪、水污染、應變
+
+## 戰情室情境1：岡山爆炸 × 部長手機 Line 問答
+
+> 用 2026 真實事件岡山工廠爆炸，演練部長不在戰情室時以手機 Line 60 秒取得半徑列管設施清單＋即時風向擴散＋可溯源回應立委媒體。套矽谷流敘事四要素＋痛點/現況/替代方案/情境演變，內嵌擬真手機畫面 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s1-gangshan.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-s1-gangshan.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、戰情室、岡山爆炸、Agentic AI、應變
+
+## 環境部戰情室：Top 10 痛點（矽谷流 JTBD）
+
+> 標案二戰情室／視覺儀表板：以六種角色（署長、值勤指揮官、戰情幕僚、大屏工程師、跨機關協調官、稽查員）為中心，用矽谷流 JTBD 句型寫 Top 10 痛點，技術以 Agentic 主動告警為主。內嵌三層架構 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-top10-jtbd.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-warroom-top10-jtbd.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、戰情室、JTBD、Agentic AI、儀表板
+
+## 環境部資料湖 v2：Top 10 痛點改矽谷流 JTBD
+
+> v2 版把 Top 10 痛點改寫為《INSPIRED 矽谷最夯》＋ JTBD 句型（當…想要…這樣就能…卡在…造成…），愛上問題而非解決方案；保留十大亮點與三案配合 SVG。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights-v2.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights-v2.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、資料湖、JTBD、矽谷流、Cagan
+
+## 環境部資料湖：十大實施亮點（Agentic × SKILL.md）
+
+> 以人為中心拆解環境部三標案最底層「資料湖」：去向量 RAG、改以 Agentic AI 即時代打來源＋SKILL.md 技能卡（SSOT），貫徹 BDD/SOLID/DRY/KISS/SSOT。Top 10 痛點＋十大亮點（舊痛/新解/效益/地雷），內嵌 SVG、丹麥簡約、老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/epa-lake-highlights.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-25T18:00:00+08:00
+- 標籤：環境部、資料湖、Agentic AI、SKILL.md、痛點分析
+
+## 鴻海公文 AI 模型評測方案：二元評測 × 三路徑
+
+> 一場 4 分鐘會議敲定如何公正地幫第三方公文 AI 系統做品質評測：否決受測方自評，主推「端點二元評測」與「SKILL.md A/B Test」兩條路徑，皆以鴻海提供的 20 份去識別公文樣態（或 5 題黃金答案）為基準奠基。內嵌全景 SVG、置頂逐字稿全文、四件套（How-to／程式碼／prompt／資料樣態），丹麥簡約風、老花友善、去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/鴻海公文AI模型評測方案-二元評測三路徑傳承.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/鴻海公文AI模型評測方案-二元評測三路徑傳承.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T16:30:00+08:00
+- 標籤：鴻海、公文 AI、模型評測、二元評測、工研院 AI 測試實驗室
+
+## 環境部 Gemini 全地端落地 — 是否承接 SI 可行性評估
+
+> 用約 15 億／攤 10 年把 Gemini 搬進台灣機房，四個付錢角色拆解（Google／SI 架設／PMO 顧問／波特玩軟體原廠），CAMEO 年抽 10%＝1500 萬，綁工研院百家策評測當亮點，團隊表決傾向接 SI。內嵌 SVG、丹麥簡約風、老花友善、自包含單檔。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-moenv-onprem-si.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-moenv-onprem-si.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T16:00:00+08:00
+- 標籤：環境部、Gemini 地端、SI 可行性、百家策評測、主權 AI
+
+## CAMEO 團隊工作方法與招募面試對談
+
+> 從一場 RD/PM 面試看 CAMEO 的核心方法論——高品味題庫、二元評測、可驗證進化技能，與「解決問題而非賣產品」的定位；現場 vs coding 工時配比、雙人組合編組、一個月做完轉維護。內嵌 SVG、丹麥簡約風、老花友善、自包含單檔。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/cameo-team-method-interview.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/cameo-team-method-interview.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T16:05:00+08:00
+- 標籤：團隊方法論、高品味題庫、二元評測、可驗證進化技能、招募
+
+## 動態題庫：國家主權 AI 的評測護城河
+
+> 承接百家測計畫，從國家主權 AI 效益剖析「每次都換題」的優勢。固定題庫會被送測廠商抄題、微調刷榜（Benchmark Contamination），動態題庫每次隨機抽生 5–20 題＋地端去機敏，一條龍七步全自動：gemma-31b 去機敏 → Opus 出題／黃金答案／二元 rubric → 訓練集＋保留集打分 → A/B 雙盲 → 評測報告＋技能進化建議書。內嵌三張 SVG，丹麥簡約風、老花友善、自包含單檔。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/動態題庫-國家主權AI評測優勢傳承.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/動態題庫-國家主權AI評測優勢傳承.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T13:25:00+08:00
+- 標籤：國家主權 AI、動態題庫、防作弊、二元評測、技能進化
+
+## 百家測計畫 — AI 評測商業模式傳承
+
+> 把「AI 一定要送測」入法與標案（像資安抽 10% 預算），再用一套會自動去機敏、自動出題、跑多模型驗測的工具，解決「機關根本不會出題」的最大卡點。四方角色、雙金流分潤、逆推出題法、動態二元評測、規模化領域題庫。丹麥簡約風、老花友善、自包含單檔。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/百家測計畫-AI評測商業模式傳承-2026-06-24.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/百家測計畫-AI評測商業模式傳承-2026-06-24.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T13:10:00+08:00
+- 標籤：AI 基本法、百家測計畫、雙金流分潤、自動化評測、傳承
+
+## pi.dev × Hermes Agent：2026 年 5–6 月最新評價比較
+
+> 彙整 2026/05–06 多篇實測評論與 GitHub 即時資料，比較極簡編碼 harness（pi.dev）與自我成長個人代理（Hermes Agent）。內嵌六維記分卡與定位地圖 SVG，含同名 Pi 釐清地雷。丹麥簡約風、老花友善、自包含單檔。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-vs-hermes-review.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-vs-hermes-review.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T12:50:00+08:00
+- 標籤：pi.dev、Hermes Agent、AI 代理、評測比較、傳承
+
+## 主機端機敏資料加密工作區：gocryptfs 傳承
+
+> 用 gocryptfs（檔案級加密）而非全碟加密守護主機端機敏資料：三類加密層級對比、掛載/卸載生命週期與紅色暴露窗口、macOS/Linux/Windows 三平台支援矩陣。關鍵突破＝選對加密『類別』而非追求最強。內嵌 3 張 SVG，丹麥簡約風、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/encrypted-workspace-gocryptfs.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/encrypted-workspace-gocryptfs.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T12:40:53+08:00
+- 標籤：gocryptfs、加密工作區、機敏資料、macFUSE、傳承
+
+## 主權 AI 的命脈：機敏評測商業模式與國家標準傳承
+
+> 工研院×AIEC 機敏評測策略會議傳承：法務部→巨鷗→CAMEO 轉包鏈與送測費剝半分潤、四大護城河（繁中去機密／國網 1.6 折／A/B test 2.0／機關經驗）、評測工具 v1.0→v2.0（從只評分到 A/B 技能進化）、把「臺灣機敏評測標準」推成國家標準寫進政府標案。含金流圖、送測 SOP、護城河、國家標準四張 SVG 與四件套。北歐淺色、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/aiec-sensitive-eval-business-model.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/aiec-sensitive-eval-business-model.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-24T11:08:38+08:00
+- 標籤：機敏評測、工研院、AIEC、商業模式、高品味題庫
+
+## G 泰德的真相，與「波公子」公文代理人傳承
+
+> 國家級公文模型 G 泰德（GPT-OSS 20B fine-tune，中研院研發、國網中心發包、七機關合作）用了不好用；國網中心委託我們做波公子（Pi Mono ＋ Gemma 31B），二元評測把公文從 76 → 94 分。含五單位四態度全景、技術堆疊、機敏評測傳承鏈、突破關鍵變因與四件套。北歐淺色、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/g-taide-truth-bo-gong-zi.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/g-taide-truth-bo-gong-zi.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-23T16:36:00+08:00
+- 標籤：G 泰德、波公子、公文代理人、二元評測、機敏評測
+
+## 不起訴處分書生成 · 自適應迭代傳承（v1→v11）
+
+> 用小模型(pi -p 31B)把去機敏移送書變成可列印不起訴處分書：11 輪迭代總分 62.8→94.2。含 2026 上網啟發、三階段機械架構、6 維評分、四件套與 SVG 圖解。方法論定理：硬約束機械保證、正面內容 prompt 注入。北歐淺色、老花友善、全去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-iteration-legacy.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-iteration-legacy.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-23T16:30:00+08:00
+- 標籤：自適應迭代、小模型、prompt 工程、法律文書、去機敏
+
+## 不起訴處分書 · 二十份合成訓練資料傳承
+
+> 為訓練不起訴書撰寫，用平行 subagent 生成詐欺/殺人致死/酒駕毒駕共 20 份合成案件（每案三檔：移送書→檢察官筆記→不起訴處分書）。雙人 Opus 品管＋3 個查證 subagent 逐一上網核對法條款次與判例字號：揪出幻覺判例(88台上5848/92台上128實為強盜案)、自相矛盾濃度(1,258>標準500)、毒駕款次誤用、醫療法項次。核心心法：機械層＋語意層＋法源層三重把關、判例字號泛化優先寧缺勿假。北歐淺色、老花友善、全去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-synthetic-data.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/non-prosecution-synthetic-data.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-23T17:00:00+08:00
+- 標籤：合成資料、平行代理人、法規查證、判例幻覺、去機敏
+
+## 地端 vLLM 架設指南 · 給國網中心參考
+
+> 單卡 RTX PRO 6000 Blackwell 96GB 上架設 Gemma 4（31B/26B/Diffusion/ASR）：Content length 與 KV cache、GMU 顯存預算、NVFP4 量化、MTP、工具呼叫、SSOT＋systemd。北歐淺色、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-vllm-setup-guide.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/nchc-vllm-setup-guide.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-23T16:00:00+08:00
+- 標籤：vLLM、Gemma 4、NCHC、GPU、地端部署
+
+## pi.dev 最好用的 Extensions 與 Skills · 研究傳承
+
+> Pi Coding Agent 生態系盤點：pi-goal/pi-subagents/pi-lsp/pi-caffeinate 四套必裝，含研究歷程與安裝指令。北歐淺色、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-extensions-skills.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-extensions-skills.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-23T12:00:00+08:00
+- 標籤：pi.dev、extensions、skills、Pi Agent
+
+## Gemini 透通生圖 · 傳承文件（nano banana / br- / ADC 免 key）
+
+> Gemini 透明背景生圖完整傳承：ADC 免金鑰、nano banana 模型、br- 前綴流程。北歐淺色、老花友善，已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-transparent-image-gen-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-transparent-image-gen-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：生圖
+- 發佈日期：2026-06-22T23:00:00+08:00
+- 標籤：Gemini、生圖、nano banana、ADC
+
+## Gemini File API 相容語音上傳（→ GCS，全程 ADC）
+
+> Gemini File API 相容的語音上傳流程：直送 GCS、全程 ADC 免金鑰。傳承文件，北歐淺色、老花友善，已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-fileapi-stt-upload-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gemini-fileapi-stt-upload-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：語音
+- 發佈日期：2026-06-22T22:43:00+08:00
+- 標籤：Gemini、File API、STT、GCS
+
+## VM 最終規格 n1-custom-1-2048（1 vCPU / 2 GB）實機壓測通過
+
+> VM 規格 n1-custom-1-2048 實機壓測：8 條指令參考、13 個單元測試全過、端到端壓測 60/60 100%。北歐淺色、老花友善，已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/vm-final-n1-custom-1-2048-verified.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/vm-final-n1-custom-1-2048-verified.html/llms.txt): 該專案的 llms.txt
+- 類型：壓測
+- 發佈日期：2026-06-22T18:40:00+08:00
+- 標籤：VM、壓測、GCP、n1-custom
+
+## 資安應變 Checklist | Incident Response
+
+> 資安事件應變待辦清單。丹麥簡約風、老花友善。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/todo_list.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/todo_list.html/llms.txt): 該專案的 llms.txt
+- 類型：資安應變
+- 發佈日期：2026-06-22T09:35:00+08:00
+- 標籤：資安、應變、Checklist、Incident Response
+
+## AI 承辦怎麼定價？用「1/3 法則」三輪 GAN 練出來的商業模式
+
+> 賣的不是軟體，是一位越用越懂你、換誰都帶不走的地端 AI 承辦——按它做完且通過第三方認證的公文件數付錢，只收人工成本的三分之一。對齊 YC 2026『軟體護城河已崩、賣替代人力不賣工具、outcome-based 定價、捕捉 20–50% 價值留客戶 ≥2× ROI』。三輪 GAN：v1 直覺雙層→v2 從小到大四階斜坡→v3 賣替代人力＋1/3 定價。三層數字：個人 ~30 萬／團隊 ~130 萬／機關 ~530 萬＋認證 80 萬/標，per-件 ~NT$330；先 1/4 搶進場、續約 1/3 收割。含人類原始 prompt(01-09)、演進歷程、四件套(How-to／pricing.py 試算／對外一句話／去機敏計費 JSON)、突破說明(換『賣的東西』＋換『定價的尺』)。丹麥簡約、老花友善、已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ai-clerk-pricing-one-third.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ai-clerk-pricing-one-third.html/llms.txt): 該專案的 llms.txt
+- 類型：定價
+- 發佈日期：2026-06-22T08:10:00+08:00
+- 標籤：商業模式、YC 2026、outcome-based 定價、AI 承辦、GAN
+
+## 讓 .botrun 乾淨 dump 成 JSONL ＋ 純文字 blob
+
+> 把鎖在 SQLite 箱子裡的真相攤成 GitHub 逐行可 diff 的純文字 SSOT：dump／build／verify 三命令，純文字＝真相、.botrun＝可重建產物，往返逐位元組等價守門 14/14 PASS。含流程 SVG、五點動機、三方案打分、演進歷程與四件套。北歐淺色、老花友善，已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-ssot-dump-jsonl-blob.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-ssot-dump-jsonl-blob.html/llms.txt): 該專案的 llms.txt
+- 類型：SSOT
+- 發佈日期：2026-06-22T07:00:00+08:00
+- 標籤：SQLite、.botrun、SSOT、JSONL、往返驗證
+
+## 為什麼 .botrun v4.2.0 禁 deflate、改用 zstd — 一個反直覺的壓縮真相
+
+> 先各自壓一次再整包壓，反而更大、還搜不到字。用真實數字講給高中生聽：① deflate+zstd=87,876 vs 不壓+zstd=60,392(小31%,因 zstd 看得到跨檔重複而 deflate 把它打散) ② deflate 過的內容無法 LIKE(壓縮泥),不壓縮版同查詢命中 6 檔。結論升格成 v4.2.0 規格：sqlar.data 恆未壓縮(可 content LIKE)、要壓縮整檔 zstd 副檔名 .botrun.zstd/.🤖.zstd、禁雙重壓縮。含人類原始 prompt(001-007)、發現歷程、四件套、突破(壓縮分層:該留明文留明文、該壓一次壓到底)。丹麥簡約、老花友善、內嵌 SVG。
+
+**關鍵觀念：**
+- 雙重壓縮反效果
+- deflate 殺死 LIKE 內容搜尋
+- raw+zstd 跨檔去冗餘
+- sqlar.data 恆未壓縮
+- 整檔 zstd 分發
+- 壓縮分層原則
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v42-deflate-vs-zstd.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v42-deflate-vs-zstd.html/llms.txt): 該專案的 llms.txt
+- 類型：規格決策
+- 發佈日期：2026-06-21T22:30:00+08:00
+- 標籤：botrun、spec v4.2.0、zstd、deflate、壓縮、LIKE、sqlar、.botrun.zstd、IAP
+
+## 徹底讀懂 .botrun / 🤖 v4.1.0 規格 — 用真實資料，高中生也看得懂
+
+> 一個 .botrun 就是裝在 SQLite 裡的大腦。本頁用真實資料講透 v4.0.0→v4.1.0 四大升級：①檔案層改官方 sqlar(自動壓縮+記住權限,救回 .sh 執行位,真實 22723→7857 省66%) ③lessons 加 severity 致命/嚴重/注意 ④answers/scores 加 created_at+UNIQUE ⑤把規矩寫進 schema 的 CHECK 門禁(score 999 直接拒寫)+role 取代猜字尾。含人類原始 prompt 全文(001-004)、升級歷程、四件套、突破關鍵(採官方標準+資料庫當守門員)、archive 未編入地雷與 writefile bootstrap 解法。丹麥簡約、老花友善、內嵌 SVG。
+
+**關鍵觀念：**
+- 官方 sqlar 取代手刻 files
+- schema CHECK 取代註解慣例
+- lessons severity 分級
+- answers.role 取代字尾猜
+- created_at+UNIQUE 稽核
+- archive 未編入→writefile bootstrap
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v41-explainer.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-spec-v41-explainer.html/llms.txt): 該專案的 llms.txt
+- 類型：規格教學
+- 發佈日期：2026-06-21T19:10:00+08:00
+- 標籤：botrun、sqlar、SQLite、spec v4.1.0、CHECK 契約、severity、role、壓縮、權限位、IAP
+
+## 傳承：一顆 260 KB SQLite 裝下兩專案全部血淚 — pi agent × hermes agent 安裝大腦(.botrun v4.0.0)
+
+> 把 single-db-install-pi-ollama 與 hermes 兩專案的全部檔案/Dockerfile/docs/地雷封裝成連 Haiku 都能查的單一 SQLite。含人類原始 prompt 全文(001-021)、v1→v8 演進歷程、四件套(How-to/程式碼/真執行考題/資料樣態)、突破關鍵(把『能查到≠能跑通』『有輸出≠真生成』兩個等號打破:從知識問答轉真執行驗收+修正驗證器只認真模型輸出)、PII 去機敏(零明文金鑰)。丹麥簡約風、老花友善、內嵌 SVG。pi 8/8 · hermes 8/8 真執行通過。
+
+**關鍵觀念：**
+- 7 表 .botrun v4.0.0
+- blob 內嵌全工作樹+SHA256
+- LIKE 繁體友善禁 FTS5
+- 真執行考題 golden=通過條件
+- 驗證器只認真生成避假通過
+- 8 model 多來源真生成
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/single-db-install-brain-heritage.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/single-db-install-brain-heritage.html/llms.txt): 該專案的 llms.txt
+- 類型：單檔大腦
+- 發佈日期：2026-06-21T18:30:00+08:00
+- 標籤：botrun、SQLite、pi agent、hermes、Haiku、LIKE 禁 FTS5、docker alpine、真執行驗收、IAP
+
+## 傳承：Hermes Gateway 團隊協作 — 20 真人夥伴如何各自開通(Signal/LINE/Google Chat/Gmail)
+
+> 從『我以為是單一員工』到搞懂 gateway 多 profile 授權的完整理解傳承。含人類原始 prompt 全文(001-007)、v1→v7 演進歷程、四件套(How-to/設定碼/prompt/資料樣態)、突破關鍵(把『可見性』與『授權』兩層切開:可見性可鎖整個 @cameo.tw workspace,但 allowlist 不支援網域萬用要逐一列 email/門號/LINE ID=安全設計)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG 架構圖。
+
+**關鍵觀念：**
+- gateway 多 profile 隔離
+- DM pairing 配對碼
+- allowlist 逐一授權
+- 可見性 vs 授權兩層
+- MIT 開源 22 平台
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-gateway-team-onboarding.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-gateway-team-onboarding.html/llms.txt): 該專案的 llms.txt
+- 類型：團隊傳承
+- 發佈日期：2026-06-21T17:30:00+08:00
+- 標籤：Hermes Gateway、團隊協作、Signal、LINE、Google Chat、Gmail、IAP、allowlist
+
+## 傳承：乾淨 Alpine Docker 跑通 Hermes CLI 8 模型多後端
+
+> 一個乾淨 node:22-alpine 容器裝 Hermes CLI v0.17，打通四個 provider 八個模型(Anthropic Opus 4.8 / NCHC 國網 Gemma4 31B+26B / Mac host 原生 Ollama 31B+26B+12B MLX / botrun-tower vLLM 31B+26B)全部以 hermes 本體實測對話成功(8/8)。含人類原始 prompt 全文(001-013)、v1→v9 演進歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(改用 node:22-alpine 繞開 musl/glibc Node exit127、容器經 host.docker.internal+python 轉發器跳板 Tailscale、hermes 單一 active provider 靠 config set 切換)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG。
+
+**關鍵觀念：**
+- alpine 跑官方 Node 必 exit127(glibc vs musl)，改基底 node:22-alpine 讓 installer 偵測到夠新 node 即跳過下載
+- 容器看不到 Tailscale，tower 需 Mac host 跑 python TCP 轉發器當跳板，連 host 一律 host.docker.internal
+- hermes v0.17 是單一 active provider，本機端點一律 provider=custom，切換靠 config set base_url/default
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-docker-8models.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/hermes-docker-8models.html/llms.txt): 該專案的 llms.txt
+- 類型：全棧傳承
+- 發佈日期：2026-06-21T16:05:00+08:00
+- 標籤：Hermes CLI、Alpine Docker、Ollama MLX、NCHC 國網、botrun-tower、Anthropic Opus 4.8、Gemma4
+
+## 傳承：乾淨 Alpine Docker 跑通 pi.dev 全棧 8 模型
+
+> 一個乾淨 Alpine 容器裝 pi.dev，打通四個 provider 八個模型(Anthropic Opus 4.8 / NCHC 國網 Gemma4 31B+26B / Mac host 原生 Ollama 31B+26B+12B MLX / botrun-tower vLLM 31B+26B)全部實測真生成。含人類原始 prompt 全文、v1→v8 演進歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(本地模型改連 host 繞開 musl+MLX 死結、envsubst 注入金鑰解 pi 不內插 $VAR、node:22-alpine 對齊 pi0.79+Opus4.8)、PII 去機敏。丹麥簡約風、老花友善、內嵌 SVG。
+
+**關鍵觀念：**
+- 本地模型不在容器內跑、改連 Mac host 原生 ollama，一次繞開 musl/glibc/MLX 三重死結
+- pi 不會內插 models.json 的 $VAR，改用 envsubst 啟動時注入金鑰(仍不落檔)解掉 NCHC 401
+- Opus 4.8 需 pi>=0.79 + Node>=22.19，基底改 node:22-alpine 才認得 adaptive thinking
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/heritage-alpine-pi-stack.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/heritage-alpine-pi-stack.html/llms.txt): 該專案的 llms.txt
+- 類型：全棧傳承
+- 發佈日期：2026-06-21T16:30:00+08:00
+- 標籤：pi.dev、Alpine Docker、Ollama MLX、NCHC 國網、botrun-tower、Anthropic Opus 4.8、Gemma4
+
+## YouTube 熱度比較：Pi agent vs Hermes agent（近兩週）
+
+> 用 Claude in Chrome 快速驗證：以 YouTube『依上傳日期排序』抓兩關鍵字首頁前 ~20 筆，篩出近兩週影片並加總公開觀看數。結論：Hermes ≈ 58.4 萬 vs Pi ≈ 18.9 萬，約 3.1×；Hermes 有兩支破 10 萬爆款(19萬/12萬)，Pi 最高僅 4 萬且高峰多落在 3-4 週前。含人類原始 prompt 全文、v1→v4 歷程、四件套(How-to/程式碼/prompt/資料樣態)、突破關鍵(sp 排序參數+純文字抽取)、PII 紅線與限制聲明、內嵌 SVG 圖解。丹麥簡約風、老花友善。
+
+**關鍵觀念：**
+- YouTube 搜尋加 sp=CAISBAgEEAE%3D『依上傳日期排序』是框出時間窗口的關鍵變因
+- get_page_text 純文字抽取比逐張截圖快又省 token，達成『快驗』
+- 快驗求方向正確+透明限制(抽樣/相對時間誤差/累積非新增量)，非小數點精度
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/youtube-heat-pi-vs-hermes.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/youtube-heat-pi-vs-hermes.html/llms.txt): 該專案的 llms.txt
+- 類型：快驗傳承
+- 發佈日期：2026-06-21T15:30:00+08:00
+- 標籤：YouTube 熱度、Pi agent、Hermes agent、Claude in Chrome、快速驗證、資料新聞
+
+## ollama vs LM Studio：同量化 Gemma 4 速度對決，與「空 context 為何影響 TPS」實測
+
+> M4 Max 128GB 上以相同 4bit、no thinking、prompt「說個故事」對比 ollama 與 LM Studio(MLX) 跑 Gemma 4 26B/31B 的 TTFT 與 TPS。結論：ollama 反應快(低 TTFT)、LM Studio 吐字略快(高 TPS)，26B MoE(僅4B active)是兩邊甜蜜點。深掘使用者疑問『空空的 context 為何拖慢速度』：揭露 KV cache 預先配置佔記憶體頻寬、256K→8K 大躍進但 8K→4K 進入平台期、真正大變因其實是載入 parallel 路數。含 v1→v5 歷程、MoE 與 context 曲線 SVG、兩引擎量測程式碼、完整數據附錄。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- KV cache 按 num_ctx 預先配滿，巨大 context 即使空著也佔記憶體頻寬→拖慢 token generation(Mac 為頻寬瓶頸)
+- 縮 context 有天花板：256K→8K 大幅變快，但 8K→4K 持平(平台期)；使用者『空的不該影響』直覺在小範圍正確
+- 真正大幅改變單流速度的是載入設定(parallel 路數)，非 context 大小：LM Studio 4K parallel=4 反而變慢
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/ollama-vs-lmstudio-ttft-context.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/ollama-vs-lmstudio-ttft-context.html/llms.txt): 該專案的 llms.txt
+- 類型：實測傳承
+- 發佈日期：2026-06-21T13:01:09+08:00
+- 標籤：ollama vs LM Studio、Gemma 4、TTFT/TPS、KV cache、context window、MoE vs Dense、M4 Max
+
+## Gemma 4 MLX 三模型實測：TTFT 與 TPS（M4 Max 128GB）
+
+> 在 Apple M4 Max 128GB 上以 ollama 0.30.7 + MLX，no thinking、prompt「說個故事」實測 12b/26b/31b-mlx 三顆 Gemma 4 的首字延遲(TTFT)與生成速度(TPS)。反直覺發現：26B(MoE,4B active) 100 tok/s 反而最快，是 12B dense(52) 兩倍、31B dense(16) 六倍。含冷啟vs熱機歷程、MoE 為何更快的 SVG 圖解、量測腳本與 API 計時欄位解說、16GB/128GB 選型建議。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 速度由架構決定：26B-A4B 是 MoE，每個 token 只啟動 4B 參數，比 12B dense 全動還快
+- TTFT 冷啟(載入)1~9秒、熱機(keep_alive)僅 59~134ms；公平比較必須排除冷啟
+- 選型：日常用 26b-mlx(快又準)、最高品質用 31b-mlx、輕量/16GB 用 12b-mlx 並縮短 context
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/gemma4-mlx-ttft-tps-bench.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/gemma4-mlx-ttft-tps-bench.html/llms.txt): 該專案的 llms.txt
+- 類型：實測傳承
+- 發佈日期：2026-06-21T10:10:34+08:00
+- 標籤：Gemma 4、MLX、ollama、TTFT/TPS、MoE vs Dense、M4 Max
+
+## 把一顆 SQLite 教會地端小模型穩定做事：波聞管線 v2→v8 進化傳承
+
+> 一顆 .🤖（標準 SQLite）裝進指令卡＋工具＋網頁範本，用七次迭代教會地端 Gemma 4 26B 把今日新聞做成人本排行網頁。置頂逐字保留 13 條人類提示，記錄每輪做法→結果→演進理由；揭露突破關鍵＝『消除摩擦 > 堆疊能力』（先拆評測與 GAN，再讓 blob 第一次全倒、工具自己找得到 db、分數用 printf 直寫 csv）。含最終四件套(How-to/程式碼/prompt/資料樣態)與誠實未達標。最終由 pi＋本機 LM Studio(localhost:1234, gemma-4-26b-a4b) 全地端跑通。內嵌 SVG、北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 突破關鍵是『消除摩擦 > 堆疊能力』：先做減法(拆評測/GAN)，再讓工具第一次就全部可用、找得到 db、不爆 token
+- 小模型只產『最小新資訊』並直接寫檔；固定範本與組裝交給程式(s2_apply/s4_build)，避免重複吐字與重打 HTML
+- 最終全地端：pi 驅動 + 本機 LM Studio(localhost:1234, google/gemma-4-26b-a4b)，機敏不外洩
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/bowen-pipeline-evolution.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/bowen-pipeline-evolution.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承筆記
+- 發佈日期：2026-06-21T09:25:35+08:00
+- 標籤：SQLite 單檔大腦、地端小模型、Gemma 4 26B、效率/去摩擦、blob 一次全倒、pi + LM Studio
+
+## 把丟掉的頁碼從掃描檔裡找回來：多卷黏合 PDF 頁碼還原的完整傳承
+
+> 某殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B。逐字保留 18 條人類提示（每條附白話翻譯），揭露整場關鍵一招——改用 27 項二元評測（yes/no 加權到 100）讓分數不再忽高忽低；以及如何從 gold 反推「多份卷證按順序黏成 2000 多頁」的偏移演算法，泛化把頁碼精準補回，產線只吃 OCR＋檔名頁碼、不塞本案專屬數字。含最終 How-To。內容已去機敏，供內部傳承。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 整場關鍵一招：把「憑感覺給分」改成 27 項二元評測（yes/no、各有權重、加總 100），分數才穩、能指引進步
+- 多份卷證按順序黏成 2000 多頁是可拆解的——從 gold 反推偏移演算法的「長相」，泛化還原頁碼而非寫死本案數字
+- 球員不能兼裁判：畫目錄的是 31B，評分改用獨立的 Opus subagent；技能放專案本地、機敏絕不進版控
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-page-number-recovery-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-page-number-recovery-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承筆記
+- 發佈日期：2026-06-20T12:30:00+08:00
+- 標籤：PDF 頁碼還原、Gemma-4-31B、二元評測、多卷黏合 offset、去機敏 OCR
+
+## 用 Signal 指揮只屬於你的 AI：Hermes ＋ 本機 31B 端對端加密協作
+
+> 從「Signal 接得上 Hermes 嗎」一路問到「三人祕密群組 + 台北手機跨內網連花蓮 Mac 主機」。一份把信任邊界講清楚的指南：Signal 守好傳輸（E2E + Sealed Sender，公司真的看不到內容），本機 Mac M4 守好明文（31B 地端推論，明文不出門）；揭露雲端 bot 的四個風險點 R1～R4、AI 端才是真正破口、三人群組「單一大腦」七步做法、跨內網 Proxy 相容、以及 ollama-signal-bot／uoltz／signallama 等已驗證口碑。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- E2E 只保證兩端之間；AI bot 本身是收件端點，訊息到主機必須解密成明文——信任從 Signal 公司轉移到誰運營這台 AI 主機
+- 最佳形態＝Mac M4 自架 bot + 本機 31B：兩端都你掌控，明文不出門、對外全加密，把唯一破口收進自己手裡
+- 三人祕密群組用『單一群組大腦』：只一台 Mac 當 AI 主機，@觸發避免搶答；跨內網經 Signal 中繼即通，只需放行對外 443/Proxy
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/signal-hermes-e2e-local-31b.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/signal-hermes-e2e-local-31b.html/llms.txt): 該專案的 llms.txt
+- 類型：資安架構
+- 發佈日期：2026-06-20T10:45:00+08:00
+- 標籤：Signal E2E、Hermes Agent、本機 31B、signal-cli、端對端加密
+
+## 從 36 分到 86 分：多卷黏合 PDF 卷宗目錄自動生成的 14 輪迭代傳承
+
+> 某殺人案 2658 頁去識別化卷宗，地端 Gemma-4-31B + GAN 對抗式自適應迭代，3 小時內 14 版把目錄自動生成分數從 36 推到 86。完整逐字保留 18 條人類指令、每一版設計／分數／時間／教訓，揭露多卷黏合頁碼偏移量（offset）演算法如何破題。全程零黃金洩漏、零個案寫死、零洩題，泛化禁 overfit。內容已去機敏，供內部傳承。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 多卷黏合 PDF 的全域頁碼偏移量（offset）是低分主因，找出偏移演算法是破題關鍵
+- GAN 對抗式自適應迭代：14 版 3 小時把目錄自動生成從 36 分推到 86 分
+- 鐵律泛化禁 overfit、零黃金洩漏／零寫死／零洩題，逐字保留 18 條人類指令傳承
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-toc-14-round-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pdf-toc-14-round-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承筆記
+- 發佈日期：2026-06-19T21:22:00+08:00
+- 標籤：PDF 目錄、Gemma-4-31B、GAN 迭代、去機敏 OCR、頁碼偏移量
+
+## PI × bun 平行 DAG 傳承筆記：2658 頁卷宗目錄標籤實戰
+
+> 用 PI × bun 的平行 DAG 五節點管線，把 2658 頁去機敏卷宗自動打上目錄標籤；成績從 18 分推到 50 分。完整收錄按順序的人類 prompt、三招心法、bun 腳本 DAG 結構、為何非得平行，並誠實列出尚未做好的與下一步 v3。內容已去機敏，供內部傳承。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- PI × bun 五節點平行 DAG 管線：2658 頁卷宗自動目錄標籤
+- 成績 18 分 → 50 分，附完整人類 prompt 與三招心法傳承
+- 誠實標註尚未做好的部分與下一步 v3，不違背工程紀律
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-mapreduce-dag-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-mapreduce-dag-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承筆記
+- 發佈日期：2026-06-19T18:51:00+08:00
+- 標籤：PI、bun、平行 DAG、去機敏 OCR、卷宗目錄標籤
+
+## botrun-pii-web：世界第一個「可成長」去機敏 AI 引擎的設計意圖與全球競爭力
+
+> 跨平台 curl 一行裝、瀏覽器進入、只做去機敏一件事；全自動與半自動交談兼具，漏網一鍵標記、永久記憶、下次不再漏。對標 Private AI／Tonic／John Snow 三家共同缺口——「廠商訓練、客戶不能即時長知識」與重貴限醫療的 HITL——base⊕live 成長引擎加算力熱切換，是市場上沒人合在一顆的組合。北歐淺色、老花友善，內容已去機敏。
+
+**關鍵觀念：**
+- 世界第一個「可成長」去機敏引擎：漏網一鍵標記 → 永久記憶 → 下次同型自動不漏
+- 對標 Private AI／Tonic／John Snow 三家共同缺口，定位差異化賣點
+- 跨平台 curl 一行裝、算力熱切換、單一去機敏任務的輕量交談工作台
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-pii-web-design-intent.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-pii-web-design-intent.html/llms.txt): 該專案的 llms.txt
+- 類型：設計意圖
+- 發佈日期：2026-06-19T12:57:00+08:00
+- 標籤：PII 去機敏、可成長 AI、全球競爭力、base⊕live、跨平台
+
+## 人類提示工程全紀錄：觀護人語音轉文字的 36 條 prompt 靈魂
+
+> 問題怎麼問，決定 AI 怎麼做。完整收錄 guardian 觀護語音轉文字專案 001–036 條人類 prompt，原汁原味依時序編號，分三階段：合成語音 × Breeze 轉文字（001–010）、去機敏 × 順稿迭代（011–025）、交付 DB 一個檔（026–036）。全部去識別、非機密，供內部傳承。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 36 條人類 prompt 依時序原汁原味編號，呈現問題如何決定 AI 產出
+- 三階段流程：合成語音轉文字 → 去機敏順稿 → 交付一個 DB 檔
+- 全部去識別、非機密，可作為內部傳承教材
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-human-prompt-playbook.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-human-prompt-playbook.html/llms.txt): 該專案的 llms.txt
+- 類型：提示工程
+- 發佈日期：2026-06-19T08:30:00+08:00
+- 標籤：提示工程、Prompt、語音轉文字、觀護人、傳承
+
+## .botrun DB 標準 v4.0.0：一顆會進化的技能大腦
+
+> 圖紙輸給出貨單——真正交付的觀護人語音大腦 guardian-voice-brain.db 證明 v3.x「GitHub 倉庫」抽象是錯的，規格向成品學習 bump 到 v4.0.0：meta 自述／可執行 skills／多來源 answers／A-B scores／內建 lessons 七表。含 ER 全圖與進化評分流程 SVG。北歐淺色、老花友善，內容已去機敏。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-spec-v4-evolution-brain.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-spec-v4-evolution-brain.html/llms.txt): 該專案的 llms.txt
+- 類型：DB 標準
+- 發佈日期：2026-06-19T00:09:00+08:00
+- 標籤：SQLite、.botrun、可驗證進化、規格 v4.0.0、可重現評測
+
+## 交付 DB 導覽：guardian-voice-brain 一顆 SQLite＝技能庫＋可重現評測基準
+
+> 把「語音轉文字 → 去機敏 → 順稿」實驗成果裝進一顆 SQLite「腦」：別人系統匯入即可跑技能，並用黃金答案重評自家模型。內附每張表的欄位定義與非機敏範例，不必開 DB 就讀懂結構。北歐淺色、老花友善。
+
+**關鍵觀念：**
+- 一顆 SQLite 檔＝技能庫＋可重現評測基準，匯入即可跑技能
+- 用黃金答案重評自家模型，評測可重現
+- _meta 自我介紹表＋每張表欄位定義與非機敏範例，不開 DB 即可讀懂
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-voice-brain-db-guide.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-voice-brain-db-guide.html/llms.txt): 該專案的 llms.txt
+- 類型：交付導覽
+- 發佈日期：2026-06-18T23:45:00+08:00
+- 標籤：SQLite、技能庫、可重現評測、觀護人、語音轉文字
+
+## 觀護人訪視語音轉文字：Breeze-ASR × 合成資料傳承手冊
+
+> 把觀護人訪視錄音變成可上手的紀要工作流——首選 NCHC whisper-Breeze-ASR-25 高品質轉錄，大檔分段、機敏資料以合成資料去識別化，再串接會議記錄技能產出訪視紀要。北歐淺色、老花友善、可直接照做的傳承手冊。
+
+**關鍵觀念：**
+- NCHC whisper-Breeze-ASR-25 首選轉錄，大檔分段（6–10 分鐘/段）
+- 機敏訪視內容以合成資料去識別化（PERSON_A/CASE_A）
+- 轉錄後自動串接會議記錄技能產出訪視紀要
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-breeze-asr-handover.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/guardian-breeze-asr-handover.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承手冊
+- 發佈日期：2026-06-18T19:30:00+08:00
+- 標籤：Breeze-ASR、語音轉文字、合成資料、觀護人、訪視紀要
+
+## .botrun／.🤖：一個檔案就是一個 AI 大腦（KISS 5 表標準）
+
+> 把說明書、技能、檔案樹、高品味題庫全裝進同一個 SQLite 檔，只有 5 張表、純文字、零外鍵——拷貝這一個檔就把整套能力帶走。技能欄位照抄 pi.dev SKILL.md（name/description/instructions），檔案用 path 的斜線當資料夾樹，題目與答案靠同一個 id 對照、用 train/holdout 分訓練集與保留集防背答案。北歐簡約、老花友善、高中生能懂。
+
+**關鍵觀念：**
+- 一顆 .botrun（=.🤖）＝標準 SQLite，5 表零 FK 純文字，拷貝即傳承整套能力
+- readme(content)＝門面 README.md；skills(name/description/instructions)＝pi.dev SKILL.md 正文欄位官方叫 instructions
+- files(path,content)：path 的斜線就是資料夾樹，不另開 folder 表
+- questions＋answers 共用同一個 id 對照；split＝train(可調)/holdout(孵化期禁看只驗收一次)防背答案
+- 5 優 5 缺：好搬好傳承/小檔快35%/省20%空間，但高並行多檔互通弱（已用 jsonl 雙軌補 diff）
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-kiss-standard.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/botrun-db-kiss-standard.html/llms.txt): 該專案的 llms.txt
+- 類型：DB 標準
+- 標籤：botrun DB、SQLite、KISS、pi.dev SKILL.md、高品味題庫
 
 ## 治好 AI 健忘症：StraTA 戰略軌跡抽象，7B 小模型暴漲 15 倍
 
@@ -4972,6 +5819,16 @@
 - 類型：策略
 - 發佈日期：2026-03-16T09:00:00+08:00
 - 標籤：機敏、5 頁
+
+## pi.dev harness × Gemini gateway 除錯傳承
+
+> 把 pi.dev 接成第 4 個 harness,並一路揪出並修好 botrun-gate 三個 Gemini 工具呼叫 bug(schema 收斂、陣列 content 萃取、工具結果包成物件),讓 Claude 與 Gemini 3.5 Flash 都能 file CRUD + 寫程式碼用 bash 執行。含原始 prompt 逐字稿、v1→v6 演進、四件套、SVG 圖解。
+
+- [線上版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-harness-gemini-gateway.html): HTML 簡報原始頁面
+- [AI 純文字版](https://botrun-protected-257949799705.asia-east1.run.app/pi-dev-harness-gemini-gateway.html/llms.txt): 該專案的 llms.txt
+- 類型：傳承
+- 發佈日期：2026-06-26
+- 標籤：pi.dev、harness、gateway、gemini、傳承
 
 ## 關於
 
