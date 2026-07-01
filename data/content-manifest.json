@@ -14,6 +14,33 @@
   },
   "items": [
     {
+      "id": "session-share-heritage",
+      "title": "一鍵把對話變成唯讀連結 · Session 分享（issue #65）· 傳承",
+      "subtitle": "以前別人開你的對話網址會被擋在門外（unauthorized）；現在按一下「分享」，就得到一張看不懂是誰的亂碼連結，貼給別人就能看（唯讀），不想給了一鍵撕掉、連結立刻 404。預設團隊內、公開要「有意識地」撥開關；URL 用不可猜 token、落地檔名用 sha256 hash，公開 API 回傳實測掃描零個資（email/路徑/projectId/sessionId 全 0）。架構＝token→快照 registry 與來源對話脫鉤（OWASP indirect object reference）。cbh-play-dev 用 claude-in-chrome＋curl 前後端驗測全綠；pnpm lint/build＋1048 單元測試綠；PR botrun/botrun-agent-platform#160。",
+      "protected": true
+    },
+    {
+      "id": "hermes-nchc-stuck-fix",
+      "title": "Hermes×國網 NCHC「卡住／請繼續」治本 · 傳承",
+      "subtitle": "季進的環境管理署(EMA)裁罰 Excel 分析在平臺上『突然停住、要按請繼續』。治本＝不是模型變笨，是容器書桌太小(2GB)攤不開 6 萬頁帳冊→換 4GB 就一口氣做完。三根因：①卡住主因是記憶體 OOM（naive openpyxl 峰值 2004MB 破 2GB、--memory=1536m OOM-kill 137、lean read_only 僅 53MB）②做 Excel 的 Harness 是 Hermes 不是 pi（pi image 無 python）③4GB 已是程式碼預設，只需清掉殘留孤兒容器。四 harness max_tokens 稽核只 pi 寫死 8192（已改省略、讓模型伸縮到 131K）。cbh-play-dev 真機 claude-in-chrome 五情境驗測：Hermes 生成 6 萬筆 EMA Excel→總 60000／命中 4792／前 5 縣市（容器 1.48GiB/4GiB 零 OOM）、browser_navigate 上網彙整附來源、/goal(pi) update_goal 乾淨結束、全程零『請繼續』。含 7 張 SVG 前後比較卡、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "Hermes",
+        "國網 NCHC",
+        "記憶體 OOM",
+        "4GB",
+        "max_tokens",
+        "/goal",
+        "Excel 分析",
+        "cbh-play-dev",
+        "BDD"
+      ]
+    },
+    {
       "id": "trunk-based-feature-flags",
       "title": "持續改 main 不用怕 · 主幹＋功能旗標說服團隊 · 傳承",
       "subtitle": "老方法（GitFlow／長命分支）之所以『不敢改 main』＝每次改都是 big-bang 大爆炸；2026 業界對快節奏／多 AI agent 團隊第一推薦是 trunk-based development ＋ feature flags：每條功能小步（壽命<1天）直接併 main、未完成用旗標藏（併入≠曝光）、部署≠發布、翻旗標秒回滾。敢持續改 main 靠四支柱：CI 綠燈門檻＋小批量＋旗標藏未完成＋秒回滾。以 7 張 SVG 前後比較卡承載論點，引證 DORA（精英團隊活躍分支<3、壽命<1天）、Martin Fowler（big-bang 合併不確定性）、feature-flag 廠商實測（衝突 4-6hr→一天上線 4 次）、2026 AI-assisted development 研究（小批量為 AI 風險關鍵對策）。整合分支（release train）降為特例。PII 去機敏、零中國大陸用語。",
