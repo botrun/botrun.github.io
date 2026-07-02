@@ -1307,6 +1307,24 @@
       ]
     },
     {
+      "id": "agentic-loop-engineering-heritage",
+      "title": "Loop 工程傳承：讓 AI 自己跑到達標為止",
+      "subtitle": "整理自 YouTube 影片字幕與本專案既有代理人七心法傳承文的 Agentic Loop 章節，講清楚 Loop＝Trigger＋Goal 的核心概念、三種觸發方式、兩種目標類型，並收錄六個實戰案例（頁面效能、文件掃描、架構重構、日誌覆蓋、錯誤掃描、產品評測）。高中生白話比喻＋技術人括號真操作雙層敘事，含四格 A/B 對照、誠實標未達標、下一步建議。",
+      "href": "https://botrun-protected-257949799705.asia-east1.run.app/agentic-loop-engineering-heritage.html",
+      "icon": "compare",
+      "badge": "傳承",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-07-02T12:00:00+08:00",
+      "tags": [
+        "Agentic Loop",
+        "迴圈工程",
+        "Trigger Goal",
+        "htmlsvg",
+        "傳承"
+      ]
+    },
+    {
       "id": "g-taide-truth-bo-gong-zi",
       "title": "G 泰德的真相，與「波公子」公文代理人傳承",
       "subtitle": "國家級公文模型 G 泰德（GPT-OSS 20B fine-tune，中研院研發、國網中心發包、七機關合作）用了不好用；國網中心委託我們做波公子（Pi Mono ＋ Gemma 31B），二元評測把公文從 76 → 94 分。含五單位四態度全景、技術堆疊、機敏評測傳承鏈、突破關鍵變因與四件套。北歐淺色、老花友善、已去機敏。",
