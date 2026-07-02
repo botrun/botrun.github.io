@@ -41,7 +41,16 @@
       "icon": "shield-check",
       "badge": "傳承",
       "badgeColor": "#4a7c59",
-      "tags": ["傳承", "法律科技", "卷證目錄", "AI協作", "Bun 全端", "GEPA", "PDF 編輯器"]
+      "tags": [
+        "傳承",
+        "法律科技",
+        "卷證目錄",
+        "AI協作",
+        "Bun 全端",
+        "GEPA",
+        "PDF 編輯器"
+      ],
+      "publishDate": "2026-07-02T18:10:07+08:00"
     },
     {
       "id": "tool-activity-group-single-bar",
@@ -49,7 +58,8 @@
       "subtitle": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup：執行中預設一行原地更新、點開才展開 200px 內滾視窗、每條可看 raw Input/Output。2026 progressive disclosure 兼得初級與資深；四引擎 runner 端已統一 tool_use 協定故前端單點修正零 runner 改動。agent-platform#168/PR#169，cbh-play-dev 實測 pi 117 步全程一條。",
       "protected": true,
       "description": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup",
-      "file": "tool-activity-group-single-bar.html"
+      "file": "tool-activity-group-single-bar.html",
+      "publishDate": "2026-07-02T10:56:15+08:00"
     },
     {
       "id": "pi-skills-8-dossier-pipeline",
@@ -57,13 +67,15 @@
       "subtitle": "四台 AI 機器人（PI.DEV／Hermes／OpenCode／Claude Code）的 token 花費怎麼記成一本共同的帳：以 botrun-gate 當單一節流點只記量落 JSONL、第二段 loader 套單一定價表(pricing.json)算成本進 BigQuery token_ledger（MERGE 冪等、v_usage_daily 出帳）。重點在『錢一定要算對』的對帳四招：①上網查牌價(Opus $5/$25、Gemini 3.5-flash $1.5/$9 per 1M)②單位 per 1,000,000 tokens ③匯率查證(USD→TWD 32.5→31.88，舊值偏高2%) ④對真 BigQuery＋獨立手算逐筆核。抓到『偏高』兩根因：demo 用不真實的 1M token＋匯率灌水→換真實請求量後 Opus 單筆從假的 $7.5 變合理的 $0.105/NT$3.35。含縫檢查(gate 不吐 cache/team_id 為 v2 gap)、未知價 cost NULL 不混假0。自包含 HTML＋SVG、雙層敘事、去機敏。",
       "protected": true,
       "description": "八個繁體中文 pi 技能（拆頁/文字層/OCR/視覺/黃金/一條龍/去機敏/目錄生成），pi 親自驗證多維打分與地雷。",
-      "file": "pi-skills-8-dossier-pipeline.html"
+      "file": "pi-skills-8-dossier-pipeline.html",
+      "publishDate": "2026-07-02T09:24:47+08:00"
     },
     {
       "id": "token-accounting-money-audit-heritage",
       "title": "四大 harness token 計費 · 傳承（含金額對帳紀律）",
       "subtitle": "四台 AI 機器人（PI.DEV／Hermes／OpenCode／Claude Code）的 token 花費怎麼記成一本共同的帳：以 botrun-gate 當單一節流點只記量落 JSONL、第二段 loader 套單一定價表(pricing.json)算成本進 BigQuery token_ledger（MERGE 冪等、v_usage_daily 出帳）。重點在『錢一定要算對』的對帳四招：①上網查牌價(Opus $5/$25、Gemini 3.5-flash $1.5/$9 per 1M)②單位 per 1,000,000 tokens ③匯率查證(USD→TWD 32.5→31.88，舊值偏高2%) ④對真 BigQuery＋獨立手算逐筆核。抓到『偏高』兩根因：demo 用不真實的 1M token＋匯率灌水→換真實請求量後 Opus 單筆從假的 $7.5 變合理的 $0.105/NT$3.35。含縫檢查(gate 不吐 cache/team_id 為 v2 gap)、未知價 cost NULL 不混假0。自包含 HTML＋SVG、雙層敘事、去機敏。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-02T06:45:46+08:00"
     },
     {
       "id": "pi-skill-honest-76-no-overfit",
@@ -89,13 +101,15 @@
       "id": "worktree-integration-verify-heritage",
       "title": "多 worktree 跨 repo 整合驗測 · 傳承（含「何時該止步」）",
       "subtitle": "把一週開的多張 worktree（跨 gate/agent-platform/play-manager 三 repo）整合驗測的完整方法學：為何跨 repo 不能單一 PR（正解 per-repo 整合分支＋一次整合部署＋逐情境 claude-in-chrome 驗）、四把驗測尺（實機/grep部署image/對真BigQuery/金額手算）、兩個教學案例（發佈500誤走GCS、runner 層 fix 被 re-tag 漏掉）、以及最誠實的一課：當「驗測開發到完成」撞上治理與安全邊界（owner 才能 merge 的 repo、禁止代做的 IAM 授權），真正的突破是『把前置做到滿＋乾淨交棒給有權的人』而非硬闖——自動化的完成催促不能凌駕安全與治理界線。含金額查證（USD/TWD 逐筆手算、匯率修 32.5→31.88）。泛化為 global 技能 worktree-integration-verify。自包含 HTML＋SVG 卡片、雙層敘事、去機敏。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-02T01:24:13+08:00"
     },
     {
       "id": "handover-to-seba-cbh-integration",
       "title": "交接給 Seba：cbh-play-dev 整合驗測進度 · 傳承",
       "subtitle": "把一週開的多張 worktree 收攏成 4 個 agent-platform PR（#160 session 分享／#161 Hermes×NCHC maxTokens／#162 放大閱讀空間／#163 發佈HTML本機host），在 cbh-play-dev 用 claude-in-chrome 四情境端到端驗過、全 MERGEABLE/CLEAN，交棒 @sebastian-hsu review+merge。含：跨 3 repo 為何不能單一 PR、驗測抓到的兩個真 bug（發佈500誤走GCS／runner 層 fix 被 re-tag 漏掉）、四 harness 計費第一版對真 BigQuery 端到端＋金額查證（USD/TWD 逐筆手算對上）、004 上線三步（merge→授 VM SA 的 AR 寫權→build/push/upgrade-play）、地雷清單。自包含 HTML 內嵌 SVG 卡片、雙層敘事、去機敏。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-02T00:47:12+08:00"
     },
     {
       "id": "pi-skill-pdf-outline-v55",
@@ -156,13 +170,15 @@
         "agent-platform",
         "cbh-play-dev",
         "PR #162"
-      ]
+      ],
+      "publishDate": "2026-07-01T12:35:18+08:00"
     },
     {
       "id": "session-share-heritage",
       "title": "一鍵把對話變成唯讀連結 · Session 分享（issue #65）· 傳承",
       "subtitle": "以前別人開你的對話網址會被擋在門外（unauthorized）；現在按一下「分享」，就得到一張看不懂是誰的亂碼連結，貼給別人就能看（唯讀），不想給了一鍵撕掉、連結立刻 404。預設團隊內、公開要「有意識地」撥開關；URL 用不可猜 token、落地檔名用 sha256 hash，公開 API 回傳實測掃描零個資（email/路徑/projectId/sessionId 全 0）。架構＝token→快照 registry 與來源對話脫鉤（OWASP indirect object reference）。cbh-play-dev 用 claude-in-chrome＋curl 前後端驗測全綠；pnpm lint/build＋1048 單元測試綠；PR botrun/botrun-agent-platform#160。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-01T12:35:18+08:00"
     },
     {
       "id": "hermes-nchc-stuck-fix",
@@ -183,13 +199,15 @@
         "Excel 分析",
         "cbh-play-dev",
         "BDD"
-      ]
+      ],
+      "publishDate": "2026-07-01T12:35:18+08:00"
     },
     {
       "id": "trunk-based-feature-flags",
       "title": "持續改 main 不用怕 · 主幹＋功能旗標說服團隊 · 傳承",
       "subtitle": "老方法（GitFlow／長命分支）之所以『不敢改 main』＝每次改都是 big-bang 大爆炸；2026 業界對快節奏／多 AI agent 團隊第一推薦是 trunk-based development ＋ feature flags：每條功能小步（壽命<1天）直接併 main、未完成用旗標藏（併入≠曝光）、部署≠發布、翻旗標秒回滾。敢持續改 main 靠四支柱：CI 綠燈門檻＋小批量＋旗標藏未完成＋秒回滾。以 7 張 SVG 前後比較卡承載論點，引證 DORA（精英團隊活躍分支<3、壽命<1天）、Martin Fowler（big-bang 合併不確定性）、feature-flag 廠商實測（衝突 4-6hr→一天上線 4 次）、2026 AI-assisted development 研究（小批量為 AI 風險關鍵對策）。整合分支（release train）降為特例。PII 去機敏、零中國大陸用語。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-01T10:04:30+08:00"
     },
     {
       "id": "team-template-decouple",
@@ -2019,7 +2037,8 @@
         "files(path,content)：path 的斜線就是資料夾樹，不另開 folder 表",
         "questions＋answers 共用同一個 id 對照；split＝train(可調)/holdout(孵化期禁看只驗收一次)防背答案",
         "5 優 5 缺：好搬好傳承/小檔快35%/省20%空間，但高並行多檔互通弱（已用 jsonl 雙軌補 diff）"
-      ]
+      ],
+      "publishDate": "2026-06-18T12:03:49+08:00"
     },
     {
       "id": "strata-agent-strategic-rl",
@@ -8832,7 +8851,8 @@
       "id": "publish-html-local-host-login-gated",
       "title": "發佈 HTML 改『本機主機 host＋登入才可看』 · 修 #148 · 傳承",
       "subtitle": "EMA 平臺『發佈 HTML』一律『上傳失敗，請重試』的最後一哩根因＝publish-html-file 依賴 GCS(STATIC_GCS_*)、EMA 各機構分帳無 GCS env → 建構子 throw → UPLOAD_FAILED。治本（阿傑＋博安）＝不用 GCS、改 host 在本機主機、預設登入才可看：lib/local-publish 發佈即快照(與來源脫鉤)＋serve 路由 app/p/[id] 先 auth() gate＋回應加 CSP sandbox（刻意無 allow-same-origin）把發佈頁關進 opaque origin，實測 document.cookie／localStorage 皆 SecurityError → 中和同源 session riding；selectPublishBackend() 無 GCS 自動走 local(feature flag)。以多張 SVG 前後比較卡承載論點，引證 MDN(CSP sandbox=opaque origin 無法存取 cookie/localStorage)、web.dev(獨立網域 或 CSP sandbox header 隔離使用者內容)、Checkmarx n8n CVE-2026-27578(沙箱非萬靈丹→雙保險：沙箱＋登入 gate)。26 單元/整合測試綠＋claude-in-chrome 六情境驗過(獨立 worktree 與 cbh-play-dev)。PII 去機敏、零中國大陸用語。",
-      "protected": true
+      "protected": true,
+      "publishDate": "2026-07-01T12:35:18+08:00"
     },
     {
       "id": "transcribe-gemini-3-5-flash-2026-07-02",
@@ -8840,7 +8860,8 @@
       "subtitle": "把「聽打」外包給最會抄筆記的實習生：bh audio transcribe 預設引擎從 NCHC Whisper 換成 gemini-3.5-flash，86.7 分鐘會議 18 段平行僅 84.7 秒、約 US$0.057/小時（比傳統雲端聽打便宜 16.8 倍）。含一支臭蟲的治本——gemini 分支呼叫 transcribe() 漏傳 model: opts.model，害 --model 被吞、永遠跑寫死舊預設；補一行修好。v1→v5 歷程、前後對比 SVG 卡、去機敏資料樣態、誠實但書（推翻 2026-05 因 503 改 NCHC 的舊判斷，nchc/breeze 仍留備選）。",
       "protected": true,
       "href": "transcribe-gemini-3-5-flash-2026-07-02.html",
-      "file": "transcribe-gemini-3-5-flash-2026-07-02.html"
+      "file": "transcribe-gemini-3-5-flash-2026-07-02.html",
+      "publishDate": "2026-07-02T18:08:41+08:00"
     }
   ]
 }
