@@ -32,6 +32,18 @@
   },
   "items": [
     {
+      "id": "legal-case-file-labeling-ai-pdf-editor",
+      "title": "2800 頁卷證，AI 先畫好目錄標籤 · 人類拖一拖改一改就交件（傳承）",
+      "subtitle": "一宗殺人案卷證 2800 頁，檢察官要替每份文件貼「誰·哪天·什麼文件·第幾頁」的目錄標籤，人工逐頁捲動慢到數天／宗。治本＝AI 產高召回初稿目錄（寧多勿漏），人類用 Bun 全端 AI 輔助 PDF 編輯器（左欄拖拉合併書籤、點一下精準跳物理頁碼、雜訊摺疊、低信心黃底待人工）快速收斂。萃取檢察官隱性規則：人名×日期×文件種類三核心、同類合併但重複全列、DNA／告知書／交辦進行單等程序性雜訊排除、以檔名帶卷別、物理頁碼為真相、單位函覆聚合、檢察官vs事務官證據能力標註。含 10 維 0-100 評分準則、GEPA 反思演化框架、12 條以人為中心驗收準則、Neo4j 需求判斷、Claude Code 技能六步驟拆解。零中國大陸用語。",
+      "protected": true,
+      "description": "2800 頁法律卷證目錄標籤自動生成：AI 高召回初稿＋人類用 Bun AI 輔助 PDF 編輯器拖拉微調；含 10 維評分、GEPA 演化、12 條驗收準則",
+      "file": "legal-case-file-labeling-ai-pdf-editor.html",
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": ["傳承", "法律科技", "卷證目錄", "AI協作", "Bun 全端", "GEPA", "PDF 編輯器"]
+    },
+    {
       "id": "tool-activity-group-single-bar",
       "title": "工具資訊條洗版 → 一條會自己更新的活動列（P1 傳承）",
       "subtitle": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup：執行中預設一行原地更新、點開才展開 200px 內滾視窗、每條可看 raw Input/Output。2026 progressive disclosure 兼得初級與資深；四引擎 runner 端已統一 tool_use 協定故前端單點修正零 runner 改動。agent-platform#168/PR#169，cbh-play-dev 實測 pi 117 步全程一條。",
