@@ -32,6 +32,14 @@
   },
   "items": [
     {
+      "id": "tool-activity-group-single-bar",
+      "title": "工具資訊條洗版 → 一條會自己更新的活動列（P1 傳承）",
+      "subtitle": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup：執行中預設一行原地更新、點開才展開 200px 內滾視窗、每條可看 raw Input/Output。2026 progressive disclosure 兼得初級與資深；四引擎 runner 端已統一 tool_use 協定故前端單點修正零 runner 改動。agent-platform#168/PR#169，cbh-play-dev 實測 pi 117 步全程一條。",
+      "protected": true,
+      "description": "",
+      "file": ""
+    },
+    {
       "id": "pi-skills-8-dossier-pipeline",
       "title": "pi 八技能：卷證 PDF 到目錄標籤一條龍（傳承）",
       "subtitle": "四台 AI 機器人（PI.DEV／Hermes／OpenCode／Claude Code）的 token 花費怎麼記成一本共同的帳：以 botrun-gate 當單一節流點只記量落 JSONL、第二段 loader 套單一定價表(pricing.json)算成本進 BigQuery token_ledger（MERGE 冪等、v_usage_daily 出帳）。重點在『錢一定要算對』的對帳四招：①上網查牌價(Opus $5/$25、Gemini 3.5-flash $1.5/$9 per 1M)②單位 per 1,000,000 tokens ③匯率查證(USD→TWD 32.5→31.88，舊值偏高2%) ④對真 BigQuery＋獨立手算逐筆核。抓到『偏高』兩根因：demo 用不真實的 1M token＋匯率灌水→換真實請求量後 Opus 單筆從假的 $7.5 變合理的 $0.105/NT$3.35。含縫檢查(gate 不吐 cache/team_id 為 v2 gap)、未知價 cost NULL 不混假0。自包含 HTML＋SVG、雙層敘事、去機敏。",
