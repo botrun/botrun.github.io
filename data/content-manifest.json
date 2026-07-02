@@ -36,8 +36,8 @@
       "title": "工具資訊條洗版 → 一條會自己更新的活動列（P1 傳承）",
       "subtitle": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup：執行中預設一行原地更新、點開才展開 200px 內滾視窗、每條可看 raw Input/Output。2026 progressive disclosure 兼得初級與資深；四引擎 runner 端已統一 tool_use 協定故前端單點修正零 runner 改動。agent-platform#168/PR#169，cbh-play-dev 實測 pi 117 步全程一條。",
       "protected": true,
-      "description": "",
-      "file": ""
+      "description": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup",
+      "file": "tool-activity-group-single-bar.html"
     },
     {
       "id": "pi-skills-8-dossier-pipeline",
