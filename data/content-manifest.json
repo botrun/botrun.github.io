@@ -8821,6 +8821,14 @@
       "title": "發佈 HTML 改『本機主機 host＋登入才可看』 · 修 #148 · 傳承",
       "subtitle": "EMA 平臺『發佈 HTML』一律『上傳失敗，請重試』的最後一哩根因＝publish-html-file 依賴 GCS(STATIC_GCS_*)、EMA 各機構分帳無 GCS env → 建構子 throw → UPLOAD_FAILED。治本（阿傑＋博安）＝不用 GCS、改 host 在本機主機、預設登入才可看：lib/local-publish 發佈即快照(與來源脫鉤)＋serve 路由 app/p/[id] 先 auth() gate＋回應加 CSP sandbox（刻意無 allow-same-origin）把發佈頁關進 opaque origin，實測 document.cookie／localStorage 皆 SecurityError → 中和同源 session riding；selectPublishBackend() 無 GCS 自動走 local(feature flag)。以多張 SVG 前後比較卡承載論點，引證 MDN(CSP sandbox=opaque origin 無法存取 cookie/localStorage)、web.dev(獨立網域 或 CSP sandbox header 隔離使用者內容)、Checkmarx n8n CVE-2026-27578(沙箱非萬靈丹→雙保險：沙箱＋登入 gate)。26 單元/整合測試綠＋claude-in-chrome 六情境驗過(獨立 worktree 與 cbh-play-dev)。PII 去機敏、零中國大陸用語。",
       "protected": true
+    },
+    {
+      "id": "transcribe-gemini-3-5-flash-2026-07-02",
+      "title": "語音轉文字改用 Gemini 3.5 Flash · 傳承",
+      "subtitle": "把「聽打」外包給最會抄筆記的實習生：bh audio transcribe 預設引擎從 NCHC Whisper 換成 gemini-3.5-flash，86.7 分鐘會議 18 段平行僅 84.7 秒、約 US$0.057/小時（比傳統雲端聽打便宜 16.8 倍）。含一支臭蟲的治本——gemini 分支呼叫 transcribe() 漏傳 model: opts.model，害 --model 被吞、永遠跑寫死舊預設；補一行修好。v1→v5 歷程、前後對比 SVG 卡、去機敏資料樣態、誠實但書（推翻 2026-05 因 503 改 NCHC 的舊判斷，nchc/breeze 仍留備選）。",
+      "protected": true,
+      "href": "transcribe-gemini-3-5-flash-2026-07-02.html",
+      "file": "transcribe-gemini-3-5-flash-2026-07-02.html"
     }
   ]
 }
