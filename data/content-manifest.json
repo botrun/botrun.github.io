@@ -32,6 +32,13 @@
   },
   "items": [
     {
+      "id": "skill159-three-bugs-fix",
+      "title": "issue #159 續修三 bug 治本傳承：技能識別子統一 dirName、斜線即時刷新、鍵盤導覽",
+      "description": "skill-creator 產物技能編輯器空白/下載404的根因＝識別子混用；治本＝dirName SSOT＋turn 結束 refetch＋keyup 不重設；cbh chrome 驗測全綠、PR#177",
+      "protected": true,
+      "publishDate": "2026-07-03T12:50:35+08:00"
+    },
+    {
       "id": "a97b89-indep-eval-evolution",
       "title": "A97／B89 怎麼辦到的：獨立評分 × OCR 查證 × 確定性演化（v70→v76）",
       "subtitle": "接續卷證目錄標籤專案：同一位獨立 AI 評分者、同一把 27 題二元尺，v70 拿 A97/B87、演化一輪的 v76 拿 A97/B89 且 Pareto 零維度回退。本篇雙層敘事（高中生白話＋括號真操作）拆解每一分怎麼修出來：v75 自評 91 vs 獨立評分 80 的 11 分教訓、4 個簽名欄官員被誤列證人的 OCR 逐頁查證、32 對頁碼區間吞併的確定性裁切腳本（6 測試冪等）、以及跨卷併列為何誠實跳過不偷看答案。全程零 gold、零 hardcode，示例皆去識別化。",
