@@ -32,6 +32,14 @@
   },
   "items": [
     {
+      "id": "seba-delivery-flow-pr-branch-clean-main",
+      "title": "seba 交付流程 — PR branch 打包驗收、main 恆乾淨",
+      "description": "merge 權收斂於人驗閘門：功能留各自 PR branch=打包/驗收單位、seba 從 branch 佈指定測試機、人驗過才 merge；解 測試機互吃/debug 大海撈針/驗過≠上線/難退版 四痛",
+      "protected": true,
+      "file": "seba-delivery-flow-pr-branch-clean-main.html",
+      "publishDate": "2026-07-03T17:22:17+08:00"
+    },
+    {
       "id": "four-engine-billing-langfuse-jsonl",
       "title": "四引擎計費 — Langfuse＋local JSONL＋安全 API 傳承",
       "description": "補 Pi 跳錶(production 常駐 bridge 每輪 flush)＋host JSONL 帳本(pricing SSOT 熱載入、查無價 null)＋x-api-key fail-closed 查帳 API；混血 image 地雷＝驗跑的碼不是寫的碼；PR#183/PR#49、cbh 全綠",
