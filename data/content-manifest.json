@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "chandra-mlx-ocr",
+      "title": "Chandra × Mac MLX × 繁體 OCR 三引擎實測 · 傳承",
+      "description": "把開源 Chandra-OCR-2 裝進 Apple Silicon Mac（MLX）並驗證繁體 100% 正確；再用法務卷宗 2848 頁跨卷抽 10 頁，同機比較 Apple Vision／Marker／Chandra 的多快多省多準多好。關鍵突破：每頁上限 50s→120s 後密集表格不再被截斷，Chandra 由 86% 反超到 96% 奪冠、Vision 88% 為性價比冠軍（0.7s／頁、快 40 倍）、Marker 74% 墊底（身分證僅 1/10、會幻覺）。含三張 SVG 說服卡、v1→v7 歷程、成果四件套、去個資示範、停止符地雷修正。零中國大陸用語。",
+      "protected": true,
+      "file": "chandra-mlx-ocr.html",
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "OCR",
+        "Chandra",
+        "Apple Vision",
+        "Marker",
+        "MLX",
+        "OmniDocBench"
+      ],
+      "publishDate": "2026-07-04T07:17:19+08:00"
+    },
+    {
       "id": "seba-delivery-flow-pr-branch-clean-main",
       "title": "seba 交付流程 — PR branch 打包驗收、main 恆乾淨",
       "description": "merge 權收斂於人驗閘門：功能留各自 PR branch=打包/驗收單位、seba 從 branch 佈指定測試機、人驗過才 merge；解 測試機互吃/debug 大海撈針/驗過≠上線/難退版 四痛",
