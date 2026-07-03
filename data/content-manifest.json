@@ -32,6 +32,14 @@
   },
   "items": [
     {
+      "id": "session-full-history-2000",
+      "title": "Session 全歷史回捲傳承 — 移除 50 筆上限（reverse infinite scroll、2000 筆壓測）",
+      "description": "Botrun session 只顯示最新 50 筆治本：cursor 分頁+捲到頂自動載入+content-visibility；rAF 卡死與共用源碼目錄兩大地雷",
+      "protected": true,
+      "publishDate": "2026-07-03T12:50:35+08:00",
+      "file": "session-full-history-2000.html"
+    },
+    {
       "id": "skill159-three-bugs-fix",
       "title": "issue #159 續修三 bug 治本傳承：技能識別子統一 dirName、斜線即時刷新、鍵盤導覽",
       "description": "skill-creator 產物技能編輯器空白/下載404的根因＝識別子混用；治本＝dirName SSOT＋turn 結束 refetch＋keyup 不重設；cbh chrome 驗測全綠、PR#177",
