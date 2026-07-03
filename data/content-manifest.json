@@ -32,6 +32,22 @@
   },
   "items": [
     {
+      "id": "moj-preprocess-skills-heritage",
+      "title": "法務部卷證前處理五技能內建化 — 傳承",
+      "description": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
+      "protected": true,
+      "file": "moj-preprocess-skills-heritage.html",
+      "publishDate": "2026-07-03T14:22:52+08:00"
+    },
+    {
+      "id": "pr-batch-finale-cloudrun-3600",
+      "title": "收官傳承：八條 PR 收斂進 main＋全艦隊 Cloud Run 3600＋順稿二次驗證與復讀新發現",
+      "description": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
+      "protected": true,
+      "file": "pr-batch-finale-cloudrun-3600.html",
+      "publishDate": "2026-07-03T14:22:36+08:00"
+    },
+    {
       "id": "gate-cloudrun-timeout-truncation",
       "title": "順稿「後半段不見」真兇：Cloud Run 5 分鐘串流逾時 — 三層對照實驗與 60 分鐘 timeout 鐵律",
       "description": "法務部觀護順稿截斷治本：直連/走gate/agent鏈三層取證定案 gate Cloud Run timeout=300 靜默砍串流；一行 gcloud 復活＋opencode max_tokens 副兇（PR#178）＋NCHC 靜默換模地雷",
