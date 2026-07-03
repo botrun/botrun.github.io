@@ -32,6 +32,14 @@
   },
   "items": [
     {
+      "id": "gate-cloudrun-timeout-truncation",
+      "title": "順稿「後半段不見」真兇：Cloud Run 5 分鐘串流逾時 — 三層對照實驗與 60 分鐘 timeout 鐵律",
+      "description": "法務部觀護順稿截斷治本：直連/走gate/agent鏈三層取證定案 gate Cloud Run timeout=300 靜默砍串流；一行 gcloud 復活＋opencode max_tokens 副兇（PR#178）＋NCHC 靜默換模地雷",
+      "protected": true,
+      "file": "gate-cloudrun-timeout-truncation.html",
+      "publishDate": "2026-07-03T14:00:33+08:00"
+    },
+    {
       "id": "session-full-history-2000",
       "title": "Session 全歷史回捲傳承 — 移除 50 筆上限（reverse infinite scroll、2000 筆壓測）",
       "description": "Botrun session 只顯示最新 50 筆治本：cursor 分頁+捲到頂自動載入+content-visibility；rAF 卡死與共用源碼目錄兩大地雷",
