@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "chandra-ocr2-migration-heritage",
+      "title": "marker→Chandra OCR 2 完整替換全案傳承",
+      "description": "把四模型 marker pipeline 整套換成 Chandra OCR 2（Qwen3.5-VL 5B）並實機部署驗測全綠：三層 API 同形（gate/Caddy/ocr-api）、90dpi 最佳併發 20＝3.87 頁/s、真實卷宗 10 頁 A/B 證明「整份 PDF 直丟」是正確預設、12 條地雷（flashinfer JIT、GMU 殭屍、SSRF CGNAT 盲區）與 GAN 對抗風險盤點。",
+      "protected": true,
+      "file": "chandra-ocr2-migration-heritage.html",
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "OCR",
+        "Chandra",
+        "vLLM",
+        "gateway",
+        "資安"
+      ],
+      "publishDate": "2026-07-04T09:14:45+08:00"
+    },
+    {
       "id": "chandra-mlx-ocr",
       "title": "Chandra × Mac MLX × 繁體 OCR 三引擎實測 · 傳承",
       "description": "開源 OCR 裝進 Mac，再用一份大型掃描卷宗（約 2,800 頁）選出最佳引擎——放寬每頁上限 50s→120s，Chandra 由 86% 反超到 96% 奪冠，Vision 88% 快 40 倍拿性價比。全文去機敏、無任何真實影像。",
