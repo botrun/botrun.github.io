@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "colon-snippets-espanso",
+      "title": "冒號短語 prompt 展開（espanso 式）— 二階段完整傳承",
+      "description": "botrun-multi :短語秒展開＋GitHub/GCS/Drive 短語包分享＋管理頁/變數插槽/憑證；GPL 遵循與 Dioxus hook 凍屏地雷",
+      "protected": true,
+      "file": "colon-snippets-espanso.html",
+      "icon": "🔤",
+      "publishDate": "2026-07-05T07:41:02+08:00"
+    },
+    {
       "id": "hammer-voice-to-text",
       "title": "hammer 常駐語音轉文字 — 取代 botrun-hammer 經驗傳承",
       "description": "F5 全域錄音→本地 Breeze 轉錄→CGEvent 貼字；flush_packets 防遺失、TCC 靜默丟鍵、F5 被搶三大地雷實測",
