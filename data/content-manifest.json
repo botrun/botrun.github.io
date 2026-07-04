@@ -34,7 +34,7 @@
     {
       "id": "chandra-mlx-ocr",
       "title": "Chandra × Mac MLX × 繁體 OCR 三引擎實測 · 傳承",
-      "description": "開源 OCR 裝進 Mac，再用 2848 頁法務卷宗選出最佳引擎——放寬每頁上限 50s→120s，Chandra 由 86% 反超到 96% 奪冠，Vision 88% 快 40 倍拿性價比。",
+      "description": "開源 OCR 裝進 Mac，再用一份大型掃描卷宗（約 2,800 頁）選出最佳引擎——放寬每頁上限 50s→120s，Chandra 由 86% 反超到 96% 奪冠，Vision 88% 快 40 倍拿性價比。全文去機敏、無任何真實影像。",
       "protected": true,
       "file": "chandra-mlx-ocr.html",
       "icon": "shield-check",
