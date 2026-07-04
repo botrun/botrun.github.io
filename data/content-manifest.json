@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "botrun-multi-one-day-build",
+      "title": "botrun-multi 一日建成傳承：GAN 對抗進化 14 輪 × 多 session 並行架構",
+      "description": "Mac 本地多模態 AI 工作站：13 個 pi 技能＋Dioxus pure Rust 前後端（Claude web 式三欄/丹麥淺色/lucide）；獨立評審制×凍結窗口 14 輪 82→98；journal 先落盤帶 seq 再廣播、pi --mode rpc 選型、低調通知鐵律；含 RefCell/IME/MIME/rem 等 12 條地雷全集。",
+      "protected": true,
+      "file": "botrun-multi-one-day-build.html",
+      "icon": "cpu",
+      "publishDate": "2026-07-04T18:20:31+08:00"
+    },
+    {
       "id": "tower2-brgate-launch-heritage-20260704",
       "title": "tower2.botrun.ai 上線傳承：LiteLLM CVE 止血 → botrun-gate br- 漸進取代",
       "description": "同 VM 並行、port 分離、Caddy 沿用：Rust botrun-gate 以 br- key 機制上架 tower2，production 全綠（31B/26B 串流、ASR、usage 計量 in:17 out:22）；含 2026 LiteLLM 供應鏈投毒/CVE 查證、flashinfer 重開機地雷治本（nvcc 13.2 vs headers 13.0 釘回對齊＋systemd 順序閘門＋reboot 演練）。",
