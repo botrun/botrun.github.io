@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "pi-commands-subagent-card",
+      "title": "pi 套件指令自動補齊＋Subagent 觀測卡",
+      "description": "botrun-multi 的 / 選單自動補齊 pi-goal-x（/goals）與 pi-subagents（/run）共 33 指令；Claude Code 款子代理觀測卡：prompt、回覆、fresh/fork 上下文、耗時、tokens、模型。含四顆地雷拆解（工具名衝突、slash 輪無 agent_end、歷史注入毀指令、custom message 映射）。內嵌 SVG 卡片。",
+      "protected": true,
+      "file": "pi-commands-subagent-card.html",
+      "icon": "target",
+      "publishDate": "2026-07-05T07:29:50+08:00"
+    },
+    {
       "id": "botrun-multi-20-e2e-gan-pass",
       "title": "botrun-multi 20 情境 e2e GAN 對抗全過關",
       "description": "法務部 2000+ 頁 PDF 目錄標籤 20 任務第 4 輪全綠：pi.dev＋gemma4 31B 當操作者、claude-in-chrome UI 實跑、fable 對抗裁判逐關抽驗。含 UI 反洗版 ToolGroup 聚合卡、禁網清單補洞、誠實收尾警訊與 31B 操作者地雷清單。內嵌 SVG 卡片。",
