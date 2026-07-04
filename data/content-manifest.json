@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "tower2-brgate-launch-heritage-20260704",
+      "title": "tower2.botrun.ai 上線傳承：LiteLLM CVE 止血 → botrun-gate br- 漸進取代",
+      "description": "同 VM 並行、port 分離、Caddy 沿用：Rust botrun-gate 以 br- key 機制上架 tower2，production 全綠（31B/26B 串流、ASR、usage 計量 in:17 out:22）；含 2026 LiteLLM 供應鏈投毒/CVE 查證、flashinfer 重開機地雷治本（nvcc 13.2 vs headers 13.0 釘回對齊＋systemd 順序閘門＋reboot 演練）。",
+      "protected": true,
+      "file": "tower2-brgate-launch-heritage-20260704.html",
+      "icon": "shield-check",
+      "publishDate": "2026-07-04T10:21:16+08:00"
+    },
+    {
       "id": "chandra-ocr2-migration-heritage",
       "title": "marker→Chandra OCR 2 完整替換全案傳承",
       "description": "把四模型 marker pipeline 整套換成 Chandra OCR 2（Qwen3.5-VL 5B）並實機部署驗測全綠：三層 API 同形（gate/Caddy/ocr-api）、90dpi 最佳併發 20＝3.87 頁/s、真實卷宗 10 頁 A/B 證明「整份 PDF 直丟」是正確預設、12 條地雷（flashinfer JIT、GMU 殭屍、SSRF CGNAT 盲區）與 GAN 對抗風險盤點。",
