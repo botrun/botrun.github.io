@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "hammer-voice-to-text",
+      "title": "hammer 常駐語音轉文字 — 取代 botrun-hammer 經驗傳承",
+      "description": "F5 全域錄音→本地 Breeze 轉錄→CGEvent 貼字；flush_packets 防遺失、TCC 靜默丟鍵、F5 被搶三大地雷實測",
+      "protected": true,
+      "file": "hammer-voice-to-text.html",
+      "icon": "🔨",
+      "publishDate": "2026-07-05T07:40:19+08:00"
+    },
+    {
       "id": "pi-commands-subagent-card",
       "title": "pi 套件指令自動補齊＋Subagent 觀測卡",
       "description": "botrun-multi 的 / 選單自動補齊 pi-goal-x（/goals）與 pi-subagents（/run）共 33 指令；Claude Code 款子代理觀測卡：prompt、回覆、fresh/fork 上下文、耗時、tokens、模型。含四顆地雷拆解（工具名衝突、slash 輪無 agent_end、歷史注入毀指令、custom message 映射）。內嵌 SVG 卡片。",
