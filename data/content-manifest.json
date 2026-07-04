@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "botrun-multi-20-e2e-gan-pass",
+      "title": "botrun-multi 20 情境 e2e GAN 對抗全過關",
+      "description": "法務部 2000+ 頁 PDF 目錄標籤 20 任務第 4 輪全綠：pi.dev＋gemma4 31B 當操作者、claude-in-chrome UI 實跑、fable 對抗裁判逐關抽驗。含 UI 反洗版 ToolGroup 聚合卡、禁網清單補洞、誠實收尾警訊與 31B 操作者地雷清單。內嵌 SVG 卡片。",
+      "protected": true,
+      "file": "botrun-multi-20-e2e-gan-pass.html",
+      "icon": "trophy",
+      "publishDate": "2026-07-04T23:50:12+08:00"
+    },
+    {
       "id": "botrun-multi-final-qa",
       "title": "botrun-multi 收官驗傳承：獨立評審 95/100",
       "description": "獨立收官評審四道題（錄音轉文字入輸入框／模型卸載釋 RAM／KV cache＋前後端分離／回歸）——只信跑起來的 app、不看開發者自述。含關鍵發現：凍結 wasm 編在 commit 之前導致 KV cache 標示只進 source 未進 binary。內嵌 SVG 卡片、丹麥簡約風。",
