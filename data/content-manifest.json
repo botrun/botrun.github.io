@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "botrun-multi-ssot-auto-update-self-healing",
+      "title": "波麻吉 v1.0.2：版本 SSOT＋zstd 差異自動升級＋self-healing 回滾 — 傳承",
+      "description": "Cargo.toml 單點版本→全鏈路同號；GCS latest.json＋delta patch 背景升級、原子替換、連崩自動回滾；deno 式最低範疇安裝秒級能用；乾淨 Docker 操演全綠與 13 條地雷",
+      "protected": true,
+      "file": "botrun-multi-ssot-auto-update-self-healing.html",
+      "icon": "🔄",
+      "publishDate": "2026-07-05T15:17:39+08:00"
+    },
+    {
       "id": "tower-vllm-services-verify",
       "title": "波特塔 vLLM 全服務驗測＋diffusion OOM 治本 — 傳承",
       "description": "6 服務逐一真打 API 全綠；Chandra OCR 取代 marker 顯存暴增致 diffusion OOM 的根因與治本（profiles.md/diffusion-on.sh）",
