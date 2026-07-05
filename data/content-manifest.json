@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "feedback-side-tab-release-lesson",
+      "title": "回饋鈕改右緣側標籤＋「git push ≠ 發版」鐵律 — 傳承",
+      "description": "浮動回饋鈕蓋輸入區→2026 業界 side tab 慣例改版（佔邊不佔面）；忘跑 release.sh 導致安裝版停舊版的斷點解剖與發版四步鐵律",
+      "protected": true,
+      "file": "feedback-side-tab-release-lesson.html",
+      "icon": "📣",
+      "publishDate": "2026-07-05T19:15:25+08:00"
+    },
+    {
+      "id": "whitelist-install-gcloud",
+      "title": "白名單制一行安裝：私有 repo 404 之謎 → gcloud 認證 bootstrap — 傳承",
+      "description": "raw.githubusercontent 對私有 repo 匿名回 404 破案；公開 bootstrap＋GCS managed folder IAM 白名單（網域＋gmail 成批）；失敗只講真原因（沒 gcloud/沒登入/401/403/404/000 六分流）；whitelist.sh 一行管名單",
+      "protected": true,
+      "file": "whitelist-install-gcloud.html",
+      "icon": "🔐",
+      "publishDate": "2026-07-05T19:15:25+08:00"
+    },
+    {
       "id": "botrun-multi-ssot-auto-update-self-healing",
       "title": "波麻吉 v1.0.2：版本 SSOT＋zstd 差異自動升級＋self-healing 回滾 — 傳承",
       "description": "Cargo.toml 單點版本→全鏈路同號；GCS latest.json＋delta patch 背景升級、原子替換、連崩自動回滾；deno 式最低範疇安裝秒級能用；乾淨 Docker 操演全綠與 13 條地雷",
