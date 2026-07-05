@@ -9068,6 +9068,15 @@
       "href": "botrun-multi-feedback-flywheel.html",
       "file": "botrun-multi-feedback-flywheel.html",
       "publishDate": "2026-07-05T08:20:00+08:00"
+    },
+    {
+      "id": "botrun-multi-google-login-hammer-feedback",
+      "title": "Google 登入驗證＋hammer F7 回饋入口 · 補齊一鍵回饋兩項落差 · 傳承",
+      "subtitle": "補齊一鍵回饋先前標註的兩項落差：①改接 Google Identity Services 驗證使用者身份（本地應用沒有 Load Balancer/Cloud Run 反向代理層可讀真正 IAP header，改用官方 Sign-In 拿已簽章 ID token、後端驗證 aud 與 email_verified，語意等價、雲端部署時可直接換讀 IAP header）；②hammer 原生常駐程式新增 F7 全域快速鍵，osascript 對話框輸入留言，手動組 multipart 直打同一支 /api/feedback，桌面端不用開瀏覽器也能回饋。含地雷：本地app誤套IAP語意、專案無dotenv crate需自解析.env、hammer無瀏覽器不能重用前端框架元件、同資料夾平行session會把未commit變更「同車」進別人commit。",
+      "protected": true,
+      "href": "botrun-multi-google-login-hammer-feedback.html",
+      "file": "botrun-multi-google-login-hammer-feedback.html",
+      "publishDate": "2026-07-05T09:10:00+08:00"
     }
   ]
 }
