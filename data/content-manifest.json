@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "finder-drag-drop-path",
+      "title": "Finder 拖檔進對話框顯示完整路徑 — 傳承",
+      "description": "瀏覽器不給 File 路徑，改讀 macOS Finder 拖曳的 text/uri-list（file://）＋百分比解碼＝AI 拿到完整路徑；與內部拖曳共存",
+      "protected": true,
+      "file": "finder-drag-drop-path.html",
+      "icon": "🗂️",
+      "publishDate": "2026-07-06T07:31:13+08:00"
+    },
+    {
+      "id": "gate-multimodal-skills-heritage-20260706",
+      "title": "gate 多模態技能全通 — 選雲端也能聽錄音看圖讀掃描的傳承（2026-07-06）",
+      "description": "gate-* 三技能（breeze ASR／gemma 視覺／Chandra OCR 一把 br- key）＋local/gate 三層防呆嚴格區分＋「git tag 同號不同內容」地雷；API＋claude-in-chrome 驗測全綠",
+      "protected": true,
+      "file": "gate-multimodal-skills-heritage-20260706.html",
+      "icon": "🚰",
+      "publishDate": "2026-07-06T07:29:52+08:00"
+    },
+    {
       "id": "i18n-permanent-guard",
       "title": "i18n 永久把關 — 從 feedback 彈窗全中文到機器擋 commit 的治本傳承",
       "description": "通案掃描尺揪出全站 135 處漏翻→雙語化＋UI 實測→掃描尺升級 guard 測試＋pre-commit hook＋CLAUDE.md 鐵律三層防線；含豁免機制與 GSI 鈕已知限制",
