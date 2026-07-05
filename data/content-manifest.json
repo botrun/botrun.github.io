@@ -9059,6 +9059,15 @@
       "href": "transcribe-gemini-3-5-flash-2026-07-02.html",
       "file": "transcribe-gemini-3-5-flash-2026-07-02.html",
       "publishDate": "2026-07-02T18:08:41+08:00"
+    },
+    {
+      "id": "botrun-multi-feedback-flywheel",
+      "title": "一鍵回饋（BOTRUN-FEEDBACK-01）· 使用者參與的自我進化飛輪 · 傳承",
+      "subtitle": "botrun-multi 新增浮動「回饋」按鈕，任意頁面、任意時刻可打字或錄音留言，自動附上前端 console log、後端 log（新增 blog! 環狀緩衝）與可選畫面截圖，POST /api/feedback 落地成有時間戳、可歸戶的結構化 JSON，GET /api/feedback 供人類逐筆檢視。使用者身份地端版先用 localStorage email，雲端部署待接 Google IAP header。含三欄可捲動版面下「浮動 UI 沒有安全角落」的定位地雷與收斂解法。",
+      "protected": true,
+      "href": "botrun-multi-feedback-flywheel.html",
+      "file": "botrun-multi-feedback-flywheel.html",
+      "publishDate": "2026-07-05T08:20:00+08:00"
     }
   ]
 }
