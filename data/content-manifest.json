@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "i18n-permanent-guard",
+      "title": "i18n 永久把關 — 從 feedback 彈窗全中文到機器擋 commit 的治本傳承",
+      "description": "通案掃描尺揪出全站 135 處漏翻→雙語化＋UI 實測→掃描尺升級 guard 測試＋pre-commit hook＋CLAUDE.md 鐵律三層防線；含豁免機制與 GSI 鈕已知限制",
+      "protected": true,
+      "file": "i18n-permanent-guard.html",
+      "icon": "🌐",
+      "publishDate": "2026-07-05T20:35:46+08:00"
+    },
+    {
       "id": "feedback-side-tab-release-lesson",
       "title": "回饋鈕改右緣側標籤＋「git push ≠ 發版」鐵律 — 傳承",
       "description": "浮動回饋鈕蓋輸入區→2026 業界 side tab 慣例改版（佔邊不佔面）；忘跑 release.sh 導致安裝版停舊版的斷點解剖與發版四步鐵律",
