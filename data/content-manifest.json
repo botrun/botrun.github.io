@@ -9086,6 +9086,15 @@
       "href": "botrun-multi-google-login-hammer-feedback.html",
       "file": "botrun-multi-google-login-hammer-feedback.html",
       "publishDate": "2026-07-05T09:10:00+08:00"
+    },
+    {
+      "id": "botrun-multi-bm-cli",
+      "title": "bm CLI · 類 pi -p／claude -p 的非互動介面 · 傳承",
+      "subtitle": "botrun-multi 新增 bm 命令列工具（app/src/bin/bm.rs，cli feature），打既有 /api/* 路由驅動前後端全部能力，設計給自動化／unix pipe／GNU parallel 用：`bm -p \"問題\"` 打 chat SSE 印純文字回覆，`--json` 印 NDJSON；另有 sessions/files/snippets/skills/feedback 子指令；exit code 0/1/2 鐵律。含地雷：stdin 判斷不能用「參數是否為空」代表要用 IsTerminal（原始實作有這個真實 bug，已修正並記錄 before/after）、同資料夾平行 session 執行期環境層級互相影響（另一 session 改 .env 導致驗測中途聊天 API 開始回 400，證明是環境問題非 bm 臭蟲）。已實測：單次問答成功、echo 管線輸入成功、GNU parallel -j4 平行呼叫互不干擾、後端壞掉時正確吐 stderr 退出碼 1 不污染 stdout。",
+      "protected": true,
+      "href": "botrun-multi-bm-cli.html",
+      "file": "botrun-multi-bm-cli.html",
+      "publishDate": "2026-07-05T14:00:00+08:00"
     }
   ]
 }
