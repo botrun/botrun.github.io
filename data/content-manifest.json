@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "beginner-i18n-zero-leak",
+      "title": "初學者友善前後端：EN/繁中零洩漏切換＋SVG 圖卡指引 — 傳承",
+      "description": "i18n tr()+context、4 張漸進揭露圖卡、全 DOM CJK 掃描抓 19 處洩漏修到 0；環境誤判當機排查",
+      "protected": true,
+      "file": "beginner-i18n-zero-leak.html",
+      "icon": "🌏",
+      "publishDate": "2026-07-05T12:44:11+08:00"
+    },
+    {
       "id": "colon-snippets-espanso",
       "title": "冒號短語 prompt 展開（espanso 式）— 二階段完整傳承",
       "description": "botrun-multi :短語秒展開＋GitHub/GCS/Drive 短語包分享＋管理頁/變數插槽/憑證；GPL 遵循與 Dioxus hook 凍屏地雷",
