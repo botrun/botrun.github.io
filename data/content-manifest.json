@@ -9095,6 +9095,15 @@
       "href": "botrun-multi-bm-cli.html",
       "file": "botrun-multi-bm-cli.html",
       "publishDate": "2026-07-05T14:00:00+08:00"
+    },
+    {
+      "id": "botrun-multi-bm-cli-moj-20tasks",
+      "title": "bm CLI × 法務部 20 種真實任務 · 規劃與逐一驗測 · 傳承",
+      "subtitle": "為 bm CLI 設計 20 種真實法務部承辦人會碰到的任務（單一案卷前處理、內容理解摘要、GNU parallel 批次作業、案件管理紀錄四類），對照本機真實測試素材與既有 .pi/skills 逐一實測：14 項當場過關（OCR辨識公文、去機敏遮蔽個資、摘要條列、files/sessions/snippets/skills 子指令、平行拆頁與平行去機敏互不干擾、feedback落地、--json 配 jq 解析）、3 項因既有 20 任務 DAG 文件已驗證過同批技能故本輪跳過、1 項語音轉文字逾時記為真實發現非隱藏。過程中意外找到並修正 2 個真實 bug：`bm | head` 因 Rust 預設忽略 SIGPIPE 而 panic（libc::signal 還原 unix 標準行為）；`--help` 原本對 AI/LLM 不友善，改寫成含 --json 事件 schema、退出碼語意表的完整說明。",
+      "protected": true,
+      "href": "botrun-multi-bm-cli-moj-20tasks.html",
+      "file": "botrun-multi-bm-cli-moj-20tasks.html",
+      "publishDate": "2026-07-05T15:30:00+08:00"
     }
   ]
 }
