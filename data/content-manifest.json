@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "tower-vllm-services-verify",
+      "title": "波特塔 vLLM 全服務驗測＋diffusion OOM 治本 — 傳承",
+      "description": "6 服務逐一真打 API 全綠；Chandra OCR 取代 marker 顯存暴增致 diffusion OOM 的根因與治本（profiles.md/diffusion-on.sh）",
+      "protected": true,
+      "file": "tower-vllm-services-verify.html",
+      "icon": "🖥️",
+      "publishDate": "2026-07-05T15:15:42+08:00"
+    },
+    {
       "id": "beginner-i18n-zero-leak",
       "title": "初學者友善前後端：EN/繁中零洩漏切換＋SVG 圖卡指引 — 傳承",
       "description": "i18n tr()+context、4 張漸進揭露圖卡、全 DOM CJK 掃描抓 19 處洩漏修到 0；環境誤判當機排查",
