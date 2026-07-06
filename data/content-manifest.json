@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "chandra-ocr-2-verify",
+      "title": "chandra-ocr-2 有沒有驗測過關？— gate 與 local 兩路徑當場實機驗到綠（2026-07-07）",
+      "description": "不靠舊紀錄相信：拿同一張法務部公文測試圖，gate（波特塔 /ocr/v1/ocr）與 local（Mac MLX jwindle47/chandra-ocr-2-8bit-mlx）兩條路各跑一次，輸出逐字一致且正確。含靠紀錄 vs 實機驗證 before/after 卡、transformers 5.12.1 釘版關鍵變因、成果四件套、驗測總表。零中國大陸用語。",
+      "protected": true,
+      "file": "chandra-ocr-2-verify.html",
+      "icon": "🖼️",
+      "publishDate": "2026-07-07T05:37:59+08:00"
+    },
+    {
       "id": "skill-panel-crud",
       "title": "技能面板：從「藏在暗格」到「牆上正式開關」— CRUD＋master-detail 編輯（2026-07-06）",
       "description": "botrun-multi 技能管理大改版：LeftBar 正式入口（不再只藏 /）、完整 CRUD（新增表單＋軟刪 skills-trash）、master-detail 右欄（概覽渲染 README／表單改 frontmatter／原始碼分頁編 scripts/*.ts），並依 WCAG 做老花友善（16px、加深對比、≥40px 點擊區）。含 before/after SVG 卡、context 型別碰撞地雷、成果四件套。已發版 1.0.19。零中國大陸用語。",
