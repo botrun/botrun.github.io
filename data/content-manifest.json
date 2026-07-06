@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "bm-one-key-launch-port-ssot-20260706",
+      "title": "bm 一鍵啟動 — 打兩個字母整座工作站自己醒來＋port 60706 全面 SSOT（2026-07-06）",
+      "description": "裸打 bm＝清埠→dx serve→自動開網頁（冪等）；port SSOT app/src/port.rs 同 crate #[path] 共用；e2e 冷啟 62s、二跑冪等；七步收斂成一步",
+      "protected": true,
+      "file": "bm-one-key-launch-port-ssot-20260706.html",
+      "icon": "🔑",
+      "publishDate": "2026-07-06T09:48:38+08:00"
+    },
+    {
       "id": "release-dont-forget-2026-07-06",
       "title": "要發 release 別忘記 — git push ≠ 發版（2026-07-06）",
       "description": "安裝版水管接 GCS latest.json 不接 git；發版三步＋pre-push hook 把關＋版號撞號實錄（1.0.10 被同事先用→1.0.11）",
@@ -686,6 +695,25 @@
         "IAP"
       ],
       "href": "https://botrun-protected-257949799705.asia-east1.run.app/cbh-local-build-dev-loop.html"
+    },
+    {
+      "id": "tower-asr-403-no-healthcheck-heritage",
+      "title": "波特塔轉錄 403 疑案傳承：key 沒壞，是健檢打錯門",
+      "subtitle": "轉錄腳本回報「連不到端點 /v1/models HTTP 403」看似金鑰失效，真相是閘道 Caddy 白名單（2026 LiteLLM 供應鏈事件止血）刻意只放 chat/transcriptions/health 三條路。診斷鏈：交付前自驗 key→同 key 一路通一路 403→是門不是鑰匙；最終解法＝把健檢整段刪掉、讓第一個真請求當健檢。含「錯誤訊息原文 grep 反查真兇腳本」與「本機改好≠容器同步」兩鐵律。全程去機敏。",
+      "protected": true,
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#3a6b5f",
+      "tags": [
+        "botrun-tower",
+        "gateway",
+        "Caddy 白名單",
+        "ASR 轉錄",
+        "健檢反模式",
+        "去機敏"
+      ],
+      "href": "tower-asr-403-no-healthcheck-heritage.html",
+      "publishDate": "2026-07-06T09:49:03+08:00"
     },
     {
       "id": "gateway-key-issuance-heritage",
