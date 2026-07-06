@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "clean-container-gate31b-verify",
+      "title": "乾淨容器驗安裝到 gate 31B — 不驗到底看不見的地雷鏈（2026-07-06）",
+      "description": "debian 容器從 curl 安裝驗到 31B 真對話：pi 套件搬家、npm 靜默降級、stderr 黑箱等 5 連環雷逐顆治本；Alpine/musl 明確拒絕",
+      "protected": true,
+      "file": "clean-container-gate31b-verify.html",
+      "icon": "🧪",
+      "publishDate": "2026-07-06T11:59:47+08:00"
+    },
+    {
       "id": "bm-one-key-launch-port-ssot-20260706",
       "title": "bm 一鍵啟動 — 打兩個字母整座工作站自己醒來＋port 60706 全面 SSOT（2026-07-06）",
       "description": "裸打 bm＝清埠→dx serve→自動開網頁（冪等）；port SSOT app/src/port.rs 同 crate #[path] 共用；e2e 冷啟 62s、二跑冪等；七步收斂成一步",
