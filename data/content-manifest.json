@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "release-dont-forget-2026-07-06",
+      "title": "要發 release 別忘記 — git push ≠ 發版（2026-07-06）",
+      "description": "安裝版水管接 GCS latest.json 不接 git；發版三步＋pre-push hook 把關＋版號撞號實錄（1.0.10 被同事先用→1.0.11）",
+      "protected": true,
+      "file": "release-dont-forget-2026-07-06.html",
+      "icon": "🚰",
+      "publishDate": "2026-07-06T09:22:56+08:00"
+    },
+    {
       "id": "asr-tower-voice-fix",
       "title": "語音轉文字 pi.dev/OpenCode 治本 — ffmpeg＋TOWER env＋gate /tower 通道（2026-07-06）",
       "description": "pi 缺 ffmpeg、opencode 缺 TOWER env 兩根因一次治本；gate /tower passthrough 零改動＋內建語音轉文字技能；cbh 兩引擎 chrome 驗證全綠",
