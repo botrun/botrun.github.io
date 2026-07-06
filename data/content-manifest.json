@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "marker-to-chandra-ocr2",
+      "title": "marker → Chandra OCR 2：貫通整條路（cbh→gate→tower→chandra）",
+      "description": "把 cbh-play-dev 掃描頁 OCR 從舊 marker 換成 Chandra OCR 2，並在真機端到端辨識成功。含三張 SVG：完整鏈路（cbh→gate.botrun.ai/ocr→tower2→vLLM chandra:8004）、br- API key 怎麼安排（存主機 .env→平台注入→gate 換上游憑證）、參數怎麼流動（PDF→pdftoppm→base64 JSON→/ocr/v1/ocr→pages[].markdown）。一步式取代舊 marker 兩步 upload→輪詢；env OCR_→BOTRUN_OCR_ 品牌前綴。零中國大陸用語。",
+      "protected": true,
+      "file": "marker-to-chandra-ocr2.html",
+      "icon": "🔎",
+      "publishDate": "2026-07-06T18:00:00+08:00"
+    },
+    {
       "id": "chandra-ocr-2-verify",
       "title": "chandra-ocr-2 有沒有驗測過關？— gate 與 local 兩路徑當場實機驗到綠（2026-07-07）",
       "description": "不靠舊紀錄相信：拿同一張法務部公文測試圖，gate（波特塔 /ocr/v1/ocr）與 local（Mac MLX jwindle47/chandra-ocr-2-8bit-mlx）兩條路各跑一次，輸出逐字一致且正確。含靠紀錄 vs 實機驗證 before/after 卡、transformers 5.12.1 釘版關鍵變因、成果四件套、驗測總表。零中國大陸用語。",
