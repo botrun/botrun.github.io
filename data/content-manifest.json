@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "global-skills-customization",
+      "title": "Global 技能體系 — 出貨・版本・開關・客戶客製（2026-07-06）",
+      "description": "從安裝完 0 技能到開箱 19 個：三方案打分、目錄即狀態開關、clone 再編輯（不從零開始）、gate 技能 chrome 全綠",
+      "protected": true,
+      "file": "global-skills-customization.html",
+      "icon": "🧩",
+      "publishDate": "2026-07-06T13:14:44+08:00"
+    },
+    {
       "id": "clean-container-gate31b-verify",
       "title": "乾淨容器驗安裝到 gate 31B — 不驗到底看不見的地雷鏈（2026-07-06）",
       "description": "debian 容器從 curl 安裝驗到 31B 真對話：pi 套件搬家、npm 靜默降級、stderr 黑箱等 5 連環雷逐顆治本；Alpine/musl 明確拒絕",
