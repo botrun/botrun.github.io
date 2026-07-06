@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "skill-panel-crud",
+      "title": "技能面板：從「藏在暗格」到「牆上正式開關」— CRUD＋master-detail 編輯（2026-07-06）",
+      "description": "botrun-multi 技能管理大改版：LeftBar 正式入口（不再只藏 /）、完整 CRUD（新增表單＋軟刪 skills-trash）、master-detail 右欄（概覽渲染 README／表單改 frontmatter／原始碼分頁編 scripts/*.ts），並依 WCAG 做老花友善（16px、加深對比、≥40px 點擊區）。含 before/after SVG 卡、context 型別碰撞地雷、成果四件套。已發版 1.0.19。零中國大陸用語。",
+      "protected": true,
+      "file": "skill-panel-crud.html",
+      "icon": "✨",
+      "publishDate": "2026-07-06T17:08:03+08:00"
+    },
+    {
       "id": "cbh-play-dev-topology",
       "title": "cbh-play-dev 到底誰連誰？— 連線拓樸與語音技能怎麼串（2026-07-06）",
       "description": "gate／tower／tower2／國網名字很像很容易混。實查真機定案：對外只有一扇門 gate.botrun.ai——主聊天走 /openrouter→國網 NCHC 31B、語音／視覺走 /tower→波特塔、OCR 走 /marker；語音技能 ffmpeg 16kHz 切段逐段打 gate /tower→breeze-asr-26；env 設在主機 compose/.env 非團隊變數。含拓樸 SVG、六步語音流程圖、before/after 誤解卡、成果四件套。零中國大陸用語。",
