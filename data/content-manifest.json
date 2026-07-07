@@ -32,6 +32,13 @@
   },
   "items": [
     {
+      "id": "clean-install-batch-pii-redaction",
+      "title": "乾淨安裝就能大量批量去機敏＋全面多模態 — botrun-multi 1.0.24／botrun-pii 1.10.2",
+      "description": "從『同事裝好卻連不上 gate 31B（401）』到『20 word＋20 excel＋20 pdf、2803 筆個資去機敏召回 100%』的完整傳承：①.env 三來源（./.env／repo／~/.botrun/.env）＋UI 貼 key 同步 global＋401 在地化引導 ②去機敏 reuse ../botrun-pii Rust binary（不自寫 .ts）、乾淨機經 gate 本地代理注入 Bearer 走 tower gemma-4-26b ③office轉文字技能（零依賴 OOXML unzip+regex）④fable GAN 對抗三輪 81→89→91 分、召回 97%→100%（MONEY seed／全域一致傳播／裸公司規則）⑤UI 批量進度條常駐輪詢。",
+      "protected": true,
+      "publishDate": "2026-07-07T13:46:15+08:00"
+    },
+    {
       "id": "remote-dev-gepa-vs-gan-heritage",
       "title": "邊爬山邊開發、三選手一起練 — 遠端遙控 × GEPA vs GAN × 技能傳承",
       "description": "一場 21 分鐘對談的三件寶：①手機 remote control 遙控本機 Mac 開發（本機才有 OCR/語音轉文字/機密處理/claude-in-chrome，測完才發布；拖拉檔案、看 Finder、自動部署看 HTML 都叫 AI 代勞）②GEPA vs GAN 兩套 AI 教練法——GAN＝選手+裁判 loop 缺教練；GEPA(Stanford)＝一次三選手+同一裁判+教練取優去缺，進化快；選手鎖 31B 只改一個變因最可控；簡單用 GAN、難用 GEPA ③最難的傳承題：AI 產出太多非 RD 看不懂，三解法（手把手/UI 關卡引導/技能包+考試遊戲，參考法務部技能包講出內政部解法 AI 打分補缺）。實測 Fable 95%/Opus 85%/run2 分數 90 幾。含前後比較/三選手 PK/三傳承路 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
