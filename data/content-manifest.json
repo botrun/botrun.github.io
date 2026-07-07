@@ -9360,6 +9360,13 @@
       "href": "oh-my-pi-omp.html",
       "file": "oh-my-pi-omp.html",
       "publishDate": "2026-07-07T17:06:48+08:00"
+    },
+    {
+      "id": "gan-skills-95-pass",
+      "title": "GAN 對抗評分 · botrun-skills 79.2→95.8 PASS · 傳承圖卡",
+      "subtitle": "兩個 AI 互相挑剔四輪（生成方改技能庫、獨立 Fable judge 只認 artifact 打分）：20 情境×3 輪 60/60 零失敗＋3 個 fresh 專案部署全綠。三大突破：假去識別化行為斷言（產物殘留真 PII 即判死）、telemetry 檔案黑盒子（session 截斷不再吃證據＋上游 ms 歸因）、顆粒收斂 23→20（canonical＋能力聯集＋prune）。GAN 迴圈 1 小時 45 分收工，LLM 費用約 NT$3。",
+      "protected": true,
+      "publishDate": "2026-07-08T06:05:08+08:00"
     }
   ]
 }
