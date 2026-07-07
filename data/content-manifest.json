@@ -9310,6 +9310,15 @@
       "href": "botrun-multi-bm-cli-moj-20tasks.html",
       "file": "botrun-multi-bm-cli-moj-20tasks.html",
       "publishDate": "2026-07-05T15:30:00+08:00"
+    },
+    {
+      "id": "doc-ocr-pdf-markdown",
+      "title": "文件OCR視覺辨識技能 · 整份 PDF → 逐頁 Markdown · 傳承",
+      "subtitle": "pi.dev 新內建技能：整份 PDF 一鍵轉逐頁、保留表格的 Markdown。自包含前處理鏈——pdfseparate 拆單頁（檔名帶頁碼）→平行 pdftoppm 90dpi PNG→平行 Chandra OCR 2（gate /ocr 一步式，PAR=4 round-robin resume）→每頁各存 <原檔名>-NNNN.md（不合併，AI 可追溯資料出自哪一頁）。核心突破：發現「原生 PDF 必轉 PNG 否則 >120s」的舊 marker 地雷在 Chandra 新架構已不成立（tower ocr-api 內部 pypdfium2 render＋scale_to_fit），關鍵是切到 feat/chandra-ocr2-migration branch 讀真程式碼＋A/B 實測而非信過期 doc。實測法務部 13 頁掃描卷宗 36.1s／0 失敗、封面跨欄表格以 <table colspan> 完整保留。同時汰換易混淆的照片視覺辨識技能與視覺辨識融合技能。agent-platform PR #210。",
+      "protected": true,
+      "href": "doc-ocr-pdf-markdown.html",
+      "file": "doc-ocr-pdf-markdown.html",
+      "publishDate": "2026-07-07T15:02:25+08:00"
     }
   ]
 }
