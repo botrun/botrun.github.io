@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "remote-dev-gepa-vs-gan-heritage",
+      "title": "邊爬山邊開發、三選手一起練 — 遠端遙控 × GEPA vs GAN × 技能傳承",
+      "description": "一場 21 分鐘對談的三件寶：①手機 remote control 遙控本機 Mac 開發（本機才有 OCR/語音轉文字/機密處理/claude-in-chrome，測完才發布；拖拉檔案、看 Finder、自動部署看 HTML 都叫 AI 代勞）②GEPA vs GAN 兩套 AI 教練法——GAN＝選手+裁判 loop 缺教練；GEPA(Stanford)＝一次三選手+同一裁判+教練取優去缺，進化快；選手鎖 31B 只改一個變因最可控；簡單用 GAN、難用 GEPA ③最難的傳承題：AI 產出太多非 RD 看不懂，三解法（手把手/UI 關卡引導/技能包+考試遊戲，參考法務部技能包講出內政部解法 AI 打分補缺）。實測 Fable 95%/Opus 85%/run2 分數 90 幾。含前後比較/三選手 PK/三傳承路 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "file": "remote-dev-gepa-vs-gan-heritage.html",
+      "icon": "⛰️",
+      "publishDate": "2026-07-07T12:15:12+08:00"
+    },
+    {
       "id": "moj-labeling-dynamic-workflow",
       "title": "統計處標籤判讀技能 — 用 Dynamic Workflow 把「一次 300 件」跑穩",
       "description": "承接標籤判讀技能的量產化：純丟給 agentic AI 跑會漏步、亂序、逐件超慢。解法＝Dynamic Workflow（Claude Code 精神，用 Bun/TS 監工腳本控制 31B 技能的多步驟＋平行，pi -p 呼叫、GNU Parallel／Unix pipe）。批次 100～300 檔一次跑；每輪壓測量四數字（多快／多省資源／多精準／品質多好）當 baseline 迭代。output 產五頁籤 CSV/Excel（重大刑事、人口販運、國土保育、幫助犯、未遂犯），走 Files API 匯回客戶個案管理系統，開發者只產檔不管傳輸。突破＝把 AI 自由發揮換成程式監工＋可量化壓測。含前後比較/架構/壓測 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
