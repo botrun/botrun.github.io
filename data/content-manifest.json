@@ -9344,6 +9344,15 @@
       "href": "doc-ocr-parallel.html",
       "file": "doc-ocr-parallel.html",
       "publishDate": "2026-07-07T15:33:47+08:00"
+    },
+    {
+      "id": "oh-my-pi-omp",
+      "title": "oh-my-pi（omp）· 把整個 IDE 接進終端機 · 介紹圖卡",
+      "subtitle": "Can Bölük（can1357）以 Pi 為基礎打造的加強版分支，~55k 行 Rust 核心、GitHub 16.5k stars。定位：Pi 本體只給四支基本工具（read/write/search/bash），omp 直接塞 32 支內建工具＋語言智慧（LSP 14 種操作）＋真除錯器（DAP 接 lldb/dlv/debugpy）＋隱形瀏覽器（Puppeteer 控 Chromium 甚至 Electron）＋跨對話記憶（Hindsight retain/recall/reflect）＋平行 subagent（隔離 worktree、schema 驗證結果）。進階特色：TTSR 時間旅行串流規則（regex 命中回原點重試、無 context 稅）、Advisor 第二模型即時審查、/collab 即時 session 共享、/review 平行審查 P0–P3 分級、omp commit 拆依賴排序 commit、conflict:// 衝突解決。40+ 供應商三類（前沿 API／訂閱 Coding Plan／自架）、四種角色路由 default/smol/slow/plan、五種入口 TUI/-p/SDK/RPC/ACP，首次執行自動繼承 .claude/.cursor 設定。內容已上 GitHub README 查證更正（角色四種、入口五種）。",
+      "protected": true,
+      "href": "oh-my-pi-omp.html",
+      "file": "oh-my-pi-omp.html",
+      "publishDate": "2026-07-07T17:06:48+08:00"
     }
   ]
 }
