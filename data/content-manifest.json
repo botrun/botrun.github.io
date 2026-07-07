@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "moj-statistical-labeling-skill",
+      "title": "法務部統計書類 AI 標籤判讀技能 — 從一場會議到一支會分類的技能",
+      "description": "把一堆檢察官偵查書類 PDF 變成 AI 自動填好分類的 Excel。三組分工聚焦統計處標籤判讀：建 MOJ-statistical repo（data/input 案件夾＋data/output 正解 Excel）→ 公開書類直接用、機密用 Fable+Python 呼叫國網 31B 就地處理 → Fable 轉 AI 友善純文字並切訓練/保留集 → pi -p 驅動 31B（Gemma 4）依 pi.dev 寫 SKILL.md 技能 → GEPA 多輪迭代、Fable sub-agent 打分到 >90 → Bun/TS 轉回 Excel。突破＝把模糊分類直覺變成可打分閉環（切集防作弊＋獨立裁判＋依分數自動改教材）。含流程/分工/GEPA 迴圈 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "file": "moj-statistical-labeling-skill.html",
+      "icon": "🧠",
+      "publishDate": "2026-07-07T11:11:15+08:00"
+    },
+    {
       "id": "builtin-skills-asr-one-step-heritage",
       "title": "內建技能治本＋語音轉文字一步完成（GAN 96 分收官）",
       "description": "OCR/ASR 技能拷貝 stale 打廢除端點＝鬼打牆根因；治本＝SKILL.md version SSOT＋升級式 sync＋telemetry/tfetchRetry＋tower 150s 逾時；ASR 迭代 v1.2→v1.4（自動尋檔/stdout 全文/真 resume/禁委派：pi subagent 7min→2 steps 90s）。SVG 卡片八張，GAN 對抗評審 R2=95、R4=96。",
