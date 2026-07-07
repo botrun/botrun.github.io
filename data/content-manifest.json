@@ -32,6 +32,13 @@
   },
   "items": [
     {
+      "id": "pi-goal-extension-consolidation",
+      "title": "三個長得一樣的 goal 套件，選一個最簡單的 — pi 擴充收斂與選單去垃圾",
+      "description": "pi 生態三個同名 goal 擴充（pi-goal-x／@capyup/pi-goal／Michaelliv pi-goal）怎麼比較、選最簡、根除殭屍套件（settings＋npm-deps＋node_modules 三戶籍同步刪）、以及 bm / 選單去除框架 examples demo 垃圾指令（1.0.28）的完整傳承。最終收斂成單一 git:github.com/Michaelliv/pi-goal，subagents 與 pi-web-access 全刪，claude-in-chrome／bm CLI 後端驗測通過。",
+      "protected": true,
+      "publishDate": "2026-07-07T17:12:49+08:00"
+    },
+    {
       "id": "moj-lawmap-dsl-gepa-96",
       "title": "把「憑感覺分類」換成「查一張完整對照表」— 分類判讀從 79 練到 96 分",
       "description": "法務部檢察官偵結書類自動分類判讀的核心突破：把 AI「憑理解決定屬於哪一類」（會漏、會猜、baseline 只有 74～79）換成「查一張完整法條對照表」。①用 Claude in Chrome＋Bun/TS 爬全國法規五大類（未遂／幫助／重大刑案／人口販運／國土保育），落地成對照表 DSL（JSONL：法條→類別→判定規則）＋盤點表，卷宗命中哪條法就直接對到類別，幾乎不會錯 ②領域專家點出的最陰陷阱「被告不符合××未遂」負面表述——先關鍵字命中、再回查否定詞綴的 deterministic 後處理擋掉假陽性 ③一案可同屬幫助犯又未遂犯（統計需求，非分錯），對照表允許一案多標籤 ④把「對照表＋錯誤樣態」當參考餵給 GEPA 演化到第七版選手、pi -p 載入 31B，保留集 91→96 分。副線含 Chandra OCR 2 拆頁保頁碼定案（13 頁 23 秒快 7 倍）與平台收斂 pi、內建 /go。含前後比較／未遂判定流程／一案多標籤／分數演進 SVG 卡、置頂原始 prompt、成果四件套、去個資示範。零中國大陸用語。",
