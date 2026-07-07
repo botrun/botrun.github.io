@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "builtin-skills-asr-one-step-heritage",
+      "title": "內建技能治本＋語音轉文字一步完成（GAN 96 分收官）",
+      "description": "OCR/ASR 技能拷貝 stale 打廢除端點＝鬼打牆根因；治本＝SKILL.md version SSOT＋升級式 sync＋telemetry/tfetchRetry＋tower 150s 逾時；ASR 迭代 v1.2→v1.4（自動尋檔/stdout 全文/真 resume/禁委派：pi subagent 7min→2 steps 90s）。SVG 卡片八張，GAN 對抗評審 R2=95、R4=96。",
+      "protected": true,
+      "file": "marker-to-chandra-ocr2.html",
+      "icon": "🔎",
+      "publishDate": "2026-07-06T18:00:00+08:00"
+    },
+    {
       "id": "marker-to-chandra-ocr2",
       "title": "marker → Chandra OCR 2：貫通整條路（cbh→gate→tower→chandra）",
       "description": "把 cbh-play-dev 掃描頁 OCR 從舊 marker 換成 Chandra OCR 2，並在真機端到端辨識成功。含三張 SVG：完整鏈路（cbh→gate.botrun.ai/ocr→tower2→vLLM chandra:8004）、br- API key 怎麼安排（存主機 .env→平台注入→gate 換上游憑證）、參數怎麼流動（PDF→pdftoppm→base64 JSON→/ocr/v1/ocr→pages[].markdown）。一步式取代舊 marker 兩步 upload→輪詢；env OCR_→BOTRUN_OCR_ 品牌前綴。零中國大陸用語。",
