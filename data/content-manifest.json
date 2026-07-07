@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "moj-labeling-dynamic-workflow",
+      "title": "統計處標籤判讀技能 — 用 Dynamic Workflow 把「一次 300 件」跑穩",
+      "description": "承接標籤判讀技能的量產化：純丟給 agentic AI 跑會漏步、亂序、逐件超慢。解法＝Dynamic Workflow（Claude Code 精神，用 Bun/TS 監工腳本控制 31B 技能的多步驟＋平行，pi -p 呼叫、GNU Parallel／Unix pipe）。批次 100～300 檔一次跑；每輪壓測量四數字（多快／多省資源／多精準／品質多好）當 baseline 迭代。output 產五頁籤 CSV/Excel（重大刑事、人口販運、國土保育、幫助犯、未遂犯），走 Files API 匯回客戶個案管理系統，開發者只產檔不管傳輸。突破＝把 AI 自由發揮換成程式監工＋可量化壓測。含前後比較/架構/壓測 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "file": "moj-labeling-dynamic-workflow.html",
+      "icon": "🗺️",
+      "publishDate": "2026-07-07T11:46:06+08:00"
+    },
+    {
       "id": "moj-statistical-labeling-skill",
       "title": "法務部統計書類 AI 標籤判讀技能 — 從一場會議到一支會分類的技能",
       "description": "把一堆檢察官偵查書類 PDF 變成 AI 自動填好分類的 Excel。三組分工聚焦統計處標籤判讀：建 MOJ-statistical repo（data/input 案件夾＋data/output 正解 Excel）→ 公開書類直接用、機密用 Fable+Python 呼叫國網 31B 就地處理 → Fable 轉 AI 友善純文字並切訓練/保留集 → pi -p 驅動 31B（Gemma 4）依 pi.dev 寫 SKILL.md 技能 → GEPA 多輪迭代、Fable sub-agent 打分到 >90 → Bun/TS 轉回 Excel。突破＝把模糊分類直覺變成可打分閉環（切集防作弊＋獨立裁判＋依分數自動改教材）。含流程/分工/GEPA 迴圈 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
