@@ -9326,6 +9326,15 @@
       "href": "doc-ocr-pdf-markdown.html",
       "file": "doc-ocr-pdf-markdown.html",
       "publishDate": "2026-07-07T15:02:25+08:00"
+    },
+    {
+      "id": "doc-ocr-parallel",
+      "title": "平行 OCR 為什麼快 · 13 頁只要 34 秒 · 傳承",
+      "subtitle": "回答「這是平行 OCR 嗎？」——是，而且兩層平行。文件OCR視覺辨識技能把整份 PDF 的處理拆成兩階段各給對的並行度：PDF→PNG 轉檔開 30 條（CPU-bound，13 頁 0.3s 轉完），Chandra OCR 辨識開 4 條同時打 gate /ocr（單 GPU 甜蜜點，過度訂閱反而變慢）。同樣 13 頁排隊做要 100s＋、平行做 34s（約 3 倍，cbh-play-dev 真機實測、0 失敗）。想更快＝加端點 --url a,b 讓 worker round-robin，而非硬加並行。含 serial vs parallel 時間軸、吞吐 vs 並行度曲線、resume/telemetry。",
+      "protected": true,
+      "href": "doc-ocr-parallel.html",
+      "file": "doc-ocr-parallel.html",
+      "publishDate": "2026-07-07T15:33:47+08:00"
     }
   ]
 }
