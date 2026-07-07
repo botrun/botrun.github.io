@@ -32,6 +32,13 @@
   },
   "items": [
     {
+      "id": "bm-builtin-ocr-skill-gate-key-alias",
+      "title": "拖一個 zip 進來，掃描卷宗變可讀文字 — 內建 OCR 技能 × gate 金鑰別名治本",
+      "description": "把 pi.dev 的文件OCR視覺辨識技能（Chandra OCR 2，整份 PDF→逐頁 Markdown 保表格）一鍵裝進 bm 並治本內建：①zip 安裝端點 ②根因＝技能讀 BOTRUN_GATE_API_KEY 而 bm 只給 BOTRUN_GATE_KEY→401 ③治本＝runs.rs 注入 gate br- key 時同時用三別名，任何 gate 技能都不再 401 ④移除 .user-installed＝隨 release tar 內建出貨 ⑤bm CLI 實測 13 頁掃描版偵查卷宗 43.4s／0 失敗。botrun-multi 1.0.25。",
+      "protected": true,
+      "publishDate": "2026-07-07T15:23:26+08:00"
+    },
+    {
       "id": "clean-install-batch-pii-redaction",
       "title": "乾淨安裝就能大量批量去機敏＋全面多模態 — botrun-multi 1.0.24／botrun-pii 1.10.2",
       "description": "從『同事裝好卻連不上 gate 31B（401）』到『20 word＋20 excel＋20 pdf、2803 筆個資去機敏召回 100%』的完整傳承：①.env 三來源（./.env／repo／~/.botrun/.env）＋UI 貼 key 同步 global＋401 在地化引導 ②去機敏 reuse ../botrun-pii Rust binary（不自寫 .ts）、乾淨機經 gate 本地代理注入 Bearer 走 tower gemma-4-26b ③office轉文字技能（零依賴 OOXML unzip+regex）④fable GAN 對抗三輪 81→89→91 分、召回 97%→100%（MONEY seed／全域一致傳播／裸公司規則）⑤UI 批量進度條常駐輪詢。",
