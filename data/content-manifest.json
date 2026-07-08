@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "sovereign-evolving-ai-press-release",
+      "title": "「可進化主權 AI」新標準上路：政府 AI 一顆檔案自帶大腦，機敏資料全程留在機關內 — 數位發展部新聞稿",
+      "description": "以頂流新聞稿寫作原則（倒金字塔結構、5W1H導言、長官談話、標準發布區塊）撰寫的數位發展部對外新聞稿範本，說明 .botrun 單檔 AI 大腦技術規格如何解決『用國際大模型效果好但資料須外送』與『地端小模型安全但效果差』的兩難。含 3 張 SVG 說服卡：舊兩難 vs 新解方對比、出題-作答-評分-進步自我進化循環、法務部分類判讀案保留集驗測 79→96 分實測成果長條圖。附部長談話、與現行做法比較表、下一步規劃、聯絡窗口區塊，供發言人室審核修改後正式發布。零中國大陸用語。",
+      "protected": true,
+      "file": "sovereign-evolving-ai-press-release.html",
+      "icon": "📰",
+      "publishDate": "2026-07-08T12:29:06+08:00"
+    },
+    {
       "id": "botrun-quality-qa-db-spec",
       "title": ".botrun 高品味題庫 世界標準格式 v4.2.0 — 給法律人也讀得懂的傳承",
       "description": "把 AI 大腦裝進一個普通 SQLite 檔（.botrun／.🤖，改名等價、身分看內容）。用「卷宗檔案櫃」比喻講給檢察官、律師懂：一顆檔案 = 一整座會自己進步的卷宗庫。完整 7 表全景（meta 卷宗封面／sqlar 卷證檔案櫃／skills 辦案 SOP／lessons 前車之鑑）＋高品味題庫核心三表逐欄解說：questions 爭點考題（train 練習卷／holdout 彌封考卷防刷分）、answers 作答紙（golden 標準見解／candidate 待審草稿／reference 參考，身分只認 role 不認姓名）、scores 評核單（candidate 對照 golden 打 0–100 分、只增不刪成進步曲線）。含一件全去識別化的酒駕公共危險案（刑法185-3第1項第1款）golden vs candidate 前後對比 SVG＋可直接照抄 SQL、LIKE 禁 FTS5 的中文查證生死線、v2→v4 演進時間軸、成果四件套、為何從成品反推才突破。零中國大陸用語。",
