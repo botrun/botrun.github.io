@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "cmux-vs-tmux",
+      "title": "cmux vs. tmux：AI 代理人時代的終端機，兩把不同的刀",
+      "description": "把 cmux 與 tmux 講到高中生也懂、技術人看括號也知道怎麼做。tmux＝20 年老將的『終端機瑞士刀』（純文字 multiplexer、detach/attach 斷線不死、跨 Mac/Linux/BSD、極輕巧），cmux＝2026-02 為 AI 代理人而生的『駕駛艙』（原生 macOS App、libghostty GPU 渲染、通知環亮藍圈告訴你哪個 agent 在等你、內建可程式瀏覽器、Unix socket API）。結論：不是二選一而是互補，cmux 還能原生接遠端 tmux。重點加碼 Claude Code × cmux 混合優勢：cmux claude-teams 讓工頭 AI 拆活、工人 AI 各據一張 git worktree 桌（檔案不打架、一人穩定並行 4–8 桌）、teammate 自動變成有名牌會亮燈的原生分格（tmux 相容 shim 把 tmux 指令翻成 cmux socket API），瓶頸從『切畫面』上移到『你 review 得夠不夠快』。含多張 before/after SVG 比較卡、決策樹、演進歷程、成果四件套、去個資示範。零中國大陸用語。",
+      "protected": true,
+      "file": "cmux-vs-tmux.html",
+      "icon": "🖥️",
+      "publishDate": "2026-07-08T14:30:00+08:00"
+    },
+    {
       "id": "pi-goal-extension-consolidation",
       "title": "三個長得一樣的 goal 套件，選一個最簡單的 — pi 擴充收斂與選單去垃圾",
       "description": "pi 生態三個同名 goal 擴充（pi-goal-x／@capyup/pi-goal／Michaelliv pi-goal）怎麼比較、選最簡、根除殭屍套件（settings＋npm-deps＋node_modules 三戶籍同步刪）、以及 bm / 選單去除框架 examples demo 垃圾指令（1.0.28）的完整傳承。最終收斂成單一 git:github.com/Michaelliv/pi-goal，subagents 與 pi-web-access 全刪，claude-in-chrome／bm CLI 後端驗測通過。",
