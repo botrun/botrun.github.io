@@ -9367,6 +9367,13 @@
       "subtitle": "兩個 AI 互相挑剔四輪（生成方改技能庫、獨立 Fable judge 只認 artifact 打分）：20 情境×3 輪 60/60 零失敗＋3 個 fresh 專案部署全綠。三大突破：假去識別化行為斷言（產物殘留真 PII 即判死）、telemetry 檔案黑盒子（session 截斷不再吃證據＋上游 ms 歸因）、顆粒收斂 23→20（canonical＋能力聯集＋prune）。GAN 迴圈 1 小時 45 分收工，LLM 費用約 NT$3。",
       "protected": true,
       "publishDate": "2026-07-08T06:05:08+08:00"
+    },
+    {
+      "id": "gan-four-targets-billing-handoff",
+      "title": "四標的 GAN 終局 3/4 PASS＋國網 billing 完整交接 · 超完整傳承",
+      "subtitle": "獨立 Fable judge 七輪對抗：skills 95.8／multi 95.2（白天決勝場 60/60）／AP 95.1 三張簽字 PASS；cbh 89.2 誠實上限＝國網經 gate 回空 usage。內含同事接手交接包：ledger 全 0 鐵證路徑、雙層根因（litellm 串流不回 usage×OpenCode 事件鏈依賴 provider）、三條修法（include_usage／gate 節流點自算／host 估算止血）、照抄可跑排查步驟與驗收定義。方法學遺產：跨場統計判準＋乾淨樣本前提＋「分數上不去先懷疑尺」。",
+      "protected": true,
+      "publishDate": "2026-07-08T08:59:30+08:00"
     }
   ]
 }
