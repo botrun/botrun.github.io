@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "default-pi-tower-gemma",
+      "title": "波特玩新專案全面預設 Pi × 波特塔 gemma-4-31b（2026-07-08）",
+      "description": "波特玩新專案不用手選，開箱即 Pi Agent＋波特塔 Tower gemma-4-31b。治本＝agent-platform lib/engines 兩個決策函式(defaultEngineForProviderType 非Anthropic provider→pi、inferProjectEngineId Priority B 同步，原沿用 CATALOG 順序回 opencode＝既有專案看到 opencode 的真來源)；預設模型是 team 資料非硬編碼。cbh-play-dev claude-in-chrome 驗過：新專案設定顯示 Pi Agent＋波特塔 Gemma 4 31B、對話「1加1等於2。」通過。最痛地雷＝波特塔 provider 沿用 /openrouter 的 br- key 打 /tower 回 401 致 pi turn 秒錯，換 tower-scoped key(TOWER_API_KEY)即通。交付 agent-platform PR#236 停 PR 等 seba。零中國大陸用語。",
+      "protected": true,
+      "file": "default-pi-tower-gemma.html",
+      "icon": "🤖",
+      "publishDate": "2026-07-08T20:27:48+08:00"
+    },
+    {
       "id": "skill-disable-persist",
       "title": "內建技能「關不掉」治本 — 尊重 skills-disabled/（2026-07-08）",
       "description": "四個內建技能（PDF抽文字層／PDF拆頁／掃描頁OCR辨識／文件OCR視覺辨識）一關就彈回開啟。根因＝syncBuiltinSkillsToProject 每次對話前跑、只看 .claude/skills/ 不看 .claude/skills-disabled/，而 disable＝rename 到 skills-disabled/，於是被判 copy 又複製回去。治本＝複製前檢查 skills-disabled/ 存在即 continue 跳過。含 cbh-play-dev claude-in-chrome 端到端驗證、docker cached build 產舊 bundle 必須 --no-cache 等部署地雷。交付 agent-platform PR#235。零中國大陸用語。",
