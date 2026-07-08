@@ -32,6 +32,18 @@
   },
   "items": [
     {
+      "id": "batch-deid-gan-mapreduce",
+      "title": "批量去機敏 GAN 對抗評審 × Map-Reduce 平行化 — 進度傳承",
+      "subtitle": "把「一個裁判讀完 18 頁」換成「三個裁判各讀 6 頁同時查」，把「AI 說做完了」換成「另一個不知情的 AI 自己重查」。七輪查、八輪修（跨兩個獨立 repo），累積修好 16 個真實 bug；分數 65→78→65→75，尚未達 95 分終點，誠實記錄進度快照而非最終驗收。",
+      "href": "batch-deid-gan-mapreduce.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-09T07:45:00+08:00",
+      "tags": ["傳承", "GAN", "Map-Reduce", "去機敏", "PII"]
+    },
+    {
       "id": "skill-incubation-gan-verify",
       "title": "技能孵化 GAN 驗證誕生記 — 兩個會抓自己 bug 的技能",
       "subtitle": "從整理過去 4 週的人類 prompt 到孵化「研究傳承一條龍」與「GAN-GEPA演化教練」兩個全域技能：9 個真實情境驗證，抓到 2 個真缺陷（PII二次洩漏、來源鏈斷裂）並修正重驗證，同時分辨出哪些是技能缺陷、哪些是素材天花板。",
