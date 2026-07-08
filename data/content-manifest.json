@@ -38,7 +38,11 @@
       "protected": true,
       "file": "default-pi-tower-gemma.html",
       "icon": "🤖",
-      "publishDate": "2026-07-08T20:27:48+08:00"
+      "publishDate": "2026-07-08T20:27:48+08:00",
+      "href": "default-pi-tower-gemma.html",
+      "subtitle": "波特玩新專案不用手選，開箱即 Pi Agent＋波特塔 Tower gemma-4-31b。治本＝agent-platform lib/engines 兩個決策函式(defaultEngineForProviderType 非Anthropic provider→pi、inferProjectEngineId Priority B 同步，原沿用 CATALOG 順序回 opencode＝既有專案看到 opencode 的真來源)；預設模型是 team 資料非硬編碼。cbh-play-dev claude-in-chrome 驗過：新專案設定顯示 Pi Agent＋波特塔 Gemma 4 31B、對話「1加1等於2。」通過。最痛地雷＝波特塔 provider 沿用 /openrouter 的 br- key 打 /tower 回 401 致 pi turn 秒錯，換 tower-scoped key(TOWER_API_KEY)即通。交付 agent-platform PR#236 停 PR 等 seba。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "skill-disable-persist",
@@ -47,7 +51,11 @@
       "protected": true,
       "file": "skill-disable-persist.html",
       "icon": "🔛",
-      "publishDate": "2026-07-08T20:26:23+08:00"
+      "publishDate": "2026-07-08T20:26:23+08:00",
+      "href": "skill-disable-persist.html",
+      "subtitle": "四個內建技能（PDF抽文字層／PDF拆頁／掃描頁OCR辨識／文件OCR視覺辨識）一關就彈回開啟。根因＝syncBuiltinSkillsToProject 每次對話前跑、只看 .claude/skills/ 不看 .claude/skills-disabled/，而 disable＝rename 到 skills-disabled/，於是被判 copy 又複製回去。治本＝複製前檢查 skills-disabled/ 存在即 continue 跳過。含 cbh-play-dev claude-in-chrome 端到端驗證、docker cached build 產舊 bundle 必須 --no-cache 等部署地雷。交付 agent-platform PR#235。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "slash-ext-ssot-pdf-leak",
@@ -56,7 +64,11 @@
       "protected": true,
       "file": "slash-ext-ssot-pdf-leak.html",
       "icon": "🎯",
-      "publishDate": "2026-07-08T14:39:21+08:00"
+      "publishDate": "2026-07-08T14:39:21+08:00",
+      "href": "slash-ext-ssot-pdf-leak.html",
+      "subtitle": "把兩個看似玄學的失敗查到底並治本：① /goal 看似不支援＝rpc.rs 擴充事件寫死綁 subagent、非該名一律丟棄，治本改成不綁擴充名的 SSOT 單一路徑（setStatus→Progress、notify→Notice），未來 pi 擴充零改動即支援；② PDF 像叫不動＝本地 gemma 經 ollama 偶把原生 tool-call token 當正文吐出、工具沒真的執行導致技能鏈斷（技能本身 100% 正常），治本＝洩漏偵測＋可讀診斷 banner＋三條復原建議（重試／切 Gate／改小模型），不硬補跑亂碼。含前後對比 SVG 卡：綁名字 vs 認協定、亂碼 vs 可讀診斷、貫穿六層 vs GlobalSignal。依使用者鐵律全面移除 subagent；56 測試綠＋claude-in-chrome 全程實測。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "sovereign-evolving-ai-press-release",
@@ -65,7 +77,11 @@
       "protected": true,
       "file": "sovereign-evolving-ai-press-release.html",
       "icon": "📰",
-      "publishDate": "2026-07-08T12:29:06+08:00"
+      "publishDate": "2026-07-08T12:29:06+08:00",
+      "href": "sovereign-evolving-ai-press-release.html",
+      "subtitle": "以頂流新聞稿寫作原則（倒金字塔結構、5W1H導言、長官談話、標準發布區塊）撰寫的數位發展部對外新聞稿範本，說明 .botrun 單檔 AI 大腦技術規格如何解決『用國際大模型效果好但資料須外送』與『地端小模型安全但效果差』的兩難。含 3 張 SVG 說服卡：舊兩難 vs 新解方對比、出題-作答-評分-進步自我進化循環、法務部分類判讀案保留集驗測 79→96 分實測成果長條圖。附部長談話、與現行做法比較表、下一步規劃、聯絡窗口區塊，供發言人室審核修改後正式發布。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-quality-qa-db-spec",
@@ -74,7 +90,11 @@
       "protected": true,
       "file": "botrun-quality-qa-db-spec.html",
       "icon": "⚖️",
-      "publishDate": "2026-07-08T11:50:57+08:00"
+      "publishDate": "2026-07-08T11:50:57+08:00",
+      "href": "botrun-quality-qa-db-spec.html",
+      "subtitle": "把 AI 大腦裝進一個普通 SQLite 檔（.botrun／.🤖，改名等價、身分看內容）。用「卷宗檔案櫃」比喻講給檢察官、律師懂：一顆檔案 = 一整座會自己進步的卷宗庫。完整 7 表全景（meta 卷宗封面／sqlar 卷證檔案櫃／skills 辦案 SOP／lessons 前車之鑑）＋高品味題庫核心三表逐欄解說：questions 爭點考題（train 練習卷／holdout 彌封考卷防刷分）、answers 作答紙（golden 標準見解／candidate 待審草稿／reference 參考，身分只認 role 不認姓名）、scores 評核單（candidate 對照 golden 打 0–100 分、只增不刪成進步曲線）。含一件全去識別化的酒駕公共危險案（刑法185-3第1項第1款）golden vs candidate 前後對比 SVG＋可直接照抄 SQL、LIKE 禁 FTS5 的中文查證生死線、v2→v4 演進時間軸、成果四件套、為何從成品反推才突破。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "cmux-vs-tmux",
@@ -83,14 +103,23 @@
       "protected": true,
       "file": "cmux-vs-tmux.html",
       "icon": "🖥️",
-      "publishDate": "2026-07-08T14:30:00+08:00"
+      "publishDate": "2026-07-08T14:30:00+08:00",
+      "href": "cmux-vs-tmux.html",
+      "subtitle": "把 cmux 與 tmux 講到高中生也懂、技術人看括號也知道怎麼做。tmux＝20 年老將的『終端機瑞士刀』（純文字 multiplexer、detach/attach 斷線不死、跨 Mac/Linux/BSD、極輕巧），cmux＝2026-02 為 AI 代理人而生的『駕駛艙』（原生 macOS App、libghostty GPU 渲染、通知環亮藍圈告訴你哪個 agent 在等你、內建可程式瀏覽器、Unix socket API）。結論：不是二選一而是互補，cmux 還能原生接遠端 tmux。重點加碼 Claude Code × cmux 混合優勢：cmux claude-teams 讓工頭 AI 拆活、工人 AI 各據一張 git worktree 桌（檔案不打架、一人穩定並行 4–8 桌）、teammate 自動變成有名牌會亮燈的原生分格（tmux 相容 shim 把 tmux 指令翻成 cmux socket API），瓶頸從『切畫面』上移到『你 review 得夠不夠快』。含多張 before/after SVG 比較卡、決策樹、演進歷程、成果四件套、去個資示範。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "pi-goal-extension-consolidation",
       "title": "三個長得一樣的 goal 套件，選一個最簡單的 — pi 擴充收斂與選單去垃圾",
       "description": "pi 生態三個同名 goal 擴充（pi-goal-x／@capyup/pi-goal／Michaelliv pi-goal）怎麼比較、選最簡、根除殭屍套件（settings＋npm-deps＋node_modules 三戶籍同步刪）、以及 bm / 選單去除框架 examples demo 垃圾指令（1.0.28）的完整傳承。最終收斂成單一 git:github.com/Michaelliv/pi-goal，subagents 與 pi-web-access 全刪，claude-in-chrome／bm CLI 後端驗測通過。",
       "protected": true,
-      "publishDate": "2026-07-07T17:12:49+08:00"
+      "publishDate": "2026-07-07T17:12:49+08:00",
+      "href": "pi-goal-extension-consolidation.html",
+      "subtitle": "pi 生態三個同名 goal 擴充（pi-goal-x／@capyup/pi-goal／Michaelliv pi-goal）怎麼比較、選最簡、根除殭屍套件（settings＋npm-deps＋node_modules 三戶籍同步刪）、以及 bm / 選單去除框架 examples demo 垃圾指令（1.0.28）的完整傳承。最終收斂成單一 git:github.com/Michaelliv/pi-goal，subagents 與 pi-web-access 全刪，claude-in-chrome／bm CLI 後端驗測通過。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "moj-lawmap-dsl-gepa-96",
@@ -99,21 +128,35 @@
       "protected": true,
       "file": "moj-lawmap-dsl-gepa-96.html",
       "icon": "📑",
-      "publishDate": "2026-07-07T16:33:20+08:00"
+      "publishDate": "2026-07-07T16:33:20+08:00",
+      "href": "moj-lawmap-dsl-gepa-96.html",
+      "subtitle": "法務部檢察官偵結書類自動分類判讀的核心突破：把 AI「憑理解決定屬於哪一類」（會漏、會猜、baseline 只有 74～79）換成「查一張完整法條對照表」。①用 Claude in Chrome＋Bun/TS 爬全國法規五大類（未遂／幫助／重大刑案／人口販運／國土保育），落地成對照表 DSL（JSONL：法條→類別→判定規則）＋盤點表，卷宗命中哪條法就直接對到類別，幾乎不會錯 ②領域專家點出的最陰陷阱「被告不符合××未遂」負面表述——先關鍵字命中、再回查否定詞綴的 deterministic 後處理擋掉假陽性 ③一案可同屬幫助犯又未遂犯（統計需求，非分錯），對照表允許一案多標籤 ④把「對照表＋錯誤樣態」當參考餵給 GEPA 演化到第七版選手、pi -p 載入 31B，保留集 91→96 分。副線含 Chandra OCR 2 拆頁保頁碼定案（13 頁 23 秒快 7 倍）與平台收斂 pi、內建 /go。含前後比較／未遂判定流程／一案多標籤／分數演進 SVG 卡、置頂原始 prompt、成果四件套、去個資示範。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "bm-builtin-ocr-skill-gate-key-alias",
       "title": "拖一個 zip 進來，掃描卷宗變可讀文字 — 內建 OCR 技能 × gate 金鑰別名治本",
       "description": "把 pi.dev 的文件OCR視覺辨識技能（Chandra OCR 2，整份 PDF→逐頁 Markdown 保表格）一鍵裝進 bm 並治本內建：①zip 安裝端點 ②根因＝技能讀 BOTRUN_GATE_API_KEY 而 bm 只給 BOTRUN_GATE_KEY→401 ③治本＝runs.rs 注入 gate br- key 時同時用三別名，任何 gate 技能都不再 401 ④移除 .user-installed＝隨 release tar 內建出貨 ⑤bm CLI 實測 13 頁掃描版偵查卷宗 43.4s／0 失敗。botrun-multi 1.0.25。",
       "protected": true,
-      "publishDate": "2026-07-07T15:23:26+08:00"
+      "publishDate": "2026-07-07T15:23:26+08:00",
+      "href": "bm-builtin-ocr-skill-gate-key-alias.html",
+      "subtitle": "把 pi.dev 的文件OCR視覺辨識技能（Chandra OCR 2，整份 PDF→逐頁 Markdown 保表格）一鍵裝進 bm 並治本內建：①zip 安裝端點 ②根因＝技能讀 BOTRUN_GATE_API_KEY 而 bm 只給 BOTRUN_GATE_KEY→401 ③治本＝runs.rs 注入 gate br- key 時同時用三別名，任何 gate 技能都不再 401 ④移除 .user-installed＝隨 release tar 內建出貨 ⑤bm CLI 實測 13 頁掃描版偵查卷宗 43.4s／0 失敗。botrun-multi 1.0.25。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "clean-install-batch-pii-redaction",
       "title": "乾淨安裝就能大量批量去機敏＋全面多模態 — botrun-multi 1.0.24／botrun-pii 1.10.2",
       "description": "從『同事裝好卻連不上 gate 31B（401）』到『20 word＋20 excel＋20 pdf、2803 筆個資去機敏召回 100%』的完整傳承：①.env 三來源（./.env／repo／~/.botrun/.env）＋UI 貼 key 同步 global＋401 在地化引導 ②去機敏 reuse ../botrun-pii Rust binary（不自寫 .ts）、乾淨機經 gate 本地代理注入 Bearer 走 tower gemma-4-26b ③office轉文字技能（零依賴 OOXML unzip+regex）④fable GAN 對抗三輪 81→89→91 分、召回 97%→100%（MONEY seed／全域一致傳播／裸公司規則）⑤UI 批量進度條常駐輪詢。",
       "protected": true,
-      "publishDate": "2026-07-07T13:46:15+08:00"
+      "publishDate": "2026-07-07T13:46:15+08:00",
+      "href": "clean-install-batch-pii-redaction.html",
+      "subtitle": "從『同事裝好卻連不上 gate 31B（401）』到『20 word＋20 excel＋20 pdf、2803 筆個資去機敏召回 100%』的完整傳承：①.env 三來源（./.env／repo／~/.botrun/.env）＋UI 貼 key 同步 global＋401 在地化引導 ②去機敏 reuse ../botrun-pii Rust binary（不自寫 .ts）、乾淨機經 gate 本地代理注入 Bearer 走 tower gemma-4-26b ③office轉文字技能（零依賴 OOXML unzip+regex）④fable GAN 對抗三輪 81→89→91 分、召回 97%→100%（MONEY seed／全域一致傳播／裸公司規則）⑤UI 批量進度條常駐輪詢。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "remote-dev-gepa-vs-gan-heritage",
@@ -122,7 +165,11 @@
       "protected": true,
       "file": "remote-dev-gepa-vs-gan-heritage.html",
       "icon": "⛰️",
-      "publishDate": "2026-07-07T12:15:12+08:00"
+      "publishDate": "2026-07-07T12:15:12+08:00",
+      "href": "remote-dev-gepa-vs-gan-heritage.html",
+      "subtitle": "一場 21 分鐘對談的三件寶：①手機 remote control 遙控本機 Mac 開發（本機才有 OCR/語音轉文字/機密處理/claude-in-chrome，測完才發布；拖拉檔案、看 Finder、自動部署看 HTML 都叫 AI 代勞）②GEPA vs GAN 兩套 AI 教練法——GAN＝選手+裁判 loop 缺教練；GEPA(Stanford)＝一次三選手+同一裁判+教練取優去缺，進化快；選手鎖 31B 只改一個變因最可控；簡單用 GAN、難用 GEPA ③最難的傳承題：AI 產出太多非 RD 看不懂，三解法（手把手/UI 關卡引導/技能包+考試遊戲，參考法務部技能包講出內政部解法 AI 打分補缺）。實測 Fable 95%/Opus 85%/run2 分數 90 幾。含前後比較/三選手 PK/三傳承路 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "moj-labeling-dynamic-workflow",
@@ -131,7 +178,11 @@
       "protected": true,
       "file": "moj-labeling-dynamic-workflow.html",
       "icon": "🗺️",
-      "publishDate": "2026-07-07T11:46:06+08:00"
+      "publishDate": "2026-07-07T11:46:06+08:00",
+      "href": "moj-labeling-dynamic-workflow.html",
+      "subtitle": "承接標籤判讀技能的量產化：純丟給 agentic AI 跑會漏步、亂序、逐件超慢。解法＝Dynamic Workflow（Claude Code 精神，用 Bun/TS 監工腳本控制 31B 技能的多步驟＋平行，pi -p 呼叫、GNU Parallel／Unix pipe）。批次 100～300 檔一次跑；每輪壓測量四數字（多快／多省資源／多精準／品質多好）當 baseline 迭代。output 產五頁籤 CSV/Excel（重大刑事、人口販運、國土保育、幫助犯、未遂犯），走 Files API 匯回客戶個案管理系統，開發者只產檔不管傳輸。突破＝把 AI 自由發揮換成程式監工＋可量化壓測。含前後比較/架構/壓測 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "moj-statistical-labeling-skill",
@@ -140,7 +191,11 @@
       "protected": true,
       "file": "moj-statistical-labeling-skill.html",
       "icon": "🧠",
-      "publishDate": "2026-07-07T11:11:15+08:00"
+      "publishDate": "2026-07-07T11:11:15+08:00",
+      "href": "moj-statistical-labeling-skill.html",
+      "subtitle": "把一堆檢察官偵查書類 PDF 變成 AI 自動填好分類的 Excel。三組分工聚焦統計處標籤判讀：建 MOJ-statistical repo（data/input 案件夾＋data/output 正解 Excel）→ 公開書類直接用、機密用 Fable+Python 呼叫國網 31B 就地處理 → Fable 轉 AI 友善純文字並切訓練/保留集 → pi -p 驅動 31B（Gemma 4）依 pi.dev 寫 SKILL.md 技能 → GEPA 多輪迭代、Fable sub-agent 打分到 >90 → Bun/TS 轉回 Excel。突破＝把模糊分類直覺變成可打分閉環（切集防作弊＋獨立裁判＋依分數自動改教材）。含流程/分工/GEPA 迴圈 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-skills-transcribe-changelog-fix",
@@ -149,7 +204,11 @@
       "protected": true,
       "file": "botrun-skills-transcribe-changelog-fix.html",
       "icon": "🎙️",
-      "publishDate": "2026-07-08T20:00:00+08:00"
+      "publishDate": "2026-07-08T20:00:00+08:00",
+      "href": "botrun-skills-transcribe-changelog-fix.html",
+      "subtitle": "承 agent-platform PR #214 Plan A（先在 registry 治本→resync→才 merge）。#2 語音轉文字技能 transcribe.ts 對無副檔名音檔 out===file 會用逐字稿覆蓋原錄音（資料遺失）→ derivedTxt 一律確保 out!==file；#3 兩顆 SKILL.md 移除字面 \\1、合併重複 ## CHANGELOG 為單一區塊。順手修 wholepdf.ts 舊技能名、_telemetry.ts 20MB 上限告警、retired.json 無效條目。四閘門本地全綠＋行為/結構驗證。含正本影印本流向、#2/#3 before/after SVG 卡。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "builtin-skills-asr-one-step-heritage",
@@ -158,7 +217,11 @@
       "protected": true,
       "file": "marker-to-chandra-ocr2.html",
       "icon": "🔎",
-      "publishDate": "2026-07-06T18:00:00+08:00"
+      "publishDate": "2026-07-06T18:00:00+08:00",
+      "href": "builtin-skills-asr-one-step-heritage.html",
+      "subtitle": "OCR/ASR 技能拷貝 stale 打廢除端點＝鬼打牆根因；治本＝SKILL.md version SSOT＋升級式 sync＋telemetry/tfetchRetry＋tower 150s 逾時；ASR 迭代 v1.2→v1.4（自動尋檔/stdout 全文/真 resume/禁委派：pi subagent 7min→2 steps 90s）。SVG 卡片八張，GAN 對抗評審 R2=95、R4=96。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "marker-to-chandra-ocr2",
@@ -167,7 +230,11 @@
       "protected": true,
       "file": "marker-to-chandra-ocr2.html",
       "icon": "🔎",
-      "publishDate": "2026-07-06T18:00:00+08:00"
+      "publishDate": "2026-07-06T18:00:00+08:00",
+      "href": "marker-to-chandra-ocr2.html",
+      "subtitle": "把 cbh-play-dev 掃描頁 OCR 從舊 marker 換成 Chandra OCR 2，並在真機端到端辨識成功。含三張 SVG：完整鏈路（cbh→gate.botrun.ai/ocr→tower2→vLLM chandra:8004）、br- API key 怎麼安排（存主機 .env→平台注入→gate 換上游憑證）、參數怎麼流動（PDF→pdftoppm→base64 JSON→/ocr/v1/ocr→pages[].markdown）。一步式取代舊 marker 兩步 upload→輪詢；env OCR_→BOTRUN_OCR_ 品牌前綴。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "chandra-ocr-2-verify",
@@ -176,7 +243,11 @@
       "protected": true,
       "file": "chandra-ocr-2-verify.html",
       "icon": "🖼️",
-      "publishDate": "2026-07-07T05:37:59+08:00"
+      "publishDate": "2026-07-07T05:37:59+08:00",
+      "href": "chandra-ocr-2-verify.html",
+      "subtitle": "不靠舊紀錄相信：拿同一張法務部公文測試圖，gate（波特塔 /ocr/v1/ocr）與 local（Mac MLX jwindle47/chandra-ocr-2-8bit-mlx）兩條路各跑一次，輸出逐字一致且正確。含靠紀錄 vs 實機驗證 before/after 卡、transformers 5.12.1 釘版關鍵變因、成果四件套、驗測總表。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "skill-panel-crud",
@@ -185,7 +256,11 @@
       "protected": true,
       "file": "skill-panel-crud.html",
       "icon": "✨",
-      "publishDate": "2026-07-06T17:08:03+08:00"
+      "publishDate": "2026-07-06T17:08:03+08:00",
+      "href": "skill-panel-crud.html",
+      "subtitle": "botrun-multi 技能管理大改版：LeftBar 正式入口（不再只藏 /）、完整 CRUD（新增表單＋軟刪 skills-trash）、master-detail 右欄（概覽渲染 README／表單改 frontmatter／原始碼分頁編 scripts/*.ts），並依 WCAG 做老花友善（16px、加深對比、≥40px 點擊區）。含 before/after SVG 卡、context 型別碰撞地雷、成果四件套。已發版 1.0.19。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "cbh-play-dev-topology",
@@ -194,7 +269,11 @@
       "protected": true,
       "file": "cbh-play-dev-topology.html",
       "icon": "🗼",
-      "publishDate": "2026-07-06T18:30:00+08:00"
+      "publishDate": "2026-07-06T18:30:00+08:00",
+      "href": "cbh-play-dev-topology.html",
+      "subtitle": "gate／tower／tower2／國網名字很像很容易混。實查真機定案：對外只有一扇門 gate.botrun.ai——主聊天走 /openrouter→國網 NCHC 31B、語音／視覺走 /tower→波特塔、OCR 走 /marker；語音技能 ffmpeg 16kHz 切段逐段打 gate /tower→breeze-asr-26；env 設在主機 compose/.env 非團隊變數。含拓樸 SVG、六步語音流程圖、before/after 誤解卡、成果四件套。零中國大陸用語。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "global-skills-customization",
@@ -203,7 +282,11 @@
       "protected": true,
       "file": "global-skills-customization.html",
       "icon": "🧩",
-      "publishDate": "2026-07-06T13:14:44+08:00"
+      "publishDate": "2026-07-06T13:14:44+08:00",
+      "href": "global-skills-customization.html",
+      "subtitle": "從安裝完 0 技能到開箱 19 個：三方案打分、目錄即狀態開關、clone 再編輯（不從零開始）、gate 技能 chrome 全綠",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "clean-container-gate31b-verify",
@@ -212,7 +295,11 @@
       "protected": true,
       "file": "clean-container-gate31b-verify.html",
       "icon": "🧪",
-      "publishDate": "2026-07-06T11:59:47+08:00"
+      "publishDate": "2026-07-06T11:59:47+08:00",
+      "href": "clean-container-gate31b-verify.html",
+      "subtitle": "debian 容器從 curl 安裝驗到 31B 真對話：pi 套件搬家、npm 靜默降級、stderr 黑箱等 5 連環雷逐顆治本；Alpine/musl 明確拒絕",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "bm-one-key-launch-port-ssot-20260706",
@@ -221,7 +308,11 @@
       "protected": true,
       "file": "bm-one-key-launch-port-ssot-20260706.html",
       "icon": "🔑",
-      "publishDate": "2026-07-06T09:48:38+08:00"
+      "publishDate": "2026-07-06T09:48:38+08:00",
+      "href": "bm-one-key-launch-port-ssot-20260706.html",
+      "subtitle": "裸打 bm＝清埠→dx serve→自動開網頁（冪等）；port SSOT app/src/port.rs 同 crate #[path] 共用；e2e 冷啟 62s、二跑冪等；七步收斂成一步",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "release-dont-forget-2026-07-06",
@@ -230,7 +321,11 @@
       "protected": true,
       "file": "release-dont-forget-2026-07-06.html",
       "icon": "🚰",
-      "publishDate": "2026-07-06T09:22:56+08:00"
+      "publishDate": "2026-07-06T09:22:56+08:00",
+      "href": "release-dont-forget-2026-07-06.html",
+      "subtitle": "安裝版水管接 GCS latest.json 不接 git；發版三步＋pre-push hook 把關＋版號撞號實錄（1.0.10 被同事先用→1.0.11）",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "asr-tower-voice-fix",
@@ -239,7 +334,11 @@
       "protected": true,
       "file": "asr-tower-voice-fix.html",
       "icon": "🎙️",
-      "publishDate": "2026-07-06T08:15:00+08:00"
+      "publishDate": "2026-07-06T08:15:00+08:00",
+      "href": "asr-tower-voice-fix.html",
+      "subtitle": "pi 缺 ffmpeg、opencode 缺 TOWER env 兩根因一次治本；gate /tower passthrough 零改動＋內建語音轉文字技能；cbh 兩引擎 chrome 驗證全綠",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "finder-drag-drop-path",
@@ -248,7 +347,11 @@
       "protected": true,
       "file": "finder-drag-drop-path.html",
       "icon": "🗂️",
-      "publishDate": "2026-07-06T07:31:13+08:00"
+      "publishDate": "2026-07-06T07:31:13+08:00",
+      "href": "finder-drag-drop-path.html",
+      "subtitle": "瀏覽器不給 File 路徑，改讀 macOS Finder 拖曳的 text/uri-list（file://）＋百分比解碼＝AI 拿到完整路徑；與內部拖曳共存",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "gate-multimodal-skills-heritage-20260706",
@@ -257,7 +360,11 @@
       "protected": true,
       "file": "gate-multimodal-skills-heritage-20260706.html",
       "icon": "🚰",
-      "publishDate": "2026-07-06T07:29:52+08:00"
+      "publishDate": "2026-07-06T07:29:52+08:00",
+      "href": "gate-multimodal-skills-heritage-20260706.html",
+      "subtitle": "gate-* 三技能（breeze ASR／gemma 視覺／Chandra OCR 一把 br- key）＋local/gate 三層防呆嚴格區分＋「git tag 同號不同內容」地雷；API＋claude-in-chrome 驗測全綠",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "i18n-permanent-guard",
@@ -266,7 +373,11 @@
       "protected": true,
       "file": "i18n-permanent-guard.html",
       "icon": "🌐",
-      "publishDate": "2026-07-05T20:35:46+08:00"
+      "publishDate": "2026-07-05T20:35:46+08:00",
+      "href": "i18n-permanent-guard.html",
+      "subtitle": "通案掃描尺揪出全站 135 處漏翻→雙語化＋UI 實測→掃描尺升級 guard 測試＋pre-commit hook＋CLAUDE.md 鐵律三層防線；含豁免機制與 GSI 鈕已知限制",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "feedback-side-tab-release-lesson",
@@ -275,7 +386,11 @@
       "protected": true,
       "file": "feedback-side-tab-release-lesson.html",
       "icon": "📣",
-      "publishDate": "2026-07-05T19:15:25+08:00"
+      "publishDate": "2026-07-05T19:15:25+08:00",
+      "href": "feedback-side-tab-release-lesson.html",
+      "subtitle": "浮動回饋鈕蓋輸入區→2026 業界 side tab 慣例改版（佔邊不佔面）；忘跑 release.sh 導致安裝版停舊版的斷點解剖與發版四步鐵律",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "whitelist-install-gcloud",
@@ -284,7 +399,11 @@
       "protected": true,
       "file": "whitelist-install-gcloud.html",
       "icon": "🔐",
-      "publishDate": "2026-07-05T19:15:25+08:00"
+      "publishDate": "2026-07-05T19:15:25+08:00",
+      "href": "whitelist-install-gcloud.html",
+      "subtitle": "raw.githubusercontent 對私有 repo 匿名回 404 破案；公開 bootstrap＋GCS managed folder IAM 白名單（網域＋gmail 成批）；失敗只講真原因（沒 gcloud/沒登入/401/403/404/000 六分流）；whitelist.sh 一行管名單",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-multi-ssot-auto-update-self-healing",
@@ -293,7 +412,11 @@
       "protected": true,
       "file": "botrun-multi-ssot-auto-update-self-healing.html",
       "icon": "🔄",
-      "publishDate": "2026-07-05T15:17:39+08:00"
+      "publishDate": "2026-07-05T15:17:39+08:00",
+      "href": "botrun-multi-ssot-auto-update-self-healing.html",
+      "subtitle": "Cargo.toml 單點版本→全鏈路同號；GCS latest.json＋delta patch 背景升級、原子替換、連崩自動回滾；deno 式最低範疇安裝秒級能用；乾淨 Docker 操演全綠與 13 條地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "tower-vllm-services-verify",
@@ -302,7 +425,11 @@
       "protected": true,
       "file": "tower-vllm-services-verify.html",
       "icon": "🖥️",
-      "publishDate": "2026-07-05T15:15:42+08:00"
+      "publishDate": "2026-07-05T15:15:42+08:00",
+      "href": "tower-vllm-services-verify.html",
+      "subtitle": "6 服務逐一真打 API 全綠；Chandra OCR 取代 marker 顯存暴增致 diffusion OOM 的根因與治本（profiles.md/diffusion-on.sh）",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "beginner-i18n-zero-leak",
@@ -311,7 +438,11 @@
       "protected": true,
       "file": "beginner-i18n-zero-leak.html",
       "icon": "🌏",
-      "publishDate": "2026-07-05T12:44:11+08:00"
+      "publishDate": "2026-07-05T12:44:11+08:00",
+      "href": "beginner-i18n-zero-leak.html",
+      "subtitle": "i18n tr()+context、4 張漸進揭露圖卡、全 DOM CJK 掃描抓 19 處洩漏修到 0；環境誤判當機排查",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "colon-snippets-espanso",
@@ -320,7 +451,11 @@
       "protected": true,
       "file": "colon-snippets-espanso.html",
       "icon": "🔤",
-      "publishDate": "2026-07-05T07:41:02+08:00"
+      "publishDate": "2026-07-05T07:41:02+08:00",
+      "href": "colon-snippets-espanso.html",
+      "subtitle": "botrun-multi :短語秒展開＋GitHub/GCS/Drive 短語包分享＋管理頁/變數插槽/憑證；GPL 遵循與 Dioxus hook 凍屏地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "hammer-voice-to-text",
@@ -329,7 +464,11 @@
       "protected": true,
       "file": "hammer-voice-to-text.html",
       "icon": "🔨",
-      "publishDate": "2026-07-05T07:40:19+08:00"
+      "publishDate": "2026-07-05T07:40:19+08:00",
+      "href": "hammer-voice-to-text.html",
+      "subtitle": "F5 全域錄音→本地 Breeze 轉錄→CGEvent 貼字；flush_packets 防遺失、TCC 靜默丟鍵、F5 被搶三大地雷實測",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "pi-commands-subagent-card",
@@ -338,7 +477,11 @@
       "protected": true,
       "file": "pi-commands-subagent-card.html",
       "icon": "target",
-      "publishDate": "2026-07-05T07:29:50+08:00"
+      "publishDate": "2026-07-05T07:29:50+08:00",
+      "href": "pi-commands-subagent-card.html",
+      "subtitle": "botrun-multi 的 / 選單自動補齊 pi-goal-x（/goals）與 pi-subagents（/run）共 33 指令；Claude Code 款子代理觀測卡：prompt、回覆、fresh/fork 上下文、耗時、tokens、模型。含四顆地雷拆解（工具名衝突、slash 輪無 agent_end、歷史注入毀指令、custom message 映射）。內嵌 SVG 卡片。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-multi-20-e2e-gan-pass",
@@ -347,7 +490,11 @@
       "protected": true,
       "file": "botrun-multi-20-e2e-gan-pass.html",
       "icon": "trophy",
-      "publishDate": "2026-07-04T23:50:12+08:00"
+      "publishDate": "2026-07-04T23:50:12+08:00",
+      "href": "botrun-multi-20-e2e-gan-pass.html",
+      "subtitle": "法務部 2000+ 頁 PDF 目錄標籤 20 任務第 4 輪全綠：pi.dev＋gemma4 31B 當操作者、claude-in-chrome UI 實跑、fable 對抗裁判逐關抽驗。含 UI 反洗版 ToolGroup 聚合卡、禁網清單補洞、誠實收尾警訊與 31B 操作者地雷清單。內嵌 SVG 卡片。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-multi-final-qa",
@@ -356,7 +503,11 @@
       "protected": true,
       "file": "botrun-multi-final-qa.html",
       "icon": "clipboard-check",
-      "publishDate": "2026-07-04T19:06:45+08:00"
+      "publishDate": "2026-07-04T19:06:45+08:00",
+      "href": "botrun-multi-final-qa.html",
+      "subtitle": "獨立收官評審四道題（錄音轉文字入輸入框／模型卸載釋 RAM／KV cache＋前後端分離／回歸）——只信跑起來的 app、不看開發者自述。含關鍵發現：凍結 wasm 編在 commit 之前導致 KV cache 標示只進 source 未進 binary。內嵌 SVG 卡片、丹麥簡約風。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "botrun-multi-one-day-build",
@@ -365,7 +516,11 @@
       "protected": true,
       "file": "botrun-multi-one-day-build.html",
       "icon": "cpu",
-      "publishDate": "2026-07-04T18:20:31+08:00"
+      "publishDate": "2026-07-04T18:20:31+08:00",
+      "href": "botrun-multi-one-day-build.html",
+      "subtitle": "Mac 本地多模態 AI 工作站：13 個 pi 技能＋Dioxus pure Rust 前後端（Claude web 式三欄/丹麥淺色/lucide）；獨立評審制×凍結窗口 14 輪 82→98；journal 先落盤帶 seq 再廣播、pi --mode rpc 選型、低調通知鐵律；含 RefCell/IME/MIME/rem 等 12 條地雷全集。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "tower2-brgate-launch-heritage-20260704",
@@ -374,7 +529,11 @@
       "protected": true,
       "file": "tower2-brgate-launch-heritage-20260704.html",
       "icon": "shield-check",
-      "publishDate": "2026-07-04T10:21:16+08:00"
+      "publishDate": "2026-07-04T10:21:16+08:00",
+      "href": "tower2-brgate-launch-heritage-20260704.html",
+      "subtitle": "同 VM 並行、port 分離、Caddy 沿用：Rust botrun-gate 以 br- key 機制上架 tower2，production 全綠（31B/26B 串流、ASR、usage 計量 in:17 out:22）；含 2026 LiteLLM 供應鏈投毒/CVE 查證、flashinfer 重開機地雷治本（nvcc 13.2 vs headers 13.0 釘回對齊＋systemd 順序閘門＋reboot 演練）。",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59"
     },
     {
       "id": "chandra-ocr2-migration-heritage",
@@ -393,7 +552,9 @@
         "gateway",
         "資安"
       ],
-      "publishDate": "2026-07-04T09:14:45+08:00"
+      "publishDate": "2026-07-04T09:14:45+08:00",
+      "href": "chandra-ocr2-migration-heritage.html",
+      "subtitle": "把四模型 marker pipeline 整套換成 Chandra OCR 2（Qwen3.5-VL 5B）並實機部署驗測全綠：三層 API 同形（gate/Caddy/ocr-api）、90dpi 最佳併發 20＝3.87 頁/s、真實卷宗 10 頁 A/B 證明「整份 PDF 直丟」是正確預設、12 條地雷（flashinfer JIT、GMU 殭屍、SSRF CGNAT 盲區）與 GAN 對抗風險盤點。"
     },
     {
       "id": "chandra-mlx-ocr",
@@ -413,7 +574,9 @@
         "MLX",
         "OmniDocBench"
       ],
-      "publishDate": "2026-07-04T07:17:19+08:00"
+      "publishDate": "2026-07-04T07:17:19+08:00",
+      "href": "chandra-mlx-ocr.html",
+      "subtitle": "開源 OCR 裝進 Mac，再用一份大型掃描卷宗（約 2,800 頁）選出最佳引擎——放寬每頁上限 50s→120s，Chandra 由 86% 反超到 96% 奪冠，Vision 88% 快 40 倍拿性價比。全文去機敏、無任何真實影像。"
     },
     {
       "id": "seba-delivery-flow-pr-branch-clean-main",
@@ -421,7 +584,12 @@
       "description": "merge 權收斂於人驗閘門：功能留各自 PR branch=打包/驗收單位、seba 從 branch 佈指定測試機、人驗過才 merge；解 測試機互吃/debug 大海撈針/驗過≠上線/難退版 四痛",
       "protected": true,
       "file": "seba-delivery-flow-pr-branch-clean-main.html",
-      "publishDate": "2026-07-03T17:22:17+08:00"
+      "publishDate": "2026-07-03T17:22:17+08:00",
+      "href": "seba-delivery-flow-pr-branch-clean-main.html",
+      "subtitle": "merge 權收斂於人驗閘門：功能留各自 PR branch=打包/驗收單位、seba 從 branch 佈指定測試機、人驗過才 merge；解 測試機互吃/debug 大海撈針/驗過≠上線/難退版 四痛",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "four-engine-billing-langfuse-jsonl",
@@ -429,7 +597,12 @@
       "description": "補 Pi 跳錶(production 常駐 bridge 每輪 flush)＋host JSONL 帳本(pricing SSOT 熱載入、查無價 null)＋x-api-key fail-closed 查帳 API；混血 image 地雷＝驗跑的碼不是寫的碼；PR#183/PR#49、cbh 全綠",
       "protected": true,
       "file": "four-engine-billing-langfuse-jsonl.html",
-      "publishDate": "2026-07-03T16:36:12+08:00"
+      "publishDate": "2026-07-03T16:36:12+08:00",
+      "href": "four-engine-billing-langfuse-jsonl.html",
+      "subtitle": "補 Pi 跳錶(production 常駐 bridge 每輪 flush)＋host JSONL 帳本(pricing SSOT 熱載入、查無價 null)＋x-api-key fail-closed 查帳 API；混血 image 地雷＝驗跑的碼不是寫的碼；PR#183/PR#49、cbh 全綠",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "moj-preprocess-skills-heritage",
@@ -437,7 +610,12 @@
       "description": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
       "protected": true,
       "file": "moj-preprocess-skills-heritage.html",
-      "publishDate": "2026-07-03T14:22:52+08:00"
+      "publishDate": "2026-07-03T14:22:52+08:00",
+      "href": "moj-preprocess-skills-heritage.html",
+      "subtitle": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "pr-batch-finale-cloudrun-3600",
@@ -445,7 +623,12 @@
       "description": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
       "protected": true,
       "file": "pr-batch-finale-cloudrun-3600.html",
-      "publishDate": "2026-07-03T14:22:36+08:00"
+      "publishDate": "2026-07-03T14:22:36+08:00",
+      "href": "pr-batch-finale-cloudrun-3600.html",
+      "subtitle": "驗證綠燈當交付閘門：順稿二次驗證通過後八 PR 三分流收斂（直接合/rebase解衝突/殭屍列管）、83 個 Cloud Run 掃描 28 個調 3600、traffic percent 與復讀≠截斷兩地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "gate-cloudrun-timeout-truncation",
@@ -453,7 +636,12 @@
       "description": "法務部觀護順稿截斷治本：直連/走gate/agent鏈三層取證定案 gate Cloud Run timeout=300 靜默砍串流；一行 gcloud 復活＋opencode max_tokens 副兇（PR#178）＋NCHC 靜默換模地雷",
       "protected": true,
       "file": "gate-cloudrun-timeout-truncation.html",
-      "publishDate": "2026-07-03T14:00:33+08:00"
+      "publishDate": "2026-07-03T14:00:33+08:00",
+      "href": "gate-cloudrun-timeout-truncation.html",
+      "subtitle": "法務部觀護順稿截斷治本：直連/走gate/agent鏈三層取證定案 gate Cloud Run timeout=300 靜默砍串流；一行 gcloud 復活＋opencode max_tokens 副兇（PR#178）＋NCHC 靜默換模地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "session-full-history-2000",
@@ -461,14 +649,24 @@
       "description": "Botrun session 只顯示最新 50 筆治本：cursor 分頁+捲到頂自動載入+content-visibility；rAF 卡死與共用源碼目錄兩大地雷",
       "protected": true,
       "publishDate": "2026-07-03T12:50:35+08:00",
-      "file": "session-full-history-2000.html"
+      "file": "session-full-history-2000.html",
+      "href": "session-full-history-2000.html",
+      "subtitle": "Botrun session 只顯示最新 50 筆治本：cursor 分頁+捲到頂自動載入+content-visibility；rAF 卡死與共用源碼目錄兩大地雷",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "skill159-three-bugs-fix",
       "title": "issue #159 續修三 bug 治本傳承：技能識別子統一 dirName、斜線即時刷新、鍵盤導覽",
       "description": "skill-creator 產物技能編輯器空白/下載404的根因＝識別子混用；治本＝dirName SSOT＋turn 結束 refetch＋keyup 不重設；cbh chrome 驗測全綠、PR#177",
       "protected": true,
-      "publishDate": "2026-07-03T12:50:35+08:00"
+      "publishDate": "2026-07-03T12:50:35+08:00",
+      "href": "skill159-three-bugs-fix.html",
+      "subtitle": "skill-creator 產物技能編輯器空白/下載404的根因＝識別子混用；治本＝dirName SSOT＋turn 結束 refetch＋keyup 不重設；cbh chrome 驗測全綠、PR#177",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "a97b89-indep-eval-evolution",
@@ -488,7 +686,8 @@
         "卷證目錄",
         "AI協作"
       ],
-      "publishDate": "2026-07-03T00:00:00+08:00"
+      "publishDate": "2026-07-03T00:00:00+08:00",
+      "href": "a97b89-indep-eval-evolution.html"
     },
     {
       "id": "gepa-expedition-46-to-85-5",
@@ -508,7 +707,8 @@
         "卷證目錄",
         "AI協作"
       ],
-      "publishDate": "2026-07-03T00:00:00+08:00"
+      "publishDate": "2026-07-03T00:00:00+08:00",
+      "href": "gepa-expedition-46-to-85-5.html"
     },
     {
       "id": "legal-case-file-labeling-ai-pdf-editor",
@@ -529,7 +729,8 @@
         "GEPA",
         "PDF 編輯器"
       ],
-      "publishDate": "2026-07-02T18:10:07+08:00"
+      "publishDate": "2026-07-02T18:10:07+08:00",
+      "href": "legal-case-file-labeling-ai-pdf-editor.html"
     },
     {
       "id": "tool-activity-group-single-bar",
@@ -538,7 +739,11 @@
       "protected": true,
       "description": "AI 執行任務時十幾個 bash/技能資訊條逐一彈出洗版聊天畫面；治本＝render 層把連續 tool_use 收攏成單一 ToolActivityGroup",
       "file": "tool-activity-group-single-bar.html",
-      "publishDate": "2026-07-02T10:56:15+08:00"
+      "publishDate": "2026-07-02T10:56:15+08:00",
+      "href": "tool-activity-group-single-bar.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "pi-skills-8-dossier-pipeline",
@@ -547,14 +752,22 @@
       "protected": true,
       "description": "八個繁體中文 pi 技能（拆頁/文字層/OCR/視覺/黃金/一條龍/去機敏/目錄生成），pi 親自驗證多維打分與地雷。",
       "file": "pi-skills-8-dossier-pipeline.html",
-      "publishDate": "2026-07-02T09:24:47+08:00"
+      "publishDate": "2026-07-02T09:24:47+08:00",
+      "href": "pi-skills-8-dossier-pipeline.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "token-accounting-money-audit-heritage",
       "title": "四大 harness token 計費 · 傳承（含金額對帳紀律）",
       "subtitle": "四台 AI 機器人（PI.DEV／Hermes／OpenCode／Claude Code）的 token 花費怎麼記成一本共同的帳：以 botrun-gate 當單一節流點只記量落 JSONL、第二段 loader 套單一定價表(pricing.json)算成本進 BigQuery token_ledger（MERGE 冪等、v_usage_daily 出帳）。重點在『錢一定要算對』的對帳四招：①上網查牌價(Opus $5/$25、Gemini 3.5-flash $1.5/$9 per 1M)②單位 per 1,000,000 tokens ③匯率查證(USD→TWD 32.5→31.88，舊值偏高2%) ④對真 BigQuery＋獨立手算逐筆核。抓到『偏高』兩根因：demo 用不真實的 1M token＋匯率灌水→換真實請求量後 Opus 單筆從假的 $7.5 變合理的 $0.105/NT$3.35。含縫檢查(gate 不吐 cache/team_id 為 v2 gap)、未知價 cost NULL 不混假0。自包含 HTML＋SVG、雙層敘事、去機敏。",
       "protected": true,
-      "publishDate": "2026-07-02T06:45:46+08:00"
+      "publishDate": "2026-07-02T06:45:46+08:00",
+      "href": "token-accounting-money-audit-heritage.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "pi-skill-honest-76-no-overfit",
@@ -581,14 +794,22 @@
       "title": "多 worktree 跨 repo 整合驗測 · 傳承（含「何時該止步」）",
       "subtitle": "把一週開的多張 worktree（跨 gate/agent-platform/play-manager 三 repo）整合驗測的完整方法學：為何跨 repo 不能單一 PR（正解 per-repo 整合分支＋一次整合部署＋逐情境 claude-in-chrome 驗）、四把驗測尺（實機/grep部署image/對真BigQuery/金額手算）、兩個教學案例（發佈500誤走GCS、runner 層 fix 被 re-tag 漏掉）、以及最誠實的一課：當「驗測開發到完成」撞上治理與安全邊界（owner 才能 merge 的 repo、禁止代做的 IAM 授權），真正的突破是『把前置做到滿＋乾淨交棒給有權的人』而非硬闖——自動化的完成催促不能凌駕安全與治理界線。含金額查證（USD/TWD 逐筆手算、匯率修 32.5→31.88）。泛化為 global 技能 worktree-integration-verify。自包含 HTML＋SVG 卡片、雙層敘事、去機敏。",
       "protected": true,
-      "publishDate": "2026-07-02T01:24:13+08:00"
+      "publishDate": "2026-07-02T01:24:13+08:00",
+      "href": "worktree-integration-verify-heritage.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "handover-to-seba-cbh-integration",
       "title": "交接給 Seba：cbh-play-dev 整合驗測進度 · 傳承",
       "subtitle": "把一週開的多張 worktree 收攏成 4 個 agent-platform PR（#160 session 分享／#161 Hermes×NCHC maxTokens／#162 放大閱讀空間／#163 發佈HTML本機host），在 cbh-play-dev 用 claude-in-chrome 四情境端到端驗過、全 MERGEABLE/CLEAN，交棒 @sebastian-hsu review+merge。含：跨 3 repo 為何不能單一 PR、驗測抓到的兩個真 bug（發佈500誤走GCS／runner 層 fix 被 re-tag 漏掉）、四 harness 計費第一版對真 BigQuery 端到端＋金額查證（USD/TWD 逐筆手算對上）、004 上線三步（merge→授 VM SA 的 AR 寫權→build/push/upgrade-play）、地雷清單。自包含 HTML 內嵌 SVG 卡片、雙層敘事、去機敏。",
       "protected": true,
-      "publishDate": "2026-07-02T00:47:12+08:00"
+      "publishDate": "2026-07-02T00:47:12+08:00",
+      "href": "handover-to-seba-cbh-integration.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "pi-skill-pdf-outline-v55",
@@ -657,7 +878,11 @@
       "title": "一鍵把對話變成唯讀連結 · Session 分享（issue #65）· 傳承",
       "subtitle": "以前別人開你的對話網址會被擋在門外（unauthorized）；現在按一下「分享」，就得到一張看不懂是誰的亂碼連結，貼給別人就能看（唯讀），不想給了一鍵撕掉、連結立刻 404。預設團隊內、公開要「有意識地」撥開關；URL 用不可猜 token、落地檔名用 sha256 hash，公開 API 回傳實測掃描零個資（email/路徑/projectId/sessionId 全 0）。架構＝token→快照 registry 與來源對話脫鉤（OWASP indirect object reference）。cbh-play-dev 用 claude-in-chrome＋curl 前後端驗測全綠；pnpm lint/build＋1048 單元測試綠；PR botrun/botrun-agent-platform#160。",
       "protected": true,
-      "publishDate": "2026-07-01T12:35:18+08:00"
+      "publishDate": "2026-07-01T12:35:18+08:00",
+      "href": "session-share-heritage.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "hermes-nchc-stuck-fix",
@@ -679,14 +904,19 @@
         "cbh-play-dev",
         "BDD"
       ],
-      "publishDate": "2026-07-01T12:35:18+08:00"
+      "publishDate": "2026-07-01T12:35:18+08:00",
+      "href": "hermes-nchc-stuck-fix.html"
     },
     {
       "id": "trunk-based-feature-flags",
       "title": "持續改 main 不用怕 · 主幹＋功能旗標說服團隊 · 傳承",
       "subtitle": "老方法（GitFlow／長命分支）之所以『不敢改 main』＝每次改都是 big-bang 大爆炸；2026 業界對快節奏／多 AI agent 團隊第一推薦是 trunk-based development ＋ feature flags：每條功能小步（壽命<1天）直接併 main、未完成用旗標藏（併入≠曝光）、部署≠發布、翻旗標秒回滾。敢持續改 main 靠四支柱：CI 綠燈門檻＋小批量＋旗標藏未完成＋秒回滾。以 7 張 SVG 前後比較卡承載論點，引證 DORA（精英團隊活躍分支<3、壽命<1天）、Martin Fowler（big-bang 合併不確定性）、feature-flag 廠商實測（衝突 4-6hr→一天上線 4 次）、2026 AI-assisted development 研究（小批量為 AI 風險關鍵對策）。整合分支（release train）降為特例。PII 去機敏、零中國大陸用語。",
       "protected": true,
-      "publishDate": "2026-07-01T10:04:30+08:00"
+      "publishDate": "2026-07-01T10:04:30+08:00",
+      "href": "trunk-based-feature-flags.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "team-template-decouple",
@@ -3202,7 +3432,11 @@
         "Dwarkesh",
         "教育",
         "國中生"
-      ]
+      ],
+      "subtitle": "30 張投影片，Dwarkesh Podcast × Eric Jang，用國中生能懂的方式解說 MCTS、自我對弈、值網路、RL 困境，從圍棋規則一路讀懂 AlphaGo",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "chatgpt-vs-alphago-agi-explainer",
@@ -3217,7 +3451,11 @@
         "AlphaGo",
         "AGI",
         "國中生"
-      ]
+      ],
+      "subtitle": "30 張投影片，用比喻帶你看懂 GPT、強化學習、Transformer、直覺、AGI 的核心原理",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "ai-data-curation-top20-2026",
@@ -9350,7 +9588,11 @@
       "title": "發佈 HTML 改『本機主機 host＋登入才可看』 · 修 #148 · 傳承",
       "subtitle": "EMA 平臺『發佈 HTML』一律『上傳失敗，請重試』的最後一哩根因＝publish-html-file 依賴 GCS(STATIC_GCS_*)、EMA 各機構分帳無 GCS env → 建構子 throw → UPLOAD_FAILED。治本（阿傑＋博安）＝不用 GCS、改 host 在本機主機、預設登入才可看：lib/local-publish 發佈即快照(與來源脫鉤)＋serve 路由 app/p/[id] 先 auth() gate＋回應加 CSP sandbox（刻意無 allow-same-origin）把發佈頁關進 opaque origin，實測 document.cookie／localStorage 皆 SecurityError → 中和同源 session riding；selectPublishBackend() 無 GCS 自動走 local(feature flag)。以多張 SVG 前後比較卡承載論點，引證 MDN(CSP sandbox=opaque origin 無法存取 cookie/localStorage)、web.dev(獨立網域 或 CSP sandbox header 隔離使用者內容)、Checkmarx n8n CVE-2026-27578(沙箱非萬靈丹→雙保險：沙箱＋登入 gate)。26 單元/整合測試綠＋claude-in-chrome 六情境驗過(獨立 worktree 與 cbh-play-dev)。PII 去機敏、零中國大陸用語。",
       "protected": true,
-      "publishDate": "2026-07-01T12:35:18+08:00"
+      "publishDate": "2026-07-01T12:35:18+08:00",
+      "href": "publish-html-local-host-login-gated.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "transcribe-gemini-3-5-flash-2026-07-02",
@@ -9359,7 +9601,10 @@
       "protected": true,
       "href": "transcribe-gemini-3-5-flash-2026-07-02.html",
       "file": "transcribe-gemini-3-5-flash-2026-07-02.html",
-      "publishDate": "2026-07-02T18:08:41+08:00"
+      "publishDate": "2026-07-02T18:08:41+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "botrun-multi-feedback-flywheel",
@@ -9368,7 +9613,10 @@
       "protected": true,
       "href": "botrun-multi-feedback-flywheel.html",
       "file": "botrun-multi-feedback-flywheel.html",
-      "publishDate": "2026-07-05T08:20:00+08:00"
+      "publishDate": "2026-07-05T08:20:00+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "botrun-multi-google-login-hammer-feedback",
@@ -9377,7 +9625,10 @@
       "protected": true,
       "href": "botrun-multi-google-login-hammer-feedback.html",
       "file": "botrun-multi-google-login-hammer-feedback.html",
-      "publishDate": "2026-07-05T09:10:00+08:00"
+      "publishDate": "2026-07-05T09:10:00+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "botrun-multi-bm-cli",
@@ -9386,7 +9637,10 @@
       "protected": true,
       "href": "botrun-multi-bm-cli.html",
       "file": "botrun-multi-bm-cli.html",
-      "publishDate": "2026-07-05T14:00:00+08:00"
+      "publishDate": "2026-07-05T14:00:00+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "botrun-multi-bm-cli-moj-20tasks",
@@ -9395,7 +9649,10 @@
       "protected": true,
       "href": "botrun-multi-bm-cli-moj-20tasks.html",
       "file": "botrun-multi-bm-cli-moj-20tasks.html",
-      "publishDate": "2026-07-05T15:30:00+08:00"
+      "publishDate": "2026-07-05T15:30:00+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "doc-ocr-pdf-markdown",
@@ -9404,7 +9661,10 @@
       "protected": true,
       "href": "doc-ocr-pdf-markdown.html",
       "file": "doc-ocr-pdf-markdown.html",
-      "publishDate": "2026-07-07T15:02:25+08:00"
+      "publishDate": "2026-07-07T15:02:25+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "doc-ocr-parallel",
@@ -9413,7 +9673,10 @@
       "protected": true,
       "href": "doc-ocr-parallel.html",
       "file": "doc-ocr-parallel.html",
-      "publishDate": "2026-07-07T15:33:47+08:00"
+      "publishDate": "2026-07-07T15:33:47+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "oh-my-pi-omp",
@@ -9422,21 +9685,32 @@
       "protected": true,
       "href": "oh-my-pi-omp.html",
       "file": "oh-my-pi-omp.html",
-      "publishDate": "2026-07-07T17:06:48+08:00"
+      "publishDate": "2026-07-07T17:06:48+08:00",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "gan-skills-95-pass",
       "title": "GAN 對抗評分 · botrun-skills 79.2→95.8 PASS · 傳承圖卡",
       "subtitle": "兩個 AI 互相挑剔四輪（生成方改技能庫、獨立 Fable judge 只認 artifact 打分）：20 情境×3 輪 60/60 零失敗＋3 個 fresh 專案部署全綠。三大突破：假去識別化行為斷言（產物殘留真 PII 即判死）、telemetry 檔案黑盒子（session 截斷不再吃證據＋上游 ms 歸因）、顆粒收斂 23→20（canonical＋能力聯集＋prune）。GAN 迴圈 1 小時 45 分收工，LLM 費用約 NT$3。",
       "protected": true,
-      "publishDate": "2026-07-08T06:05:08+08:00"
+      "publishDate": "2026-07-08T06:05:08+08:00",
+      "href": "gan-skills-95-pass.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     },
     {
       "id": "gan-four-targets-billing-handoff",
       "title": "四標的 GAN 終局 3/4 PASS＋國網 billing 完整交接 · 超完整傳承",
       "subtitle": "獨立 Fable judge 七輪對抗：skills 95.8／multi 95.2（白天決勝場 60/60）／AP 95.1 三張簽字 PASS；cbh 89.2 誠實上限＝國網經 gate 回空 usage。內含同事接手交接包：ledger 全 0 鐵證路徑、雙層根因（litellm 串流不回 usage×OpenCode 事件鏈依賴 provider）、三條修法（include_usage／gate 節流點自算／host 估算止血）、照抄可跑排查步驟與驗收定義。方法學遺產：跨場統計判準＋乾淨樣本前提＋「分數上不去先懷疑尺」。",
       "protected": true,
-      "publishDate": "2026-07-08T08:59:30+08:00"
+      "publishDate": "2026-07-08T08:59:30+08:00",
+      "href": "gan-four-targets-billing-handoff.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield"
     }
   ]
 }

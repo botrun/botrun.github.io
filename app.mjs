@@ -45,29 +45,45 @@ function formatDate(dateStr) {
   return `${parts.year}-${parts.month}-${parts.day} ${hh}:${parts.minute} UTC+8`;
 }
 
+// 治本①：任何要塞進 innerHTML 的文字一律 escape。文章標題/摘要常含 `/skill:<名稱>`、
+// `>20s`、`<20s` 等角括號，未 escape 會被瀏覽器當未閉合標籤 → 卡片一層層巢狀套錯位。
+// escape 後，未來任何內容都不可能破壞 DOM 結構（永久免疫，不需再逐篇清資料）。
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// 治本②：欄位容錯 fallback。缺 href → 以 id 推導相對路徑（跨網域皆通、不綁 run.app 主機名）；
+// 缺 subtitle → 用 description；缺 badge/icon → 給預設。單筆缺欄位絕不再讓卡片消失或破版。
 function renderCard(item) {
-  const isExternal = item.href.startsWith('http');
+  const href = item.href || (item.id ? `${item.id}.html` : '#');
+  const isExternal = /^https?:/.test(href);
   const target = isExternal ? ' target="_blank" rel="noopener"' : '';
+  const subtitle = item.subtitle || item.description || '';
+  const badge = item.badge || '傳承';
+  const badgeColor = item.badgeColor || '#4a7c59';
+  const icon = item.icon || 'shield';
   const tags = (item.tags || []).map(t => {
-    const idx = t.indexOf(':');
+    const idx = String(t).indexOf(':');
     // 支援兩種格式：「icon:label」帶圖示，或純文字標籤（無冒號就只顯示文字）
     const hasIcon = idx > -1;
-    const icon = hasIcon ? t.slice(0, idx) : '';
+    const iconName = hasIcon ? t.slice(0, idx) : '';
     const label = hasIcon ? t.slice(idx + 1) : t;
     if (!label) return '';
-    return `<span>${hasIcon ? svg(icon) : ''}${label}</span>`;
+    return `<span>${hasIcon ? svg(iconName) : ''}${esc(label)}</span>`;
   }).filter(Boolean).join('');
 
   return `
-    <a class="card" href="${item.href}"${target} style="position:relative;">
-      <div class="badge" style="background:${item.badgeColor};">${item.badge}</div>
-      <div class="card-icon" style="background:${item.badgeColor};">${svg(item.icon)}</div>
+    <a class="card" href="${esc(href)}"${target} style="position:relative;">
+      <div class="badge" style="background:${esc(badgeColor)};">${esc(badge)}</div>
+      <div class="card-icon" style="background:${esc(badgeColor)};">${svg(icon)}</div>
       <div class="card-body">
-        <div class="card-title">${item.title}</div>
-        <div class="card-desc">${item.subtitle}</div>
+        <div class="card-title">${esc(item.title)}</div>
+        <div class="card-desc">${esc(subtitle)}</div>
         <div class="card-meta">
           ${tags}
-          <span>${svg('calendar')}${formatDate(item.publishDate)}</span>
+          <span>${svg('calendar')}${esc(formatDate(item.publishDate))}</span>
         </div>
       </div>
       <div class="card-arrow">${svg('chevron-right')}</div>
@@ -154,12 +170,17 @@ async function init() {
     // 按日期排序（最新在前）
     items.sort((a, b) => parsePublishDate(b.publishDate) - parsePublishDate(a.publishDate));
 
-    // 治本（LM：manifest 單筆缺 href 不可整頁空白）：在來源就濾掉壞資料，
-    // 讓 renderCard 永遠拿得到字串 href；單筆異常只少一張卡，絕不讓首頁卡「載入中...」。
-    const badItems = items.filter(i => typeof i.href !== 'string' || !i.href);
+    // 治本（LM：manifest 單筆缺 href 不可整頁空白）：不再整批丟棄缺 href 的項目
+    // （那會讓新發布文章從首頁消失）。renderCard 已容錯——缺 href 自動用 id 推導相對路徑、
+    // 缺 subtitle 用 description。這裡只丟掉連 id/title 都沒有的真壞資料。
+    const badItems = items.filter(i => !i.id && !i.title);
     if (badItems.length > 0) {
-      console.warn('[manifest] 略過缺 href 的項目（請補 href）：', badItems.map(i => i.id || i.title));
-      items = items.filter(i => typeof i.href === 'string' && i.href);
+      console.warn('[manifest] 略過無 id/title 的壞項目：', badItems);
+      items = items.filter(i => i.id || i.title);
+    }
+    const noHref = items.filter(i => typeof i.href !== 'string' || !i.href);
+    if (noHref.length > 0) {
+      console.info('[manifest] 以下項目缺 href，已由 id 自動推導相對路徑：', noHref.map(i => i.id || i.title));
     }
 
     // 分離機密文章與公開文章
