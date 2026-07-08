@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "slash-ext-ssot-pdf-leak",
+      "title": "botrun-multi｜/goal 支援與 PDF 解析：治本傳承",
+      "description": "把兩個看似玄學的失敗查到底並治本：① /goal 看似不支援＝rpc.rs 擴充事件寫死綁 subagent、非該名一律丟棄，治本改成不綁擴充名的 SSOT 單一路徑（setStatus→Progress、notify→Notice），未來 pi 擴充零改動即支援；② PDF 像叫不動＝本地 gemma 經 ollama 偶把原生 tool-call token 當正文吐出、工具沒真的執行導致技能鏈斷（技能本身 100% 正常），治本＝洩漏偵測＋可讀診斷 banner＋三條復原建議（重試／切 Gate／改小模型），不硬補跑亂碼。含前後對比 SVG 卡：綁名字 vs 認協定、亂碼 vs 可讀診斷、貫穿六層 vs GlobalSignal。依使用者鐵律全面移除 subagent；56 測試綠＋claude-in-chrome 全程實測。零中國大陸用語。",
+      "protected": true,
+      "file": "slash-ext-ssot-pdf-leak.html",
+      "icon": "🎯",
+      "publishDate": "2026-07-08T14:39:21+08:00"
+    },
+    {
       "id": "sovereign-evolving-ai-press-release",
       "title": "「可進化主權 AI」新標準上路：政府 AI 一顆檔案自帶大腦，機敏資料全程留在機關內 — 數位發展部新聞稿",
       "description": "以頂流新聞稿寫作原則（倒金字塔結構、5W1H導言、長官談話、標準發布區塊）撰寫的數位發展部對外新聞稿範本，說明 .botrun 單檔 AI 大腦技術規格如何解決『用國際大模型效果好但資料須外送』與『地端小模型安全但效果差』的兩難。含 3 張 SVG 說服卡：舊兩難 vs 新解方對比、出題-作答-評分-進步自我進化循環、法務部分類判讀案保留集驗測 79→96 分實測成果長條圖。附部長談話、與現行做法比較表、下一步規劃、聯絡窗口區塊，供發言人室審核修改後正式發布。零中國大陸用語。",
@@ -114,6 +123,15 @@
       "file": "moj-statistical-labeling-skill.html",
       "icon": "🧠",
       "publishDate": "2026-07-07T11:11:15+08:00"
+    },
+    {
+      "id": "botrun-skills-transcribe-changelog-fix",
+      "title": "botrun-skills 兩個小修治本：#2 逐字稿覆蓋原音檔、#3 CHANGELOG 亂碼（2026-07-08）",
+      "description": "承 agent-platform PR #214 Plan A（先在 registry 治本→resync→才 merge）。#2 語音轉文字技能 transcribe.ts 對無副檔名音檔 out===file 會用逐字稿覆蓋原錄音（資料遺失）→ derivedTxt 一律確保 out!==file；#3 兩顆 SKILL.md 移除字面 \\1、合併重複 ## CHANGELOG 為單一區塊。順手修 wholepdf.ts 舊技能名、_telemetry.ts 20MB 上限告警、retired.json 無效條目。四閘門本地全綠＋行為/結構驗證。含正本影印本流向、#2/#3 before/after SVG 卡。零中國大陸用語。",
+      "protected": true,
+      "file": "botrun-skills-transcribe-changelog-fix.html",
+      "icon": "🎙️",
+      "publishDate": "2026-07-08T20:00:00+08:00"
     },
     {
       "id": "builtin-skills-asr-one-step-heritage",
