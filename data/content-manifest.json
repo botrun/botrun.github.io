@@ -45,6 +45,19 @@
       "badgeColor": "#4a7c59"
     },
     {
+      "id": "mattpocock-skills-real-engineers",
+      "title": "mattpocock/skills：真工程師的 AI 技能包傳承（2026-07-09）",
+      "description": "研究 GitHub 熱門專案 mattpocock/skills（161k stars）：TypeScript 講師 Matt Pocock 公開自己每天用的 Claude Code 技能包，主張「扎實工程」而非 vibe coding。四大失敗模式對應解方：對齊用 /grill-me、共享語言用 CONTEXT.md、程式碼品質用 /tdd、架構腐化用 /improve-codebase-architecture。v1.1 把規劃類技能收斂成 /to-spec + /to-tickets + /implement + /wayfinder 一條主線，附作者官方發佈影片對照。",
+      "protected": true,
+      "file": "mattpocock-skills-real-engineers.html",
+      "icon": "🛠️",
+      "href": "mattpocock-skills-real-engineers.html",
+      "subtitle": "GitHub 161k stars 技能包拆解：grill-me 對齊、to-spec/to-tickets 規劃、tdd 紅綠迴圈、improve-codebase-architecture 防腐化，v1.1 新增 wayfinder",
+      "badge": "研究",
+      "badgeColor": "#3b6fa0",
+      "publishDate": "2026-07-09T02:16:05+08:00"
+    },
+    {
       "id": "skill-disable-persist",
       "title": "內建技能「關不掉」治本 — 尊重 skills-disabled/（2026-07-08）",
       "description": "四個內建技能（PDF抽文字層／PDF拆頁／掃描頁OCR辨識／文件OCR視覺辨識）一關就彈回開啟。根因＝syncBuiltinSkillsToProject 每次對話前跑、只看 .claude/skills/ 不看 .claude/skills-disabled/，而 disable＝rename 到 skills-disabled/，於是被判 copy 又複製回去。治本＝複製前檢查 skills-disabled/ 存在即 continue 跳過。含 cbh-play-dev claude-in-chrome 端到端驗證、docker cached build 產舊 bundle 必須 --no-cache 等部署地雷。交付 agent-platform PR#235。零中國大陸用語。",
