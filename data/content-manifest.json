@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "skill-disable-persist",
+      "title": "內建技能「關不掉」治本 — 尊重 skills-disabled/（2026-07-08）",
+      "description": "四個內建技能（PDF抽文字層／PDF拆頁／掃描頁OCR辨識／文件OCR視覺辨識）一關就彈回開啟。根因＝syncBuiltinSkillsToProject 每次對話前跑、只看 .claude/skills/ 不看 .claude/skills-disabled/，而 disable＝rename 到 skills-disabled/，於是被判 copy 又複製回去。治本＝複製前檢查 skills-disabled/ 存在即 continue 跳過。含 cbh-play-dev claude-in-chrome 端到端驗證、docker cached build 產舊 bundle 必須 --no-cache 等部署地雷。交付 agent-platform PR#235。零中國大陸用語。",
+      "protected": true,
+      "file": "skill-disable-persist.html",
+      "icon": "🔛",
+      "publishDate": "2026-07-08T20:26:23+08:00"
+    },
+    {
       "id": "slash-ext-ssot-pdf-leak",
       "title": "botrun-multi｜/goal 支援與 PDF 解析：治本傳承",
       "description": "把兩個看似玄學的失敗查到底並治本：① /goal 看似不支援＝rpc.rs 擴充事件寫死綁 subagent、非該名一律丟棄，治本改成不綁擴充名的 SSOT 單一路徑（setStatus→Progress、notify→Notice），未來 pi 擴充零改動即支援；② PDF 像叫不動＝本地 gemma 經 ollama 偶把原生 tool-call token 當正文吐出、工具沒真的執行導致技能鏈斷（技能本身 100% 正常），治本＝洩漏偵測＋可讀診斷 banner＋三條復原建議（重試／切 Gate／改小模型），不硬補跑亂碼。含前後對比 SVG 卡：綁名字 vs 認協定、亂碼 vs 可讀診斷、貫穿六層 vs GlobalSignal。依使用者鐵律全面移除 subagent；56 測試綠＋claude-in-chrome 全程實測。零中國大陸用語。",
