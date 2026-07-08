@@ -32,6 +32,18 @@
   },
   "items": [
     {
+      "id": "skill-incubation-gan-verify",
+      "title": "技能孵化 GAN 驗證誕生記 — 兩個會抓自己 bug 的技能",
+      "subtitle": "從整理過去 4 週的人類 prompt 到孵化「研究傳承一條龍」與「GAN-GEPA演化教練」兩個全域技能：9 個真實情境驗證，抓到 2 個真缺陷（PII二次洩漏、來源鏈斷裂）並修正重驗證，同時分辨出哪些是技能缺陷、哪些是素材天花板。",
+      "href": "skill-incubation-gan-verify.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-09T06:28:37+08:00",
+      "tags": ["傳承", "Claude Code Skills", "GAN", "GEPA", "技能孵化"]
+    },
+    {
       "id": "card-nesting-escape-heritage",
       "title": "首頁卡片一層層套錯位 — 角括號破版的治本傳承",
       "subtitle": "485 張卡片突然變成「卡片包卡片」，表面像排版壞掉，真相是一個角括號把整棵 DOM 樹拆歪。記錄怎麼從止血走到免疫：escape 輸入＋欄位 fallback＋href 相對化＋源頭冪等。",
