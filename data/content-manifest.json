@@ -32,6 +32,15 @@
   },
   "items": [
     {
+      "id": "botrun-quality-qa-db-spec",
+      "title": ".botrun 高品味題庫 世界標準格式 v4.2.0 — 給法律人也讀得懂的傳承",
+      "description": "把 AI 大腦裝進一個普通 SQLite 檔（.botrun／.🤖，改名等價、身分看內容）。用「卷宗檔案櫃」比喻講給檢察官、律師懂：一顆檔案 = 一整座會自己進步的卷宗庫。完整 7 表全景（meta 卷宗封面／sqlar 卷證檔案櫃／skills 辦案 SOP／lessons 前車之鑑）＋高品味題庫核心三表逐欄解說：questions 爭點考題（train 練習卷／holdout 彌封考卷防刷分）、answers 作答紙（golden 標準見解／candidate 待審草稿／reference 參考，身分只認 role 不認姓名）、scores 評核單（candidate 對照 golden 打 0–100 分、只增不刪成進步曲線）。含一件全去識別化的酒駕公共危險案（刑法185-3第1項第1款）golden vs candidate 前後對比 SVG＋可直接照抄 SQL、LIKE 禁 FTS5 的中文查證生死線、v2→v4 演進時間軸、成果四件套、為何從成品反推才突破。零中國大陸用語。",
+      "protected": true,
+      "file": "botrun-quality-qa-db-spec.html",
+      "icon": "⚖️",
+      "publishDate": "2026-07-08T11:50:57+08:00"
+    },
+    {
       "id": "cmux-vs-tmux",
       "title": "cmux vs. tmux：AI 代理人時代的終端機，兩把不同的刀",
       "description": "把 cmux 與 tmux 講到高中生也懂、技術人看括號也知道怎麼做。tmux＝20 年老將的『終端機瑞士刀』（純文字 multiplexer、detach/attach 斷線不死、跨 Mac/Linux/BSD、極輕巧），cmux＝2026-02 為 AI 代理人而生的『駕駛艙』（原生 macOS App、libghostty GPU 渲染、通知環亮藍圈告訴你哪個 agent 在等你、內建可程式瀏覽器、Unix socket API）。結論：不是二選一而是互補，cmux 還能原生接遠端 tmux。重點加碼 Claude Code × cmux 混合優勢：cmux claude-teams 讓工頭 AI 拆活、工人 AI 各據一張 git worktree 桌（檔案不打架、一人穩定並行 4–8 桌）、teammate 自動變成有名牌會亮燈的原生分格（tmux 相容 shim 把 tmux 指令翻成 cmux socket API），瓶頸從『切畫面』上移到『你 review 得夠不夠快』。含多張 before/after SVG 比較卡、決策樹、演進歷程、成果四件套、去個資示範。零中國大陸用語。",
