@@ -41,7 +41,13 @@
       "badgeColor": "#4a7c59",
       "protected": true,
       "publishDate": "2026-07-09T07:45:00+08:00",
-      "tags": ["傳承", "GAN", "Map-Reduce", "去機敏", "PII"]
+      "tags": [
+        "傳承",
+        "GAN",
+        "Map-Reduce",
+        "去機敏",
+        "PII"
+      ]
     },
     {
       "id": "skill-incubation-gan-verify",
@@ -53,7 +59,13 @@
       "badgeColor": "#4a7c59",
       "protected": true,
       "publishDate": "2026-07-09T06:28:37+08:00",
-      "tags": ["傳承", "Claude Code Skills", "GAN", "GEPA", "技能孵化"]
+      "tags": [
+        "傳承",
+        "Claude Code Skills",
+        "GAN",
+        "GEPA",
+        "技能孵化"
+      ]
     },
     {
       "id": "card-nesting-escape-heritage",
@@ -9766,6 +9778,17 @@
       "badge": "傳承",
       "badgeColor": "#4a7c59",
       "icon": "shield"
+    },
+    {
+      "id": "botrun-uiux-env-botrunmd",
+      "title": "波麻吉一日 v1.0.42→1.0.50：UI/UX 總體檢＋.env 啟動路徑＋BOTRUN.md AI 指示 · 傳承",
+      "subtitle": "一天九版：左上 9 顆 icon 改成 VS Code 式最左垂直 activity rail（一顆＝一功能區）、composer 縮放跑版治本（真兇＝容器 min-width:0 拒縮而非鈕）、垃圾桶恆顯改漸進揭露。順手治好同事裝不起來的病：.env 在 repo_root 解析後才載＝設路徑無效（雞生蛋），治本＝preload_env_for_path 先讀＋BOTRUN_MULTI_REPO 正名；預設後端改 gate；工作區可 .env 指定；bm update 一鍵升級；curl 升級先停舊 process 防殘留。BOTRUN.md AI 指示（預設繁中、缺檔當場建）改用 pi 原生 --append-system-prompt 旗標注入＝不覆蓋使用者自有的 .pi/APPEND_SYSTEM.md。全程 chrome／API 實測＋單元測試守住。",
+      "protected": true,
+      "href": "botrun-uiux-env-botrunmd.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-09T18:52:00+08:00"
     }
   ]
 }
