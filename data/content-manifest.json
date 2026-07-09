@@ -9808,6 +9808,17 @@
       "badgeColor": "#4a7c59",
       "icon": "shield",
       "publishDate": "2026-07-09T18:52:00+08:00"
+    },
+    {
+      "id": "ai-ready-data-verbatim-pipeline",
+      "title": "多模態 AI 就緒資料：保真管線 × DRY 路由 SSOT × 姊妹面板 · 傳承",
+      "subtitle": "同一批卷宗兩種命運：對外去機敏（塗黑個資）、對內保真（一字不改建知識庫）。三方案打分後選「新獨立技能複用 CLI」（27 分），先零風險交付；再回應「不要重複 debug」把多模態路由 toText 抽到 _lib/_multimodal.ts 單一來源，去機敏(1.0.1)與 AI-ready(1.0.0)兩管線共用、只 debug 一次。後端 /api/airdy-batch 重用 deid 全部積木、前端 AiReadyBatchPanel 共用 .deid-* 版面（連 UI 都 DRY），依 2026 UI/UX 逐檔狀態列＋N/M 進度。突破點＝把交付與收斂拆兩步：先驗證再重構，每步有綠燈墊底。33 tests＋API＋chrome 全驗。",
+      "protected": true,
+      "href": "ai-ready-data-verbatim-pipeline.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "layers",
+      "publishDate": "2026-07-10T05:34:58+08:00"
     }
   ]
 }
