@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "moj-batch-deid-audit-driven-fix",
+      "title": "抽驗驅動治本：法務部 2848 頁卷宗批量去機敏",
+      "subtitle": "每次抽驗都揪出一個「看似成功、其實漏遮」的陷阱，逐一溯源到根 repo 治本：部分失敗被吞→多檔撞檔→<br/>斷行住址明文外洩→病歷號跨儲存格漏遮。用 Claude in Chrome 分段實測（50/101/200 頁）＋Opus 多模態抽驗兩輪打分，最終全 200 頁零真個資明文殘留。核心突破：Phase-2 跨頁已知實體傳播——單頁看不懂的斷行住址，換整份文件的視角就補得回來。",
+      "href": "moj-batch-deid-audit-driven-fix.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "tags": [
+        "傳承",
+        "去機敏",
+        "PII",
+        "Opus抽驗",
+        "治本",
+        "claude-in-chrome"
+      ],
+      "publishDate": "2026-07-09T21:47:14+08:00"
+    },
+    {
       "id": "batch-deid-gan-mapreduce",
       "title": "批量去機敏 GAN 對抗評審 × Map-Reduce 平行化 — 進度傳承",
       "subtitle": "把「一個裁判讀完 18 頁」換成「三個裁判各讀 6 頁同時查」，把「AI 說做完了」換成「另一個不知情的 AI 自己重查」。七輪查、八輪修（跨兩個獨立 repo），累積修好 16 個真實 bug；分數 65→78→65→75，尚未達 95 分終點，誠實記錄進度快照而非最終驗收。",
