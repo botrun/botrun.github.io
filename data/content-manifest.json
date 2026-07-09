@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "bololo-local-install-fixes",
+      "title": "波露露全地端一行安裝：從一行崩潰到 10 缺點全修",
+      "subtitle": "「複製貼上就好」的一行安裝，在非 bash 終端機直接崩潰——不是模型跑不動，是 install.sh 把 <code>$LLM_MODEL）</code> 這種變數緊貼中文全形括號的位元組吃進變數名，在 <code>/bin/sh</code>＋<code>set -u</code> 下判成未定義變數而 exit 1。實測 macOS/Apple Silicon 找出並修好 001~010 十個缺點：埠寫死撞崩、綁 0.0.0.0＋萬用密碼資安、無自我升級、無全域指令、啟動重複初始化…；用 claude-in-chrome 端到端驗證登入建會議、開 PR 給維護者交接。核心突破：從「逐行打地鼠」改成「按類別全域正規式一次掃完」。含前後比較 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "href": "bololo-local-install-fixes.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "全地端安裝",
+        "POSIX sh bug",
+        "claude-in-chrome",
+        "資安 127.0.0.1",
+        "PR 交接"
+      ],
+      "publishDate": "2026-07-10T07:14:50+08:00"
+    },
+    {
       "id": "moj-batch-deid-audit-driven-fix",
       "title": "抽驗驅動治本：法務部 2848 頁卷宗批量去機敏",
       "subtitle": "每次抽驗都揪出一個「看似成功、其實漏遮」的陷阱，逐一溯源到根 repo 治本：部分失敗被吞→多檔撞檔→<br/>斷行住址明文外洩→病歷號跨儲存格漏遮。用 Claude in Chrome 分段實測（50/101/200 頁）＋Opus 多模態抽驗兩輪打分，最終全 200 頁零真個資明文殘留。核心突破：Phase-2 跨頁已知實體傳播——單頁看不懂的斷行住址，換整份文件的視角就補得回來。",
