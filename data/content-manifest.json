@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "port-single-ssot-60706",
+      "title": "一個埠走天下：把埠號收斂成單一 SSOT（60706）",
+      "subtitle": "起點只是驗證 <code>bm</code> CLI 能否平行——dev 用埠 60706 中途掉線，程式竟靜默 fallback 到安裝版寫死的 8799，照出「同一系統藏兩種埠」的分裂病根。治本：讓安裝版路徑也回歸單一來源 <code>app/src/port.rs</code> 的 <code>DEFAULT_PORT=60706</code>、環境變數統一 <code>BOTRUN_MULTI_PORT</code>，砍掉平行的 8799／<code>BOTRUN_PORT</code>（bm.rs／install.sh／hammer 全對齊）。附 bm 平行小測試 4/4 PASS（總牆鐘≈最慢一題，證明可平行當工人）、發版 v1.0.56。含前後比較 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
+      "href": "port-single-ssot-60706.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "單一 SSOT",
+        "埠號治本",
+        "bm CLI 平行",
+        "發版 v1.0.56"
+      ],
+      "publishDate": "2026-07-10T07:47:45+08:00"
+    },
+    {
       "id": "bololo-local-install-fixes",
       "title": "波露露全地端一行安裝：從一行崩潰到 10 缺點全修",
       "subtitle": "「複製貼上就好」的一行安裝，在非 bash 終端機直接崩潰——不是模型跑不動，是 install.sh 把 <code>$LLM_MODEL）</code> 這種變數緊貼中文全形括號的位元組吃進變數名，在 <code>/bin/sh</code>＋<code>set -u</code> 下判成未定義變數而 exit 1。實測 macOS/Apple Silicon 找出並修好 001~010 十個缺點：埠寫死撞崩、綁 0.0.0.0＋萬用密碼資安、無自我升級、無全域指令、啟動重複初始化…；用 claude-in-chrome 端到端驗證登入建會議、開 PR 給維護者交接。核心突破：從「逐行打地鼠」改成「按類別全域正規式一次掃完」。含前後比較 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
