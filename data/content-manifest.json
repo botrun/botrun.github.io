@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "sovereign-ai-confidential-strategy",
+      "title": "把「機密」做成護城河：主權 AI 戰略與「一日成真」開發法",
+      "subtitle": "一場產品演進會議的完整傳承（逐字稿全程去機敏、零真實人名）。核心突破＝取消優先權的「一日成真」：今天許願、明天全部 release，靠雙 Fable 驗車（功能性 BDD/TDD ＋ 以人為中心好用驗車 GAN 迭代）過關就直發 PR to main、不用人工盯。七大主題涵蓋：Botrun Multi 去機密一條龍與技能 CRUD（UI＋BM CLI 雙軌）、地端防「有 SSH 權限內賊」的後端加密＋專案沙盒＋三種個人化解密（iPhone 臉辨識/Mac 指紋/USB 指紋）、資安『可溯源』理念、可進化主權 AI（斷網也能用、夜間做夢向頂流蒸餾）、評測商業模式（工研院 40 萬分潤）與服務內部標案飛輪、數位發展部 Try AI 五年期導向小型 Production。含多張前後比較 SVG 卡、成果四件套。零真實人名、零中國大陸用語。",
+      "href": "sovereign-ai-confidential-strategy.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "主權 AI",
+        "一日成真",
+        "地端防內賊加密",
+        "去機敏",
+        "評測商業模式"
+      ],
+      "publishDate": "2026-07-10T11:18:57+08:00"
+    },
+    {
       "id": "port-single-ssot-60706",
       "title": "一個埠走天下：把埠號收斂成單一 SSOT（60706）",
       "subtitle": "起點只是驗證 <code>bm</code> CLI 能否平行——dev 用埠 60706 中途掉線，程式竟靜默 fallback 到安裝版寫死的 8799，照出「同一系統藏兩種埠」的分裂病根。治本：讓安裝版路徑也回歸單一來源 <code>app/src/port.rs</code> 的 <code>DEFAULT_PORT=60706</code>、環境變數統一 <code>BOTRUN_MULTI_PORT</code>，砍掉平行的 8799／<code>BOTRUN_PORT</code>（bm.rs／install.sh／hammer 全對齊）。附 bm 平行小測試 4/4 PASS（總牆鐘≈最慢一題，證明可平行當工人）、發版 v1.0.56。含前後比較 SVG 卡、成果四件套、去個資示範。零中國大陸用語。",
