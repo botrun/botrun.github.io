@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "slash-drive-goal-guard-heritage",
+      "title": "打斜線看不到，到 5 情境全過關：/drive 治本傳承",
+      "subtitle": "一支 /drive 指令從「按了沒反應」治本成「本地工作站與雲端 play 都能自動把目標做到完成」。三個零件（pi 引擎＋goal-guard 擴充＋宿主看得懂訊號）缺一不可；泛化不綁擴充名（只認 slash＋followUp 機制）、洩漏前端串流當下就去噪且工具真實重做、同一份 SSOT 兩宿主共用。含前後比較 SVG 卡、雙層敘事（白話比喻＋括號真操作）、成果四件套、cbh-play-dev claude-in-chrome 五情境全過關證據。零真實人名、零中國大陸用語。",
+      "href": "slash-drive-goal-guard-heritage.html",
+      "protected": true,
+      "icon": "shield-check",
+      "badge": "傳承",
+      "badgeColor": "#3a6ea5",
+      "tags": [
+        "傳承",
+        "pi/goal-guard",
+        "斜線指令",
+        "泛化不綁名",
+        "洩漏治本",
+        "SSOT 共用",
+        "cbh-play-dev 驗測"
+      ],
+      "publishDate": "2026-07-10T14:53:16+08:00"
+    },
+    {
       "id": "sovereign-ai-confidential-strategy",
       "title": "把「機密」做成護城河：主權 AI 戰略與「一日成真」開發法",
       "subtitle": "一場產品演進會議的完整傳承（逐字稿全程去機敏、零真實人名）。核心突破＝取消優先權的「一日成真」：今天許願、明天全部 release，靠雙 Fable 驗車（功能性 BDD/TDD ＋ 以人為中心好用驗車 GAN 迭代）過關就直發 PR to main、不用人工盯。七大主題涵蓋：Botrun Multi 去機密一條龍與技能 CRUD（UI＋BM CLI 雙軌）、地端防「有 SSH 權限內賊」的後端加密＋專案沙盒＋三種個人化解密（iPhone 臉辨識/Mac 指紋/USB 指紋）、資安『可溯源』理念、可進化主權 AI（斷網也能用、夜間做夢向頂流蒸餾）、評測商業模式（工研院 40 萬分潤）與服務內部標案飛輪、數位發展部 Try AI 五年期導向小型 Production。含多張前後比較 SVG 卡、成果四件套。零真實人名、零中國大陸用語。",
