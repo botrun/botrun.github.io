@@ -9895,6 +9895,17 @@
       "badgeColor": "#4a7c59",
       "icon": "layers",
       "publishDate": "2026-07-10T05:34:58+08:00"
+    },
+    {
+      "id": "web-media-skills-gan",
+      "title": "台灣新聞＋YouTube 技能：GAN 對抗煉成 · 傳承",
+      "subtitle": "起因＝/drive 上網查台灣新聞時本地模型只 grep 到一則標題就宣告成功、追問還腦補內文——沒有可量測的達標關卡。治本＝做兩個「真的能用」的共用技能，並用 GAN 對抗＋獨立 subagent 打分逼品質 >95：①台灣新聞技能（五來源多分類抓標題/內文/摘要/來源網址/日期，逐來源精準抽取器去廣告、搜尋/去重/JSON、exit 2 驗證、管線大輸出不截斷）②youtube影片技能（近 N 天搜尋、字幕逐字稿滾動去重分段、下載影音回傳實際落地檔、無字幕接語音轉文字 ASR）。三位互不通氣的裁判各自實跑五維打分，教練依評語逐項治本：新聞 79/82→96/98、youtube 91/94→97/97。突破點＝把「達標」從模型主觀感覺變成裁判可複現的客觀量測。地雷：加來源不加抽取器＝洩廣告、process.exit 早於 stdout flush＝64KB 管線截斷、yt-dlp -x 回傳已刪中間檔、自動字幕滾動重疊去重、--days 用絕對日期。SSOT＝botrun-skills web-media pack，vendored 進 .pi/skills，PR #11/#37 皆 merge。",
+      "protected": true,
+      "href": "web-media-skills-gan.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T00:00:00+08:00"
     }
   ]
 }
