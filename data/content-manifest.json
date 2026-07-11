@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "legacy-20260711-v76-issues-humanloop",
+      "title": "40 分鐘，把腦中的專案狀態變成可傳承的 GitHub 資產",
+      "subtitle": "法務部卷證標籤專案 2026-07-11 工作階段傳承：v76 定版（獨立評分 A97/B89，版本號大≠好）→ 13 條 issues P0-P3 兩輪優先權調整（P0=多標不漏標/證據歸屬/負面表列品質三本柱）→ 事務官會議逐字稿歸檔＋13 條 issues 行號引證流水線 → +IQ 洞見：負面表列讓事務官自己寫＝human in the loop 的制度證據。含時間軸、四張說服 SVG 卡、成果四件套。全內容去識別化、零中國大陸用語。",
+      "href": "legacy-20260711-v76-issues-humanloop.html",
+      "protected": true,
+      "icon": "archive",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "tags": [
+        "傳承",
+        "法務部卷證標籤",
+        "v76 定版",
+        "GitHub issues",
+        "引證流水線",
+        "human in the loop",
+        "+IQ"
+      ],
+      "publishDate": "2026-07-11T14:09:07+08:00"
+    },
+    {
       "id": "slash-drive-goal-guard-heritage",
       "title": "打斜線看不到，到 5 情境全過關：/drive 治本傳承",
       "subtitle": "一支 /drive 指令從「按了沒反應」治本成「本地工作站與雲端 play 都能自動把目標做到完成」。三個零件（pi 引擎＋goal-guard 擴充＋宿主看得懂訊號）缺一不可；泛化不綁擴充名（只認 slash＋followUp 機制）、洩漏前端串流當下就去噪且工具真實重做、同一份 SSOT 兩宿主共用。含前後比較 SVG 卡、雙層敘事（白話比喻＋括號真操作）、成果四件套、cbh-play-dev claude-in-chrome 五情境全過關證據。零真實人名、零中國大陸用語。",
