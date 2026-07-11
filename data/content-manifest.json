@@ -32,6 +32,16 @@
   },
   "items": [
     {
+      "id": "issue16-18-org-unit-wordbank",
+      "title": "issue #16-18 傳承：機關→組織單位、詞庫抽離——改了哪些，證據在哪",
+      "protected": true,
+      "href": "issue16-18-org-unit-wordbank.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T18:10:02+08:00"
+    },
+    {
       "id": "skills-decomposition-chandra-ocr2-video-legacy",
       "title": "重算力一次做完、輕語意切成小技能 · Chandra OCR 2 破天花板 × 0.3 秒技能群 × 影片傳承 · 傳承",
       "subtitle": "卡在 80 分整整 8 個版本，根因不在模型而在上游 OCR：換掉 Marker、改版 Chandra OCR 2（兩個半天）後天花板消失、80→90。接著把架構切成「重算力層跑一次（2 小時 OCR 落盤快取）／輕語意層天天改（門號歸屬、機關發文單位各 0.3 秒的小技能）／可變規則層交還使用者（references 對照表，改資料不改程式）」——迭代成本從 2 小時降到 0.3 秒，才有本錢跟事務官高頻共創。含四條原理（驗測要過量才抓得到「財團法人」邊界／小技能專屬好除錯好演化／換引擎值得／領域知識是寶貝：檢定合格證書非列不可是因為它撐起酒測值的證據能力）、六張 SVG 前後對比卡、成果四件套、七條地雷。並定版傳承載體：從今天起錄影上 YouTube 餵給波特人 AI，人類傳承 O(人數)、AI 傳承 O(1)。全案例去識別化。",
