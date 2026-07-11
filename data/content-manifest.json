@@ -9959,6 +9959,17 @@
       "badgeColor": "#4a7c59",
       "icon": "layout",
       "publishDate": "2026-07-11T09:20:00+08:00"
+    },
+    {
+      "id": "negative-list-gan-eval-2026-07-11",
+      "title": "負面表列技能 GAN 六輪雙盲驗測 · 傳承（可檢驗證據版）",
+      "subtitle": "issue #2 行政程序文件不生成標籤：人類可編輯負面表列.md＋可逆槓掉。GAN 三角色（選手/獨立雙盲裁判17人次/教練）六輪 89.4→96.33，五位裁判個別全>95、五維全過線；凍結 baseline 同尺 84.55 證明非放水。突破＝評分尺錨定校準（規格要求的 human-in-the-loop 與安全側設計不得扣分、無具體缺陷不得保守壓分）＋移除過保守例外。全部驗測例子附可自跑檢驗指令與來源引證：2800 頁案 7 條槓掉行號可對、byte 級可逆 cmp 驗證、同名家族陷阱 selftest 20 項、bm UI chrome e2e 逐字紀錄、17 份裁判 JSON 入庫可查。",
+      "protected": true,
+      "href": "negative-list-gan-eval-2026-07-11.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T15:30:00+08:00"
     }
   ]
 }
