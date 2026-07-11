@@ -34,7 +34,12 @@
     {
       "id": "issue9-phone-agency-verification",
       "title": "issue #9 門號歸屬＋機關發文單位技能——驗測成果傳承（可查證版）",
-      "protected": true
+      "protected": true,
+      "href": "issue9-phone-agency-verification.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T15:24:59+08:00"
     },
     {
       "id": "universal-web-search-gan-10rounds",
