@@ -9906,6 +9906,17 @@
       "badgeColor": "#4a7c59",
       "icon": "shield",
       "publishDate": "2026-07-11T00:00:00+08:00"
+    },
+    {
+      "id": "chat-whitespace-container-query",
+      "title": "聊天欄「左右留白太多」怎麼修好 · 傳承",
+      "subtitle": "使用者一句「左右留白太多」，配一張三欄截圖。真相＝聊天欄兩側的留白（padding）用 5vw（整個視窗寬的 5%）去算，但左右兩塊固定面板吃掉約 775px 後，中間聊天欄其實只有約 537px，卻還套著大螢幕才合理的大留白（左右各 48／64px）。治本＝把「尺」從視窗換成容器：.chat 宣告 container-type: inline-size，padding 改 clamp(16px, 4cqw, 40px)——4cqw＝聊天欄自身寬的 4%，537px 時降到約 21px，且聊天欄變寬時自己等比長大。突破點＝先在 Claude in Chrome 用 getBoundingClientRect／getComputedStyle 量到「欄 537px、padding 卻 48/64px」，才把模糊的「留白太多」縮成一句「尺用錯」。一輪命中、驗測 padding 21.48px、截圖確認填滿，v1.0.60→1.0.61 PR #38 merge main。",
+      "protected": true,
+      "href": "chat-whitespace-container-query.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "layout",
+      "publishDate": "2026-07-11T09:20:00+08:00"
     }
   ]
 }
