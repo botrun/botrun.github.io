@@ -32,6 +32,16 @@
   },
   "items": [
     {
+      "id": "host-truth-eyewitness-verify",
+      "title": "主機實況與親眼驗測傳承——盲測還原、勘誤定版、三端同步",
+      "protected": true,
+      "href": "host-truth-eyewitness-verify.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T21:13:36+08:00"
+    },
+    {
       "id": "issue16-18-org-unit-wordbank",
       "title": "issue #16-18 傳承：機關→組織單位、詞庫抽離——改了哪些，證據在哪",
       "protected": true,
