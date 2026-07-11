@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "ddd-3-lines-prompt",
+      "title": "3 行指令讓 AI 貫徹 DDD 精神（2026 版）— 十輪對話完整推導傳承",
+      "subtitle": "DDD 戰略半套（通用語言＋限界脈絡）業界公認無替代品、戰術半套（Repository/Factory 儀式）常是負資產——推導出 3 行指令：①盤問對齊術語產 glossary 同詞同義貫穿四層 ②非法狀態不可表示焊進 schema/CHECK ③禁 pattern 儀式＋3 行 ADR 留痕。含三層模型（DDD 管詞義、schema 管格式、契約管傳輸）、.botrun v4.2.0 對照體檢、四處追蹤檢驗法",
+      "href": "ddd-3-lines-prompt.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-12T07:26:00+08:00",
+      "tags": [
+        "傳承",
+        "DDD",
+        "Prompt 工程",
+        "glossary",
+        "schema 約束",
+        "ADR"
+      ]
+    },
+    {
       "id": "botrun-hammer-gemini35-upgrade",
       "title": "波特槌 v1.9.4 雲端模型升級 gemini-3.5-flash 傳承",
       "subtitle": "查證 3 件事只需改 1 件：model id 換 GA stable；Gemini 3.x thinkingLevel 禁與 thinkingBudget 並用、thinking 無法全關；Files API resumable 上傳沒變——「一樣就不用改」的查證價值",
