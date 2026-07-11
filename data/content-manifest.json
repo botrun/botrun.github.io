@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "botrun-hammer-gemini35-upgrade",
+      "title": "波特槌 v1.9.4 雲端模型升級 gemini-3.5-flash 傳承",
+      "subtitle": "查證 3 件事只需改 1 件：model id 換 GA stable；Gemini 3.x thinkingLevel 禁與 thinkingBudget 並用、thinking 無法全關；Files API resumable 上傳沒變——「一樣就不用改」的查證價值",
+      "href": "botrun-hammer-gemini35-upgrade.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-11T21:45:00+08:00",
+      "tags": [
+        "傳承",
+        "Gemini",
+        "語音轉文字",
+        "botrun-hammer",
+        "thinkingLevel"
+      ]
+    },
+    {
       "id": "2026-07-11-chandra2-ocr-kiss",
       "title": "2848 頁全卷 Chandra OCR 2 定版＋空白頁預檢三輪誤殺的 KISS 教訓",
       "subtitle": "GAN 三輪裁判 477→184→8→0；刪掉每卷只省 3 分鐘的預檢守門員，一條直線互補路由收乾淨；SSOT sync 派發流程矯正",
