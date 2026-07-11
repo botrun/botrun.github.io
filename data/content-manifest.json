@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "2026-07-11-chandra2-ocr-kiss",
+      "title": "2848 頁全卷 Chandra OCR 2 定版＋空白頁預檢三輪誤殺的 KISS 教訓",
+      "subtitle": "GAN 三輪裁判 477→184→8→0；刪掉每卷只省 3 分鐘的預檢守門員，一條直線互補路由收乾淨；SSOT sync 派發流程矯正",
+      "href": "2026-07-11-chandra2-ocr-kiss.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-11T21:30:00+08:00",
+      "tags": [
+        "傳承",
+        "OCR",
+        "KISS",
+        "GAN",
+        "SSOT"
+      ]
+    },
+    {
       "id": "host-truth-eyewitness-verify",
       "title": "主機實況與親眼驗測傳承——盲測還原、勘誤定版、三端同步",
       "protected": true,
