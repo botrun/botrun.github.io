@@ -10044,6 +10044,17 @@
       "badgeColor": "#4a7c59",
       "icon": "shield",
       "publishDate": "2026-07-11T15:30:00+08:00"
+    },
+    {
+      "id": "neglist-references-dsl-2026-07-11",
+      "title": "負面表列技能 v1.6.0：規則抽離 references/ 人類可編輯 DSL · 傳承",
+      "subtitle": "承 GAN 六輪達標版續作：歸類 vertical/moj（法務部垂直技能）＋把程式裡所有負面表列 regex/字集抽成 references/ 兩個 .md（負面表列.md 事務官改、引擎樣式.md 工程層改），存檔即生效、改壞退內建預設。先 WebSearch 查證 Anthropic references/ progressive disclosure 官方方法學與 Business Readable DSL 再動手；驗證四道門全綠（selftest 22/22、evals 5/5、獨立驗收員三項實跑 PASS、bm 派發端再驗）。地雷：restore 前綴不可綁樣式（會咬尾巴）、字元類正則要跳脫、輸出標記=還原契約不開放外移。",
+      "protected": true,
+      "href": "neglist-references-dsl-2026-07-11.html",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "file-text",
+      "publishDate": "2026-07-11T21:50:00+08:00"
     }
   ]
 }
