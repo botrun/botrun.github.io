@@ -32,6 +32,23 @@
   },
   "items": [
     {
+      "id": "issue9-phone-agency-verification",
+      "title": "issue #9 門號歸屬＋機關發文單位技能——驗測成果傳承（可查證版）",
+      "protected": true
+    },
+    {
+      "id": "universal-web-search-gan-10rounds",
+      "protected": true,
+      "title": "通用搜尋 × 通用網頁抓取技能：GAN 十輪迭代傳承",
+      "description": "免 API key 多引擎搜尋＋七層抓取階梯＋<60s 鐵律＋10 輪對抗迭代＋五情境驗測標準化",
+      "href": "universal-web-search-gan-10rounds.html",
+      "subtitle": "免 API key 多引擎搜尋＋七層抓取階梯＋<60s 鐵律＋10 輪對抗迭代＋五情境驗測標準化",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "icon": "shield",
+      "publishDate": "2026-07-11T15:24:35+08:00"
+    },
+    {
       "id": "legacy-20260711-v76-issues-humanloop",
       "title": "40 分鐘，把腦中的專案狀態變成可傳承的 GitHub 資產",
       "subtitle": "法務部卷證標籤專案 2026-07-11 工作階段傳承：v76 定版（獨立評分 A97/B89，版本號大≠好）→ 13 條 issues P0-P3 兩輪優先權調整（P0=多標不漏標/證據歸屬/負面表列品質三本柱）→ 事務官會議逐字稿歸檔＋13 條 issues 行號引證流水線 → +IQ 洞見：負面表列讓事務官自己寫＝human in the loop 的制度證據。含時間軸、四張說服 SVG 卡、成果四件套。全內容去識別化、零中國大陸用語。",
