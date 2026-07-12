@@ -32,6 +32,42 @@
   },
   "items": [
     {
+      "id": "apple-vision-ocr-benchmark",
+      "title": "Apple Vision OCR 速度基準——當「我以為會崩的地方」反而更強",
+      "subtitle": "2848 頁卷宗 OCR 從 2 小時降到 5.8 分鐘（21×）；而事前推理嚴密的風險預測，方向是反的。",
+      "href": "apple-vision-ocr-benchmark.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-12T18:30:00+08:00",
+      "tags": [
+        "傳承",
+        "OCR",
+        "效能",
+        "地雷",
+        "AppleVision"
+      ]
+    },
+    {
+      "id": "2026-07-12-security-proportionality-p0-editor",
+      "title": "資安比例原則 × 三項落地 × P0 轉場（加 IQ 傳承）",
+      "subtitle": "風險不在「送目錄給模型」，在「整份卷宗存錯地方」；Apple Vision 平行度甜蜜點 PAR16；下一階段重點＝editor 斷點續做。",
+      "href": "2026-07-12-security-proportionality-p0-editor.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-12T11:30:00+08:00",
+      "tags": [
+        "傳承",
+        "資安",
+        "比例原則",
+        "OCR",
+        "editor"
+      ]
+    },
+    {
       "id": "2026-07-12-strict-judge-team-day",
       "title": "嚴格尺團隊日：一天 70.8→87.1（零 gold、30 版零回退）",
       "subtitle": "換尺 gate90＋十五段小技能鏈＋寬表事實層——每一分都有頁碼證據",
