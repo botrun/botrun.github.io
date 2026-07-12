@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "vllm-26b-150-parallel-kv-tuning",
+      "title": "26B 開到 150 路平行：KV cache 才是併發的真天花板",
+      "subtitle": "MAXSEQS 只是門口告示、KV 才是桌面面積→只多給 0.01 GMU（1GB）→KV 314,771→361,898 tok→150 路 0.86s 跑完、編號 150/150 全對、加速比 142×；含 5 顆地雷（deploy 腳本直推 main／假 active／gh pr merge 噴錯卻已成功）",
+      "href": "vllm-26b-150-parallel-kv-tuning.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-12T21:50:00+08:00",
+      "tags": [
+        "傳承",
+        "vLLM",
+        "併發調校",
+        "KV cache",
+        "GPU 顯存",
+        "壓測方法"
+      ]
+    },
+    {
       "id": "bm-default-drive",
       "title": "bm -p 預設 /drive：從「以為有」到「驗證真的有」",
       "subtitle": "檢驗發現未成真→實作補前綴→cargo check 舊 binary 假驗證地雷→GOAL_GUARD_LOG 開關交叉驗測→v1.0.64 發版",
