@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "2026-07-12-strict-judge-team-day",
+      "title": "嚴格尺團隊日：一天 70.8→87.1（零 gold、30 版零回退）",
+      "subtitle": "換尺 gate90＋十五段小技能鏈＋寬表事實層——每一分都有頁碼證據",
+      "href": "2026-07-12-strict-judge-team-day.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "publishDate": "2026-07-12T12:00:00+08:00"
+    },
+    {
+      "id": "2026-07-12-strict-judge-handover-todo",
+      "title": "嚴格尺交接 TODO：清空上下文後續戰手冊",
+      "subtitle": "pipeline.ts 一鍵鏈＋剩餘梯度＋影像層戰場＋鐵律紅線",
+      "href": "2026-07-12-strict-judge-handover-todo.html",
+      "icon": "shield",
+      "badge": "交接",
+      "badgeColor": "#4a5d7c",
+      "publishDate": "2026-07-12T12:00:00+08:00"
+    },
+    {
       "id": "ddd-3-lines-prompt",
       "title": "3 行指令讓 AI 貫徹 DDD 精神（2026 版）— 十輪對話完整推導傳承",
       "subtitle": "DDD 戰略半套（通用語言＋限界脈絡）業界公認無替代品、戰術半套（Repository/Factory 儀式）常是負資產——推導出 3 行指令：①盤問對齊術語產 glossary 同詞同義貫穿四層 ②非法狀態不可表示焊進 schema/CHECK ③禁 pattern 儀式＋3 行 ADR 留痕。含三層模型（DDD 管詞義、schema 管格式、契約管傳輸）、.botrun v4.2.0 對照體檢、四處追蹤檢驗法",
