@@ -32,6 +32,23 @@
   },
   "items": [
     {
+      "id": "bm-default-drive",
+      "title": "bm -p 預設 /drive：從「以為有」到「驗證真的有」",
+      "subtitle": "檢驗發現未成真→實作補前綴→cargo check 舊 binary 假驗證地雷→GOAL_GUARD_LOG 開關交叉驗測→v1.0.64 發版",
+      "href": "bm-default-drive.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-12T18:40:00+08:00",
+      "tags": [
+        "傳承",
+        "bm CLI",
+        "goal-guard",
+        "驗測方法"
+      ]
+    },
+    {
       "id": "deid-batch-crash-three-causes",
       "title": "批量去機敏「上傳就當機」三真因治本",
       "subtitle": "job 目錄漂移＋失敗全靜默＋假成功判定；五情境驗測＋乾淨安裝驗證（v1.0.63）",
