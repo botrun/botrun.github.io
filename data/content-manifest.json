@@ -32,6 +32,16 @@
   },
   "items": [
     {
+      "id": "deid-batch-crash-three-causes",
+      "title": "批量去機敏「上傳就當機」三真因治本",
+      "subtitle": "job 目錄漂移＋失敗全靜默＋假成功判定；五情境驗測＋乾淨安裝驗證（v1.0.63）",
+      "href": "deid-batch-crash-three-causes.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "publishDate": "2026-07-12T12:00:00+08:00"
+    },
+    {
       "id": "gold-outline-12cases",
       "title": "黃金答案目錄技能：12 案泛化訓練集的「標準答案」是怎麼來的",
       "subtitle": "把人工書籤確定性還原成評分黃金答案；以及一顆差點誤殺四個案件的地雷——驗證器自己的假設，也需要被驗證。",
