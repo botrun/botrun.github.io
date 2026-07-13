@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "moj-docstart-31b-prompt-iteration-20260713",
+      "title": "31B 視窗切割 · prompt 迭代完整傳承",
+      "subtitle": "把「判斷卷況」從 prompt 拿出來交給程式，F1 從 31.3 衝到 56.4、精準翻倍、時間砍半，而且召回還漲了 5.5%。但最值錢的不是分數，是兩次失敗換來的判準：能用程式 100% 算出的就從 prompt 拿走（叫模型比對側戳，29 個視窗錯 4 個）；輸出本身會逼模型驗證自己的就留下（拿掉「寫標籤名稱」，精準當場崩 16.7%——原來命名不是負擔，是 chain-of-thought）。含根因診斷（78% 的誤報埋在「調卷」內部、跨 12 案驗證零反例）、六個版本的完整軌跡（含兩次失敗）、所有 path 的用途說明、七條接手 TODO，以及去識別化連踩兩次的血淚（gold 只寫角色詞不寫真名，從 gold 抽人名清單是空的）。所有案號人名已代號化。",
+      "href": "moj-docstart-31b-prompt-iteration-20260713.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-13T11:30:08+08:00",
+      "tags": [
+        "傳承",
+        "法務部",
+        "Page Stream Segmentation",
+        "prompt engineering",
+        "Gemma 31B",
+        "泛化鐵律"
+      ]
+    },
+    {
       "id": "high-taste-benchmark-story",
       "title": "一個高品味題庫的效益，該怎麼說？——寫給高中老師的一堂敘事課",
       "subtitle": "查完日／美／法／菲／台五國 2026 AI 教育準則逐字原文，用矽谷敘事骨架講清楚：平庸題庫讓所有 AI 長得一樣好，高品味題庫讓好的 AI 跟危險的 AI 當場分開。",
