@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "pipeline-v3-docstart-explainer-heritage-20260713",
+      "title": "PSS 架構互動傳承：高中生看懂 × 技術人可實施",
+      "subtitle": "把「視窗式文件開頭偵測」六輪迭代（F1 31.3→56.4）做成雙層 explainer-doc：白話比喻＋技術深度，含六版可點按互動走讀＋五題結尾測驗（借鏡 Notion 設計工程師 Jeffrey Litt 的 explainer-doc 方法論）。核心判準：能程式算出的從 prompt 拿走、輸出會逼模型自證的留在 prompt——命名即 chain-of-thought。",
+      "href": "pipeline-v3-docstart-explainer-heritage-20260713.html",
+      "icon": "layers",
+      "badge": "傳承",
+      "badgeColor": "#3b6fa0",
+      "protected": true,
+      "publishDate": "2026-07-13T13:24:55+08:00",
+      "tags": [
+        "傳承",
+        "explainer-doc",
+        "Page Stream Segmentation",
+        "雙層教學",
+        "互動測驗"
+      ]
+    },
+    {
       "id": "moj-docstart-31b-prompt-iteration-20260713",
       "title": "31B 視窗切割 · prompt 迭代完整傳承",
       "subtitle": "把「判斷卷況」從 prompt 拿出來交給程式，F1 從 31.3 衝到 56.4、精準翻倍、時間砍半，而且召回還漲了 5.5%。但最值錢的不是分數，是兩次失敗換來的判準：能用程式 100% 算出的就從 prompt 拿走（叫模型比對側戳，29 個視窗錯 4 個）；輸出本身會逼模型驗證自己的就留下（拿掉「寫標籤名稱」，精準當場崩 16.7%——原來命名不是負擔，是 chain-of-thought）。含根因診斷（78% 的誤報埋在「調卷」內部、跨 12 案驗證零反例）、六個版本的完整軌跡（含兩次失敗）、所有 path 的用途說明、七條接手 TODO，以及去識別化連踩兩次的血淚（gold 只寫角色詞不寫真名，從 gold 抽人名清單是空的）。所有案號人名已代號化。",
