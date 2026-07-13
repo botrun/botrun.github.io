@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "moj-opus-judge-loop-85-20260714",
+      "title": "把「尺」換掉，分數才開始有意義",
+      "subtitle": "opus 書記官裁判迴圈：程式說召回 95.2%，人看說可交付只有 72%——那 23 個百分點，全躲在「頁碼對、名字錯」",
+      "href": "moj-opus-judge-loop-85-20260714.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-14T02:30:00+08:00",
+      "tags": [
+        "傳承",
+        "LLM 評測",
+        "黃金答案",
+        "白名單",
+        "卷宗編目"
+      ]
+    },
+    {
       "id": "pipeline-v3-docstart-explainer-heritage-20260713",
       "title": "PSS 架構互動傳承：高中生看懂 × 技術人可實施",
       "subtitle": "把「視窗式文件開頭偵測」六輪迭代（F1 31.3→56.4）做成雙層 explainer-doc：白話比喻＋技術深度，含六版可點按互動走讀＋五題結尾測驗（借鏡 Notion 設計工程師 Jeffrey Litt 的 explainer-doc 方法論）。核心判準：能程式算出的從 prompt 拿走、輸出會逼模型自證的留在 prompt——命名即 chain-of-thought。",
