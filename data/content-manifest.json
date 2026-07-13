@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "high-taste-benchmark-story",
+      "title": "一個高品味題庫的效益，該怎麼說？——寫給高中老師的一堂敘事課",
+      "subtitle": "查完日／美／法／菲／台五國 2026 AI 教育準則逐字原文，用矽谷敘事骨架講清楚：平庸題庫讓所有 AI 長得一樣好，高品味題庫讓好的 AI 跟危險的 AI 當場分開。",
+      "href": "high-taste-benchmark-story.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-13T21:30:00+08:00",
+      "tags": [
+        "傳承",
+        "高品味題庫",
+        "敘事簡報",
+        "教案生成",
+        "AI評測"
+      ]
+    },
+    {
       "id": "moj-pss-docstart-heritage-20260713",
       "title": "卷宗標籤目錄生成 · 從「逐頁分類」改成「視窗選擇」· 完整傳承",
       "subtitle": "把 2848 頁刑事卷宗 OCR 變成檢方要的 189 條標籤目錄。卡關一整輪的根因不是模型笨，是問題問壞了——逐頁問「這頁是不是新文件？」，判決書每一頁都有抬頭，模型每頁都說「是」，過切 4.6 倍，六種手寫規則全數收不回來。改成把 100 頁包成 XML 一次送進去問「這 100 頁裡哪幾頁是開頭？」，模型被迫比較而非獨立判斷（LumberChunker EMNLP 2024／DocSplit arXiv 2602.15958 的 Page Stream Segmentation 標準法），31B ＋ structured output ＋ PAR 30，全案 515 秒：召回 87.6%、真正救不回來的漏 0 條、可救召回上限 100%。問題從「找不到」變成「找太多」——而找太多可以往回收，找不到才是死的。含八顆地雷（空字串相似度回傳 1 的陷阱出現四次、表頭是位置性訊號、產線非確定性）、六條驗證過的死路、第一鐵律誠實揭露（結構維度的章節模板抄自 gold，12 案皆不乾淨）、全部 skill/實驗/產物 paths、六條接手 TODO。所有範例已去識別化。",
@@ -41,7 +59,15 @@
       "badgeColor": "#4a7c59",
       "protected": true,
       "publishDate": "2026-07-13T10:06:42+08:00",
-      "tags": ["傳承", "法務部", "Page Stream Segmentation", "文件切割", "OCR", "Gemma 31B", "泛化鐵律"]
+      "tags": [
+        "傳承",
+        "法務部",
+        "Page Stream Segmentation",
+        "文件切割",
+        "OCR",
+        "Gemma 31B",
+        "泛化鐵律"
+      ]
     },
     {
       "id": "vllm-26b-150-parallel-kv-tuning",
