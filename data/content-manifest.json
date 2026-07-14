@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "pineapple-daily-2026-07-14",
+      "title": "2026-07-14 菠蘿船一日成真：從 62 分鐘會議到 8 個 PR",
+      "subtitle": "三個被實測推翻的假設（OCR 並行度、31B preemption、碳排值），以及我自己造假證據的那次靜默失敗",
+      "href": "pineapple-daily-2026-07-14.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-14T23:10:00+08:00",
+      "tags": [
+        "傳承",
+        "一日成真",
+        "實測",
+        "靜默失敗",
+        "波特塔",
+        "botrun-eye"
+      ]
+    },
+    {
       "id": "gate-disk-plainlog-outage",
       "title": "日誌把自己寫死了：一句「pi 打不進去」挖出全服務中斷",
       "subtitle": "分層量測破案、首位元組 0.000000s、Rust 同步 stdout 在磁碟滿時卡死整個服務——治本改成頭尾各留 1K，日誌縮 93%",
