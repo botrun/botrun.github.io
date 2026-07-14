@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "skill-panel-list-vanished-css",
+      "title": "技能清單「消失」了——但它其實一直都在",
+      "subtitle": "一次 CSS 版面事故的完整解剖：兩行 CSS 讓單張卡片吃掉整個面板，順帶挖出發版 SSOT、semver 跳過、CDN 快取三個更深的坑",
+      "href": "skill-panel-list-vanished-css.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-14T18:30:00+08:00",
+      "tags": [
+        "傳承",
+        "botrun-multi",
+        "CSS",
+        "除錯",
+        "SSOT",
+        "發版"
+      ]
+    },
+    {
       "id": "tower-kv-llmlog-watcher",
       "title": "KV cache 才是天花板：從「300 路平行」到加密日誌與即時監控台",
       "subtitle": "MAXSEQS 是空頭支票、MTP 是冤案、真凶是 34 萬字的 prompt——日誌上線 12 分鐘破案的完整傳承",
