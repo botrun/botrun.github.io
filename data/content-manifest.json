@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "gate-disk-plainlog-outage",
+      "title": "日誌把自己寫死了：一句「pi 打不進去」挖出全服務中斷",
+      "subtitle": "分層量測破案、首位元組 0.000000s、Rust 同步 stdout 在磁碟滿時卡死整個服務——治本改成頭尾各留 1K，日誌縮 93%",
+      "href": "gate-disk-plainlog-outage.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#b23b3b",
+      "protected": true,
+      "publishDate": "2026-07-14T20:30:00+08:00",
+      "tags": [
+        "傳承",
+        "事故",
+        "除錯",
+        "日誌",
+        "地雷"
+      ]
+    },
+    {
       "id": "skill-panel-list-vanished-css",
       "title": "技能清單「消失」了——但它其實一直都在",
       "subtitle": "一次 CSS 版面事故的完整解剖：兩行 CSS 讓單張卡片吃掉整個面板，順帶挖出發版 SSOT、semver 跳過、CDN 快取三個更深的坑",
