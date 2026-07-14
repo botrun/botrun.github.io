@@ -32,6 +32,26 @@
   },
   "items": [
     {
+      "id": "nchc-gpu-capacity-moj-20260714",
+      "title": "國網中心算力需求試算：法務部年 3,000 萬頁卷證要幾張 GPU？",
+      "subtitle": "建議 7 張 Blackwell（辨識池 2 ＋ 31B 判讀池 5）；拆兩池共用卡省下 16 張。含最重要的移植風險：H100／H200 沒有 FP4 硬體，帳面 2.7× 實際只剩 1.68×。附實測階梯（並行 4→16 吞吐 ×2.06、每頁耗電 −52%）與三張 SVG 圖解。",
+      "href": "nchc-gpu-capacity-moj-20260714.html",
+      "icon": "cpu",
+      "badge": "對外交付",
+      "badgeColor": "#2f5f8f",
+      "protected": true,
+      "publishDate": "2026-07-14T23:55:00+08:00",
+      "tags": [
+        "國網中心",
+        "法務部",
+        "GPU 算力",
+        "對外文件",
+        "波活眼",
+        "實測",
+        "FP4 移植風險"
+      ]
+    },
+    {
       "id": "moj-ocr-preprocessing-tradeoff-20260714",
       "title": "卷證 OCR 前處理：時間差異試算報告（給法務部）",
       "subtitle": "3,000 頁卷證省 46 分鐘；並附我方效能剛提升一倍的誠實揭露，與 20 份驗證樣本的請求",
