@@ -32,6 +32,25 @@
   },
   "items": [
     {
+      "id": "tower-kv-llmlog-watcher",
+      "title": "KV cache 才是天花板：從「300 路平行」到加密日誌與即時監控台",
+      "subtitle": "MAXSEQS 是空頭支票、MTP 是冤案、真凶是 34 萬字的 prompt——日誌上線 12 分鐘破案的完整傳承",
+      "href": "tower-kv-llmlog-watcher.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-14T16:30:00+08:00",
+      "tags": [
+        "傳承",
+        "vLLM",
+        "KV cache",
+        "地雷",
+        "監控",
+        "加密"
+      ]
+    },
+    {
       "id": "moj-handoff-five-wrong-bottlenecks-20260714",
       "title": "五個我以為的瓶頸，量出來全是錯的",
       "subtitle": "交接包實戰與 24,464 頁去識別化：每一次我以為找到瓶頸，量測都說你猜錯了",
