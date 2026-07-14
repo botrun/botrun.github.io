@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "moj-ocr-preprocessing-tradeoff-20260714",
+      "title": "卷證 OCR 前處理：時間差異試算報告（給法務部）",
+      "subtitle": "3,000 頁卷證省 46 分鐘；並附我方效能剛提升一倍的誠實揭露，與 20 份驗證樣本的請求",
+      "href": "moj-ocr-preprocessing-tradeoff-20260714.html",
+      "icon": "shield",
+      "badge": "對外交付",
+      "badgeColor": "#2f5f8f",
+      "protected": true,
+      "publishDate": "2026-07-14T23:40:00+08:00",
+      "tags": [
+        "法務部",
+        "OCR",
+        "對外文件",
+        "波活眼",
+        "實測"
+      ]
+    },
+    {
       "id": "pineapple-daily-2026-07-14",
       "title": "2026-07-14 菠蘿船一日成真：從 62 分鐘會議到 8 個 PR",
       "subtitle": "三個被實測推翻的假設（OCR 並行度、31B preemption、碳排值），以及我自己造假證據的那次靜默失敗",
