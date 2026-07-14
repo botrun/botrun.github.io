@@ -32,6 +32,18 @@
   },
   "items": [
     {
+      "id": "2026-07-15-central-audit-five-truths",
+      "title": "中央入口 issues 全面盤點與收尾 — 逐一檢驗揪出的五個真相",
+      "subtitle": "把 23 張「已完成」issue 重新逐一檢驗，揪出四個原本沒人發現的問題，其中一個是還開著的個資外洩。五大真相各配當日現場鐵證截圖＋雙層敘事＋SVG 對比卡：① preemption 我斷言恆 0、實測 19（被自己的證據推翻）② PR 說 registry 全改、實掃還漏 5 個 chandra ③ 設定檔 MAXSEQS 300、線上實跑 8（設定漂移）④ deid 本機模型掛了會靜默改走雲端、改成 fail-closed 並用本機 Ollama 端到端驗過 ⑤ P0 個資移除「完成」是假的——filter-repo 漏了 9 個 tag、每個仍在 GitHub 曝露 152 檔正本，已全刪、現場四項驗證全 0。貫穿一句話：完成是需要被證明的宣稱，不是可以被回報的狀態。",
+      "href": "2026-07-15-central-audit-five-truths.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-15T08:00:00+08:00",
+      "tags": ["傳承", "盤點", "資安", "個資移除", "逐一檢驗"]
+    },
+    {
       "id": "nchc-gpu-capacity-moj-20260714",
       "title": "國網中心算力需求試算：法務部年 3,000 萬頁卷證要幾張 GPU？",
       "subtitle": "建議 7 張 Blackwell（辨識池 2 ＋ 31B 判讀池 5）；拆兩池共用卡省下 16 張。含最重要的移植風險：H100／H200 沒有 FP4 硬體，帳面 2.7× 實際只剩 1.68×。附實測階梯（並行 4→16 吞吐 ×2.06、每頁耗電 −52%）與三張 SVG 圖解。",
