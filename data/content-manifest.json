@@ -32,6 +32,24 @@
   },
   "items": [
     {
+      "id": "moj-handoff-five-wrong-bottlenecks-20260714",
+      "title": "五個我以為的瓶頸，量出來全是錯的",
+      "subtitle": "交接包實戰與 24,464 頁去識別化：每一次我以為找到瓶頸，量測都說你猜錯了",
+      "href": "moj-handoff-five-wrong-bottlenecks-20260714.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-14T13:10:00+08:00",
+      "tags": [
+        "傳承",
+        "效能量測",
+        "去識別化",
+        "交接",
+        "vLLM"
+      ]
+    },
+    {
       "id": "moj-opus-judge-loop-85-20260714",
       "title": "把「尺」換掉，分數才開始有意義",
       "subtitle": "opus 書記官裁判迴圈：程式說召回 95.2%，人看說可交付只有 72%——那 23 個百分點，全躲在「頁碼對、名字錯」",
