@@ -7,6 +7,18 @@
    "intro": "政府標案技術提升 — 服務建議書請依下列傳承文章撰寫，確保技術論述對齊 2026 業界方法學、話術一致、可回溯佐證。",
    "items": [
     {
+     "id": "evolvable-sovereign-ai-quality-benchmark",
+     "title": "可進化主權 AI（高品味技能驗證標準）",
+     "subtitle": "一場「原本要討論演講、結果討論成國家級 AI 驗測標準」的會議傳承。核心一句：國家要能自己當 AI 的考官，考卷要能天天進化、抄不走。八張 SVG 說服卡拆解——① 考官必須是政府（廠商自評的 800 萬案不了了之）② 錄影成真（Gemini 標時間戳＋ffmpeg 截圖，一段螢幕錄影長出全機關自動化）③ 顧問 vs 稽核兩種錢分家 ④ 高品味題庫訓練集給／保留集鎖死＋動態出題防作弊 ⑤ 以人為中心 15 分鐘真專家錄影一票否決、沒有直接零分 ⑥ 信度＝穩定度／效度＝鑑別度 ⑦ 保留集天天刷新（幻覺＋資安題組，一年前考題毫無意義）⑧ 貫穿價值鏈＝品牌成功奧義。含成果四件套、Gemini 3.5 Flash 時間戳轉錄地雷（-c copy 跨容器 exit 234）、去識別資料樣態。白話＋技術雙層。",
+     "href": "evolvable-sovereign-ai-quality-benchmark.html",
+     "icon": "shield",
+     "badge": "傳承",
+     "badgeColor": "#4a7c59",
+     "protected": true,
+     "publishDate": "2026-07-15T14:30:00+08:00",
+     "tags": ["傳承", "主權AI", "高品味題庫", "驗測標準", "以人為中心"]
+    },
+    {
      "id": "four-harness-token-accounting",
      "title": "四大 Harness Token／計費統一記錄 · 收費站碼表 · 傳承",
      "subtitle": "四個 Harness（PI.DEV／Hermes／OpenCode／Claude Code）的 Token 與花費以前各記各的——Hermes 幾乎沒數字、Langfuse 在 EMA 單機不共用也不進 BigQuery、更看不出同一個 Gemma 走的是 Vertex 還是國網。治本＝在四家共同節流點 botrun-gate（自寫的 Rust proxy，類 LiteLLM）裝一台碼表：每筆過站無條件寫一行 append-only JSONL（只記量、標真實後端 backend_site=vertex／nchc、harness 歸因、5 分鐘一檔）；第二段由 loader 對照唯一價目表 pricing.json（Anthropic／Gemini 全系列＋國網 NCHC 三 tier×1.6折 $0.021/$0.082/$0.33）snapshot 當下單價與成本，登進本案專用 botrun-play-dev.token_ledger BigQuery，機進一句 bq query 就撈報表。量價解耦、分兩段（先落地再串接）、旗標預設關可安全併主幹、出事秒回滾。cbh-play-dev 真機 claude-in-chrome 驗測通過（Pi→gate→國網 Gemma 秒回）＋『真 gate→真國網端點→JSONL→BigQuery』端到端實測。含七張 SVG 前後比較卡、成果四件套、去個資示範。零中國大陸用語。",
