@@ -86,6 +86,25 @@
   },
   "items": [
     {
+      "id": "botrun-multi-7features-verify",
+      "title": "botrun-multi 七大功能：規格→TDD 實作→Playwright 驗測→每項五情境",
+      "subtitle": "七項功能核心 TDD 全綠（bun41+cargo94+gate6）＋Playwright UI 端到端＋每項五情境；需雲端/UI/部署誠實標待",
+      "href": "botrun-multi-7features-verify.html",
+      "icon": "shield",
+      "badge": "傳承",
+      "badgeColor": "#4a7c59",
+      "protected": true,
+      "publishDate": "2026-07-15T20:10:00+08:00",
+      "tags": [
+        "傳承",
+        "TDD",
+        "驗測",
+        "Playwright",
+        "加密",
+        "OCR"
+      ]
+    },
+    {
       "id": "botrun-multi-7features-spec",
       "title": "botrun-multi 七大功能移植需求規格（BDD＋E2E 驗收＋SVG）",
       "subtitle": "動態表單／KMS加密／語音時間戳／OCR多引擎／去機敏SSOT／GCP-ADC多模型／gate成本熔斷；每項含優先權階梯與 End-to-End 驗收流程圖",
