@@ -32,6 +32,18 @@
   },
   "items": [
     {
+      "id": "2026-07-15-pineapple-24-issues-nav",
+      "title": "一日成真 · 24 張 issue 處理後導航摘要 — 一站找到你的編號與證據",
+      "subtitle": "一場 62 分鐘會議變成散落 7 個 repo 的 24 張 issue，這頁是唯一導航點：找到編號→看處理後狀態→點網址看證據，不用再交接。24 張→✅22 已驗證交付／已完成、🟡1 待人拍板（碳排 26B 去留）、⬜1 未到期（CI/CD 文件 7/16）。雙層敘事：為什麼一堆 open 不等於沒做（依規範等 seba merge）、逐一檢驗揪出的四個真相＋一個補完的個資 tag 外洩、碳排 26B 每 token 能耗約 31B 的 1/5。每張帶 GitHub 網址與引證。",
+      "href": "2026-07-15-pineapple-24-issues-nav.html",
+      "icon": "compass",
+      "badge": "導航",
+      "badgeColor": "#3b6ea5",
+      "protected": true,
+      "publishDate": "2026-07-15T09:00:00+08:00",
+      "tags": ["導航", "一日成真", "issue 摘要", "盤點"]
+    },
+    {
       "id": "2026-07-15-central-audit-five-truths",
       "title": "中央入口 issues 全面盤點與收尾 — 逐一檢驗揪出的五個真相",
       "subtitle": "把 23 張「已完成」issue 重新逐一檢驗，揪出四個原本沒人發現的問題，其中一個是還開著的個資外洩。五大真相各配當日現場鐵證截圖＋雙層敘事＋SVG 對比卡：① preemption 我斷言恆 0、實測 19（被自己的證據推翻）② PR 說 registry 全改、實掃還漏 5 個 chandra ③ 設定檔 MAXSEQS 300、線上實跑 8（設定漂移）④ deid 本機模型掛了會靜默改走雲端、改成 fail-closed 並用本機 Ollama 端到端驗過 ⑤ P0 個資移除「完成」是假的——filter-repo 漏了 9 個 tag、每個仍在 GitHub 曝露 152 檔正本，已全刪、現場四項驗證全 0。貫穿一句話：完成是需要被證明的宣稱，不是可以被回報的狀態。",
